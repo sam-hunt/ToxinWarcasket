@@ -1,0 +1,85 @@
+# Toxin Warcasket
+
+> A RimWorld mod adding a heavy chemical-warfare warcasket set for Vanilla Factions Expanded - Pirates
+
+[![RimWorld](https://img.shields.io/badge/RimWorld-1.6-blue.svg)](https://rimworldgame.com/)
+[![VFE Pirates](https://img.shields.io/badge/Requires-VFE%20Pirates-orange.svg)](https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948)
+
+## About
+
+Vanilla Factions Expanded - Pirates lets you weld a pawn into a warcasket: a steel shell,
+customized part by part at the foundry, with a range of sets that carries a colony from the
+industrial era into the late game. This mod adds one more set to that range: the Toxin, the
+Cataphract chassis resealed for chemical warfare. Same superior plating, same worse weight, and
+a pilot who can hold a gassed position long after everyone else has fled it.
+
+Biotech is optional. Without it there is no tox gas to be immune to; the toxic resistance and
+fallout protection still work.
+
+## Features
+
+### The Toxin Set
+
+Armor, shoulder pads and helmet, welded on at VFE Pirates' warcasket foundry and unlocked by its
+advanced warcaskets research. Cataphract-tier plating in all three pieces, at Cataphract prices.
+
+- **Armor**: the sealed shell. Half of the set's toxic resistance
+- **Shoulder pads**: the Cataphract pauldrons, resealed
+- **Helmet**: the respirator. The other half of the toxic resistance, 80% toxic environment
+  resistance against fallout and rot stink, and, with Biotech, immunity to the tox gas debuff; the full set shrugs off tox gas entirely
+- **Built on VFE Pirates** rather than beside it: the foundry, entombing, customization and
+  removal surgery all apply unchanged, and the pieces mix and match with VFE Pirates' own sets
+
+## Requirements
+
+- **RimWorld 1.6** or later
+- **Vanilla Factions Expanded - Pirates** (required), which itself requires
+  **Vanilla Expanded Framework**
+- **Harmony** (auto-download from Steam Workshop if you don't have it)
+- **Biotech DLC** is optional
+
+## Installation
+
+### Steam Workshop (Recommended)
+
+Coming with the first release.
+
+### Manual Installation
+
+1. Download the latest release from the [Releases](https://github.com/sam-hunt/ToxinWarcasket/releases) page
+2. Extract the `ToxinWarcasket` folder to your RimWorld `Mods` directory:
+   - **Windows**: `C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\`
+   - **Mac**: `~/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/`
+   - **Linux**: `~/.steam/steam/steamapps/common/RimWorld/Mods/`
+3. Enable the mod in RimWorld's mod menu, after Vanilla Factions Expanded - Pirates
+4. Restart RimWorld
+
+## Compatibility
+
+- **Safe to add** to existing saves.
+- **Not safe to remove** from saves while a pawn is welded into the set.
+- **Save Our Ship 2 / Universum**: EVA rated under exactly the same rules as VFE Pirates' own sets.
+- Not tested with Combat Extended.
+
+## Contributing
+
+Bug reports and feature requests welcome on [GitHub Issues](https://github.com/sam-hunt/ToxinWarcasket/issues).
+Please attach any relevant logs/stack traces/mod lists etc.
+
+Translations are welcome - see [CONTRIBUTING.md](CONTRIBUTING.md).
+For development setup, see [CLAUDE.md](CLAUDE.md).
+
+## Credits
+
+**Author**: Sam Hunt ([@sam-hunt](https://github.com/sam-hunt))
+
+**Built With**:
+
+- [Harmony](https://github.com/pardeike/Harmony) by Andreas Pardeike - Runtime patching library
+- RimWorld modding API, community examples
+
+**Special Thanks**:
+
+- The [Vanilla Expanded team](https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948) for Vanilla Factions Expanded - Pirates
+- [Ludeon Studios](https://ludeon.com) for RimWorld and modding API
+- [The RimWorld modding community](https://steamcommunity.com/app/294100/workshop/) for inspiration

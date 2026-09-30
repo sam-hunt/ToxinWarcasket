@@ -1,0 +1,57 @@
+# TODOs
+
+## Content
+
+- **Custom art.** All six texPaths (armor, shoulders, helmet; `texPath` and
+  `wornGraphicPath` each) point at VFEP's Cataphract textures as placeholders. Author the set
+  under `Textures/Things/Pawn/Warcasketlike/WarcasketToxin/` (the same `_north`/`_east`/`_south`
+  facings and item-icon single as the Cataphract; see the sibling Shipcracker repo's
+  `Textures/` for the layout), then repoint the defs and drop the placeholder notes from their
+  headers. `About/Preview.png` and `About/ModIcon.png` are also missing.
+- **The tox gas ability.** Deferred by decision; the set ships as a pure protection suit until
+  it lands. `Docs/Research/TOX_GAS_MECHANICS.md` maps the engine: the gas grid refuses ToxGas
+  and the exposure hediff does not exist without Biotech, so the ability def, its DefInjected
+  and its gizmo art all belong behind the Biotech load-folder gate drafted in `LoadFolders.xml`
+  (`1.6/Mods/Biotech/` and `Mods/Biotech/`), never the main tree. The three candidate routes
+  (the tox pack's `CompProperties_ReleaseGas` + `CompApparelReloadable`, a VEF apparel ability
+  calling `GasUtility.AddGas`, an explosion verb with `postExplosionGasType`) are compared
+  there. The full set's ToxicResistance 1.0 already zeroes gas buildup and the helmet's
+  `immuneToToxGasExposure` removes the exposure debuff, so the wearer can stand in their own
+  gas. Revisit the armor's costList when the emitter lands (a reagent tank prices onto that
+  piece).
+- **Tuning pass.** Plating, weight, speed and price are the Cataphract's verbatim; the toxin
+  identity is ToxicResistance 1.0 across armor + helmet plus the helmet's
+  ToxicEnvironmentResistance 0.8 and Chemfuel 20. Decide, once the ability exists, whether the
+  set stays on `VFEP_AdvancedWarcaskets` (industrial, 4000) or moves up to
+  `VFEP_SpecialisedWarcaskets` beside the Hazard set, and whether Biotech's tox-related
+  research should gate the ability's root.
+- **English text is not final.** Descriptions and the Workshop page are first drafts; the
+  translation passes wait for them (see CLAUDE.md's Localization Toolchain section).
+
+## Open questions
+
+- Acquisition: foundry only, by construction. Warcasket parts are destroyed on drop and
+  untradeable, so raid presence (all three pieces carry the Cataphract's `WarcasketHeavy` and
+  `WarcasketCata` tags, so VFEP's Junker and Mercenary heavy pawnkinds can roll our pieces
+  beside the Cataphract's) is threat and flavor, never loot. Decide whether that mix is wanted
+  or the set should get its own tag until the ability makes a raider in it interesting.
+- Does the Hazard set (VFEP's chemical/flamer 7th-gen set) need any parity or contrast note in
+  the descriptions or the Workshop FAQ?
+
+## Infrastructure follow-ups
+
+- **Create the GitHub repo** (`sam-hunt/ToxinWarcasket`; the origin remote is already set) and
+  push. Until it exists, `git submodule update --init` in a fresh clone cannot resolve the
+  relative `../rimworld-l10n.git` URL against a remote either.
+- **Cut a 0.1.0 pre-release to exercise CI before the real release.** The release workflow
+  fetches VEF and VFEP from the Workshop with SteamCMD (anonymous login) and injects them via
+  `VEF_PATH` / `VFEP_PATH`; it has never run for this repo. Push a pre-release tag such as
+  `v0.1.0-rc.1`: the workflow marks a release pre-release only when the tag contains `alpha`,
+  `beta` or `-rc`, so a bare `v0.1.0` would publish as a normal release. The CHANGELOG section
+  heading must match the tag without its `v` (`## [0.1.0-rc.1]`) or the notes step fails. The
+  existing `## [0.1.0] - TBD` placeholder needs replacing either way.
+- **Translation passes** for the CONTRIBUTING.md roster, one language at a time via
+  `/translate <Language>`, only once the English is final and shortly before release.
+- **First Workshop publish.** Upload writes `About/PublishedFileId.txt`; commit it, add the
+  Workshop link to the README's Installation section, and paste
+  `.steamworkshop/Description/English.txt` into the page.

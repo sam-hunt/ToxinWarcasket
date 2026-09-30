@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+  <v1.6>
+    <li>/</li>
+    <!-- With a LoadFolders.xml only the folders listed here load. Art sits under the mod
+         root, so "/" covers it; there is no Common/ root. -->
+    <li>1.6</li>
+    <!-- Optional-mod/DLC compat roots, gated by package id via IfModActive: DefInjected
+         entries and textures cannot carry MayRequire, so the load root is the gate.
+         Mods/<Mod Name>/ holds version-independent content (art), 1.6/Mods/<Mod Name>/ the
+         Defs, Patches and the DefInjected that must share their root. The game only scans
+         well-known folders (Defs/, Languages/, Textures/, ...) directly under a load root,
+         so "/" and 1.6 never see Mods/.
+
+         Biotech gate, for the tox gas ability: the gas grid refuses ToxGas without Biotech
+         and the exposure hediff does not exist, so the ability def, its DefInjected and its
+         gizmo art must all live behind this gate. Uncomment when the first one lands:
+    <li IfModActive="ludeon.rimworld.biotech">Mods/Biotech</li>
+    <li IfModActive="ludeon.rimworld.biotech">1.6/Mods/Biotech</li>
+    -->
+  </v1.6>
+</loadFolders>
