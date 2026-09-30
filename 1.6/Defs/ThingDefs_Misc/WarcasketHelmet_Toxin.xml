@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    Templated from VFEP's VFEP_WarcasketHelmet_Cataphract (VFEP v3.09, commit 31cee5e,
+    1.6/Defs/ThingDefs_Misc/Apparel_Headgear.xml); fields not discussed here, uiIconScale
+    included, are the Cataphract's. Tags, the research prereq and the placeholder Cataphract
+    texPaths follow the armor's header.
+
+    The sealed helm, the set's respirator. Modeled on Biotech's gas mask (Apparel_GasMask:
+    ToxicEnvironmentResistance 0.8, immuneToToxGasExposure, Chemfuel 20 in its costList):
+    - ToxicResistance +0.5 completes the armor's 0.5 to the 1.0 cap (rationale in the armor's
+      header).
+    - ToxicEnvironmentResistance +0.8, the gas mask's value: toxic fallout and rot stink. Core
+      stat; a full 1.0 is left to the stat's own cap so a fallout hediff still ticks faintly.
+    - apparel.immuneToToxGasExposure: a Core field on ApparelProperties that only
+      GasUtility.IsAffectedByExposure reads, and only under Biotech, where it exempts the wearer
+      from the ToxGasExposure hediff (the sight/breathing debuff; the gas mask's mechanic). It
+      does NOT touch the toxic buildup gas also deals; the two resistance stats do that, and
+      they multiply, so the helmet alone cuts gas buildup by 90% and the full set (1.0) to zero.
+      Inert without Biotech, so it needs no MayRequire and no gate. Together these let the
+      wearer stand in their own gas once the ability lands (Docs/Research/TOX_GAS_MECHANICS.md).
+    - Chemfuel 20 on top of the Cataphract's ComponentIndustrial 2 / Steel 75: the mask's filter
+      reagent, priced the way the gas mask prices it.
+  -->
+  <VFEPirates.WarcasketDef ParentName="VFEP_WarcasketHelmetBase">
+    <defName>TXWC_WarcasketHelmet_Toxin</defName>
+    <label>toxin warcasket helmet</label>
+    <shortDescription>Specialized warcasket helmet with superior protection and worse weight, sealed and fitted with a filtered respirator that keeps out tox gas and toxic fallout.</shortDescription>
+    <description>Specialized warcasket helmet with superior protection and worse weight, sealed and fitted with a filtered respirator that keeps out tox gas and toxic fallout.\n\n5th generation warcaskets were created with a much shorter period between generations, largely being slight specializations of the previous one. The Toxin design reworked the Cataphract chassis for chemical warfare: every seam gasketed, every intake filtered, so that a pilot could hold a gassed position long after everyone else had fled it.\n\nPirate crews took to seeding a raid with toxin pilots and shelling their own front line with gas. Whoever was still standing when the cloud thinned was wearing one. Their motto, muffled through the respirator, was to breathe easy.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Warcasketlike/WarcasketCataphract/WarcasketCataphractHelmet</texPath>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <statBases>
+      <Mass>8</Mass>
+      <ArmorRating_Sharp>1.56</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.78</ArmorRating_Heat>
+      <Insulation_Cold>4</Insulation_Cold>
+      <Insulation_Heat>2</Insulation_Heat>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.15</MoveSpeed>
+      <ToxicResistance>0.5</ToxicResistance>
+      <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.1</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <costList>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Steel>75</Steel>
+      <Chemfuel>20</Chemfuel>
+    </costList>
+    <researchPrerequisites>
+      <li>VFEP_AdvancedWarcaskets</li>
+    </researchPrerequisites>
+    <apparel>
+      <immuneToToxGasExposure>true</immuneToToxGasExposure>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Warcasketlike/WarcasketCataphract/WarcasketCataphractHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>WarcasketHeavy</li>
+        <li>WarcasketCata</li>
+        <li>WarcasketAll</li>
+      </tags>
+    </apparel>
+  </VFEPirates.WarcasketDef>
+</Defs>

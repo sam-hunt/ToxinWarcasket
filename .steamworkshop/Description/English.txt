@@ -1,0 +1,41 @@
+Toxin Warcasket
+
+A new heavy chemical-warfare warcasket for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
+
+[h1]About[/h1]
+
+The Toxin is VFE Pirates' Cataphract chassis resealed for chemical warfare: the same superior plating and worse weight, with every seam gasketed and every intake filtered. Wear the full set and the pilot shrugs off toxic buildup entirely, and the helmet's respirator keeps out tox gas and toxic fallout. Biotech is optional; without it the set is still the most toxin-proof heavy suit a pirate foundry can weld.
+
+[hr][/hr]
+[h2]The Set[/h2]
+Cataphract-tier plating in all three pieces, at Cataphract prices, unlocked by the same advanced warcaskets research.
+[list]
+[*][b]Torso:[/b] the sealed shell. Half of the set's toxic resistance.
+[*][b]Shoulder pads:[/b] the Cataphract pauldrons, resealed.
+[*][b]Helmet:[/b] the respirator. The other half of the toxic resistance, 80% toxic environment resistance against fallout and rot stink, and, with Biotech, immunity to the tox gas debuff; the full set shrugs off tox gas entirely.
+[/list]
+
+[hr][/hr]
+[h1]Mod Compatibility[/h1]
+[list]
+[*]Safe to add to existing saves
+[*]Not safe to remove while a pawn is welded into the set
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]: required.
+[*]Save Our Ship 2: EVA rated under the same rules as VFE Pirates' own sets
+[*]Not tested with Combat Extended (reports welcome)
+[/list]
+
+[hr][/hr]
+[h1]FAQ[/h1]
+[b]Q: Do I need Biotech?[/b]
+A: No. Without it there is no tox gas in the game to be immune to; the toxic resistance and fallout protection still work.
+
+[b]Q: How do I get it?[/b]
+A: Research advanced warcaskets, then weld it on at the warcasket foundry like any other set. Mix and match the pieces with VFE Pirates' own sets as you please.
+
+[b]Q: Was this made with LLMs?[/b]
+A: Some of the grunt code, and most localizations. I'm a software engineer by trade, and have been writing code for 25 years. All code is manually reviewed and tested; all bug reports and mod-conflicts followed up personally as time and detail allows. All art is either commissioned from humans, hand-authored in Krita, or both.
+
+[hr][/hr]
+[h1]Links[/h1]
+Source code, manual downloads and issue tracker: [url=https://github.com/sam-hunt/ToxinWarcasket]GitHub[/url]
