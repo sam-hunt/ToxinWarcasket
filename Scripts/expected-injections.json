@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "gameBuild": "1.6.4871 rev591",
+    "activeDlcs": [
+      "Core",
+      "Biotech"
+    ],
+    "modPackageId": "shunter.toxinwarcasket",
+    "modName": "Toxin Warcasket",
+    "activeMods": [
+      "brrainz.harmony",
+      "ludeon.rimworld",
+      "ludeon.rimworld.biotech",
+      "oskarpotocki.vanillafactionsexpanded.core",
+      "oskarpotocki.vfe.pirates",
+      "shunter.toxinwarcasket",
+      "shunter.l10nprobe"
+    ]
+  },
+  "defInjections": {
+    "ThingDef": {
+      "TXWC_WarcasketHelmet_Toxin.description": {
+        "english": "Specialized warcasket helmet with superior protection and worse weight, sealed and fitted with a filtered respirator that keeps out tox gas and toxic fallout.\n\n5th generation warcaskets were created with a much shorter period between generations, largely being slight specializations of the previous one. The Toxin design reworked the Cataphract chassis for chemical warfare: every seam gasketed, every intake filtered, so that a pilot could hold a gassed position long after everyone else had fled it.\n\nPirate crews took to seeding a raid with toxin pilots and shelling their own front line with gas. Whoever was still standing when the cloud thinned was wearing one. Their motto, muffled through the respirator, was to breathe easy.",
+        "required": true
+      },
+      "TXWC_WarcasketHelmet_Toxin.label": {
+        "english": "toxin warcasket helmet",
+        "required": true
+      },
+      "TXWC_WarcasketHelmet_Toxin.shortDescription": {
+        "english": "Specialized warcasket helmet with superior protection and worse weight, sealed and fitted with a filtered respirator that keeps out tox gas and toxic fallout.",
+        "required": true
+      },
+      "TXWC_WarcasketShoulders_Toxin.description": {
+        "english": "Specialized warcasket pauldrons with superior protection and worse weight, sealed against chemical and toxic exposure.\n\n5th generation warcaskets were created with a much shorter period between generations, largely being slight specializations of the previous one. The Toxin design reworked the Cataphract chassis for chemical warfare: every seam gasketed, every intake filtered, so that a pilot could hold a gassed position long after everyone else had fled it.\n\nPirate crews took to seeding a raid with toxin pilots and shelling their own front line with gas. Whoever was still standing when the cloud thinned was wearing one. Their motto, muffled through the respirator, was to breathe easy.",
+        "required": true
+      },
+      "TXWC_WarcasketShoulders_Toxin.label": {
+        "english": "toxin warcasket shoulders",
+        "required": true
+      },
+      "TXWC_WarcasketShoulders_Toxin.shortDescription": {
+        "english": "Specialized warcasket pauldrons with superior protection and worse weight, sealed against chemical and toxic exposure.",
+        "required": true
+      },
+      "TXWC_Warcasket_Toxin.description": {
+        "english": "Specialized warcasket shell with superior protection and worse weight, sealed against chemical and toxic exposure.\n\n5th generation warcaskets were created with a much shorter period between generations, largely being slight specializations of the previous one. The Toxin design reworked the Cataphract chassis for chemical warfare: every seam gasketed, every intake filtered, so that a pilot could hold a gassed position long after everyone else had fled it.\n\nPirate crews took to seeding a raid with toxin pilots and shelling their own front line with gas. Whoever was still standing when the cloud thinned was wearing one. Their motto, muffled through the respirator, was to breathe easy.",
+        "required": true
+      },
+      "TXWC_Warcasket_Toxin.label": {
+        "english": "toxin warcasket",
+        "required": true
+      },
+      "TXWC_Warcasket_Toxin.shortDescription": {
+        "english": "Specialized warcasket shell with superior protection and worse weight, sealed against chemical and toxic exposure.",
+        "required": true
+      }
+    }
+  }
+}
