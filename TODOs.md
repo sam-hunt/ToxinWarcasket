@@ -40,9 +40,6 @@
 
 ## Infrastructure follow-ups
 
-- **Create the GitHub repo** (`sam-hunt/ToxinWarcasket`; the origin remote is already set) and
-  push. Until it exists, `git submodule update --init` in a fresh clone cannot resolve the
-  relative `../rimworld-l10n.git` URL against a remote either.
 - **Cut a release candidate to exercise CI before the real release.** The release
   workflow fetches VEF and VFEP from the Workshop with SteamCMD (anonymous login) and injects
   them via `VEF_PATH` / `VFEP_PATH`, but it has never run for this repo. `/release major rc` tags
