@@ -43,15 +43,14 @@
 - **Create the GitHub repo** (`sam-hunt/ToxinWarcasket`; the origin remote is already set) and
   push. Until it exists, `git submodule update --init` in a fresh clone cannot resolve the
   relative `../rimworld-l10n.git` URL against a remote either.
-- **Cut a 0.1.0 pre-release to exercise CI before the real release.** The release workflow
-  fetches VEF and VFEP from the Workshop with SteamCMD (anonymous login) and injects them via
-  `VEF_PATH` / `VFEP_PATH`; it has never run for this repo. Push a pre-release tag such as
-  `v0.1.0-rc.1`: the workflow marks a release pre-release only when the tag contains `alpha`,
-  `beta` or `-rc`, so a bare `v0.1.0` would publish as a normal release. The CHANGELOG section
-  heading must match the tag without its `v` (`## [0.1.0-rc.1]`) or the notes step fails. The
-  existing `## [0.1.0] - TBD` placeholder needs replacing either way.
+- **Cut a release candidate to exercise CI before the real release.** The release
+  workflow fetches VEF and VFEP from the Workshop with SteamCMD (anonymous login) and injects
+  them via `VEF_PATH` / `VFEP_PATH`, but it has never run for this repo. `/release major rc` tags
+  `v1.0.0-rc.1`: a GitHub prerelease that needs no CHANGELOG section. Check the Workshop
+  fetch step, the translation gate and the zip's contents.
 - **Translation passes** for the CONTRIBUTING.md roster, one language at a time via
   `/translate <Language>`, only once the English is final and shortly before release.
 - **First Workshop publish.** Upload writes `About/PublishedFileId.txt`; commit it, add the
-  Workshop link to the README's Installation section, and paste
+  Workshop link to the README's Installation section, fill the id into the README's
+  commented-out Steam badges and uncomment them, and paste
   `.steamworkshop/Description/English.txt` into the page.
