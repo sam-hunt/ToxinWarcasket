@@ -251,7 +251,11 @@ inherited from the Shipcracker glossaries so the two sets read as one family in-
 `CHANGELOG.md`, bump `About/About.xml` `<modVersion>` and `Source/1.6/Properties/AssemblyInfo.cs`,
 then push a `v*.*.*` tag. The GitHub Actions workflow (`.github/workflows/release.yml`) builds,
 stages via `StageMod`, lifts the tag's CHANGELOG section into the release body, and **fails the
-release if that section is missing**.
+release if that section is missing**. Release candidates are `X.Y.Z-rc.N` tags (the same glob
+matches): CHANGELOG-less and Workshop-less, with the suffix only in `modVersion` and
+`AssemblyInformationalVersion` (the numeric assembly attributes stay `X.Y.Z.0`); `release.yml`
+gives any suffixed tag a stub body and marks it a prerelease, and `/release` measures every range
+from the last *stable* tag.
 
 ## Debugging
 
