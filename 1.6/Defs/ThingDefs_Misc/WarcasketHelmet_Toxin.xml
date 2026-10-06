@@ -3,8 +3,8 @@
   <!--
     Templated from VFEP's VFEP_WarcasketHelmet_Cataphract (VFEP v3.09, commit 31cee5e,
     1.6/Defs/ThingDefs_Misc/Apparel_Headgear.xml); fields not discussed here, uiIconScale
-    included, are the Cataphract's. Tags, the research prereq and the placeholder Cataphract
-    texPaths follow the armor's header.
+    included, are the Cataphract's. Tags, the research prereq and the art follow the armor's
+    header.
 
     The sealed helm, the set's respirator. Modeled on Biotech's gas mask (Apparel_GasMask:
     ToxicEnvironmentResistance 0.8, immuneToToxGasExposure, Chemfuel 20 in its costList):
@@ -28,7 +28,7 @@
     <shortDescription>Specialized warcasket helmet with superior protection and worse weight, sealed and fitted with a filtered respirator that keeps out tox gas and toxic fallout.</shortDescription>
     <description>Specialized warcasket helmet with superior protection and worse weight, sealed and fitted with a filtered respirator that keeps out tox gas and toxic fallout.\n\n5th generation warcaskets were created with a much shorter period between generations, largely being slight specializations of the previous one. The Toxin design reworked the Cataphract chassis for chemical warfare: every seam gasketed, every intake filtered, so that a pilot could hold a gassed position long after everyone else had fled it.\n\nPirate crews took to seeding a raid with toxin pilots and shelling their own front line with gas. Whoever was still standing when the cloud thinned was wearing one. Their motto, muffled through the respirator, was to breathe easy.</description>
     <graphicData>
-      <texPath>Things/Pawn/Warcasketlike/WarcasketCataphract/WarcasketCataphractHelmet</texPath>
+      <texPath>Things/Pawn/Warcasketlike/WarcasketToxin/WarcasketToxinHelmet</texPath>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
     <statBases>
@@ -59,7 +59,7 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Warcasketlike/WarcasketCataphract/WarcasketCataphractHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Warcasketlike/WarcasketToxin/WarcasketToxinHelmet</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>

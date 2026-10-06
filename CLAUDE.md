@@ -15,7 +15,7 @@ any land, live in `Source/1.6/Patches/`).
 
 **Def prefix:** `TXWC_`. Stat/cost tuning is templated on the Cataphract (each def's header
 carries its rationale); `TODOs.md` holds the scoping notes for what has not landed, chiefly
-the art and the tox gas ability.
+the tox gas ability and the art polish.
 
 **Sibling mod:** `../ShipcrackerWarcasket/` is the same author's spacer-tier set (templated on
 the Siegebreaker) and the source of this repo's infrastructure. When both repos need the same
@@ -107,8 +107,8 @@ whatever it automates (e.g. `/release` encodes the CHANGELOG layout).
 
 ```
 About/           - Mod metadata (About.xml; Preview.png and PublishedFileId.txt once published)
-Textures/        - Art (version-independent, loaded via the "/" root; no Common/ root). Empty
-                   until the set's art lands; the defs point at VFEP's Cataphract art meanwhile
+Textures/        - Art (version-independent, loaded via the "/" root; no Common/ root), under
+                   VFEP's Things/Pawn/Warcasketlike/WarcasketToxin/ layout
 1.6/             - RimWorld 1.6 specific content
   Assemblies/    - Compiled DLLs (build output, gitignored)
   Defs/          - XML definitions (ThingDefs, etc.)

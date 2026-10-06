@@ -2,12 +2,9 @@
 
 ## Content
 
-- **Custom art.** All six texPaths (armor, shoulders, helmet; `texPath` and
-  `wornGraphicPath` each) point at VFEP's Cataphract textures as placeholders. Author the set
-  under `Textures/Things/Pawn/Warcasketlike/WarcasketToxin/` (the same `_north`/`_east`/`_south`
-  facings and item-icon single as the Cataphract; see the sibling Shipcracker repo's
-  `Textures/` for the layout), then repoint the defs and drop the placeholder notes from their
-  headers. `About/Preview.png` and `About/ModIcon.png` are also missing.
+- **Art polish.** The set's textures are wired in, but each item icon is a straight copy of its
+  `_south` facing; give them dedicated icon art if that reads poorly in the foundry.
+  `About/Preview.png` and `About/ModIcon.png` are also missing.
 - **The tox gas ability.** Deferred by decision; the set ships as a pure protection suit until
   it lands. `Docs/Research/TOX_GAS_MECHANICS.md` maps the engine: the gas grid refuses ToxGas
   and the exposure hediff does not exist without Biotech, so the ability def, its DefInjected
