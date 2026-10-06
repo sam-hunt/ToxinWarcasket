@@ -25,6 +25,13 @@
     worn graphic is Graphic_Multi (the _north/_east/_south facings); the item icon is the
     parent's Graphic_Single, read from the bare-named file, which is a copy of the _south facing.
 
+    Masked tint, this piece only (VFEP's sets have no masks; vanilla's prestige armors are the
+    pattern): CutoutComplex on both graphics, worn via apparel.useWornGraphicMask, so the
+    CompColorable colour paints the mask's red areas and the black-masked tox canisters and
+    hoses keep their painted green (apparel graphics pass white as colorTwo). Mask names differ
+    by graphic class: Graphic_Multi reads <path>_northm, Graphic_Single <path>_m. The helmet and
+    shoulders are greyscale and unmasked, so they keep the whole-texture Cutout tint.
+
     Compat: 1.6/Patches/SOS2Patch.xml reaches this def (EVA tag, cold insulation).
 
     ApparelExtension priority 1: VFEP_WarcasketArmorBase carries its own ApparelExtension and
@@ -41,6 +48,7 @@
     <description>Specialized warcasket shell with superior protection and worse weight, sealed against chemical and toxic exposure.\n\n5th generation warcaskets were created with a much shorter period between generations, largely being slight specializations of the previous one. The Toxin design reworked the Cataphract chassis for chemical warfare: every seam gasketed, every intake filtered, so that a pilot could hold a gassed position long after everyone else had fled it.\n\nPirate crews took to seeding a raid with toxin pilots and shelling their own front line with gas. Whoever was still standing when the cloud thinned was wearing one. Their motto, muffled through the respirator, was to breathe easy.</description>
     <graphicData>
       <texPath>Things/Pawn/Warcasketlike/WarcasketToxin/WarcasketToxin</texPath>
+      <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <statBases>
       <Mass>75</Mass>
@@ -71,6 +79,7 @@
         <li>Feet</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Warcasketlike/WarcasketToxin/WarcasketToxin</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
       <layers>
         <li>OnSkin</li>
         <li>Middle</li>

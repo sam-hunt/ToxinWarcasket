@@ -2,8 +2,15 @@
 
 ## Content
 
-- **Art polish.** The set's textures are wired in, but each item icon is a straight copy of its
-  `_south` facing; give them dedicated icon art if that reads poorly in the foundry.
+- **Art polish.** The set's textures are wired in, but each item icon (and the armor's icon
+  mask) is a straight copy of its `_south` facing; give them dedicated icon art if that reads
+  poorly in the foundry.
+- **Helmet and shoulder masks.** Only the armor is masked; the helmet and shoulders take the
+  whole-texture tint. When their masks land, wire them as the armor is (its header has the
+  rationale): `<shaderType>CutoutComplex</shaderType>` in `graphicData`,
+  `<useWornGraphicMask>true</useWornGraphicMask>` in `apparel`, masks named `_northm`/`_eastm`/
+  `_southm` for the worn graphic plus a bare `_m` for the item icon, and drop the "greyscale and
+  unmasked" line from the armor's header.
   `About/Preview.png` and `About/ModIcon.png` are also missing.
 - **The tox gas ability.** Deferred by decision; the set ships as a pure protection suit until
   it lands. `Docs/Research/TOX_GAS_MECHANICS.md` maps the engine: the gas grid refuses ToxGas
