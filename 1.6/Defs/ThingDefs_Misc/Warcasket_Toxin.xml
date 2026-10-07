@@ -25,12 +25,12 @@
     worn graphic is Graphic_Multi (the _north/_east/_south facings); the item icon is the
     parent's Graphic_Single, read from the bare-named file, which is a copy of the _south facing.
 
-    Masked tint, this piece only (VFEP's sets have no masks; vanilla's prestige armors are the
+    Masked tint, all three pieces (VFEP's sets have no masks; vanilla's prestige armors are the
     pattern): CutoutComplex on both graphics, worn via apparel.useWornGraphicMask, so the
-    CompColorable colour paints the mask's red areas and the black-masked tox canisters and
-    hoses keep their painted green (apparel graphics pass white as colorTwo). Mask names differ
-    by graphic class: Graphic_Multi reads <path>_northm, Graphic_Single <path>_m. The helmet and
-    shoulders are greyscale and unmasked, so they keep the whole-texture Cutout tint.
+    CompColorable colour paints the mask's red areas and the black-masked areas (on this piece,
+    the tox canisters and hoses) keep their painted colours (apparel graphics pass white as
+    colorTwo). Mask names differ by graphic class: Graphic_Multi reads <path>_northm,
+    Graphic_Single <path>_m, the latter a copy of the _southm as the icon is of the _south.
 
     Compat: 1.6/Patches/SOS2Patch.xml reaches this def (EVA tag, cold insulation).
 
