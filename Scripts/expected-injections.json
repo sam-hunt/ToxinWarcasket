@@ -18,6 +18,16 @@
     ]
   },
   "defInjections": {
+    "HediffDef": {
+      "TXWC_AbsorbingGas.description": {
+        "english": "The warcasket's respirator is drawing in the surrounding air, filtering out every gas and banking it in the reagent tank.",
+        "required": true
+      },
+      "TXWC_AbsorbingGas.label": {
+        "english": "absorbing gas",
+        "required": true
+      }
+    },
     "ThingDef": {
       "TXWC_WarcasketHelmet_Toxin.description": {
         "english": "Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's reagent tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that, while interchangeable, work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series rebuilt the old Cataphract chassis for chemical warfare. A reagent tank in the shell feeds both the vents around the pilot and the nozzles on the pauldrons, and the helmet's respirator filters the air and draws spent gas back into the tank, so a pilot can flood a position, breathe it unharmed and reclaim the cloud once the work is done. A toxin pilot rarely falls alone: the tank bursts where they lie. Their motto, muffled through the respirator, is to breathe easy.",
@@ -67,6 +77,25 @@
       }
     },
     "VEF.Abilities.AbilityDef": {
+      "TXWC_AbsorbGas.description": {
+        "english": "Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas and other gases from around the pilot. Whatever is drawn in is filtered into reagent and banked in the warcasket's tank, if one is worn.",
+        "required": true
+      },
+      "TXWC_AbsorbGas.iconPath": {
+        "english": "Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack"
+      },
+      "TXWC_AbsorbGas.jobReportString": {
+        "english": "Using ability: {0}",
+        "required": true
+      },
+      "TXWC_AbsorbGas.label": {
+        "english": "absorb gas",
+        "required": true
+      },
+      "TXWC_AbsorbGas.verbProperties.label": {
+        "english": "absorb gas",
+        "required": true
+      },
       "TXWC_VentTank.description": {
         "english": "Open the reagent tank's vents and release tox gas around the pilot, about a tenth of a full tank every second. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left.",
         "required": true

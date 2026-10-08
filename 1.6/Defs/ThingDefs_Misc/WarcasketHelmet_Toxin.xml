@@ -15,6 +15,9 @@
       full set stand in its own gas.
     - Costs: Chemfuel 20 is the respirator's filter reagent, priced as the gas mask prices it;
       Comp 3, Steel 45 and Plasteel 20 put the piece in the 7th-gen band.
+    - Absorb Gas (TXWC_AbsorbGas): the respirator pulls the air around the pilot through its
+      filter and into the armor's reagent tank. The ability's hediff carries the work, so the
+      helmet keeps the base's tickerType Never.
   -->
   <VFEPirates.WarcasketDef ParentName="VFEP_WarcasketHelmetBase">
     <defName>TXWC_WarcasketHelmet_Toxin</defName>
@@ -65,5 +68,12 @@
         <li>WarcasketAll</li>
       </tags>
     </apparel>
+    <comps>
+      <li Class="VEF.Abilities.CompProperties_AbilitiesApparel">
+        <abilities>
+          <li>TXWC_AbsorbGas</li>
+        </abilities>
+      </li>
+    </comps>
   </VFEPirates.WarcasketDef>
 </Defs>

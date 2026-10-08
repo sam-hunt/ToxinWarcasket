@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    The helmet's respirator pull, granted by its CompAbilitiesApparel. A self-cast that only
+    applies TXWC_AbsorbingGas (the work is in that hediff's header). radius matches the hediff
+    comp's so the gizmo's mouseover ring shows the disc. Usable undrafted for cleanup, one
+    in-game hour of cooldown, no fuel; player-only, as raiders never cast it. The icon is the
+    tox pack's item texture until the set's own gizmo art lands.
+  -->
+  <VEF.Abilities.AbilityDef>
+    <defName>TXWC_AbsorbGas</defName>
+    <label>absorb gas</label>
+    <description>Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas and other gases from around the pilot. Whatever is drawn in is filtered into reagent and banked in the warcasket's tank, if one is worn.</description>
+    <abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+    <targetMode>Self</targetMode>
+    <iconPath>Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack</iconPath>
+    <radius>2.9</radius>
+    <cooldownTime>2500</cooldownTime>
+    <showUndrafted>true</showUndrafted>
+    <casterHediff>TXWC_AbsorbingGas</casterHediff>
+  </VEF.Abilities.AbilityDef>
+</Defs>
