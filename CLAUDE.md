@@ -7,15 +7,14 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 **Toxin Warcasket** is a RimWorld 1.6 mod adding a single new warcasket apparel set (armor,
 shoulder pads, helmet) for Vanilla Factions Expanded - Pirates (VFE Pirates), templated on
 VFEP's Cataphract set and themed around vanilla's tox gas. VFE Pirates is a hard dependency;
-Biotech is optional and Biotech-only content must load only when the DLC is active (see
-Optional-Content Gating). Requires Harmony (bootstrapped in `ModInit.cs`; patch classes, when
+Biotech is becoming one too (see Tox Gas and Biotech). Requires Harmony (bootstrapped in `ModInit.cs`; patch classes, when
 any land, live in `Source/1.6/Patches/`).
 
 **Key technologies:** C# (.NET Framework 4.7.2), Harmony, RimWorld modding API, XML defs.
 
 **Def prefix:** `TXWC_`. Stat/cost tuning is templated on the Cataphract (each def's header
 carries its rationale); `TODOs.md` holds the scoping notes for what has not landed, chiefly
-the tox gas ability and the art polish.
+the tox gas abilities, specified in `Docs/Research/ABILITIES_SPEC.md`.
 
 **Sibling mod:** `../ShipcrackerWarcasket/` is the same author's spacer-tier set (templated on
 the Siegebreaker) and the source of this repo's infrastructure. When both repos need the same
@@ -38,7 +37,9 @@ and diff. Def comments ship in the bundle, so keep them lean.
 `Docs/Research/` is informational only and not mod content: `VFEP_WARCASKET_STATS.md` is the
 VFEP roster's declared stats, `TOX_GAS_MECHANICS.md` the decompile-verified map of the tox gas
 engine (the three Biotech gates, the buildup math, the vanilla emitters, the candidate ability
-routes). Read the latter before designing the ability.
+routes), `ABILITIES_SPEC.md` the agreed design and phased plan for the abilities and the 7th-gen
+rebalance. Read the spec before implementing any of it; once a phase lands, the def headers and
+code comments are the record and the spec is not kept in sync with tuning.
 
 ## Build Commands
 
@@ -166,24 +167,21 @@ TODOs.md         - Scoping notes for the feature work that has not landed yet
   `.steamworkshop/`); reflow the sentence instead. This file, code comments and def comments are
   unaffected.
 
-## Tox Gas and the Biotech Question
+## Tox Gas and Biotech
 
 Tox gas is Biotech-locked at the engine level, not just by content: `GasGrid.AddGas` refuses
 `ToxGas` without Biotech, the `ToxGasExposure` hediff and `ToxGas` damage def only exist with
-it, and `GasUtility` skips the tox branch without it (`Docs/Research/TOX_GAS_MECHANICS.md` has
-the call paths). Two things follow:
+it, `GasUtility` skips the tox branch without it, and cell pollution (the death rupture) calls
+`ModLister.CheckBiotech` (`Docs/Research/TOX_GAS_MECHANICS.md` has the call paths). Every
+mechanic of the set's design emits gas or pollution, so **Biotech is a hard dependency, by
+decision**: a Biotech-less set would be plating at a 7th-gen price.
 
-- **Biotech is optional, by decision, not a `modDependencies` entry.** The set's protection
-  half (`ToxicResistance`, `ToxicEnvironmentResistance`, `apparel.immuneToToxGasExposure`) is
-  entirely Core: the stats exist and work without Biotech (fallout, rot stink, venom) and the
-  immunity flag is inert without it, so the defs in the main tree are safe on any install.
-- **The emitter half (the ability) must live behind the Biotech gate.** Its def, its
-  `DefInjected` and its gizmo art all go in the `1.6/Mods/Biotech/` and `Mods/Biotech/` roots
-  drafted (commented out) in `LoadFolders.xml`, never the main tree. A `MayRequire` on the def
-  would not be enough: DefInjected ignores attributes (see below) and the gizmo texture cannot
-  carry one. If the design ever changes to hard-require Biotech instead, the gate collapses into
-  the main tree and About.xml gains a `ludeon.rimworld.biotech` dependency; do one or the other,
-  never both.
+- Gas content goes in the main tree like everything else; there is no Biotech load-folder gate
+  and Biotech defs need no `MayRequire`.
+- **Transition:** until phase 1 of `ABILITIES_SPEC.md` lands, the tree still reads
+  Biotech-optional (About.xml has no Biotech `modDependencies` entry, `LoadFolders.xml` carries
+  the drafted gate, def headers, README and Workshop text say "optional"). Phase 1 lists every
+  file that flips; do them together, and drop this bullet when it lands.
 
 ## Localization and Optional-Content Gating
 
@@ -192,11 +190,11 @@ the call paths). Two things follow:
   loads unconditionally and logs a "found no def named ..." startup error whenever the gating
   mod/DLC is absent.
 - The fix is a folder gate: ship the gated content from a compat load root, loaded via an
-  `IfModActive` entry in `LoadFolders.xml` (the Biotech pair is drafted there, commented out).
+  `IfModActive` entry in `LoadFolders.xml`.
   Two flavors, mirroring the ungated roots: `1.6/Mods/<Mod Name>/` for version-specific content
   (Defs, and the DefInjected targeting them) and root-level `Mods/<Mod Name>/` for
   version-independent content (art). The def's `MayRequire` becomes redundant and should be
-  dropped when it moves. Gate on the package id (`ludeon.rimworld.biotech`), never
+  dropped when it moves. Gate on the package id (`ludeon.rimworld.odyssey`), never
   `PatchOperationFindMod` (matches by display name). The one deliberate exception is a patch
   that mirrors a VFEP patch: `1.6/Patches/SOS2Patch.xml` copies VFEP's own display-name gate so
   the Toxin and VFEP's sets flip to EVA-rated under exactly the same condition.
@@ -208,7 +206,7 @@ the call paths). Two things follow:
 - A compat root's language files must never reuse a main-tree file's language-relative path
   (`DefInjected/<Type>/<File>.xml`, `Keyed/<File>.xml`): the game dedups language files per mod by
   that path and silently skips one whole file, in an enumeration order that is not LoadFolders
-  order. Suffix compat-root filenames with the gate's name (`Apparel_Biotech.xml`).
+  order. Suffix compat-root filenames with the gate's name (`Apparel_Odyssey.xml`).
 
 ## Localization Toolchain
 

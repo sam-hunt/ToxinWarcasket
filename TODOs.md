@@ -2,47 +2,27 @@
 
 ## Content
 
-- **Art polish.** The set's textures are wired in, but each item icon (and the armor's icon
-  mask) is a straight copy of its `_south` facing; give them dedicated icon art if that reads
-  poorly in the foundry.
 - **Workshop art.** `About/Preview.png` and `About/ModIcon.png` are missing.
-- **The tox gas ability.** Deferred by decision; the set ships as a pure protection suit until
-  it lands. `Docs/Research/TOX_GAS_MECHANICS.md` maps the engine: the gas grid refuses ToxGas
-  and the exposure hediff does not exist without Biotech, so the ability def, its DefInjected
-  and its gizmo art all belong behind the Biotech load-folder gate drafted in `LoadFolders.xml`
-  (`1.6/Mods/Biotech/` and `Mods/Biotech/`), never the main tree. The three candidate routes
-  (the tox pack's `CompProperties_ReleaseGas` + `CompApparelReloadable`, a VEF apparel ability
-  calling `GasUtility.AddGas`, an explosion verb with `postExplosionGasType`) are compared
-  there. The full set's ToxicResistance 1.0 already zeroes gas buildup and the helmet's
-  `immuneToToxGasExposure` removes the exposure debuff, so the wearer can stand in their own
-  gas. Revisit the armor's costList when the emitter lands (a reagent tank prices onto that
-  piece).
-- **Tuning pass.** Plating, weight, speed and price are the Cataphract's verbatim; the toxin
-  identity is ToxicResistance 1.0 across armor + helmet plus the helmet's
-  ToxicEnvironmentResistance 0.8 and Chemfuel 20. Decide, once the ability exists, whether the
-  set stays on `VFEP_AdvancedWarcaskets` (industrial, 4000) or moves up to
-  `VFEP_SpecialisedWarcaskets` beside the Hazard set, and whether Biotech's tox-related
-  research should gate the ability's root.
+- **The tox gas abilities and the 7th-gen rebalance.** Designed; `Docs/Research/ABILITIES_SPEC.md`
+  is the spec. Phase 1 (XML and docs): Biotech becomes a hard dependency, the set moves to
+  `VFEP_SpecialisedWarcaskets`, ToxicResistance gives way to a ToxicEnvironmentResistance spread,
+  costs rebase with the tank priced onto the armor, descriptions move to 7th-gen framing.
+  Phase 2: the armor's reagent tank with the downed burst and death rupture. Phase 3: the vent
+  (armor), absorb (helmet) and gas jet (shoulders) abilities.
+- **Gizmo art.** Requested from the artist: vent, absorb and gas jet icons (paths in the spec).
+- Check the gas rate of torso vent and gas jet
+- Check how the armor rating sits against other same-tier warcaskets for cost and functionality
+- Check the torso environmental resistance alone with the explosive on-down tox gas vent
 - **English text is not final.** Descriptions and the Workshop page are first drafts; the
   translation passes wait for them (see CLAUDE.md's Localization Toolchain section).
 
 ## Open questions
 
-- Acquisition: foundry only, by construction. Warcasket parts are destroyed on drop and
-  untradeable, so raid presence (all three pieces carry the Cataphract's `WarcasketHeavy` and
-  `WarcasketCata` tags, so VFEP's Junker and Mercenary heavy pawnkinds can roll our pieces
-  beside the Cataphract's) is threat and flavor, never loot. Decide whether that mix is wanted
-  or the set should get its own tag until the ability makes a raider in it interesting.
-- Does the Hazard set (VFEP's chemical/flamer 7th-gen set) need any parity or contrast note in
-  the descriptions or the Workshop FAQ?
+- The Workshop FAQ should spell out the contrast with VFEP's Hazard set (Hazard resists toxins
+  that hit it, Toxin breathes poisoned air and emits it) once phase 1 lands.
 
 ## Infrastructure follow-ups
 
-- **Cut a release candidate to exercise CI before the real release.** The release
-  workflow fetches VEF and VFEP from the Workshop with SteamCMD (anonymous login) and injects
-  them via `VEF_PATH` / `VFEP_PATH`, but it has never run for this repo. `/release major rc` tags
-  `v1.0.0-rc.1`: a GitHub prerelease that needs no CHANGELOG section. Check the Workshop
-  fetch step, the translation gate and the zip's contents.
 - **Translation passes** for the CONTRIBUTING.md roster, one language at a time via
   `/translate <Language>`, only once the English is final and shortly before release.
 - **First Workshop publish.** Upload writes `About/PublishedFileId.txt`; commit it, add the

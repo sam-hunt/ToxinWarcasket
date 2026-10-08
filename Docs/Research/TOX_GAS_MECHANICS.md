@@ -113,7 +113,8 @@ AI use: `CompToxPack` extends `CompAIUsablePack`. Every tick `CompAIUsablePack.C
 
 ## Design hooks for an apparel ability
 
-None of these are implemented. All are for later design.
+None of these are implemented. The design that was chosen is `ABILITIES_SPEC.md`, which also
+makes Biotech a hard dependency, so the load-folder gating advice below is superseded.
 
 ### (a) Clone the tox pack
 
