@@ -3,11 +3,10 @@
 ## Content
 
 - **Workshop art.** `About/Preview.png` and `About/ModIcon.png` are missing.
-- **The tox gas abilities.** `Docs/Research/ABILITIES_SPEC.md` is the spec; phases 1 (the
-  Biotech switch and the 7th-gen rebalance) and 2 (the armor's reagent tank with the downed
-  burst, death rupture and raider vent) have landed. Phase 3: the vent toggle (armor), absorb
-  (helmet) and gas jet (shoulders) abilities. The descriptions and Workshop page already
-  describe all of it.
+- **In-game test pass for the tox gas mechanics.** All three phases of
+  `Docs/Research/ABILITIES_SPEC.md` have landed but none has been played yet; its "Edge cases
+  and test list" is the checklist (downed/death bursts, anaesthetic, caravans, save/load
+  mid-vent/absorb/jet, the jet's cone near allies, raider vent and jet AI).
 - **Gizmo art.** Requested from the artist: vent, absorb and gas jet icons (paths in the spec).
 - Check the gas rate of torso vent and gas jet
 - Check how the armor rating sits against other same-tier warcaskets for cost and functionality

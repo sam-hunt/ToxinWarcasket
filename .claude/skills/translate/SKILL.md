@@ -70,8 +70,13 @@ notes for the shim or flow edit this repo owes before continuing.
 - **Def type folder:** `DefInjected/ThingDef/` for the three
   `VFEPirates.WarcasketDef`s (`TXWC_Warcasket_Toxin`,
   `TXWC_WarcasketShoulders_Toxin`, `TXWC_WarcasketHelmet_Toxin`): `label`,
-  `description`, and `shortDescription` (a VFEP field shown in the foundry's
-  part picker; translate it like any other). The game rolls a def type
+  `description`, `shortDescription` (a VFEP field shown in the foundry's
+  part picker; translate it like any other), and the armor's and shoulders'
+  reload comps' `chargeNoun` (the tank's "reagent", the nozzle's "reserve
+  jet"; vanilla reads it in "out of {CHARGENOUN}" style strings). The
+  abilities and their hediff take the sidecar's other def types as their
+  folder names: the two VEF ability defs (`TXWC_VentTank`, `TXWC_AbsorbGas`)
+  and `HediffDef` (`TXWC_AbsorbingGas`). The game rolls a def type
   without its own database into its base, and the checker maps the element
   tag via `DEF_TYPE_ALIASES` in `Scripts/check-translations.py`; a
   `WarcasketDef` folder would never load. Never translate or place a
@@ -118,7 +123,9 @@ Terms that MUST be grounded before use:
   fallout, rot stink, toxic buildup;
 - from vanilla Biotech (ground against the Biotech tar): tox gas, gas mask,
   tox pack (its reload noun), pollution, and the ToxGasExposure hediff's
-  label and stage names.
+  label and stage names;
+- this mod's own ability vocabulary, coined once and recorded in the
+  glossary: reagent (tank), vent, absorb, gas jet, reserve jet.
 
 Grep the tars for just this handful of terms; never extract or read a
 whole tar. The vanilla-grounded answers for common words live in

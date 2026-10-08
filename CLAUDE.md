@@ -206,8 +206,8 @@ and references to Biotech defs need no `MayRequire`.
 
 ## Localization Toolchain
 
-English (the def XML's `label`, `description` and VFEP's `shortDescription`) is the source of
-truth; there is no Keyed surface and no English `Languages/` tree. Other languages derive from it
+English (the def XML's `label`, `description`, VFEP's `shortDescription` and the reload comps'
+`chargeNoun`) is the source of truth; there is no Keyed surface and no English `Languages/` tree. Other languages derive from it
 via the `/translate` skill (`.claude/skills/translate/SKILL.md`: this mod's surface, grounding
 domain and per-language glossary; the family-wide process lives in the `l10n/` submodule) and
 are validated deterministically by `python3 Scripts/check-translations.py` (also a CI release
