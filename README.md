@@ -14,24 +14,32 @@
 
 Vanilla Factions Expanded - Pirates lets you weld a pawn into a warcasket: a steel shell,
 customized part by part at the foundry, with a range of sets that carries a colony from the
-industrial era into the late game. This mod adds one more set to that range: the Toxin, the
-Cataphract chassis resealed for chemical warfare. Same superior plating, same worse weight, and
-a pilot who can hold a gassed position long after everyone else has fled it.
+industrial era into the late game. This mod adds one more set to that range: the Toxin, a 7th
+generation set that rebuilds the Cataphract chassis for chemical warfare. Same superior plating,
+same worse weight, and three pieces sharing one reagent tank, so the pilot can flood a position
+with tox gas, breathe it unharmed and draw it back in when the work is done.
 
-Biotech is optional. Without it there is no tox gas to be immune to; the toxic resistance and
-fallout protection still work.
+Biotech is required: tox gas and pollution only exist with it.
 
 ## Features
 
 ### The Toxin Set
 
 Armor, shoulder pads and helmet, welded on at VFE Pirates' warcasket foundry and unlocked by its
-advanced warcaskets research. Cataphract-tier plating in all three pieces, at Cataphract prices.
+specialised warcaskets research plus Biotech's tox gas research. Cataphract-tier plating in all
+three pieces, at a 7th generation price with plasteel, and a 100% toxic environment resistance
+across the full set: tox gas, fallout and pollution do nothing to it. Toxins that hit directly,
+such as venom and toxic needles, still do.
 
-- **Armor**: the sealed shell. Half of the set's toxic resistance
-- **Shoulder pads**: the Cataphract pauldrons, resealed
-- **Helmet**: the respirator. The other half of the toxic resistance, 80% toxic environment
-  resistance against fallout and rot stink, and, with Biotech, immunity to the tox gas debuff; the full set shrugs off tox gas entirely
+- **Armor**: the reagent tank, 100 chemfuel when full, refilled like a tox pack. Toggle a vent
+  to empty it around the pilot as a growing cloud; 15% toxic environment resistance
+- **Shoulder pads**: a gas jet that sprays a cone of tox gas from the tank, with one reserve
+  shot of its own; 15% toxic environment resistance
+- **Helmet**: the respirator. 80% toxic environment resistance and immunity to the tox gas
+  debuff, like a gas mask, and an ability that clears the air around the pilot and banks it in
+  the tank
+- **Downed or dead**: a downed pilot bursts whatever is left in the tank; a dead one also
+  pollutes the ground around the body
 - **Built on VFE Pirates** rather than beside it: the foundry, entombing, customization and
   removal surgery all apply unchanged, and the pieces mix and match with VFE Pirates' own sets
 
@@ -41,7 +49,7 @@ advanced warcaskets research. Cataphract-tier plating in all three pieces, at Ca
 - **Vanilla Factions Expanded - Pirates** (required), which itself requires
   **Vanilla Expanded Framework**
 - **Harmony** (auto-download from Steam Workshop if you don't have it)
-- **Biotech DLC** is optional
+- **Biotech DLC** (required)
 
 ## Installation
 

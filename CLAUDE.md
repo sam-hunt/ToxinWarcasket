@@ -6,15 +6,15 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 
 **Toxin Warcasket** is a RimWorld 1.6 mod adding a single new warcasket apparel set (armor,
 shoulder pads, helmet) for Vanilla Factions Expanded - Pirates (VFE Pirates), templated on
-VFEP's Cataphract set and themed around vanilla's tox gas. VFE Pirates is a hard dependency;
-Biotech is becoming one too (see Tox Gas and Biotech). Requires Harmony (bootstrapped in `ModInit.cs`; patch classes, when
-any land, live in `Source/1.6/Patches/`).
+VFEP's Cataphract set and themed around vanilla's tox gas. VFE Pirates and Biotech are hard
+dependencies (see Tox Gas and Biotech). Requires Harmony (bootstrapped in `ModInit.cs`; patch
+classes, when any land, live in `Source/1.6/Patches/`).
 
 **Key technologies:** C# (.NET Framework 4.7.2), Harmony, RimWorld modding API, XML defs.
 
-**Def prefix:** `TXWC_`. Stat/cost tuning is templated on the Cataphract (each def's header
-carries its rationale); `TODOs.md` holds the scoping notes for what has not landed, chiefly
-the tox gas abilities, specified in `Docs/Research/ABILITIES_SPEC.md`.
+**Def prefix:** `TXWC_`. A 7th-generation (Specialised) set on the Cataphract's plating; each
+def's header carries its tuning rationale. `TODOs.md` holds the scoping notes for what has not
+landed, chiefly the tox gas abilities, specified in `Docs/Research/ABILITIES_SPEC.md`.
 
 **Sibling mod:** `../ShipcrackerWarcasket/` is the same author's spacer-tier set (templated on
 the Siegebreaker) and the source of this repo's infrastructure. When both repos need the same
@@ -176,12 +176,8 @@ it, `GasUtility` skips the tox branch without it, and cell pollution (the death 
 mechanic of the set's design emits gas or pollution, so **Biotech is a hard dependency, by
 decision**: a Biotech-less set would be plating at a 7th-gen price.
 
-- Gas content goes in the main tree like everything else; there is no Biotech load-folder gate
-  and Biotech defs need no `MayRequire`.
-- **Transition:** until phase 1 of `ABILITIES_SPEC.md` lands, the tree still reads
-  Biotech-optional (About.xml has no Biotech `modDependencies` entry, `LoadFolders.xml` carries
-  the drafted gate, def headers, README and Workshop text say "optional"). Phase 1 lists every
-  file that flips; do them together, and drop this bullet when it lands.
+Gas content goes in the main tree like everything else; there is no Biotech load-folder gate
+and references to Biotech defs need no `MayRequire`.
 
 ## Localization and Optional-Content Gating
 

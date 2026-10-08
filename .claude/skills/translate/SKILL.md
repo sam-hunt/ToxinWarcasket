@@ -77,18 +77,16 @@ notes for the shim or flow edit this repo owes before continuing.
   `WarcasketDef` folder would never load. Never translate or place a
   non-`required` sidecar entry in any language file.
 - **The three descriptions share their second and third paragraphs
-  verbatim** (the 5th-generation lore and the pirate-crews paragraph); only
+  verbatim** (the 7th-generation lore and the Toxin series paragraph); only
   the first paragraph differs per part. Keep the shared paragraphs
   byte-identical across the three defs in every language, and keep each
   def's `shortDescription` identical to its description's first paragraph,
   as the English does. Paragraph breaks are the literal two-character
   `\n` sequences the def XML uses.
-- **Compat roots carry no strings today.** The Biotech root drafted in
-  `LoadFolders.xml` is not live. When the tox gas ability lands there, its
-  DefInjected must move into that root's own `Languages/` with a
-  gate-suffixed filename (see CLAUDE.md's Localization and Optional-Content
-  Gating section), never the main tree, and the sidecar must be regenerated
-  with Biotech active (the refresh shim pins it).
+- **Compat roots carry no strings.** None is live: Biotech is a hard
+  dependency, so the tox gas content and its DefInjected sit in the main
+  tree. A future optional-mod root follows CLAUDE.md's Localization and
+  Optional-Content Gating section.
 - **Workshop page:** `.steamworkshop/Description/<Language>.txt`, per
   `l10n/workshop.md` and the folder's own `README.md`. The title's anchor
   term is "warcasket"; every localized title must contain the rendering of
@@ -111,14 +109,16 @@ Terms that MUST be grounded before use:
 - from VFEP's own vocabulary: "warcasket" itself, the VFEP set names our
   text or Workshop page references (cataphract), "warcasket foundry",
   "shoulders" / "pauldrons", "helmet", "shell", the generation phrasing
-  ("5th generation warcaskets ...", which VFEP's own descriptions repeat
-  verbatim across the Recon and Cataphract sets);
+  ("7th generation warcaskets ...", which VFEP's own descriptions repeat
+  verbatim across the Aerial, Barrage, Hazard and Shock sets; ours reflows
+  VFEP's dashed aside into commas, so follow the meaning, not the dashes);
 - from vanilla Core (ground against the Core tar per `l10n/process.md`):
-  apparel terms (armor, helmet, shoulder pads), steel, uranium, chemfuel,
-  industrial tech level, respirator, breathing, toxic resistance, toxic
-  environment resistance, toxic fallout, rot stink, toxic buildup;
+  apparel terms (armor, helmet, shoulder pads), steel, plasteel, uranium,
+  chemfuel, respirator, breathing, toxic environment resistance, toxic
+  fallout, rot stink, toxic buildup;
 - from vanilla Biotech (ground against the Biotech tar): tox gas, gas mask,
-  tox pack, and the ToxGasExposure hediff's label and stage names.
+  tox pack (its reload noun), pollution, and the ToxGasExposure hediff's
+  label and stage names.
 
 Grep the tars for just this handful of terms; never extract or read a
 whole tar. The vanilla-grounded answers for common words live in
@@ -134,8 +134,8 @@ workflows verbatim. This mod's specifics on top:
   languages). Sidecar regen: `python3
   Scripts/refresh-translation-expectations.py` (game must be closed; drives
   the deployed L10nProbe, which must have this mod ticked in its settings).
-- There is no compat-root routing to do today (see above); everything
-  lands in the main tree.
+- There is no compat-root routing to do (see above); everything lands in
+  the main tree.
 - The public roster is CONTRIBUTING.md's localization table, update it in
   the same commit as any language addition or native review.
 - Machine-assisted passes are run as one Opus subagent per language with a

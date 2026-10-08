@@ -24,7 +24,7 @@ engine.PACKAGE_ID = "shunter.toxinwarcasket"
 
 # RATIONALE: the first five entries are the l10n CANONICAL_ACTIVE_MODS (the
 # refresh shim explains them: VFE Pirates is the hard dep, VEF and Harmony
-# are its deps, Biotech is the planned compat gate). Save Our Ship 2 is the
+# are its deps, Biotech is the other hard dep). Save Our Ship 2 is the
 # only optional mod this repo integrates with: 1.6/Patches/SOS2Patch.xml
 # fires on its display name (or Universum's) and never runs otherwise, and
 # a failed PatchOperation is exactly the kind of error only a boot with the

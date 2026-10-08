@@ -3,30 +3,24 @@
   <!--
     Templated from VFEP's VFEP_WarcasketHelmet_Cataphract (VFEP v3.09, commit 31cee5e,
     1.6/Defs/ThingDefs_Misc/Apparel_Headgear.xml); fields not discussed here, uiIconScale
-    included, are the Cataphract's. Tags, the research prereq and the art follow the armor's
-    header.
+    included, are the Cataphract's. Tier, research, tags and the art follow the armor's header.
 
-    The sealed helm, the set's respirator. Modeled on Biotech's gas mask (Apparel_GasMask:
+    The sealed helm, the set's respirator. Alone it equals Biotech's gas mask (Apparel_GasMask:
     ToxicEnvironmentResistance 0.8, immuneToToxGasExposure, Chemfuel 20 in its costList):
-    - ToxicResistance +0.5 completes the armor's 0.5 to the 1.0 cap (rationale in the armor's
-      header).
-    - ToxicEnvironmentResistance +0.8, the gas mask's value: toxic fallout and rot stink. Core
-      stat; a full 1.0 is left to the stat's own cap so a fallout hediff still ticks faintly.
-    - apparel.immuneToToxGasExposure: a Core field on ApparelProperties that only
-      GasUtility.IsAffectedByExposure reads, and only under Biotech, where it exempts the wearer
-      from the ToxGasExposure hediff (the sight/breathing debuff; the gas mask's mechanic). It
-      does NOT touch the toxic buildup gas also deals; the two resistance stats do that, and
-      they multiply, so the helmet alone cuts gas buildup by 90% and the full set (1.0) to zero.
-      Inert without Biotech, so it needs no MayRequire and no gate. Together these let the
-      wearer stand in their own gas once the ability lands (Docs/Research/TOX_GAS_MECHANICS.md).
-    - Chemfuel 20 on top of the Cataphract's ComponentIndustrial 2 / Steel 75: the mask's filter
-      reagent, priced the way the gas mask prices it.
+    - ToxicEnvironmentResistance +0.8, the gas mask's value and the bulk of the set's 1.1
+      (rationale in the armor's header).
+    - apparel.immuneToToxGasExposure: read only by GasUtility.IsAffectedByExposure, it exempts
+      the wearer from the ToxGasExposure hediff (the sight/breathing debuff). It does not touch
+      the toxic buildup gas also deals; the resistance stat does that. Together they let the
+      full set stand in its own gas.
+    - Costs: Chemfuel 20 is the respirator's filter reagent, priced as the gas mask prices it;
+      Comp 3, Steel 45 and Plasteel 20 put the piece in the 7th-gen band.
   -->
   <VFEPirates.WarcasketDef ParentName="VFEP_WarcasketHelmetBase">
     <defName>TXWC_WarcasketHelmet_Toxin</defName>
     <label>toxin warcasket helmet</label>
-    <shortDescription>Specialized warcasket helmet with superior protection and worse weight, sealed and fitted with a filtered respirator that keeps out tox gas and toxic fallout.</shortDescription>
-    <description>Specialized warcasket helmet with superior protection and worse weight, sealed and fitted with a filtered respirator that keeps out tox gas and toxic fallout.\n\n5th generation warcaskets were created with a much shorter period between generations, largely being slight specializations of the previous one. The Toxin design reworked the Cataphract chassis for chemical warfare: every seam gasketed, every intake filtered, so that a pilot could hold a gassed position long after everyone else had fled it.\n\nPirate crews took to seeding a raid with toxin pilots and shelling their own front line with gas. Whoever was still standing when the cloud thinned was wearing one. Their motto, muffled through the respirator, was to breathe easy.</description>
+    <shortDescription>Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's reagent tank.</shortDescription>
+    <description>Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's reagent tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that, while interchangeable, work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series rebuilt the old Cataphract chassis for chemical warfare. A reagent tank in the shell feeds both the vents around the pilot and the nozzles on the pauldrons, and the helmet's respirator filters the air and draws spent gas back into the tank, so a pilot can flood a position, breathe it unharmed and reclaim the cloud once the work is done. A toxin pilot rarely falls alone: the tank bursts where they lie. Their motto, muffled through the respirator, is to breathe easy.</description>
     <graphicData>
       <texPath>Things/Pawn/Warcasketlike/WarcasketToxin/WarcasketToxinHelmet</texPath>
       <shaderType>CutoutComplex</shaderType>
@@ -43,17 +37,18 @@
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>-0.15</MoveSpeed>
-      <ToxicResistance>0.5</ToxicResistance>
       <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
       <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.1</SlaveSuppressionOffset>
     </equippedStatOffsets>
     <costList>
-      <ComponentIndustrial>2</ComponentIndustrial>
-      <Steel>75</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <Steel>45</Steel>
+      <Plasteel>20</Plasteel>
       <Chemfuel>20</Chemfuel>
     </costList>
     <researchPrerequisites>
-      <li>VFEP_AdvancedWarcaskets</li>
+      <li>VFEP_SpecialisedWarcaskets</li>
+      <li>ToxGas</li>
     </researchPrerequisites>
     <apparel>
       <immuneToToxGasExposure>true</immuneToToxGasExposure>
@@ -66,8 +61,7 @@
         <li>Overhead</li>
       </layers>
       <tags>
-        <li>WarcasketHeavy</li>
-        <li>WarcasketCata</li>
+        <li>WarcasketSpecialised</li>
         <li>WarcasketAll</li>
       </tags>
     </apparel>

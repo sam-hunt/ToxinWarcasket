@@ -177,8 +177,8 @@ python3 Scripts/integration-smoke-test.py
   - **Save Our Ship 2**, with its dependency Vehicle Framework, so
     `1.6/Patches/SOS2Patch.xml` actually runs; it only fires with SOS2 or
     Universum active.
-  - Biotech is on the list so the `1.6/Mods/Biotech` root opens once the tox
-    gas ability lands there (see `LoadFolders.xml`); today it gates nothing.
+  - Biotech is on the list as a hard dependency: every tox gas mechanic
+    needs it.
 
   A failed PatchOperation or a broken compat-root def is exactly the kind of
   error only a boot with the mod active can surface, and this is the only

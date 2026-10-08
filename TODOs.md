@@ -3,23 +3,16 @@
 ## Content
 
 - **Workshop art.** `About/Preview.png` and `About/ModIcon.png` are missing.
-- **The tox gas abilities and the 7th-gen rebalance.** Designed; `Docs/Research/ABILITIES_SPEC.md`
-  is the spec. Phase 1 (XML and docs): Biotech becomes a hard dependency, the set moves to
-  `VFEP_SpecialisedWarcaskets`, ToxicResistance gives way to a ToxicEnvironmentResistance spread,
-  costs rebase with the tank priced onto the armor, descriptions move to 7th-gen framing.
-  Phase 2: the armor's reagent tank with the downed burst and death rupture. Phase 3: the vent
-  (armor), absorb (helmet) and gas jet (shoulders) abilities.
+- **The tox gas abilities.** `Docs/Research/ABILITIES_SPEC.md` is the spec; phase 1 (the
+  Biotech switch and the 7th-gen rebalance) has landed. Phase 2: the armor's reagent tank with
+  the downed burst and death rupture. Phase 3: the vent (armor), absorb (helmet) and gas jet
+  (shoulders) abilities. The descriptions and Workshop page already describe all of it.
 - **Gizmo art.** Requested from the artist: vent, absorb and gas jet icons (paths in the spec).
 - Check the gas rate of torso vent and gas jet
 - Check how the armor rating sits against other same-tier warcaskets for cost and functionality
 - Check the torso environmental resistance alone with the explosive on-down tox gas vent
 - **English text is not final.** Descriptions and the Workshop page are first drafts; the
   translation passes wait for them (see CLAUDE.md's Localization Toolchain section).
-
-## Open questions
-
-- The Workshop FAQ should spell out the contrast with VFEP's Hazard set (Hazard resists toxins
-  that hit it, Toxin breathes poisoned air and emits it) once phase 1 lands.
 
 ## Infrastructure follow-ups
 

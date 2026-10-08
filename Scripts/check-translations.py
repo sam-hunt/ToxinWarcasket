@@ -18,14 +18,11 @@ engine.REPO_ROOT = Path(__file__).resolve().parent.parent
 # the surface is three apparel defs' label/description text.
 engine.PARITY_EXEMPT_FIELDS = set()
 
-# RATIONALE: no DLC is a hard dependency (About.xml's modDependencies are
-# Harmony and VFE Pirates). Biotech is pinned anyway because it is the
-# mod's planned compat gate (LoadFolders.xml's commented Mods/Biotech
-# roots): the tox gas ability can only exist with Biotech active, so the
-# moment its def or DefInjected lands, a sidecar generated without Biotech
-# would silently lose its keys. Pinning the DLC now means that change needs
-# no shim edit. Ideology stays out: its only footprint is a MayRequire on a
-# stat LEAF (SlaveSuppressionOffset), and a gated leaf drops a number, not a
+# RATIONALE: Biotech is a hard dependency (About.xml's modDependencies):
+# every tox gas mechanic needs it, and the defs reference its ToxGas
+# research, so a sidecar generated without it would not load the mod at
+# all. Ideology stays out: its only footprint is a MayRequire on a stat
+# LEAF (SlaveSuppressionOffset), and a gated leaf drops a number, not a
 # def, so it never changes the key set the probe dumps.
 engine.REQUIRED_DLCS = {"Biotech"}
 
