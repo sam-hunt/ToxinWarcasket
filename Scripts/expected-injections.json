@@ -65,6 +65,27 @@
         "english": "Specialized warcasket shell with superior protection and worse weight, fitted with a reagent tank that vents tox gas around the pilot.",
         "required": true
       }
+    },
+    "VEF.Abilities.AbilityDef": {
+      "TXWC_VentTank.description": {
+        "english": "Open the reagent tank's vents and release tox gas around the pilot, about a tenth of a full tank every second. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left.",
+        "required": true
+      },
+      "TXWC_VentTank.iconPath": {
+        "english": "Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack"
+      },
+      "TXWC_VentTank.jobReportString": {
+        "english": "Using ability: {0}",
+        "required": true
+      },
+      "TXWC_VentTank.label": {
+        "english": "vent tank",
+        "required": true
+      },
+      "TXWC_VentTank.verbProperties.label": {
+        "english": "vent tank",
+        "required": true
+      }
     }
   }
 }

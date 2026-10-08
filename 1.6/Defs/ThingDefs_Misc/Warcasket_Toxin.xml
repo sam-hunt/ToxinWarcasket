@@ -28,8 +28,9 @@
       cells; 1.9 would be 9) and splashes filth over them: a blast mark under the body, 70%
       per cell for slime, spent acid or bile, 30% for a second kind on top. Dead raiders in the
       set do this on the player's map, by design.
-    - Vent: one charge every 6 ticks, 10% of the tank per second, so the cloud grows smoothly
-      and a toggle-off wastes at most one charge. Raiders vent on their own once hostile
+    - Vent (TXWC_VentTank, a toggle): one charge every 6 ticks, 10% of the tank per second, so
+      the cloud grows smoothly and a toggle-off wastes at most one charge. GasGrid.AddGas floods
+      a full cell's excess outward, so the cloud grows from the pilot and trails them. Raiders vent on their own once hostile
       humanlikes of body size 1 are within 4 cells and the tank holds 20+.
 
     Toxin stats, environment only, all three pieces: ToxicEnvironmentResistance 0.15 here, 0.15
@@ -128,6 +129,11 @@
           <li>Filth_SpentAcid</li>
           <li>Filth_CorpseBile</li>
         </ruptureFilth>
+      </li>
+      <li Class="VEF.Abilities.CompProperties_AbilitiesApparel">
+        <abilities>
+          <li>TXWC_VentTank</li>
+        </abilities>
       </li>
     </comps>
     <modExtensions>
