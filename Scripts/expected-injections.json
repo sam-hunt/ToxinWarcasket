@@ -43,6 +43,16 @@
         "english": "Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted nozzles that spray tox gas from the shell's reagent tank.",
         "required": true
       },
+      "TXWC_Warcasket_Toxin.comps.CompToxTank.chargeNoun": {
+        "english": "reagent",
+        "required": true,
+        "normalized": "TXWC_Warcasket_Toxin.comps.2.chargeNoun"
+      },
+      "TXWC_Warcasket_Toxin.comps.CompToxTank.cooldownGerund": {
+        "english": "on cooldown",
+        "required": true,
+        "normalized": "TXWC_Warcasket_Toxin.comps.2.cooldownGerund"
+      },
       "TXWC_Warcasket_Toxin.description": {
         "english": "Specialized warcasket shell with superior protection and worse weight, fitted with a reagent tank that vents tox gas around the pilot.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that, while interchangeable, work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series rebuilt the old Cataphract chassis for chemical warfare. A reagent tank in the shell feeds both the vents around the pilot and the nozzles on the pauldrons, and the helmet's respirator filters the air and draws spent gas back into the tank, so a pilot can flood a position, breathe it unharmed and reclaim the cloud once the work is done. A toxin pilot rarely falls alone: the tank bursts where they lie. Their motto, muffled through the respirator, is to breathe easy.",
         "required": true

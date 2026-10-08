@@ -16,7 +16,21 @@
       kind's weapon; VFEP has no tox weapon or tox pawn kind, so there is none to take. Only the
       mercenary VFEP_General lists WarcasketAll, so raiders in the set are rare.
     - Costs sit in VFEP's 7th-gen band (the other sets total Comp 11-14, Steel 220-360, Plasteel
-      65-75, Uranium 50). Chemfuel 100 here prices the reagent tank.
+      65-75, Uranium 50). Chemfuel 100 here pays for the full reagent tank the armor is built
+      with.
+
+    The reagent tank (ToxinWarcasket.CompToxTank, a CompApparelReloadable): 100 charges, one
+    charge one cell of gas at full density, about 2.2 tox packs (the pack fills 45 cells for 35
+    chemfuel). Refilled with Chemfuel 1 per charge, the Aerial's and Shock's 100 per tank.
+    - Downed burst: the wearer going down with 5+ charges vents the lot as one tox gas
+      explosion of GenRadial.RadiusOfNumCells(charges), about 5.6 for a full tank.
+    - Death rupture: a dead wearer bursts what is left, then pollutes every cell within 2.0 (13
+      cells; 1.9 would be 9) and splashes filth over them: a blast mark under the body, 70%
+      per cell for slime, spent acid or bile, 30% for a second kind on top. Dead raiders in the
+      set do this on the player's map, by design.
+    - Vent: one charge every 6 ticks, 10% of the tank per second, so the cloud grows smoothly
+      and a toggle-off wastes at most one charge. Raiders vent on their own once hostile
+      humanlikes of body size 1 are within 4 cells and the tank holds 20+.
 
     Toxin stats, environment only, all three pieces: ToxicEnvironmentResistance 0.15 here, 0.15
     on the shoulders, 0.8 on the helmet (the gas mask's value), summing to 1.1 against the stat's
@@ -99,6 +113,23 @@
         <li>WarcasketAll</li>
       </tags>
     </apparel>
+    <comps>
+      <li Class="ToxinWarcasket.CompProperties_ToxTank">
+        <maxCharges>100</maxCharges>
+        <chargeNoun>reagent</chargeNoun>
+        <ammoDef>Chemfuel</ammoDef>
+        <ammoCountPerCharge>1</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <ventEffecter>ToxGasReleasing</ventEffecter>
+        <ruptureCenterFilth>Filth_BlastMark</ruptureCenterFilth>
+        <ruptureFilth>
+          <li>Filth_Slime</li>
+          <li>Filth_SpentAcid</li>
+          <li>Filth_CorpseBile</li>
+        </ruptureFilth>
+      </li>
+    </comps>
     <modExtensions>
       <li Class="VEF.Apparels.ApparelExtension">
         <priority>1</priority>
