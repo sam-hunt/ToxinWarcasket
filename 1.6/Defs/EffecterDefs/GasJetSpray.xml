@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    The gas jet's spray, played from the pilot toward the target for the verb's
+    sprayEffecterTicks. Biotech's Fire_SpewShort (the scorcher's) with the tox pack's gas fleck
+    for its flame; a placeholder until the set's own effect art lands.
+  -->
+  <EffecterDef>
+    <defName>TXWC_GasJetSpray</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.15</positionRadius>
+        <fleckDef>Fleck_ToxGasSmall</fleckDef>
+        <chancePerTick>0.9</chancePerTick>
+        <speed>6.5</speed>
+        <scale>0.8~1.4</scale>
+        <angle>-15~15</angle>
+        <positionLerpFactor>0.8</positionLerpFactor>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+    </children>
+  </EffecterDef>
+</Defs>

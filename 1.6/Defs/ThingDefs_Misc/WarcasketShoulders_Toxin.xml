@@ -10,6 +10,17 @@
     - Costs: Comp 2 is the gas jet's nozzle (VFEP's Controller shoulders likewise pay components
       for their verb); Steel 55 and Plasteel 20 put the piece in the 7th-gen band.
 
+    Gas jet: an apparel verb (ToxinWarcasket.Verb_SprayGas), as the Barrage shoulders carry
+    theirs, so this piece redeclares tickerType Normal for the verb tracker and the AI check (the
+    shoulder base leaves it at Never). A 15 degree half-angle cone to 11.9 is about 32 cells, so
+    at 30 tank charges a shot the jet spends the tank at the vent's gas per charge. Warmup 1 s.
+    - Fuel (ToxinWarcasket.CompJetNozzle): 30 charges from the armor's tank when it holds them,
+      otherwise the nozzle's one reserve shot, reloaded with the same 30 chemfuel. The gizmo's
+      corner shows the tank's fill and the reserve.
+    - onlyManualCast, as the Barrage's: a drafted colonist never fires it on its own. Raiders
+      fire it through the nozzle's own check, at the densest group of hostile humanlikes the gas
+      would affect, never into their own faction's.
+
     Compat: SOS2Patch.xml leaves shoulder pads alone, as VFEP's own patch does for VFEP's.
   -->
   <VFEPirates.WarcasketDef ParentName="VFEP_WarcasketShoulderPadBase">
@@ -17,6 +28,7 @@
     <label>toxin warcasket shoulders</label>
     <shortDescription>Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted nozzles that spray tox gas from the shell's reagent tank.</shortDescription>
     <description>Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted nozzles that spray tox gas from the shell's reagent tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that, while interchangeable, work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series rebuilt the old Cataphract chassis for chemical warfare. A reagent tank in the shell feeds both the vents around the pilot and the nozzles on the pauldrons, and the helmet's respirator filters the air and draws spent gas back into the tank, so a pilot can flood a position, breathe it unharmed and reclaim the cloud once the work is done. A toxin pilot rarely falls alone: the tank bursts where they lie. Their motto, muffled through the respirator, is to breathe easy.</description>
+    <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Pawn/Warcasketlike/WarcasketToxin/WarcasketToxinShoulders</texPath>
       <shaderType>CutoutComplex</shaderType>
@@ -63,5 +75,38 @@
         <li>WarcasketAll</li>
       </tags>
     </apparel>
+    <comps>
+      <li Class="ToxinWarcasket.CompProperties_JetNozzle">
+        <maxCharges>1</maxCharges>
+        <chargeNoun>reserve jet</chargeNoun>
+        <ammoDef>Chemfuel</ammoDef>
+        <ammoCountPerCharge>30</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <hotKey>Misc4</hotKey>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+        <tankChargesPerShot>30</tankChargesPerShot>
+      </li>
+    </comps>
+    <verbs>
+      <li Class="ToxinWarcasket.VerbProperties_SprayGas">
+        <label>gas jet</label>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>true</onlyManualCast>
+        <range>11.9</range>
+        <warmupTime>1</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <commandIcon>Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack</commandIcon>
+        <soundCast>GasPack_Deploy</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <halfAngle>15</halfAngle>
+        <gasPerCell>255</gasPerCell>
+        <propagationSpeed>0.6</propagationSpeed>
+        <sprayEffecter>TXWC_GasJetSpray</sprayEffecter>
+        <sprayEffecterTicks>14</sprayEffecterTicks>
+      </li>
+    </verbs>
   </VFEPirates.WarcasketDef>
 </Defs>
