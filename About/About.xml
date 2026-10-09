@@ -4,7 +4,7 @@
   <author>Sam Hunt</author>
   <packageId>shunter.toxinwarcasket</packageId>
   <modVersion>0.1.0</modVersion>
-  <description>Adds the Toxin warcasket, a 7th generation chemical-warfare armor set for VFE Pirates, welded at the warcasket foundry like any other. Its three pieces share one reagent tank: the shell vents tox gas around the pilot, the pauldrons spray it in a cone, and the helmet's respirator breathes it unharmed and draws it back into the tank. A downed pilot bursts the tank; a dead one fouls the ground. Compatible with SOS2. Requires Vanilla Factions Expanded - Pirates and Biotech.</description>
+  <description>Adds the Toxin warcasket, a 7th generation chemical-warfare armor set for VFE Pirates, welded at the warcasket foundry like any other. Its three pieces share one tox gas tank: the shell vents tox gas around the pilot, the pauldrons spray it in a cone, and the helmet's respirator breathes it unharmed and draws it back into the tank. A downed pilot bursts the tank; a dead one fouls the ground. Compatible with SOS2. Requires Vanilla Factions Expanded - Pirates and Biotech.</description>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>

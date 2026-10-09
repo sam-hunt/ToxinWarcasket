@@ -12,11 +12,33 @@
 
     Gas jet: an apparel verb (ToxinWarcasket.Verb_SprayGas), as the Barrage shoulders carry
     theirs, so this piece redeclares tickerType Normal for the verb tracker and the AI check (the
-    shoulder base leaves it at Never). A 15 degree half-angle cone to 11.9 is about 32 cells, so
-    at 30 tank charges a shot the jet spends the tank at the vent's gas per charge. Warmup 1 s.
-    - Fuel (ToxinWarcasket.CompJetNozzle): 30 charges from the armor's tank when it holds them,
-      otherwise the nozzle's one reserve shot, reloaded with the same 30 chemfuel. The gizmo's
-      corner shows the tank's fill and the reserve.
+    shoulder base leaves it at Never). A jet is two thirds of a tox pack, shaped: 10 tank charges
+    at the armor's 3 cells each are 30 cells against the pack's 45, spread evenly over the cells
+    the cone reaches. A 12 degree half-angle cone from 3 cells out to 12.9 is about 32 cells, so
+    an open cone lands just under full density; walls shrink the cone and concentrate it, and
+    past a full cell GasGrid.AddGas thickens the edges with the excess. coneStart 3: the angle
+    test makes the cone a single-cell line for its first four cells, the pilot is immune and
+    whoever stands beside them is not, and a one-wide stem bleeds sideways as much as any edge,
+    so the shot begins where the cone is already three wide. The gas then spreads past the cone
+    as the grid equalizes neighbours down to a step of 34, so the targeter draws two areas: the
+    cone the gas lands in, and around it the cells expected to hold spreadMinGas or more within
+    spreadTicks of the shot, from GasSpreadEstimate's replay of the grid's own rules. The
+    threshold is 1, any gas at all, because that is what the player sees: SectionLayer_Gas hands
+    each cell's raw density to the vertex colour, which clamps to 1, so a cell holding one unit
+    draws exactly like a full one and the cloud shows no dose. The outer area is therefore where
+    the cloud will show, and the cone itself is the part that bites: the first ring gets half the
+    cone's density on the grid's first push, the next a quarter, the third a trace. At the
+    defaults that is about 133 cells, four times the cone, three rings deep and back to the
+    pilot's neighbours, which is the cloud a shot leaves on open ground. halfAngle and range are
+    the defaults of their mod settings. Warmup 1 s.
+    - Fuel (ToxinWarcasket.CompJetNozzle): 10 charges from the armor's tank when it holds them,
+      otherwise one of the nozzle's two reserve jets, each reloaded with those charges' 20
+      chemfuel; two so the shoulders are worth wearing alone. tankChargesPerShot and maxCharges
+      are the defaults of their mod settings (the jet's cost and reserve), and the settings
+      recompute ammoCountPerCharge as the cost times the armor's chemfuel per charge, so the 20
+      here is only the default's product. The command's corner counts jets left, the tank's and
+      the reserves' together, so a full tank and loaded reserves read 6 / 6; alone, the reserves'
+      2 / 2. Its tooltip is jetDescription, as the gear's own description is the set's lore.
     - onlyManualCast, as the Barrage's: a drafted colonist never fires it on its own. Raiders
       fire it through the nozzle's own check, at the densest group of hostile humanlikes the gas
       would affect, never into their own faction's.
@@ -26,8 +48,8 @@
   <VFEPirates.WarcasketDef ParentName="VFEP_WarcasketShoulderPadBase">
     <defName>TXWC_WarcasketShoulders_Toxin</defName>
     <label>toxin warcasket shoulders</label>
-    <shortDescription>Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted nozzles that spray tox gas from the shell's reagent tank.</shortDescription>
-    <description>Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted nozzles that spray tox gas from the shell's reagent tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that, while interchangeable, work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series rebuilt the old Cataphract chassis for chemical warfare. A reagent tank in the shell feeds both the vents around the pilot and the nozzles on the pauldrons, and the helmet's respirator filters the air and draws spent gas back into the tank, so a pilot can flood a position, breathe it unharmed and reclaim the cloud once the work is done. A toxin pilot rarely falls alone: the tank bursts where they lie. Their motto, muffled through the respirator, is to breathe easy.</description>
+    <shortDescription>Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted nozzles that spray tox gas from the shell's tank.</shortDescription>
+    <description>Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted nozzles that spray tox gas from the shell's tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that, while interchangeable, work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series rebuilt the old Cataphract chassis for chemical warfare. A gas tank in the shell feeds both the vents around the pilot and the nozzles on the pauldrons, and the helmet's respirator filters the air and draws spent gas back into the tank, so a pilot can flood a position, breathe it unharmed and reclaim the cloud once the work is done. A toxin pilot rarely falls alone: the tank bursts where they lie. Their motto, muffled through the respirator, is to breathe easy.</description>
     <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Pawn/Warcasketlike/WarcasketToxin/WarcasketToxinShoulders</texPath>
@@ -77,15 +99,16 @@
     </apparel>
     <comps>
       <li Class="ToxinWarcasket.CompProperties_JetNozzle">
-        <maxCharges>1</maxCharges>
-        <chargeNoun>reserve jet</chargeNoun>
+        <maxCharges>2</maxCharges>
+        <chargeNoun>jet</chargeNoun>
         <ammoDef>Chemfuel</ammoDef>
-        <ammoCountPerCharge>30</ammoCountPerCharge>
+        <ammoCountPerCharge>20</ammoCountPerCharge>
         <baseReloadTicks>60</baseReloadTicks>
         <soundReload>Standard_Reload</soundReload>
         <hotKey>Misc4</hotKey>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-        <tankChargesPerShot>30</tankChargesPerShot>
+        <tankChargesPerShot>10</tankChargesPerShot>
+        <jetDescription>Spray a cone of tox gas from the shoulder nozzles toward the target. The gas lands in the inner cone and drifts over the outer area, thinning as it goes. Each jet draws on the warcasket's tank while it holds enough, and otherwise spends one of the nozzles' own reserve jets, which are reloaded with chemfuel.</jetDescription>
       </li>
     </comps>
     <verbs>
@@ -93,7 +116,7 @@
         <label>gas jet</label>
         <hasStandardCommand>true</hasStandardCommand>
         <onlyManualCast>true</onlyManualCast>
-        <range>11.9</range>
+        <range>12.9</range>
         <warmupTime>1</warmupTime>
         <noiseRadius>4</noiseRadius>
         <commandIcon>Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack</commandIcon>
@@ -101,9 +124,11 @@
         <targetParams>
           <canTargetLocations>true</canTargetLocations>
         </targetParams>
-        <halfAngle>15</halfAngle>
-        <gasPerCell>255</gasPerCell>
+        <halfAngle>12</halfAngle>
+        <coneStart>3</coneStart>
         <propagationSpeed>0.6</propagationSpeed>
+        <spreadMinGas>1</spreadMinGas>
+        <spreadTicks>300</spreadTicks>
         <sprayEffecter>TXWC_GasJetSpray</sprayEffecter>
         <sprayEffecterTicks>14</sprayEffecterTicks>
       </li>

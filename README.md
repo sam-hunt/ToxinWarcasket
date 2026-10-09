@@ -16,7 +16,7 @@ Vanilla Factions Expanded - Pirates lets you weld a pawn into a warcasket: a ste
 customized part by part at the foundry, with a range of sets that carries a colony from the
 industrial era into the late game. This mod adds one more set to that range: the Toxin, a 7th
 generation set that rebuilds the Cataphract chassis for chemical warfare. Same superior plating,
-same worse weight, and three pieces sharing one reagent tank, so the pilot can flood a position
+same worse weight, and three pieces sharing one tox gas tank, so the pilot can flood a position
 with tox gas, breathe it unharmed and draw it back in when the work is done.
 
 Biotech is required: tox gas and pollution only exist with it.
@@ -31,10 +31,11 @@ three pieces, at a 7th generation price with plasteel, and a 100% toxic environm
 across the full set: tox gas, fallout and pollution do nothing to it. Toxins that hit directly,
 such as venom and toxic needles, still do.
 
-- **Armor**: the reagent tank, 100 chemfuel when full, refilled like a tox pack. Toggle a vent
-  to empty it around the pilot as a growing cloud; 15% toxic environment resistance
-- **Shoulder pads**: a gas jet that sprays a cone of tox gas from the tank, with one reserve
-  shot of its own; 15% toxic environment resistance
+- **Armor**: the tox gas tank, close to three tox packs' worth of gas, refilled with chemfuel
+  like a pack. Toggle a vent to empty it around the pilot as a growing cloud, and again to keep
+  what is left; 15% toxic environment resistance
+- **Shoulder pads**: a gas jet that sprays a cone of tox gas from the tank, four to a full tank,
+  with two reserve jets of its own; 15% toxic environment resistance
 - **Helmet**: the respirator. 80% toxic environment resistance and immunity to the tox gas
   debuff, like a gas mask, and an ability that clears the air around the pilot and banks it in
   the tank

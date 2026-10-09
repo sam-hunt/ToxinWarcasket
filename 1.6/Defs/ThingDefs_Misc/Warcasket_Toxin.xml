@@ -6,7 +6,7 @@
     Cataphract's. Design rationale: Docs/Research/ABILITIES_SPEC.md.
 
     Tier: VFEP's 7th generation (Specialised), beside the Hazard. The set's identity is three
-    pieces sharing one reagent supply, VFEP's 7th-gen "work better as a set", so it takes that
+    pieces sharing one gas supply, VFEP's 7th-gen "work better as a set", so it takes that
     tier's research, plasteel and tags while keeping the Cataphract's plating, Mass and MoveSpeed
     (Sharp 1.56 / Blunt 0.65 / Heat 0.78; the Hazard likewise trades plating for function).
     - researchPrerequisites: VFEP_SpecialisedWarcaskets plus Biotech's ToxGas (the tox pack's
@@ -16,22 +16,39 @@
       kind's weapon; VFEP has no tox weapon or tox pawn kind, so there is none to take. Only the
       mercenary VFEP_General lists WarcasketAll, so raiders in the set are rare.
     - Costs sit in VFEP's 7th-gen band (the other sets total Comp 11-14, Steel 220-360, Plasteel
-      65-75, Uranium 50). Chemfuel 100 here pays for the full reagent tank the armor is built
-      with.
+      65-75, Uranium 50). No chemfuel: the tank's first fill is free, as VFEP prices its own
+      reloadable sets (the Shock's armor and the Aerial's shoulders hold 100 chemfuel charges and
+      cost none), where vanilla's packs charge their fill up front.
 
-    The reagent tank (ToxinWarcasket.CompToxTank, a CompApparelReloadable): 100 charges, one
-    charge one cell of gas at full density, about 2.2 tox packs (the pack fills 45 cells for 35
-    chemfuel). Refilled with Chemfuel 1 per charge, the Aerial's and Shock's 100 per tank.
+    The tox gas tank (ToxinWarcasket.CompToxTank, a CompApparelReloadable), sized against the
+    tox pack: the pack is a utility slot, the set a permanent commitment, so a full tank is close
+    to three packs' gas, spent as four jets of two thirds of a pack each, one long vent, or a
+    mix. 40 charges, refilled with Chemfuel 2 per charge, 80 per tank (three packs' refills are
+    105). A charge's gas is cellsPerCharge, 3 full cells, so a full tank is 120 cells against
+    the pack's 45, and the jet's 10 charges are 30. cellsPerCharge, maxCharges and
+    ventChargesPerSecond are the defaults of their mod settings, and every reader takes them from
+    the settings. To the player a charge is a "unit" (chargeNoun, and every settings string):
+    the vent drains the tank continuously, so it reads as a volume, not a count of activations.
+    - Gauge (Gizmo_ToxTank): the fill as a bar in the canisters' lime, and a slider for the
+      level colonists reload to, full by default, as a refuelable building's fuel target.
     - Downed burst: the wearer going down with 5+ charges vents the lot as one tox gas
-      explosion of GenRadial.RadiusOfNumCells(charges), about 5.6 for a full tank.
+      explosion at full density over the cells its gas fills: radius about 6.2 for a full tank,
+      3.1 for the 10 charges of a last jet (the tox grenade's is 1.9).
     - Death rupture: a dead wearer bursts what is left, then pollutes every cell within 2.0 (13
       cells; 1.9 would be 9) and splashes filth over them: a blast mark under the body, 70%
       per cell for slime, spent acid or bile, 30% for a second kind on top. Dead raiders in the
       set do this on the player's map, by design.
-    - Vent (TXWC_VentTank, a toggle): one charge every 6 ticks, 10% of the tank per second, so
-      the cloud grows smoothly and a toggle-off wastes at most one charge. GasGrid.AddGas floods
-      a full cell's excess outward, so the cloud grows from the pilot and trails them. Raiders vent on their own once hostile
-      humanlikes of body size 1 are within 4 cells and the tank holds 20+.
+    - Vent (TXWC_VentTank, a toggle): two charges a second, 5% of the tank, so a full tank is 20 s
+      of vent, half again the pack's release time, and a toggle-off wastes at most one charge.
+      GasGrid.AddGas floods a full cell's excess outward, so the cloud grows from the pilot and
+      trails them. The rate is set by how the grid behaves: every gassed cell loses 3 of 255 per
+      64 ticks unroofed (half that roofed) whatever its density, and neighbours equalize whenever
+      they differ by 34+, so a cloud's life is set by its footprint, not its density, and a
+      faster vent only makes the same gas a wider, shorter cloud. On an open field
+      (Docs/Research/gas-grid-sim.py) the pack's release peaks at about 70 cells at the exposure
+      hediff's mild stage or worse and is gone after 50 s; this tank at two a second peaks at
+      about 165 and is gone after 80 s. Raiders vent on their own once hostile humanlikes of
+      body size 1 are within 4 cells and the tank holds 10+.
 
     Toxin stats, environment only, all three pieces: ToxicEnvironmentResistance 0.15 here, 0.15
     on the shoulders, 0.8 on the helmet (the gas mask's value), summing to 1.1 against the stat's
@@ -65,8 +82,8 @@
   <VFEPirates.WarcasketDef ParentName="VFEP_WarcasketArmorBase">
     <defName>TXWC_Warcasket_Toxin</defName>
     <label>toxin warcasket</label>
-    <shortDescription>Specialized warcasket shell with superior protection and worse weight, fitted with a reagent tank that vents tox gas around the pilot.</shortDescription>
-    <description>Specialized warcasket shell with superior protection and worse weight, fitted with a reagent tank that vents tox gas around the pilot.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that, while interchangeable, work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series rebuilt the old Cataphract chassis for chemical warfare. A reagent tank in the shell feeds both the vents around the pilot and the nozzles on the pauldrons, and the helmet's respirator filters the air and draws spent gas back into the tank, so a pilot can flood a position, breathe it unharmed and reclaim the cloud once the work is done. A toxin pilot rarely falls alone: the tank bursts where they lie. Their motto, muffled through the respirator, is to breathe easy.</description>
+    <shortDescription>Specialized warcasket shell with superior protection and worse weight, fitted with a tox gas tank that vents around the pilot.</shortDescription>
+    <description>Specialized warcasket shell with superior protection and worse weight, fitted with a tox gas tank that vents around the pilot.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that, while interchangeable, work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series rebuilt the old Cataphract chassis for chemical warfare. A gas tank in the shell feeds both the vents around the pilot and the nozzles on the pauldrons, and the helmet's respirator filters the air and draws spent gas back into the tank, so a pilot can flood a position, breathe it unharmed and reclaim the cloud once the work is done. A toxin pilot rarely falls alone: the tank bursts where they lie. Their motto, muffled through the respirator, is to breathe easy.</description>
     <graphicData>
       <texPath>Things/Pawn/Warcasketlike/WarcasketToxin/WarcasketToxin</texPath>
       <shaderType>CutoutComplex</shaderType>
@@ -90,7 +107,6 @@
       <Steel>150</Steel>
       <Plasteel>20</Plasteel>
       <Uranium>50</Uranium>
-      <Chemfuel>100</Chemfuel>
     </costList>
     <researchPrerequisites>
       <li>VFEP_SpecialisedWarcaskets</li>
@@ -116,12 +132,14 @@
     </apparel>
     <comps>
       <li Class="ToxinWarcasket.CompProperties_ToxTank">
-        <maxCharges>100</maxCharges>
-        <chargeNoun>reagent</chargeNoun>
+        <maxCharges>40</maxCharges>
+        <chargeNoun>unit</chargeNoun>
         <ammoDef>Chemfuel</ammoDef>
-        <ammoCountPerCharge>1</ammoCountPerCharge>
+        <ammoCountPerCharge>2</ammoCountPerCharge>
         <baseReloadTicks>60</baseReloadTicks>
         <soundReload>Standard_Reload</soundReload>
+        <cellsPerCharge>3</cellsPerCharge>
+        <ventChargesPerSecond>2</ventChargesPerSecond>
         <ventEffecter>ToxGasReleasing</ventEffecter>
         <ruptureCenterFilth>Filth_BlastMark</ruptureCenterFilth>
         <ruptureFilth>

@@ -4,27 +4,30 @@ using Verse;
 
 namespace ToxinWarcasket;
 
-// The armor's reagent tank (see CompToxTank). The reload fields (maxCharges, ammoDef,
+// The armor's tox gas tank (see CompToxTank). The reload fields (maxCharges, ammoDef,
 // ammoCountPerCharge, chargeNoun, ...) are vanilla CompApparelReloadable's; everything below
 // tunes what the tank does with its charges. Values live in the armor def, rationale in its
-// header.
+// header; cellsPerCharge, maxCharges and ventChargesPerSecond are mod settings defaulting to
+// them, and every reader takes them from the settings (ToxinWarcasketSettings), which write them
+// back here.
 public class CompProperties_ToxTank : CompProperties_ApparelReloadable
 {
-    // Gas units one charge releases: 255 is one cell at full density (GasGrid.MaxGasPerCell).
-    public int gasPerCharge = 255;
+    // Full-density cells of tox gas one charge makes, wherever the set spends it (the vent, the
+    // bursts, the jet) and the rate the absorb banks gas back at.
+    public float cellsPerCharge = 3f;
 
     // Fewest charges that make a downed or death burst; below this the tank just stays put.
     public int minBurstCharges = 5;
 
-    // Vent emission: one charge every ventTicksPerCharge ticks.
-    public int ventTicksPerCharge = 6;
+    // Vent emission rate.
+    public float ventChargesPerSecond = 2f;
     public EffecterDef ventEffecter;
 
     // Opportunistic vent for non-player wearers, after CompToxPack.ChanceToUse: every
     // aiCheckInterval ticks, start venting once hostile pawns the gas affects within
     // aiTriggerRadius sum to aiTriggerBodySize, and stop after aiStopAfterTicks without any.
     public int aiCheckInterval = 60;
-    public int aiMinCharges = 20;
+    public int aiMinCharges = 10;
     public float aiTriggerRadius = 4f;
     public float aiTriggerBodySize = 1f;
     public int aiStopAfterTicks = 300;
@@ -47,10 +50,10 @@ public class CompProperties_ToxTank : CompProperties_ApparelReloadable
     {
         foreach (string error in base.ConfigErrors(parentDef))
             yield return error;
-        if (gasPerCharge <= 0)
-            yield return "gasPerCharge must be positive";
-        if (ventTicksPerCharge <= 0)
-            yield return "ventTicksPerCharge must be positive";
+        if (cellsPerCharge <= 0f)
+            yield return "cellsPerCharge must be positive";
+        if (ventChargesPerSecond <= 0f)
+            yield return "ventChargesPerSecond must be positive";
         if (aiCheckInterval <= 0)
             yield return "aiCheckInterval must be positive";
     }

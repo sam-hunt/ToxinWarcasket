@@ -8,7 +8,7 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 shoulder pads, helmet) for Vanilla Factions Expanded - Pirates (VFE Pirates), templated on
 VFEP's Cataphract set and themed around vanilla's tox gas. VFE Pirates and Biotech are hard
 dependencies (see Tox Gas and Biotech). Requires Harmony (bootstrapped in `ModInit.cs`; patch
-classes, when any land, live in `Source/1.6/Patches/`).
+classes live in `Source/1.6/Patches/`).
 
 **Key technologies:** C# (.NET Framework 4.7.2), Harmony, RimWorld modding API, XML defs.
 
@@ -162,7 +162,16 @@ TODOs.md         - Scoping notes for the feature work that has not landed yet
   its declaring type's static ctor. Our targets will often be VFEP's own methods, and a VFEP type
   whose cctor resolves defs would be permanently broken by an early patch (the BetterTradersGuild
   v1.1.0 CWTL incident). Static ctors on startup run after defs load, so foreign targets are safe
-  there. If a `Mod` subclass is added for settings, leave `PatchAll` where it is.
+  there. The settings' `Mod` subclass (`ToxinWarcasketMod`) stays free of patches and def access
+  for the same reason.
+- **Mod settings override def fields, never shadow them.** `Source/1.6/Settings/` writes each
+  setting onto its def's props (at startup and whenever the window closes) and reads its default
+  from that same def field, so every reader, vanilla's and VEF's included, sees the setting
+  with no code of its own, and the def header stays the record of the default. The one value
+  read through the settings object rather than a worn comp is the gas-per-charge yield (the
+  tank comp's `cellsPerCharge`): every emitter and the absorb's banking rate take it from
+  `ToxinWarcasketSettings.GasPerCharge`, because the shoulders' reserve jet needs it with no
+  tank worn.
 - **No em dashes in player-facing text** (def labels/descriptions, `Keyed/`, `About.xml`,
   `.steamworkshop/`); reflow the sentence instead. This file, code comments and def comments are
   unaffected.
@@ -206,10 +215,11 @@ and references to Biotech defs need no `MayRequire`.
 
 ## Localization Toolchain
 
-English (the def XML's `label`, `description`, VFEP's `shortDescription` and the reload comps'
-`chargeNoun`) is the source of truth; there is no Keyed surface and no English `Languages/` tree. Other languages derive from it
-via the `/translate` skill (`.claude/skills/translate/SKILL.md`: this mod's surface, grounding
-domain and per-language glossary; the family-wide process lives in the `l10n/` submodule) and
+English (the def XML's `label`, `description`, VFEP's `shortDescription`, the reload comps'
+`chargeNoun` and the jet nozzle's `jetDescription`), plus the settings window's Keyed strings
+(`1.6/Languages/English/Keyed/ToxinWarcasket.xml`), is the source of truth. Other languages derive from it via the `/translate`
+skill (`.claude/skills/translate/SKILL.md`: this mod's surface, grounding domain and
+per-language glossary; the family-wide process lives in the `l10n/` submodule) and
 are validated deterministically by `python3 Scripts/check-translations.py` (also a CI release
 gate). The DefInjected expected set is the checked-in sidecar `Scripts/expected-injections.json`:
 a dump of every injection point the *live* game sees for this mod, produced by

@@ -5,17 +5,22 @@ namespace ToxinWarcasket;
 
 // The armor's vent toggle. It only flips CompToxTank.Venting: the tank ticks the emission and
 // saves the state, so this class holds none. VEF's base gizmo is a cast command, so GetGizmo
-// hands out a toggle instead, as VFEP's Ability_SiegeMode does (with a command of our own rather
-// than a dependency on VFEP's CommandAbilityToggle). VEF asks for gizmos every frame a wearer is
-// selected; one command is kept and only its live fields refreshed, after Shipcracker's
-// Ability_BreachJump.
+// hands out a plain Command_Toggle instead, as VFEP's Ability_SiegeMode does (without a
+// dependency on VFEP's CommandAbilityToggle); the tank's own gauge shows the fill. VEF asks for
+// gizmos every frame a wearer is selected; one command is kept and only its live fields
+// refreshed, after Shipcracker's Ability_BreachJump. The empty-tank reason quotes the tank's
+// whole range rather than MinAmmoNeeded/MaxAmmoNeeded, which follow the gauge's reload target.
 public class Ability_VentTank : Ability
 {
     private CompToxTank tank;
-    private Command_VentTank gizmo;
+    private Command_Toggle gizmo;
 
     // holder is the armor; it never changes for this instance.
     private CompToxTank Tank => tank ??= holder.TryGetComp<CompToxTank>();
+
+    // A toggle has nothing to autocast; VEF offers it to any one-target ability and says so in
+    // the tooltip GetDescriptionForPawn builds.
+    public override bool CanAutoCast => false;
 
     // VEF runs Init again when the apparel changes wearer.
     public override void Init()
@@ -27,7 +32,7 @@ public class Ability_VentTank : Ability
     public override Gizmo GetGizmo()
     {
         CompToxTank t = Tank;
-        gizmo ??= new Command_VentTank(t)
+        gizmo ??= new Command_Toggle
         {
             defaultLabel = def.LabelCap,
             icon = def.icon,
@@ -37,22 +42,10 @@ public class Ability_VentTank : Ability
         gizmo.defaultDesc = GetDescriptionForPawn();
         gizmo.Disabled = false;
         if (!t.Venting && t.RemainingCharges <= 0)
-            gizmo.Disable(t.DisabledReason(t.MinAmmoNeeded(false), t.MaxAmmoNeeded(false)));
+            gizmo.Disable(t.DisabledReason(t.Props.ammoCountPerCharge, t.MaxAmmoAmount()));
         else if (!IsEnabledForPawn(out string reason))
             gizmo.Disable(reason.Colorize(ColorLibrary.RedReadable));
         return gizmo;
     }
 }
 
-// A toggle whose corner label is the tank's fill, the readout for the whole set's reagent.
-public class Command_VentTank : Command_Toggle
-{
-    private readonly CompToxTank tank;
-
-    public Command_VentTank(CompToxTank tank)
-    {
-        this.tank = tank;
-    }
-
-    public override string TopRightLabel => tank.FillPercent.ToStringPercent();
-}

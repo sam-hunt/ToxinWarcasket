@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    A wisp of the gas TXWC_AbsorbGas takes from a cell, thrown from that cell into the pilot.
+    Ability_AbsorbGas spawns one per cell a pulse thins, tinted by instanceColor with the colour
+    of the gas it took most of (the ability def's gas colours; the fleck's own colour, white,
+    carries only the alpha, as the draw multiplies the two), sized by how much it took, and fast
+    enough to cover the distance in the fleck's 0.8 s life. Core's Fleck_ToxGasSmall's texture
+    and shader, so it reads as the gas grid's own cloud; growthRate shrinks it as it is drawn in.
+  -->
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>TXWC_AbsorbedGas</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.15</fadeInTime>
+    <solidTime>0.35</solidTime>
+    <fadeOutTime>0.3</fadeOutTime>
+    <growthRate>-0.6</growthRate>
+    <graphicData>
+      <texPath>Things/Gas/GasCloudThickA</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(255, 255, 255, 96)</color>
+    </graphicData>
+  </FleckDef>
+</Defs>

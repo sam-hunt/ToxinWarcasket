@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <TXWC_SettingsCategory>Toxin Warcasket</TXWC_SettingsCategory>
+
+  <TXWC_SectionTank>Tox gas tank</TXWC_SectionTank>
+  <TXWC_SectionJet>Gas jet</TXWC_SectionJet>
+  <TXWC_SectionAbsorb>Absorb gas</TXWC_SectionAbsorb>
+
+  <TXWC_GasPerUnit>Tox gas per unit (cells)</TXWC_GasPerUnit>
+  <TXWC_GasPerUnitDesc>How many cells of tox gas one unit from the tank makes, wherever it is spent: the vent, the burst when the pilot goes down or dies, and the gas jet, from the tank or from its reserve. The helmet's absorb banks a unit for every unit's worth of gas it draws in. A tox pack fills 45 cells. Default: {0}.</TXWC_GasPerUnitDesc>
+
+  <TXWC_TankCapacity>Capacity (units)</TXWC_TankCapacity>
+  <TXWC_TankCapacityDesc>How many units the warcasket's tank holds. Each unit is reloaded with 2 chemfuel. A tank holding more than a lowered capacity loses the excess. Default: {0}.</TXWC_TankCapacityDesc>
+
+  <TXWC_VentRate>Vent rate (units per second)</TXWC_VentRate>
+  <TXWC_VentRateDesc>How fast the vent empties the tank. A faster vent spreads the same gas wider and it clears sooner. Default: {0}.</TXWC_VentRateDesc>
+
+  <TXWC_JetCost>Cost (units)</TXWC_JetCost>
+  <TXWC_JetCostDesc>How many units each gas jet draws from the tank. A reserve jet holds the same gas and reloads with the same chemfuel. Default: {0}.</TXWC_JetCostDesc>
+
+  <TXWC_JetReserve>Reserve jets</TXWC_JetReserve>
+  <TXWC_JetReserveDesc>How many jets the shoulder nozzles hold on their own, spent once the tank cannot pay for one or when no tank is worn, and reloaded with chemfuel. Default: {0}.</TXWC_JetReserveDesc>
+
+  <TXWC_JetConeWidth>Cone width (degrees)</TXWC_JetConeWidth>
+  <TXWC_JetConeWidthDesc>The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}.</TXWC_JetConeWidthDesc>
+
+  <TXWC_JetRange>Range (cells)</TXWC_JetRange>
+  <TXWC_JetRangeDesc>How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}.</TXWC_JetRangeDesc>
+
+  <TXWC_AbsorbRadius>Radius (cells)</TXWC_AbsorbRadius>
+  <TXWC_AbsorbRadiusDesc>How far around the pilot the helmet's absorb draws gas in. Default: {0}.</TXWC_AbsorbRadiusDesc>
+
+  <TXWC_AbsorbDuration>Duration (seconds)</TXWC_AbsorbDuration>
+  <TXWC_AbsorbDurationDesc>How long each absorb keeps drawing gas in. Default: {0}.</TXWC_AbsorbDurationDesc>
+
+  <TXWC_DefaultSuffix> (default)</TXWC_DefaultSuffix>
+  <TXWC_ResetToDefaults>Reset to defaults</TXWC_ResetToDefaults>
+
+</LanguageData>

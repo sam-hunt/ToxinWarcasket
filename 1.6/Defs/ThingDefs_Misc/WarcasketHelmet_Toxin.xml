@@ -13,17 +13,19 @@
       the wearer from the ToxGasExposure hediff (the sight/breathing debuff). It does not touch
       the toxic buildup gas also deals; the resistance stat does that. Together they let the
       full set stand in its own gas.
-    - Costs: Chemfuel 20 is the respirator's filter reagent, priced as the gas mask prices it;
+    - Costs: Chemfuel 20 is the respirator's filter, priced as the gas mask prices its own;
       Comp 3, Steel 45 and Plasteel 20 put the piece in the 7th-gen band.
     - Absorb Gas (TXWC_AbsorbGas): the respirator pulls the air around the pilot through its
-      filter and into the armor's reagent tank. The ability's hediff carries the work, so the
-      helmet keeps the base's tickerType Never.
+      filter and into the armor's tank. The ability runs the draw and its autocast on
+      the helmet's own tick, so this piece redeclares tickerType Normal (the base's is Never)
+      for its CompAbilitiesApparel to tick it (the ability def's header).
   -->
   <VFEPirates.WarcasketDef ParentName="VFEP_WarcasketHelmetBase">
     <defName>TXWC_WarcasketHelmet_Toxin</defName>
     <label>toxin warcasket helmet</label>
-    <shortDescription>Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's reagent tank.</shortDescription>
-    <description>Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's reagent tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that, while interchangeable, work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series rebuilt the old Cataphract chassis for chemical warfare. A reagent tank in the shell feeds both the vents around the pilot and the nozzles on the pauldrons, and the helmet's respirator filters the air and draws spent gas back into the tank, so a pilot can flood a position, breathe it unharmed and reclaim the cloud once the work is done. A toxin pilot rarely falls alone: the tank bursts where they lie. Their motto, muffled through the respirator, is to breathe easy.</description>
+    <shortDescription>Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank.</shortDescription>
+    <description>Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that, while interchangeable, work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series rebuilt the old Cataphract chassis for chemical warfare. A gas tank in the shell feeds both the vents around the pilot and the nozzles on the pauldrons, and the helmet's respirator filters the air and draws spent gas back into the tank, so a pilot can flood a position, breathe it unharmed and reclaim the cloud once the work is done. A toxin pilot rarely falls alone: the tank bursts where they lie. Their motto, muffled through the respirator, is to breathe easy.</description>
+    <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Pawn/Warcasketlike/WarcasketToxin/WarcasketToxinHelmet</texPath>
       <shaderType>CutoutComplex</shaderType>
@@ -73,6 +75,9 @@
         <abilities>
           <li>TXWC_AbsorbGas</li>
         </abilities>
+      </li>
+      <li>
+        <compClass>ToxinWarcasket.CompDevResetCooldowns</compClass>
       </li>
     </comps>
   </VFEPirates.WarcasketDef>

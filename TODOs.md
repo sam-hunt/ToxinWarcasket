@@ -6,11 +6,19 @@
 - **In-game test pass for the tox gas mechanics.** All three phases of
   `Docs/Research/ABILITIES_SPEC.md` have landed but none has been played yet; its "Edge cases
   and test list" is the checklist (downed/death bursts, anaesthetic, caravans, save/load
-  mid-vent/absorb/jet, the jet's cone near allies, raider vent and jet AI).
+  mid-vent/absorb/jet, the jet's cone near allies, raider vent and jet AI). The tox-pack-sized
+  tuning (close to three packs a tank, two thirds of one a jet, two charges a second) has had
+  one open-field look; the full-tank downed burst (radius about 6) and the targeter's settle
+  area against a real cloud still want checking.
 - **Gizmo art.** Requested from the artist: vent, absorb and gas jet icons (paths in the spec).
-- Check the gas rate of torso vent and gas jet
 - Check how the armor rating sits against other same-tier warcaskets for cost and functionality
 - Check the torso environmental resistance alone with the explosive on-down tox gas vent
+- Decide whether surgery deaths should trigger gas explosion in addition to filth rupture
+- Consider switching chemfuel welding cost to toxic wastepacks
+- Decide whether the jet count should show the reserves (6 / 6 with a full tank) or the tank's
+  jets alone
+- Gas jet ability gizmo gets apparel tint for some reason when shouldn't
+- Match vanilla instead of VFEP when rolling initial charge costs into welding
 - **English text is not final.** Descriptions and the Workshop page are first drafts; the
   translation passes wait for them (see CLAUDE.md's Localization Toolchain section).
 

@@ -165,3 +165,9 @@ All types are in `Assembly-CSharp.dll` unless noted.
 | `VEF.Abilities.AbilityExtension_Explosion`, `Ability_Explode` | Explosion ability with `postExplosionGas*` fields | VEF.dll |
 | `VEF.Abilities.CompProperties_AbilitiesApparel`, `CompAbilitiesApparel` | Grants VEF abilities from worn apparel | VEF.dll |
 | `VEF.Abilities.AbilityExtension_Spawn`, `Ability_Spawn` | Spawns a ThingDef at target | VEF.dll |
+
+## Simulating a cloud
+
+`gas-grid-sim.py` beside this file replays the dissipation, diffusion and overflow rules above on an
+open field, so an emitter can be sized against the tox pack on paper; the armor def header quotes
+its results for the vent rate.

@@ -1,14 +1,23 @@
 using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
 namespace ToxinWarcasket;
 
+// tankChargesPerShot and the reserve's maxCharges are mod settings defaulting to the def's
+// values; the settings also recompute ammoCountPerCharge as the cost times the armor's chemfuel
+// per charge, so the XML value is only the default's product (ToxinWarcasketSettings).
 public class CompProperties_JetNozzle : CompProperties_ApparelReloadable
 {
     // Charges one jet draws from the worn armor's tank.
-    public int tankChargesPerShot = 30;
+    public int tankChargesPerShot = 10;
+
+    // The jet command's tooltip. Vanilla's apparel verb command shows the gear's description,
+    // which for these shoulders is the set's lore rather than what the jet does.
+    [MustTranslate]
+    public string jetDescription;
 
     // Opportunistic jet for non-player wearers (see CompJetNozzle.AIJetCheck): every
     // aiCheckInterval ticks, fire at the hostile with the most hostile body size the gas would
@@ -25,8 +34,10 @@ public class CompProperties_JetNozzle : CompProperties_ApparelReloadable
 
 // The shoulders' gas jet fuel. A jet draws Props.tankChargesPerShot from the worn armor's
 // CompToxTank when it holds that many; otherwise it spends the nozzle's own charge, a reserve
-// shot loaded with chemfuel like a tox pack. So the shoulders work alone on their reserve, and
-// with the armor the reserve is the shot left when the tank runs dry.
+// jet loaded with chemfuel like a tox pack. So the shoulders work alone on their reserve, and
+// with the armor the reserve is the jet left when the tank runs dry. Either way the jet's gas
+// is GasPerShot, the tank charges it costs at the gas-per-charge setting, so the reserve's
+// chemfuel in the def is those charges' worth (the armor's ammoCountPerCharge times the cost).
 //
 // CompApparelReloadable.CanBeUsed fails on an empty nozzle before it reaches its base's map
 // checks, so with the tank paying those checks are repeated here rather than reached through it.
@@ -38,35 +49,33 @@ public class CompJetNozzle : CompApparelReloadable
 {
     public new CompProperties_JetNozzle Props => (CompProperties_JetNozzle)props;
 
-    private CompToxTank WornTank
-    {
-        get
-        {
-            Pawn wearer = Wearer;
-            if (wearer?.apparel == null)
-                return null;
-            foreach (Apparel apparel in wearer.apparel.WornApparel)
-            {
-                CompToxTank tank = apparel.TryGetComp<CompToxTank>();
-                if (tank != null)
-                    return tank;
-            }
-            return null;
-        }
-    }
+    private CompToxTank WornTank => CompToxTank.WornBy(Wearer);
 
     private bool TankCanPay => WornTank is { } tank && tank.RemainingCharges >= Props.tankChargesPerShot;
 
-    // The tank's fill and the reserve, e.g. "64% +1"; the plain charge count without the armor.
+    // Gas units one jet makes, from the tank or the reserve alike.
+    public float GasPerShot => Props.tankChargesPerShot * ToxinWarcasketMod.Settings.GasPerCharge;
+
+    // The jet command's corner: jets left out of jets possible. With the armor that is the shots
+    // the tank can pay plus the reserve, as a jet spends the tank first; alone, the reserve's own.
     public override string GizmoExtraLabel
     {
         get
         {
-            CompToxTank tank = WornTank;
-            if (tank == null)
+            if (WornTank is not { } tank)
                 return base.GizmoExtraLabel;
-            string fill = tank.FillPercent.ToStringPercent();
-            return RemainingCharges > 0 ? $"{fill} +{RemainingCharges}" : fill;
+            int perShot = Mathf.Max(1, Props.tankChargesPerShot);
+            return $"{tank.RemainingCharges / perShot + RemainingCharges} / {tank.MaxCharges / perShot + MaxCharges}";
+        }
+    }
+
+    public override IEnumerable<Gizmo> CompGetWornGizmosExtra()
+    {
+        foreach (Gizmo gizmo in base.CompGetWornGizmosExtra())
+        {
+            if (gizmo is Command_VerbTarget { verb: Verb_SprayGas } jet && !Props.jetDescription.NullOrEmpty())
+                jet.defaultDesc = Props.jetDescription;
+            yield return gizmo;
         }
     }
 
@@ -102,6 +111,8 @@ public class CompJetNozzle : CompApparelReloadable
     public override void CompTick()
     {
         base.CompTick();
+        if (remainingCharges > MaxCharges)
+            remainingCharges = MaxCharges;
         Pawn wearer = Wearer;
         if (wearer != null && wearer.IsHashIntervalTick(Props.aiCheckInterval))
             AIJetCheck(wearer);
@@ -130,18 +141,22 @@ public class CompJetNozzle : CompApparelReloadable
 
     // The hostile at the heart of the densest group the gas would affect (GasUtility counts only
     // humanlikes without exposure immunity), skipping any group with an affected pawn of the
-    // wearer's own faction in it.
+    // wearer's own faction in it, and anyone inside the cone's start, where no gas lands.
     private Pawn BestTarget(Pawn wearer, Verb jet)
     {
         List<IAttackTarget> potential = wearer.Map.attackTargetsCache.GetPotentialTargetsFor(wearer);
         float range = jet.EffectiveRange;
+        float start = (jet.verbProps as VerbProperties_SprayGas)?.coneStart ?? 0f;
+        float startSq = start * start;
         float clusterRadiusSq = Props.aiClusterRadius * Props.aiClusterRadius;
         Pawn best = null;
         float bestScore = Props.aiTriggerBodySize - 0.001f;
         foreach (IAttackTarget candidate in potential)
         {
             if (candidate.Thing is not Pawn pawn || !Affected(pawn, wearer)
-                || !pawn.Position.InHorDistOf(wearer.Position, range) || !jet.CanHitTarget(pawn))
+                || !pawn.Position.InHorDistOf(wearer.Position, range)
+                || (pawn.Position - wearer.Position).LengthHorizontalSquared < startSq
+                || !jet.CanHitTarget(pawn))
                 continue;
             float score = 0f;
             bool allyNear = false;

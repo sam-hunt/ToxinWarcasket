@@ -9,7 +9,7 @@
   <VEF.Abilities.AbilityDef>
     <defName>TXWC_VentTank</defName>
     <label>vent tank</label>
-    <description>Open the reagent tank's vents and release tox gas around the pilot, about a tenth of a full tank every second. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left.</description>
+    <description>Open the tank's vents and release tox gas around the pilot. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left.</description>
     <abilityClass>ToxinWarcasket.Ability_VentTank</abilityClass>
     <targetMode>Self</targetMode>
     <iconPath>Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack</iconPath>

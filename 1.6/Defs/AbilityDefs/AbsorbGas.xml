@@ -1,22 +1,62 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <!--
-    The helmet's respirator pull, granted by its CompAbilitiesApparel. A self-cast that only
-    applies TXWC_AbsorbingGas (the work is in that hediff's header). radius matches the hediff
-    comp's so the gizmo's mouseover ring shows the disc. Usable undrafted for cleanup, one
-    in-game hour of cooldown, no fuel; player-only, as raiders never cast it. The icon is the
-    tox pack's item texture until the set's own gizmo art lands.
+    The helmet's respirator pull, granted by its CompAbilitiesApparel and run by
+    Ability_AbsorbGas (the mechanics, the jobless cast and the autocast are in that class's
+    comment). Usable undrafted for cleanup, one in-game hour of cooldown, no fuel; player-only,
+    as raiders never cast it. The icon is the tox pack's item texture until the set's own gizmo
+    art lands. needsTickingInterval is what lets the helmet's CompAbilitiesApparel tick it.
+
+    The draw (AbsorbGasExtension): for durationTime, 300 ticks, a pulse every 30, ten in all,
+    each taking up to 64 of every gas type's density from the 37 cells within radius 3.5, a round
+    disc seven cells across that moves with the pilot. Four pulses clear a full cell; the rest
+    catch gas drifting back in and whatever the pilot walks into. Casting it closes the armor's
+    vent and opening the vent ends it (Ability_AbsorbGas). radius also drives the gizmo's
+    mouseover ring. durationTime is VEF's own field, so the gizmo's tooltip shows it. radius and
+    durationTime are the defaults of their mod settings.
+    - Each charge's worth of gas drawn in (the gas-per-charge mod setting) banks a charge, so
+      what is absorbed is what refills the tank; at the default 3 cells, a saturated disc (37
+      full cells) is 12 charges, a jet and change, so reclaiming a cloud tops the tank up rather
+      than refilling it.
+    - Autocast, off by default, checked every 60 ticks: fires on any gas in the pilot's cell.
+      Gas spreads, so a trace there is the near edge of a cloud the disc then reaches into;
+      thin edges and rot stink are what the autocast is for, and the cooldown is short.
+    - Inflow visuals: every cell a pulse thins throws a TXWC_AbsorbedGas wisp (that def's
+      header) into the pilot in the colour of the gas it gave most of. Tox gas and deadlife
+      dust take the colours of vanilla's flecks for them (Core's Fleck_ToxGasSmall, Anomaly's
+      Fleck_DeadlifeSmall); smoke's grey and rot stink's orange have no coloured fleck to copy
+      and are matched by eye. A pulse over clean air throws four of Core's AirPuff from the disc's
+      edge toward the pilot at 3.5 cells a second instead, so the draw always shows.
   -->
   <VEF.Abilities.AbilityDef>
     <defName>TXWC_AbsorbGas</defName>
     <label>absorb gas</label>
-    <description>Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas and other gases from around the pilot. Whatever is drawn in is filtered into reagent and banked in the warcasket's tank, if one is worn.</description>
-    <abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+    <description>Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn.</description>
+    <abilityClass>ToxinWarcasket.Ability_AbsorbGas</abilityClass>
     <targetMode>Self</targetMode>
     <iconPath>Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack</iconPath>
-    <radius>2.9</radius>
+    <radius>3.5</radius>
+    <durationTime>300</durationTime>
     <cooldownTime>2500</cooldownTime>
     <showUndrafted>true</showUndrafted>
-    <casterHediff>TXWC_AbsorbingGas</casterHediff>
+    <needsTickingInterval>true</needsTickingInterval>
+    <modExtensions>
+      <li Class="ToxinWarcasket.AbsorbGasExtension">
+        <pulseInterval>30</pulseInterval>
+        <unitsPerPulse>64</unitsPerPulse>
+        <autoCastCheckInterval>60</autoCastCheckInterval>
+        <autoCastMinDensity>1</autoCastMinDensity>
+        <gasFleck>TXWC_AbsorbedGas</gasFleck>
+        <gasFleckScale>0.6~1.4</gasFleckScale>
+        <gasFleckTravelSeconds>0.8</gasFleckTravelSeconds>
+        <smokeColor>(220, 220, 220)</smokeColor>
+        <toxGasColor>(180, 214, 24)</toxGasColor>
+        <rotStinkColor>(200, 95, 30)</rotStinkColor>
+        <deadlifeDustColor>(45, 45, 45)</deadlifeDustColor>
+        <puffFleck>AirPuff</puffFleck>
+        <puffsPerPulse>4</puffsPerPulse>
+        <puffSpeed>3.5</puffSpeed>
+      </li>
+    </modExtensions>
   </VEF.Abilities.AbilityDef>
 </Defs>

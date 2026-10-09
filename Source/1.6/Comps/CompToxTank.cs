@@ -1,13 +1,15 @@
+using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace ToxinWarcasket;
 
-// The armor's reagent tank, the one supply every tox gas emitter of the set draws on. A vanilla
+// The armor's tox gas tank, the one supply every tox gas emitter of the set draws on. A vanilla
 // CompApparelReloadable underneath, so the reload job, the "reload" float menu, save/load of the
-// charge count and the full tank on creation (PostPostMake) all come from the base class; one
-// charge is one cell of gas (Props.gasPerCharge). remainingCharges is protected on
+// charge count and the full tank on creation (PostPostMake) all come from the base class. A
+// charge's gas is GasPerCharge, the gas-per-charge setting; the tank's size is a setting too,
+// and a lowered one drops what no longer fits on the next tick. remainingCharges is protected on
 // CompApparelVerbOwner_Charged, which is what TryConsume/Add/Empty reach.
 //
 // The tank also owns:
@@ -19,7 +21,10 @@ namespace ToxinWarcasket;
 //    reaches through PreDeathPawnModifications before the pawn despawns, so Wearer's position
 //    and map are still valid there.
 //  - Venting: the vent ability only flips Venting; the emission ticks here, so the state lives
-//    in one saved place. Non-player wearers vent on their own (AIVentCheck).
+//    in one saved place. Non-player wearers vent on their own (AIVentCheck). Venting and the
+//    helmet's absorb exclude each other (Ability_AbsorbGas's comment).
+//  - The gauge (Gizmo_ToxTank) and its reload target, which the reload patches
+//    (Patches/CompApparelReloadable_ToxTank) read in place of the tank's size.
 //
 // Bursts skip an anaesthetized wearer, so no surgery (VFEP's warcasket removal among them)
 // gasses the operating room, alive or dead. Every emitter skips an unspawned wearer (caravans,
@@ -30,17 +35,47 @@ public class CompToxTank : CompApparelReloadable
     private bool wasDowned;
     private int aiTicksWithoutTargets;
 
-    // Ticks until the next vent charge. Unsaved: a load mid-vent at worst emits one charge early.
-    private int ventCooldown;
+    // The gauge's reload target in charges; -1 until the player sets one, read as a full tank.
+    private int targetCharges = -1;
+
+    // Vent charges owed, accrued at the vent rate and spent whole; it starts at one so a vent
+    // emits as it opens. Unsaved: a load mid-vent at worst emits one charge early.
+    private float ventProgress = 1f;
 
     [Unsaved]
     private Effecter ventEffecter;
+
+    [Unsaved]
+    private Gizmo_ToxTank gauge;
 
     public new CompProperties_ToxTank Props => (CompProperties_ToxTank)props;
 
     public bool Venting => venting;
 
     public float FillPercent => (float)RemainingCharges / MaxCharges;
+
+    // Gas units one charge makes (GasGrid.MaxGasPerCell to a full cell).
+    public float GasPerCharge => ToxinWarcasketMod.Settings.GasPerCharge;
+
+    // The tank worn by pawn, if any: the armor's, which every other piece draws on.
+    public static CompToxTank WornBy(Pawn pawn)
+    {
+        if (pawn?.apparel == null)
+            return null;
+        foreach (Apparel apparel in pawn.apparel.WornApparel)
+        {
+            CompToxTank tank = apparel.TryGetComp<CompToxTank>();
+            if (tank != null)
+                return tank;
+        }
+        return null;
+    }
+
+    public int TargetCharges
+    {
+        get => targetCharges < 0 ? MaxCharges : Mathf.Min(targetCharges, MaxCharges);
+        set => targetCharges = Mathf.Clamp(value, 0, MaxCharges);
+    }
 
     public bool TryConsume(int charges)
     {
@@ -65,11 +100,12 @@ public class CompToxTank : CompApparelReloadable
         if (on && remainingCharges > 0)
         {
             venting = true;
+            Ability_AbsorbGas.WornBy(Wearer)?.StopAbsorbing();
             return;
         }
         venting = false;
         aiTicksWithoutTargets = 0;
-        ventCooldown = 0;
+        ventProgress = 1f;
         ventEffecter?.Cleanup();
         ventEffecter = null;
     }
@@ -77,6 +113,8 @@ public class CompToxTank : CompApparelReloadable
     public override void CompTick()
     {
         base.CompTick();
+        if (remainingCharges > MaxCharges)
+            remainingCharges = MaxCharges;
         Pawn wearer = Wearer;
         if (wearer == null || wearer.Dead)
         {
@@ -107,6 +145,13 @@ public class CompToxTank : CompApparelReloadable
             AIVentCheck(wearer);
         if (venting)
             VentTick(wearer);
+    }
+
+    public override IEnumerable<Gizmo> CompGetWornGizmosExtra()
+    {
+        foreach (Gizmo gizmo in base.CompGetWornGizmosExtra())
+            yield return gizmo;
+        yield return gauge ??= new Gizmo_ToxTank(this);
     }
 
     public override void Notify_WearerDied()
@@ -144,6 +189,7 @@ public class CompToxTank : CompApparelReloadable
         Scribe_Values.Look(ref venting, "venting");
         Scribe_Values.Look(ref wasDowned, "wasDowned");
         Scribe_Values.Look(ref aiTicksWithoutTargets, "aiTicksWithoutTargets");
+        Scribe_Values.Look(ref targetCharges, "targetCharges", -1);
     }
 
     private void VentTick(Pawn wearer)
@@ -158,26 +204,31 @@ public class CompToxTank : CompApparelReloadable
             ventEffecter ??= Props.ventEffecter.Spawn(wearer, TargetInfo.Invalid);
             ventEffecter.EffectTick(wearer, TargetInfo.Invalid);
         }
-        if (--ventCooldown > 0)
-            return;
-        ventCooldown = Props.ventTicksPerCharge;
-        GasUtility.AddGas(wearer.Position, wearer.Map, GasType.ToxGas, Props.gasPerCharge);
-        remainingCharges--;
+        ventProgress += Props.ventChargesPerSecond / GenTicks.TicksPerRealSecond;
+        int gas = Mathf.RoundToInt(GasPerCharge);
+        for (; ventProgress >= 1f && remainingCharges > 0; ventProgress -= 1f)
+        {
+            GasUtility.AddGas(wearer.Position, wearer.Map, GasType.ToxGas, gas);
+            remainingCharges--;
+        }
     }
 
-    // Whole tank at once as a tox gas explosion sized to what was in it: ToxGas is the tox
-    // grenade's damage def (defaultDamage 0), so the blast is visuals and sound and the gas, laid
-    // per cell by the explosion, does the work. Explosions skip cells out of the centre's line of
-    // sight, so walls shape the cloud.
+    // Whole tank at once as a tox gas explosion: ToxGas is the tox grenade's damage def
+    // (defaultDamage 0), so the blast is visuals and sound and the gas, laid per cell by the
+    // explosion, does the work. The tank's gas goes down at full density over as many cells as it
+    // fills, so the gas-per-charge setting sizes the cloud rather than thinning it; a thinner
+    // cloud would also never reach ToxGasExposure's top stage, which takes a full cell.
+    // Explosions skip cells out of the centre's line of sight, so walls shape the cloud.
     private void TryBurst(Pawn wearer)
     {
         if (!wearer.Spawned || remainingCharges < Props.minBurstCharges)
             return;
         if (wearer.health.hediffSet.HasHediff(HediffDefOf.Anesthetic))
             return;
-        float radius = GenRadial.RadiusOfNumCells(remainingCharges);
+        int cells = Mathf.Max(1, Mathf.RoundToInt(remainingCharges * GasPerCharge / GasGrid.MaxGasPerCell));
+        float radius = GenRadial.RadiusOfNumCells(cells);
         GenExplosion.DoExplosion(wearer.Position, wearer.Map, radius, DamageDefOf.ToxGas, wearer,
-            postExplosionGasType: GasType.ToxGas, postExplosionGasAmount: Props.gasPerCharge);
+            postExplosionGasType: GasType.ToxGas, postExplosionGasAmount: GasGrid.MaxGasPerCell);
         Empty();
     }
 

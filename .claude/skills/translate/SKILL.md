@@ -57,10 +57,16 @@ notes for the shim or flow edit this repo owes before continuing.
 
 ## This mod's translation surface
 
-- **No Keyed strings and no English Languages tree at all.** English is
-  served entirely by the def XML's own fields; there is nothing under
-  `1.6/Languages/English/`. The translation surface is DefInjected only,
-  plus the Workshop page under `.steamworkshop/`.
+- **Two surfaces plus the Workshop page.** The defs' English is served by
+  the def XML's own fields (DefInjected, below). The mod settings window is
+  the only Keyed file: `1.6/Languages/English/Keyed/ToxinWarcasket.xml`,
+  translated to `1.6/Languages/<Language>/Keyed/ToxinWarcasket.xml` with the
+  same keys. Each `TXWC_<Setting>` label and its `TXWC_<Setting>Desc`
+  tooltip take one `{0}`, the formatted value (the tooltip's is the
+  default); keep it and any unit after it, such as the cone width's degree
+  sign. `TXWC_DefaultSuffix` keeps its leading space. Name the set's things
+  with the same renderings as the DefInjected text (tox gas tank, unit,
+  gas jet, absorb gas, warcasket).
 - **Enumerate the key set from `Scripts/expected-injections.json`, never
   from a Languages folder or by scanning `1.6/Defs/`.** The sidecar is a
   dump of what the live game walks; regenerate it (game closed) with
@@ -72,11 +78,13 @@ notes for the shim or flow edit this repo owes before continuing.
   `TXWC_WarcasketShoulders_Toxin`, `TXWC_WarcasketHelmet_Toxin`): `label`,
   `description`, `shortDescription` (a VFEP field shown in the foundry's
   part picker; translate it like any other), and the armor's and shoulders'
-  reload comps' `chargeNoun` (the tank's "reagent", the nozzle's "reserve
-  jet"; vanilla reads it in "out of {CHARGENOUN}" style strings). The
-  abilities and their hediff take the sidecar's other def types as their
-  folder names: the two VEF ability defs (`TXWC_VentTank`, `TXWC_AbsorbGas`)
-  and `HediffDef` (`TXWC_AbsorbingGas`). The game rolls a def type
+  reload comps' `chargeNoun` (the tank's "unit", a volume the vent drains
+  continuously, and the nozzle's "jet", one per activation; vanilla
+  pluralizes it into "No {CHARGENOUN_plural} left." and
+  "{CHARGENOUN_plural} remaining", so render a noun that pluralizes), and the
+  nozzle's `jetDescription` (the gas jet command's tooltip). The
+  abilities take the sidecar's other def type as their folder name: the two
+  VEF ability defs (`TXWC_VentTank`, `TXWC_AbsorbGas`). The game rolls a def type
   without its own database into its base, and the checker maps the element
   tag via `DEF_TYPE_ALIASES` in `Scripts/check-translations.py`; a
   `WarcasketDef` folder would never load. Never translate or place a
@@ -95,8 +103,9 @@ notes for the shim or flow edit this repo owes before continuing.
 - **Workshop page:** `.steamworkshop/Description/<Language>.txt`, per
   `l10n/workshop.md` and the folder's own `README.md`. The title's anchor
   term is "warcasket"; every localized title must contain the rendering of
-  "warcasket" recorded in that language's glossary. There is no Keyed
-  title key to keep in step with (`WORKSHOP_TITLE_KEY` is `None`).
+  "warcasket" recorded in that language's glossary. The title is coupled to
+  the Keyed `TXWC_SettingsCategory` (the settings window's header,
+  `WORKSHOP_TITLE_KEY`), so translate the two together.
 
 ## This mod's grounding domain
 
@@ -125,7 +134,8 @@ Terms that MUST be grounded before use:
   tox pack (its reload noun), pollution, and the ToxGasExposure hediff's
   label and stage names;
 - this mod's own ability vocabulary, coined once and recorded in the
-  glossary: reagent (tank), vent, absorb, gas jet, reserve jet.
+  glossary: tox gas tank, unit (its reload noun and the settings' word for
+  the tank's contents), vent, absorb, gas jet, reserve jet.
 
 Grep the tars for just this handful of terms; never extract or read a
 whole tar. The vanilla-grounded answers for common words live in
