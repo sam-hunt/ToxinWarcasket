@@ -214,6 +214,11 @@ The respirator inhales the air around the pilot and banks it in the tank.
   checked every 60 ticks, casting when the pilot's cell holds any gas (summed density 1 or
   more). Player pilots only, never while the worn tank is venting. The toggle survives VEF's
   re-`Init` on wearer change and load.
+- **Recasting:** never during a draw. `IsEnabledForPawn` disables the gizmo with Core's
+  "Already active" while one runs, ahead of VEF's cooldown check, since the cooldown setting can
+  go below the draw's duration and a cast mid-draw would restart it and drop the carried
+  remainder; the autocast check runs only between draws. At a 0 h cooldown the autocast chains
+  draws while gas stays in the pilot's cell.
 - **Visuals:** every cell a pulse thins throws a `TXWC_AbsorbedGas` fleck into the pilot in the
   colour of the gas it gave most of (vanilla's tox and deadlife fleck colours; smoke and rot
   stink matched by eye); a pulse over clean air throws four of Core's `AirPuff` from the disc's
@@ -384,6 +389,9 @@ the abilities) have landed. Where each part lives:
   stands.
 - Autocast on, pilot walks into a thin edge of a cloud: the absorb fires; the toggle survives a
   save and a re-equip.
+- Absorb cooldown set to 0 h, autocast on, pilot standing in a cloud: a draw starts within a
+  second of the last ending until the pilot's cell is clear; never two at once. Mid-draw, the
+  gizmo reads "Already active" at any cooldown.
 - Jet with a tank worn at 9 charges: disabled with the tank reason, the nozzle's own jets
   untouched and no reload job for them, even if they were spent earlier without the tank.
 - Jet with the shoulders alone: spends an own jet, reloaded with 20 chemfuel; both own jets

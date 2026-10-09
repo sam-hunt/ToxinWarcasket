@@ -107,6 +107,19 @@ public class Ability_AbsorbGas : Ability
         autoCast = wasAutoCast && CanAutoCast;
     }
 
+    // The gizmo is disabled for the draw, before the cooldown is checked: a cast mid-draw would
+    // restart it and drop the carried remainder, and the cooldown setting can go below the
+    // draw's duration. Core's "Already active" is the reason.
+    public override bool IsEnabledForPawn(out string reason)
+    {
+        if (Absorbing)
+        {
+            reason = "AlreadyActive".Translate();
+            return false;
+        }
+        return base.IsEnabledForPawn(out reason);
+    }
+
     public override void CreateCastJob(params GlobalTargetInfo[] targets)
     {
         currentTargetingIndex = -1;
