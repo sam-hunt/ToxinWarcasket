@@ -8,7 +8,8 @@ namespace ToxinWarcasket;
 // slider it is DefaultValue, read from the def field it overrides when defs load
 // (ToxinWarcasketSettings.LoadDefaultsFromDefs), so the def and its header stay the record of the
 // shipped tuning and another mod's XML patch moves the default too. Only an override is saved; a
-// slider landing within half a step of the default clears it.
+// slider landing within half a step of the default clears it, and a saved override outside the
+// slider's range (saved before the range moved) reads as its nearest end.
 public sealed class Tunable
 {
     private const float Unset = -1f;
@@ -42,7 +43,7 @@ public sealed class Tunable
 
     public float DefaultValue { get; set; }
 
-    public float Value => value < 0f ? DefaultValue : value;
+    public float Value => value < 0f ? DefaultValue : Mathf.Clamp(value, min, max);
 
     public int IntValue => Mathf.RoundToInt(Value);
 

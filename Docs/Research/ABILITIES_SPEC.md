@@ -390,8 +390,8 @@ the abilities) have landed. Where each part lives:
 - Save and load mid-vent, mid-absorb, and mid-jet warmup on both fuel routes.
 - Allies: jet beside a friendly does not gas them unless they are inside the cone; the AI jet
   skips any group with an affected friendly in it.
-- Settings: capacity lowered below the fill drops the excess next tick; jets without a tank set
-  to 0 leaves the shoulders alone with no jet.
+- Settings: capacity lowered below the fill drops the excess next tick; jets without a tank
+  cannot go below 1, so the shoulders always work alone.
 - Raiders: vent AI fires near player pawns; jet AI fires at the densest group; dead raiders
   rupture.
 - Mechs: immune to all of it (`ToxicResistance` 1). Expected; noted in the Workshop FAQ.

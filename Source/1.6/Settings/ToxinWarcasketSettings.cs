@@ -26,11 +26,12 @@ public class ToxinWarcasketSettings : ModSettings
     public readonly Tunable tankCapacity = new("TankCapacity", 10f, 100f, 5f, v => Mathf.RoundToInt(v).ToString());
     public readonly Tunable ventRate = new("VentRate", 0.5f, 10f, 0.5f, v => v.ToString("0.#"));
 
-    // The shoulders' CompProperties_JetNozzle: tankChargesPerShot and the reserve's maxCharges.
-    // The reserve's ammoCountPerCharge follows the cost, so a jet costs the same chemfuel from
-    // the tank or the reserve.
+    // The shoulders' CompProperties_JetNozzle: tankChargesPerShot and the own jets' maxCharges.
+    // The own jets' ammoCountPerCharge follows the cost, so a jet costs the same chemfuel from
+    // the tank or an own jet. At least one own jet: shoulders with none would be useless without
+    // the tank, and the nozzle's disabled reason would quote a reload of nothing.
     public readonly Tunable jetCost = new("JetCost", 1f, 50f, 1f, v => Mathf.RoundToInt(v).ToString());
-    public readonly Tunable jetReserve = new("JetReserve", 0f, 5f, 1f, v => Mathf.RoundToInt(v).ToString());
+    public readonly Tunable jetReserve = new("JetReserve", 1f, 5f, 1f, v => Mathf.RoundToInt(v).ToString());
 
     // The shoulders' VerbProperties_SprayGas: the cone's full width (twice halfAngle) and range.
     public readonly Tunable jetConeWidth = new("JetConeWidth", 6f, 120f, 2f, v => v.ToString("0"));
