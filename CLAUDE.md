@@ -14,7 +14,7 @@ classes live in `Source/1.6/Patches/`).
 
 **Def prefix:** `TXWC_`. A 7th-generation (Specialised) set on the Cataphract's plating; each
 def's header carries its tuning rationale. `TODOs.md` holds the scoping notes for what has not
-landed, chiefly the tox gas abilities, specified in `Docs/Research/ABILITIES_SPEC.md`.
+landed; the design of the tox gas mechanics is `Docs/Research/ABILITIES_SPEC.md`.
 
 **Sibling mod:** `../ShipcrackerWarcasket/` is the same author's spacer-tier set (templated on
 the Siegebreaker) and the source of this repo's infrastructure. When both repos need the same
@@ -37,9 +37,9 @@ and diff. Def comments ship in the bundle, so keep them lean.
 `Docs/Research/` is informational only and not mod content: `VFEP_WARCASKET_STATS.md` is the
 VFEP roster's declared stats, `TOX_GAS_MECHANICS.md` the decompile-verified map of the tox gas
 engine (the three Biotech gates, the buildup math, the vanilla emitters, the candidate ability
-routes), `ABILITIES_SPEC.md` the agreed design and phased plan for the abilities and the 7th-gen
-rebalance. Read the spec before implementing any of it; once a phase lands, the def headers and
-code comments are the record and the spec is not kept in sync with tuning.
+routes), `ABILITIES_SPEC.md` the design of the abilities and the 7th-gen rebalance as shipped,
+with its edge-case test list. Read it before changing a mechanic; the def headers and code
+comments are the record of the current tuning, which the spec does not track.
 
 ## Build Commands
 
