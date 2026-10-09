@@ -184,7 +184,7 @@ A toggle that empties the tank into a growing cloud around the pilot, who keeps 
 The respirator inhales the air around the pilot and banks it in the tank.
 
 - **Route:** VEF `CompAbilitiesApparel` on the helmet granting `TXWC_AbsorbGas`, self-cast,
-  `cooldownTime` 2500 ticks (one in-game hour), `durationTime` 300, `radius` 3.5, usable
+  `cooldownTime` 7500 ticks (three in-game hours), `durationTime` 300, `radius` 3.5, usable
   undrafted. `Ability_AbsorbGas : VEF.Abilities.Ability` runs the draw itself on the comp's
   tick (`needsTickingInterval`), so the helmet redeclares `tickerType` Normal (the helmet base's
   is Never) and the draw ends if the helmet comes off. There is no hediff.
@@ -300,6 +300,7 @@ defs or patches, because `Mod` constructors run before defs load.
 | Range (cells) | verb `range` | 12.9 |
 | Absorb radius (cells) | ability `radius` | 3.5 |
 | Absorb duration (seconds) | ability `durationTime` | 5 |
+| Absorb cooldown (hours) | ability `cooldownTime` | 3 |
 
 The one value read through the settings object rather than a worn comp is the gas per charge
 (`ToxinWarcasketSettings.GasPerCharge`, cells per unit times `GasGrid.MaxGasPerCell`): every

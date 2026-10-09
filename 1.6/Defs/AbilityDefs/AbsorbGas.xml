@@ -3,7 +3,7 @@
   <!--
     The helmet's respirator pull, granted by its CompAbilitiesApparel and run by
     Ability_AbsorbGas (the mechanics, the jobless cast and the autocast are in that class's
-    comment). Usable undrafted for cleanup, one in-game hour of cooldown, no fuel; player-only,
+    comment). Usable undrafted for cleanup, three in-game hours of cooldown, no fuel; player-only,
     as raiders never cast it. The icon is the tox pack's item texture until the set's own gizmo
     art lands. needsTickingInterval is what lets the helmet's CompAbilitiesApparel tick it.
 
@@ -12,15 +12,15 @@
     disc seven cells across that moves with the pilot. Four pulses clear a full cell; the rest
     catch gas drifting back in and whatever the pilot walks into. Casting it closes the armor's
     vent and opening the vent ends it (Ability_AbsorbGas). radius also drives the gizmo's
-    mouseover ring. durationTime is VEF's own field, so the gizmo's tooltip shows it. radius and
-    durationTime are the defaults of their mod settings.
+    mouseover ring. durationTime is VEF's own field, so the gizmo's tooltip shows it. radius,
+    durationTime and cooldownTime are the defaults of their mod settings.
     - Each charge's worth of gas drawn in (the gas-per-charge mod setting) banks a charge, so
       what is absorbed is what refills the tank; at the default 3 cells, a saturated disc (37
       full cells) is 12 charges, a jet and change, so reclaiming a cloud tops the tank up rather
       than refilling it.
     - Autocast, off by default, checked every 60 ticks: fires on any gas in the pilot's cell.
       Gas spreads, so a trace there is the near edge of a cloud the disc then reaches into;
-      thin edges and rot stink are what the autocast is for, and the cooldown is short.
+      thin edges and rot stink are what the autocast is for.
     - Inflow visuals: every cell a pulse thins throws a TXWC_AbsorbedGas wisp (that def's
       header) into the pilot in the colour of the gas it gave most of. Tox gas and deadlife
       dust take the colours of vanilla's flecks for them (Core's Fleck_ToxGasSmall, Anomaly's
@@ -37,7 +37,7 @@
     <iconPath>Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack</iconPath>
     <radius>3.5</radius>
     <durationTime>300</durationTime>
-    <cooldownTime>2500</cooldownTime>
+    <cooldownTime>7500</cooldownTime>
     <showUndrafted>true</showUndrafted>
     <needsTickingInterval>true</needsTickingInterval>
     <modExtensions>

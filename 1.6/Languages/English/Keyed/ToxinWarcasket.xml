@@ -36,6 +36,9 @@
   <TXWC_AbsorbDuration>Duration (seconds)</TXWC_AbsorbDuration>
   <TXWC_AbsorbDurationDesc>How long each absorb keeps drawing gas in. Default: {0}.</TXWC_AbsorbDurationDesc>
 
+  <TXWC_AbsorbCooldown>Cooldown (hours)</TXWC_AbsorbCooldown>
+  <TXWC_AbsorbCooldownDesc>How long the helmet's absorb must recharge before it can be used again. Default: {0}.</TXWC_AbsorbCooldownDesc>
+
   <TXWC_DefaultSuffix> (default)</TXWC_DefaultSuffix>
   <TXWC_ResetToDefaults>Reset to defaults</TXWC_ResetToDefaults>
 

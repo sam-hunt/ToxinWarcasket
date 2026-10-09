@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using RimWorld;
 using UnityEngine;
 using Verse;
 using AbilityDef = VEF.Abilities.AbilityDef;
@@ -37,9 +38,10 @@ public class ToxinWarcasketSettings : ModSettings
     public readonly Tunable jetConeWidth = new("JetConeWidth", 6f, 120f, 2f, v => v.ToString("0"));
     public readonly Tunable jetRange = new("JetRange", 2.9f, 29.9f, 1f, v => v.ToString("0.#"));
 
-    // The absorb's AbilityDef radius, and durationTime in seconds.
+    // The absorb's AbilityDef radius, durationTime in seconds and cooldownTime in hours.
     public readonly Tunable absorbRadius = new("AbsorbRadius", 1.5f, 9.5f, 0.5f, v => v.ToString("0.#"));
     public readonly Tunable absorbDuration = new("AbsorbDuration", 1f, 15f, 0.5f, v => v.ToString("0.#"));
+    public readonly Tunable absorbCooldown = new("AbsorbCooldown", 0f, 24f, 1f, v => Mathf.RoundToInt(v).ToString());
 
     private bool defaultsLoaded;
 
@@ -48,7 +50,7 @@ public class ToxinWarcasketSettings : ModSettings
     public float GasPerCharge => gasPerUnit.Value * GasGrid.MaxGasPerCell;
 
     private IEnumerable<Tunable> All =>
-        [gasPerUnit, tankCapacity, ventRate, jetCost, jetReserve, jetConeWidth, jetRange, absorbRadius, absorbDuration];
+        [gasPerUnit, tankCapacity, ventRate, jetCost, jetReserve, jetConeWidth, jetRange, absorbRadius, absorbDuration, absorbCooldown];
 
     public override void ExposeData()
     {
@@ -72,6 +74,7 @@ public class ToxinWarcasketSettings : ModSettings
         jetRange.DefaultValue = defs.jet.range;
         absorbRadius.DefaultValue = defs.absorb.radius;
         absorbDuration.DefaultValue = defs.absorb.durationTime.TicksToSeconds();
+        absorbCooldown.DefaultValue = (float)defs.absorb.cooldownTime / GenDate.TicksPerHour;
         defaultsLoaded = true;
     }
 
@@ -89,6 +92,7 @@ public class ToxinWarcasketSettings : ModSettings
         defs.jet.range = jetRange.Value;
         defs.absorb.radius = absorbRadius.Value;
         defs.absorb.durationTime = absorbDuration.Value.SecondsToTicks();
+        defs.absorb.cooldownTime = absorbCooldown.IntValue * GenDate.TicksPerHour;
     }
 
     // One row per tunable under a header per piece: the tank (with the gas yield every piece
@@ -113,6 +117,7 @@ public class ToxinWarcasketSettings : ModSettings
         SectionHeader(listing, "TXWC_SectionAbsorb");
         absorbRadius.DoRow(listing);
         absorbDuration.DoRow(listing);
+        absorbCooldown.DoRow(listing);
         listing.End();
 
         if (Widgets.ButtonText(new Rect(inRect.x, inRect.yMax - buttonHeight, buttonWidth, buttonHeight),
