@@ -74,8 +74,13 @@ public class CompJetNozzle : CompApparelReloadable
     {
         foreach (Gizmo gizmo in base.CompGetWornGizmosExtra())
         {
-            if (gizmo is Command_VerbTarget { verb: Verb_SprayGas } jet && !Props.jetDescription.NullOrEmpty())
-                jet.defaultDesc = Props.jetDescription;
+            if (gizmo is Command_VerbTarget { verb: Verb_SprayGas } jet)
+            {
+                if (!Props.jetDescription.NullOrEmpty())
+                    jet.defaultDesc = Props.jetDescription;
+                // Vanilla tints a commandIcon with the gear's DrawColor, the shoulders' dye.
+                jet.defaultIconColor = Color.white;
+            }
             yield return gizmo;
         }
     }
