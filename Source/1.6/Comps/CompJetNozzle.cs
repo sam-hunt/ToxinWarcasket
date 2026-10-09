@@ -32,12 +32,14 @@ public class CompProperties_JetNozzle : CompProperties_ApparelReloadable
     }
 }
 
-// The shoulders' gas jet fuel. A jet draws Props.tankChargesPerShot from the worn armor's
-// CompToxTank when it holds that many; otherwise it spends the nozzle's own charge, a reserve
-// jet loaded with chemfuel like a tox pack. So the shoulders work alone on their reserve, and
-// with the armor the reserve is the jet left when the tank runs dry. Either way the jet's gas
-// is GasPerShot, the tank charges it costs at the gas-per-charge setting, so the reserve's
-// chemfuel in the def is those charges' worth (the armor's ammoCountPerCharge times the cost).
+// The shoulders' gas jet fuel. With the armor's CompToxTank worn, a jet draws
+// Props.tankChargesPerShot from it and nothing else, and a tank short of that disables the jet.
+// The nozzle's own charges, jets loaded with chemfuel like a tox pack, are the fuel only when no
+// tank is worn: a fallback so the shoulders stay useful alone, not a supply on top of the tank's,
+// so while a tank is worn they are neither spent here nor reloaded
+// (Patches/CompApparelReloadable_Reload). Either way the jet's gas is GasPerShot, the tank
+// charges it costs at the gas-per-charge setting, so an own jet's chemfuel in the def is those
+// charges' worth (the armor's ammoCountPerCharge times the cost).
 //
 // CompApparelReloadable.CanBeUsed fails on an empty nozzle before it reaches its base's map
 // checks, so with the tank paying those checks are repeated here rather than reached through it.
@@ -49,15 +51,14 @@ public class CompJetNozzle : CompApparelReloadable
 {
     public new CompProperties_JetNozzle Props => (CompProperties_JetNozzle)props;
 
-    private CompToxTank WornTank => CompToxTank.WornBy(Wearer);
+    // The tank the jet draws on, if the wearer wears one.
+    public CompToxTank WornTank => CompToxTank.WornBy(Wearer);
 
-    private bool TankCanPay => WornTank is { } tank && tank.RemainingCharges >= Props.tankChargesPerShot;
-
-    // Gas units one jet makes, from the tank or the reserve alike.
+    // Gas units one jet makes, from the tank or an own jet alike.
     public float GasPerShot => Props.tankChargesPerShot * ToxinWarcasketMod.Settings.GasPerCharge;
 
-    // The jet command's corner: jets left out of jets possible. With the armor that is the shots
-    // the tank can pay plus the reserve, as a jet spends the tank first; alone, the reserve's own.
+    // The jet command's corner: the jets the worn supply holds, the tank's when one is worn and
+    // the nozzle's own otherwise.
     public override string GizmoExtraLabel
     {
         get
@@ -65,7 +66,7 @@ public class CompJetNozzle : CompApparelReloadable
             if (WornTank is not { } tank)
                 return base.GizmoExtraLabel;
             int perShot = Mathf.Max(1, Props.tankChargesPerShot);
-            return $"{tank.RemainingCharges / perShot + RemainingCharges} / {tank.MaxCharges / perShot + MaxCharges}";
+            return $"{tank.RemainingCharges / perShot} / {tank.MaxCharges / perShot}";
         }
     }
 
@@ -81,10 +82,15 @@ public class CompJetNozzle : CompApparelReloadable
 
     public override bool CanBeUsed(out string reason)
     {
-        if (!TankCanPay)
+        if (WornTank is not { } tank)
             return base.CanBeUsed(out reason);
 
         reason = "";
+        if (tank.RemainingCharges < Props.tankChargesPerShot)
+        {
+            reason = "TXWC_JetTankLow".Translate(Props.tankChargesPerShot.Named("COUNT"), tank.Props.ChargeNounArgument);
+            return false;
+        }
         Map map = parent.MapHeld;
         if (map == null)
             return false;
@@ -103,8 +109,11 @@ public class CompJetNozzle : CompApparelReloadable
 
     public override void UsedOnce()
     {
-        if (WornTank is { } tank && tank.TryConsume(Props.tankChargesPerShot))
+        if (WornTank is { } tank)
+        {
+            tank.TryConsume(Props.tankChargesPerShot);
             return;
+        }
         base.UsedOnce();
     }
 

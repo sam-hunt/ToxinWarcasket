@@ -24,7 +24,7 @@ namespace ToxinWarcasket;
 //    in one saved place. Non-player wearers vent on their own (AIVentCheck). Venting and the
 //    helmet's absorb exclude each other (Ability_AbsorbGas's comment).
 //  - The gauge (Gizmo_ToxTank) and its reload target, which the reload patches
-//    (Patches/CompApparelReloadable_ToxTank) read in place of the tank's size.
+//    (Patches/CompApparelReloadable_Reload) read in place of the tank's size.
 //
 // Bursts skip an anaesthetized wearer, so no surgery (VFEP's warcasket removal among them)
 // gasses the operating room, alive or dead. Every emitter skips an unspawned wearer (caravans,

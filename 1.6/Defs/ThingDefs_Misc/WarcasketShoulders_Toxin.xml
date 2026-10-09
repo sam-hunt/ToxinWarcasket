@@ -31,14 +31,17 @@
     defaults that is about 133 cells, four times the cone, three rings deep and back to the
     pilot's neighbours, which is the cloud a shot leaves on open ground. halfAngle and range are
     the defaults of their mod settings. Warmup 1 s.
-    - Fuel (ToxinWarcasket.CompJetNozzle): 10 charges from the armor's tank when it holds them,
-      otherwise one of the nozzle's two reserve jets, each reloaded with those charges' 20
-      chemfuel; two so the shoulders are worth wearing alone. tankChargesPerShot and maxCharges
-      are the defaults of their mod settings (the jet's cost and reserve), and the settings
-      recompute ammoCountPerCharge as the cost times the armor's chemfuel per charge, so the 20
-      here is only the default's product. The command's corner counts jets left, the tank's and
-      the reserves' together, so a full tank and loaded reserves read 6 / 6; alone, the reserves'
-      2 / 2. Its tooltip is jetDescription, as the gear's own description is the set's lore.
+    - Fuel (ToxinWarcasket.CompJetNozzle): 10 charges from the armor's tank, and nothing else
+      while one is worn; with the tank short the command is disabled with the tank's shortfall.
+      Worn without a tank, the nozzle's own two jets are the fuel, each reloaded with those
+      charges' 20 chemfuel, so the shoulders stay useful alone; they are a fallback, not a
+      supply on top of the tank's, so a worn tank leaves them unspent and unreloaded
+      (Patches/CompApparelReloadable_Reload). tankChargesPerShot and maxCharges are the defaults
+      of their mod settings (the jet's cost and jets without a tank), and the settings recompute
+      ammoCountPerCharge as the cost times the armor's chemfuel per charge, so the 20 here is
+      only the default's product. The command's corner counts the jets the worn supply holds: a
+      full tank reads 4 / 4, the shoulders alone 2 / 2. Its tooltip is jetDescription, as the
+      gear's own description is the set's lore.
     - onlyManualCast, as the Barrage's: a drafted colonist never fires it on its own. Raiders
       fire it through the nozzle's own check, at the densest group of hostile humanlikes the gas
       would affect, never into their own faction's.
@@ -108,7 +111,7 @@
         <hotKey>Misc4</hotKey>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
         <tankChargesPerShot>10</tankChargesPerShot>
-        <jetDescription>Spray a cone of tox gas from the shoulder nozzles toward the target. The gas lands in the inner cone and drifts over the outer area, thinning as it goes. Each jet draws on the warcasket's tank while it holds enough, and otherwise spends one of the nozzles' own reserve jets, which are reloaded with chemfuel.</jetDescription>
+        <jetDescription>Spray a cone of tox gas from the shoulder nozzles toward the target. The gas lands in the inner cone and drifts over the outer area, thinning as it goes. Each jet draws on the warcasket's tank. Without a tank, the nozzles fall back on jets of their own, reloaded with chemfuel.</jetDescription>
       </li>
     </comps>
     <verbs>

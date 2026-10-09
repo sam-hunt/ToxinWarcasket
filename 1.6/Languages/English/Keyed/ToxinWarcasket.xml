@@ -8,7 +8,7 @@
   <TXWC_SectionAbsorb>Absorb gas</TXWC_SectionAbsorb>
 
   <TXWC_GasPerUnit>Tox gas per unit (cells)</TXWC_GasPerUnit>
-  <TXWC_GasPerUnitDesc>How many cells of tox gas one unit from the tank makes, wherever it is spent: the vent, the burst when the pilot goes down or dies, and the gas jet, from the tank or from its reserve. The helmet's absorb banks a unit for every unit's worth of gas it draws in. A tox pack fills 45 cells. Default: {0}.</TXWC_GasPerUnitDesc>
+  <TXWC_GasPerUnitDesc>How many cells of tox gas one unit from the tank makes, wherever it is spent: the vent, the burst when the pilot goes down or dies, and the gas jet, whether from the tank or from the nozzles' own jets. The helmet's absorb banks a unit for every unit's worth of gas it draws in. A tox pack fills 45 cells. Default: {0}.</TXWC_GasPerUnitDesc>
 
   <TXWC_TankCapacity>Capacity (units)</TXWC_TankCapacity>
   <TXWC_TankCapacityDesc>How many units the warcasket's tank holds. Each unit is reloaded with 2 chemfuel. A tank holding more than a lowered capacity loses the excess. Default: {0}.</TXWC_TankCapacityDesc>
@@ -17,10 +17,12 @@
   <TXWC_VentRateDesc>How fast the vent empties the tank. A faster vent spreads the same gas wider and it clears sooner. Default: {0}.</TXWC_VentRateDesc>
 
   <TXWC_JetCost>Cost (units)</TXWC_JetCost>
-  <TXWC_JetCostDesc>How many units each gas jet draws from the tank. A reserve jet holds the same gas and reloads with the same chemfuel. Default: {0}.</TXWC_JetCostDesc>
+  <TXWC_JetCostDesc>How many units each gas jet draws from the tank. Without a tank, one of the nozzles' own jets makes the same gas and reloads with the same chemfuel. Default: {0}.</TXWC_JetCostDesc>
 
-  <TXWC_JetReserve>Reserve jets</TXWC_JetReserve>
-  <TXWC_JetReserveDesc>How many jets the shoulder nozzles hold on their own, spent once the tank cannot pay for one or when no tank is worn, and reloaded with chemfuel. Default: {0}.</TXWC_JetReserveDesc>
+  <TXWC_JetReserve>Jets without a tank</TXWC_JetReserve>
+  <TXWC_JetReserveDesc>How many jets the shoulder nozzles hold on their own, for a pilot wearing them without the tank. They reload with chemfuel, and are neither spent nor reloaded while a tank is worn. Default: {0}.</TXWC_JetReserveDesc>
+
+  <TXWC_JetTankLow>Needs {COUNT} {CHARGENOUN_plural} in the tank.</TXWC_JetTankLow>
 
   <TXWC_JetConeWidth>Cone width (degrees)</TXWC_JetConeWidth>
   <TXWC_JetConeWidthDesc>The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}.</TXWC_JetConeWidthDesc>

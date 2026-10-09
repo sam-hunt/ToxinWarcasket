@@ -35,7 +35,7 @@ such as venom and toxic needles, still do.
   like a pack. Toggle a vent to empty it around the pilot as a growing cloud, and again to keep
   what is left; 15% toxic environment resistance
 - **Shoulder pads**: a gas jet that sprays a cone of tox gas from the tank, four to a full tank,
-  with two reserve jets of its own; 15% toxic environment resistance
+  or from two jets of its own when worn without the tank; 15% toxic environment resistance
 - **Helmet**: the respirator. 80% toxic environment resistance and immunity to the tox gas
   debuff, like a gas mask, and an ability that clears the air around the pilot and banks it in
   the tank

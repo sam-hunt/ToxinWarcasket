@@ -11,12 +11,12 @@ The Toxin is a 7th generation warcasket that rebuilds VFE Pirates' Cataphract ch
 Cataphract-tier plating in all three pieces at a 7th generation price, unlocked by specialised warcaskets plus tox gas research. The full set has 100% toxic environment resistance: tox gas, fallout and pollution do nothing to it.
 [list]
 [*][b]Torso:[/b] the tox gas tank, close to three tox packs' worth of gas, refilled with chemfuel like a pack. Toggle the vent to empty it around the pilot as a growing cloud, and again to keep what is left. 15% toxic environment resistance.
-[*][b]Shoulder pads:[/b] a gas jet that sprays a cone of tox gas from the tank, four to a full tank, with two reserve jets of its own. The targeter shows both where the gas lands and how far it will drift. 15% toxic environment resistance.
+[*][b]Shoulder pads:[/b] a gas jet that sprays a cone of tox gas from the tank, four to a full tank, or from two jets of its own when worn without the tank. The targeter shows both where the gas lands and how far it will drift. 15% toxic environment resistance.
 [*][b]Helmet:[/b] the respirator. 80% toxic environment resistance and immunity to the tox gas debuff, like a gas mask, plus an ability that clears the air around the pilot and banks it in the tank.
 [*][b]Downed or dead:[/b] a downed pilot bursts whatever is left in the tank; a dead one also pollutes the ground around the body.
 [/list]
 
-Mod settings tune how much gas each unit makes, the tank's size, the vent's rate, the gas jet's cost, reserve, cone and range, and the absorb's radius and duration.
+Mod settings tune how much gas each unit makes, the tank's size, the vent's rate, the gas jet's cost, cone, range and jets without a tank, and the absorb's radius and duration.
 
 [hr][/hr]
 [h1]Mod Compatibility[/h1]

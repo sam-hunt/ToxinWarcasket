@@ -15,8 +15,6 @@
 - Check the torso environmental resistance alone with the explosive on-down tox gas vent
 - Decide whether surgery deaths should trigger gas explosion in addition to filth rupture
 - Consider switching chemfuel welding cost to toxic wastepacks
-- Decide whether the jet count should show the reserves (6 / 6 with a full tank) or the tank's
-  jets alone
 - Gas jet ability gizmo gets apparel tint for some reason when shouldn't
 - Match vanilla instead of VFEP when rolling initial charge costs into welding
 - **English text is not final.** Descriptions and the Workshop page are first drafts; the

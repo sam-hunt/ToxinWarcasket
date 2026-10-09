@@ -7,7 +7,7 @@ namespace ToxinWarcasket;
 // The tox gas tank's gauge, the readout for the whole set's gas: vanilla's Gizmo_SetFuelLevel
 // (the transport pod launcher's) over CompToxTank rather than a CompRefuelable. The bar is the
 // tank's fill and, for the player's wearers, the drag handle sets TargetCharges, the level
-// colonists reload to (Patches/CompApparelReloadable_ToxTank). The colours are the three tones of
+// colonists reload to (Patches/CompApparelReloadable_Reload). The colours are the three tones of
 // the armor texture's tox canisters, so the bar reads as the tank at a glance: the diffuse fills
 // it, the highlight on hover, and the shade marks the target, which vanilla's pale marker would
 // lose against the fill. Gizmo_Slider makes its bar textures on first draw, so CompToxTank keeps
