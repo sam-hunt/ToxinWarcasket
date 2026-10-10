@@ -17,7 +17,7 @@ public class CompProperties_ToxTank : CompProperties_ApparelReloadable
     public float cellsPerCharge = 3f;
 
     // Fewest charges that make a downed or death burst; below this the tank just stays put.
-    public int minBurstCharges = 5;
+    public int minBurstCharges = 10;
 
     // Vent emission rate.
     public float ventChargesPerSecond = 2f;
@@ -27,7 +27,7 @@ public class CompProperties_ToxTank : CompProperties_ApparelReloadable
     // aiCheckInterval ticks, start venting once hostile pawns the gas affects within
     // aiTriggerRadius sum to aiTriggerBodySize, and stop after aiStopAfterTicks without any.
     public int aiCheckInterval = 60;
-    public int aiMinCharges = 10;
+    public int aiMinCharges = 20;
     public float aiTriggerRadius = 4f;
     public float aiTriggerBodySize = 1f;
     public int aiStopAfterTicks = 300;

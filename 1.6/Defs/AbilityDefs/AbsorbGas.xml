@@ -15,8 +15,8 @@
     mouseover ring. durationTime is VEF's own field, so the gizmo's tooltip shows it. radius,
     durationTime and cooldownTime are the defaults of their mod settings.
     - Each charge's worth of gas drawn in (the gas-per-charge mod setting) banks a charge, so
-      what is absorbed is what refills the tank; at the default 3 cells, a saturated disc (37
-      full cells) is 12 charges, a jet and change, so reclaiming a cloud tops the tank up rather
+      what is absorbed is what refills the tank; at the default 1.5 cells, a saturated disc (37
+      full cells) is 24 charges, a jet and change, so reclaiming a cloud tops the tank up rather
       than refilling it.
     - Autocast, off by default, checked every 60 ticks: fires on any gas in the pilot's cell.
       Gas spreads, so a trace there is the near edge of a cloud the disc then reaches into;

@@ -15,7 +15,7 @@ Unlocked by the specialised warcaskets and tox gas research. The full set has 10
 [*][b]Helmet:[/b] the respirator. 80% toxic environment resistance and immunity to tox gas exposure, like a gas mask, plus an ability that clears the air around the pilot into the tank (clears smoke, rot stink, and deadlife dust too!).
 [/list]
 
-Mod settings tune the gas per unit, the tank's capacity and vent rate, the jet's cost, cone, range, and tankless jets, and the absorb's radius, duration, and cooldown.
+Mod settings tune the gas per chemfuel, the tank's capacity and vent rate, the jet's cost, cone, range, and tankless jets, and the absorb's radius, duration, and cooldown.
 
 [hr][/hr]
 [h1]Mod Compatibility[/h1]

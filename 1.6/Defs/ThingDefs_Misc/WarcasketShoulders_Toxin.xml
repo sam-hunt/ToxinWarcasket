@@ -31,7 +31,7 @@
     defaults that is about 133 cells, four times the cone, three rings deep and back to the
     pilot's neighbours, which is the cloud a shot leaves on open ground. halfAngle and range are
     the defaults of their mod settings. Warmup 1 s.
-    - Fuel (ToxinWarcasket.CompJetNozzle): 10 charges from the armor's tank, and nothing else
+    - Fuel (ToxinWarcasket.CompJetNozzle): 20 charges from the armor's tank, and nothing else
       while one is worn; with the tank short the command is disabled with the tank's shortfall.
       Worn without a tank, the nozzle's own two jets are the fuel, each reloaded with those
       charges' 20 chemfuel, so the shoulders stay useful alone; they are a fallback, not a
@@ -110,7 +110,7 @@
         <soundReload>Standard_Reload</soundReload>
         <hotKey>Misc4</hotKey>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-        <tankChargesPerShot>10</tankChargesPerShot>
+        <tankChargesPerShot>20</tankChargesPerShot>
         <jetDescription>Spray a cone of tox gas from the shoulder nozzles toward the target. The gas lands in the inner cone and drifts over the outer area, thinning as it goes. Each jet draws on the warcasket's tank. Without a tank, the nozzles fall back on jets of their own, reloaded with chemfuel.</jetDescription>
       </li>
     </comps>
