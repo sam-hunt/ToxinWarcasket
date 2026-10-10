@@ -16,13 +16,18 @@ public sealed class Tunable
 
     // A row is the label, the slider and the value side by side, as a vanilla SliderLabeled row
     // is, with a gap below it so neighbouring rows read apart, indented so it sits under its
-    // section header (Listing.Indent only moves the cursor and would push the row off the right).
-    // The settings' checkbox rows share the height, gap and indent.
+    // section header (Listing.Indent only moves the cursor and would push the row off the right)
+    // and padded on the right so it does not run up against the scrollbar.
+    // The value column is sized to the widest value a row can show, so the slider runs out to
+    // it and the row ends near the window's edge as the checkbox rows do; every format here is
+    // at most four characters, so "00.00" with the default suffix (as translated) bounds it.
+    // The settings' checkbox rows share the height, gap, indent and pad.
     internal const float RowHeight = 30f;
     internal const float RowGap = 6f;
     internal const float RowIndent = Listing.DefaultIndent;
+    internal const float RowEndPad = Listing.DefaultIndent;
     private const float LabelShare = 0.4f;
-    private const float ValueShare = 0.2f;
+    private const string WidestValue = "00.00";
     private const float SliderPad = 10f;
 
     private readonly string key;
@@ -59,8 +64,10 @@ public sealed class Tunable
     {
         Rect row = listing.GetRect(RowHeight);
         row.xMin += RowIndent;
+        row.xMax -= RowEndPad;
         Rect labelRect = row.LeftPart(LabelShare);
-        Rect valueRect = row.RightPart(ValueShare);
+        float valueWidth = Text.CalcSize(WidestValue + "TXWC_DefaultSuffix".Translate()).x;
+        var valueRect = new Rect(row.xMax - valueWidth, row.y, valueWidth, row.height);
         var sliderRect = new Rect(labelRect.xMax + SliderPad, row.y,
             valueRect.x - labelRect.xMax - 2f * SliderPad, row.height);
 

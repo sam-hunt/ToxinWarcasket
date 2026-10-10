@@ -25,9 +25,9 @@ public class ToxinWarcasketSettings : ModSettings
     // The whitespace above every section header but the first, and below the last row.
     private const float SectionGap = 18f;
 
-    // The armor's CompProperties_ToxTank: cellsPerCharge, maxCharges and ventChargesPerSecond.
-    public readonly Tunable gasPerUnit = new("GasPerUnit", 0.5f, 6f, 0.25f, v => v.ToString("0.##"));
+    // The armor's CompProperties_ToxTank: maxCharges, cellsPerCharge and ventChargesPerSecond.
     public readonly Tunable tankCapacity = new("TankCapacity", 10f, 100f, 5f, v => Mathf.RoundToInt(v).ToString());
+    public readonly Tunable gasPerUnit = new("GasPerUnit", 0.5f, 6f, 0.25f, v => v.ToString("0.##"));
     public readonly Tunable ventRate = new("VentRate", 0.5f, 10f, 0.5f, v => v.ToString("0.#"));
 
     // The shoulders' CompProperties_JetNozzle: tankChargesPerShot and the own jets' maxCharges.
@@ -61,7 +61,7 @@ public class ToxinWarcasketSettings : ModSettings
     public float GasPerCharge => gasPerUnit.Value * GasGrid.MaxGasPerCell;
 
     private IEnumerable<Tunable> All =>
-        [gasPerUnit, tankCapacity, ventRate, jetCost, jetReserve, jetConeWidth, jetRange, absorbRadius, absorbDuration, absorbCooldown];
+        [tankCapacity, gasPerUnit, ventRate, jetCost, jetReserve, jetConeWidth, jetRange, absorbRadius, absorbDuration, absorbCooldown];
 
     public override void ExposeData()
     {
@@ -77,8 +77,8 @@ public class ToxinWarcasketSettings : ModSettings
     {
         if (!TryGetDefs(out Defs defs))
             return;
-        gasPerUnit.DefaultValue = defs.tank.cellsPerCharge;
         tankCapacity.DefaultValue = defs.tank.maxCharges;
+        gasPerUnit.DefaultValue = defs.tank.cellsPerCharge;
         ventRate.DefaultValue = defs.tank.ventChargesPerSecond;
         jetCost.DefaultValue = defs.nozzle.tankChargesPerShot;
         jetReserve.DefaultValue = defs.nozzle.maxCharges;
@@ -94,8 +94,8 @@ public class ToxinWarcasketSettings : ModSettings
     {
         if (!defaultsLoaded || !TryGetDefs(out Defs defs))
             return;
-        defs.tank.cellsPerCharge = gasPerUnit.Value;
         defs.tank.maxCharges = tankCapacity.IntValue;
+        defs.tank.cellsPerCharge = gasPerUnit.Value;
         defs.tank.ventChargesPerSecond = ventRate.Value;
         defs.nozzle.tankChargesPerShot = jetCost.IntValue;
         defs.nozzle.maxCharges = jetReserve.IntValue;
@@ -128,8 +128,8 @@ public class ToxinWarcasketSettings : ModSettings
         var listing = new Listing_Standard { maxOneColumn = true };
         listing.Begin(viewRect);
         SectionHeader(listing, "TXWC_SectionTank", first: true);
-        gasPerUnit.DoRow(listing);
         tankCapacity.DoRow(listing);
+        gasPerUnit.DoRow(listing);
         ventRate.DoRow(listing);
         SectionHeader(listing, "TXWC_SectionJet");
         jetCost.DoRow(listing);
@@ -157,12 +157,13 @@ public class ToxinWarcasketSettings : ModSettings
     }
 
     // A checkbox row laid out as a Tunable row is, the box where a slider row shows its value.
-    // Disabled without Odyssey, which owns the stat. While the box differs from what the patch
-    // applied at startup, the label says a restart is required.
+    // Disabled without Odyssey, which owns the stat, and the label says so; with Odyssey it
+    // always says a change takes a restart, since the patch only reads the box at startup.
     private void DoHazardVacuumRow(Listing_Standard listing)
     {
         Rect row = listing.GetRect(Tunable.RowHeight);
         row.xMin += Tunable.RowIndent;
+        row.xMax -= Tunable.RowEndPad;
         Widgets.DrawHighlightIfMouseover(row);
         TooltipHandler.TipRegion(row, "TXWC_HazardVacuumDesc".Translate());
 
@@ -170,8 +171,8 @@ public class ToxinWarcasketSettings : ModSettings
         string label = "TXWC_HazardVacuum".Translate();
         if (!odyssey)
             label += "TXWC_RequiresOdysseySuffix".Translate();
-        else if (hazardVacuum != PatchOperationHazardVacuum.Applied)
-            label += "TXWC_RestartRequiredSuffix".Translate();
+        else
+            label += "TXWC_RequiresRestartSuffix".Translate();
         Widgets.CheckboxLabeled(row, label, ref hazardVacuum, disabled: !odyssey);
         listing.Gap(Tunable.RowGap);
     }

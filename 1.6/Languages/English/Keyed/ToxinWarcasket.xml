@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
   <TXWC_SettingsCategory>Toxin Warcasket</TXWC_SettingsCategory>
@@ -8,11 +8,11 @@
   <TXWC_SectionAbsorb>Absorb gas</TXWC_SectionAbsorb>
   <TXWC_SectionMisc>Miscellaneous</TXWC_SectionMisc>
 
+  <TXWC_TankCapacity>Tank capacity (units)</TXWC_TankCapacity>
+  <TXWC_TankCapacityDesc>How many units the tank holds, each reloaded with 2 chemfuel. Lowering it below a tank's current fill drops the excess. Default: {0}.</TXWC_TankCapacityDesc>
+
   <TXWC_GasPerUnit>Tox gas per unit (cells)</TXWC_GasPerUnit>
   <TXWC_GasPerUnitDesc>How many cells of tox gas one unit makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks one unit per unit's worth of gas drawn in. A tox pack fills 45 cells. Default: {0}.</TXWC_GasPerUnitDesc>
-
-  <TXWC_TankCapacity>Capacity (units)</TXWC_TankCapacity>
-  <TXWC_TankCapacityDesc>How many units the tank holds, each reloaded with 2 chemfuel. Lowering it below a tank's current fill drops the excess. Default: {0}.</TXWC_TankCapacityDesc>
 
   <TXWC_VentRate>Vent rate (units per second)</TXWC_VentRate>
   <TXWC_VentRateDesc>How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}.</TXWC_VentRateDesc>
@@ -42,7 +42,7 @@
 
   <TXWC_HazardVacuum>Hazard warcaskets resist vacuum</TXWC_HazardVacuum>
   <TXWC_HazardVacuumDesc>Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off.</TXWC_HazardVacuumDesc>
-  <TXWC_RestartRequiredSuffix> (requires a restart)</TXWC_RestartRequiredSuffix>
+  <TXWC_RequiresRestartSuffix> (requires restart)</TXWC_RequiresRestartSuffix>
   <TXWC_RequiresOdysseySuffix> (requires Odyssey)</TXWC_RequiresOdysseySuffix>
 
   <TXWC_DefaultSuffix> (default)</TXWC_DefaultSuffix>
