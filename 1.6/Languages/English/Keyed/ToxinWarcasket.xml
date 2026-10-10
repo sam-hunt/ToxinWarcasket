@@ -6,6 +6,7 @@
   <TXWC_SectionTank>Tox gas tank</TXWC_SectionTank>
   <TXWC_SectionJet>Gas jet</TXWC_SectionJet>
   <TXWC_SectionAbsorb>Absorb gas</TXWC_SectionAbsorb>
+  <TXWC_SectionMisc>Miscellaneous</TXWC_SectionMisc>
 
   <TXWC_GasPerUnit>Tox gas per unit (cells)</TXWC_GasPerUnit>
   <TXWC_GasPerUnitDesc>How many cells of tox gas one unit makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks one unit per unit's worth of gas drawn in. A tox pack fills 45 cells. Default: {0}.</TXWC_GasPerUnitDesc>
@@ -39,7 +40,11 @@
   <TXWC_AbsorbCooldown>Cooldown (hours)</TXWC_AbsorbCooldown>
   <TXWC_AbsorbCooldownDesc>How long the absorb takes to recharge. Default: {0}.</TXWC_AbsorbCooldownDesc>
 
+  <TXWC_HazardVacuum>Hazard warcaskets resist vacuum</TXWC_HazardVacuum>
+  <TXWC_HazardVacuumDesc>Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off.</TXWC_HazardVacuumDesc>
+  <TXWC_RestartRequiredSuffix> (requires a restart)</TXWC_RestartRequiredSuffix>
+  <TXWC_RequiresOdysseySuffix> (requires Odyssey)</TXWC_RequiresOdysseySuffix>
+
   <TXWC_DefaultSuffix> (default)</TXWC_DefaultSuffix>
-  <TXWC_ResetToDefaults>Reset to defaults</TXWC_ResetToDefaults>
 
 </LanguageData>

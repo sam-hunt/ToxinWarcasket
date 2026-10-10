@@ -22,6 +22,9 @@ public class ToxinWarcasketSettings : ModSettings
     private const string ShouldersDefName = "TXWC_WarcasketShoulders_Toxin";
     private const string AbsorbDefName = "TXWC_AbsorbGas";
 
+    // The whitespace above every section header but the first, and below the last row.
+    private const float SectionGap = 18f;
+
     // The armor's CompProperties_ToxTank: cellsPerCharge, maxCharges and ventChargesPerSecond.
     public readonly Tunable gasPerUnit = new("GasPerUnit", 0.5f, 6f, 0.25f, v => v.ToString("0.##"));
     public readonly Tunable tankCapacity = new("TankCapacity", 10f, 100f, 5f, v => Mathf.RoundToInt(v).ToString());
@@ -43,7 +46,15 @@ public class ToxinWarcasketSettings : ModSettings
     public readonly Tunable absorbDuration = new("AbsorbDuration", 1f, 15f, 0.5f, v => v.ToString("0.#"));
     public readonly Tunable absorbCooldown = new("AbsorbCooldown", 0f, 24f, 1f, v => Mathf.RoundToInt(v).ToString());
 
+    // Gives VFEP's hazard warcasket the spacer sets' vacuum resistance under Odyssey. Unlike the
+    // tunables it overrides no field of ours: PatchOperationHazardVacuum reads it while the XML
+    // patches apply (1.6/Patches/HazardVacuumResistance.xml has the rationale), so a change
+    // waits for a restart. Off by default.
+    public bool hazardVacuum;
+
     private bool defaultsLoaded;
+    private Vector2 scrollPosition;
+    private float contentHeight;
 
     // Gas units (GasGrid.MaxGasPerCell to a full cell) one tank charge makes, wherever the set
     // spends or banks one: the vent, the bursts, the jet from the tank or its reserve, the absorb.
@@ -57,6 +68,7 @@ public class ToxinWarcasketSettings : ModSettings
         base.ExposeData();
         foreach (Tunable tunable in All)
             tunable.ExposeData();
+        Scribe_Values.Look(ref hazardVacuum, "HazardVacuum");
     }
 
     // Reads the def-backed defaults before the first ApplyToDefs overwrites them; defs must be
@@ -96,15 +108,25 @@ public class ToxinWarcasketSettings : ModSettings
     }
 
     // One row per tunable under a header per piece: the tank (with the gas yield every piece
-    // shares), the shoulders' jet, the helmet's absorb, with a reset button below. Sections are
-    // set apart by whitespace and a medium-font header rather than rules, which read as more
-    // sliders, and the rows sit indented under their header.
+    // shares), the shoulders' jet, the helmet's absorb, then the miscellaneous toggles, with a
+    // reset button below. Sections are set apart by whitespace and a medium-font header rather
+    // than rules, which read as more sliders, and the rows sit indented under their header; the
+    // last section closes on the same gap so the list does not end flush on its last row. The
+    // sections outgrow the window's height, so they scroll, sized from the previous frame's
+    // listing height; the scrollbar only takes its width once it is needed. maxOneColumn keeps
+    // the listing growing downward: past its rect's height it would start a new column off to
+    // the right, outside the window, and never report the height the scroll view needs.
     public void DoWindowContents(Rect inRect)
     {
         const float buttonHeight = 30f;
         const float buttonWidth = 200f;
-        var listing = new Listing_Standard();
-        listing.Begin(new Rect(inRect.x, inRect.y, inRect.width, inRect.height - buttonHeight - Listing.DefaultGap));
+        const float scrollbarWidth = 16f;
+        var outRect = new Rect(inRect.x, inRect.y, inRect.width, inRect.height - buttonHeight - Listing.DefaultGap);
+        float viewWidth = contentHeight > outRect.height ? outRect.width - scrollbarWidth : outRect.width;
+        var viewRect = new Rect(0f, 0f, viewWidth, Mathf.Max(contentHeight, outRect.height));
+        Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
+        var listing = new Listing_Standard { maxOneColumn = true };
+        listing.Begin(viewRect);
         SectionHeader(listing, "TXWC_SectionTank", first: true);
         gasPerUnit.DoRow(listing);
         tankCapacity.DoRow(listing);
@@ -118,22 +140,47 @@ public class ToxinWarcasketSettings : ModSettings
         absorbRadius.DoRow(listing);
         absorbDuration.DoRow(listing);
         absorbCooldown.DoRow(listing);
+        SectionHeader(listing, "TXWC_SectionMisc");
+        DoHazardVacuumRow(listing);
+        listing.Gap(SectionGap);
+        contentHeight = listing.CurHeight;
         listing.End();
+        Widgets.EndScrollView();
 
         if (Widgets.ButtonText(new Rect(inRect.x, inRect.yMax - buttonHeight, buttonWidth, buttonHeight),
-                "TXWC_ResetToDefaults".Translate()))
+                "RestoreToDefaultSettings".Translate()))
         {
             foreach (Tunable tunable in All)
                 tunable.Reset();
+            hazardVacuum = false;
         }
+    }
+
+    // A checkbox row laid out as a Tunable row is, the box where a slider row shows its value.
+    // Disabled without Odyssey, which owns the stat. While the box differs from what the patch
+    // applied at startup, the label says a restart is required.
+    private void DoHazardVacuumRow(Listing_Standard listing)
+    {
+        Rect row = listing.GetRect(Tunable.RowHeight);
+        row.xMin += Tunable.RowIndent;
+        Widgets.DrawHighlightIfMouseover(row);
+        TooltipHandler.TipRegion(row, "TXWC_HazardVacuumDesc".Translate());
+
+        bool odyssey = ModsConfig.OdysseyActive;
+        string label = "TXWC_HazardVacuum".Translate();
+        if (!odyssey)
+            label += "TXWC_RequiresOdysseySuffix".Translate();
+        else if (hazardVacuum != PatchOperationHazardVacuum.Applied)
+            label += "TXWC_RestartRequiredSuffix".Translate();
+        Widgets.CheckboxLabeled(row, label, ref hazardVacuum, disabled: !odyssey);
+        listing.Gap(Tunable.RowGap);
     }
 
     private static void SectionHeader(Listing_Standard listing, string key, bool first = false)
     {
-        const float sectionGap = 18f;
         const float headerGap = 4f;
         if (!first)
-            listing.Gap(sectionGap);
+            listing.Gap(SectionGap);
         GameFont font = Text.Font;
         Text.Font = GameFont.Medium;
         listing.Label(key.Translate());

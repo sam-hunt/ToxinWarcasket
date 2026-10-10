@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!--
+    Optional, off by default: the hazard vacuum setting gives VFEP's hazard warcasket the vacuum
+    resistance of VFEP's spacer (10th generation) sets, a step above its own tier, to set the two
+    7th-gen environment sets further apart under Odyssey. The Hazard is the all-rounder (fire,
+    heat, cold, toxins, psychic) and the Toxin the tox gas specialist; without this, neither
+    resists vacuum, as no 7th-gen set does. PatchOperationHazardVacuum skips the whole patch
+    while the setting is off or Odyssey is inactive.
+
+    Values per piece, as the spacer sets carry them:
+    - VFEP alone: armor 0.2, shoulders 0.1, helmet 0.7, a 1.0 set.
+    - Vanilla Gravship Expanded (chapter 1): its ArmorVacuumResistancePatch.xml lowers the
+      spacer armors to 0.22 and helmets to 0.65 by defName, shoulders left at 0.1, so no suit
+      reaches 1.0 without an oxygen source; the hazard takes those, matched by package id.
+      An oxygen pack (VGE chapter 2, active from a base 0.12) then lifts it to 1.0 as it does
+      the spacer sets.
+    VGE's patch never names the hazard defs, so the two do not depend on load order. Any
+    VacuumResistance already on the hazard (a future VFEP value, or a mod loaded before this
+    one) is removed first, so the values below replace it rather than duplicate the stat.
+
+    Save Our Ship 2: VFEP's own SOS2Patch.xml gives the hazard armor and helmet the EVA tag and
+    Insulation_Cold 100. SOS2's vacuum survival runs on its own decompression and hypoxia
+    stats, not VacuumResistance, and this patch touches neither those nor the EVA tag.
+  -->
+  <Operation Class="ToxinWarcasket.PatchOperationHazardVacuum">
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <success>Always</success>
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_Warcasket_Hazard" or defName = "VFEP_WarcasketShoulders_Hazard" or defName = "VFEP_WarcasketHelmet_Hazard"]/equippedStatOffsets/VacuumResistance</xpath>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_WarcasketShoulders_Hazard"]/equippedStatOffsets</xpath>
+          <value>
+            <VacuumResistance>0.1</VacuumResistance>
+          </value>
+        </li>
+        <li Class="ToxinWarcasket.PatchOperationModActive">
+          <packageIds>
+            <li>vanillaexpanded.gravship</li>
+          </packageIds>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_Warcasket_Hazard"]/equippedStatOffsets</xpath>
+                <value>
+                  <VacuumResistance>0.22</VacuumResistance>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_WarcasketHelmet_Hazard"]/equippedStatOffsets</xpath>
+                <value>
+                  <VacuumResistance>0.65</VacuumResistance>
+                </value>
+              </li>
+            </operations>
+          </match>
+          <nomatch Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_Warcasket_Hazard"]/equippedStatOffsets</xpath>
+                <value>
+                  <VacuumResistance>0.2</VacuumResistance>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_WarcasketHelmet_Hazard"]/equippedStatOffsets</xpath>
+                <value>
+                  <VacuumResistance>0.7</VacuumResistance>
+                </value>
+              </li>
+            </operations>
+          </nomatch>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

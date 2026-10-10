@@ -17,9 +17,10 @@ public sealed class Tunable
     // A row is the label, the slider and the value side by side, as a vanilla SliderLabeled row
     // is, with a gap below it so neighbouring rows read apart, indented so it sits under its
     // section header (Listing.Indent only moves the cursor and would push the row off the right).
-    private const float RowHeight = 30f;
-    private const float RowGap = 6f;
-    private const float RowIndent = Listing.DefaultIndent;
+    // The settings' checkbox rows share the height, gap and indent.
+    internal const float RowHeight = 30f;
+    internal const float RowGap = 6f;
+    internal const float RowIndent = Listing.DefaultIndent;
     private const float LabelShare = 0.4f;
     private const float ValueShare = 0.2f;
     private const float SliderPad = 10f;

@@ -171,7 +171,10 @@ TODOs.md         - Scoping notes for the feature work that has not landed yet
   read through the settings object rather than a worn comp is the gas-per-charge yield (the
   tank comp's `cellsPerCharge`): every emitter and the absorb's banking rate take it from
   `ToxinWarcasketSettings.GasPerCharge`, because the shoulders' reserve jet needs it with no
-  tank worn.
+  tank worn. A setting that has to change XML no def field covers (another mod's def, a node
+  that is absent) instead gates a patch through a custom `PatchOperation` reading the settings,
+  which the `Mod` constructor has loaded before patches apply, and takes effect at the next
+  restart (`Source/1.6/PatchOperations/`; the hazard vacuum toggle is the model).
 - **No em dashes in player-facing text** (def labels/descriptions, `Keyed/`, `About.xml`,
   `.steamworkshop/`); reflow the sentence instead. This file, code comments and def comments are
   unaffected.
@@ -200,7 +203,9 @@ and references to Biotech defs need no `MayRequire`.
   (Defs, and the DefInjected targeting them) and root-level `Mods/<Mod Name>/` for
   version-independent content (art). The def's `MayRequire` becomes redundant and should be
   dropped when it moves. Gate on the package id (`ludeon.rimworld.odyssey`), never
-  `PatchOperationFindMod` (matches by display name). The one deliberate exception is a patch
+  `PatchOperationFindMod` (matches by display name); inside a patch file that must not split
+  across roots, `ToxinWarcasket.PatchOperationModActive` is the package-id equivalent (patches
+  from different roots apply in an order that is not LoadFolders order). The one deliberate exception is a patch
   that mirrors a VFEP patch: `1.6/Patches/SOS2Patch.xml` copies VFEP's own display-name gate so
   the Toxin and VFEP's sets flip to EVA-rated under exactly the same condition.
 - Compat roots must sit BESIDE the well-known folders, never inside them: anything under
