@@ -12,7 +12,7 @@ Unlocked by the specialised warcaskets and tox gas research. The full set has 10
 [list]
 [*][b]Torso:[/b] the tank, nearly three tox packs of gas, refilled with chemfuel like a pack. Toggle the vent to empty it around the pilot as a growing cloud, and again to keep the rest. 25% toxic environment resistance.
 [*][b]Shoulder pads:[/b] the nozzles. Each gas jet sprays a cone from the tank, four to a full tank, or from two jets of their own without one. The targeter shows where the gas lands and how far it drifts. 15% toxic environment resistance.
-[*][b]Helmet:[/b] the respirator. 80% toxic environment resistance and immunity to tox gas exposure, like a gas mask, plus an ability that clears the air around the pilot into the tank (clears smoke, rotstink, and deadlift dust too!).
+[*][b]Helmet:[/b] the respirator. 80% toxic environment resistance and immunity to tox gas exposure, like a gas mask, plus an ability that clears the air around the pilot into the tank (clears smoke, rot stink, and deadlife dust too!).
 [/list]
 
 Mod settings tune the gas per unit, the tank's capacity and vent rate, the jet's cost, cone, range, and tankless jets, and the absorb's radius, duration, and cooldown.
