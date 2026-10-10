@@ -135,7 +135,8 @@ under the corpse, chemical slime, spent acid and bile splashed around it.
 - **Trigger:** `ThingComp.Notify_WearerDied`, called from `Apparel.Notify_PawnKilled`.
   `Pawn.Kill` runs `PreDeathPawnModifications` (which notifies apparel) **before**
   `DeSpawnOrDeselect`, so `Wearer.Position` and `Wearer.Map` are still valid. Skip if unspawned
-  (caravans, transporters, holding containers).
+  (caravans, transporters, holding containers) or anesthetized: a death in surgery leaves no
+  gas, pollution or filth, as vanilla's tox pack stops its release when its wearer dies.
 - **Burst:** if the tank still holds 5 or more charges (killed outright rather than after a
   downed burst), fire the downed burst first.
 - **Pollution:** every cell within `ruptureRadius` 2.0 where `map.pollutionGrid.CanPollute(cell)`
@@ -373,7 +374,8 @@ the abilities) have landed. Where each part lives:
   pilot in a lone armor lies in their own full-tank cloud taking about 85% buildup. That is the
   cost of not wearing the helmet; check in game that it reads as fair, since a downed pawn cannot
   crawl out.
-- Downed by anesthetic (any surgery, VFEP removal): no burst.
+- Downed by anesthetic (any surgery, VFEP removal): no burst. Dies on the table: nothing, no
+  rupture either. Dies after the anesthetic wears off: full burst + pollution + filth.
 - Downed, rescued, tank refilled, downed again: second burst. Downed again with fewer than 5
   charges: nothing.
 - Killed outright: burst + pollution + filth. Killed while downed after a burst: pollution and

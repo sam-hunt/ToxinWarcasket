@@ -26,9 +26,10 @@ namespace ToxinWarcasket;
 //  - The gauge (Gizmo_ToxTank) and its reload target, which the reload patches
 //    (Patches/CompApparelReloadable_Reload) read in place of the tank's size.
 //
-// Bursts skip an anaesthetized wearer, so no surgery (VFEP's warcasket removal among them)
-// gasses the operating room, alive or dead. Every emitter skips an unspawned wearer (caravans,
-// transporters, holding platforms).
+// Bursts and the rupture skip an anaesthetized wearer, so no surgery (VFEP's warcasket removal
+// among them) gasses or fouls the operating room, alive or dead: vanilla's tox pack likewise
+// stops its release when the wearer dies (CompReleaseGas.Notify_WearerDied). Every emitter
+// skips an unspawned wearer (caravans, transporters, holding platforms).
 public class CompToxTank : CompApparelReloadable
 {
     private bool venting;
@@ -159,7 +160,7 @@ public class CompToxTank : CompApparelReloadable
         base.Notify_WearerDied();
         SetVenting(false);
         Pawn wearer = Wearer;
-        if (wearer == null || !wearer.Spawned)
+        if (wearer == null || !wearer.Spawned || Anaesthetized(wearer))
             return;
         TryBurst(wearer);
         Rupture(wearer.Position, wearer.Map);
@@ -223,7 +224,7 @@ public class CompToxTank : CompApparelReloadable
     {
         if (!wearer.Spawned || remainingCharges < Props.minBurstCharges)
             return;
-        if (wearer.health.hediffSet.HasHediff(HediffDefOf.Anesthetic))
+        if (Anaesthetized(wearer))
             return;
         int cells = Mathf.Max(1, Mathf.RoundToInt(remainingCharges * GasPerCharge / GasGrid.MaxGasPerCell));
         float radius = GenRadial.RadiusOfNumCells(cells);
@@ -231,6 +232,9 @@ public class CompToxTank : CompApparelReloadable
             postExplosionGasType: GasType.ToxGas, postExplosionGasAmount: GasGrid.MaxGasPerCell);
         Empty();
     }
+
+    private static bool Anaesthetized(Pawn wearer) =>
+        wearer.health.hediffSet.HasHediff(HediffDefOf.Anesthetic);
 
     private void Rupture(IntVec3 center, Map map)
     {

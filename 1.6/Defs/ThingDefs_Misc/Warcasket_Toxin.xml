@@ -37,7 +37,8 @@
     - Death rupture: a dead wearer bursts what is left, then pollutes every cell within 2.0 (13
       cells; 1.9 would be 9) and splashes filth over them: a blast mark under the body, 70%
       per cell for slime, spent acid or bile, 30% for a second kind on top. Dead raiders in the
-      set do this on the player's map, by design.
+      set do this on the player's map, by design. An anaesthetized wearer neither bursts nor
+      ruptures, so a death in surgery leaves the room clean.
     - Vent (TXWC_VentTank, a toggle): two charges a second, 5% of the tank, so a full tank is 20 s
       of vent, half again the pack's release time, and a toggle-off wastes at most one charge.
       GasGrid.AddGas floods a full cell's excess outward, so the cloud grows from the pilot and
