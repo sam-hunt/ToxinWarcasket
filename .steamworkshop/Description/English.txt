@@ -4,7 +4,7 @@ A new chemical-warfare warcasket for [url=https://steamcommunity.com/sharedfiles
 
 [h1]About[/h1]
 
-The Toxin is a 7th generation warcasket built on VFE Pirates' Cataphract chassis: Aerial-grade plating on a slightly lighter frame, and three pieces sharing one tox gas tank. Flood a position with gas, breathe it unharmed, and recover a portion when the work is done. Requires Biotech.
+The Toxin is a 7th generation warcasket built on VFE Pirates' Cataphract chassis: Aerial-grade plating on a slightly lighter frame, and three pieces sharing one tox gas tank. Flood a position with gas, storm it unharmed, and recover a portion by clearing the air after. Requires Biotech.
 
 [hr][/hr]
 [h1]The Set[/h1]
@@ -34,10 +34,7 @@ Mod settings tune the gas per unit, the tank's capacity and vent rate, the jet's
 A: Yes. Tox gas only exists with Biotech, and the whole set integrates with it.
 
 [b]Q: How is it different from VFE Pirates' Hazard set?[/b]
-A: The Hazard is the all-rounder: lighter, fireproof, and immune to toxic buildup and psychic effects, with thinner plating. The Toxin is built for tox gas alone, breathing it unharmed and spreading its own, and pays in weight for Aerial-grade plating and its tank. Venom and fire still hurt it.
-
-[b]Q: Does it work on mechanoids?[/b]
-A: No. Mechanoids are immune to tox gas.
+A: The Hazard is the all-rounder: lighter, fireproof, and immune to toxic buildup and psychic effects, with thinner sharp/blunt plating. The Toxin is built for tox gas alone, in both offense and defense. It pays in weight for Aerial-grade plating and its tank, while still being more vulnerable to venom, fire, extreme temperatures etc.
 
 [b]Q: How do I get it?[/b]
 A: Research VFE Pirates' "Specialised Warcaskets" and Biotech's "Tox Gas" projects, then weld it on at the warcasket foundry like any other set. Mix and match the pieces with VFE Pirates' own sets as you please.
