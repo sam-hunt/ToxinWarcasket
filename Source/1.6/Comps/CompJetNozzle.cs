@@ -156,41 +156,59 @@ public class CompJetNozzle : CompApparelReloadable
     // The hostile at the heart of the densest group the gas would affect (GasUtility counts only
     // humanlikes without exposure immunity), skipping any group with an affected pawn of the
     // wearer's own faction in it, and anyone inside the cone's start, where no gas lands.
+    // Cheapest tests first: the line of sight is cast only for a group that would beat the best
+    // so far.
     private Pawn BestTarget(Pawn wearer, Verb jet)
     {
         List<IAttackTarget> potential = wearer.Map.attackTargetsCache.GetPotentialTargetsFor(wearer);
         float range = jet.EffectiveRange;
+        float rangeSq = range * range;
         float start = (jet.verbProps as VerbProperties_SprayGas)?.coneStart ?? 0f;
         float startSq = start * start;
-        float clusterRadiusSq = Props.aiClusterRadius * Props.aiClusterRadius;
         Pawn best = null;
         float bestScore = Props.aiTriggerBodySize - 0.001f;
         foreach (IAttackTarget candidate in potential)
         {
-            if (candidate.Thing is not Pawn pawn || !Affected(pawn, wearer)
-                || !pawn.Position.InHorDistOf(wearer.Position, range)
-                || (pawn.Position - wearer.Position).LengthHorizontalSquared < startSq
-                || !jet.CanHitTarget(pawn))
+            if (candidate.Thing is not Pawn pawn)
                 continue;
-            float score = 0f;
-            bool allyNear = false;
-            foreach (Pawn other in wearer.Map.mapPawns.AllPawnsSpawned)
-            {
-                if (other == wearer || other.Downed || !GasUtility.IsAffectedByExposure(other)
-                    || (other.Position - pawn.Position).LengthHorizontalSquared > clusterRadiusSq)
-                    continue;
-                if (other.HostileTo(wearer))
-                    score += other.BodySize;
-                else if (other.Faction == wearer.Faction)
-                    allyNear = true;
-            }
-            if (!allyNear && score > bestScore)
+            int distSq = (pawn.Position - wearer.Position).LengthHorizontalSquared;
+            if (distSq > rangeSq || distSq < startSq || !Affected(pawn, wearer))
+                continue;
+            float score = ClusterScore(wearer, pawn.Position);
+            if (score > bestScore && jet.CanHitTarget(pawn))
             {
                 best = pawn;
                 bestScore = score;
             }
         }
         return best;
+    }
+
+    // The body size of the hostiles within aiClusterRadius of center that the gas would affect,
+    // or -1 once an affected pawn of the wearer's own faction turns up among them. Read from the
+    // cells' thing lists, so the cost is the disc's, not the map's pawn count.
+    private float ClusterScore(Pawn wearer, IntVec3 center)
+    {
+        Map map = wearer.Map;
+        int cells = GenRadial.NumCellsInRadius(Props.aiClusterRadius);
+        float score = 0f;
+        for (int i = 0; i < cells; i++)
+        {
+            IntVec3 cell = center + GenRadial.RadialPattern[i];
+            if (!cell.InBounds(map))
+                continue;
+            foreach (Thing thing in cell.GetThingList(map))
+            {
+                if (thing is not Pawn other || other == wearer || other.Downed
+                    || !GasUtility.IsAffectedByExposure(other))
+                    continue;
+                if (other.HostileTo(wearer))
+                    score += other.BodySize;
+                else if (other.Faction == wearer.Faction)
+                    return -1f;
+            }
+        }
+        return score;
     }
 
     private static bool Affected(Pawn pawn, Pawn wearer) =>

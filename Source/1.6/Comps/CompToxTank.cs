@@ -267,9 +267,12 @@ public class CompToxTank : CompApparelReloadable
 
     // The vanilla AI never toggles an apparel ability, so raiders decide here (player wearers
     // never reach this). Venting state is shared with the player toggle; a colonist who loses
-    // player control mid-vent is handed to this check and stops once no target is near.
+    // player control mid-vent is handed to this check and stops once no target is near. A closed
+    // tank too low to open skips the scan.
     private void AIVentCheck(Pawn wearer)
     {
+        if (!venting && remainingCharges < Props.aiMinCharges)
+            return;
         bool targets = wearer.Awake() && !wearer.InMentalState && HostilesInReach(wearer);
         if (venting)
         {
@@ -278,7 +281,7 @@ public class CompToxTank : CompApparelReloadable
             else if ((aiTicksWithoutTargets += Props.aiCheckInterval) >= Props.aiStopAfterTicks)
                 SetVenting(false);
         }
-        else if (targets && remainingCharges >= Props.aiMinCharges)
+        else if (targets)
         {
             SetVenting(true);
         }
