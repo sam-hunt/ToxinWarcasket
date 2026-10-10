@@ -2,8 +2,6 @@
 
 ## Content
 
-- raider vent and jet AI (how does `CompAIUsablePack` work?)
-- Match vanilla instead of VFEP when rolling initial charge costs into welding?
 - **English text is not final.** should be reviewed before pre-release translation
 - Perf profiling pass
 
