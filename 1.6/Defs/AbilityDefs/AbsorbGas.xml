@@ -31,7 +31,7 @@
   <VEF.Abilities.AbilityDef>
     <defName>TXWC_AbsorbGas</defName>
     <label>absorb gas</label>
-    <description>Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn.</description>
+    <description>Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas, and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn.</description>
     <abilityClass>ToxinWarcasket.Ability_AbsorbGas</abilityClass>
     <targetMode>Self</targetMode>
     <iconPath>Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack</iconPath>

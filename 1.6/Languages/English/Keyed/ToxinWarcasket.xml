@@ -8,19 +8,19 @@
   <TXWC_SectionAbsorb>Absorb gas</TXWC_SectionAbsorb>
 
   <TXWC_GasPerUnit>Tox gas per unit (cells)</TXWC_GasPerUnit>
-  <TXWC_GasPerUnitDesc>How many cells of tox gas one unit from the tank makes, wherever it is spent: the vent, the burst when the pilot goes down or dies, and the gas jet, whether from the tank or from the nozzles' own jets. The helmet's absorb banks a unit for every unit's worth of gas it draws in. A tox pack fills 45 cells. Default: {0}.</TXWC_GasPerUnitDesc>
+  <TXWC_GasPerUnitDesc>How many cells of tox gas one unit makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks one unit per unit's worth of gas drawn in. A tox pack fills 45 cells. Default: {0}.</TXWC_GasPerUnitDesc>
 
   <TXWC_TankCapacity>Capacity (units)</TXWC_TankCapacity>
-  <TXWC_TankCapacityDesc>How many units the warcasket's tank holds. Each unit is reloaded with 2 chemfuel. A tank holding more than a lowered capacity loses the excess. Default: {0}.</TXWC_TankCapacityDesc>
+  <TXWC_TankCapacityDesc>How many units the tank holds, each reloaded with 2 chemfuel. Lowering it below a tank's current fill drops the excess. Default: {0}.</TXWC_TankCapacityDesc>
 
   <TXWC_VentRate>Vent rate (units per second)</TXWC_VentRate>
-  <TXWC_VentRateDesc>How fast the vent empties the tank. A faster vent spreads the same gas wider and it clears sooner. Default: {0}.</TXWC_VentRateDesc>
+  <TXWC_VentRateDesc>How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}.</TXWC_VentRateDesc>
 
   <TXWC_JetCost>Cost (units)</TXWC_JetCost>
-  <TXWC_JetCostDesc>How many units each gas jet draws from the tank. Without a tank, one of the nozzles' own jets makes the same gas and reloads with the same chemfuel. Default: {0}.</TXWC_JetCostDesc>
+  <TXWC_JetCostDesc>How many units each gas jet draws from the tank. Without a tank, one of the nozzles' own jets makes the same gas for the same chemfuel. Default: {0}.</TXWC_JetCostDesc>
 
   <TXWC_JetReserve>Jets without a tank</TXWC_JetReserve>
-  <TXWC_JetReserveDesc>How many jets the shoulder nozzles hold on their own, for a pilot wearing them without the tank. They reload with chemfuel, and are neither spent nor reloaded while a tank is worn. Default: {0}.</TXWC_JetReserveDesc>
+  <TXWC_JetReserveDesc>How many jets the nozzles hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}.</TXWC_JetReserveDesc>
 
   <TXWC_JetTankLow>Needs {COUNT} {CHARGENOUN_plural} in the tank.</TXWC_JetTankLow>
 
@@ -31,13 +31,13 @@
   <TXWC_JetRangeDesc>How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}.</TXWC_JetRangeDesc>
 
   <TXWC_AbsorbRadius>Radius (cells)</TXWC_AbsorbRadius>
-  <TXWC_AbsorbRadiusDesc>How far around the pilot the helmet's absorb draws gas in. Default: {0}.</TXWC_AbsorbRadiusDesc>
+  <TXWC_AbsorbRadiusDesc>How far around the pilot the absorb draws gas in. Default: {0}.</TXWC_AbsorbRadiusDesc>
 
   <TXWC_AbsorbDuration>Duration (seconds)</TXWC_AbsorbDuration>
   <TXWC_AbsorbDurationDesc>How long each absorb keeps drawing gas in. Default: {0}.</TXWC_AbsorbDurationDesc>
 
   <TXWC_AbsorbCooldown>Cooldown (hours)</TXWC_AbsorbCooldown>
-  <TXWC_AbsorbCooldownDesc>How long the helmet's absorb must recharge before it can be used again. Default: {0}.</TXWC_AbsorbCooldownDesc>
+  <TXWC_AbsorbCooldownDesc>How long the absorb takes to recharge. Default: {0}.</TXWC_AbsorbCooldownDesc>
 
   <TXWC_DefaultSuffix> (default)</TXWC_DefaultSuffix>
   <TXWC_ResetToDefaults>Reset to defaults</TXWC_ResetToDefaults>

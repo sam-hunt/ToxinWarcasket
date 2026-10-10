@@ -8,15 +8,15 @@ The Toxin is a 7th generation warcasket that rebuilds VFE Pirates' Cataphract ch
 
 [hr][/hr]
 [h2]The Set[/h2]
-Plating on par with the Aerial in all three pieces at a 7th generation price, unlocked by specialised warcaskets plus tox gas research. The full set has 100% toxic environment resistance: tox gas, fallout and pollution do nothing to it.
+Plating on par with the Aerial in all three pieces at a 7th generation price, unlocked by specialised warcaskets plus tox gas research. The full set has 100% toxic environment resistance: tox gas, toxic fallout, and pollution do nothing to it.
 [list]
 [*][b]Torso:[/b] the tox gas tank, close to three tox packs' worth of gas, refilled with chemfuel like a pack. Toggle the vent to empty it around the pilot as a growing cloud, and again to keep what is left. 25% toxic environment resistance.
 [*][b]Shoulder pads:[/b] a gas jet that sprays a cone of tox gas from the tank, four to a full tank, or from two jets of its own when worn without the tank. The targeter shows both where the gas lands and how far it will drift. 15% toxic environment resistance.
-[*][b]Helmet:[/b] the respirator. 80% toxic environment resistance and immunity to the tox gas debuff, like a gas mask, plus an ability that clears the air around the pilot and banks it in the tank.
+[*][b]Helmet:[/b] the respirator. 80% toxic environment resistance and immunity to tox gas exposure, like a gas mask, plus an ability that clears the air around the pilot and banks it in the tank.
 [*][b]Downed or dead:[/b] a downed pilot bursts whatever is left in the tank; a dead one also pollutes the ground around the body.
 [/list]
 
-Mod settings tune how much gas each unit makes, the tank's size, the vent's rate, the gas jet's cost, cone, range and jets without a tank, and the absorb's radius and duration.
+Mod settings tune how much gas each unit makes, the tank's size, the vent's rate, the gas jet's cost, cone, range, and jets without a tank, and the absorb's radius and duration.
 
 [hr][/hr]
 [h1]Mod Compatibility[/h1]
@@ -35,7 +35,7 @@ Mod settings tune how much gas each unit makes, the tank's size, the vent's rate
 A: Yes. Tox gas and pollution only exist with Biotech, and every part of the set either makes or filters them.
 
 [b]Q: How is it different from VFE Pirates' Hazard set?[/b]
-A: The Hazard resists toxins that hit it. The Toxin breathes poisoned air: tox gas, fallout and pollution do nothing to the full set, but venom and toxic needles still do, and it brings its own cloud.
+A: The Hazard resists toxins that hit it. The Toxin breathes poisoned air: tox gas, toxic fallout, and pollution do nothing to the full set, but venom and toxic needles still do, and it brings its own cloud.
 
 [b]Q: Does it work on mechanoids?[/b]
 A: No. Mechanoids are immune to tox gas.
