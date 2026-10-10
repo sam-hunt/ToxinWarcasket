@@ -12,7 +12,7 @@ classes live in `Source/1.6/Patches/`).
 
 **Key technologies:** C# (.NET Framework 4.7.2), Harmony, RimWorld modding API, XML defs.
 
-**Def prefix:** `TXWC_`. A 7th-generation (Specialised) set on the Cataphract's plating; each
+**Def prefix:** `TXWC_`. A 7th-generation (Specialised) set on the Cataphract's chassis; each
 def's header carries its tuning rationale. `TODOs.md` holds the scoping notes for what has not
 landed; the design of the tox gas mechanics is `Docs/Research/ABILITIES_SPEC.md`.
 

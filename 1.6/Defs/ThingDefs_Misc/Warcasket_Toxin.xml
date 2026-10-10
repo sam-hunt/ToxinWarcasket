@@ -7,8 +7,14 @@
 
     Tier: VFEP's 7th generation (Specialised), beside the Hazard. The set's identity is three
     pieces sharing one gas supply, VFEP's 7th-gen "work better as a set", so it takes that
-    tier's research, plasteel and tags while keeping the Cataphract's plating, Mass and MoveSpeed
-    (Sharp 1.56 / Blunt 0.65 / Heat 0.78; the Hazard likewise trades plating for function).
+    tier's research, plasteel and tags. Every other 7th-gen set pairs its function with a stat
+    gain over the set it grew from (the Hazard trades plating for broad environmental immunity),
+    so the Toxin takes the Aerial's plating over the Cataphract's, Sharp 1.65 / Blunt 0.72 /
+    Heat 0.86 (also the Shock's Sharp and Heat), in all three pieces. Its gas does nothing to
+    mechanoids, so against them the plating is all the set brings. It sheds a little of the
+    chassis's weight: 108 kg and MoveSpeed -1.25 for the set (armor 70 / -0.80, shoulders
+    30 / -0.30, helmet 8 / -0.15) against the Cataphract's 118 and -1.35, still second only to
+    the Barrage, since the slow advance inside its own cloud is the set's identity.
     - researchPrerequisites: VFEP_SpecialisedWarcaskets plus Biotech's ToxGas (the tox pack's
       project). BuildableDef.IsResearchFinished requires every entry and VFEP's foundry filters
       its menu with it. Biotech is a hard dependency (About.xml), so ToxGas needs no MayRequire.
@@ -52,15 +58,18 @@
       about 165 and is gone after 80 s. Raiders vent on their own once hostile humanlikes of
       body size 1 are within 4 cells and the tank holds 10+.
 
-    Toxin stats, environment only, all three pieces: ToxicEnvironmentResistance 0.15 here, 0.15
-    on the shoulders, 0.8 on the helmet (the gas mask's value), summing to 1.1 against the stat's
+    Toxin stats, environment only, all three pieces: ToxicEnvironmentResistance 0.25 here, 0.15
+    on the shoulders, 0.8 on the helmet (the gas mask's value), summing to 1.2 against the stat's
     max of 1.0. ToxicUtility.DoPawnToxicDamage multiplies by (1 - ToxicEnvironmentResistance) for
     tox gas, fallout and polluted terrain, so the full set takes no buildup from any of them. The
-    overshoot is deliberate: ThoughtWorker_NoxiousHaze and HediffComp_ImmunizableToxic test the
-    stat against exactly 1, and offsets aimed at exactly 1 (0.8 + 0.1 + 0.1) can sum to
-    0.99999994 in floats and miss both. No ToxicResistance: direct toxins (toxic needles, venom)
-    still bite. That is the split from the Hazard, whose helmet resists toxins that hit it but
-    not the ToxGasExposure debuff the Toxin helmet is immune to.
+    armor's share is above the shoulders' so the tank piece stands better alone: mixed with
+    another set's helmet and shoulders, it still cuts a quarter of the buildup the pilot takes
+    from its own vent and downed burst. The overshoot is deliberate: ThoughtWorker_NoxiousHaze
+    and HediffComp_ImmunizableToxic test the stat against exactly 1, and offsets aimed at
+    exactly 1 (0.8 + 0.1 + 0.1) can sum to 0.99999994 in floats and miss both. No
+    ToxicResistance: direct toxins (toxic needles, venom) still bite. That is the split from the
+    Hazard, whose helmet resists toxins that hit it but not the ToxGasExposure debuff the Toxin
+    helmet is immune to.
 
     Art: Textures/Things/Pawn/Warcasketlike/WarcasketToxin/, laid out as VFEP's sets are. The
     worn graphic is Graphic_Multi (the _north/_east/_south facings); the item icon is the
@@ -91,17 +100,17 @@
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <statBases>
-      <Mass>75</Mass>
-      <ArmorRating_Sharp>1.56</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.78</ArmorRating_Heat>
+      <Mass>70</Mass>
+      <ArmorRating_Sharp>1.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.72</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.86</ArmorRating_Heat>
       <Insulation_Cold>43</Insulation_Cold>
       <Insulation_Heat>14</Insulation_Heat>
       <EquipDelay>1</EquipDelay>
     </statBases>
     <equippedStatOffsets>
-      <MoveSpeed>-0.85</MoveSpeed>
-      <ToxicEnvironmentResistance>0.15</ToxicEnvironmentResistance>
+      <MoveSpeed>-0.80</MoveSpeed>
+      <ToxicEnvironmentResistance>0.25</ToxicEnvironmentResistance>
       <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.3</SlaveSuppressionOffset>
     </equippedStatOffsets>
     <costList>

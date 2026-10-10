@@ -3,9 +3,9 @@
   <!--
     Templated from VFEP's VFEP_WarcasketShoulders_Cataphract (VFEP v3.09, commit 31cee5e,
     1.6/Defs/ThingDefs_Misc/Apparel_Various.xml); fields not discussed here are the
-    Cataphract's. Tier, research, tags and the art follow the armor's header.
+    Cataphract's. Tier, research, tags, plating, weight and the art follow the armor's header.
 
-    - ToxicEnvironmentResistance +0.15, the shoulders' share of the set's 1.1 (rationale in the
+    - ToxicEnvironmentResistance +0.15, the shoulders' share of the set's 1.2 (rationale in the
       armor's header).
     - Costs: Comp 2 is the gas jet's nozzle (VFEP's Controller shoulders likewise pay components
       for their verb); Steel 55 and Plasteel 20 put the piece in the 7th-gen band.
@@ -59,16 +59,16 @@
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <statBases>
-      <Mass>35</Mass>
-      <ArmorRating_Sharp>1.56</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.78</ArmorRating_Heat>
+      <Mass>30</Mass>
+      <ArmorRating_Sharp>1.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.72</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.86</ArmorRating_Heat>
       <Insulation_Cold>18</Insulation_Cold>
       <Insulation_Heat>6</Insulation_Heat>
       <EquipDelay>1</EquipDelay>
     </statBases>
     <equippedStatOffsets>
-      <MoveSpeed>-0.35</MoveSpeed>
+      <MoveSpeed>-0.30</MoveSpeed>
       <ToxicEnvironmentResistance>0.15</ToxicEnvironmentResistance>
       <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.2</SlaveSuppressionOffset>
     </equippedStatOffsets>

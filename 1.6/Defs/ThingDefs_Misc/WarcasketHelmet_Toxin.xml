@@ -3,11 +3,12 @@
   <!--
     Templated from VFEP's VFEP_WarcasketHelmet_Cataphract (VFEP v3.09, commit 31cee5e,
     1.6/Defs/ThingDefs_Misc/Apparel_Headgear.xml); fields not discussed here, uiIconScale
-    included, are the Cataphract's. Tier, research, tags and the art follow the armor's header.
+    included, are the Cataphract's. Tier, research, tags, plating, weight and the art follow the
+    armor's header.
 
     The sealed helm, the set's respirator. Alone it equals Biotech's gas mask (Apparel_GasMask:
     ToxicEnvironmentResistance 0.8, immuneToToxGasExposure, Chemfuel 20 in its costList):
-    - ToxicEnvironmentResistance +0.8, the gas mask's value and the bulk of the set's 1.1
+    - ToxicEnvironmentResistance +0.8, the gas mask's value and the bulk of the set's 1.2
       (rationale in the armor's header).
     - apparel.immuneToToxGasExposure: read only by GasUtility.IsAffectedByExposure, it exempts
       the wearer from the ToxGasExposure hediff (the sight/breathing debuff). It does not touch
@@ -33,9 +34,9 @@
     <uiIconScale>1.25</uiIconScale>
     <statBases>
       <Mass>8</Mass>
-      <ArmorRating_Sharp>1.56</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.78</ArmorRating_Heat>
+      <ArmorRating_Sharp>1.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.72</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.86</ArmorRating_Heat>
       <Insulation_Cold>4</Insulation_Cold>
       <Insulation_Heat>2</Insulation_Heat>
       <EquipDelay>1</EquipDelay>

@@ -14,10 +14,10 @@ as the design rationale and is not kept in sync with later tuning.
 
 | Topic | Decision |
 | --- | --- |
-| Biotech | **Hard dependency.** Every emitter needs it (the gas grid refuses ToxGas, pollution is Biotech-only), so a Biotech-less set would be Cataphract plating at a Specialised price. All content lives in the main tree with no load-folder gate. |
+| Biotech | **Hard dependency.** Every emitter needs it (the gas grid refuses ToxGas, pollution is Biotech-only), so a Biotech-less set would be bare plating at a Specialised price. All content lives in the main tree with no load-folder gate. |
 | Tier | **Specialised (7th generation)**, beside Hazard: `VFEP_SpecialisedWarcaskets` **plus Biotech's `ToxGas`** (600, Industrial; the project that gates the tox pack and tox grenades). Vanilla `BuildableDef.IsResearchFinished` requires every listed prerequisite and VFEP's foundry filters its menu with it, so the second entry works with no code. VFEP's 7th-gen lore is "work better as a set" and "first to include plasteel", which a three-piece shared tank is. No 5th-gen piece carries any comp. Spacer (10th gen) is wrong: shields, vacuum, spacer components. |
-| Plating, mass, speed | Keep the Cataphract's (Sharp 1.56 / Blunt 0.65 / Heat 0.78, 118 kg, MoveSpeed -1.35). Hazard also trades plating for function (Sharp 1.20); the slow chassis is the advancing gas cloud's identity. |
-| Toxin stats | **Environment only.** No `ToxicResistance`; `ToxicEnvironmentResistance` armor 0.15 / shoulders 0.15 / helmet 0.8 (sum 1.1, clamps to the stat's max of 1.0); helmet keeps `immuneToToxGasExposure`. |
+| Plating, mass, speed | **The tier's plating step over the Cataphract's**: the Aerial's Sharp 1.65 / Blunt 0.72 / Heat 0.86 in all three pieces, and a little of the weight shed, 108 kg and MoveSpeed -1.25 against the Cataphract's 118 and -1.35 (reasoning below). Still the tier's second heaviest and slowest after the Barrage: the slow chassis is the advancing gas cloud's identity. |
+| Toxin stats | **Environment only.** No `ToxicResistance`; `ToxicEnvironmentResistance` armor 0.25 / shoulders 0.15 / helmet 0.8 (sum 1.2, clamps to the stat's max of 1.0; the armor's larger share helps the tank piece mixed into other sets); helmet keeps `immuneToToxGasExposure`. |
 | Costs | Rebased to 7th-gen bands (table below). The tank's first fill is free, as VFEP prices its own reloadable sets; refills cost chemfuel. |
 | Raider tags | **`WarcasketSpecialised`, `WarcasketAll`**, replacing the Cataphract's `WarcasketHeavy`/`WarcasketCata` (reasoning below). |
 | Tank scale | Sized against the tox pack: close to three packs of gas a tank, two thirds of a pack a jet, so the set reads in a unit the player already knows. |
@@ -40,13 +40,38 @@ VFEP XML). Hazard's helmet carries `ToxicResistance +1`. Engine facts:
   `ThoughtWorker_NoxiousHaze` (acidic smog mood) is skipped at `>= 1f`, and
   `HediffComp_ImmunizableToxic.SeverityChangePerDay` progresses on polluted cells only while
   `< 1f`. Three float offsets of 0.8 + 0.1 + 0.1 may sum to 0.99999994 and miss both, hence the
-  deliberate overshoot to 1.1.
+  deliberate overshoot to 1.2.
 
 Result: **Hazard shrugs off toxins that hit it; Toxin breathes poisoned air.** A Hazard pilot in
 gas takes no buildup but still gets the `ToxGasExposure` debuff (sight, breathing, pain); a full
 Toxin pilot gets neither, and is the set that fights inside its own cloud. Toxin is exposed to
 toxic needles and venom; Hazard is not. Helmet alone equals a vanilla gas mask (0.8 plus
 exposure immunity). Partial sets matter for the downed burst (see Edge cases).
+
+### Plating
+
+Set totals (armor + shoulders + helmet) across the tier, from the VFEP checkout; value is the
+summed market value of the costList:
+
+| Set | Sharp | Blunt | Heat | Mass | MoveSpeed | Value | Kit |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cataphract (6th, template) | 1.56 | 0.65 | 0.78 | 118 | -1.35 | ~1150 | none |
+| Aerial | 1.65 | 0.72 | 0.86 | 75 | -0.70 | ~1510 | power jump, flight speed x1.5 |
+| Shock | 1.65 | 1.24 | 0.86 | 100 | -1.05 | ~1760 | blast off, melee hit and dodge x1.2 |
+| Barrage | 2.00 | 0.90 | 1.08 | 122 | -1.60 | ~2020 | siege mode, grenade barrage, accuracy x1.1 |
+| Hazard | 1.20 | 0.65 | 2.00 | 85 | -1.00 | ~2060 | fire, toxic and psychic immunity, insulation 111 / 98 |
+| Toxin | 1.65 | 0.72 | 0.86 | 108 | -1.25 | ~1790 | vent, jet, absorb, bursts |
+
+Every other 7th-gen set pairs its function with a stat gain over the set it grew from: the
+Aerial is the Marine plus 0.45 Sharp, a lighter shell and a smaller speed penalty, for about the
+same premium (~630) the Toxin pays over the Cataphract; the Shock is lighter, faster and far
+better against blunt. The Hazard alone gives up plating, and buys broad environmental immunity
+and mobility with it, which the Toxin's tox-only environment resistance does not match. On the
+Cataphract's numbers the Toxin's premium bought the kit alone, and the Aerial beat it on every
+stat for less. The kit is also idle against mechanoids (immune to tox gas), where only the
+plating counts. So the Toxin takes the Aerial's plating and sheds a little weight, staying the
+tier's second slowest. The enemy's `ToxGasExposure` in the cloud is a further defence against
+humanlikes that the plating figures do not show.
 
 ### Raider tags
 
@@ -371,8 +396,8 @@ the abilities) have landed. Where each part lives:
 
 ## Edge cases and test list
 
-- **Partial sets and the burst:** the armor alone gives 0.15 environment resistance, so a downed
-  pilot in a lone armor lies in their own full-tank cloud taking about 85% buildup. That is the
+- **Partial sets and the burst:** the armor alone gives 0.25 environment resistance, so a downed
+  pilot in a lone armor lies in their own full-tank cloud taking about 75% buildup. That is the
   cost of not wearing the helmet; check in game that it reads as fair, since a downed pawn cannot
   crawl out.
 - Downed by anesthetic (any surgery, VFEP removal): no burst. Dies on the table: nothing, no
