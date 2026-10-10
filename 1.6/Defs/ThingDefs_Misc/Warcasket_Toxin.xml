@@ -15,10 +15,11 @@
     - Tags: the tier's common pair. VFEP's other 7th-gen sets add a role tag matching a pawn
       kind's weapon; VFEP has no tox weapon or tox pawn kind, so there is none to take. Only the
       mercenary VFEP_General lists WarcasketAll, so raiders in the set are rare.
-    - Costs sit in VFEP's 7th-gen band (the other sets total Comp 11-14, Steel 220-360, Plasteel
-      65-75, Uranium 50). No chemfuel: the tank's first fill is free, as VFEP prices its own
-      reloadable sets (the Shock's armor and the Aerial's shoulders hold 100 chemfuel charges and
-      cost none), where vanilla's packs charge their fill up front.
+    - Costs sit in VFEP's 7th-gen band (the other sets total Comp 7-14, Steel 210-360, Plasteel
+      30-75, Uranium 50, and the Hazard adds Devilstrand 150). No chemfuel: the tank's first fill
+      is free, as VFEP prices its own reloadable sets (the Shock's armor and the Aerial's
+      shoulders hold 100 chemfuel charges and cost none), where vanilla's packs charge their
+      fill up front.
 
     The tox gas tank (ToxinWarcasket.CompToxTank, a CompApparelReloadable), sized against the
     tox pack: the pack is a utility slot, the set a permanent commitment, so a full tank is close

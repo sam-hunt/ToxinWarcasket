@@ -75,7 +75,8 @@ creation, and VFEP's own reloadable sets (the Shock's armor and the Aerial's sho
 chemfuel charges) cost none, where vanilla's packs charge their fill up front. The helmet's
 Chemfuel 20 is the respirator's filter, priced as the gas mask prices its own. The shoulders'
 Comp 2 is the jet nozzle (Controller's shoulders pay components for their verb). For comparison,
-the other 7th-gen sets total Comp 11 to 14, Steel 220 to 360, Plasteel 65 to 75, Uranium 50.
+the other 7th-gen sets total Comp 7 to 14, Steel 210 to 360, Plasteel 30 to 75, Uranium 50, and
+the Hazard adds Devilstrand 150.
 
 ## The tank (armor)
 
