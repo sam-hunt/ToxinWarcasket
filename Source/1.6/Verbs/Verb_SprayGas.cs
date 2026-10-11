@@ -52,8 +52,22 @@ public class Verb_SprayGas : Verb
     // The outer area's edges, dimmer than the cone's white so the cone stays the aim.
     private static readonly Color SpreadColor = new(1f, 1f, 1f, 0.3f);
 
+    // The targeter's preview (DrawHighlight) and the inputs it was built from. One preview at
+    // a time, as the targeter has one verb; the map is held by id so nothing of a discarded map
+    // is kept alive.
     private static readonly List<IntVec3> coneScratch = new();
     private static readonly List<IntVec3> spreadScratch = new();
+    private static int previewMapId = -1;
+    private static IntVec3 previewOrigin;
+    private static IntVec3 previewTarget;
+    private static float previewGas;
+    private static float previewRange;
+    private static float previewHalfAngle;
+    private static int previewTick;
+
+    // Unpaused ticks a preview is kept with its inputs unchanged, so a door or wall that
+    // changes meanwhile shows within half a second; paused, nothing moves and it is kept.
+    private const int PreviewTicks = 30;
 
     private VerbProperties_SprayGas Props => (VerbProperties_SprayGas)verbProps;
 
@@ -110,21 +124,41 @@ public class Verb_SprayGas : Verb
 
     // The range ring, the cone the shot lands in, and fainter around it the cells the gas should
     // drift over as it spreads (GasSpreadEstimate), so the player sees both who the jet hits and
-    // where the cloud will show.
+    // where the cloud will show. The targeter draws every frame, and the cone's sight casts and
+    // the spread's replay cost most of a millisecond, so both are kept while the pilot's cell,
+    // the hovered cell and the shot stay the same (PreviewTicks); the replay reads geometry
+    // only, never the live gas, so nothing else can change its answer.
     public override void DrawHighlight(LocalTargetInfo target)
     {
         base.DrawHighlight(target);
         if (!target.IsValid || caster?.Map == null)
             return;
         Map map = caster.Map;
-        ConeCells(caster.Position, target.Cell, map, Props.coneStart, EffectiveRange, Props.halfAngle, coneScratch);
+        CompJetNozzle nozzle = ReloadableCompSource as CompJetNozzle;
+        float gas = nozzle?.GasPerShot ?? 0f;
+        float range = EffectiveRange;
+        float halfAngle = Props.halfAngle;
+        int tick = Find.TickManager.TicksGame;
+        if (map.uniqueID != previewMapId || caster.Position != previewOrigin || target.Cell != previewTarget
+            || gas != previewGas || range != previewRange || halfAngle != previewHalfAngle
+            || tick - previewTick >= PreviewTicks)
+        {
+            previewMapId = map.uniqueID;
+            previewOrigin = caster.Position;
+            previewTarget = target.Cell;
+            previewGas = gas;
+            previewRange = range;
+            previewHalfAngle = halfAngle;
+            previewTick = tick;
+            ConeCells(caster.Position, target.Cell, map, Props.coneStart, range, halfAngle, coneScratch);
+            spreadScratch.Clear();
+            if (nozzle != null && coneScratch.Count > 0)
+                GasSpreadEstimate.Cells(map, coneScratch, gas, Props.spreadMinGas, Props.spreadTicks, spreadScratch);
+        }
         if (coneScratch.Count == 0)
             return;
-        if (ReloadableCompSource is CompJetNozzle nozzle)
-        {
-            GasSpreadEstimate.Cells(map, coneScratch, nozzle.GasPerShot, Props.spreadMinGas, Props.spreadTicks, spreadScratch);
+        if (spreadScratch.Count > 0)
             GenDraw.DrawFieldEdges(spreadScratch, SpreadColor);
-        }
         GenDraw.DrawFieldEdges(coneScratch);
     }
 
