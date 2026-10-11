@@ -55,7 +55,8 @@ public class Verb_SprayGas : Verb
     // The targeter's preview (DrawHighlight) and the inputs it was built from. One preview at
     // a time, as the targeter has one verb; the map is held by id so nothing of a discarded map
     // is kept alive.
-    private static readonly List<IntVec3> coneScratch = new();
+    private static List<IntVec3> coneScratch = new();
+    private static List<IntVec3> coneNext = new();
     private static readonly List<IntVec3> spreadScratch = new();
     private static int previewMapId = -1;
     private static IntVec3 previewOrigin;
@@ -127,7 +128,9 @@ public class Verb_SprayGas : Verb
     // where the cloud will show. The targeter draws every frame, and the cone's sight casts and
     // the spread's replay cost most of a millisecond, so both are kept while the pilot's cell,
     // the hovered cell and the shot stay the same (PreviewTicks); the replay reads geometry
-    // only, never the live gas, so nothing else can change its answer.
+    // only, never the live gas, so nothing else can change its answer. A hovered cell that moves
+    // along the aim line changes the cone not at all, and the spread is the cone's alone, so a
+    // cone that comes out the same keeps its spread.
     public override void DrawHighlight(LocalTargetInfo target)
     {
         base.DrawHighlight(target);
@@ -139,9 +142,9 @@ public class Verb_SprayGas : Verb
         float range = EffectiveRange;
         float halfAngle = Props.halfAngle;
         int tick = Find.TickManager.TicksGame;
-        if (map.uniqueID != previewMapId || caster.Position != previewOrigin || target.Cell != previewTarget
-            || gas != previewGas || range != previewRange || halfAngle != previewHalfAngle
-            || tick - previewTick >= PreviewTicks)
+        bool stale = map.uniqueID != previewMapId || caster.Position != previewOrigin || gas != previewGas
+            || range != previewRange || halfAngle != previewHalfAngle || tick - previewTick >= PreviewTicks;
+        if (stale || target.Cell != previewTarget)
         {
             previewMapId = map.uniqueID;
             previewOrigin = caster.Position;
@@ -150,16 +153,35 @@ public class Verb_SprayGas : Verb
             previewRange = range;
             previewHalfAngle = halfAngle;
             previewTick = tick;
-            ConeCells(caster.Position, target.Cell, map, Props.coneStart, range, halfAngle, coneScratch);
-            spreadScratch.Clear();
-            if (nozzle != null && coneScratch.Count > 0)
-                GasSpreadEstimate.Cells(map, coneScratch, gas, Props.spreadMinGas, Props.spreadTicks, spreadScratch);
+            ConeCells(caster.Position, target.Cell, map, Props.coneStart, range, halfAngle, coneNext);
+            bool coneMoved = stale || !SameCells(coneNext, coneScratch);
+            (coneScratch, coneNext) = (coneNext, coneScratch);
+            if (coneMoved)
+            {
+                spreadScratch.Clear();
+                if (nozzle != null && coneScratch.Count > 0)
+                    GasSpreadEstimate.Cells(map, coneScratch, gas, Props.spreadMinGas, Props.spreadTicks, spreadScratch);
+            }
         }
         if (coneScratch.Count == 0)
             return;
         if (spreadScratch.Count > 0)
             GenDraw.DrawFieldEdges(spreadScratch, SpreadColor);
         GenDraw.DrawFieldEdges(coneScratch);
+    }
+
+    // ConeCells walks the radial pattern in one order, so two cones of the same cells match
+    // cell for cell.
+    private static bool SameCells(List<IntVec3> a, List<IntVec3> b)
+    {
+        if (a.Count != b.Count)
+            return false;
+        for (int i = 0; i < a.Count; i++)
+        {
+            if (a[i] != b[i])
+                return false;
+        }
+        return true;
     }
 
     // The walkable cells in the pilot's line of sight between start and range of origin and
