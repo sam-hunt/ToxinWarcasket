@@ -25,10 +25,11 @@ public class ToxinWarcasketSettings : ModSettings
     private const string ArmorDefName = "TXWC_Warcasket_Toxin";
     private const string ShouldersDefName = "TXWC_WarcasketShoulders_Toxin";
     private const string AbsorbDefName = "TXWC_AbsorbGas";
+    private const string VentDefName = "TXWC_VentTank";
     private const string ToxPackDefName = "Apparel_PackTox";
 
     // The whitespace above every section header but the first, and below the last row.
-    private const float SectionGap = 18f;
+    private const float SectionGap = 28f;
 
     // The armor's CompProperties_ToxTank: maxCharges, cellsPerCharge and ventChargesPerSecond,
     // in chemfuel.
@@ -69,6 +70,12 @@ public class ToxinWarcasketSettings : ModSettings
     private float packCells = 45f;
     private AbsorbGasExtension absorbDraw;
 
+    // The gizmo icon of the piece each section tunes, beside its header: the armor's vent, the
+    // shoulders' jet (its verb's commandIcon) and the helmet's absorb.
+    private Texture2D tankIcon;
+    private Texture2D jetIcon;
+    private Texture2D absorbIcon;
+
     // Gas units (GasGrid.MaxGasPerCell to a full cell) one tank charge makes, wherever the set
     // spends or banks one: the vent, the bursts, the jet from the tank or its reserve, the absorb.
     public float GasPerCharge => gasPerChemfuel.Value * chemfuelPerCharge * GasGrid.MaxGasPerCell;
@@ -94,6 +101,9 @@ public class ToxinWarcasketSettings : ModSettings
         packCells = DefDatabase<ThingDef>.GetNamedSilentFail(ToxPackDefName)
             ?.GetCompProperties<CompProperties_ReleaseGas>()?.cellsToFill ?? packCells;
         absorbDraw = defs.absorbDraw;
+        tankIcon = DefDatabase<AbilityDef>.GetNamedSilentFail(VentDefName)?.icon;
+        jetIcon = defs.jet.commandIcon.NullOrEmpty() ? null : ContentFinder<Texture2D>.Get(defs.jet.commandIcon, false);
+        absorbIcon = defs.absorb.icon;
         tankCapacity.DefaultValue = defs.tank.maxCharges * chemfuelPerCharge;
         gasPerChemfuel.DefaultValue = defs.tank.cellsPerCharge / chemfuelPerCharge;
         ventRate.DefaultValue = defs.tank.ventChargesPerSecond * chemfuelPerCharge;
@@ -144,23 +154,23 @@ public class ToxinWarcasketSettings : ModSettings
         Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
         var listing = new Listing_Standard { maxOneColumn = true };
         listing.Begin(viewRect);
-        SectionHeader(listing, "TXWC_SectionTank", first: true);
+        SectionHeader(listing, "TXWC_SectionTank", tankIcon, first: true);
         tankCapacity.DoRow(listing);
         gasPerChemfuel.DoRow(listing);
         ventRate.DoRow(listing);
         SummaryRow(listing, TankSummary);
-        SectionHeader(listing, "TXWC_SectionJet");
+        SectionHeader(listing, "TXWC_SectionJet", jetIcon);
         jetCost.DoRow(listing);
         jetReserve.DoRow(listing);
         jetConeWidth.DoRow(listing);
         jetRange.DoRow(listing);
         SummaryRow(listing, JetSummary);
-        SectionHeader(listing, "TXWC_SectionAbsorb");
+        SectionHeader(listing, "TXWC_SectionAbsorb", absorbIcon);
         absorbRadius.DoRow(listing);
         absorbDuration.DoRow(listing);
         absorbCooldown.DoRow(listing);
         SummaryRow(listing, AbsorbSummary);
-        SectionHeader(listing, "TXWC_SectionMisc");
+        SectionHeader(listing, "TXWC_SectionMisc", null);
         DoHazardVacuumRow(listing);
         listing.Gap(SectionGap);
         contentHeight = listing.CurHeight;
@@ -243,14 +253,28 @@ public class ToxinWarcasketSettings : ModSettings
         listing.Gap(Tunable.RowGap);
     }
 
-    private static void SectionHeader(Listing_Standard listing, string key, bool first = false)
+    // The header's text in the medium font after its icon, a square as tall as the header; a
+    // header without one (the toggles', or any while the defs were not found) starts its text
+    // at the left edge rather than after an empty slot.
+    private static void SectionHeader(Listing_Standard listing, string key, Texture2D icon, bool first = false)
     {
         const float headerGap = 4f;
+        const float headerHeight = 32f;
+        const float iconPad = 8f;
         if (!first)
             listing.Gap(SectionGap);
+        Rect rect = listing.GetRect(headerHeight);
+        if (icon != null && icon != BaseContent.BadTex)
+        {
+            GUI.DrawTexture(rect.LeftPartPixels(headerHeight), icon);
+            rect.xMin += headerHeight + iconPad;
+        }
         GameFont font = Text.Font;
+        TextAnchor anchor = Text.Anchor;
         Text.Font = GameFont.Medium;
-        listing.Label(key.Translate());
+        Text.Anchor = TextAnchor.MiddleLeft;
+        Widgets.Label(rect, key.Translate());
+        Text.Anchor = anchor;
         Text.Font = font;
         listing.Gap(headerGap);
     }
