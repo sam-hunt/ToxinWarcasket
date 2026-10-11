@@ -367,9 +367,8 @@ command icons:
 | Absorb Gas | Helmet | `Textures/UI/Abilities/WarcasketToxin/AbsorbGas.png` |
 | Gas Jet | Shoulders | `Textures/UI/Abilities/WarcasketToxin/GasJet.png` |
 
-The tank's reload uses the vanilla reload command. Until the art arrives, the defs point at the
-tox pack's item texture (`Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack`, Biotech; the pack has
-no dedicated command icon) as a placeholder.
+The tank's reload uses the vanilla reload command. Until the art arrives, placeholder icons sit
+at these paths, so the final art drops in with no def change.
 
 ## What shipped
 

@@ -4,7 +4,7 @@
     The armor's vent toggle, granted by its CompAbilitiesApparel. Ability_VentTank flips the
     tank's venting state; the emission rate and stop conditions are the tank's (the armor's
     header). Drafted only and no cooldown: the tank's fuel is the limiter, as on the Aerial and
-    Shock. The icon is the tox pack's item texture until the set's own gizmo art lands.
+    Shock.
   -->
   <VEF.Abilities.AbilityDef>
     <defName>TXWC_VentTank</defName>
@@ -12,6 +12,6 @@
     <description>Open the tank's vents and release tox gas around the pilot. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left.</description>
     <abilityClass>ToxinWarcasket.Ability_VentTank</abilityClass>
     <targetMode>Self</targetMode>
-    <iconPath>Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack</iconPath>
+    <iconPath>UI/Abilities/WarcasketToxin/VentTank</iconPath>
   </VEF.Abilities.AbilityDef>
 </Defs>

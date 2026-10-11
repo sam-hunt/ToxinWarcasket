@@ -4,8 +4,8 @@
     The helmet's respirator pull, granted by its CompAbilitiesApparel and run by
     Ability_AbsorbGas (the mechanics, the jobless cast and the autocast are in that class's
     comment). Usable undrafted for cleanup, three in-game hours of cooldown, no fuel; player-only,
-    as raiders never cast it. The icon is the tox pack's item texture until the set's own gizmo
-    art lands. needsTickingInterval is what lets the helmet's CompAbilitiesApparel tick it.
+    as raiders never cast it. needsTickingInterval is what lets the helmet's CompAbilitiesApparel
+    tick it.
 
     The draw (AbsorbGasExtension): for durationTime, 300 ticks, a pulse every 30, ten in all,
     each taking up to 64 of every gas type's density from the 37 cells within radius 3.5, a round
@@ -34,7 +34,7 @@
     <description>Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas, and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn.</description>
     <abilityClass>ToxinWarcasket.Ability_AbsorbGas</abilityClass>
     <targetMode>Self</targetMode>
-    <iconPath>Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack</iconPath>
+    <iconPath>UI/Abilities/WarcasketToxin/AbsorbGas</iconPath>
     <radius>3.5</radius>
     <durationTime>300</durationTime>
     <cooldownTime>7500</cooldownTime>

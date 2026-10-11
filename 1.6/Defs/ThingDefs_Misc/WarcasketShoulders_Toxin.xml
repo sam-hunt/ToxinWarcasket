@@ -122,7 +122,7 @@
         <range>12.9</range>
         <warmupTime>1</warmupTime>
         <noiseRadius>4</noiseRadius>
-        <commandIcon>Things/Pawn/Humanlike/Apparel/ToxPack/ToxPack</commandIcon>
+        <commandIcon>UI/Abilities/WarcasketToxin/GasJet</commandIcon>
         <soundCast>GasPack_Deploy</soundCast>
         <targetParams>
           <canTargetLocations>true</canTargetLocations>

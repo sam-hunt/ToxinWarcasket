@@ -7,8 +7,8 @@
 
 ## Art
 
-- `About/Preview.png` and `About/ModIcon.png`
-- **Gizmo art.** vent, absorb and gas jet icons (paths in the spec).
+- `About/Preview.png`
+- **Gizmo art.** vent, absorb and gas jet icons from the artist to replace the placeholders
 - **Workshop images.**
 
 ## Infrastructure follow-ups
