@@ -51,6 +51,11 @@ public class CompJetNozzle : CompApparelReloadable
 {
     public new CompProperties_JetNozzle Props => (CompProperties_JetNozzle)props;
 
+    // CanBeUsed runs every frame the jet command shows, and the low-tank reason quotes only the
+    // cost, so it is built once per settings write (ToxinWarcasketSettings.Generation).
+    private string tankLowReason;
+    private int tankLowGeneration = -1;
+
     // The tank the jet draws on, if the wearer wears one.
     public CompToxTank WornTank => CompToxTank.WornBy(Wearer);
 
@@ -96,7 +101,12 @@ public class CompJetNozzle : CompApparelReloadable
         reason = "";
         if (tank.RemainingCharges < Props.tankChargesPerShot)
         {
-            reason = "TXWC_JetTankLow".Translate(Props.tankChargesPerShot.Named("COUNT"), tank.Props.ChargeNounArgument);
+            if (tankLowReason == null || tankLowGeneration != ToxinWarcasketSettings.Generation)
+            {
+                tankLowGeneration = ToxinWarcasketSettings.Generation;
+                tankLowReason = "TXWC_JetTankLow".Translate(Props.tankChargesPerShot.Named("COUNT"), tank.Props.ChargeNounArgument);
+            }
+            reason = tankLowReason;
             return false;
         }
         Map map = parent.MapHeld;

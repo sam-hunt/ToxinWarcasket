@@ -31,6 +31,11 @@ public class ToxinWarcasketSettings : ModSettings
     // The whitespace above every section header but the first, and below the last row.
     private const float SectionGap = 28f;
 
+    // Bumped by every ApplyToDefs, including the one at startup. A write moves numbers that
+    // live instances have folded into strings (the abilities' tooltips, the jet's low-tank
+    // reason); each rebuilds its own on its next request when this has moved.
+    public static int Generation { get; private set; }
+
     // The armor's CompProperties_ToxTank: maxCharges, cellsPerCharge and ventChargesPerSecond,
     // in chemfuel.
     public readonly Tunable tankCapacity = new("TankCapacity", 20f, 200f, 10f, v => Mathf.RoundToInt(v).ToString());
@@ -132,6 +137,7 @@ public class ToxinWarcasketSettings : ModSettings
         defs.absorb.radius = absorbRadius.Value;
         defs.absorb.durationTime = absorbDuration.Value.SecondsToTicks();
         defs.absorb.cooldownTime = absorbCooldown.IntValue * GenDate.TicksPerHour;
+        Generation++;
     }
 
     // One row per tunable under a header per piece: the tank (with the gas yield every piece

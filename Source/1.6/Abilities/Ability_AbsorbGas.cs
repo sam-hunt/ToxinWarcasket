@@ -4,6 +4,7 @@ using UnityEngine;
 using Verse;
 using VEF.Abilities;
 using Ability = VEF.Abilities.Ability;
+using Command_Ability = VEF.Abilities.Command_Ability;
 
 namespace ToxinWarcasket;
 
@@ -63,6 +64,14 @@ public class AbsorbGasExtension : DefModExtension
 // nothing here. TickInterval reads the toggle instead and casts when the pilot's cell holds
 // gas. Player pilots only, as raiders never absorb, and never while the worn tank is venting,
 // which would feed the vent's own cloud straight back in.
+//
+// Gizmo: VEF's GetGizmo builds a new Command_Ability, tooltip and all, every time gizmos are
+// requested, which is every frame for a selected wearer. One command is kept and only what
+// moves is refreshed, after Shipcracker's Ability_BreachJump: the enable state every call, and
+// the tooltip from a cache keyed on the two things in it that change, the settings (the radius,
+// duration and cooldown lines; ToxinWarcasketSettings.Generation) and the autocast toggle
+// (VEF's right-click line). defaultDesc is reassigned every call because VEF's shrunk-mode draw
+// prepends the label to it in place.
 public class Ability_AbsorbGas : Ability
 {
     // The tick the current draw ends; at or before now, no draw is running.
@@ -72,6 +81,11 @@ public class Ability_AbsorbGas : Ability
     private int carriedUnits;
 
     private AbsorbGasExtension extension;
+
+    private Command_Ability gizmo;
+    private string description;
+    private int descriptionGeneration = -1;
+    private bool descriptionAutoCast;
 
     private AbsorbGasExtension Extension => extension ??= def.GetModExtension<AbsorbGasExtension>();
 
@@ -105,6 +119,32 @@ public class Ability_AbsorbGas : Ability
         bool wasAutoCast = autoCast;
         base.Init();
         autoCast = wasAutoCast && CanAutoCast;
+        gizmo = null;
+        description = null;
+    }
+
+    public override string GetDescriptionForPawn()
+    {
+        bool auto = AutoCast;
+        int generation = ToxinWarcasketSettings.Generation;
+        if (description != null && descriptionGeneration == generation && descriptionAutoCast == auto)
+            return description;
+        descriptionGeneration = generation;
+        descriptionAutoCast = auto;
+        return description = base.GetDescriptionForPawn();
+    }
+
+    public override Gizmo GetGizmo()
+    {
+        if (gizmo == null)
+        {
+            gizmo = (Command_Ability)base.GetGizmo();
+            return gizmo;
+        }
+        gizmo.Disabled = !IsEnabledForPawn(out string reason);
+        gizmo.disabledReason = reason.Colorize(ColorLibrary.RedReadable);
+        gizmo.defaultDesc = GetDescriptionForPawn();
+        return gizmo;
     }
 
     // The gizmo is disabled for the draw, before the cooldown is checked: a cast mid-draw would

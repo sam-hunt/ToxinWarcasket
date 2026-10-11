@@ -8,12 +8,18 @@ namespace ToxinWarcasket;
 // hands out a plain Command_Toggle instead, as VFEP's Ability_SiegeMode does (without a
 // dependency on VFEP's CommandAbilityToggle); the tank's own gauge shows the fill. VEF asks for
 // gizmos every frame a wearer is selected; one command is kept and only its live fields
-// refreshed, after Shipcracker's Ability_BreachJump. The empty-tank reason quotes the tank's
-// whole range rather than MinAmmoNeeded/MaxAmmoNeeded, which follow the gauge's reload target.
+// refreshed, after Shipcracker's Ability_BreachJump, and the two strings it shows are built
+// once per settings write (ToxinWarcasketSettings.Generation), as VEF's description formats
+// and translates every line and the empty-tank reason quotes the tank's size. That reason
+// quotes the tank's whole range rather than MinAmmoNeeded/MaxAmmoNeeded, which follow the
+// gauge's reload target.
 public class Ability_VentTank : Ability
 {
     private CompToxTank tank;
     private Command_Toggle gizmo;
+    private string description;
+    private string emptyReason;
+    private int settingsGeneration = -1;
 
     // holder is the armor; it never changes for this instance.
     private CompToxTank Tank => tank ??= holder.TryGetComp<CompToxTank>();
@@ -27,11 +33,18 @@ public class Ability_VentTank : Ability
     {
         base.Init();
         gizmo = null;
+        description = null;
     }
 
     public override Gizmo GetGizmo()
     {
         CompToxTank t = Tank;
+        if (description == null || settingsGeneration != ToxinWarcasketSettings.Generation)
+        {
+            settingsGeneration = ToxinWarcasketSettings.Generation;
+            description = GetDescriptionForPawn();
+            emptyReason = t.DisabledReason(t.Props.ammoCountPerCharge, t.MaxAmmoAmount());
+        }
         gizmo ??= new Command_Toggle
         {
             defaultLabel = def.LabelCap,
@@ -39,10 +52,10 @@ public class Ability_VentTank : Ability
             isActive = () => t.Venting,
             toggleAction = () => t.SetVenting(!t.Venting),
         };
-        gizmo.defaultDesc = GetDescriptionForPawn();
+        gizmo.defaultDesc = description;
         gizmo.Disabled = false;
         if (!t.Venting && t.RemainingCharges <= 0)
-            gizmo.Disable(t.DisabledReason(t.Props.ammoCountPerCharge, t.MaxAmmoAmount()));
+            gizmo.Disable(emptyReason);
         else if (!IsEnabledForPawn(out string reason))
             gizmo.Disable(reason.Colorize(ColorLibrary.RedReadable));
         return gizmo;
