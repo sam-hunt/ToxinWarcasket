@@ -74,12 +74,15 @@ public class CompJetNozzle : CompApparelReloadable
     {
         foreach (Gizmo gizmo in base.CompGetWornGizmosExtra())
         {
-            if (gizmo is Command_VerbTarget { verb: Verb_SprayGas } jet)
+            if (gizmo is Command_VerbOwner { verb: Verb_SprayGas } jet)
             {
                 if (!Props.jetDescription.NullOrEmpty())
                     jet.defaultDesc = Props.jetDescription;
-                // Vanilla tints a commandIcon with the gear's DrawColor, the shoulders' dye.
-                jet.defaultIconColor = Color.white;
+                // Command_VerbTarget.IconDrawColor tints the icon with the gear's DrawColor, the
+                // shoulders' dye, whenever the verb has an EquipmentSource, which a reloadable
+                // comp's verb always does, so defaultIconColor never reaches the draw. Only
+                // Command_VerbOwner.overrideColor wins over it.
+                jet.overrideColor = Color.white;
             }
             yield return gizmo;
         }
