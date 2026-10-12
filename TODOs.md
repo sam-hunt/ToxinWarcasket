@@ -2,14 +2,12 @@
 
 ## Content
 
-- **English text is not final.** should be reviewed before pre-release translation
-- Perf profiling pass
+- **English text is not final.** needs a review of whether it matches Vanilla/VFEP tone and reads naturally. In particular, the warcasket apparel description feels a bit "rambling" in its description of vents and nozzles etc
 
 ## Art
 
-- `About/Preview.png`
-- **Gizmo art.** vent, absorb and gas jet icons from the artist to replace the placeholders
-- **Workshop images.**
+- Replace the `About/Preview.png` placeholder when it lands
+- **Workshop images.** shipcracker as the template for the lineup
 
 ## Infrastructure follow-ups
 

@@ -11,7 +11,7 @@ The Toxin is a 7th generation warcasket built on VFE Pirates' Cataphract chassis
 Unlocked by the specialised warcaskets and tox gas research. The full set has 100% toxic environment resistance: tox gas, toxic fallout, and polluted terrain cannot touch it.
 [list]
 [*][b]Torso:[/b] the tank, nearly three tox packs of gas, refilled with chemfuel like a pack. Toggle the vent to empty it around the pilot as a growing cloud, and again to keep the rest. 25% toxic environment resistance.
-[*][b]Shoulder pads:[/b] the nozzles. Each gas jet sprays a cone from the tank, four to a full tank, or from two jets of their own without one. The targeter shows where the gas lands and how far it drifts. 15% toxic environment resistance.
+[*][b]Shoulders:[/b] the gas jets. Each jet sprays a cone from the tank, four to a full tank, or two charges without one. The targeter shows where the gas lands and how far it drifts. 15% toxic environment resistance.
 [*][b]Helmet:[/b] the respirator. 80% toxic environment resistance and immunity to tox gas exposure, like a gas mask, plus an ability that clears the air around the pilot into the tank (clears smoke, rot stink, and deadlife dust too!).
 [/list]
 
@@ -34,7 +34,7 @@ Mod settings tune the gas per chemfuel, the tank's capacity and vent rate, the j
 A: Yes. Tox gas only exists with Biotech, and the whole set integrates with it.
 
 [b]Q: How is it different from VFE Pirates' Hazard set?[/b]
-A: The Hazard is the all-rounder: lighter, fireproof, and immune to toxic buildup and psychic effects, with thinner sharp/blunt plating. The Toxin is built for tox gas alone, in both offense and defense. It pays in weight for Aerial-grade plating and its tank, while still being more vulnerable to venom, fire, extreme temperatures etc.
+A: The Hazard is the all-rounder: lighter, fireproof, and immune to toxic buildup and psychic effects, with thinner sharp/blunt plating. The Toxin is built for tox gas alone, in both offense and defense. It pays in weight for its stronger plating and tank, while still being more vulnerable to venom, fire, extreme temperatures etc.
 
 [b]Q: How do I get it?[/b]
 A: Research VFE Pirates' "Specialised Warcaskets" and Biotech's "Tox Gas" projects, then weld it on at the warcasket foundry like any other set. Mix and match the pieces with VFE Pirates' own sets as you please.
@@ -45,3 +45,4 @@ A: Some of the grunt code, and most localizations. I'm a software engineer by tr
 [hr][/hr]
 [h1]Links[/h1]
 Source code, manual downloads and issue tracker: [url=https://github.com/sam-hunt/ToxinWarcasket]GitHub[/url]
+Art by [url=https://steamcommunity.com/profiles/76561198094174176/myworkshopfiles/?appid=294100]IcingWithCheeseCake[/url]

@@ -20,10 +20,10 @@
   <TXWC_TankSummary>A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds.</TXWC_TankSummary>
 
   <TXWC_JetCost>Cost (chemfuel)</TXWC_JetCost>
-  <TXWC_JetCostDesc>How much chemfuel each gas jet draws from the tank. Without a tank, one of the nozzles' own jets makes the same gas for the same chemfuel. Default: {0}.</TXWC_JetCostDesc>
+  <TXWC_JetCostDesc>How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}.</TXWC_JetCostDesc>
 
   <TXWC_JetReserve>Jets without a tank</TXWC_JetReserve>
-  <TXWC_JetReserveDesc>How many jets the nozzles hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}.</TXWC_JetReserveDesc>
+  <TXWC_JetReserveDesc>How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}.</TXWC_JetReserveDesc>
 
   <TXWC_JetTankLow>Needs {COUNT} {CHARGENOUN_plural} in the tank.</TXWC_JetTankLow>
 
@@ -33,7 +33,7 @@
   <TXWC_JetRange>Range (cells)</TXWC_JetRange>
   <TXWC_JetRangeDesc>How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}.</TXWC_JetRangeDesc>
 
-  <TXWC_JetSummary>A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the nozzles alone {4}.</TXWC_JetSummary>
+  <TXWC_JetSummary>A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}.</TXWC_JetSummary>
 
   <TXWC_AbsorbRadius>Radius (cells)</TXWC_AbsorbRadius>
   <TXWC_AbsorbRadiusDesc>How far around the pilot the absorb draws gas in. Default: {0}.</TXWC_AbsorbRadiusDesc>
