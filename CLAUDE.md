@@ -125,7 +125,7 @@ Source/1.6/      - C# source code targeting net472
 Scripts/         - l10n config shims + the expected-injections.json sidecar (not shipped)
 Docs/Research/   - Reference notes (VFEP stats, tox gas engine map); not shipped
 l10n/            - rimworld-l10n toolkit, git submodule pinned to a release tag (not shipped)
-LoadFolders.xml  - Tells RimWorld which folders to load per game version
+LoadFolders.xml  - Tells RimWorld which folders to load per game version (1.7 loads the 1.6 tree)
 CHANGELOG.md     - Keep a Changelog format; load-bearing for releases (see below)
 TODOs.md         - Scoping notes for the feature work that has not landed yet
 ```
