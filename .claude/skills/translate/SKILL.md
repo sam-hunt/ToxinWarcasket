@@ -89,7 +89,12 @@ notes for the shim or flow edit this repo owes before continuing.
   without its own database into its base, and the checker maps the element
   tag via `DEF_TYPE_ALIASES` in `Scripts/check-translations.py`; a
   `WarcasketDef` folder would never load. Never translate or place a
-  non-`required` sidecar entry in any language file.
+  non-`required` sidecar entry in any language file. The shoulders' verb
+  label ("spray gas", `VerbProperties_SprayGas.label` under the def's
+  `verbs` list) is not in the sidecar: a live refresh confirms the game's
+  walker never reaches it, so it stays English in every language until
+  the code moves it to a translatable field. Each glossary records the
+  rendering to use when that happens.
 - **The two charge nouns are shown only through plural and lookup slots.**
   The tank's `chargeNoun` "unit" (a volume the vent drains continuously)
   and the shoulders' "jet" (one per activation) never appear bare: vanilla
