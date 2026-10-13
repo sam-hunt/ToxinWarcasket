@@ -2,8 +2,6 @@
 
 ## Content
 
-- **English text is not final.** needs a review of whether it matches Vanilla/VFEP tone and reads naturally. In particular, the warcasket apparel description feels a bit "rambling" in its description of vents and nozzles etc
-
 ## Art
 
 - Replace the `About/Preview.png` placeholder when it lands
