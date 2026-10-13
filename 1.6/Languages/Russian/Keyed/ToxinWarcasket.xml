@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: Toxin Warcasket -->
+  <TXWC_SettingsCategory>Токсичная броня мертвеца</TXWC_SettingsCategory>
+
+  <!-- EN: Tox gas tank -->
+  <TXWC_SectionTank>Бак с токсичным газом</TXWC_SectionTank>
+  <!-- EN: Gas jet -->
+  <TXWC_SectionJet>Газовая струя</TXWC_SectionJet>
+  <!-- EN: Absorb gas -->
+  <TXWC_SectionAbsorb>Поглощение газа</TXWC_SectionAbsorb>
+  <!-- EN: Miscellaneous -->
+  <TXWC_SectionMisc>Прочее</TXWC_SectionMisc>
+
+  <!-- EN: Tank capacity (chemfuel) -->
+  <TXWC_TankCapacity>Ёмкость бака (химтопливо)</TXWC_TankCapacity>
+  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
+  <TXWC_TankCapacityDesc>Сколько химтоплива вмещает полный бак. Шкала бака отображает его в единицах. Если в баке уже больше, излишек пропадает. По умолчанию: {0}.</TXWC_TankCapacityDesc>
+
+  <!-- EN: Tox gas per chemfuel (cells) -->
+  <TXWC_GasPerChemfuel>Токсичный газ на единицу химтоплива (в клетках)</TXWC_GasPerChemfuel>
+  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>Сколько клеток токсичного газа даёт каждая единица химтоплива в баке, как бы её ни потратили: выпуском, струёй или выбросом, когда пилот выходит из строя. Поглощение возвращает в бак единицу химтоплива за каждый такой объём втянутого газа. Токсичный ранец заполняет 45 клеток за 35 единиц химтоплива. По умолчанию: {0}.</TXWC_GasPerChemfuelDesc>
+
+  <!-- EN: Vent rate (chemfuel per second) -->
+  <TXWC_VentRate>Скорость выпуска (химтопливо в секунду)</TXWC_VentRate>
+  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>Как быстро выпуск газа опустошает бак. Чем быстрее выпуск, тем шире облако и тем скорее оно рассеивается. По умолчанию: {0}.</TXWC_VentRateDesc>
+
+  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
+  <TXWC_TankSummary>Полный бак: {0} ед. химтоплива. Клеток токсичного газа: {1} (в пересчёте на токсичные ранцы: {2}). Выпуск опустошает бак за {3} с.</TXWC_TankSummary>
+
+  <!-- EN: Cost (chemfuel) -->
+  <TXWC_JetCost>Расход на струю (химтопливо)</TXWC_JetCost>
+  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
+  <TXWC_JetCostDesc>Сколько химтоплива каждая газовая струя берёт из бака. Без бака собственная струя наплечников даёт столько же газа за столько же химтоплива. По умолчанию: {0}.</TXWC_JetCostDesc>
+
+  <!-- EN: Jets without a tank -->
+  <TXWC_JetReserve>Струи без бака</TXWC_JetReserve>
+  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
+  <TXWC_JetReserveDesc>Сколько струй наплечники хранят сами, если бак не надет. Они перезаряжаются химтопливом и не расходуются, пока на пилоте есть бак. По умолчанию: {0}.</TXWC_JetReserveDesc>
+
+  <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
+  <TXWC_JetTankLow>Недостаточно {lookup: {CHARGENOUN_plural}; Case; 1} в баке (нужно {COUNT}).</TXWC_JetTankLow>
+
+  <!-- EN: Cone width (degrees) -->
+  <TXWC_JetConeWidth>Ширина конуса (в градусах)</TXWC_JetConeWidth>
+  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>Полная ширина конуса, в который ложится газовая струя. Чем шире конус, тем сильнее рассеивается тот же газ. По умолчанию: {0}.</TXWC_JetConeWidthDesc>
+
+  <!-- EN: Range (cells) -->
+  <TXWC_JetRange>Дальность (в клетках)</TXWC_JetRange>
+  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetRangeDesc>Как далеко достаёт газовая струя. Чем длиннее струя, тем сильнее рассеивается тот же газ. По умолчанию: {0}.</TXWC_JetRangeDesc>
+
+  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
+  <TXWC_JetSummary>Одна струя: {0} ед. химтоплива. Клеток токсичного газа: {1} (в пересчёте на токсичные ранцы: {2}). Струй в полном баке: {3}, в самих наплечниках: {4}.</TXWC_JetSummary>
+
+  <!-- EN: Radius (cells) -->
+  <TXWC_AbsorbRadius>Радиус (в клетках)</TXWC_AbsorbRadius>
+  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>На каком расстоянии от пилота поглощение втягивает газ. По умолчанию: {0}.</TXWC_AbsorbRadiusDesc>
+
+  <!-- EN: Duration (seconds) -->
+  <TXWC_AbsorbDuration>Длительность (в секундах)</TXWC_AbsorbDuration>
+  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>Как долго длится каждое поглощение газа. По умолчанию: {0}.</TXWC_AbsorbDurationDesc>
+
+  <!-- EN: Cooldown (hours) -->
+  <TXWC_AbsorbCooldown>Перезарядка (в часах)</TXWC_AbsorbCooldown>
+  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>Сколько времени перезаряжается поглощение. По умолчанию: {0}.</TXWC_AbsorbCooldownDesc>
+
+  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
+  <TXWC_AbsorbSummary>Клеток вокруг пилота в зоне поглощения: {0}. Сплошное облако над ними пополнит бак на {1} ед. химтоплива.</TXWC_AbsorbSummary>
+
+  <!-- EN: Hazard warcaskets resist vacuum -->
+  <TXWC_HazardVacuum>Защитная броня мертвеца устойчива к вакууму</TXWC_HazardVacuum>
+  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
+  <TXWC_HazardVacuumDesc>Даёт защитной броне мертвеца такую же устойчивость к вакууму, как у космической брони мертвеца, и сильнее отличает её от токсичной. Изменение требует перезапуска игры. По умолчанию: выключено.</TXWC_HazardVacuumDesc>
+  <!-- EN:  (requires restart) -->
+  <TXWC_RequiresRestartSuffix> (требуется перезапуск)</TXWC_RequiresRestartSuffix>
+  <!-- EN:  (requires Odyssey) -->
+  <TXWC_RequiresOdysseySuffix> (требуется Odyssey)</TXWC_RequiresOdysseySuffix>
+
+  <!-- EN:  (default) -->
+  <TXWC_DefaultSuffix> (по умолчанию)</TXWC_DefaultSuffix>
+
+</LanguageData>

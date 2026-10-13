@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas, and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn. -->
+  <TXWC_AbsorbGas.description>Несколько секунд втягивает окружающий воздух через респиратор и очищает пространство вокруг пилота от дыма, токсичного газа и других газов, даже на ходу. Всё втянутое проходит через фильтр и пополняет бак брони токсичным газом, если на пилоте броня с баком.</TXWC_AbsorbGas.description>
+  <!-- EN: Using ability: {0} -->
+  <TXWC_AbsorbGas.jobReportString>применяет способность «{0}»</TXWC_AbsorbGas.jobReportString>
+  <!-- EN: absorb gas -->
+  <TXWC_AbsorbGas.label>поглощение газа</TXWC_AbsorbGas.label>
+  <!-- EN: absorb gas -->
+  <TXWC_AbsorbGas.verbProperties.label>поглощение газа</TXWC_AbsorbGas.verbProperties.label>
+
+  <!-- EN: Open the tank's vents and release tox gas around the pilot. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left. -->
+  <TXWC_VentTank.description>Открывает клапаны бака и выпускает токсичный газ вокруг пилота. Облако растёт там, где стоит пилот, и движется вместе с ним. Повторное нажатие закрывает клапаны и сохраняет остаток газа.</TXWC_VentTank.description>
+  <!-- EN: Using ability: {0} -->
+  <TXWC_VentTank.jobReportString>применяет способность «{0}»</TXWC_VentTank.jobReportString>
+  <!-- EN: vent tank -->
+  <TXWC_VentTank.label>выпуск газа</TXWC_VentTank.label>
+  <!-- EN: vent tank -->
+  <TXWC_VentTank.verbProperties.label>выпуск газа</TXWC_VentTank.verbProperties.label>
+
+</LanguageData>

@@ -20,7 +20,7 @@ welcome too.
 | -------------------- | ------- | ------ |
 | English              | Source  | -      |
 | Simplified Chinese   | Planned | -      |
-| Russian              | Planned | -      |
+| Russian              | Machine-assisted | Fable 5.1 |
 | Korean               | Planned | -      |
 | German               | Machine-assisted | Fable 5.1 |
 | Spanish              | Machine-assisted | Fable 5.1 |
