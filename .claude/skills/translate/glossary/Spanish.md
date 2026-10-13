@@ -1,7 +1,8 @@
 # Spanish (Castellano) glossary, Toxin Warcasket
 
 Seeded from the Shipcracker Warcasket glossary (machine-assisted there,
-pending native review); no translation pass has run here yet. Only
+pending native review); first machine-assisted pass 2026-10-13, no native
+review yet. Only
 mod-specific coinages and grounding decisions; family-wide mechanics and
 style live in `l10n/languages/Spanish.md`. Folder `Spanish`, grounded against
 the Castilian tars only (never `SpanishLatin`, whose VFEP lineage uses
@@ -48,21 +49,61 @@ ships a line** in `1.6/Languages/Spanish/WordInfo/plural.txt`
 
 | English | Spanish | Grounding |
 |---|---|---|
-| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | *pass* | Shipcracker's "fuel unit" is `unidad de combustible`, mapped to `unidades de combustible` by its line. A bare `unidad` needs no line. |
-| jet (the shoulders' `chargeNoun`; one per activation) | *pass* | Single word needs no line. The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
+| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | unidad (pl. unidades, by rule; no `plural.txt` line) | Feminine, and vanilla's Core `Gender/Female.txt` lacks it: `Stat_Thing_ReloadDestroyOnEmpty_Desc` switches on `{CHARGENOUN_gender}`, so it ships `1.6/Languages/Spanish/WordInfo/Gender/Female.txt` (`unidad`). Bare noun, not Shipcracker's `unidad de combustible`, since the unit here is the chemfuel itself. | Shipcracker's "fuel unit" is `unidad de combustible`, mapped to `unidades de combustible` by its line. A bare `unidad` needs no line. |
+| jet (the shoulders' `chargeNoun`; one per activation) | chorro (pl. chorros, by rule) | None needed: single word, masculine, which is the gender default on a table miss. Matches the settings' `Chorro de gas` section and vanilla's `chorro de veneno`/`chorro de bilis`. | Single word needs no line. The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
 
-## To ground in the first pass
+## Grounded in the first pass
 
-- cataphract (set name, lore paragraph 3): the community pack's `VFEP_Warcasket_Cataphract.label`, else Royalty `Apparel_ArmorCataphract.label`.
-- hazard (set name, settings' vacuum toggle and Workshop FAQ): the community pack's `VFEP_Warcasket_Hazard.label`.
-- the 7th-generation paragraph: the community pack's Aerial / Barrage / Hazard / Shock descriptions share it verbatim; take that rendering.
-- "specialised warcaskets" research (Workshop FAQ): the community pack's `VFEP_SpecialisedWarcaskets.label`.
-- toxin (this set's name) and the Workshop title.
-- pilot (the wearer): Core and Odyssey Castilian for "pilot"; the pack's own word if it has one.
-- Biotech: tox gas, gas mask, tox pack, pollution, the `ToxGasExposure` hediff label and stages; Core: toxic environment resistance, toxic fallout, rot stink, toxic buildup.
-- This mod's coinages: tox gas tank, vent (noun and verb), absorb, gas jet, reserve jet, spray gas.
+The community pack (Cito2310) was fetched from GitHub
+(`vanilla-factions-expanded/Tribal_Translate/DefInjected/{ThingDef,ResearchProjectDef}/Pirates_*.xml`,
+despite the folder name these are the VFE Pirates files).
+
+| English | Spanish | Grounding |
+|---|---|---|
+| cataphract (set name) | catafracto; `el diseño Catafracto` in prose | Community VFEP `VFEP_Warcasket_Cataphract.label` = `ataúd de guerra catafracto`, prose `El Catafracto`. (Royalty's `servoarmadura catafracta` agrees on the word.) |
+| hazard (set name) | hazard (kept in English); `la serie Hazard`, `el Hazard` | Community VFEP `VFEP_Warcasket_Hazard.label` = `ataúd de guerra hazard`, prose `La serie Hazard`. |
+| specialised warcaskets (research) | ataúdes de guerra especializados | Community VFEP `VFEP_SpecialisedWarcaskets.label`. |
+| spacer warcaskets (in the hazard vacuum tooltip) | ataúdes de guerra de la era espacial | Shipcracker's FAQ wording; the pack's `ataúdes de guerra espacial` is ungrammatical. |
+| 7th-generation paragraph | `Los ataúdes de guerra de 7.ª generación surgieron tras...` | The pack's shared Aerial/Barrage/Hazard/Shock paragraph, corrected: its `7ta` is a Latin American ordinal (Castilian `7.ª`), it has agreement slips (`que entran`, `a hacer más frecuente`) and mistranslates "a separate class of" as `separada de`. The structure and `si bien/aunque ... intercambiables, funcionan mejor en conjunto` and `unidades blindadas móviles` are kept; VFEP's dashed aside is commas. |
+| superior protection and worse weight | una protección superior y un peor peso | Community VFEP `VFEP_Warcasket_Cataphract.description` verbatim. |
+| toxin (set name) | toxina; label pattern `ataúd de guerra toxina` / `hombreras toxina de ataúd de guerra` / `casco toxina de ataúd de guerra`; prose `la serie Toxina`, `el Toxina` | Coined. Invariable noun in apposition like the pack's `hazard`/`catafracto`; vanilla attests `toxinas ambientales` (Core). |
+| Workshop title / `TXWC_SettingsCategory` | Ataúd de guerra toxina | Inherited title pattern. |
+| pilot | piloto | Core (`biofirma del piloto`), Odyssey (`consola de piloto`), community VFEP (`El piloto puede...`). |
+| tox gas | toxigás (pl. toxigases) | Biotech `ToxGas.label`, `Apparel_GasMask.description`. |
+| gas mask | máscara antigás | Biotech `Apparel_GasMask.label`. |
+| tox pack (and its reload noun) | pack de tóxicos (pl. packs de tóxicos) | Biotech `Apparel_PackTox.label` and `chargeNoun`. |
+| pollution / polluted terrain | contaminación / terreno contaminado | Biotech `PollutedTerrain.label`, `Apparel_GasMask.description`. |
+| `ToxGasExposure` hediff and stages | toxigás: leve / moderada / grave; "exposición al toxigás" in prose | Biotech `ToxGasExposure.label`, stages, description. |
+| toxic environment resistance | resistencia a entornos tóxicos | Biotech StatDef `ToxicEnvironmentResistance.label`. |
+| toxic fallout | lluvia tóxica | Core `ToxicFallout.label`. |
+| rot stink | olor a putrefacción | Core `RotStink` stage label. |
+| toxic buildup | acumulación tóxica | Core `ToxicBuildup.label`. |
+| environmental toxins | toxinas ambientales | Core/Biotech prose. |
+| deadlife dust | polvo de la muerte | Core Keyed `DeadlifeDust` (the Core `book.txt` lookup has `polvo de necrovita`; Keyed wins for a player-facing noun). |
+| smoke / sharp / blunt | humo / cortante / contundente | Core `Smoke.label`, `ArmorRating_Sharp`/`_Blunt`. |
+| vacuum resistance | resistencia al vacío | Odyssey `VacuumResistance.label`. |
+| requires restart | requiere un reinicio; suffix ` (requiere reinicio)` | Core `ChangedTextureCompressionRestart`. |
+| Miscellaneous (settings section) | Varios | Core `MiscRecordsCategory`. |
+| downed (pilot goes down) | queda incapacitado | Core `DownedCannotCrawl` (`incapacitado`). |
+| tox gas tank | depósito de toxigás | Coined from the inherited `depósito`. |
+| vent (ability verb / the process / the hardware) | purgar depósito / la purga / válvulas de purga | Coined. `purgar` is the plain engineering verb for bleeding gas from a tank; the ability label is a lowercase infinitive like Biotech's `desplegar pack de tóxicos`. |
+| absorb (ability / noun) | absorber gas / la absorción | Coined, plain words. |
+| gas jet (the action and charge) / jet hardware | chorro de gas / toberas (de gas) | Coined. `chorro` as in vanilla's `chorro de veneno`; the physical nozzles on the pauldrons are `toberas`, kept apart from the charge noun. |
+| reserve jet (the shoulders' own jets) | chorros propios de las hombreras; settings label `Chorros sin depósito` | Coined, following the English settings label. |
+| spray gas (verb label, not on the translation surface) | rociar gas | Coined; `rocía` is the jet description's verb. Settled for when it becomes translatable. |
+| targeter (Workshop only) | restructured: `Al apuntar se ve...` | No vanilla noun for the targeter in this slot. |
 
 ## Pending native review
 
 Nothing inherited is open for the VFEP rows (they are the community pack's).
-Add this mod's own coinages here as the pass makes them.
+
+- `toxina` as the set name (noun in apposition; `el Toxina` with a masculine
+  article for the model in Workshop prose).
+- `purgar depósito` / `la purga` / `válvulas de purga` for vent.
+- `absorber gas` / `la absorción`; `chorro`, `chorro de gas`, `toberas`;
+  `depósito de toxigás`; `rociar gas`.
+- `unidad` as the tank's charge noun and its `Gender/Female.txt` line.
+- The corrected 7th-generation paragraph (diverges from the community pack's
+  wording where that is ungrammatical or Latin American).
+- `un peor peso` is the pack's Cataphract formula, kept for family
+  consistency; a native reviewer may prefer `un peso mayor`.

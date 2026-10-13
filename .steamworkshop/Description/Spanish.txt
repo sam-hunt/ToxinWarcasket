@@ -1,0 +1,46 @@
+Ataúd de guerra toxina
+
+Un nuevo ataúd de guerra para [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url], pensado para la guerra química.
+
+[h1]Acerca de[/h1]
+
+El Toxina es un ataúd de guerra de 7.ª generación construido sobre el chasis del Catafracto de VFE Pirates: blindaje del nivel del Aerial sobre un armazón algo más ligero, y tres piezas que comparten un mismo depósito de toxigás. Inunda una posición de gas, asáltala sin sufrir daño y recupera una parte limpiando el aire después. Requiere Biotech.
+
+[hr][/hr]
+[h1]El conjunto[/h1]
+Se desbloquea con las investigaciones "ataúdes de guerra especializados" y "toxigás". El conjunto completo tiene un 100% de resistencia a entornos tóxicos: ni el toxigás, ni la lluvia tóxica, ni el terreno contaminado le afectan.
+[list]
+[*][b]Torso:[/b] el depósito, con gas para casi tres packs de tóxicos, que se rellena con biocombustible igual que un pack. Activa la purga para vaciarlo alrededor del piloto en una nube creciente, y desactívala para guardar el resto. 25% de resistencia a entornos tóxicos.
+[*][b]Hombreras:[/b] los chorros de gas. Cada chorro rocía un cono con gas del depósito: cuatro con el depósito lleno, o dos cargas propias si no lo llevas. Al apuntar se ve dónde cae el gas y hasta dónde se extiende. 15% de resistencia a entornos tóxicos.
+[*][b]Casco:[/b] el respirador. 80% de resistencia a entornos tóxicos e inmunidad a la exposición al toxigás, como una máscara antigás, además de una habilidad que aspira el aire alrededor del piloto hacia el depósito (¡también despeja el humo, el olor a putrefacción y el polvo de la muerte!).
+[/list]
+
+Las opciones del mod ajustan el gas por biocombustible, la capacidad y la velocidad de purga del depósito, el coste, el cono y el alcance del chorro, los chorros sin depósito, y el radio, la duración y el enfriamiento de la absorción.
+
+[hr][/hr]
+[h1]Compatibilidad con mods[/h1]
+[list]
+[*]Seguro de añadir a partidas existentes.
+[*]No es seguro quitarlo mientras haya alguien sepultado en el conjunto.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]: obligatorio.
+[*]Biotech: obligatorio.
+[*]Save Our Ship 2: apto para EVA con las mismas reglas que las series propias de VFE Pirates.
+[*]No probado con Combat Extended (se agradecen los informes).
+[/list]
+
+[hr][/hr]
+[h1]Preguntas frecuentes[/h1]
+[b]P: ¿Necesito Biotech?[/b]
+R: Sí. El toxigás solo existe con Biotech, y todo el conjunto gira en torno a él.
+
+[b]P: ¿En qué se diferencia de la serie Hazard de VFE Pirates?[/b]
+R: El Hazard es el todoterreno: más ligero, ignífugo e inmune a la acumulación tóxica y a los efectos psíquicos, con menos blindaje cortante y contundente. El Toxina está hecho solo para el toxigás, tanto en ataque como en defensa. Paga en peso su blindaje más fuerte y su depósito, y sigue siendo más vulnerable al veneno, al fuego, a las temperaturas extremas, etc.
+
+[b]P: ¿Cómo lo consigo?[/b]
+R: Investiga los proyectos "ataúdes de guerra especializados" de VFE Pirates y "toxigás" de Biotech, y móntalo en la forja de ataúd de guerra como cualquier otro conjunto. Combina las piezas con las series de VFE Pirates como quieras.
+
+
+[hr][/hr]
+[h1]Enlaces[/h1]
+Código fuente, descargas manuales y seguimiento de incidencias: [url=https://github.com/sam-hunt/ToxinWarcasket]GitHub[/url]
+Arte por [url=https://steamcommunity.com/profiles/76561198094174176/myworkshopfiles/?appid=294100]IcingWithCheeseCake[/url]

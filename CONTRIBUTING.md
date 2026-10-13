@@ -23,7 +23,7 @@ welcome too.
 | Russian              | Planned | -      |
 | Korean               | Planned | -      |
 | German               | Machine-assisted | Fable 5.1 |
-| Spanish              | Planned | -      |
+| Spanish              | Machine-assisted | Fable 5.1 |
 | French               | Machine-assisted | Fable 5.1 |
 | Brazilian Portuguese | Planned | -      |
 | Japanese             | Planned | -      |
