@@ -1,0 +1,46 @@
+Warcasket toxine
+
+Un nouveau warcasket de guerre chimique pour [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
+
+[h1]À propos[/h1]
+
+Le Toxine est un warcasket de 7e génération bâti sur le châssis du Cataphracte de VFE Pirates : un blindage digne de l'Aérien sur une structure un peu plus légère, et trois pièces qui partagent un même réservoir de gaz tox. Noyez une position sous le gaz, prenez-la d'assaut sans dommage, puis récupérez-en une partie en assainissant l'air. Nécessite Biotech.
+
+[hr][/hr]
+[h1]L'ensemble[/h1]
+Débloqué par les recherches « specialised warcaskets » et « gaz tox ». L'ensemble complet offre 100% de résistance à l'environnement toxique : le gaz tox, la pluie toxique et les terrains pollués n'ont aucune prise sur lui.
+[list]
+[*][b]Torse :[/b] le réservoir, qui contient le gaz de près de trois packs tox et se recharge au chemfuel comme un pack. Activez la purge pour le vider autour du pilote en un nuage qui s'étend, puis désactivez-la pour garder le reste. 25% de résistance à l'environnement toxique.
+[*][b]Épaulières :[/b] les jets de gaz. Chaque jet pulvérise un cône de gaz puisé dans le réservoir : quatre par réservoir plein, ou deux charges sans réservoir. Le ciblage montre où le gaz retombe et jusqu'où il dérive. 15% de résistance à l'environnement toxique.
+[*][b]Casque :[/b] le respirateur. 80% de résistance à l'environnement toxique et immunité à l'exposition au gaz tox, comme un masque à gaz, plus une capacité qui aspire l'air autour du pilote vers le réservoir (elle dissipe aussi la fumée, la pestilence et la poussière de résurrection !).
+[/list]
+
+Les paramètres du mod règlent le gaz par chemfuel, la capacité et le débit de purge du réservoir, le coût, le cône, la portée et les charges sans réservoir des jets, ainsi que le rayon, la durée et le temps de recharge de l'absorption.
+
+[hr][/hr]
+[h1]Compatibilité des mods[/h1]
+[list]
+[*]Peut être ajouté sans risque à une partie en cours.
+[*]Ne peut pas être retiré sans risque tant qu'un colon est soudé dans l'ensemble.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] : requis.
+[*]Biotech : requis.
+[*]Save Our Ship 2 : apte aux sorties extravéhiculaires, selon les mêmes règles que les ensembles de VFE Pirates.
+[*]Non testé avec Combat Extended (vos retours sont les bienvenus).
+[/list]
+
+[hr][/hr]
+[h1]FAQ[/h1]
+[b]Q : Faut-il Biotech ?[/b]
+R : Oui. Le gaz tox n'existe qu'avec Biotech, et tout l'ensemble repose dessus.
+
+[b]Q : En quoi diffère-t-il de l'ensemble Hazard de VFE Pirates ?[/b]
+R : Le Hazard est polyvalent : plus léger, ignifugé, insensible à l'accumulation toxique et aux effets psychiques, mais avec un blindage plus mince contre les dégâts tranchants et contondants. Le Toxine est conçu pour le seul gaz tox, en attaque comme en défense. Son blindage plus solide et son réservoir se paient en poids, et il reste plus vulnérable au venin, au feu, aux températures extrêmes, etc.
+
+[b]Q : Comment l'obtenir ?[/b]
+R : Recherchez le projet « specialised warcaskets » (warcaskets spécialisés) de VFE Pirates et le projet « gaz tox » de Biotech, puis soudez-le sur un colon à la fonderie de warcaskets, comme tout autre ensemble. Combinez librement ses pièces avec celles des ensembles de VFE Pirates.
+
+
+[hr][/hr]
+[h1]Liens[/h1]
+Code source, téléchargements manuels et suivi des problèmes : [url=https://github.com/sam-hunt/ToxinWarcasket]GitHub[/url]
+Illustrations par [url=https://steamcommunity.com/profiles/76561198094174176/myworkshopfiles/?appid=294100]IcingWithCheeseCake[/url]

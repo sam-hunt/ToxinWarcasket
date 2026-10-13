@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: Toxin Warcasket -->
+  <TXWC_SettingsCategory>Warcasket toxine</TXWC_SettingsCategory>
+
+  <!-- EN: Tox gas tank -->
+  <TXWC_SectionTank>Réservoir de gaz tox</TXWC_SectionTank>
+  <!-- EN: Gas jet -->
+  <TXWC_SectionJet>Jet de gaz</TXWC_SectionJet>
+  <!-- EN: Absorb gas -->
+  <TXWC_SectionAbsorb>Absorption de gaz</TXWC_SectionAbsorb>
+  <!-- EN: Miscellaneous -->
+  <TXWC_SectionMisc>Divers</TXWC_SectionMisc>
+
+  <!-- EN: Tank capacity (chemfuel) -->
+  <TXWC_TankCapacity>Capacité du réservoir (chemfuel)</TXWC_TankCapacity>
+  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
+  <TXWC_TankCapacityDesc>La quantité de chemfuel que contient un réservoir plein. La jauge la compte en unités, une par chemfuel. Un réservoir qui en contient déjà davantage perd l'excédent. Par défaut : {0}.</TXWC_TankCapacityDesc>
+
+  <!-- EN: Tox gas per chemfuel (cells) -->
+  <TXWC_GasPerChemfuel>Gaz tox par chemfuel (cases)</TXWC_GasPerChemfuel>
+  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>Le nombre de cases de gaz tox que produit chaque chemfuel du réservoir, quelle que soit la façon dont il est dépensé : purge, jet, ou libération d'un coup quand le pilote est à terre. L'absorption stocke un chemfuel chaque fois qu'elle aspire autant de gaz. Un pack tox remplit 45 cases avec 35 chemfuel. Par défaut : {0}.</TXWC_GasPerChemfuelDesc>
+
+  <!-- EN: Vent rate (chemfuel per second) -->
+  <TXWC_VentRate>Débit de purge (chemfuel par seconde)</TXWC_VentRate>
+  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>La vitesse à laquelle la purge vide le réservoir. Une purge plus rapide forme un nuage plus large qui se dissipe plus tôt. Par défaut : {0}.</TXWC_VentRateDesc>
+
+  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
+  <TXWC_TankSummary>Un réservoir plein : {0} chemfuel pour {1} cases de gaz tox ({2} packs tox). La purge le vide en {3} secondes.</TXWC_TankSummary>
+
+  <!-- EN: Cost (chemfuel) -->
+  <TXWC_JetCost>Coût (chemfuel)</TXWC_JetCost>
+  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
+  <TXWC_JetCostDesc>La quantité de chemfuel que chaque jet de gaz puise dans le réservoir. Sans réservoir, un des jets propres aux épaulières produit le même gaz pour le même chemfuel. Par défaut : {0}.</TXWC_JetCostDesc>
+
+  <!-- EN: Jets without a tank -->
+  <TXWC_JetReserve>Jets sans réservoir</TXWC_JetReserve>
+  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
+  <TXWC_JetReserveDesc>Le nombre de jets que les épaulières stockent elles-mêmes, pour un usage sans réservoir. Ils se rechargent au chemfuel et restent intacts tant qu'un réservoir est porté. Par défaut : {0}.</TXWC_JetReserveDesc>
+
+  <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
+  <TXWC_JetTankLow>Nécessite {COUNT} {CHARGENOUN_plural} dans le réservoir.</TXWC_JetTankLow>
+
+  <!-- EN: Cone width (degrees) -->
+  <TXWC_JetConeWidth>Largeur du cône (degrés)</TXWC_JetConeWidth>
+  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>La largeur totale du cône où retombe le jet de gaz. Plus le cône est large, plus le gaz est dilué. Par défaut : {0}.</TXWC_JetConeWidthDesc>
+
+  <!-- EN: Range (cells) -->
+  <TXWC_JetRange>Portée (cases)</TXWC_JetRange>
+  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetRangeDesc>La distance que parcourt le jet de gaz. Plus le jet porte loin, plus le gaz est dilué. Par défaut : {0}.</TXWC_JetRangeDesc>
+
+  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
+  <TXWC_JetSummary>Un jet : {0} chemfuel pour {1} cases de gaz tox ({2} packs tox). Un réservoir plein en contient {3}, les épaulières seules {4}.</TXWC_JetSummary>
+
+  <!-- EN: Radius (cells) -->
+  <TXWC_AbsorbRadius>Rayon (cases)</TXWC_AbsorbRadius>
+  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>La distance autour du pilote dans laquelle l'absorption aspire le gaz. Par défaut : {0}.</TXWC_AbsorbRadiusDesc>
+
+  <!-- EN: Duration (seconds) -->
+  <TXWC_AbsorbDuration>Durée (secondes)</TXWC_AbsorbDuration>
+  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>Le temps pendant lequel chaque absorption aspire le gaz. Par défaut : {0}.</TXWC_AbsorbDurationDesc>
+
+  <!-- EN: Cooldown (hours) -->
+  <TXWC_AbsorbCooldown>Temps de recharge (heures)</TXWC_AbsorbCooldown>
+  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>Le temps qu'il faut à l'absorption pour se recharger. Par défaut : {0}.</TXWC_AbsorbCooldownDesc>
+
+  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
+  <TXWC_AbsorbSummary>Une absorption aspire le gaz des {0} cases autour du pilote. Un nuage qui les couvre entièrement rapporte {1} chemfuel au réservoir.</TXWC_AbsorbSummary>
+
+  <!-- EN: Hazard warcaskets resist vacuum -->
+  <TXWC_HazardVacuum>Les warcaskets hazard résistent au vide</TXWC_HazardVacuum>
+  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
+  <TXWC_HazardVacuumDesc>Donne au warcasket hazard la résistance au vide des warcaskets spatiaux, ce qui le distingue davantage du warcasket toxine. Ce changement nécessite un redémarrage. Par défaut : désactivé.</TXWC_HazardVacuumDesc>
+  <!-- EN:  (requires restart) -->
+  <TXWC_RequiresRestartSuffix> (nécessite un redémarrage)</TXWC_RequiresRestartSuffix>
+  <!-- EN:  (requires Odyssey) -->
+  <TXWC_RequiresOdysseySuffix> (nécessite Odyssey)</TXWC_RequiresOdysseySuffix>
+
+  <!-- EN:  (default) -->
+  <TXWC_DefaultSuffix> (par défaut)</TXWC_DefaultSuffix>
+
+</LanguageData>

@@ -24,7 +24,7 @@ welcome too.
 | Korean               | Planned | -      |
 | German               | Machine-assisted | Fable 5.1 |
 | Spanish              | Planned | -      |
-| French               | Planned | -      |
+| French               | Machine-assisted | Fable 5.1 |
 | Brazilian Portuguese | Planned | -      |
 | Japanese             | Planned | -      |
 | Traditional Chinese  | Planned | -      |

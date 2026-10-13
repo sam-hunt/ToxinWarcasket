@@ -1,7 +1,7 @@
 # French glossary, Toxin Warcasket
 
-Seeded from the Shipcracker Warcasket glossary; no translation pass has run
-here yet. Only mod-specific coinages and grounding decisions; family-wide
+Seeded from the Shipcracker Warcasket glossary; the first machine-assisted
+pass has run. Only mod-specific coinages and grounding decisions; family-wide
 mechanics and style (the elision worker, where `PostProcessed` runs, register
 tells) live in `l10n/languages/French.md`. Folder `French`, grounded against
 the Core, Royalty and Biotech `French (Français).tar`s.
@@ -56,21 +56,50 @@ multi-word noun gets its `s` on the last word.
 
 | English | French | Grounding |
 |---|---|---|
-| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | *pass* | Shipcracker's "fuel unit" is `unité` for exactly this reason (feminine against Core's masculine `{CHARGENOUN_plural} restants` is vanilla's own shape: `charge`, `grenade`; `Il ne reste plus de unités` elides to `d'unités`). The fuel is named by the reload-cost line beside it. |
-| jet (the shoulders' `chargeNoun`; one per activation) | *pass* | Single word. The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
+| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | unité (f., pl. unités); lookup file: none needed (French `Pluralize` is rule-only; `CHARGENOUN_gender` is unused in vanilla fr Keyed, so no `WordInfo/Gender` line either) | Shipcracker's "fuel unit" is `unité` for exactly this reason (feminine against Core's masculine `{CHARGENOUN_plural} restants` is vanilla's own shape: `charge`, `grenade`; `Il ne reste plus de unités` elides to `d'unités`). The fuel is named by the reload-cost line beside it. |
+| jet (the shoulders' `chargeNoun`; one per activation) | jet (m., pl. jets); lookup file: none needed (rule plural, masculine default matches) | Single word. The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
 
-## To ground in the first pass
+## Grounded in the first pass
 
-- cataphract (set name, lore paragraph 3): Royalty `Apparel_ArmorCataphract.label` = `armure de cataphracte`; VFEP's label is untranslated in-game, so decide between the Royalty word and the English name in guillemets.
-- hazard (set name, in the settings' vacuum toggle and the Workshop FAQ): VFEP's label is untranslated in-game; same choice.
-- toxin (this set's name) and the Workshop title.
-- the 7th-generation paragraph: no community pack to mirror; follow the meaning, not VFEP's dashes.
-- pilot (the wearer, every description): Core and Odyssey French for "pilot".
-- Biotech: tox gas, gas mask, tox pack, pollution, the `ToxGasExposure` hediff label and stages; Core: toxic environment resistance, toxic fallout, rot stink, toxic buildup.
-- This mod's coinages: tox gas tank, vent (noun and verb), absorb, gas jet, reserve jet, spray gas.
+| English | French | Grounding |
+|---|---|---|
+| toxin (set name; title, labels) | toxine (`warcasket toxine`, `casque de warcasket toxine`, `épaulières de warcasket toxine`); Workshop title `Warcasket toxine` | **Coined.** Noun in apposition, the same shape as Shipcracker's `brise-coque`; lowercase in-game, `le Toxine` (m., the warcasket) on the Workshop page. |
+| cataphract (lore paragraph, Workshop) | cataphracte (`le modèle cataphracte` in-game; `Cataphracte` on the Workshop page) | Royalty `Apparel_ArmorCataphract.label` = `armure de cataphracte`. |
+| hazard (VFEP set, settings and FAQ) | hazard (`warcasket hazard`, `ensemble Hazard` on the Workshop page) | Kept English: VFEP's label is untranslated in-game, and no French word reads as a set name. |
+| Aerial (VFEP set, Workshop only) | Aérien | **Coined**, following Shipcracker's Workshop habit of translating VFEP set names (`Brise-siège`, `Gardien`). |
+| 7th generation | 7e génération; the dashed aside becomes `qui, bien qu'interchangeables, fonctionnent mieux en ensemble` | Shipcracker's `10e génération`; no community VFEP pack. |
+| pilot | pilote | Odyssey (`console de pilotage`, `pilote`); Shipcracker. |
+| tox gas | gaz tox | Biotech `ToxGas.label` (GasDef and research). |
+| gas mask | masque à gaz | Biotech `Apparel_GasMask.label`. |
+| tox pack | pack tox (pl. packs tox) | Biotech `Apparel_PackTox.label` and its `chargeNoun`. |
+| pollution / polluted terrain | pollution / terrain pollué | Biotech Keyed `TerrainPollutionTip`, `MessageWarningNotPollutedCell`. |
+| tox gas exposure (hediff; stages) | gaz tox (bénigne / modérée / sévère); prose `exposition au gaz tox` | Biotech `ToxGasExposure.*`; the description uses `l'exposition au gaz tox`. |
+| toxic environment resistance | résistance à l'environnement toxique | Core `ToxicEnvironmentResistance.label`. |
+| toxic fallout | pluie toxique | Core `GameConditionDef`/`IncidentDef` `ToxicFallout.label` (the TaleDef's `retombée toxique` is the outlier). |
+| rot stink | pestilence | Core `RotStink` stage label; also the stat description's word. |
+| toxic buildup | accumulation toxique | Core `ToxicBuildup.label`. |
+| smoke / deadlife dust | fumée / poussière de résurrection | Core `Smoke.label`, Keyed `DeadlifeDust`. |
+| venom / psychic | venin / psychique | Core `Cobra` `crochets à venin`, `PsychicSensitivity.label`. |
+| vacuum resistance | résistance au vide | Odyssey `VacuumResistance.label`. |
+| tox gas tank | réservoir de gaz tox (`réservoir`) | **Coined**; `réservoir` as Shipcracker's tank. |
+| vent (the openings) | évent(s) | **Coined**, plain French. |
+| vent (the action; ability label, settings) | purge (`purge du réservoir`, `débit de purge`; verb `se purger`) | **Coined.** Noun-phrase ability label like Biotech `pulvérisation d'acide`. |
+| absorb (ability; "the absorb") | absorption (`absorption de gaz`) | **Coined**, noun-phrase label pattern. |
+| gas jet | jet de gaz | Biotech `FoamSpray.label` = `jet de mousse`. |
+| reserve jet / jets without a tank | jets sans réservoir; prose `les propres jets des épaulières` | **Coined.** |
+| spray gas (verb label, not yet on the surface) | pulvérisation de gaz | Biotech `AcidSpray.label` = `pulvérisation d'acide`. Record only. |
+| cone / cloud | cône / nuage | Core `Stat_Thing_Weapon_MissRadius_Desc`; Biotech `nuage toxique`. |
+| `Default: off.` | Par défaut : désactivé. | Glossary settings row (`Désactivé`). |
 
 ## Pending native review
 
 Still open from the Shipcracker review, inherited as-is: `fonderie de
 warcaskets`, `épaulières`, and the set-name capitalization pattern. Add this
 mod's own coinages here as the pass makes them.
+
+This pass's coinages, all machine-assisted: `toxine` as the set name (vs
+the adjective `toxique`), `purge` for the vent action beside `évent` for the
+openings, `absorption de gaz`, `jets sans réservoir`, `Aérien`, keeping
+`hazard` in English, the lowercase set names in in-game lore prose
+(`série toxine`, `modèle cataphracte`), and `plus protecteur mais plus
+lourd` for "superior protection and worse weight".
