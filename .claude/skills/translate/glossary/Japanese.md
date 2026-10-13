@@ -1,7 +1,7 @@
 # Japanese glossary, Toxin Warcasket
 
 Seeded from the Shipcracker Warcasket glossary (machine-assisted there,
-pending native review); no translation pass has run here yet. Only
+pending native review); one machine-assisted pass has run here. Only
 mod-specific coinages and grounding decisions; family-wide mechanics and
 style (ASCII `,` `.`, no LanguageWorker, polite register in descriptions,
 「」 vs ASCII quotes per slot) live in `l10n/languages/Japanese.md`.
@@ -50,23 +50,56 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 
 | English | Japanese | Grounding |
 |---|---|---|
-| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | *pass* | Shipcracker's "fuel unit" is the plain mass noun 燃料 (燃料残数, 燃料回復コスト); 燃料ユニット would be a calque. Decide whether a counted ユニット reads better for a gauge counted in units of one. |
-| jet (the shoulders' `chargeNoun`; one per activation) | *pass* | The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
+| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | 燃料 | Shipcracker's tank noun, kept for the family: 燃料残数, 最大燃料数, 燃料回復コスト, 燃料が残っていません read as vanilla; a counted ユニット reads as a calque in those slots. Lookup file: none needed (base `Pluralize`, unchanged). Gender: none (`CHARGENOUN_gender` absent from ja Core Keyed). |
+| jet (the shoulders' `chargeNoun`; one per activation) | 噴射 | Coined; 噴射残数, 最大噴射数, 噴射が残っていません. The same noun as the settings' ガス噴射 section and the spray-gas verb. Lookup file: none needed. Gender: none. |
 
-## To ground in the first pass
+## Grounded in the first pass
 
-- cataphract (set name, lore paragraph 3): Royalty `Apparel_ArmorCataphract.label` (カタフラクト family), in the katakana set-name habit.
-- hazard (set name, settings' vacuum toggle and Workshop FAQ): coin in katakana to match.
-- toxin (this set's name) and the Workshop title.
-- the 7th-generation paragraph: no community pack to mirror; follow the meaning, not VFEP's dashes.
-- "specialised warcaskets" / "spacer warcaskets" research (Workshop FAQ): coin; cite in 「」 per the language file.
-- Biotech: tox gas, gas mask, tox pack, pollution, the `ToxGasExposure` hediff label and stages; Core: toxic environment resistance, toxic fallout, rot stink, toxic buildup.
-- This mod's coinages: tox gas tank, vent (noun and verb), absorb, gas jet, reserve jet, spray gas.
+| English | Japanese | Grounding |
+|---|---|---|
+| toxin (set name) / Workshop title | トキシン / トキシン・ウォーキャスケット | Coined katakana, set-name habit; title equals `TXWC_SettingsCategory` and the armor label. |
+| Toxin series | トキシンシリーズ | Coined. |
+| cataphract | カタフラクト | Royalty `Apparel_ArmorCataphract.label` (カタフラクトアーマー). |
+| hazard (set name) | ハザード / ハザード・ウォーキャスケット | Coined katakana. |
+| 7th generation | 第7世代 | Shipcracker's 第10世代. VFEP's dashed aside reflowed as "パーツの互換性は保ちつつ,". |
+| specialised warcaskets / spacer warcaskets (research) | 「特殊なウォーキャスケット」 / 「宇宙世紀のウォーキャスケット」 | Coined; the second is Shipcracker's Workshop rendering. 「」 per the language file. |
+| specialized (part description opener) | 特殊な | Shipcracker's descriptions. |
+| superior protection and worse weight | 防護性能に優れる反面,重量が増しています | Coined. |
+| tox gas / tox gas (research) | 毒ガス | Biotech `ToxGas.label` (GasDef/ResearchProjectDef), `ToxGasExposure.label`. |
+| tox gas exposure | 毒ガスへの曝露 | Biotech `ToxGasExposure.description`. |
+| gas mask | ガスマスク | Biotech `Apparel_GasMask.label`. |
+| tox pack | 毒ガスパック | Biotech `Apparel_PackTox.label` and its `chargeNoun`. |
+| pollution / polluted terrain | 汚染 / 汚染された土地 | Biotech `PollutionPump`, `PollutedTerrain.label`. |
+| toxic environment resistance | 毒環境耐性 | Biotech StatDef `ToxicEnvironmentResistance.label`. |
+| toxic fallout | 死の灰 | Core GameConditionDef `ToxicFallout.label`. |
+| rot stink | 腐敗臭 | Core `RotStink.stages.rot_stink.label`. |
+| toxic buildup | 毒物の蓄積 | Core `ToxicBuildup.label` (毒物が蓄積), nominalised. |
+| smoke | 煙幕 | Core `Smoke.label`. |
+| deadlife dust | 死の塵 | Vanilla Keyed `DeadlifeDust`. |
+| sharp / blunt (armor) | 突刺系 / 打撲系 | Core `ArmorRating_Sharp/Blunt.label`. |
+| vacuum resistance | 真空耐性 | Odyssey `VacuumResistance.label`. |
+| Miscellaneous | その他 | Core Keyed `Etc`. |
+| (requires restart) | ` (再起動が必要)` | Core Keyed `ChangedTextureCompressionRestart` (再起動が必要です). |
+| Mod settings (Workshop) | Mod 設定 | Core Keyed `ModSettings`. |
+| tox gas tank | 毒ガスタンク | Coined. |
+| vent (ability label) / vent (verb) / vents (the openings) | タンク放出 / 放出する / 放出口 | Coined; Core's 換気口 is the room vent, kept apart. |
+| absorb gas (ability) / the absorb | ガス吸収 | Coined. |
+| draw in (the respirator's action) | 吸い込む / 吸い戻す | Coined. |
+| gas jet (settings section) / jets (the openings) | ガス噴射 / ガス噴射口, 肩部の噴射口 | Coined. |
+| reserve jet / jets without a tank | ショルダーアーマー自体の噴射 / タンクなしの噴射回数 | Coined. |
+| spray gas (shoulders' verb label, not on the surface yet) | ガスを噴射 | Coined; follows Biotech `deploy_tox_pack` (毒ガスパックを展開) verb-phrase shape. |
+| cone | 円錐 | Coined plain word. |
 
 ## Pending native review
 
 Inherited and still open there: ショルダーアーマー and the resulting label
 length, ウォーキャスケット鋳造台 (foundry) and 封入 (entomb), both unattested.
 If the community VFEP translation surfaces, align these and the set names to
-it in the Shipcracker glossary first. Add this mod's own coinages here as the
-pass makes them.
+it in the Shipcracker glossary first.
+
+This mod's first pass (machine-assisted): トキシン, ハザード (set names);
+毒ガスタンク, タンク放出 / 放出口, ガス吸収, ガス噴射 and 噴射 (the jet
+charge noun), ショルダーアーマー自体の噴射 (reserve jet), ガスを噴射; 燃料 as
+the tank's charge noun inside a tank that is also measured in バイオ液化燃料
+in the settings; 特殊な for "specialized"; the 7th-generation paragraph's
+phrasing (no community VFEP rendering exists).

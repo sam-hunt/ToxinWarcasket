@@ -26,7 +26,7 @@ welcome too.
 | Spanish              | Machine-assisted | Fable 5.1 |
 | French               | Machine-assisted | Fable 5.1 |
 | Brazilian Portuguese | Machine-assisted | Fable 5.1 |
-| Japanese             | Planned | -      |
+| Japanese             | Machine-assisted | Fable 5.1 |
 | Traditional Chinese  | Planned | -      |
 
 Statuses: **Source** (the authoritative English strings), **Machine-assisted**

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that - while interchangeable - work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series is based on the Cataphract design, rebuilt for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to environmental toxins. -->
+  <TXWC_WarcasketHelmet_Toxin.description>特殊なウォーキャスケットヘルメットで,防護性能に優れる反面,重量が増しています.呼吸装置で気密化されており,毒ガスを遮断するとともに,外殻のタンクへ吸い戻します.\n\n第7世代のウォーキャスケットは,基本性能をさらに高める試みが期待外れの結果に終わったことから生まれました.パーツの互換性は保ちつつ,セットでこそ真価を発揮する設計に重点を置いています.また,回収品や略奪品の中にプラスチールが多く見られるようになったことから,初めてプラスチールを設計に取り入れた世代でもあります.各パーツは同じシリーズのパーツと相乗効果を生む固有の機能を持ち,まさに独立した部類の機動装甲ユニットとなっています.\n\nトキシンシリーズは,カタフラクトの設計を化学戦向けに作り直したものです.外殻のタンクがパイロットの周囲の放出口とショルダーアーマーのガス噴射口にガスを送り,ヘルメットの呼吸装置がガスをタンクへ吸い戻します.全パーツがそろうと,パイロットは環境中の毒素の影響を受けなくなります.</TXWC_WarcasketHelmet_Toxin.description>
+  <!-- EN: toxin warcasket helmet -->
+  <TXWC_WarcasketHelmet_Toxin.label>トキシン・ウォーキャスケットヘルメット</TXWC_WarcasketHelmet_Toxin.label>
+  <!-- EN: Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
+  <TXWC_WarcasketHelmet_Toxin.shortDescription>特殊なウォーキャスケットヘルメットで,防護性能に優れる反面,重量が増しています.呼吸装置で気密化されており,毒ガスを遮断するとともに,外殻のタンクへ吸い戻します.</TXWC_WarcasketHelmet_Toxin.shortDescription>
+
+  <!-- EN: jet -->
+  <TXWC_WarcasketShoulders_Toxin.comps.CompJetNozzle.chargeNoun>噴射</TXWC_WarcasketShoulders_Toxin.comps.CompJetNozzle.chargeNoun>
+  <!-- EN: on cooldown -->
+  <TXWC_WarcasketShoulders_Toxin.comps.CompJetNozzle.cooldownGerund>クールダウン中</TXWC_WarcasketShoulders_Toxin.comps.CompJetNozzle.cooldownGerund>
+  <!-- EN: Spray a cone of tox gas from the shoulders toward the target. The gas lands in the inner cone and drifts over the outer area, thinning as it goes. Each jet draws on the warcasket's tank. Without a tank, the shoulders fall back on jets of their own, reloaded with chemfuel. -->
+  <TXWC_WarcasketShoulders_Toxin.comps.CompJetNozzle.jetDescription>肩から目標に向けて毒ガスを円錐状に噴射します.ガスは内側の円錐に着弾し,外側の範囲へ流れながら薄まっていきます.噴射ごとにウォーキャスケットのタンクの中身を使います.タンクがない場合は,バイオ液化燃料で補充するショルダーアーマー自体の噴射を代わりに使います.</TXWC_WarcasketShoulders_Toxin.comps.CompJetNozzle.jetDescription>
+  <!-- EN: Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted jets that spray tox gas from the shell's tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that - while interchangeable - work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series is based on the Cataphract design, rebuilt for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to environmental toxins. -->
+  <TXWC_WarcasketShoulders_Toxin.description>特殊なウォーキャスケットショルダーアーマーで,防護性能に優れる反面,重量が増しています.外殻のタンクから毒ガスを噴射する肩部の噴射口を搭載しています.\n\n第7世代のウォーキャスケットは,基本性能をさらに高める試みが期待外れの結果に終わったことから生まれました.パーツの互換性は保ちつつ,セットでこそ真価を発揮する設計に重点を置いています.また,回収品や略奪品の中にプラスチールが多く見られるようになったことから,初めてプラスチールを設計に取り入れた世代でもあります.各パーツは同じシリーズのパーツと相乗効果を生む固有の機能を持ち,まさに独立した部類の機動装甲ユニットとなっています.\n\nトキシンシリーズは,カタフラクトの設計を化学戦向けに作り直したものです.外殻のタンクがパイロットの周囲の放出口とショルダーアーマーのガス噴射口にガスを送り,ヘルメットの呼吸装置がガスをタンクへ吸い戻します.全パーツがそろうと,パイロットは環境中の毒素の影響を受けなくなります.</TXWC_WarcasketShoulders_Toxin.description>
+  <!-- EN: toxin warcasket shoulders -->
+  <TXWC_WarcasketShoulders_Toxin.label>トキシン・ウォーキャスケットショルダーアーマー</TXWC_WarcasketShoulders_Toxin.label>
+  <!-- EN: Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <TXWC_WarcasketShoulders_Toxin.shortDescription>特殊なウォーキャスケットショルダーアーマーで,防護性能に優れる反面,重量が増しています.外殻のタンクから毒ガスを噴射する肩部の噴射口を搭載しています.</TXWC_WarcasketShoulders_Toxin.shortDescription>
+
+  <!-- EN: unit -->
+  <TXWC_Warcasket_Toxin.comps.CompToxTank.chargeNoun>燃料</TXWC_Warcasket_Toxin.comps.CompToxTank.chargeNoun>
+  <!-- EN: on cooldown -->
+  <TXWC_Warcasket_Toxin.comps.CompToxTank.cooldownGerund>クールダウン中</TXWC_Warcasket_Toxin.comps.CompToxTank.cooldownGerund>
+  <!-- EN: Specialized warcasket shell with superior protection and worse weight, fitted with a tox gas tank that vents around the pilot.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that - while interchangeable - work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergises with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series is based on the Cataphract design, rebuilt for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to environmental toxins. -->
+  <TXWC_Warcasket_Toxin.description>特殊なウォーキャスケット外殻で,防護性能に優れる反面,重量が増しています.パイロットの周囲にガスを放出する毒ガスタンクを搭載しています.\n\n第7世代のウォーキャスケットは,基本性能をさらに高める試みが期待外れの結果に終わったことから生まれました.パーツの互換性は保ちつつ,セットでこそ真価を発揮する設計に重点を置いています.また,回収品や略奪品の中にプラスチールが多く見られるようになったことから,初めてプラスチールを設計に取り入れた世代でもあります.各パーツは同じシリーズのパーツと相乗効果を生む固有の機能を持ち,まさに独立した部類の機動装甲ユニットとなっています.\n\nトキシンシリーズは,カタフラクトの設計を化学戦向けに作り直したものです.外殻のタンクがパイロットの周囲の放出口とショルダーアーマーのガス噴射口にガスを送り,ヘルメットの呼吸装置がガスをタンクへ吸い戻します.全パーツがそろうと,パイロットは環境中の毒素の影響を受けなくなります.</TXWC_Warcasket_Toxin.description>
+  <!-- EN: toxin warcasket -->
+  <TXWC_Warcasket_Toxin.label>トキシン・ウォーキャスケット</TXWC_Warcasket_Toxin.label>
+  <!-- EN: Specialized warcasket shell with superior protection and worse weight, fitted with a tox gas tank that vents around the pilot. -->
+  <TXWC_Warcasket_Toxin.shortDescription>特殊なウォーキャスケット外殻で,防護性能に優れる反面,重量が増しています.パイロットの周囲にガスを放出する毒ガスタンクを搭載しています.</TXWC_Warcasket_Toxin.shortDescription>
+
+</LanguageData>
