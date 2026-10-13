@@ -2,7 +2,6 @@
 
 ## Art
 
-- Replace the `About/Preview.png` placeholder when it lands
 - **Workshop images.** shipcracker as the template for the lineup
 
 ## Infrastructure follow-ups
