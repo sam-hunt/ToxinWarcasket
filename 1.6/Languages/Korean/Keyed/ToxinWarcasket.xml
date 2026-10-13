@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: Toxin Warcasket -->
+  <TXWC_SettingsCategory>독소 워캐스킷</TXWC_SettingsCategory>
+
+  <!-- EN: Tox gas tank -->
+  <TXWC_SectionTank>독소 가스 탱크</TXWC_SectionTank>
+  <!-- EN: Gas jet -->
+  <TXWC_SectionJet>가스 분사</TXWC_SectionJet>
+  <!-- EN: Absorb gas -->
+  <TXWC_SectionAbsorb>가스 흡수</TXWC_SectionAbsorb>
+  <!-- EN: Miscellaneous -->
+  <TXWC_SectionMisc>기타</TXWC_SectionMisc>
+
+  <!-- EN: Tank capacity (chemfuel) -->
+  <TXWC_TankCapacity>탱크 용량 (화학연료)</TXWC_TankCapacity>
+  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
+  <TXWC_TankCapacityDesc>탱크를 가득 채웠을 때 들어가는 화학연료의 양입니다. 게이지에는 화학연료 1개가 1로 표시됩니다. 탱크에 이미 이보다 많이 들어 있으면 초과분은 사라집니다. 기본값: {0}.</TXWC_TankCapacityDesc>
+
+  <!-- EN: Tox gas per chemfuel (cells) -->
+  <TXWC_GasPerChemfuel>화학연료당 독소 가스 (칸)</TXWC_GasPerChemfuel>
+  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>탱크의 화학연료 1개가 만드는 독소 가스의 칸 수입니다. 배출하든, 분사하든, 조종사가 쓰러지며 터지든 똑같이 적용됩니다. 흡수는 이만큼의 가스를 빨아들일 때마다 화학연료 1개 분량을 저장합니다. 독소 등짐은 화학연료 35개로 45칸을 채웁니다. 기본값: {0}.</TXWC_GasPerChemfuelDesc>
+
+  <!-- EN: Vent rate (chemfuel per second) -->
+  <TXWC_VentRate>배출 속도 (초당 화학연료)</TXWC_VentRate>
+  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>배출구가 탱크를 비우는 속도입니다. 빠를수록 가스 구름이 더 넓게 퍼지고 더 빨리 걷힙니다. 기본값: {0}.</TXWC_VentRateDesc>
+
+  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
+  <TXWC_TankSummary>가득 찬 탱크: 화학연료 {0}개, 독소 가스 {1}칸 (독소 등짐 {2}개 분량). 배출하면 {3}초 만에 비워집니다.</TXWC_TankSummary>
+
+  <!-- EN: Cost (chemfuel) -->
+  <TXWC_JetCost>비용 (화학연료)</TXWC_JetCost>
+  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
+  <TXWC_JetCostDesc>가스 분사 1회에 탱크에서 끌어오는 화학연료의 양입니다. 탱크가 없을 때 쓰는 어깨 자체의 분사도 같은 화학연료로 같은 양의 가스를 만듭니다. 기본값: {0}.</TXWC_JetCostDesc>
+
+  <!-- EN: Jets without a tank -->
+  <TXWC_JetReserve>탱크 미착용 시 분사 횟수</TXWC_JetReserve>
+  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
+  <TXWC_JetReserveDesc>탱크 없이 어깨만 착용할 때 쓰는, 어깨 자체의 분사 횟수입니다. 화학연료로 재장전하며, 탱크를 착용한 동안에는 소모되지 않습니다. 기본값: {0}.</TXWC_JetReserveDesc>
+
+  <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
+  <TXWC_JetTankLow>탱크에 {CHARGENOUN_plural} {COUNT}개가 필요합니다.</TXWC_JetTankLow>
+
+  <!-- EN: Cone width (degrees) -->
+  <TXWC_JetConeWidth>원뿔 폭 (도)</TXWC_JetConeWidth>
+  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>가스 분사가 떨어지는 원뿔의 전체 폭입니다. 원뿔이 넓을수록 같은 양의 가스가 더 옅게 퍼집니다. 기본값: {0}.</TXWC_JetConeWidthDesc>
+
+  <!-- EN: Range (cells) -->
+  <TXWC_JetRange>사거리 (칸)</TXWC_JetRange>
+  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetRangeDesc>가스 분사가 닿는 거리입니다. 멀리 닿을수록 같은 양의 가스가 더 옅게 퍼집니다. 기본값: {0}.</TXWC_JetRangeDesc>
+
+  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
+  <TXWC_JetSummary>분사 1회: 화학연료 {0}개, 독소 가스 {1}칸 (독소 등짐 {2}개 분량). 가득 찬 탱크로 {3}회, 어깨만으로 {4}회 분사할 수 있습니다.</TXWC_JetSummary>
+
+  <!-- EN: Radius (cells) -->
+  <TXWC_AbsorbRadius>범위 (칸)</TXWC_AbsorbRadius>
+  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>흡수가 조종사 주위에서 가스를 빨아들이는 범위입니다. 기본값: {0}.</TXWC_AbsorbRadiusDesc>
+
+  <!-- EN: Duration (seconds) -->
+  <TXWC_AbsorbDuration>지속 시간 (초)</TXWC_AbsorbDuration>
+  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>흡수 1회가 가스를 빨아들이는 시간입니다. 기본값: {0}.</TXWC_AbsorbDurationDesc>
+
+  <!-- EN: Cooldown (hours) -->
+  <TXWC_AbsorbCooldown>재사용 대기 (시간)</TXWC_AbsorbCooldown>
+  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>흡수를 다시 쓸 수 있을 때까지 걸리는 시간입니다. 기본값: {0}.</TXWC_AbsorbCooldownDesc>
+
+  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
+  <TXWC_AbsorbSummary>흡수 1회는 조종사 주위 {0}칸에서 가스를 빨아들입니다. 이 칸들이 가스로 가득 차 있으면 화학연료 {1}개 분량이 저장됩니다.</TXWC_AbsorbSummary>
+
+  <!-- EN: Hazard warcaskets resist vacuum -->
+  <TXWC_HazardVacuum>재해 워캐스킷의 진공 저항력</TXWC_HazardVacuum>
+  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
+  <TXWC_HazardVacuumDesc>재해 워캐스킷에 우주시대 워캐스킷과 같은 진공 저항력을 부여해, 독소 워캐스킷과의 차이를 더 벌립니다. 변경하면 게임을 다시 시작해야 합니다. 기본값: 꺼짐.</TXWC_HazardVacuumDesc>
+  <!-- EN:  (requires restart) -->
+  <TXWC_RequiresRestartSuffix> (재시작 필요)</TXWC_RequiresRestartSuffix>
+  <!-- EN:  (requires Odyssey) -->
+  <TXWC_RequiresOdysseySuffix> (오디세이 필요)</TXWC_RequiresOdysseySuffix>
+
+  <!-- EN:  (default) -->
+  <TXWC_DefaultSuffix> (기본값)</TXWC_DefaultSuffix>
+
+</LanguageData>

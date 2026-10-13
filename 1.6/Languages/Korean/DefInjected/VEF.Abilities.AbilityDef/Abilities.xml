@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas, and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn. -->
+  <TXWC_AbsorbGas.description>몇 초 동안 호흡 장치로 주위의 공기를 빨아들여, 조종사가 움직이는 동안 주변의 연막, 독소 가스 등 각종 가스를 걷어냅니다. 빨아들인 가스는 걸러진 뒤, 탱크를 착용하고 있다면 워캐스킷의 탱크에 독소 가스로 저장됩니다.</TXWC_AbsorbGas.description>
+  <!-- EN: Using ability: {0} -->
+  <TXWC_AbsorbGas.jobReportString>{0} 능력 사용 중</TXWC_AbsorbGas.jobReportString>
+  <!-- EN: absorb gas -->
+  <TXWC_AbsorbGas.label>가스 흡수</TXWC_AbsorbGas.label>
+  <!-- EN: absorb gas -->
+  <TXWC_AbsorbGas.verbProperties.label>가스 흡수</TXWC_AbsorbGas.verbProperties.label>
+
+  <!-- EN: Open the tank's vents and release tox gas around the pilot. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left. -->
+  <TXWC_VentTank.description>탱크의 배출구를 열어 조종사 주위로 독소 가스를 내뿜습니다. 가스 구름은 조종사가 선 자리에서부터 커지며, 조종사가 움직이면 함께 따라갑니다. 다시 누르면 배출구를 닫고 남은 가스를 보존합니다.</TXWC_VentTank.description>
+  <!-- EN: Using ability: {0} -->
+  <TXWC_VentTank.jobReportString>{0} 능력 사용 중</TXWC_VentTank.jobReportString>
+  <!-- EN: vent tank -->
+  <TXWC_VentTank.label>탱크 배출</TXWC_VentTank.label>
+  <!-- EN: vent tank -->
+  <TXWC_VentTank.verbProperties.label>탱크 배출</TXWC_VentTank.verbProperties.label>
+
+</LanguageData>

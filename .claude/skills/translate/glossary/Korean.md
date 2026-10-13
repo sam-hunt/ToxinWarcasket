@@ -1,7 +1,7 @@
 # Korean glossary, Toxin Warcasket
 
 Seeded from the Shipcracker Warcasket glossary (machine-assisted there,
-pending native review); no translation pass has run here yet. Only
+pending native review); first machine-assisted pass 2026-10-13. Only
 mod-specific coinages and grounding decisions; family-wide mechanics, josa
 markers and style live in `l10n/languages/Korean.md`.
 
@@ -45,20 +45,51 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 
 | English | Korean | Grounding |
 |---|---|---|
-| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | *pass* | Shipcracker's "fuel unit" is the plain mass noun 연료 (잔여 연료, 연료당 재장전 비용). Decide whether a counted 단위 reads better for a gauge counted in units of one. |
-| jet (the shoulders' `chargeNoun`; one per activation) | *pass* | The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
+| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | 연료 | Same plain mass noun as Shipcracker's fuel unit, so the gauge reads `잔여 연료`, `연료당 재장전 비용`, `남은 연료가 없습니다` across the family; 단위 reads wrong in those slots. Lookup file: none needed. Gender: none (ko Core Keyed has no `CHARGENOUN_gender`). | Shipcracker's "fuel unit" is the plain mass noun 연료 (잔여 연료, 연료당 재장전 비용). Decide whether a counted 단위 reads better for a gauge counted in units of one. |
+| jet (the shoulders' `chargeNoun`; one per activation) | 분사 | Same noun as the "Gas jet" section (가스 분사) and the spray-gas verb label; reads `잔여 분사`, `분사당 재장전 비용`. Lookup file: none needed. Gender: none. | The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
 
-## To ground in the first pass
+## Grounded in the first pass
 
-- cataphract (set prefix, lore paragraph 3): RMK's `VFEP_Warcasket_Cataphract.label`, else Royalty `Apparel_ArmorCataphract.label`.
-- hazard (set prefix, settings' vacuum toggle and Workshop FAQ): RMK's `VFEP_Warcasket_Hazard.label`.
-- the 7th-generation paragraph: RMK's Aerial / Barrage / Hazard / Shock descriptions share it verbatim; take that rendering.
-- "specialised warcaskets" research (Workshop FAQ): RMK's `VFEP_SpecialisedWarcaskets.label`.
-- toxin (this set's prefix) and the Workshop title.
-- Biotech: tox gas, gas mask, tox pack, pollution, the `ToxGasExposure` hediff label and stages; Core: toxic environment resistance, toxic fallout, rot stink, toxic buildup.
-- This mod's coinages: tox gas tank, vent (noun and verb), absorb, gas jet, reserve jet, spray gas.
+| English | Korean | Grounding |
+|---|---|---|
+| cataphract (set prefix) | 중무장 (`중무장 워캐스킷`) | RMK `VFEP_Warcasket_Cataphract.label`; Royalty's `근위대 갑옷` is the vanilla armor, not the VFEP set. |
+| hazard (set prefix) | 재해 (`재해 워캐스킷`) | RMK `VFEP_Warcasket_Hazard.label`. |
+| aerial (set prefix, Workshop) | 충격 | RMK `VFEP_Warcasket_Aerial.label` (RMK's Shock is 강습). |
+| 7th-generation paragraph | `7세대 워캐스킷은 기존 성능을 ...취급되곤 했습니다.` | RMK Aerial/Hazard/Shock descriptions, verbatim; it already reflows the dashed aside into 모듈 방식, no dashes. |
+| specialised warcaskets (research) | 전문화 워캐스킷 | RMK `VFEP_SpecialisedWarcaskets.label`. |
+| spacer warcaskets | 우주시대 워캐스킷 | Shipcracker's Workshop FAQ. |
+| specialized (description opener) | `무게는 늘어났지만 뛰어난 방어력을 갖춘 특화형 워캐스킷[ 어깨| 헬멧]입니다.` | RMK Cataphract opener `무게는 늘어났지만 뛰어난 방어력을 갖춘 신형 워캐스킷입니다.` with 특화형 for "specialized" (RMK's 7th-gen sets use `특화되었습니다`). |
+| toxin (set prefix) / Workshop title | 독소 / 독소 워캐스킷 | Biotech `ToxGas.label` = `독소 가스`; title equals `TXWC_SettingsCategory`. |
+| tox gas | 독소 가스 | Biotech `ToxGas.label`, `ToxGasExposure.label`. |
+| ToxGasExposure stages | 약한 영향 / 보통 / 심각함 | Biotech HediffDef (not used in our text). |
+| Tox Gas (research) | 독소 활용 | Biotech `ResearchProjectDef ToxGas.label`. |
+| gas mask | 방독면 | Biotech `Apparel_GasMask.label`. |
+| tox pack | 독소 등짐 | Biotech `Apparel_PackTox.label` (also its chargeNoun). |
+| pollution / polluted terrain | 오염 / 오염된 지형 | Biotech Keyed `PlanetPollution`, `AlertToxicBuildupDesc`. |
+| toxic environment resistance | 독성 환경 저항 | Core/Biotech `ToxicEnvironmentResistance.label`. |
+| environmental toxins | 환경 독성 | Its description (`주위의 환경 독성`). |
+| toxic fallout | 유독성 낙진 | Core `ToxicFallout.label`. |
+| rot stink | 부패 가스 | Core `RotStink` stage labels, `LetterTextLungRot`. |
+| toxic buildup | 중독 (hediff) / 독성 축적 (process) | Core `ToxicBuildup.label`; Biotech `AlertToxicBuildupDesc`. |
+| smoke | 연막 | Core `Smoke.label`. |
+| deadlife dust | 모조생명 먼지 | Core Keyed `DeadlifeDust`. |
+| vacuum resistance | 진공 저항력 | Odyssey `VacuumResistance.label`. |
+| Biotech (expansion) | 바이오테크 | ExpansionDef `Biotech.label`. |
+| sharp / blunt armor | 날카로움 / 둔탁함 방어도 | Core `ArmorRating_Sharp/Blunt.label`. |
+| range | 사거리 | Core Keyed `Range`. |
+| respirator (helmet) | 호흡 장치 | Inherited 내장 호흡 장치, shortened. |
+| tox gas tank | 독소 가스 탱크 | Coined. |
+| vent (ability label / noun / verb) | 탱크 배출 / 배출구 / 배출 | Coined after Biotech's tox pack verb `독소 가스 배출`. |
+| absorb gas / the absorb | 가스 흡수 / 흡수 | Coined. |
+| gas jet / jets (hardware) | 가스 분사 / 분사기 | Coined. |
+| reserve jet (tankless) | 어깨 자체의 분사, `탱크 미착용 시 분사 횟수` | Coined; shaped after Shipcracker's `어깨 미착용`. |
+| spray gas (verb label, not yet on the surface) | 가스 분사 | Coined; same noun as the section and chargeNoun. |
+| cone | 원뿔 | Coined (no vanilla analog). |
+| shell's tank | 워캐스킷의 탱크 / 몸통의 탱크 | "shell" dropped per the warcasket row. |
 
 ## Pending native review
 
-Nothing inherited is open for the VFEP rows (they are RMK's). Add this mod's
-own coinages here as the pass makes them.
+Nothing inherited is open for the VFEP rows (they are RMK's). This pass's
+coinages: 독소 (set prefix), 독소 가스 탱크, 탱크 배출 / 배출구, 가스 흡수,
+가스 분사 / 분사기, 분사 (jet chargeNoun), 연료 (unit chargeNoun), 원뿔,
+특화형 in the description opener, and the Workshop's 화학전용.
