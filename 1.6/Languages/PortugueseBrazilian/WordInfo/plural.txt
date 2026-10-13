@@ -1,0 +1,3 @@
+// Toxin Warcasket: chargeNoun plural
+unidade;unidades
+jato;jatos

@@ -1,7 +1,8 @@
 # Brazilian Portuguese glossary: Toxin Warcasket
 
 Seeded from the Shipcracker Warcasket glossary (machine-assisted there,
-pending native review); no translation pass has run here yet. Only
+pending native review); first machine-assisted pass 2026-10-13, pending
+native review. Only
 mod-specific coinages and grounding decisions; family-wide mechanics and
 style live in `l10n/languages/PortugueseBrazilian.md`.
 
@@ -43,21 +44,51 @@ never pluralizes.
 
 | English | Brazilian Portuguese | Grounding |
 |---|---|---|
-| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | *pass* | Shipcracker's "fuel unit" is `unidade de combustível`, mapped to `unidades de combustível` by its line. |
-| jet (the shoulders' `chargeNoun`; one per activation) | *pass* | Needs its own line. The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
+| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | unidade | `WordInfo/plural.txt` line `unidade;unidades`. Feminine, so vanilla's masculine-only frames (`um {CHARGENOUN}`, `seu último {CHARGENOUN}`) read "um unidade" there, as Shipcracker's `unidade de combustível` already does; pt-BR Keyed has no `CHARGENOUN_gender` switch, so no `WordInfo/Gender` file can help. | Shipcracker's "fuel unit" is `unidade de combustível`, mapped to `unidades de combustível` by its line. |
+| jet (the shoulders' `chargeNoun`; one per activation) | jato | `WordInfo/plural.txt` line `jato;jatos`; masculine, fits every vanilla frame. Settings section "Gas jet" = `Jato de gás`, "Jets without a tank" = `Jatos sem tanque`; "spray gas" (verb label, not yet on the surface) = `pulverizar gás`. | Needs its own line. The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
 
-## To ground in the first pass
+## Grounded in the first pass
 
-- cataphract (set name, lore paragraph 3): the pack's `VFEP_Warcasket_Cataphract.label`, else Royalty `Apparel_ArmorCataphract.label`.
-- hazard (set name, settings' vacuum toggle and Workshop FAQ): the pack's `VFEP_Warcasket_Hazard.label`.
-- the 7th-generation paragraph: the pack's Aerial / Barrage / Hazard / Shock descriptions share it verbatim; take that rendering.
-- "specialised warcaskets" research (Workshop FAQ): the pack's `VFEP_SpecialisedWarcaskets.label`.
-- toxin (this set's name) and the Workshop title.
-- pilot (the wearer): Core and Odyssey pt-BR for "pilot"; the pack's own word if it has one.
-- Biotech: tox gas, gas mask, tox pack, pollution, the `ToxGasExposure` hediff label and stages; Core: toxic environment resistance, toxic fallout, rot stink, toxic buildup.
-- This mod's coinages: tox gas tank, vent (noun and verb), absorb, gas jet, reserve jet, spray gas.
+VFEP set names, the research label and the 7th-generation paragraph are
+reconciled against the community pack's `VFE_Pirates_ThingDef.xml` and
+`VFE_Pirates_ResearchProjectDef.xml`.
+
+| English | Brazilian Portuguese | Grounding |
+|---|---|---|
+| toxin (set name) / Workshop title | toxina (labels: `carcaça de guerra toxina`); `A série Toxina` in lore; title `Carcaça de Guerra Toxina` | coined, pack label pattern |
+| cataphract (set name) | catafrática (`carcaça de guerra catafrática`; lore "no design catafrática") | Pack `VFEP_Warcasket_Cataphract.label`, its lore's "O design catafrática" |
+| hazard (set name) | de risco (`carcaça de guerra de risco`; lore `A série de Risco`) | Pack `VFEP_Warcasket_Hazard.label` |
+| aerial (set name, Workshop) | aérea | Pack `VFEP_Warcasket_Aerial.label` |
+| 7th-generation paragraph | "As carcaças de guerra de 7ª geração surgiram após ..." | Pack `VFEP_Warcasket_Hazard.description` paragraph 2, its "— embora intercambiáveis —" reflowed into commas and its "plastoaço" replaced by Core's `plastiaço` |
+| specialised warcaskets (research) | carcaças de guerra especializadas | Pack `VFEP_SpecialisedWarcaskets.label` |
+| tox gas (research) | gases tóxicos | Biotech `ResearchProjectDef` `ToxGas.label` |
+| pilot | piloto | Core backstories (`CargoPilot58.titleShort` "Piloto") |
+| tox gas | gás tóxico | Biotech `ToxGas.label`, `ToxGasExposure.label` |
+| tox gas exposure (stages) | gás tóxico (suave / moderado / severo) | Biotech `ToxGasExposure` |
+| gas mask | máscara de gás | Biotech `Apparel_GasMask.label` |
+| tox pack (and its reload noun) | mochila tóxica | Biotech `Apparel_PackTox.label` / `chargeNoun` |
+| pollution / polluted terrain | poluição / terreno poluído | Biotech `ToxicEnvironmentResistance.description` |
+| toxic environment resistance | resistência a ambiente tóxico | Biotech `ToxicEnvironmentResistance.label` |
+| toxic fallout | chuva tóxica | Core `ToxicFallout.label` |
+| rot stink | fedor de podridão | Core Keyed `RotStink`, hediff `RotStink` |
+| toxic buildup | acúmulo tóxico | Core `ToxicBuildup.label` |
+| smoke | fumaça | Core `Smoke.label` |
+| sharp / blunt (armor) | cortante / contundente | Core `ArmorRating_Sharp/Blunt.label` |
+| deadlife dust | poeira de vida morta | coined (Anomaly not grounded) |
+| Miscellaneous (settings section) | Outros | Core Keyed `MiscRecordsCategory` |
+| (requires restart) | (requer reinício) | coined from Core Keyed "reiniciado" |
+| tox gas tank | tanque de gás tóxico | coined |
+| vent (noun) / vent tank (ability) / vent rate | válvulas / abrir válvulas / Vazão das válvulas | coined; Core's `Vent` "saída de ventilação" is the temperature building, so avoided |
+| absorb (noun) / absorb gas (ability) | a absorção / absorver gás | coined |
+| gas jet / reserve jets | jato de gás / jatos próprios (das ombreiras), `Jatos sem tanque` | coined |
+| spray (verb) | pulverizar | coined |
+| superior protection and worse weight (7th-gen opener) | proteção superior e peso elevado | Pack `VFEP_WarcasketShoulders_Cataphract.description` |
 
 ## Pending native review
 
 Nothing inherited is open for the VFEP rows (they are the community pack's).
-Add this mod's own coinages here as the pass makes them.
+
+- Toxina as the set's own name (`A Toxina`, `A série Toxina`).
+- `unidade` as a feminine charge noun in vanilla's masculine frames.
+- válvulas / abrir válvulas, absorção, jato de gás, pulverizar gás, tanque de gás tóxico.
+- poeira de vida morta (Anomaly's deadlife dust, not grounded).
