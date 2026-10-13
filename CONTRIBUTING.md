@@ -27,7 +27,7 @@ welcome too.
 | French               | Machine-assisted | Fable 5.1 |
 | Brazilian Portuguese | Machine-assisted | Fable 5.1 |
 | Japanese             | Machine-assisted | Fable 5.1 |
-| Traditional Chinese  | Planned          | -         |
+| Traditional Chinese  | Machine-assisted | Fable 5.1 |
 
 Statuses: **Source** (the authoritative English strings), **Machine-assisted**
 (generated with terminology grounded against the official RimWorld

@@ -1,0 +1,46 @@
+毒素型戰棺
+
+為[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]新增一套化學戰用的戰棺。
+
+[h1]關於[/h1]
+
+毒素型是第七代戰棺，以VFE Pirates的騎士型為骨架：裝甲達到空襲型的水準，機體略輕，三個部件共用一個毒氣罐。用毒氣淹沒陣地，毫髮無傷地攻進去，事後清理空氣還能收回一部分毒氣。需要Biotech。
+
+[hr][/hr]
+[h1]套裝[/h1]
+完成「特化型戰棺」與「毒氣」研究後解鎖。整套具備100%有毒環境抗性：毒氣、毒霧霾與受污染地形都傷不了它。
+[list]
+[*][b]裝甲主體：[/b]毒氣罐，容量將近三個毒氣背包，和毒氣背包一樣以化合燃料補充。切換排放，毒雲會在駕駛員周圍逐漸擴大；再切換一次即可保留剩餘的毒氣。25%有毒環境抗性。
+[*][b]護肩：[/b]毒氣噴射。每次從毒氣罐噴出一道錐形毒氣，滿罐可噴四次；沒有毒氣罐時自帶兩次。瞄準時會顯示毒氣的落點與飄散範圍。15%有毒環境抗性。
+[*][b]頭盔：[/b]呼吸器。80%有毒環境抗性，並和防毒面罩一樣對毒氣免疫；另有一項能力可將駕駛員周圍的空氣吸入毒氣罐(連煙霧、腐爛臭氣和死者粉塵也能清除！)。
+[/list]
+
+模組設定可調整每單位化合燃料的毒氣量、毒氣罐的容量與排放速率、噴射的消耗、錐形、距離與無毒氣罐時的次數，以及吸收氣體的半徑、持續時間與冷卻。
+
+[hr][/hr]
+[h1]模組相容性[/h1]
+[list]
+[*]可安全加入現有的存檔。
+[*]有殖民者封在這套戰棺內時，請勿移除本模組。
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]：必要。
+[*]Biotech：必要。
+[*]Save Our Ship 2：與VFE Pirates原有的套裝採用相同規則，具備EVA能力。
+[*]未與Combat Extended一同測試(歡迎回報)。
+[/list]
+
+[hr][/hr]
+[h1]常見問題[/h1]
+[b]問：需要Biotech嗎？[/b]
+答：需要。毒氣只有在Biotech中才存在，整套戰棺都與它緊密結合。
+
+[b]問：和VFE Pirates的險境型有什麼不同？[/b]
+答：險境型是全能型：更輕、防火，對中毒與心靈效果免疫，但銳器與鈍器防護較薄。毒素型則專為毒氣而生，攻守皆然。它以重量換取更強的裝甲與毒氣罐，對毒液、火焰、極端溫度等仍較脆弱。
+
+[b]問：要怎麼取得？[/b]
+答：完成VFE Pirates的「特化型戰棺」與Biotech的「毒氣」研究後，和其他套裝一樣到戰棺鑄造廠組裝即可。各部件也能和VFE Pirates原有的套裝自由混搭。
+
+
+[hr][/hr]
+[h1]連結[/h1]
+原始碼、手動下載與問題回報：[url=https://github.com/sam-hunt/ToxinWarcasket]GitHub[/url]
+美術由[url=https://steamcommunity.com/profiles/76561198094174176/myworkshopfiles/?appid=294100]IcingWithCheeseCake[/url]繪製
