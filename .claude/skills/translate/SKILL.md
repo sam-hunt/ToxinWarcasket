@@ -28,11 +28,13 @@ and only these** (progressive disclosure; if `l10n/` is empty, run
   style rules, and vanilla-grounded common vocabulary. Read ONLY the target
   language's file.
 - `glossary/<Language>.md` (beside this file), this mod's own coined-term
-  table for the target language. Read it in the same pass. None exist yet;
-  the first pass for a language creates it, starting from the sibling
-  Shipcracker Warcasket repo's glossary for that language, whose VFEP
-  warcasket vocabulary decisions (warcasket, foundry, entomb, set names)
-  this mod inherits verbatim so the two sets read as one family in-game.
+  table for the target language. Read it in the same pass. Every file is
+  seeded: its inherited rows are the sibling Shipcracker Warcasket repo's
+  VFEP warcasket vocabulary (warcasket, parts, foundry, entomb, set names,
+  settings words), copied verbatim so the sets read as one family in-game,
+  and its closing list names the terms the first pass must still ground
+  or coin. The pass fills that list in and never reopens an inherited row
+  (a change there is made in the Shipcracker glossary first).
 - `l10n/lessons.md`, cross-language lessons; read when generating a new
   language, skim otherwise. Its free-prose register lesson applies with
   full force here: the three descriptions are lore paragraphs with no
@@ -77,18 +79,34 @@ notes for the shim or flow edit this repo owes before continuing.
   `VFEPirates.WarcasketDef`s (`TXWC_Warcasket_Toxin`,
   `TXWC_WarcasketShoulders_Toxin`, `TXWC_WarcasketHelmet_Toxin`): `label`,
   `description`, `shortDescription` (a VFEP field shown in the foundry's
-  part picker; translate it like any other), and the armor's and shoulders'
-  reload comps' `chargeNoun` (the tank's "unit", a volume the vent drains
-  continuously, and the nozzle's "jet", one per activation; vanilla
-  pluralizes it into "No {CHARGENOUN_plural} left." and
-  "{CHARGENOUN_plural} remaining", so render a noun that pluralizes), and the
-  nozzle's `jetDescription` (the gas jet command's tooltip). The
+  part picker; translate it like any other), the armor's and shoulders'
+  reload comps' `chargeNoun` (next bullet) and `cooldownGerund` (vanilla's
+  default "on cooldown", which the defs do not set but the probe dumps; the
+  glossary inherits Shipcracker's rendering), and the nozzle's
+  `jetDescription` (the gas jet command's tooltip). The
   abilities take the sidecar's other def type as their folder name: the two
   VEF ability defs (`TXWC_VentTank`, `TXWC_AbsorbGas`). The game rolls a def type
   without its own database into its base, and the checker maps the element
   tag via `DEF_TYPE_ALIASES` in `Scripts/check-translations.py`; a
   `WarcasketDef` folder would never load. Never translate or place a
   non-`required` sidecar entry in any language file.
+- **The two charge nouns are shown only through plural and lookup slots.**
+  The tank's `chargeNoun` "unit" (a volume the vent drains continuously)
+  and the shoulders' "jet" (one per activation) never appear bare: vanilla
+  prints them through `{CHARGENOUN_plural}` and `{lookup: ...}` in five
+  Keyed strings (charges remaining, max charges, reload cost, cost per
+  charge, none left), and our own `TXWC_JetTankLow` adds a sixth plural
+  slot for the tank's noun. A rendering the language worker's fallback
+  would mangle (a multi-word noun, or German's appended `s`) gets its
+  forms from `1.6/Languages/<Language>/WordInfo/plural.txt`
+  (`singular;plural`, one line per noun; Russian also `case.txt` rows for
+  both numbers): the game assembles each lookup table from every language
+  folder, mods included, and resolves the file name lowercased, so keep
+  the file names lowercase. French's worker never reads the table, so
+  both French nouns must be single words. Japanese, Korean and Chinese
+  need nothing. The checker ignores these files; each noun's glossary row
+  names the lookup file it relies on (`l10n/lessons.md` has the
+  decompile-verified worker map).
 - **The three descriptions share their second and third paragraphs
   verbatim** (the 7th-generation lore and the Toxin series paragraph); only
   the first paragraph differs per part. Keep the shared paragraphs
@@ -121,11 +139,14 @@ time. Each glossary names the source it was grounded against.
 Terms that MUST be grounded before use:
 
 - from VFEP's own vocabulary: "warcasket" itself, the VFEP set names our
-  text or Workshop page references (cataphract), "warcasket foundry",
-  "shoulders" / "pauldrons", "helmet", "shell", the generation phrasing
-  ("7th generation warcaskets ...", which VFEP's own descriptions repeat
-  verbatim across the Aerial, Barrage, Hazard and Shock sets; ours reflows
-  VFEP's dashed aside into commas, so follow the meaning, not the dashes);
+  text, settings or Workshop page reference (cataphract, hazard), the
+  "specialised warcaskets" and "spacer warcaskets" research labels,
+  "warcasket foundry", "shoulders" / "pauldrons", "helmet", "shell", and
+  the 7th-generation paragraph, which VFEP's own descriptions repeat
+  verbatim across the Aerial, Barrage, Hazard and Shock sets, so a
+  community VFEP pack already renders it: take that rendering where one
+  exists (the glossary names the pack), and where none does, follow the
+  meaning, not the dashes (ours reflows VFEP's dashed aside into commas);
 - from vanilla Core (ground against the Core tar per `l10n/process.md`):
   apparel terms (armor, helmet, shoulder pads), steel, plasteel, uranium,
   chemfuel, respirator, breathing, toxic environment resistance, toxic

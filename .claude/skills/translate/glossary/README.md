@@ -8,11 +8,18 @@ name cataphract and "warcasket foundry" are rendered, and which community
 VFEP translation, if any, they were grounded against), the toxin-domain
 coinages, and any terms pending native review.
 
-None exist yet: translation passes are deferred until shortly before the
-first release. When a language's first pass runs, start its file from the
-sibling Shipcracker Warcasket repo's `.claude/skills/translate/glossary/
-<Language>.md` and inherit its VFEP vocabulary verbatim, so both sets read
-as one family in-game; add only this mod's own terms.
+Every roster language has a seeded file, written before any translation
+pass ran. Each carries, in this order: the community VFEP source it is
+grounded against (or the absence of one); the rows inherited verbatim from
+the sibling Shipcracker Warcasket repo's `.claude/skills/translate/glossary/
+<Language>.md` (warcasket, the part nouns, the label pattern, foundry,
+entomb, set names, the VEF ability strings, the settings words), so the two
+sets read as one family in-game; the two charge nouns with that language's
+plural-lookup constraint; the list of terms the first pass must still ground
+or coin; and what is pending native review. Rows marked *pass* are filled
+in by the pass. An inherited row is never changed here first: reconcile it
+in the Shipcracker glossary, then mirror it. The same seeded rows live in
+the Medic Warcasket repo; a fourth copy is the signal to move them upstream.
 
 Family-shared, mod-independent findings, LanguageWorker mechanics, style
 and corpus rules, and vanilla-grounded common vocabulary (armor,
