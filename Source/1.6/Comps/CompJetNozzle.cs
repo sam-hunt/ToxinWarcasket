@@ -14,6 +14,13 @@ public class CompProperties_JetNozzle : CompProperties_ApparelReloadable
     // Charges one jet draws from the worn armor's tank.
     public int tankChargesPerShot = 10;
 
+    // The spray verb's label, the jet command's and the job report's. It lives here because the
+    // DefInjection walker never reaches a WarcasketDef's verbs: it lists the runtime type's
+    // fields, and ThingDef.verbs is private to the base. Injection runs before ResolveReferences,
+    // so the translated text is what lands on the verb.
+    [MustTranslate]
+    public string jetLabel;
+
     // The jet command's tooltip. Vanilla's apparel verb command shows the gear's description,
     // which for these shoulders is the set's lore rather than what the jet does.
     [MustTranslate]
@@ -29,6 +36,18 @@ public class CompProperties_JetNozzle : CompProperties_ApparelReloadable
     public CompProperties_JetNozzle()
     {
         compClass = typeof(CompJetNozzle);
+    }
+
+    public override void ResolveReferences(ThingDef parentDef)
+    {
+        base.ResolveReferences(parentDef);
+        if (jetLabel.NullOrEmpty())
+            return;
+        foreach (VerbProperties verb in parentDef.Verbs)
+        {
+            if (verb is VerbProperties_SprayGas)
+                verb.label = jetLabel;
+        }
     }
 }
 

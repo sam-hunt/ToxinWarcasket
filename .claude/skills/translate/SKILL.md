@@ -83,18 +83,18 @@ notes for the shim or flow edit this repo owes before continuing.
   reload comps' `chargeNoun` (next bullet) and `cooldownGerund` (vanilla's
   default "on cooldown", which the defs do not set but the probe dumps; the
   glossary inherits Shipcracker's rendering), and the nozzle's
-  `jetDescription` (the gas jet command's tooltip). The
+  `jetLabel` (the gas jet command's label, "spray gas") and
+  `jetDescription` (its tooltip). The
   abilities take the sidecar's other def type as their folder name: the two
   VEF ability defs (`TXWC_VentTank`, `TXWC_AbsorbGas`). The game rolls a def type
   without its own database into its base, and the checker maps the element
   tag via `DEF_TYPE_ALIASES` in `Scripts/check-translations.py`; a
   `WarcasketDef` folder would never load. Never translate or place a
-  non-`required` sidecar entry in any language file. The shoulders' verb
-  label ("spray gas", `VerbProperties_SprayGas.label` under the def's
-  `verbs` list) is not in the sidecar: a live refresh confirms the game's
-  walker never reaches it, so it stays English in every language until
-  the code moves it to a translatable field. Each glossary records the
-  rendering to use when that happens.
+  non-`required` sidecar entry in any language file. The game's walker
+  never reaches a `WarcasketDef`'s `verbs` (it lists the runtime type's
+  fields, and `ThingDef.verbs` is private to the base), so a verb's
+  `label` is never a key: the jet's label is the nozzle's `jetLabel`,
+  which the comp copies onto the verb.
 - **The two charge nouns are shown only through plural and lookup slots.**
   The tank's `chargeNoun` "unit" (a volume the vent drains continuously)
   and the shoulders' "jet" (one per activation) never appear bare: vanilla

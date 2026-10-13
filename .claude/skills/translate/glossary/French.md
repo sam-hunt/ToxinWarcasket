@@ -87,7 +87,7 @@ multi-word noun gets its `s` on the last word.
 | absorb (ability; "the absorb") | absorption (`absorption de gaz`) | **Coined**, noun-phrase label pattern. |
 | gas jet | jet de gaz | Biotech `FoamSpray.label` = `jet de mousse`. |
 | reserve jet / jets without a tank | jets sans réservoir; prose `les propres jets des épaulières` | **Coined.** |
-| spray gas (verb label, not yet on the surface) | pulvérisation de gaz | Biotech `AcidSpray.label` = `pulvérisation d'acide`. Record only. |
+| spray gas (the nozzle's `jetLabel`, the jet command's label) | pulvérisation de gaz | Biotech `AcidSpray.label` = `pulvérisation d'acide`. |
 | cone / cloud | cône / nuage | Core `Stat_Thing_Weapon_MissRadius_Desc`; Biotech `nuage toxique`. |
 | `Default: off.` | Par défaut : désactivé. | Glossary settings row (`Désactivé`). |
 

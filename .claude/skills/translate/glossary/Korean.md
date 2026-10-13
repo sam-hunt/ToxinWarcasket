@@ -83,7 +83,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | absorb gas / the absorb | 가스 흡수 / 흡수 | Coined. |
 | gas jet / jets (hardware) | 가스 분사 / 분사기 | Coined. |
 | reserve jet (tankless) | 어깨 자체의 분사, `탱크 미착용 시 분사 횟수` | Coined; shaped after Shipcracker's `어깨 미착용`. |
-| spray gas (verb label, not yet on the surface) | 가스 분사 | Coined; same noun as the section and chargeNoun. |
+| spray gas (the nozzle's `jetLabel`, the jet command's label) | 가스 분사 | Coined; same noun as the section and chargeNoun. |
 | cone | 원뿔 | Coined (no vanilla analog). |
 | shell's tank | 워캐스킷의 탱크 / 몸통의 탱크 | "shell" dropped per the warcasket row. |
 

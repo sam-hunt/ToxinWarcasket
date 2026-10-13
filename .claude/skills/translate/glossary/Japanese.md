@@ -87,7 +87,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | draw in (the respirator's action) | 吸い込む / 吸い戻す | Coined. |
 | gas jet (settings section) / jets (the openings) | ガス噴射 / ガス噴射口, 肩部の噴射口 | Coined. |
 | reserve jet / jets without a tank | ショルダーアーマー自体の噴射 / タンクなしの噴射回数 | Coined. |
-| spray gas (shoulders' verb label, not on the surface yet) | ガスを噴射 | Coined; follows Biotech `deploy_tox_pack` (毒ガスパックを展開) verb-phrase shape. |
+| spray gas (the nozzle's `jetLabel`, the jet command's label) | ガスを噴射 | Coined; follows Biotech `deploy_tox_pack` (毒ガスパックを展開) verb-phrase shape. |
 | cone | 円錐 | Coined plain word. |
 
 ## Pending native review

@@ -90,7 +90,7 @@ despite the folder name these are the VFE Pirates files).
 | absorb (ability / noun) | absorber gas / la absorción | Coined, plain words. |
 | gas jet (the action and charge) / jet hardware | chorro de gas / toberas (de gas) | Coined. `chorro` as in vanilla's `chorro de veneno`; the physical nozzles on the pauldrons are `toberas`, kept apart from the charge noun. |
 | reserve jet (the shoulders' own jets) | chorros propios de las hombreras; settings label `Chorros sin depósito` | Coined, following the English settings label. |
-| spray gas (verb label, not on the translation surface) | rociar gas | Coined; `rocía` is the jet description's verb. Settled for when it becomes translatable. |
+| spray gas (the nozzle's `jetLabel`, the jet command's label) | rociar gas | Coined; `rocía` is the jet description's verb. |
 | targeter (Workshop only) | restructured: `Al apuntar se ve...` | No vanilla noun for the targeter in this slot. |
 
 ## Pending native review

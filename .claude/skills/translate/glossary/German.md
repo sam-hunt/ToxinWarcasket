@@ -86,7 +86,7 @@ that plural unchanged.
 | gas jet (the shot, the settings section) | Gasstoß | See Charge nouns. |
 | gas jets (the hardware on the pauldrons) | Gasdüsen / Düsen | Coined. |
 | reserve jet ("Jets without a tank", the shoulders' own jets) | Gasstöße ohne Tank / eigene Gasstöße der Schulterpanzer | Coined from the charge noun. |
-| spray gas (the shoulders' verb label; not on the translation surface, the sidecar does not require it) | Gas versprühen | Coined; versprühen is also the jet description's verb. Use it if the key ever becomes required. |
+| spray gas (the nozzle's `jetLabel`, the jet command's label) | Gas versprühen | Coined; versprühen is also the jet description's verb. |
 | cone width / range | Kegelbreite (Grad) / Reichweite (Zellen) | Coined / Shipcracker. |
 
 ## Pending native review

@@ -221,7 +221,7 @@ and references to Biotech defs need no `MayRequire`.
 ## Localization Toolchain
 
 English (the def XML's `label`, `description`, VFEP's `shortDescription`, the reload comps'
-`chargeNoun` and the jet nozzle's `jetDescription`), plus the settings window's Keyed strings
+`chargeNoun` and the jet nozzle's `jetLabel` and `jetDescription`), plus the settings window's Keyed strings
 (`1.6/Languages/English/Keyed/ToxinWarcasket.xml`), is the source of truth. Other languages derive from it via the `/translate`
 skill (`.claude/skills/translate/SKILL.md`: this mod's surface, grounding domain and
 per-language glossary; the family-wide process lives in the `l10n/` submodule) and

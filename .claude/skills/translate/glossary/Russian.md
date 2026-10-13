@@ -84,7 +84,7 @@ Russian worker lowercases a missed key, so a miss also loses capitalization.
 | gas jet | газовая струя | Coined. |
 | jets on the pauldrons (hardware) | сопла | Coined. |
 | reserve jets (tankless) | собственные струи (наплечников) | Coined; settings label `Струи без бака`. |
-| spray gas (jet verb label; not on the surface yet) | распыление газа | Coined; vanilla `FirefoampopMech` `распыление пены`. Recorded only, no key. |
+| spray gas (the nozzle's `jetLabel`, the jet command's label) | распыление газа | Coined; vanilla `FirefoampopMech` `распыление пены`. |
 | cells (settings units) | клетки, `(в клетках)` | Inherited slider-unit style; counts written as `Клеток ...: {1}` to avoid numeral agreement. |
 
 ## Pending native review

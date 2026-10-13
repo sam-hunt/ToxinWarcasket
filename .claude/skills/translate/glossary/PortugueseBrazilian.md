@@ -45,7 +45,7 @@ never pluralizes.
 | English | Brazilian Portuguese | Grounding |
 |---|---|---|
 | unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | unidade | `WordInfo/plural.txt` line `unidade;unidades`. Feminine, so vanilla's masculine-only frames (`um {CHARGENOUN}`, `seu último {CHARGENOUN}`) read "um unidade" there, as Shipcracker's `unidade de combustível` already does; pt-BR Keyed has no `CHARGENOUN_gender` switch, so no `WordInfo/Gender` file can help. | Shipcracker's "fuel unit" is `unidade de combustível`, mapped to `unidades de combustível` by its line. |
-| jet (the shoulders' `chargeNoun`; one per activation) | jato | `WordInfo/plural.txt` line `jato;jatos`; masculine, fits every vanilla frame. Settings section "Gas jet" = `Jato de gás`, "Jets without a tank" = `Jatos sem tanque`; "spray gas" (verb label, not yet on the surface) = `pulverizar gás`. | Needs its own line. The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
+| jet (the shoulders' `chargeNoun`; one per activation) | jato | `WordInfo/plural.txt` line `jato;jatos`; masculine, fits every vanilla frame. Settings section "Gas jet" = `Jato de gás`, "Jets without a tank" = `Jatos sem tanque`; "spray gas" (the nozzle's `jetLabel`) = `pulverizar gás`. | Needs its own line. The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
 
 ## Grounded in the first pass
 

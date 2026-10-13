@@ -308,7 +308,9 @@ the vent.
     because `CompApparelReloadable.CanBeUsed` tests the nozzle's own charges before reaching
     them and C# cannot skip a level.
 - **Visuals:** `TXWC_GasJetSpray`, an effecter throwing tox gas flecks along the line
-  (vanilla's `Fire_SpewShort` is fire-coloured). The command's tooltip is the nozzle's
+  (vanilla's `Fire_SpewShort` is fire-coloured). The command's label is the nozzle's
+  `jetLabel`, written onto the verb at resolve time because the DefInjection walker never
+  reaches a `WarcasketDef`'s private `verbs`, and its tooltip is the nozzle's
   `jetDescription`, as the gear's own description is the set's lore.
 
 ## Mod settings

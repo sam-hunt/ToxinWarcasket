@@ -40,8 +40,9 @@
       of their mod settings (the jet's cost and jets without a tank), and the settings recompute
       ammoCountPerCharge as the cost times the armor's chemfuel per charge, so the 20 here is
       only the default's product. The command's corner counts the jets the worn supply holds: a
-      full tank reads 4 / 4, the shoulders alone 2 / 2. Its tooltip is jetDescription, as the
-      gear's own description is the set's lore.
+      full tank reads 4 / 4, the shoulders alone 2 / 2. Its label is jetLabel, which the comp
+      writes onto the verb because the translation walker never reaches a WarcasketDef's verbs,
+      and its tooltip is jetDescription, as the gear's own description is the set's lore.
     - onlyManualCast, as the Barrage's: a drafted colonist never fires it on its own. Raiders
       fire it through the nozzle's own check, at the densest group of hostile humanlikes the gas
       would affect, never into their own faction's.
@@ -111,12 +112,12 @@
         <hotKey>Misc4</hotKey>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
         <tankChargesPerShot>20</tankChargesPerShot>
+        <jetLabel>spray gas</jetLabel>
         <jetDescription>Spray a cone of tox gas from the shoulders toward the target. The gas lands in the inner cone and drifts over the outer area, thinning as it goes. Each jet draws on the warcasket's tank. Without a tank, the shoulders fall back on jets of their own, reloaded with chemfuel.</jetDescription>
       </li>
     </comps>
     <verbs>
       <li Class="ToxinWarcasket.VerbProperties_SprayGas">
-        <label>spray gas</label>
         <hasStandardCommand>true</hasStandardCommand>
         <onlyManualCast>true</onlyManualCast>
         <range>12.9</range>

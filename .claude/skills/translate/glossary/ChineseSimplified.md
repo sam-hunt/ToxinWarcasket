@@ -75,7 +75,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | absorb / absorb gas | 吸收 / 吸收气体 | Coined; 气体, not 毒气, because it clears every gas. |
 | gas jet | 毒气喷射 | Coined (settings section). |
 | reserve jet ("Jets without a tank") | 无毒气罐时的喷射次数; prose 护肩自带的喷射 | Coined. |
-| spray gas (shoulders' verb label, not on the surface yet) | 喷射毒气 | Coined, recorded for when it becomes translatable. |
+| spray gas (the nozzle's `jetLabel`, the jet command's label) | 喷射毒气 | Coined. |
 | jet nozzle (shoulders' hardware) | 喷口 | Coined. |
 
 ## Pending native review

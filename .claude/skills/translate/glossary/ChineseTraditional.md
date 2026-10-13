@@ -78,7 +78,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | absorb gas (ability, settings section; "the absorb") | 吸收氣體 | Coined. |
 | gas jet (settings section) / shoulder jets (hardware) | 毒氣噴射 / 噴射口 | Coined; 噴射 is vanilla's spray verb (Biotech `AcidSpray.description`). |
 | reserve jet (tankless jets) | 無毒氣罐時的噴射次數 (prose: 護肩自身的噴射) | Coined, descriptive. |
-| spray gas (shoulders' verb label; not on the surface yet) | 噴射毒氣 | Coined; recorded so it matches the charge noun when it becomes translatable. |
+| spray gas (the nozzle's `jetLabel`, the jet command's label) | 噴射毒氣 | Coined; matches the charge noun. |
 | cone width / range (jet) / radius | 錐形寬度(度) / 距離(格) / 半徑(格) | 錐形 Core rulestring; 距離(格) matches Shipcracker's jump range. |
 
 ## Pending native review
