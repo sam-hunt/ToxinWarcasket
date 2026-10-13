@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: Toxin Warcasket -->
+  <TXWC_SettingsCategory>毒素型战棺</TXWC_SettingsCategory>
+
+  <!-- EN: Tox gas tank -->
+  <TXWC_SectionTank>毒气罐</TXWC_SectionTank>
+  <!-- EN: Gas jet -->
+  <TXWC_SectionJet>毒气喷射</TXWC_SectionJet>
+  <!-- EN: Absorb gas -->
+  <TXWC_SectionAbsorb>吸收气体</TXWC_SectionAbsorb>
+  <!-- EN: Miscellaneous -->
+  <TXWC_SectionMisc>杂项</TXWC_SectionMisc>
+
+  <!-- EN: Tank capacity (chemfuel) -->
+  <TXWC_TankCapacity>毒气罐容量（化合燃料）</TXWC_TankCapacity>
+  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
+  <TXWC_TankCapacityDesc>毒气罐装满时容纳的化合燃料量，计量表以1为单位计数。调低到毒气罐现有存量以下时，超出部分会被清除。默认：{0}。</TXWC_TankCapacityDesc>
+
+  <!-- EN: Tox gas per chemfuel (cells) -->
+  <TXWC_GasPerChemfuel>每单位化合燃料的毒气量（格）</TXWC_GasPerChemfuel>
+  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>毒气罐中每单位化合燃料能产生多少格毒气，排放、喷射以及驾驶员倒下时爆出都按此计算。吸收气体时，每吸入这么多气体便存回一单位化合燃料。一个毒气背包用35化合燃料产生45格毒气。默认：{0}。</TXWC_GasPerChemfuelDesc>
+
+  <!-- EN: Vent rate (chemfuel per second) -->
+  <TXWC_VentRate>排放速率（化合燃料/秒）</TXWC_VentRate>
+  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>排气阀清空毒气罐的速度。排放越快，毒气云越大，消散也越快。默认：{0}。</TXWC_VentRateDesc>
+
+  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
+  <TXWC_TankSummary>满罐：{0}化合燃料，可产生{1}格毒气（相当于{2}个毒气背包）。排气阀可在{3}秒内将其排空。</TXWC_TankSummary>
+
+  <!-- EN: Cost (chemfuel) -->
+  <TXWC_JetCost>消耗（化合燃料）</TXWC_JetCost>
+  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
+  <TXWC_JetCostDesc>每次毒气喷射从毒气罐中抽取的化合燃料量。没有毒气罐时，护肩自带的喷射消耗同样多的化合燃料，产生同样多的毒气。默认：{0}。</TXWC_JetCostDesc>
+
+  <!-- EN: Jets without a tank -->
+  <TXWC_JetReserve>无毒气罐时的喷射次数</TXWC_JetReserve>
+  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
+  <TXWC_JetReserveDesc>护肩自身储备的喷射次数，供未穿戴毒气罐时使用。这些喷射用化合燃料装填，穿戴毒气罐期间不会消耗。默认：{0}。</TXWC_JetReserveDesc>
+
+  <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
+  <TXWC_JetTankLow>毒气罐中需要{COUNT}单位{CHARGENOUN_plural}。</TXWC_JetTankLow>
+
+  <!-- EN: Cone width (degrees) -->
+  <TXWC_JetConeWidth>锥形宽度（度）</TXWC_JetConeWidth>
+  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>毒气喷射所覆盖锥形区域的总宽度。锥形越宽，同样多的毒气分布得越稀薄。默认：{0}。</TXWC_JetConeWidthDesc>
+
+  <!-- EN: Range (cells) -->
+  <TXWC_JetRange>射程（格）</TXWC_JetRange>
+  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetRangeDesc>毒气喷射能达到的距离。射程越远，同样多的毒气分布得越稀薄。默认：{0}。</TXWC_JetRangeDesc>
+
+  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
+  <TXWC_JetSummary>每次喷射：{0}化合燃料，产生{1}格毒气（相当于{2}个毒气背包）。满罐可喷射{3}次，仅凭护肩可喷射{4}次。</TXWC_JetSummary>
+
+  <!-- EN: Radius (cells) -->
+  <TXWC_AbsorbRadius>半径（格）</TXWC_AbsorbRadius>
+  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>吸收气体时，以驾驶员为中心吸入气体的范围。默认：{0}。</TXWC_AbsorbRadiusDesc>
+
+  <!-- EN: Duration (seconds) -->
+  <TXWC_AbsorbDuration>持续时间（秒）</TXWC_AbsorbDuration>
+  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>每次吸收持续吸入气体的时间。默认：{0}。</TXWC_AbsorbDurationDesc>
+
+  <!-- EN: Cooldown (hours) -->
+  <TXWC_AbsorbCooldown>冷却时间（小时）</TXWC_AbsorbCooldown>
+  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>吸收气体能力重新充能所需的时间。默认：{0}。</TXWC_AbsorbCooldownDesc>
+
+  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
+  <TXWC_AbsorbSummary>每次吸收作用于驾驶员周围的{0}格。这些格子全部充满气体时，可存回{1}化合燃料。</TXWC_AbsorbSummary>
+
+  <!-- EN: Hazard warcaskets resist vacuum -->
+  <TXWC_HazardVacuum>险境型战棺可抵御真空</TXWC_HazardVacuum>
+  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
+  <TXWC_HazardVacuumDesc>让险境型战棺拥有太空时代战棺的真空抗性，与毒素型战棺进一步拉开差别。更改此项需要重启游戏。默认：关。</TXWC_HazardVacuumDesc>
+  <!-- EN:  (requires restart) -->
+  <TXWC_RequiresRestartSuffix>（需要重启）</TXWC_RequiresRestartSuffix>
+  <!-- EN:  (requires Odyssey) -->
+  <TXWC_RequiresOdysseySuffix>（需要奥德赛）</TXWC_RequiresOdysseySuffix>
+
+  <!-- EN:  (default) -->
+  <TXWC_DefaultSuffix>（默认）</TXWC_DefaultSuffix>
+
+</LanguageData>

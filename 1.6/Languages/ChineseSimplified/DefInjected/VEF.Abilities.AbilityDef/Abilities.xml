@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas, and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn. -->
+  <TXWC_AbsorbGas.description>通过呼吸器吸入周围空气数秒，随驾驶员移动清除其周围的烟雾、毒气和其他气体。若穿戴了毒气罐，吸入的气体会经过滤后作为毒气存入战棺的毒气罐。</TXWC_AbsorbGas.description>
+  <!-- EN: Using ability: {0} -->
+  <TXWC_AbsorbGas.jobReportString>使用{0}。</TXWC_AbsorbGas.jobReportString>
+  <!-- EN: absorb gas -->
+  <TXWC_AbsorbGas.label>吸收气体</TXWC_AbsorbGas.label>
+  <!-- EN: absorb gas -->
+  <TXWC_AbsorbGas.verbProperties.label>吸收气体</TXWC_AbsorbGas.verbProperties.label>
+
+  <!-- EN: Open the tank's vents and release tox gas around the pilot. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left. -->
+  <TXWC_VentTank.description>打开毒气罐的排气阀，在驾驶员周围释放毒气。毒气云从驾驶员所在位置扩散开来，并随驾驶员移动。再次切换可关闭排气阀，保留剩余的毒气。</TXWC_VentTank.description>
+  <!-- EN: Using ability: {0} -->
+  <TXWC_VentTank.jobReportString>使用{0}。</TXWC_VentTank.jobReportString>
+  <!-- EN: vent tank -->
+  <TXWC_VentTank.label>排放罐内毒气</TXWC_VentTank.label>
+  <!-- EN: vent tank -->
+  <TXWC_VentTank.verbProperties.label>排放罐内毒气</TXWC_VentTank.verbProperties.label>
+
+</LanguageData>

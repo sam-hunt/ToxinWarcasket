@@ -1,7 +1,8 @@
 # Simplified Chinese glossary, Toxin Warcasket
 
 Seeded from the Shipcracker Warcasket glossary (machine-assisted there,
-pending native review); no translation pass has run here yet. Only
+pending native review); this mod's first machine-assisted pass
+filled the charge nouns and the grounded table below. Only
 mod-specific coinages and grounding decisions; family-wide mechanics and
 style live in `l10n/languages/ChineseSimplified.md`.
 
@@ -44,20 +45,44 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 
 | English | Simplified Chinese | Grounding |
 |---|---|---|
-| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | *pass* | Shipcracker's "fuel unit" is the plain mass noun 燃料 (燃料剩余, 没有燃料。), not 燃料罐 (a container). Decide whether a counted 单位 reads better for a gauge counted in units of one. |
-| jet (the shoulders' `chargeNoun`; one per activation) | *pass* | The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
+| unit (the tank's `chargeNoun`; one chemfuel, a volume the vent drains) | 燃料 | Lookup file: none needed. Kept Shipcracker's mass noun: 燃料剩余, 没有燃料。, 毒气罐中需要4燃料。 all read naturally, while a counted 单位 would print a bare 单位剩余. Settings prose says 化合燃料 / 每单位化合燃料 where the English names chemfuel. | Shipcracker's "fuel unit" is the plain mass noun 燃料 (燃料剩余, 没有燃料。), not 燃料罐 (a container). Decide whether a counted 单位 reads better for a gauge counted in units of one. |
+| jet (the shoulders' `chargeNoun`; one per activation) | 喷射 | Lookup file: none needed. Same noun as the 毒气喷射 settings section and 无毒气罐时的喷射次数; reads 喷射剩余, 没有喷射。 Vanilla's generic 充能 was rejected so the gauge names what it counts. | The ability label "spray gas" and the settings' "Gas jet" section must use the same noun. |
 
-## To ground in the first pass
+## Grounded in the first pass
 
-- cataphract (set name, lore paragraph 3): the pack's `VFEP_Warcasket_Cataphract.label`, else Royalty `Apparel_ArmorCataphract.label`.
-- hazard (set name, settings' vacuum toggle and Workshop FAQ): the pack's `VFEP_Warcasket_Hazard.label`.
-- the 7th-generation paragraph: the pack's Aerial / Barrage / Hazard / Shock descriptions share it verbatim; take that rendering.
-- "specialised warcaskets" research (Workshop FAQ): the pack's `VFEP_SpecialisedWarcaskets.label`.
-- toxin (this set's name, in the `<set>`型 slot) and the Workshop title.
-- Biotech: tox gas, gas mask, tox pack, pollution, the `ToxGasExposure` hediff label and stages; Core: toxic environment resistance, toxic fallout, rot stink, toxic buildup, chemfuel.
-- This mod's coinages: tox gas tank, vent (noun and verb), absorb, gas jet, reserve jet, spray gas.
+| English | Simplified Chinese | Grounding |
+|---|---|---|
+| cataphract (set name) | 骑士型 | Community pack `VFEP_Warcasket_Cataphract.label` = 骑士型战棺装甲 (Royalty's armor is 骑士装甲). |
+| hazard (set name) | 险境型 | Community pack `VFEP_Warcasket_Hazard.label` = 险境型战棺装甲. |
+| specialised warcaskets (research) | 「特化型战棺」 | Community pack `VFEP_SpecialisedWarcaskets.label`. |
+| 7th-generation paragraph | 由于机体基本性能的强化陷入瓶颈…… | Community pack's Hazard/Barrage/Shock text verbatim, its —— reflowed to a comma. |
+| "Specialized ... with superior protection and worse weight" | 特化型战棺`<part>`，在增加机体重量的同时大幅提升了防护性 | Community pack: superior = 大幅 (Shock), worse weight = 增加机体重量 (Barrage). |
+| toxin (set name) / Workshop title | 毒素型 / 毒素型战棺 | Coined: toxin = 毒素, in the pack's `<set>`型 slot. |
+| tox gas | 毒气 | Biotech `ToxGas.label`, also the research label and the `ToxGasExposure` hediff label. |
+| ToxGasExposure stages | 较轻 / 中等 / 严重 | Biotech `ToxGasExposure.stages.*`. |
+| gas mask / tox pack | 防毒面具 / 毒气背包 | Biotech `Apparel_GasMask.label`, `Apparel_PackTox.label` (also its `chargeNoun`). |
+| pollution / polluted terrain | 污染 / 受污染的地形 | Biotech Keyed `PollutionLower`, `PollutedTerrain.label`. |
+| toxic environment resistance | 有毒环境抗性 | Biotech stat label. |
+| toxic fallout / toxic buildup | 有毒尘埃 / 中毒 | Core labels. |
+| rot stink / deadlife dust / smoke | 腐气 / 死灵尘 / 烟雾 | Core Keyed `RotStink`, `DeadlifeDust`; 烟雾 is the prose form of Core's terse 烟. |
+| chemfuel | 化合燃料 | Core `Chemfuel.label`. |
+| sharp / blunt armor | 利器 / 钝器护甲 | Core `ArmorRating_Sharp/Blunt`. |
+| vacuum resistance | 真空抗性 | Odyssey stat label. |
+| Miscellaneous (settings section) | 杂项 | Core Keyed `MiscRecordsCategory`. |
+| Biotech (Workshop) | Biotech | Left in English on the Workshop page, as Shipcracker leaves Odyssey; in-game DLC name is 生物技术. |
+| tox gas tank | 毒气罐 | Coined; vanilla's own tank nouns are ~罐 (燃料罐, 烟罐). |
+| vent (noun) / vent tank (ability) / vent rate | 排气阀 / 排放罐内毒气 / 排放速率 | Coined; kept apart from the tox pack's 释放毒气 so the two abilities do not share a label. |
+| absorb / absorb gas | 吸收 / 吸收气体 | Coined; 气体, not 毒气, because it clears every gas. |
+| gas jet | 毒气喷射 | Coined (settings section). |
+| reserve jet ("Jets without a tank") | 无毒气罐时的喷射次数; prose 护肩自带的喷射 | Coined. |
+| spray gas (shoulders' verb label, not on the surface yet) | 喷射毒气 | Coined, recorded for when it becomes translatable. |
+| jet nozzle (shoulders' hardware) | 喷口 | Coined. |
 
 ## Pending native review
 
 Inherited and still open there: 呼吸器 (coined, no vanilla or community
-source). Add this mod's own coinages here as the pass makes them.
+source).
+
+This mod's first pass (machine-assisted): 毒素型 (set name), 毒气罐,
+排气阀 / 排放罐内毒气, 吸收气体, 毒气喷射, 喷射 (jet `chargeNoun`), 喷口,
+喷射毒气, and the reuse of 燃料 for the tank's unit.
