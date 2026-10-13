@@ -4,6 +4,15 @@ Publishing metadata for the mod's Steam Workshop page. Nothing in this folder
 ships with the mod (the StageMod manifest never matches it) or is loaded by
 RimWorld. A `Media/` folder for Workshop images can live here later.
 
+## Preview.gif
+
+The animated Workshop thumbnail, optional. Steam animates a GIF preview on the
+page (it must stay below 1 MB), but the game's mod list decodes only PNG and
+JPG, so `About/Preview.png` stays a static image and this file is set on the
+page separately: the `release` skill runs a preview-only SteamCMD update after
+every in-game upload, because the uploader resets the preview to the PNG each
+time.
+
 ## Description/
 
 One file per language, named after the RimWorld language folders in

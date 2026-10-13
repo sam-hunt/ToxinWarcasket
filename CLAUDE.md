@@ -269,6 +269,9 @@ inherited from the Shipcracker glossaries so the two sets read as one family in-
   (`Description/<Language>.txt`, the toolkit's convention; its `README.md` has the format and
   title rule). It is player-facing text and quotes def numbers, so a tuning change that moves
   one updates `English.txt` in the same commit; the release skill translates it from there.
+  `Preview.gif`, when present, is the animated Workshop thumbnail: the mod list decodes only
+  PNG/JPG, so `About/Preview.png` stays static and the release skill sets the GIF on the page
+  with a preview-only SteamCMD update after each in-game upload (which resets it).
 
 **Releases:** run the `/release` skill, or by hand: add the version's `## [X.Y.Z]` section to
 `CHANGELOG.md`, bump `About/About.xml` `<modVersion>` and `Source/1.6/Properties/AssemblyInfo.cs`,
