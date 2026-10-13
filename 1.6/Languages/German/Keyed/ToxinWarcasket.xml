@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: Toxin Warcasket -->
+  <TXWC_SettingsCategory>Toxin-Kriegssarg</TXWC_SettingsCategory>
+
+  <!-- EN: Tox gas tank -->
+  <TXWC_SectionTank>Giftgastank</TXWC_SectionTank>
+  <!-- EN: Gas jet -->
+  <TXWC_SectionJet>Gasstoß</TXWC_SectionJet>
+  <!-- EN: Absorb gas -->
+  <TXWC_SectionAbsorb>Gas absorbieren</TXWC_SectionAbsorb>
+  <!-- EN: Miscellaneous -->
+  <TXWC_SectionMisc>Sonstiges</TXWC_SectionMisc>
+
+  <!-- EN: Tank capacity (chemfuel) -->
+  <TXWC_TankCapacity>Tankkapazität (Sprit)</TXWC_TankCapacity>
+  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
+  <TXWC_TankCapacityDesc>Wie viel Sprit ein voller Tank fasst. Die Anzeige zählt ihn in Einheiten zu je 1 Sprit. Sinkt der Wert unter den aktuellen Füllstand eines Tanks, geht der Überschuss verloren. Standard: {0}.</TXWC_TankCapacityDesc>
+
+  <!-- EN: Tox gas per chemfuel (cells) -->
+  <TXWC_GasPerChemfuel>Giftgas pro Sprit (Zellen)</TXWC_GasPerChemfuel>
+  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>Wie viele Zellen Giftgas jede Einheit Sprit im Tank erzeugt, egal wie sie verbraucht wird: abgelassen, als Gasstoß versprüht oder freigesetzt, wenn der Pilot zu Boden geht. Die Absorption speichert eine Einheit Sprit für je so viel angesaugtes Gas. Ein Giftrucksack erzeugt aus 35 Sprit 45 Zellen. Standard: {0}.</TXWC_GasPerChemfuelDesc>
+
+  <!-- EN: Vent rate (chemfuel per second) -->
+  <TXWC_VentRate>Ablassrate (Sprit pro Sekunde)</TXWC_VentRate>
+  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>Wie schnell das Ablassen den Tank leert. Schnelleres Ablassen erzeugt eine breitere Wolke, die sich früher auflöst. Standard: {0}.</TXWC_VentRateDesc>
+
+  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
+  <TXWC_TankSummary>Ein voller Tank: {0} Sprit für {1} Zellen Giftgas ({2} Giftrucksäcke). Das Ablassen leert ihn in {3} Sekunden.</TXWC_TankSummary>
+
+  <!-- EN: Cost (chemfuel) -->
+  <TXWC_JetCost>Kosten (Sprit)</TXWC_JetCost>
+  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
+  <TXWC_JetCostDesc>Wie viel Sprit jeder Gasstoß aus dem Tank verbraucht. Ohne Tank erzeugt ein eigener Gasstoß der Schulterpanzer dasselbe Gas für dieselbe Menge Sprit. Standard: {0}.</TXWC_JetCostDesc>
+
+  <!-- EN: Jets without a tank -->
+  <TXWC_JetReserve>Gasstöße ohne Tank</TXWC_JetReserve>
+  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
+  <TXWC_JetReserveDesc>Wie viele Gasstöße die Schulterpanzer selbst fassen, für den Einsatz ohne Tank. Sie werden mit Sprit nachgeladen und bleiben unberührt, solange ein Tank getragen wird. Standard: {0}.</TXWC_JetReserveDesc>
+
+  <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
+  <TXWC_JetTankLow>Benötigt {COUNT} {CHARGENOUN_plural} im Tank.</TXWC_JetTankLow>
+
+  <!-- EN: Cone width (degrees) -->
+  <TXWC_JetConeWidth>Kegelbreite (Grad)</TXWC_JetConeWidth>
+  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>Die volle Breite des Kegels, in dem der Gasstoß landet. Ein breiterer Kegel verteilt dasselbe Gas dünner. Standard: {0}.</TXWC_JetConeWidthDesc>
+
+  <!-- EN: Range (cells) -->
+  <TXWC_JetRange>Reichweite (Zellen)</TXWC_JetRange>
+  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetRangeDesc>Wie weit der Gasstoß reicht. Ein längerer Gasstoß verteilt dasselbe Gas dünner. Standard: {0}.</TXWC_JetRangeDesc>
+
+  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
+  <TXWC_JetSummary>Ein Gasstoß: {0} Sprit für {1} Zellen Giftgas ({2} Giftrucksäcke). Ein voller Tank reicht für {3}, die Schulterpanzer allein fassen {4}.</TXWC_JetSummary>
+
+  <!-- EN: Radius (cells) -->
+  <TXWC_AbsorbRadius>Radius (Zellen)</TXWC_AbsorbRadius>
+  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>Wie weit um den Piloten herum die Absorption Gas ansaugt. Standard: {0}.</TXWC_AbsorbRadiusDesc>
+
+  <!-- EN: Duration (seconds) -->
+  <TXWC_AbsorbDuration>Dauer (Sekunden)</TXWC_AbsorbDuration>
+  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>Wie lange jede Absorption Gas ansaugt. Standard: {0}.</TXWC_AbsorbDurationDesc>
+
+  <!-- EN: Cooldown (hours) -->
+  <TXWC_AbsorbCooldown>Abklingzeit (Stunden)</TXWC_AbsorbCooldown>
+  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>Wie lange die Absorption zum Aufladen braucht. Standard: {0}.</TXWC_AbsorbCooldownDesc>
+
+  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
+  <TXWC_AbsorbSummary>Eine Absorption saugt Gas aus den {0} Zellen um den Piloten. Eine volle Wolke darüber bringt {1} Sprit in den Tank.</TXWC_AbsorbSummary>
+
+  <!-- EN: Hazard warcaskets resist vacuum -->
+  <TXWC_HazardVacuum>Gefahrenschutz-Kriegssärge sind vakuumresistent</TXWC_HazardVacuum>
+  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
+  <TXWC_HazardVacuumDesc>Gibt dem Gefahrenschutz-Kriegssarg die Vakuumresistenz der Raumfahrt-Kriegssärge und grenzt ihn damit stärker vom Toxin-Kriegssarg ab. Eine Änderung erfordert einen Neustart. Standard: aus.</TXWC_HazardVacuumDesc>
+  <!-- EN:  (requires restart) -->
+  <TXWC_RequiresRestartSuffix> (erfordert Neustart)</TXWC_RequiresRestartSuffix>
+  <!-- EN:  (requires Odyssey) -->
+  <TXWC_RequiresOdysseySuffix> (erfordert Odyssey)</TXWC_RequiresOdysseySuffix>
+
+  <!-- EN:  (default) -->
+  <TXWC_DefaultSuffix> (Standard)</TXWC_DefaultSuffix>
+
+</LanguageData>

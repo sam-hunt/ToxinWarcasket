@@ -22,7 +22,7 @@ welcome too.
 | Simplified Chinese   | Planned | -      |
 | Russian              | Planned | -      |
 | Korean               | Planned | -      |
-| German               | Planned | -      |
+| German               | Machine-assisted | Fable 5.1 |
 | Spanish              | Planned | -      |
 | French               | Planned | -      |
 | Brazilian Portuguese | Planned | -      |

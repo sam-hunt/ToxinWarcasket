@@ -1,0 +1,46 @@
+Toxin-Kriegssarg
+
+Ein neuer Kriegssarg zur chemischen Kriegsführung für [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
+
+[h1]Überblick[/h1]
+
+Der Toxin-Kriegssarg gehört zur 7. Generation und baut auf dem Kataphrakt-Chassis aus VFE Pirates auf: Panzerung auf dem Niveau des Luft-Kriegssargs bei etwas leichterem Rahmen und drei Teile, die sich einen Giftgastank teilen. Setze eine Stellung unter Gas, stürme sie unversehrt und hol dir danach einen Teil des Gases zurück, indem du die Luft reinigst. Erfordert Biotech.
+
+[hr][/hr]
+[h1]Das Set[/h1]
+Freigeschaltet durch die Forschungsprojekte 'spezialisierte Kriegssärge' und 'Giftgas'. Das vollständige Set hat 100% Giftresistenz (Umwelt): Giftgas, giftiger Fallout und verseuchter Boden können ihm nichts anhaben.
+[list]
+[*][b]Torso:[/b] der Tank mit Gas für fast drei Giftrucksäcke, der wie ein Giftrucksack mit Sprit nachgeladen wird. 'Tank ablassen' leert ihn als wachsende Wolke rund um den Piloten, ein erneuter Klick hält den Rest zurück. 25% Giftresistenz (Umwelt).
+[*][b]Schulterpanzer:[/b] die Gasdüsen. Jeder Gasstoß versprüht einen Kegel aus dem Tank, vier pro vollem Tank, ohne Tank zwei eigene. Beim Zielen siehst du, wo das Gas landet und wie weit es treibt. 15% Giftresistenz (Umwelt).
+[*][b]Helm:[/b] das Atemgerät. 80% Giftresistenz (Umwelt) und wie eine Gasmaske immun gegen Giftgas, dazu eine Fähigkeit, die die Luft um den Piloten in den Tank saugt (entfernt auch Rauch, Verwesungsgeruch und Deadlife-Staub!).
+[/list]
+
+In den Mod-Einstellungen lassen sich anpassen: Gas pro Sprit, Kapazität und Ablassrate des Tanks, Kosten, Kegel und Reichweite der Gasstöße samt ihrer Anzahl ohne Tank, sowie Radius, Dauer und Abklingzeit der Absorption.
+
+[hr][/hr]
+[h1]Mod-Kompatibilität[/h1]
+[list]
+[*]Kann gefahrlos zu bestehenden Spielständen hinzugefügt werden.
+[*]Kann nicht gefahrlos entfernt werden, solange jemand in das Set eingeschweißt ist.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]: erforderlich.
+[*]Biotech: erforderlich.
+[*]Save Our Ship 2: EVA-tauglich nach denselben Regeln wie die Sets aus VFE Pirates.
+[*]Nicht mit Combat Extended getestet (Rückmeldungen willkommen).
+[/list]
+
+[hr][/hr]
+[h1]FAQ[/h1]
+[b]F: Brauche ich Biotech?[/b]
+A: Ja. Giftgas gibt es nur mit Biotech, und das ganze Set baut darauf auf.
+
+[b]F: Was unterscheidet es vom Gefahrenschutz-Set aus VFE Pirates?[/b]
+A: Der Gefahrenschutz ist der Allrounder: leichter, feuerfest und immun gegen Vergiftung und psychische Effekte, aber mit dünnerer Panzerung gegen Schnitt und Wucht. Der Toxin-Kriegssarg ist ganz auf Giftgas ausgelegt, im Angriff wie in der Verteidigung. Für die stärkere Panzerung und den Tank zahlt er mit Gewicht und bleibt anfälliger für Giftangriffe, Feuer, extreme Temperaturen usw.
+
+[b]F: Wie bekomme ich es?[/b]
+A: Erforsche die Projekte 'spezialisierte Kriegssärge' aus VFE Pirates und 'Giftgas' aus Biotech und schweiße dann einen Kolonisten wie bei jedem anderen Set in der Kriegssarg-Gießerei ein. Die Teile lassen sich nach Belieben mit den Sets aus VFE Pirates kombinieren.
+
+
+[hr][/hr]
+[h1]Links[/h1]
+Quellcode, manuelle Downloads und Fehler-Tracker: [url=https://github.com/sam-hunt/ToxinWarcasket]GitHub[/url]
+Grafik von [url=https://steamcommunity.com/profiles/76561198094174176/myworkshopfiles/?appid=294100]IcingWithCheeseCake[/url]

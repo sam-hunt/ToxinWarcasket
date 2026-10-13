@@ -1,0 +1,3 @@
+// Toxin Warcasket: chargeNoun plural
+Spriteinheit;Spriteinheiten
+Gasstoß;Gasstöße
