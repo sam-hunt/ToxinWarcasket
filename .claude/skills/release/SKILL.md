@@ -285,6 +285,16 @@ the user through the hand-offs below in order and wait at each one.
     ships it, so every later upload updates this item instead of creating
     another. Check the item's visibility on its page straight away and keep it
     hidden until the rest of this step is on the page.
+  - **Which game client:** the 1.6 client, or the 1.7 client with its
+    "Build asset pack" box unticked; the two send the same bytes (the mod
+    folder verbatim, tags from `About.xml`), and that is what the CI zip and
+    the smoke test saw. Ticked, the 1.7 uploader bakes an `Assets.zip` of
+    BC7 textures into the root of every load folder its `<v1.7>` block names
+    that has `Textures/` or `Sounds/`, writing it into the *deployed* copy
+    (the next build removes it, so a later upload rebakes rather than reusing
+    a stale pack) and ships a Workshop item that differs from the tested
+    deploy. "Don't upload source textures" must stay unticked while 1.6 is
+    in `supportedVersions`: 1.6 ignores the pack and would ship with no art.
 - **Change notes:** show the changelog notes from step 7 for the user to paste
   into the Workshop change notes of this upload.
 - **Title and description per language:** list every
