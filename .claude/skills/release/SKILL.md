@@ -305,8 +305,19 @@ the user through the hand-offs below in order and wait at each one.
   none of it. Remind the user to paste each listed title and description into
   the page's per-language edit UI (Steam's own language names differ:
   schinese, koreana, brazilian, latam, ...).
-- **Page images:** screenshots are not in the repo; the user adds or refreshes
-  them on the page.
+- **Page images:** the gallery lives in `.steamworkshop/Images/`. The user
+  uploads new or changed ones through the page's images and videos UI; list
+  any changed since the
+  last stable tag (`git diff --name-only <last-stable-tag> --
+  .steamworkshop/Images/`). Steam rejects gallery images of 2 MB or more and
+  takes no video files, so a gameplay clip goes up as a GIF cut to fit:
+  ffmpeg ships with Krita on the Windows side
+  (`.../steamapps/common/Krita/krita/bin/ffmpeg.exe`), and lowering frame
+  rate, scale and palette with Bayer dithering is what gets a few seconds of
+  gas under the limit:
+  ```bash
+  ffmpeg -i Clip.mp4 -lavfi "fps=8,scale=iw*0.75:-2:flags=lanczos,split[a][b];[a]palettegen=max_colors=48:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=4:diff_mode=rectangle" -loop 0 Clip.gif
+  ```
 - **Animated preview** (only when `.steamworkshop/Preview.gif` exists; skip
   silently otherwise). The mod list loads `About/Preview.png` through Unity's
   `LoadImage`, which decodes only PNG and JPG, so a GIF shipped under that name
@@ -336,9 +347,8 @@ the user through the hand-offs below in order and wait at each one.
     `mkdir -p ~/steamcmd && curl -sqL https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz | tar -zxf - -C ~/steamcmd`);
     the first run self-updates and takes a minute.
   - Verify on the page: the thumbnail animates, and the tags still read "Mod"
-    plus the supported versions. SteamCMD cannot set tags and is expected to
-    leave them alone, but that is unconfirmed until the first run; if they are
-    gone, upload from the game again (which restores them and the static
-    preview), report it, and rerun the SteamCMD update to see whether it
-    repeats.
+    plus the supported versions. SteamCMD cannot set tags and has left them
+    alone so far; if they are ever gone, upload from the game again (which
+    restores them and the static preview), report it, and rerun the SteamCMD
+    update to see whether it repeats.
 - **First release:** set the item public once everything above is on the page.
