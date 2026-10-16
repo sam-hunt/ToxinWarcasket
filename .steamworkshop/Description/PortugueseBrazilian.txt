@@ -4,26 +4,24 @@ Uma nova carcaça de guerra de combate químico para o [url=https://steamcommuni
 
 [h1]Sobre[/h1]
 
-A Toxina é uma carcaça de guerra de 7ª geração construída sobre o chassi da carcaça de guerra catafrática do VFE Pirates: blindagem do nível da carcaça aérea em uma estrutura um pouco mais leve, e três peças que compartilham um único tanque de gás tóxico. Encha uma posição de gás, invada-a sem sofrer dano e recupere parte do gás limpando o ar depois. Requer Biotech.
+Uma façanha de engenharia impressionantemente antiética, a Toxina é uma carcaça de guerra de 7ª geração construída sobre o chassi da carcaça de guerra catafrática do VFE Pirates: blindagem do nível da carcaça aérea em uma estrutura um pouco mais leve, e três peças que compartilham um tanque de gás tóxico. Encha uma posição de gás, invada-a sem sofrer dano e recupere parte do gás limpando o ar depois. Requer Biotech.
 
 [hr][/hr]
 [h1]O conjunto[/h1]
-Liberado pelas pesquisas de carcaças de guerra especializadas e de gases tóxicos. O conjunto completo tem 100% de resistência a ambiente tóxico: gás tóxico, chuva tóxica e terreno poluído não o afetam.
 [list]
-[*][b]Tronco:[/b] o tanque, com gás para quase três mochilas tóxicas, recarregado com combustível químico como uma mochila. Ative as válvulas para esvaziá-lo ao redor do piloto em uma nuvem que cresce, e ative de novo para guardar o resto. 25% de resistência a ambiente tóxico.
-[*][b]Ombreiras:[/b] os jatos de gás. Cada jato pulveriza um cone a partir do tanque: quatro jatos com o tanque cheio, ou duas cargas sem ele. A mira mostra onde o gás cai e até onde ele se espalha. 15% de resistência a ambiente tóxico.
-[*][b]Capacete:[/b] o respirador. 80% de resistência a ambiente tóxico e imunidade à exposição a gás tóxico, como uma máscara de gás, além de uma habilidade que aspira o ar ao redor do piloto para dentro do tanque (também limpa fumaça, fedor de podridão e poeira de vida morta!).
+[*][b]Tronco:[/b] o tanque, com gás para quase três mochilas tóxicas, recarregado com combustível químico do mesmo jeito. Ative as válvulas para esvaziá-lo ao redor do piloto em uma nuvem que cresce, e ative de novo para guardar o resto.
+[*][b]Ombreiras:[/b] os jatos de gás. Cada jato pulveriza um cone a partir do tanque: quatro jatos com o tanque cheio, ou duas cargas sem ele. A mira mostra onde o gás cai e até onde ele se espalha.
+[*][b]Capacete:[/b] o respirador. Imunidade à exposição a gás tóxico, como uma máscara de gás, além da habilidade de sugar gases ao redor do piloto para dentro do tanque (também limpa fumaça, fedor de podridão e poeira de vida morta!).
 [/list]
 
-As configurações do mod ajustam o gás por combustível químico, a capacidade e a vazão do tanque, o custo, o cone e o alcance do jato e os jatos sem tanque, e o raio, a duração e o tempo de recarga da absorção.
+As configurações do mod ajustam o gás por combustível químico, a capacidade e a vazão do tanque, o custo, o cone e o alcance do jato e as cargas sem tanque, e o raio, a duração e o tempo de recarga da absorção etc.
 
 [hr][/hr]
 [h1]Compatibilidade[/h1]
 [list]
 [*]Seguro para adicionar a jogos salvos existentes.
 [*]Não é seguro remover enquanto houver um colono integrado ao conjunto.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]: obrigatório.
-[*]Biotech: obrigatória.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] e DLC Biotech obrigatórios.
 [*]Save Our Ship 2: vale como traje de EVA pelas mesmas regras dos conjuntos do próprio VFE Pirates.
 [*]Não testado com o Combat Extended (relatos são bem-vindos).
 [/list]
@@ -34,7 +32,7 @@ As configurações do mod ajustam o gás por combustível químico, a capacidade
 R: Sim. O gás tóxico só existe com a Biotech, e todo o conjunto depende dele.
 
 [b]P: Qual é a diferença entre ela e o conjunto de risco do VFE Pirates?[/b]
-R: A carcaça de guerra de risco é a mais versátil: mais leve, à prova de fogo e imune a acúmulo tóxico e efeitos psíquicos, com blindagem cortante e contundente mais fraca. A Toxina é feita só para o gás tóxico, no ataque e na defesa. Ela paga com peso a blindagem mais forte e o tanque, e ainda é mais vulnerável a veneno, fogo, temperaturas extremas etc.
+R: A carcaça de guerra de risco é a mais versátil: mais leve, à prova de fogo e imune a acúmulo tóxico e efeitos psíquicos, com blindagem cortante e contundente mais fraca. A Toxina é feita só para o gás tóxico, no ataque e na defesa. Ela paga com peso a blindagem mais forte e o tanque, e ainda é mais vulnerável a veneno, fogo, temperaturas extremas etc. Inclui um patch opcional para diferenciar ainda mais as duas, aumentando a resistência ao vácuo da carcaça de guerra de risco.
 
 [b]P: Como consigo?[/b]
 R: Pesquise os projetos "carcaças de guerra especializadas" do VFE Pirates e "gases tóxicos" da Biotech e depois integre o colono na fundição de carcaças de guerra, como em qualquer outro conjunto. Combine as peças com os conjuntos do próprio VFE Pirates como quiser.
