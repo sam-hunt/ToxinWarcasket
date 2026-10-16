@@ -14,8 +14,9 @@
       the wearer from the ToxGasExposure hediff (the sight/breathing debuff). It does not touch
       the toxic buildup gas also deals; the resistance stat does that. Together they let the
       full set stand in its own gas.
-    - Costs: Chemfuel 20 is the respirator's filter, priced as the gas mask prices its own;
-      Comp 3, Steel 45 and Plasteel 20 put the piece in the 7th-gen band.
+    - Costs: Chemfuel 10 is the respirator's filter, half the gas mask's, as the set's chemfuel
+      sits mostly with the tank's and the nozzle's first fills (the armor's header); Comp 3,
+      Steel 45 and Plasteel 20 put the piece in the 7th-gen band.
     - Absorb Gas (TXWC_AbsorbGas): the respirator pulls the air around the pilot through its
       filter and into the armor's tank. The ability runs the draw and its autocast on
       the helmet's own tick, so this piece redeclares tickerType Normal (the base's is Never)
@@ -50,7 +51,7 @@
       <ComponentIndustrial>3</ComponentIndustrial>
       <Steel>45</Steel>
       <Plasteel>20</Plasteel>
-      <Chemfuel>20</Chemfuel>
+      <Chemfuel>10</Chemfuel>
     </costList>
     <researchPrerequisites>
       <li>VFEP_SpecialisedWarcaskets</li>

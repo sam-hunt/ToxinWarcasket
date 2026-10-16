@@ -8,7 +8,9 @@
     - ToxicEnvironmentResistance +0.15, the shoulders' share of the set's 1.2 (rationale in the
       armor's header).
     - Costs: Comp 2 is the gas jet's nozzle (VFEP's Controller shoulders likewise pay components
-      for their verb); Steel 55 and Plasteel 20 put the piece in the 7th-gen band.
+      for their verb); Steel 55 and Plasteel 20 put the piece in the 7th-gen band. Chemfuel 15
+      pays part of the nozzle's own two jets, which come filled (40), on the armor's middle
+      ground between VFEP's free fill and vanilla's up-front one.
 
     Gas jet: an apparel verb (ToxinWarcasket.Verb_SprayGas), as the Barrage shoulders carry
     theirs, so this piece redeclares tickerType Normal for the verb tracker and the AI check (the
@@ -77,6 +79,7 @@
       <ComponentIndustrial>2</ComponentIndustrial>
       <Steel>55</Steel>
       <Plasteel>20</Plasteel>
+      <Chemfuel>15</Chemfuel>
     </costList>
     <researchPrerequisites>
       <li>VFEP_SpecialisedWarcaskets</li>
