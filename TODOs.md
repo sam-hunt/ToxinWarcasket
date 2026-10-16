@@ -1,9 +1,5 @@
 # TODOs
 
-## Art
-
-- **Workshop images.** shipcracker as the template for the lineup
-
 ## Infrastructure follow-ups
 
 - **First Workshop publish.** Upload writes `About/PublishedFileId.txt`; commit it, add the
