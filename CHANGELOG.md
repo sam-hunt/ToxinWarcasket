@@ -14,3 +14,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
      section before tagging. Release candidates (X.Y.Z-rc.N) get no section: their
      changes land in the stable version's section at promotion. The /release skill
      walks through all of this. -->
+
+## [1.0.0] - 2026-10-17
+
+First release.
+
+### Added
+
+- Toxin warcasket set: armor, shoulder pads, helmet, sharing one tox gas tank refilled with chemfuel.
+- Vent the tank to flood the area around the pilot with tox gas.
+- Gas jets spray a cone of tox gas from the tank, with a few charges of their own when worn without it.
+- Respirator helmet: immune to tox gas, and absorbs nearby gases back into the tank.
+- The tank bursts when the pilot is downed and ruptures on death.
+- Mod settings for the gas yield, tank, jets and absorb, plus an optional vacuum resistance bump for VFE Pirates' Hazard set.
+- Rarely worn by raiders.
+- Save Our Ship 2 support (confirmed on 1.6; SOS2 itself does not start cleanly on 1.7 yet).
+- RimWorld 1.6 and 1.7 support.
+- Translated into 9 languages.
+
+[1.0.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.0.0
