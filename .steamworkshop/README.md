@@ -2,7 +2,7 @@
 
 Publishing metadata for the mod's Steam Workshop page. Nothing in this folder
 ships with the mod (the StageMod manifest never matches it) or is loaded by
-RimWorld. A `Media/` folder for Workshop images can live here later.
+RimWorld.
 
 ## Preview.gif
 
@@ -12,6 +12,13 @@ JPG, so `About/Preview.png` stays a static image and this file is set on the
 page separately: the `release` skill runs a preview-only SteamCMD update after
 every in-game upload, because the uploader resets the preview to the PNG each
 time.
+
+## Images/
+
+The page's gallery images, uploaded by hand through the page's images and
+videos UI. Steam rejects gallery images of 2 MB or more and takes no video
+files, so gameplay clips are GIFs cut down to fit (lower frame rate, scale and
+palette) from screen recordings kept outside the repo.
 
 ## Description/
 
@@ -44,5 +51,4 @@ differ: schinese, koreana, brazilian, latam, ...). The `release` skill diffs
 whenever it changed.
 
 Every shipped language has a description file; the non-English ones are
-machine-assisted first passes pending native review. The page does not exist
-until the first release.
+machine-assisted first passes pending native review.
