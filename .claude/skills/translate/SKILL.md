@@ -68,11 +68,14 @@ notes for the shim or flow edit this repo owes before continuing.
   default); keep it and any unit after it, such as the cone width's degree
   sign. `TXWC_DefaultSuffix` keeps its leading space, as do the
   `TXWC_Requires*Suffix` keys. The toggles (`TXWC_HazardVacuum*`,
-  `TXWC_FeedToxAbsorption*`) take no `{0}`. `TXWC_FeedToxAbsorption*` names
-  Vanilla Races Expanded - Waster and its "tox absorption" gene: keep the
-  mod's title in English (it ships English only, and that is its Workshop
-  title in every language); render the gene from the language's "tox gas"
-  and "waster" (Biotech's xenotype label in that language). Name the set's
+  `TXWC_FeedToxAbsorption*`) take no `{0}`, except
+  `TXWC_FeedToxAbsorptionDesc`, whose `{0}` is the title of Vanilla Races
+  Expanded - Waster, passed in by code and never translated (the mod ships
+  English only, and that is its Workshop title in every language); keep
+  the placeholder. `TXWC_RequiresVREWasterSuffix` spells that title out:
+  keep it in English there too. Render the "tox absorption" gene from the
+  language's "tox gas" and "waster" (Biotech's xenotype label in that
+  language). Name the set's
   things with the same renderings as the DefInjected text (tox gas tank,
   unit, gas jet, absorb gas, warcasket).
 - **Enumerate the key set from `Scripts/expected-injections.json`, never

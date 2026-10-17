@@ -32,6 +32,7 @@ namespace ToxinWarcasket.Integrations;
 public static class VREWasterIntegration
 {
     public const string PackageId = "vanillaracesexpanded.waster";
+    public const string ModName = "Vanilla Races Expanded - Waster";
 
     // VREW's HediffCompToxAbsorption.tickInterval and its per-interval severity.
     public const int TickInterval = 60;
@@ -64,17 +65,17 @@ public static class VREWasterIntegration
         }
         catch (Exception ex)
         {
-            Log.Warning("[Toxin Warcasket] Vanilla Races Expanded - Waster reflection failed (the tank will not feed tox absorption): " + ex);
+            Log.Warning("[Toxin Warcasket] " + ModName + " reflection failed (the tank will not feed tox absorption): " + ex);
             return;
         }
         if (Available)
         {
             // Positive evidence for a log reader: silence alone cannot tell "resolved" from
             // "VREW was not active".
-            Log.Message("[Toxin Warcasket] Vanilla Races Expanded - Waster found; the tank feeds its tox absorption gene.");
+            Log.Message("[Toxin Warcasket] " + ModName + " found; the tank feeds its tox absorption gene.");
             return;
         }
-        Log.Warning("[Toxin Warcasket] Vanilla Races Expanded - Waster is active but " + GeneDependentPollutionTypeName
+        Log.Warning("[Toxin Warcasket] " + ModName + " is active but " + GeneDependentPollutionTypeName
             + ", " + ToxAbsorptionGeneName + " or " + PollutionRushGeneName
             + " could not be resolved; the tank will not feed tox absorption. VREW may have changed.");
     }

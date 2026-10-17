@@ -273,14 +273,16 @@ public class ToxinWarcasketSettings : ModSettings
     }
 
     // The same row for the tank's waster feed, disabled without Vanilla Races Expanded - Waster,
-    // whose gene it feeds; the comp reads the box live, so no restart suffix.
+    // whose gene it feeds; the comp reads the box live, so no restart suffix. The tooltip takes
+    // the mod's title as an argument, in vanilla's colour for names, so it stands out of the
+    // sentence and translators never touch it.
     private void DoFeedToxAbsorptionRow(Listing_Standard listing)
     {
         Rect row = listing.GetRect(Tunable.RowHeight);
         row.xMin += Tunable.RowIndent;
         row.xMax -= Tunable.RowEndPad;
         Widgets.DrawHighlightIfMouseover(row);
-        TooltipHandler.TipRegion(row, "TXWC_FeedToxAbsorptionDesc".Translate());
+        TooltipHandler.TipRegion(row, "TXWC_FeedToxAbsorptionDesc".Translate(VREWasterIntegration.ModName.Colorize(ColoredText.NameColor)));
 
         bool waster = VREWasterIntegration.ModActive;
         string label = "TXWC_FeedToxAbsorption".Translate();
