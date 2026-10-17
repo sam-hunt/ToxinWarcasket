@@ -86,8 +86,8 @@
 
   <!-- EN: Tank feeds waster tox absorption -->
   <TXWC_FeedToxAbsorption>웨이스터의 독소 흡수에 탱크 사용</TXWC_FeedToxAbsorption>
-  <!-- EN: Pilots with the tox absorption gene ({0}) absorb gas from the tank as if standing in a tox cloud, so their pollution mutations grow whenever the tank is not empty. Costs no gas. Default: on. -->
-  <TXWC_FeedToxAbsorptionDesc>독소 흡수 유전자({0})가 있는 조종사는 독소 가스 구름 속에 서 있는 것처럼 탱크에서 가스를 흡수하므로, 탱크가 비어 있지 않은 동안 오염 변이가 발달합니다. 가스는 소모되지 않습니다. 기본값: 켜짐.</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN: A tank with gas in it counts as tox gas for pilots with the tox absorption gene ({0}), keeping their pollution mutations active. Costs no gas. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>가스가 든 탱크는 독소 흡수 유전자({0})가 있는 조종사에게 독소 가스로 간주되어, 오염 변이가 활성 상태로 유지됩니다. 가스는 소모되지 않습니다. 기본값: 켜짐.</TXWC_FeedToxAbsorptionDesc>
   <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
   <TXWC_RequiresVREWasterSuffix> (Vanilla Races Expanded - Waster 필요)</TXWC_RequiresVREWasterSuffix>
 

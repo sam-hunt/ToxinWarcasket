@@ -86,8 +86,8 @@
 
   <!-- EN: Tank feeds waster tox absorption -->
   <TXWC_FeedToxAbsorption>Tank speist die Giftgasabsorption der Ödländer</TXWC_FeedToxAbsorption>
-  <!-- EN: Pilots with the tox absorption gene ({0}) absorb gas from the tank as if standing in a tox cloud, so their pollution mutations grow whenever the tank is not empty. Costs no gas. Default: on. -->
-  <TXWC_FeedToxAbsorptionDesc>Piloten mit dem Gen 'Giftgasabsorption' ({0}) absorbieren Gas aus dem Tank, als stünden sie in einer Giftgaswolke, sodass ihre Verseuchungsmutationen wachsen, solange der Tank nicht leer ist. Kostet kein Gas. Standard: an.</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN: A tank with gas in it counts as tox gas for pilots with the tox absorption gene ({0}), keeping their pollution mutations active. Costs no gas. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>Ein Tank mit Gas zählt für Piloten mit dem Gen 'Giftgasabsorption' ({0}) als Giftgas und hält ihre Verseuchungsmutationen aktiv. Kostet kein Gas. Standard: an.</TXWC_FeedToxAbsorptionDesc>
   <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
   <TXWC_RequiresVREWasterSuffix> (erfordert Vanilla Races Expanded - Waster)</TXWC_RequiresVREWasterSuffix>
 

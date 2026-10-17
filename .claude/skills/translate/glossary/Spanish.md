@@ -96,7 +96,8 @@ despite the folder name these are the VFE Pirates files).
 | gene | gen (pl. genes) | Biotech Keyed `Gene` / `Genes`. |
 | tox absorption (VREW gene label) | absorción de toxigás; `el gen de absorción de toxigás` | Coined: VREW ships English only. Biotech `toxigás` plus the `absorción` of the absorb row; naming it as `el gen de ...` keeps it apart from the helmet's absorb. |
 | pollution mutations (VREW) | mutaciones por contaminación | Coined: Anomaly `inducir mutaciones`, Odyssey `mutado por aguas contaminadas`, Biotech `contaminación`. |
-| tox cloud (in "as if standing in a tox cloud") | nube tóxica; `como si estuvieran en una nube tóxica` | Biotech `Toxalope.description` (`produce una nube tóxica`). |
+| keeping (mutations) active / counts as | mantiene activas / cuenta como | Coined: an on-state while gas is present, not growth. |
+| tox cloud | nube tóxica | Biotech `Toxalope.description` (`produce una nube tóxica`). |
 | tank feeds tox absorption (settings label) | El depósito alimenta la absorción de toxigás de los escorias | Coined, sentence case like the hazard vacuum toggle. "Costs no gas" = `No consume gas`. |
 | Default: on. (toggle tooltip) | Por defecto: activado. | The inherited settings row, mirroring the hazard vacuum's `Por defecto: desactivado.` |
 | requires Vanilla Races Expanded - Waster (suffix) | ` (requiere Vanilla Races Expanded - Waster)` | Same frame as ` (requiere Odyssey)`; the mod title stays in English. |

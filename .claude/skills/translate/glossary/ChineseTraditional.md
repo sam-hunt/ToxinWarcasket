@@ -83,9 +83,9 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | waster (xenotype) | 荒地人 | Biotech `XenotypeDef` `Waster.label`. |
 | gene | 基因 | Biotech (345 value hits; `Learning_Fast.description` 基因擁有者). |
 | tox cloud | 毒雲 | Biotech value prose (毒性物質會爆炸並產生毒雲); already used by this file's vent tooltips. |
-| as if standing in (a cloud) | 如同身處… | 身處 from Biotech prose (身處受污染地帶). |
 | tox absorption (VREW gene label) | 「毒氣吸收」基因 | Coined: Biotech `ToxGas.label` 毒氣 + 吸收 (the absorb row's verb; Biotech `CannotAbsorbPollution` 吸收污染). VREW ships English only. Quoted in 「」 as a named gene. |
 | pollution mutations (VREW) | 污染突變 | Coined: 污染 (Biotech, row above) + 突變 (Core mech descriptions 突變品種). |
+| keeping (mutations) active / counts as | 保持活躍 / 視為 | Coined: an on-state while gas is present, not growth; 視為 (is treated as) from Core prose. |
 | Tank feeds waster tox absorption (setting label) | 毒氣罐供荒地人吸收毒氣 | Coined, descriptive "the tank lets wasters absorb tox gas"; the tooltip names the gene. |
 | the tank feeds (a gene, Workshop) | 毒氣罐會供給…「毒氣吸收」基因 | Coined; the Workshop bullet names the gene where the setting label does not. |
 | Default: on. / On | 預設值：開啟。 / 開啟 | Core Keyed `On` 開啟; same shape as the inherited 預設值：關閉。 |
@@ -106,4 +106,4 @@ Traditional pack).
 
 Coinages from the 2026-10-17 VRE Waster update, pending native review:
 「毒氣吸收」基因 (tox absorption), 污染突變 (pollution mutations), the
-setting label 毒氣罐供荒地人吸收毒氣, and 成長 for the mutations' growth.
+setting label 毒氣罐供荒地人吸收毒氣, and 保持活躍 for the mutations staying active.

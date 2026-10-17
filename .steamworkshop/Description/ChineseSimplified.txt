@@ -23,7 +23,7 @@
 [*]仍有殖民者封在这套战棺里时，不可安全移除。
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]和Biotech DLC：必需。
 [*]Save Our Ship 2：与VFE海盗自带套装遵循相同规则，具备舱外活动（EVA）能力。
-[*]Vanilla Races Expanded - Waster：毒气罐供给污骸种驾驶员的毒气吸收基因（设置选项，默认开启）。
+[*]Vanilla Races Expanded - Waster：毒气罐中有毒气时，对污骸种驾驶员的毒气吸收基因视同毒气（设置选项，默认开启）。
 [*]未与Combat Extended一同测试（欢迎反馈）。
 [/list]
 

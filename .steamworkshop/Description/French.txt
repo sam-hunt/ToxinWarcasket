@@ -23,7 +23,7 @@ Les paramètres du mod règlent le gaz par chemfuel, la capacité et le débit d
 [*]Ne peut pas être retiré sans risque tant qu'un colon est soudé dans l'ensemble.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] et le DLC Biotech requis.
 [*]Save Our Ship 2 : apte aux sorties extravéhiculaires, selon les mêmes règles que les ensembles de VFE Pirates.
-[*]Vanilla Races Expanded - Waster : le réservoir alimente le gène d'absorption tox d'un pilote pestilent (paramètre, activé par défaut).
+[*]Vanilla Races Expanded - Waster : un réservoir contenant du gaz compte comme du gaz tox pour le gène d'absorption tox d'un pilote pestilent (paramètre, activé par défaut).
 [*]Non testé avec Combat Extended (vos retours sont les bienvenus).
 [/list]
 

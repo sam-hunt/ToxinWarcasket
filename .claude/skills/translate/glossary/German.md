@@ -92,6 +92,7 @@ that plural unchanged.
 | gene | Gen (n.), cited as dem Gen '<label>' | Biotech GeneDefs "Träger dieses Gens"; single-quoted cited label per the language file. |
 | tox absorption (VREW gene, no German source) | Giftgasabsorption | Coined: Giftgas (Biotech `ToxGas.label`) + Absorption (the absorb row above); VREW ships English only. |
 | pollution mutations (VREW, no German source) | Verseuchungsmutationen | Coined: Verseuchung (Biotech `PollutedTerrain.label`) + Mutation; no "mutation" string in Core or Biotech de. |
+| keeping (mutations) active / counts as | hält ... aktiv / zählt als | Coined: an on-state while gas is present, not growth. |
 | Tank feeds waster tox absorption (settings toggle) / feed (verb) | Tank speist die Giftgasabsorption der Ödländer / speisen | Coined: speisen as in supplying a system; the toggle label is a sentence without period, like the Hazard toggle. |
 | tox cloud | Giftgaswolke | Coined: Giftgas + Wolke (Wolke as in `TXWC_VentRateDesc`). |
 | Default: on. | Standard: an. | The file's `Standard: aus.` with the "On" row above (Core Keyed `On`). Workshop bullet: (Einstellung, standardmäßig an). |

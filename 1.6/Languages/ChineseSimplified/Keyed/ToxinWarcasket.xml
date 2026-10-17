@@ -86,8 +86,8 @@
 
   <!-- EN: Tank feeds waster tox absorption -->
   <TXWC_FeedToxAbsorption>毒气罐供给污骸种的毒气吸收</TXWC_FeedToxAbsorption>
-  <!-- EN: Pilots with the tox absorption gene ({0}) absorb gas from the tank as if standing in a tox cloud, so their pollution mutations grow whenever the tank is not empty. Costs no gas. Default: on. -->
-  <TXWC_FeedToxAbsorptionDesc>拥有毒气吸收基因（{0}）的驾驶员会像身处毒气云中一样从毒气罐吸收气体，因此只要毒气罐不空，其污染突变就会不断生长。不消耗毒气。默认：开。</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN: A tank with gas in it counts as tox gas for pilots with the tox absorption gene ({0}), keeping their pollution mutations active. Costs no gas. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>毒气罐中有毒气时，对拥有毒气吸收基因（{0}）的驾驶员视同毒气，使其污染突变保持生效。不消耗毒气。默认：开。</TXWC_FeedToxAbsorptionDesc>
   <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
   <TXWC_RequiresVREWasterSuffix>（需要Vanilla Races Expanded - Waster）</TXWC_RequiresVREWasterSuffix>
 

@@ -23,7 +23,7 @@ Las opciones del mod ajustan el gas por biocombustible, la capacidad y la veloci
 [*]No es seguro quitarlo mientras haya alguien sepultado en el conjunto.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] y el DLC Biotech obligatorios.
 [*]Save Our Ship 2: apto para EVA con las mismas reglas que las series propias de VFE Pirates.
-[*]Vanilla Races Expanded - Waster: el depósito alimenta el gen de absorción de toxigás de un piloto escoria (opción, activada por defecto).
+[*]Vanilla Races Expanded - Waster: un depósito con gas cuenta como toxigás para el gen de absorción de toxigás de un piloto escoria (opción, activada por defecto).
 [*]No probado con Combat Extended (se agradecen los informes).
 [/list]
 

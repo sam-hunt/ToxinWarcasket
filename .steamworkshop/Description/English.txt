@@ -23,7 +23,7 @@ Mod settings tune the gas per chemfuel, the tank's capacity and vent rate, the j
 [*]Not safe to remove while a pawn is welded into the set.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] and Biotech DLC required.
 [*]Save Our Ship 2: EVA rated under the same rules as VFE Pirates' own sets.
-[*]Vanilla Races Expanded - Waster: the tank feeds a waster pilot's tox absorption gene (setting, on by default).
+[*]Vanilla Races Expanded - Waster: a tank with gas in it counts as tox gas for a waster pilot's tox absorption gene (setting, on by default).
 [*]Not tested with Combat Extended (reports welcome).
 [/list]
 

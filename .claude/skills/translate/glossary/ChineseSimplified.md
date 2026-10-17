@@ -81,6 +81,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | gene | 基因 | Biotech throughout (`GenesAndXenotypes.label` = 基因与异种人). |
 | tox absorption (VREW gene) | 毒气吸收; 毒气吸收基因 | Coined: VREW ships English only. 毒气 (`ToxGas.label`) + 吸收, the absorb row's verb. |
 | pollution mutations (VREW) | 污染突变 | Coined: 污染 (`PollutionLower`) + 突变 (Core's 突变小麦; Biotech's 变异 is its prefix-symbol slot, not prose). |
+| keeping (mutations) active / counts as | 保持生效 / 视同 | Coined: an on-state while gas is present, not growth; 视同 (is treated as). |
 | tox cloud | 毒气云 | Already in `TXWC_VentRateDesc` (毒气云). |
 | "Tank feeds waster tox absorption" (toggle) | 毒气罐供给污骸种的毒气吸收 | Coined; declarative like 险境型战棺可抵御真空. The Workshop bullet reuses 供给 (毒气罐供给污骸种驾驶员的毒气吸收基因), with 默认开启 for "on by default". |
 | `Default: on.` | 默认：开。 | Core Keyed `On` = 开, pairing with this file's `Default: off.` = 默认：关 (Core `Off`). The inherited settings row's 默认：启用 (Core `Enabled`, as Shipcracker's `SCWC_VacuumBurnDesc`) has no Off counterpart in this file, so it is not used here. |

@@ -23,7 +23,7 @@ In den Mod-Einstellungen lassen sich anpassen: Gas pro Sprit, Kapazität und Abl
 [*]Kann nicht gefahrlos entfernt werden, solange jemand in das Set eingeschweißt ist.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] und das Biotech-DLC erforderlich.
 [*]Save Our Ship 2: EVA-tauglich nach denselben Regeln wie die Sets aus VFE Pirates.
-[*]Vanilla Races Expanded - Waster: Der Tank speist das Gen 'Giftgasabsorption' eines Ödländer-Piloten (Einstellung, standardmäßig an).
+[*]Vanilla Races Expanded - Waster: Ein Tank mit Gas zählt für das Gen 'Giftgasabsorption' eines Ödländer-Piloten als Giftgas (Einstellung, standardmäßig an).
 [*]Nicht mit Combat Extended getestet (Rückmeldungen willkommen).
 [/list]
 

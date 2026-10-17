@@ -23,7 +23,7 @@ Mod 設定で,バイオ液化燃料あたりのガス量,タンクの容量と�
 [*]ポーンがセットに溶接されている間は,MODを削除しないでください.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]とBiotech DLCが必要です.
 [*]Save Our Ship 2: VFE Pirates本体のセットと同じ条件でEVA対応になります.
-[*]Vanilla Races Expanded - Waster: タンクがウェイスターのパイロットの毒ガス吸収の遺伝子にガスを供給します(設定,デフォルトはOn).
+[*]Vanilla Races Expanded - Waster: ガスの入ったタンクは,ウェイスターのパイロットの毒ガス吸収の遺伝子にとって毒ガスとみなされます(設定,デフォルトはOn).
 [*]Combat Extendedでは未検証です(報告歓迎).
 [/list]
 

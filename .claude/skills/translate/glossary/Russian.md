@@ -94,7 +94,8 @@ Russian worker lowercases a missed key, so a miss also loses capitalization.
 | waster (xenotype) | мусорщик | Biotech `XenotypeDef` `Waster.label`. |
 | gene | ген | Biotech Keyed `Gene`. |
 | tox absorption (VREW gene) | ген поглощения токсичного газа | Coined: VREW ships English only. Glossary `поглощение` (absorb) + Biotech `ToxGas` `токсичный газ`. Written as "the gene of ..." in the genitive, so `({0})` after it stays nominative. |
-| pollution mutations (VREW) | мутации от загрязнения | Coined: Anomaly `мутация` (`BecameMutant.label`) + Biotech `загрязнение`. Verb `развиваются` for "grow". |
+| pollution mutations (VREW) | мутации от загрязнения | Coined: Anomaly `мутация` (`BecameMutant.label`) + Biotech `загрязнение`. `остаются активными` for "keeping active". |
+| keeping (mutations) active / counts as | остаются активными / считается токсичным газом | Coined: an on-state while gas is present, not growth; `считается` (is counted as). |
 | tox cloud | токсичное облако | Coined from Biotech `токсичный`. |
 | Tank feeds waster tox absorption (setting label) | Мусорщики поглощают токсичный газ из бака | Coined, active clause per the calque lesson rather than a noun chain. |
 | Default: on. | По умолчанию: включено. | Counterpart of the file's `По умолчанию: выключено.`; Core tooltips use `Если включено`. |

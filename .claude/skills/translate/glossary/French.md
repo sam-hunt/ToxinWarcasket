@@ -95,6 +95,7 @@ multi-word noun gets its `s` on the last word.
 | gene | gène | Biotech Keyed `Gene` = `gène`; prose `porteurs du gène`, as Biotech's `Les porteurs de ce gène`. |
 | tox absorption (VREW gene) | absorption tox; prose `le gène d'absorption tox` | **Coined** (VREW ships English only), on Biotech `ToxResist_Partial.label` = `résistance tox`; shares `absorption` with the absorb ability's row. |
 | pollution mutations (VREW) | mutations liées à la pollution | **Coined**; `mutation` is plain French (Anomaly `BecameMutant.label` = `a subi une mutation`). |
+| keeping (mutations) active / counts as | maintient actives / compte comme | Coined: an on-state while gas is present, not growth. |
 | tank feeds (the VREW toggle) | `Le réservoir alimente l'absorption tox des pestilents`; Workshop `le réservoir alimente le gène d'absorption tox d'un pilote pestilent` | **Coined.** Sentence-case label like `TXWC_HazardVacuum`. |
 | tox cloud | nuage de gaz tox | Biotech `ToxGas.label` + glossary `nuage`. |
 | Costs no gas. | Ne consomme aucun gaz. | **Coined**, plain French. |
