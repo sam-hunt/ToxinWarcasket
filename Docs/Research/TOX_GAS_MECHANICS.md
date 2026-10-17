@@ -75,6 +75,12 @@ The `ToxGasExposure` HediffDef (`Data/Biotech/Defs/HediffDefs/Hediffs_Local_Misc
 
 `GasUtility.GetLungRotAffectedBodyParts(pawn)`: the not-missing `Lung` parts that carry no hediff with `preventsLungRot`. It feeds only the RotStink branch (`LungRotExposure`), not tox gas.
 
+### Gas as a benefit: wasters and Vanilla Races Expanded - Waster
+
+Vanilla has no path by which tox gas helps a pawn. The waster xenotype's total antitoxic lungs (`ToxicEnvironmentResistance_Total`: `immuneToToxGasExposure` and `ToxicEnvironmentResistance` +1) zero the buildup from gas, fallout and terrain, and its pollution stimulus is terrain-only at both ends: `PollutionUtility.PawnPollutionTickInterval` adds `PollutionStimulus` and `HediffComp_Pollution` grows it (+0.0333 per 60 ticks, -0.003 off) on `Position.IsPolluted(map)` only. Dropping this set's resistance would therefore change nothing for a waster.
+
+Vanilla Races Expanded - Waster (VREW, Workshop 2983471725) is the one mod that makes gas feed a pawn. Its `VanillaRacesExpandedWaster.HediffCompToxAbsorption`, on the `VRE_ToxAbsorption` hediff VEF attaches while that gene is active, runs every 60 ticks of the pawn's hash interval on a map: if `GasUtility.AnyGas(pawn.Position, map, ToxGas)`, it adds `PollutionStimulus` when the pawn has the `VREW_PollutionRush` gene and lacks it, then adds 0.022 severity to every hediff carrying `HediffComp_Pollution` or VREW's `HediffCompGeneDependentPollution` (its eleven mutation hediffs, which only grow at all while the pawn has the tox absorption gene: +0.0333 on polluted terrain, -0.003 off it, per 60 ticks). It tests gas presence only, never exposure or resistance, so a pilot inside this set's own cloud is fed like any waster. `Source/1.6/Integrations/VREWasterIntegration.cs` mirrors that gas branch for a charged tank on a cell without gas.
+
 ## Vanilla emitters
 
 Two distinct mechanisms produce gas. Density-per-cell explosions add up to `postExplosionGasAmount` (default 255) to every cell within radius in one instant. `CompReleaseGas` trickles gas into one cell over time.
@@ -162,6 +168,8 @@ All types are in `Assembly-CSharp.dll` unless noted.
 | `Verse.Explosion`, `Verse.Projectile_Explosive`, `RimWorld.CompExplosive`, `Verse.ProjectileProperties` | `postExplosionGas*` handling and `TrySpawnExplosionThing` release start | Assembly-CSharp |
 | `RimWorld.CompGasOnDamage` | Adds gas when a thing is damaged | Assembly-CSharp |
 | `RimWorld.ApparelProperties` and `Verse.GeneDef` | `immuneToToxGasExposure` fields | Assembly-CSharp |
+| `Verse.PollutionUtility.PawnPollutionTickInterval`, `Verse.HediffComp_Pollution` | Vanilla pollution stimulus: added and grown on polluted terrain only | Assembly-CSharp |
+| `VanillaRacesExpandedWaster.HediffCompToxAbsorption`, `HediffCompGeneDependentPollution` | Tox gas on the cell feeds the stimulus and VREW's mutation hediffs | VanillaRacesExpanded-Waster.dll |
 | `VEF.Abilities.AbilityExtension_Explosion`, `Ability_Explode` | Explosion ability with `postExplosionGas*` fields | VEF.dll |
 | `VEF.Abilities.CompProperties_AbilitiesApparel`, `CompAbilitiesApparel` | Grants VEF abilities from worn apparel | VEF.dll |
 | `VEF.Abilities.AbilityExtension_Spawn`, `Ability_Spawn` | Spawns a ThingDef at target | VEF.dll |

@@ -51,6 +51,10 @@
   <TXWC_RequiresRestartSuffix> (requires restart)</TXWC_RequiresRestartSuffix>
   <TXWC_RequiresOdysseySuffix> (requires Odyssey)</TXWC_RequiresOdysseySuffix>
 
+  <TXWC_FeedToxAbsorption>Tank feeds waster tox absorption</TXWC_FeedToxAbsorption>
+  <TXWC_FeedToxAbsorptionDesc>While the tank holds any gas, a pilot with the tox absorption gene from Vanilla Races Expanded - Waster gains what that gene gives in tox gas, so their pollution mutations grow inside the suit. Uses no gas. Default: on.</TXWC_FeedToxAbsorptionDesc>
+  <TXWC_RequiresVREWasterSuffix> (requires Vanilla Races Expanded - Waster)</TXWC_RequiresVREWasterSuffix>
+
   <TXWC_DefaultSuffix> (default)</TXWC_DefaultSuffix>
 
 </LanguageData>

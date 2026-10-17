@@ -158,6 +158,14 @@ TODOs.md         - Scoping notes for the feature work that has not landed yet
 - **C#:** root namespace `ToxinWarcasket`; patch classes live in `Source/1.6/Patches/` under
   the `.Patches` namespace suffix to avoid RimWorld type-name conflicts. Log with the
   `[Toxin Warcasket]` prefix.
+- **Optional-mod integrations are reflection, never references or patches.** Each lives in
+  `Source/1.6/Integrations/` (`.Integrations` namespace suffix), resolves its foreign names once
+  in a static constructor that `ModInit` forces after defs load, stays silent when the mod is
+  absent and warns once when the mod is active but a name failed to resolve, so the smoke test
+  (which boots with the mod on its list) catches drift. Detect a mod with
+  `ModLister.GetActiveModWithIdentifier(id, ignorePostfix: true)`, never `ModsConfig.IsActive`,
+  which misses a Workshop copy installed beside a local one. The VRE Waster integration is the
+  model; its class header carries the mechanics it mirrors.
 - **Warnings are build errors.** The csproj sets `TreatWarningsAsErrors`, so every compiler and
   analyzer warning fails the build, locally, in the Stop hook and in CI. `.editorconfig`
   severities at `warning` block the build; `suggestion` is IDE-only.
@@ -260,9 +268,10 @@ inherited from the Shipcracker glossaries so the two sets read as one family in-
   own database, so the game dumps and injects them under `ThingDef`; the checker maps the element
   tag via `DEF_TYPE_ALIASES`. A DefInjected folder named `WarcasketDef` would never load.
 - **Startup smoke test (pre-release):** `python3 Scripts/integration-smoke-test.py` (game closed)
-  boots the deployed mod on a pinned list (VFEP chain + Biotech + Save Our Ship 2 with Vehicle
-  Framework so `SOS2Patch.xml` actually runs), then classifies logged errors by origin and fails
-  on anything attributed to this mod or a VFEP/VEF/SOS2 seam. Wired into the release skill.
+  boots the deployed mod on a pinned list (VFEP chain + Biotech + VRE Waster so the integration
+  resolves + Save Our Ship 2 with Vehicle Framework so `SOS2Patch.xml` actually runs), then
+  classifies logged errors by origin and fails on anything attributed to this mod or a
+  VFEP/VEF/VREW/SOS2 seam. Wired into the release skill.
   Sibling-mod "dump WILL fail" warnings at launch are expected: the probe is ticked for every
   family mod but each boot loads only its own list.
 - **`.steamworkshop/`** holds the Workshop title and BBCode description per language

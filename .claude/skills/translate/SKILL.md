@@ -66,9 +66,15 @@ notes for the shim or flow edit this repo owes before continuing.
   same keys. Each `TXWC_<Setting>` label and its `TXWC_<Setting>Desc`
   tooltip take one `{0}`, the formatted value (the tooltip's is the
   default); keep it and any unit after it, such as the cone width's degree
-  sign. `TXWC_DefaultSuffix` keeps its leading space. Name the set's things
-  with the same renderings as the DefInjected text (tox gas tank, unit,
-  gas jet, absorb gas, warcasket).
+  sign. `TXWC_DefaultSuffix` keeps its leading space, as do the
+  `TXWC_Requires*Suffix` keys. The toggles (`TXWC_HazardVacuum*`,
+  `TXWC_FeedToxAbsorption*`) take no `{0}`. `TXWC_FeedToxAbsorption*` names
+  Vanilla Races Expanded - Waster and its "tox absorption" gene: keep the
+  mod's title in English (it ships English only, and that is its Workshop
+  title in every language); render the gene from the language's "tox gas"
+  and "waster" (Biotech's xenotype label in that language). Name the set's
+  things with the same renderings as the DefInjected text (tox gas tank,
+  unit, gas jet, absorb gas, warcasket).
 - **Enumerate the key set from `Scripts/expected-injections.json`, never
   from a Languages folder or by scanning `1.6/Defs/`.** The sidecar is a
   dump of what the live game walks; regenerate it (game closed) with

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using RimWorld;
+using ToxinWarcasket.Integrations;
 using UnityEngine;
 using Verse;
 
@@ -25,6 +26,9 @@ namespace ToxinWarcasket;
 //    helmet's absorb exclude each other (Ability_AbsorbGas's comment).
 //  - The gauge (Gizmo_ToxTank) and its reload target, which the reload patches
 //    (Patches/CompApparelReloadable_Reload) read in place of the tank's size.
+//  - Waster feed: once a second a charged tank stands in for tox gas to Vanilla Races Expanded -
+//    Waster's tox absorption gene (Integrations/VREWasterIntegration has the mechanics), while
+//    the def's feedsToxAbsorption, a setting, allows. It costs no gas.
 //
 // Bursts and the rupture skip an anaesthetized wearer, so no surgery (VFEP's warcasket removal
 // among them) gasses or fouls the operating room, alive or dead: vanilla's tox pack likewise
@@ -146,6 +150,8 @@ public class CompToxTank : CompApparelReloadable
             AIVentCheck(wearer);
         if (venting)
             VentTick(wearer);
+        if (Props.feedsToxAbsorption && remainingCharges > 0 && wearer.IsHashIntervalTick(VREWasterIntegration.TickInterval))
+            VREWasterIntegration.FeedToxAbsorption(wearer);
     }
 
     public override IEnumerable<Gizmo> CompGetWornGizmosExtra()

@@ -60,6 +60,13 @@
       hediff's mild stage or worse and is gone after 50 s; this tank at four a second peaks at
       about 165 and is gone after 80 s. Raiders vent on their own once hostile humanlikes of
       body size 1 are within 4 cells and the tank holds 20+.
+    - Waster feed (feedsToxAbsorption, a setting, on by default; Vanilla Races Expanded - Waster
+      only): while the tank holds any charge, a pilot with VREW's tox absorption gene gains what
+      that gene gives on a gassed cell, so the mutations a waster is welded in for grow inside
+      the suit. On by default because the weld is a permanent commitment that stops all work,
+      and it costs no gas: VREW's effect is free for anyone standing in a cloud, and the set
+      makes its pilot immune to that cloud anyway. Integrations/VREWasterIntegration has the
+      mechanics.
 
     Toxin stats, environment only, all three pieces: ToxicEnvironmentResistance 0.25 here, 0.15
     on the shoulders, 0.8 on the helmet (the gas mask's value), summing to 1.2 against the stat's
@@ -156,6 +163,7 @@
         <cellsPerCharge>1.5</cellsPerCharge>
         <ventChargesPerSecond>4</ventChargesPerSecond>
         <ventEffecter>ToxGasReleasing</ventEffecter>
+        <feedsToxAbsorption>true</feedsToxAbsorption>
         <ruptureCenterFilth>Filth_BlastMark</ruptureCenterFilth>
         <ruptureFilth>
           <li>Filth_Slime</li>

@@ -24,20 +24,27 @@ engine.PACKAGE_ID = "shunter.toxinwarcasket"
 
 # RATIONALE: the first five entries are the l10n CANONICAL_ACTIVE_MODS (the
 # refresh shim explains them: VFE Pirates is the hard dep, VEF and Harmony
-# are its deps, Biotech is the other hard dep). Save Our Ship 2 is the
-# only optional mod this repo integrates with: 1.6/Patches/SOS2Patch.xml
-# fires on its display name (or Universum's) and never runs otherwise, and
-# a failed PatchOperation is exactly the kind of error only a boot with the
-# mod active can surface. SOS2 hard-requires Vehicle Framework, which is
-# here only for that reason. Universum is not installed locally, and the
-# patch is the same either way. Probe last (auto-quit). Plain ids on
-# purpose; see the refresh shim's "_steam" note.
+# are its deps, Biotech is the other hard dep). Then the two optional mods
+# this repo integrates with. Vanilla Races Expanded - Waster: the tank
+# feeds its tox absorption gene through names resolved by reflection
+# (Source/1.6/Integrations/VREWasterIntegration.cs), which warns at
+# startup when VREW is active but a name has drifted, a warning only a
+# boot with VREW active can surface; it needs only VEF and Biotech, both
+# above it. It is NOT on the refresh shim's list: it patches none of our
+# defs, so it never changes the sidecar's key set. Save Our Ship 2:
+# 1.6/Patches/SOS2Patch.xml fires on its display name (or Universum's) and
+# never runs otherwise, and a failed PatchOperation is exactly the kind of
+# error only a boot with the mod active can surface. SOS2 hard-requires
+# Vehicle Framework, which is here only for that reason. Universum is not
+# installed locally, and the patch is the same either way. Probe last
+# (auto-quit). Plain ids on purpose; see the refresh shim's "_steam" note.
 engine.SMOKE_ACTIVE_MODS = [
     "brrainz.harmony",
     "ludeon.rimworld",
     "ludeon.rimworld.biotech",
     "oskarpotocki.vanillafactionsexpanded.core",
     "oskarpotocki.vfe.pirates",
+    "vanillaracesexpanded.waster",
     "smashphil.vehicleframework",
     "kentington.saveourship2",
     "shunter.toxinwarcasket",
@@ -49,14 +56,16 @@ engine.SMOKE_ACTIVE_MODS = [
 engine.OWN_PATTERNS = ["ToxinWarcasket", "[Toxin Warcasket]", "TXWC_"]
 
 # The seams: VFEP's warcasket code (foundry, entombing, Apparel_Warcasket)
-# walks our WarcasketDefs, VEF's ApparelExtension runs on them, and SOS2
-# reads the EVA tag our patch adds. An error mentioning any of these gates
-# the test even when the exception fires inside their code. Vehicle
-# Framework is deliberately absent: it is only SOS2's dep and its own noise
-# is third-party.
+# walks our WarcasketDefs, VEF's ApparelExtension runs on them, VREW's
+# names are what our integration resolves and its hediff comps are what it
+# feeds, and SOS2 reads the EVA tag our patch adds. An error mentioning any
+# of these gates the test even when the exception fires inside their code.
+# Vehicle Framework is deliberately absent: it is only SOS2's dep and its
+# own noise is third-party.
 engine.INTEGRATION_PATTERNS = {
     "VFEP": ["VFEPirates"],
     "VEF": ["VEF."],
+    "VREW": ["VanillaRacesExpandedWaster", "VanillaRacesExpanded-Waster"],
     "SOS2": ["SaveOurShip2", "SaveOurShip"],
 }
 

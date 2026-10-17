@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using ToxinWarcasket.Integrations;
 using UnityEngine;
 using Verse;
 using AbilityDef = VEF.Abilities.AbilityDef;
@@ -65,6 +66,13 @@ public class ToxinWarcasketSettings : ModSettings
     // waits for a restart. Off by default.
     public bool hazardVacuum;
 
+    // The tank's feedsToxAbsorption: whether a charged tank stands in for tox gas to Vanilla
+    // Races Expanded - Waster's tox absorption gene (Integrations/VREWasterIntegration). Written
+    // onto the def like the tunables and read live from it, so no restart; its default is the
+    // def's.
+    public bool feedToxAbsorption = true;
+    private bool feedToxAbsorptionDefault = true;
+
     private bool defaultsLoaded;
     private Vector2 scrollPosition;
     private float contentHeight;
@@ -94,6 +102,7 @@ public class ToxinWarcasketSettings : ModSettings
         foreach (Tunable tunable in All)
             tunable.ExposeData();
         Scribe_Values.Look(ref hazardVacuum, "HazardVacuum");
+        Scribe_Values.Look(ref feedToxAbsorption, "FeedToxAbsorption", true);
     }
 
     // Reads the def-backed defaults before the first ApplyToDefs overwrites them; defs must be
@@ -119,6 +128,7 @@ public class ToxinWarcasketSettings : ModSettings
         absorbRadius.DefaultValue = defs.absorb.radius;
         absorbDuration.DefaultValue = defs.absorb.durationTime.TicksToSeconds();
         absorbCooldown.DefaultValue = (float)defs.absorb.cooldownTime / GenDate.TicksPerHour;
+        feedToxAbsorptionDefault = defs.tank.feedsToxAbsorption;
         defaultsLoaded = true;
     }
 
@@ -137,6 +147,7 @@ public class ToxinWarcasketSettings : ModSettings
         defs.absorb.radius = absorbRadius.Value;
         defs.absorb.durationTime = absorbDuration.Value.SecondsToTicks();
         defs.absorb.cooldownTime = absorbCooldown.IntValue * GenDate.TicksPerHour;
+        defs.tank.feedsToxAbsorption = feedToxAbsorption;
         Generation++;
     }
 
@@ -178,6 +189,7 @@ public class ToxinWarcasketSettings : ModSettings
         SummaryRow(listing, AbsorbSummary);
         SectionHeader(listing, "TXWC_SectionMisc", null);
         DoHazardVacuumRow(listing);
+        DoFeedToxAbsorptionRow(listing);
         listing.Gap(SectionGap);
         contentHeight = listing.CurHeight;
         listing.End();
@@ -189,6 +201,7 @@ public class ToxinWarcasketSettings : ModSettings
             foreach (Tunable tunable in All)
                 tunable.Reset();
             hazardVacuum = false;
+            feedToxAbsorption = feedToxAbsorptionDefault;
         }
     }
 
@@ -256,6 +269,24 @@ public class ToxinWarcasketSettings : ModSettings
         else
             label += "TXWC_RequiresRestartSuffix".Translate();
         Widgets.CheckboxLabeled(row, label, ref hazardVacuum, disabled: !odyssey);
+        listing.Gap(Tunable.RowGap);
+    }
+
+    // The same row for the tank's waster feed, disabled without Vanilla Races Expanded - Waster,
+    // whose gene it feeds; the comp reads the box live, so no restart suffix.
+    private void DoFeedToxAbsorptionRow(Listing_Standard listing)
+    {
+        Rect row = listing.GetRect(Tunable.RowHeight);
+        row.xMin += Tunable.RowIndent;
+        row.xMax -= Tunable.RowEndPad;
+        Widgets.DrawHighlightIfMouseover(row);
+        TooltipHandler.TipRegion(row, "TXWC_FeedToxAbsorptionDesc".Translate());
+
+        bool waster = VREWasterIntegration.ModActive;
+        string label = "TXWC_FeedToxAbsorption".Translate();
+        if (!waster)
+            label += "TXWC_RequiresVREWasterSuffix".Translate();
+        Widgets.CheckboxLabeled(row, label, ref feedToxAbsorption, disabled: !waster);
         listing.Gap(Tunable.RowGap);
     }
 

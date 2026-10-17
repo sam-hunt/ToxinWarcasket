@@ -23,6 +23,10 @@ public class CompProperties_ToxTank : CompProperties_ApparelReloadable
     public float ventChargesPerSecond = 2f;
     public EffecterDef ventEffecter;
 
+    // Whether a charged tank feeds Vanilla Races Expanded - Waster's tox absorption gene as tox
+    // gas would (Integrations/VREWasterIntegration); a mod setting defaulting to this.
+    public bool feedsToxAbsorption = true;
+
     // Opportunistic vent for non-player wearers, after CompToxPack.ChanceToUse: every
     // aiCheckInterval ticks, start venting once hostile pawns the gas affects within
     // aiTriggerRadius sum to aiTriggerBodySize, and stop after aiStopAfterTicks without any.
