@@ -3,12 +3,10 @@
 > A RimWorld mod adding a heavy chemical-warfare warcasket set for Vanilla Factions Expanded - Pirates
 
 [![RimWorld](https://img.shields.io/badge/RimWorld-1.6%20%7C%201.7-blue.svg)](https://rimworldgame.com/)
-<!-- Steam badges, added on first Workshop publish with WORKSHOP_ID from About/PublishedFileId.txt:
-[![Subscribers](https://img.shields.io/steam/subscriptions/WORKSHOP_ID?logo=steam&label=subscribers)](https://steamcommunity.com/sharedfiles/filedetails/?id=WORKSHOP_ID)
-[![Downloads](https://img.shields.io/steam/downloads/WORKSHOP_ID?logo=steam&label=downloads)](https://steamcommunity.com/sharedfiles/filedetails/?id=WORKSHOP_ID)
-[![Favorites](https://img.shields.io/steam/favorites/WORKSHOP_ID?logo=steam&label=favorites)](https://steamcommunity.com/sharedfiles/filedetails/?id=WORKSHOP_ID)
-[![Views](https://img.shields.io/steam/views/WORKSHOP_ID?logo=steam&label=views)](https://steamcommunity.com/sharedfiles/filedetails/?id=WORKSHOP_ID)
--->
+[![Subscribers](https://img.shields.io/steam/subscriptions/3821100591?logo=steam&label=subscribers)](https://steamcommunity.com/sharedfiles/filedetails/?id=3821100591)
+[![Downloads](https://img.shields.io/steam/downloads/3821100591?logo=steam&label=downloads)](https://steamcommunity.com/sharedfiles/filedetails/?id=3821100591)
+[![Favorites](https://img.shields.io/steam/favorites/3821100591?logo=steam&label=favorites)](https://steamcommunity.com/sharedfiles/filedetails/?id=3821100591)
+[![Views](https://img.shields.io/steam/views/3821100591?logo=steam&label=views)](https://steamcommunity.com/sharedfiles/filedetails/?id=3821100591)
 
 ## About
 
@@ -56,7 +54,7 @@ directly, such as venom and toxic needles, still do.
 
 ### Steam Workshop (Recommended)
 
-Coming with the first release.
+Subscribe on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3821100591) and it will auto-download.
 
 ### Manual Installation
 
