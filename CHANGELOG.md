@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
      changes land in the stable version's section at promotion. The /release skill
      walks through all of this. -->
 
+## [1.1.0] - 2026-10-17
+
+### Added
+
+- Vanilla Races Expanded - Waster support: a tank with gas in it counts as tox gas for the tox absorption gene.
+
 ## [1.0.0] - 2026-10-17
 
 First release.
@@ -32,4 +38,5 @@ First release.
 - RimWorld 1.6 and 1.7 support.
 - Translated into 9 languages.
 
+[1.1.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.1.0
 [1.0.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.0.0
