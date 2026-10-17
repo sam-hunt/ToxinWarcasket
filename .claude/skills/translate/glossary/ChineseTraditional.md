@@ -80,6 +80,16 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | reserve jet (tankless jets) | 無毒氣罐時的噴射次數 (prose: 護肩自身的噴射) | Coined, descriptive. |
 | spray gas (the nozzle's `jetLabel`, the jet command's label) | 噴射毒氣 | Coined; matches the charge noun. |
 | cone width / range (jet) / radius | 錐形寬度(度) / 距離(格) / 半徑(格) | 錐形 Core rulestring; 距離(格) matches Shipcracker's jump range. |
+| waster (xenotype) | 荒地人 | Biotech `XenotypeDef` `Waster.label`. |
+| gene | 基因 | Biotech (345 value hits; `Learning_Fast.description` 基因擁有者). |
+| tox cloud | 毒雲 | Biotech value prose (毒性物質會爆炸並產生毒雲); already used by this file's vent tooltips. |
+| as if standing in (a cloud) | 如同身處… | 身處 from Biotech prose (身處受污染地帶). |
+| tox absorption (VREW gene label) | 「毒氣吸收」基因 | Coined: Biotech `ToxGas.label` 毒氣 + 吸收 (the absorb row's verb; Biotech `CannotAbsorbPollution` 吸收污染). VREW ships English only. Quoted in 「」 as a named gene. |
+| pollution mutations (VREW) | 污染突變 | Coined: 污染 (Biotech, row above) + 突變 (Core mech descriptions 突變品種). |
+| Tank feeds waster tox absorption (setting label) | 毒氣罐供荒地人吸收毒氣 | Coined, descriptive "the tank lets wasters absorb tox gas"; the tooltip names the gene. |
+| the tank feeds (a gene, Workshop) | 毒氣罐會供給…「毒氣吸收」基因 | Coined; the Workshop bullet names the gene where the setting label does not. |
+| Default: on. / On | 預設值：開啟。 / 開啟 | Core Keyed `On` 開啟; same shape as the inherited 預設值：關閉。 |
+| requires VRE - Waster (suffix) | (需要Vanilla Races Expanded - Waster) | Mod title kept in English, set solid like the Workshop page's Latin names; ASCII parens solid, no leading space, like the other suffixes. |
 
 ## Pending native review
 
@@ -93,3 +103,7 @@ name), 毒氣罐 (tank), 排放毒氣 / 排放 / 排氣口 (vent), 吸收氣體 
 the reserve-jet phrasing, and the derived VFEP terms 騎士型 / 險境型 / 「特化型戰棺」
 and the 7th-generation paragraph (character-checked, not compared against the
 Traditional pack).
+
+Coinages from the 2026-10-17 VRE Waster update, pending native review:
+「毒氣吸收」基因 (tox absorption), 污染突變 (pollution mutations), the
+setting label 毒氣罐供荒地人吸收毒氣, and 成長 for the mutations' growth.

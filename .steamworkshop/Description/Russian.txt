@@ -23,6 +23,7 @@
 [*]Удалять небезопасно, пока хоть один поселенец закован в этот комплект.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] и DLC Biotech обязательны.
 [*]Save Our Ship 2: комплект годится для выхода в открытый космос по тем же правилам, что и броня из самого VFE Pirates.
+[*]Vanilla Races Expanded - Waster: бак питает ген поглощения токсичного газа у пилота-мусорщика (настройка, по умолчанию включена).
 [*]С Combat Extended не проверялся (буду рад отзывам).
 [/list]
 

@@ -88,6 +88,14 @@ that plural unchanged.
 | reserve jet ("Jets without a tank", the shoulders' own jets) | Gasstöße ohne Tank / eigene Gasstöße der Schulterpanzer | Coined from the charge noun. |
 | spray gas (the nozzle's `jetLabel`, the jet command's label) | Gas versprühen | Coined; versprühen is also the jet description's verb. |
 | cone width / range | Kegelbreite (Grad) / Reichweite (Zellen) | Coined / Shipcracker. |
+| waster (Biotech xenotype) | Ödländer (m.), pl. Ödländer; Ödländer-Pilot | Biotech `Waster.label` = Ödländer. |
+| gene | Gen (n.), cited as dem Gen '<label>' | Biotech GeneDefs "Träger dieses Gens"; single-quoted cited label per the language file. |
+| tox absorption (VREW gene, no German source) | Giftgasabsorption | Coined: Giftgas (Biotech `ToxGas.label`) + Absorption (the absorb row above); VREW ships English only. |
+| pollution mutations (VREW, no German source) | Verseuchungsmutationen | Coined: Verseuchung (Biotech `PollutedTerrain.label`) + Mutation; no "mutation" string in Core or Biotech de. |
+| Tank feeds waster tox absorption (settings toggle) / feed (verb) | Tank speist die Giftgasabsorption der Ödländer / speisen | Coined: speisen as in supplying a system; the toggle label is a sentence without period, like the Hazard toggle. |
+| tox cloud | Giftgaswolke | Coined: Giftgas + Wolke (Wolke as in `TXWC_VentRateDesc`). |
+| Default: on. | Standard: an. | The file's `Standard: aus.` with the "On" row above (Core Keyed `On`). Workshop bullet: (Einstellung, standardmäßig an). |
+| (requires Vanilla Races Expanded - Waster) | (erfordert Vanilla Races Expanded - Waster) | Same shape as the Odyssey suffix; the mod title stays English. |
 
 ## Pending native review
 
@@ -107,3 +115,10 @@ charge noun prints "einen Spriteinheit"; a mod `WordInfo/Gender/Female.txt`
 line would fix it, the same gap exists for Shipcracker's Treibstoffeinheit);
 the free prose of the three descriptions, the ability and jet descriptions and
 the Workshop page.
+
+The Vanilla Races Expanded - Waster update pass (machine-assisted):
+Giftgasabsorption for the VREW tox absorption gene; Verseuchungsmutationen
+for its pollution mutations; speisen for the tank feeding the gene (toggle
+label "Tank speist die Giftgasabsorption der Ödländer"); Giftgaswolke; the
+toggle tooltip and the Workshop bullet (Der Tank speist das Gen
+'Giftgasabsorption' eines Ödländer-Piloten).

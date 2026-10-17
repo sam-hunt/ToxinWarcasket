@@ -90,6 +90,20 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | spray gas (the nozzle's `jetLabel`, the jet command's label) | ガスを噴射 | Coined; follows Biotech `deploy_tox_pack` (毒ガスパックを展開) verb-phrase shape. |
 | cone | 円錐 | Coined plain word. |
 
+## Vanilla Races Expanded - Waster setting
+
+| English | Japanese | Grounding |
+|---|---|---|
+| waster (xenotype) | ウェイスター | Biotech XenotypeDef `Waster.label`. |
+| gene | 遺伝子 | Biotech Keyed `Gene`, `Genes`. |
+| tox absorption (VREW gene) | 毒ガス吸収 / 毒ガス吸収の遺伝子 | Coined: 毒ガス (Biotech `ToxGas.label`) + 吸収 (Biotech Keyed `CanAbsorbPollution`, 汚染を吸収). The 毒 prefix keeps it apart from the helmet's ガス吸収 ability. VREW ships English only. |
+| pollution mutations (VREW) | 汚染変異 | Coined: 汚染 (Biotech) + 変異 (Biotech `WasteRat.description` 変異種, `UniqueXenotypeDesc` ヒト変異体). They "grow" as 進行する. |
+| Tank feeds waster tox absorption (toggle label) | タンクによるウェイスターの毒ガス吸収 | Coined noun phrase, the same shape as the `TXWC_HazardVacuum` label. |
+| as if standing in a tox cloud | 毒ガスの雲の中に立っているかのように | Coined; 雲 as in `TXWC_VentRateDesc`. |
+| Default: on. | デフォルト: On. | The `Default: off.` pattern (デフォルト: Off.) with Core Keyed `On`. |
+| (requires Vanilla Races Expanded - Waster) | ` (Vanilla Races Expanded - Wasterが必要)` | The Odyssey suffix pattern; the mod title stays English. |
+| the tank feeds ... (setting, on by default) (Workshop bullet) | タンクが...にガスを供給します(設定,デフォルトはOn). | Coined; parenthetical attached before the period as in the page's Combat Extended bullet (未検証です(報告歓迎).). |
+
 ## Pending native review
 
 Inherited and still open there: ショルダーアーマー and the resulting label
@@ -103,3 +117,8 @@ charge noun), ショルダーアーマー自体の噴射 (reserve jet), ガス�
 the tank's charge noun inside a tank that is also measured in バイオ液化燃料
 in the settings; 特殊な for "specialized"; the 7th-generation paragraph's
 phrasing (no community VFEP rendering exists).
+
+The VREW update pass (machine-assisted): 毒ガス吸収 for VREW's "tox
+absorption" gene and 汚染変異 for its "pollution mutations" (no Japanese
+VREW translation to align with), 進行する for their growth, and the toggle
+label タンクによるウェイスターの毒ガス吸収.

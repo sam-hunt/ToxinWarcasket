@@ -92,6 +92,14 @@ despite the folder name these are the VFE Pirates files).
 | reserve jet (the shoulders' own jets) | chorros propios de las hombreras; settings label `Chorros sin depósito` | Coined, following the English settings label. |
 | spray gas (the nozzle's `jetLabel`, the jet command's label) | rociar gas | Coined; `rocía` is the jet description's verb. |
 | targeter (Workshop only) | restructured: `Al apuntar se ve...` | No vanilla noun for the targeter in this slot. |
+| waster (xenotype; attributive for a pilot) | escoria (pl. los escorias); `piloto escoria` | Biotech `XenotypeDef Waster.label` = `escoria`; the description writes `Los escorias` and `Los piratas escoria`, so masculine plural for the people and the bare noun in apposition. |
+| gene | gen (pl. genes) | Biotech Keyed `Gene` / `Genes`. |
+| tox absorption (VREW gene label) | absorción de toxigás; `el gen de absorción de toxigás` | Coined: VREW ships English only. Biotech `toxigás` plus the `absorción` of the absorb row; naming it as `el gen de ...` keeps it apart from the helmet's absorb. |
+| pollution mutations (VREW) | mutaciones por contaminación | Coined: Anomaly `inducir mutaciones`, Odyssey `mutado por aguas contaminadas`, Biotech `contaminación`. |
+| tox cloud (in "as if standing in a tox cloud") | nube tóxica; `como si estuvieran en una nube tóxica` | Biotech `Toxalope.description` (`produce una nube tóxica`). |
+| tank feeds tox absorption (settings label) | El depósito alimenta la absorción de toxigás de los escorias | Coined, sentence case like the hazard vacuum toggle. "Costs no gas" = `No consume gas`. |
+| Default: on. (toggle tooltip) | Por defecto: activado. | The inherited settings row, mirroring the hazard vacuum's `Por defecto: desactivado.` |
+| requires Vanilla Races Expanded - Waster (suffix) | ` (requiere Vanilla Races Expanded - Waster)` | Same frame as ` (requiere Odyssey)`; the mod title stays in English. |
 
 ## Pending native review
 
@@ -107,3 +115,7 @@ Nothing inherited is open for the VFEP rows (they are the community pack's).
   wording where that is ungrammatical or Latin American).
 - `un peor peso` is the pack's Cataphract formula, kept for family
   consistency; a native reviewer may prefer `un peso mayor`.
+- VRE Waster pass: `absorción de toxigás` for the tox absorption gene,
+  `mutaciones por contaminación` for pollution mutations, `piloto escoria`
+  / `los escorias`, `nube tóxica`, and the settings label `El depósito
+  alimenta la absorción de toxigás de los escorias`.

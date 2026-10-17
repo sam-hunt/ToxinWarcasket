@@ -84,6 +84,13 @@
   <!-- EN:  (requires Odyssey) -->
   <TXWC_RequiresOdysseySuffix>(需要「漫遊」DLC)</TXWC_RequiresOdysseySuffix>
 
+  <!-- EN: Tank feeds waster tox absorption -->
+  <TXWC_FeedToxAbsorption>毒氣罐供荒地人吸收毒氣</TXWC_FeedToxAbsorption>
+  <!-- EN: Pilots with the tox absorption gene ({0}) absorb gas from the tank as if standing in a tox cloud, so their pollution mutations grow whenever the tank is not empty. Costs no gas. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>擁有「毒氣吸收」基因({0})的駕駛員會如同身處毒雲般從毒氣罐吸收氣體，因此只要毒氣罐不是空的，他們的污染突變就會持續成長。不消耗毒氣。預設值：開啟。</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
+  <TXWC_RequiresVREWasterSuffix>(需要Vanilla Races Expanded - Waster)</TXWC_RequiresVREWasterSuffix>
+
   <!-- EN:  (default) -->
   <TXWC_DefaultSuffix>(預設)</TXWC_DefaultSuffix>
 

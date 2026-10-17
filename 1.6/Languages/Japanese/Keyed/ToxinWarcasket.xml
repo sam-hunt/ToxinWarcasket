@@ -84,6 +84,13 @@
   <!-- EN:  (requires Odyssey) -->
   <TXWC_RequiresOdysseySuffix> (Odysseyが必要)</TXWC_RequiresOdysseySuffix>
 
+  <!-- EN: Tank feeds waster tox absorption -->
+  <TXWC_FeedToxAbsorption>タンクによるウェイスターの毒ガス吸収</TXWC_FeedToxAbsorption>
+  <!-- EN: Pilots with the tox absorption gene ({0}) absorb gas from the tank as if standing in a tox cloud, so their pollution mutations grow whenever the tank is not empty. Costs no gas. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>毒ガス吸収の遺伝子 ({0})を持つパイロットは,毒ガスの雲の中に立っているかのようにタンクからガスを吸収するため,タンクが空でない限り汚染変異が進行します.ガスは消費しません.デフォルト: On.</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
+  <TXWC_RequiresVREWasterSuffix> (Vanilla Races Expanded - Wasterが必要)</TXWC_RequiresVREWasterSuffix>
+
   <!-- EN:  (default) -->
   <TXWC_DefaultSuffix> (デフォルト)</TXWC_DefaultSuffix>
 

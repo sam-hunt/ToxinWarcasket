@@ -84,6 +84,13 @@
   <!-- EN:  (requires Odyssey) -->
   <TXWC_RequiresOdysseySuffix> (nécessite Odyssey)</TXWC_RequiresOdysseySuffix>
 
+  <!-- EN: Tank feeds waster tox absorption -->
+  <TXWC_FeedToxAbsorption>Le réservoir alimente l'absorption tox des pestilents</TXWC_FeedToxAbsorption>
+  <!-- EN: Pilots with the tox absorption gene ({0}) absorb gas from the tank as if standing in a tox cloud, so their pollution mutations grow whenever the tank is not empty. Costs no gas. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>Les pilotes porteurs du gène d'absorption tox ({0}) absorbent le gaz du réservoir comme s'ils se trouvaient dans un nuage de gaz tox, si bien que leurs mutations liées à la pollution se développent tant que le réservoir n'est pas vide. Ne consomme aucun gaz. Par défaut : activé.</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
+  <TXWC_RequiresVREWasterSuffix> (nécessite Vanilla Races Expanded - Waster)</TXWC_RequiresVREWasterSuffix>
+
   <!-- EN:  (default) -->
   <TXWC_DefaultSuffix> (par défaut)</TXWC_DefaultSuffix>
 

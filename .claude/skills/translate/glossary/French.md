@@ -90,6 +90,15 @@ multi-word noun gets its `s` on the last word.
 | spray gas (the nozzle's `jetLabel`, the jet command's label) | pulvérisation de gaz | Biotech `AcidSpray.label` = `pulvérisation d'acide`. |
 | cone / cloud | cône / nuage | Core `Stat_Thing_Weapon_MissRadius_Desc`; Biotech `nuage toxique`. |
 | `Default: off.` | Par défaut : désactivé. | Glossary settings row (`Désactivé`). |
+| `Default: on.` | Par défaut : activé. | Core Keyed `On` = `Activé(e)`; the counterpart of the `Default: off.` row. |
+| waster (Biotech xenotype) | pestilent (pl. pestilents) | Biotech `XenotypeDef` `Waster.label` = `pestilent`. Not to be confused with `pestilence` (rot stink). |
+| gene | gène | Biotech Keyed `Gene` = `gène`; prose `porteurs du gène`, as Biotech's `Les porteurs de ce gène`. |
+| tox absorption (VREW gene) | absorption tox; prose `le gène d'absorption tox` | **Coined** (VREW ships English only), on Biotech `ToxResist_Partial.label` = `résistance tox`; shares `absorption` with the absorb ability's row. |
+| pollution mutations (VREW) | mutations liées à la pollution | **Coined**; `mutation` is plain French (Anomaly `BecameMutant.label` = `a subi une mutation`). |
+| tank feeds (the VREW toggle) | `Le réservoir alimente l'absorption tox des pestilents`; Workshop `le réservoir alimente le gène d'absorption tox d'un pilote pestilent` | **Coined.** Sentence-case label like `TXWC_HazardVacuum`. |
+| tox cloud | nuage de gaz tox | Biotech `ToxGas.label` + glossary `nuage`. |
+| Costs no gas. | Ne consomme aucun gaz. | **Coined**, plain French. |
+| ` (requires Vanilla Races Expanded - Waster)` | ` (nécessite Vanilla Races Expanded - Waster)` | Pattern of `(nécessite Odyssey)`; the mod title stays in English. |
 
 ## Pending native review
 
@@ -103,3 +112,8 @@ openings, `absorption de gaz`, `jets sans réservoir`, `Aérien`, keeping
 `hazard` in English, the lowercase set names in in-game lore prose
 (`série toxine`, `modèle cataphracte`), and `plus protecteur mais plus
 lourd` for "superior protection and worse weight".
+
+The VRE Waster update pass's coinages, also machine-assisted: `absorption
+tox` for the gene (on `résistance tox`), `mutations liées à la pollution`,
+`alimente` for "feeds", and `Ne consomme aucun
+gaz`.

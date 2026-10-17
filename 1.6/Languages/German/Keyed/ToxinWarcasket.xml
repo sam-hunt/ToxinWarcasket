@@ -84,6 +84,13 @@
   <!-- EN:  (requires Odyssey) -->
   <TXWC_RequiresOdysseySuffix> (erfordert Odyssey)</TXWC_RequiresOdysseySuffix>
 
+  <!-- EN: Tank feeds waster tox absorption -->
+  <TXWC_FeedToxAbsorption>Tank speist die Giftgasabsorption der Ödländer</TXWC_FeedToxAbsorption>
+  <!-- EN: Pilots with the tox absorption gene ({0}) absorb gas from the tank as if standing in a tox cloud, so their pollution mutations grow whenever the tank is not empty. Costs no gas. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>Piloten mit dem Gen 'Giftgasabsorption' ({0}) absorbieren Gas aus dem Tank, als stünden sie in einer Giftgaswolke, sodass ihre Verseuchungsmutationen wachsen, solange der Tank nicht leer ist. Kostet kein Gas. Standard: an.</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
+  <TXWC_RequiresVREWasterSuffix> (erfordert Vanilla Races Expanded - Waster)</TXWC_RequiresVREWasterSuffix>
+
   <!-- EN:  (default) -->
   <TXWC_DefaultSuffix> (Standard)</TXWC_DefaultSuffix>
 

@@ -83,6 +83,14 @@ reconciled against the community pack's `VFE_Pirates_ThingDef.xml` and
 | gas jet / reserve jets | jato de gás / jatos próprios (das ombreiras), `Jatos sem tanque` | coined |
 | spray (verb) | pulverizar | coined |
 | superior protection and worse weight (7th-gen opener) | proteção superior e peso elevado | Pack `VFEP_WarcasketShoulders_Cataphract.description` |
+| waster (xenotype) | toxicador / toxicadores (also as a trailing adjective: `piloto toxicador`) | Biotech `Waster.label` "toxicadores", `PirateWaster.pawnSingular` "toxicador", `PirateBossTox.label` "chefe toxicador" |
+| gene | gene | Biotech Keyed `Gene` |
+| tox absorption (VREW gene, `VRE_ToxAbsorption`) | absorção de gás tóxico (`o gene de absorção de gás tóxico`) | coined: VREW ships English only; the absorb row's `absorção` plus `gás tóxico`, on Biotech Keyed `AbsorbingPollutionNext` "Absorção de poluição" |
+| pollution mutations (VREW's pollution-related genes) | mutações ligadas à poluição | coined; VREW's own wording is "pollution-related genes"; Core attests `mutada`/`mutante` |
+| tox cloud | nuvem tóxica | Biotech description text ("nuvem tóxica mortal") |
+| Tank feeds waster tox absorption (settings toggle) | Tanque alimenta a absorção de gás tóxico dos toxicadores; Workshop: `o tanque alimenta o gene de absorção de gás tóxico de um piloto toxicador` | coined, label shape of `TXWC_HazardVacuum` |
+| Default: on. / on by default | Padrão: ligado. / `(configuração, ligada por padrão)` (agreeing with `configuração`) | Core Keyed `On` "Ligado", mirroring `Padrão: desligado.` |
+| (requires Vanilla Races Expanded - Waster) | (requer Vanilla Races Expanded - Waster) | Title kept in English (VREW's Workshop title), `(requer Odyssey)` pattern |
 
 ## Pending native review
 
@@ -92,3 +100,6 @@ Nothing inherited is open for the VFEP rows (they are the community pack's).
 - `unidade` as a feminine charge noun in vanilla's masculine frames.
 - válvulas / abrir válvulas, absorção, jato de gás, pulverizar gás, tanque de gás tóxico.
 - poeira de vida morta (Anomaly's deadlife dust, not grounded).
+- absorção de gás tóxico (VREW's tox absorption gene), mutações ligadas à
+  poluição, and the toggle phrasing `Tanque alimenta a absorção ... dos
+  toxicadores` / `o tanque alimenta o gene ...` (VRE Waster pass, 2026-10-17).

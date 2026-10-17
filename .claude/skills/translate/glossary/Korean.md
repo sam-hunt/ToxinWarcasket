@@ -86,6 +86,13 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | spray gas (the nozzle's `jetLabel`, the jet command's label) | 가스 분사 | Coined; same noun as the section and chargeNoun. |
 | cone | 원뿔 | Coined (no vanilla analog). |
 | shell's tank | 워캐스킷의 탱크 / 몸통의 탱크 | "shell" dropped per the warcasket row. |
+| waster (xenotype) | 웨이스터 | Biotech `XenotypeDef Waster.label`. |
+| gene | 유전자 | Biotech Keyed `Gene`, `Genes`. |
+| tox absorption (VREW gene, shown via `{0}`) | 독소 흡수 (`독소 흡수 유전자({0})`) | Coined: Biotech `ToxGas.label` 독소 + this glossary's 흡수 (absorb). VREW ships English only, so no source exists. The literal `가` after `유전자({0})` follows the fixed noun, no josa marker needed. |
+| pollution mutations | 오염 변이 | Coined: Biotech `PlanetPollution` 오염 + Anomaly's 변이 (`WarpedObelisk_Mutator` `변이 재사용 대기시간`; Anomaly also has 돌연변이 in labels). "grow" rendered 발달합니다. |
+| Tank feeds waster tox absorption (toggle label) / Workshop bullet | 웨이스터의 독소 흡수에 탱크 사용 / `웨이스터 조종사의 독소 흡수 유전자에 탱크를 사용합니다(설정, 기본값: 켜짐).` | Coined; noun-phrase toggle like `TXWC_HazardVacuum`. "feeds" as 사용 so it does not imply gas is spent (the setting costs none); the Workshop bullet reuses the same verb. |
+| Default: on. | 기본값: 켜짐. | Counterpart of the file's `기본값: 꺼짐.`; 켜짐 per the Off row above. |
+| (requires Vanilla Races Expanded - Waster) | (Vanilla Races Expanded - Waster 필요) | Shape of `(오디세이 필요)`; title kept in English (VREW's Workshop title). |
 
 ## Pending native review
 
@@ -93,3 +100,6 @@ Nothing inherited is open for the VFEP rows (they are RMK's). This pass's
 coinages: 독소 (set prefix), 독소 가스 탱크, 탱크 배출 / 배출구, 가스 흡수,
 가스 분사 / 분사기, 분사 (jet chargeNoun), 연료 (unit chargeNoun), 원뿔,
 특화형 in the description opener, and the Workshop's 화학전용.
+The VREW pass (2026-10-17) adds: 독소 흡수 (the VREW gene), 오염 변이
+for pollution mutations with 발달합니다 for "grow", and the toggle label
+`웨이스터의 독소 흡수에 탱크 사용`.

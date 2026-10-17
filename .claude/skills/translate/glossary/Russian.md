@@ -87,6 +87,20 @@ Russian worker lowercases a missed key, so a miss also loses capitalization.
 | spray gas (the nozzle's `jetLabel`, the jet command's label) | распыление газа | Coined; vanilla `FirefoampopMech` `распыление пены`. |
 | cells (settings units) | клетки, `(в клетках)` | Inherited slider-unit style; counts written as `Клеток ...: {1}` to avoid numeral agreement. |
 
+## VRE Waster setting (update pass 2026-10-17)
+
+| English | Russian | Grounding |
+|---|---|---|
+| waster (xenotype) | мусорщик | Biotech `XenotypeDef` `Waster.label`. |
+| gene | ген | Biotech Keyed `Gene`. |
+| tox absorption (VREW gene) | ген поглощения токсичного газа | Coined: VREW ships English only. Glossary `поглощение` (absorb) + Biotech `ToxGas` `токсичный газ`. Written as "the gene of ..." in the genitive, so `({0})` after it stays nominative. |
+| pollution mutations (VREW) | мутации от загрязнения | Coined: Anomaly `мутация` (`BecameMutant.label`) + Biotech `загрязнение`. Verb `развиваются` for "grow". |
+| tox cloud | токсичное облако | Coined from Biotech `токсичный`. |
+| Tank feeds waster tox absorption (setting label) | Мусорщики поглощают токсичный газ из бака | Coined, active clause per the calque lesson rather than a noun chain. |
+| Default: on. | По умолчанию: включено. | Counterpart of the file's `По умолчанию: выключено.`; Core tooltips use `Если включено`. |
+| (requires Vanilla Races Expanded - Waster) | (требуется Vanilla Races Expanded - Waster) | Same pattern as `(требуется Odyssey)`; the title stays English. |
+| Workshop: "(setting, on by default)" | (настройка, по умолчанию включена) | Coined; `включена` agrees with feminine `настройка`. Feed verb: `бак питает` (the tank feeds). |
+
 ## Pending native review
 
 Nothing inherited is open for the VFEP rows (they are the community pack's).
@@ -97,3 +111,4 @@ This pass's coinages, all pending native review:
 - `бак с токсичным газом`, `выпуск газа`, `клапаны`, `поглощение газа`, `газовая струя`, `сопла`, `Струи без бака`, `распыление газа`.
 - `с превосходной защитой ценой большего веса` (superior protection and worse weight).
 - `TXWC_JetTankLow` restructured as `Недостаточно {lookup: {CHARGENOUN_plural}; Case; 1} в баке (нужно {COUNT}).` to avoid numeral agreement with an injected noun.
+- VRE Waster pass (2026-10-17): `ген поглощения токсичного газа` (tox absorption; it shares `поглощение` with the set's own absorb ability), `мутации от загрязнения`, `токсичное облако`, the label `Мусорщики поглощают токсичный газ из бака`, and the Workshop bullet's `бак питает ...` and `(настройка, по умолчанию включена)`.
