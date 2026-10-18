@@ -8,6 +8,8 @@
 [![Favorites](https://img.shields.io/steam/favorites/3821100591?logo=steam&label=favorites)](https://steamcommunity.com/sharedfiles/filedetails/?id=3821100591)
 [![Views](https://img.shields.io/steam/views/3821100591?logo=steam&label=views)](https://steamcommunity.com/sharedfiles/filedetails/?id=3821100591)
 
+![Preview](.steamworkshop/Preview.gif)
+
 ## About
 
 Vanilla Factions Expanded - Pirates lets you weld a pawn into a warcasket: a steel shell,
