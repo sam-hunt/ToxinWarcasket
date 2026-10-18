@@ -75,9 +75,10 @@ csproj in this order: explicit override (`-p:VfePiratesDir=` / `-p:VefDir=` or t
 `VEF_PATH` env vars), the Steam Workshop copy beside the install (ids 2723801948 and 2023507013),
 the sibling source checkouts under `../VanillaExpanded/`, then the RimWorld `Mods/` folder. The
 Workshop copy is preferred because it is what players run against. Both references are skipped
-silently when the DLL is absent, so a build still succeeds without them until code uses their
-types. CI fetches both DLLs from the Workshop with SteamCMD in the release workflow and injects
-them via the `VEF_PATH` / `VFEP_PATH` environment variables.
+silently when the DLL is absent, but the code uses types from both (`VFEPirates.WarcasketDef`,
+VEF's abilities), so a build without them fails on those. CI fetches both DLLs from the Workshop
+with SteamCMD in the release workflow and injects them via the `VEF_PATH` / `VFEP_PATH`
+environment variables.
 
 Reference source checkouts: `../VanillaExpanded/VanillaFactionsExpanded-Pirates/` (its
 `CLAUDE.md` maps the warcasket subsystem: `WarcasketDef`, `Apparel_Warcasket`,
@@ -185,9 +186,15 @@ TODOs.md         - Scoping notes for the feature work that has not landed yet
   tank comp's `cellsPerCharge`): every emitter and the absorb's banking rate take it from
   `ToxinWarcasketSettings.GasPerCharge`, because the shoulders' reserve jet needs it with no
   tank worn. A setting that has to change XML no def field covers (another mod's def, a node
-  that is absent) instead gates a patch through a custom `PatchOperation` reading the settings,
-  which the `Mod` constructor has loaded before patches apply, and takes effect at the next
-  restart (`Source/1.6/PatchOperations/`; the hazard vacuum toggle is the model).
+  that is absent) instead gates a patch through `PatchOperationSetting`, which reads a settings
+  bool by name while patches apply (the `Mod` constructor has loaded them by then) and takes
+  effect at the next restart; the hazard vacuum and spacer tier toggles are the two uses.
+  **Player-facing text a setting changes never goes through a patch:** patches apply before
+  DefInjected, so every language but English would put the translated default back. It goes in
+  `Keyed/` and is written onto the def from `ModInit` (after both injection passes),
+  startup-only like the patch it accompanies (`ToxinWarcasketSettings.ApplySpacerText` is the
+  model). Patch files within a mod apply in filesystem order, so two patches touching one node
+  must not depend on their order.
 - **No em dashes in player-facing text** (def labels/descriptions, `Keyed/`, `About.xml`,
   `.steamworkshop/`); reflow the sentence instead. This file, code comments and def comments are
   unaffected.

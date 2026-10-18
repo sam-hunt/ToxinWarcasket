@@ -5,8 +5,10 @@
     resistance of VFEP's spacer (10th generation) sets, a step above its own tier, to set the two
     7th-gen environment sets further apart under Odyssey. The Hazard is the all-rounder (fire,
     heat, cold, toxins, psychic) and the Toxin the tox gas specialist; without this, neither
-    resists vacuum, as no 7th-gen set does. PatchOperationHazardVacuum skips the whole patch
-    while the setting is off or Odyssey is inactive.
+    resists vacuum, as no 7th-gen set does (the spacer tier setting, SpacerTier.xml, moves the
+    Toxin up a tier and gives it the stat on its own terms; the two settings are independent).
+    PatchOperationSetting skips the whole patch while the setting is off, and the inner
+    PatchOperationModActive while Odyssey, which owns the stat, is inactive.
 
     Values per piece, as the spacer sets carry them:
     - VFEP alone: armor 0.2, shoulders 0.1, helmet 0.7, a 1.0 set.
@@ -23,57 +25,63 @@
     Insulation_Cold 100. SOS2's vacuum survival runs on its own decompression and hypoxia
     stats, not VacuumResistance, and this patch touches neither those nor the EVA tag.
   -->
-  <Operation Class="ToxinWarcasket.PatchOperationHazardVacuum">
-    <match Class="PatchOperationSequence">
-      <operations>
-        <li Class="PatchOperationRemove">
-          <success>Always</success>
-          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_Warcasket_Hazard" or defName = "VFEP_WarcasketShoulders_Hazard" or defName = "VFEP_WarcasketHelmet_Hazard"]/equippedStatOffsets/VacuumResistance</xpath>
-        </li>
-        <li Class="PatchOperationAdd">
-          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_WarcasketShoulders_Hazard"]/equippedStatOffsets</xpath>
-          <value>
-            <VacuumResistance>0.1</VacuumResistance>
-          </value>
-        </li>
-        <li Class="ToxinWarcasket.PatchOperationModActive">
-          <packageIds>
-            <li>vanillaexpanded.gravship</li>
-          </packageIds>
-          <match Class="PatchOperationSequence">
-            <operations>
-              <li Class="PatchOperationAdd">
-                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_Warcasket_Hazard"]/equippedStatOffsets</xpath>
-                <value>
-                  <VacuumResistance>0.22</VacuumResistance>
-                </value>
-              </li>
-              <li Class="PatchOperationAdd">
-                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_WarcasketHelmet_Hazard"]/equippedStatOffsets</xpath>
-                <value>
-                  <VacuumResistance>0.65</VacuumResistance>
-                </value>
-              </li>
-            </operations>
-          </match>
-          <nomatch Class="PatchOperationSequence">
-            <operations>
-              <li Class="PatchOperationAdd">
-                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_Warcasket_Hazard"]/equippedStatOffsets</xpath>
-                <value>
-                  <VacuumResistance>0.2</VacuumResistance>
-                </value>
-              </li>
-              <li Class="PatchOperationAdd">
-                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_WarcasketHelmet_Hazard"]/equippedStatOffsets</xpath>
-                <value>
-                  <VacuumResistance>0.7</VacuumResistance>
-                </value>
-              </li>
-            </operations>
-          </nomatch>
-        </li>
-      </operations>
+  <Operation Class="ToxinWarcasket.PatchOperationSetting">
+    <setting>hazardVacuum</setting>
+    <match Class="ToxinWarcasket.PatchOperationModActive">
+      <packageIds>
+        <li>ludeon.rimworld.odyssey</li>
+      </packageIds>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationRemove">
+            <success>Always</success>
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_Warcasket_Hazard" or defName = "VFEP_WarcasketShoulders_Hazard" or defName = "VFEP_WarcasketHelmet_Hazard"]/equippedStatOffsets/VacuumResistance</xpath>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_WarcasketShoulders_Hazard"]/equippedStatOffsets</xpath>
+            <value>
+              <VacuumResistance>0.1</VacuumResistance>
+            </value>
+          </li>
+          <li Class="ToxinWarcasket.PatchOperationModActive">
+            <packageIds>
+              <li>vanillaexpanded.gravship</li>
+            </packageIds>
+            <match Class="PatchOperationSequence">
+              <operations>
+                <li Class="PatchOperationAdd">
+                  <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_Warcasket_Hazard"]/equippedStatOffsets</xpath>
+                  <value>
+                    <VacuumResistance>0.22</VacuumResistance>
+                  </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                  <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_WarcasketHelmet_Hazard"]/equippedStatOffsets</xpath>
+                  <value>
+                    <VacuumResistance>0.65</VacuumResistance>
+                  </value>
+                </li>
+              </operations>
+            </match>
+            <nomatch Class="PatchOperationSequence">
+              <operations>
+                <li Class="PatchOperationAdd">
+                  <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_Warcasket_Hazard"]/equippedStatOffsets</xpath>
+                  <value>
+                    <VacuumResistance>0.2</VacuumResistance>
+                  </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                  <xpath>/Defs/VFEPirates.WarcasketDef[defName = "VFEP_WarcasketHelmet_Hazard"]/equippedStatOffsets</xpath>
+                  <value>
+                    <VacuumResistance>0.7</VacuumResistance>
+                  </value>
+                </li>
+              </operations>
+            </nomatch>
+          </li>
+        </operations>
+      </match>
     </match>
   </Operation>
 </Patch>

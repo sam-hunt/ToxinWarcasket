@@ -27,6 +27,9 @@
       at no cost (the Shock's armor and the Aerial's shoulders hold 100 chemfuel charges and
       cost none), and vanilla, whose packs charge their whole fill up front; Steel 140 makes
       room for it. The shoulders and helmet take the set's other chemfuel on the same terms.
+    The spacer tier setting (1.6/Patches/SpacerTier.xml, whose header carries that tier's
+    values) rebuilds all three pieces at the 10th generation at the next startup; the tier
+    fields above are the defaults it replaces.
 
     The tox gas tank (ToxinWarcasket.CompToxTank, a CompApparelReloadable), sized against the
     tox pack: the pack is a utility slot, the set a permanent commitment, so a full tank is close

@@ -26,6 +26,7 @@ public static class ModInit
 
         ToxinWarcasketMod.Settings.LoadDefaultsFromDefs();
         ToxinWarcasketMod.Settings.ApplyToDefs();
+        ToxinWarcasketMod.Settings.ApplySpacerText();
 
         // Forces each optional integration to resolve its foreign names now, after defs, so a
         // drifted one warns at startup (where the smoke test reads) rather than on first use.

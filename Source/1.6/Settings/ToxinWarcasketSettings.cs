@@ -5,6 +5,7 @@ using RimWorld;
 using ToxinWarcasket.Integrations;
 using UnityEngine;
 using Verse;
+using VFEPirates;
 using AbilityDef = VEF.Abilities.AbilityDef;
 
 namespace ToxinWarcasket;
@@ -25,6 +26,7 @@ public class ToxinWarcasketSettings : ModSettings
 {
     private const string ArmorDefName = "TXWC_Warcasket_Toxin";
     private const string ShouldersDefName = "TXWC_WarcasketShoulders_Toxin";
+    private const string HelmetDefName = "TXWC_WarcasketHelmet_Toxin";
     private const string AbsorbDefName = "TXWC_AbsorbGas";
     private const string VentDefName = "TXWC_VentTank";
     private const string ToxPackDefName = "Apparel_PackTox";
@@ -61,10 +63,16 @@ public class ToxinWarcasketSettings : ModSettings
     public readonly Tunable absorbCooldown = new("AbsorbCooldown", 0f, 24f, 1f, v => Mathf.RoundToInt(v).ToString());
 
     // Gives VFEP's hazard warcasket the spacer sets' vacuum resistance under Odyssey. Unlike the
-    // tunables it overrides no field of ours: PatchOperationHazardVacuum reads it while the XML
-    // patches apply (1.6/Patches/HazardVacuumResistance.xml has the rationale), so a change
+    // tunables it overrides no field of ours: PatchOperationSetting reads it by name while the
+    // XML patches apply (1.6/Patches/HazardVacuumResistance.xml has the rationale), so a change
     // waits for a restart. Off by default.
     public bool hazardVacuum;
+
+    // Rebuilds the set at VFEP's spacer tier. It overrides no field either: PatchOperationSetting
+    // reads it while the XML patches apply (1.6/Patches/SpacerTier.xml has the values and the
+    // rationale) and ApplySpacerText writes the tier's descriptions once at startup, so a change
+    // waits for a restart. Off by default.
+    public bool spacerTier;
 
     // The tank's feedsToxAbsorption: whether a charged tank stands in for tox gas to Vanilla
     // Races Expanded - Waster's tox absorption gene (Integrations/VREWasterIntegration). Written
@@ -102,6 +110,7 @@ public class ToxinWarcasketSettings : ModSettings
         foreach (Tunable tunable in All)
             tunable.ExposeData();
         Scribe_Values.Look(ref hazardVacuum, "HazardVacuum");
+        Scribe_Values.Look(ref spacerTier, "SpacerTier");
         Scribe_Values.Look(ref feedToxAbsorption, "FeedToxAbsorption", true);
     }
 
@@ -151,6 +160,33 @@ public class ToxinWarcasketSettings : ModSettings
         Generation++;
     }
 
+    // The spacer tier's descriptions, from Keyed strings rather than from the patch: the XML
+    // patches apply before the DefInjected translations, which would put the 7th-gen text back
+    // for every language but English, while this runs after both injection passes (ModInit's
+    // static constructor) and Keyed strings come translated per language. Startup only, as the
+    // patch is, so the text never moves without the stats. Each description is its piece's short
+    // description over the two paragraphs the pieces share, as the def XML lays them out.
+    public void ApplySpacerText()
+    {
+        if (!spacerTier)
+            return;
+        SetSpacerText(ArmorDefName, "TXWC_SpacerShortDescription_Armor");
+        SetSpacerText(ShouldersDefName, "TXWC_SpacerShortDescription_Shoulders");
+        SetSpacerText(HelmetDefName, "TXWC_SpacerShortDescription_Helmet");
+    }
+
+    private static void SetSpacerText(string defName, string shortDescriptionKey)
+    {
+        if (DefDatabase<ThingDef>.GetNamedSilentFail(defName) is not WarcasketDef def)
+        {
+            Log.Error($"[Toxin Warcasket] Spacer tier setting could not find {defName}; it keeps its description.");
+            return;
+        }
+        string shortDescription = shortDescriptionKey.Translate();
+        def.shortDescription = shortDescription;
+        def.description = shortDescription + "\n\n" + "TXWC_SpacerLoreGeneration".Translate() + "\n\n" + "TXWC_SpacerLoreSeries".Translate();
+    }
+
     // One row per tunable under a header per piece: the tank (with the gas yield every piece
     // shares), the shoulders' jet, the helmet's absorb, then the miscellaneous toggles, with a
     // reset button below. Sections are set apart by whitespace and a medium-font header rather
@@ -188,6 +224,7 @@ public class ToxinWarcasketSettings : ModSettings
         absorbCooldown.DoRow(listing);
         SummaryRow(listing, AbsorbSummary);
         SectionHeader(listing, "TXWC_SectionMisc", null);
+        DoSpacerTierRow(listing);
         DoHazardVacuumRow(listing);
         DoFeedToxAbsorptionRow(listing);
         listing.Gap(SectionGap);
@@ -201,6 +238,7 @@ public class ToxinWarcasketSettings : ModSettings
             foreach (Tunable tunable in All)
                 tunable.Reset();
             hazardVacuum = false;
+            spacerTier = false;
             feedToxAbsorption = feedToxAbsorptionDefault;
         }
     }
@@ -251,44 +289,50 @@ public class ToxinWarcasketSettings : ModSettings
         GUI.color = Color.white;
     }
 
-    // A checkbox row laid out as a Tunable row is, the box where a slider row shows its value.
+    // The spacer tier rebuild; the patch and the text only read the box at startup, so the label
+    // always says a change takes a restart.
+    private void DoSpacerTierRow(Listing_Standard listing)
+    {
+        string label = "TXWC_SpacerTier".Translate() + "TXWC_RequiresRestartSuffix".Translate();
+        ToggleRow(listing, label, "TXWC_SpacerTierDesc".Translate(), ref spacerTier);
+    }
+
     // Disabled without Odyssey, which owns the stat, and the label says so; with Odyssey it
     // always says a change takes a restart, since the patch only reads the box at startup.
     private void DoHazardVacuumRow(Listing_Standard listing)
     {
-        Rect row = listing.GetRect(Tunable.RowHeight);
-        row.xMin += Tunable.RowIndent;
-        row.xMax -= Tunable.RowEndPad;
-        Widgets.DrawHighlightIfMouseover(row);
-        TooltipHandler.TipRegion(row, "TXWC_HazardVacuumDesc".Translate());
-
         bool odyssey = ModsConfig.OdysseyActive;
         string label = "TXWC_HazardVacuum".Translate();
         if (!odyssey)
             label += "TXWC_RequiresOdysseySuffix".Translate();
         else
             label += "TXWC_RequiresRestartSuffix".Translate();
-        Widgets.CheckboxLabeled(row, label, ref hazardVacuum, disabled: !odyssey);
-        listing.Gap(Tunable.RowGap);
+        ToggleRow(listing, label, "TXWC_HazardVacuumDesc".Translate(), ref hazardVacuum, disabled: !odyssey);
     }
 
-    // The same row for the tank's waster feed, disabled without Vanilla Races Expanded - Waster,
-    // whose gene it feeds; the comp reads the box live, so no restart suffix. The tooltip takes
-    // the mod's title as an argument, in vanilla's colour for names, so it stands out of the
-    // sentence and translators never touch it.
+    // The tank's waster feed, disabled without Vanilla Races Expanded - Waster, whose gene it
+    // feeds; the comp reads the box live, so no restart suffix. The tooltip takes the mod's title
+    // as an argument, in vanilla's colour for names, so it stands out of the sentence and
+    // translators never touch it.
     private void DoFeedToxAbsorptionRow(Listing_Standard listing)
+    {
+        bool waster = VREWasterIntegration.ModActive;
+        string label = "TXWC_FeedToxAbsorption".Translate();
+        if (!waster)
+            label += "TXWC_RequiresVREWasterSuffix".Translate();
+        string tooltip = "TXWC_FeedToxAbsorptionDesc".Translate(VREWasterIntegration.ModName.Colorize(ColoredText.NameColor));
+        ToggleRow(listing, label, tooltip, ref feedToxAbsorption, disabled: !waster);
+    }
+
+    // A checkbox row laid out as a Tunable row is, the box where a slider row shows its value.
+    private static void ToggleRow(Listing_Standard listing, string label, string tooltip, ref bool value, bool disabled = false)
     {
         Rect row = listing.GetRect(Tunable.RowHeight);
         row.xMin += Tunable.RowIndent;
         row.xMax -= Tunable.RowEndPad;
         Widgets.DrawHighlightIfMouseover(row);
-        TooltipHandler.TipRegion(row, "TXWC_FeedToxAbsorptionDesc".Translate(VREWasterIntegration.ModName.Colorize(ColoredText.NameColor)));
-
-        bool waster = VREWasterIntegration.ModActive;
-        string label = "TXWC_FeedToxAbsorption".Translate();
-        if (!waster)
-            label += "TXWC_RequiresVREWasterSuffix".Translate();
-        Widgets.CheckboxLabeled(row, label, ref feedToxAbsorption, disabled: !waster);
+        TooltipHandler.TipRegion(row, tooltip);
+        Widgets.CheckboxLabeled(row, label, ref value, disabled: disabled);
         listing.Gap(Tunable.RowGap);
     }
 

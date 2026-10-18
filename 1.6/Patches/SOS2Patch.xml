@@ -8,7 +8,9 @@
 
     The gate is PatchOperationFindMod on display names, copied verbatim from VFEP's patch on
     purpose: this must fire under exactly VFEP's condition so the two sets never disagree about
-    being EVA-rated. If VFEP changes its gate, change this one to match.
+    being EVA-rated. If VFEP changes its gate, change this one to match. VFEP's patch names every
+    tier's armor and helmet, so the spacer tier setting changes nothing here; SpacerTier.xml
+    leaves an Insulation_Cold of 100 alone, as the two files apply in no fixed order.
   -->
   <Operation Class="PatchOperationFindMod">
     <mods>

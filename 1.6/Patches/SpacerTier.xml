@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!--
+    Optional, off by default: the spacer tier setting rebuilds the Toxin as one of VFEP's 10th
+    generation (spacer) sets, beside the Siegebreaker, instead of a 7th-gen set beside the Hazard.
+    PatchOperationSetting reads the setting while the patches apply, so a change waits for a
+    restart; the descriptions move with it from Keyed strings (ToxinWarcasketSettings
+    .ApplySpacerText), since a patched description would be put back by every language's
+    DefInjected text but English's. The def headers stay the record of the 7th-gen defaults;
+    this header is the record of the spacer values. Nothing marks a VFEP def as spacer tier;
+    the tier is the bundle below, each entry the spacer sets' shared value (VFEP v3.09,
+    Apparel_Various.xml / Apparel_Headgear.xml) unless said otherwise:
+    - Plating Sharp 2 / Blunt 1 / Heat 1 in every piece (the Siegebreaker's, the Controller's
+      and the Sarcophagus's; the Guardian and Brute take Blunt 1.5 as their specialty).
+    - Mass 50 / 20 / 8 and no MoveSpeed offset: the tier's frames carry no speed penalty at
+      all. Insulation 80/80, 22/22, 5/2.
+    - ToxicResistance +0.5 and PsychicSensitivity -0.5 on armor and helmet, every spacer set's
+      pair, so the set is immune to direct toxins as its peers are; the 7th-gen split from the
+      Hazard (environment only) does not apply at a tier the Hazard is not in. The gas-specific
+      ToxicEnvironmentResistance stays as it is.
+    - Shield bubble on the armor, the tier's comp block verbatim: the tier's baseline of
+      EnergyShieldEnergyMax 1.5 (150 energy) and EnergyShieldRechargeRate 0.01 (the Guardian's,
+      Controller's and Sarcophagus's; the Siegebreaker's 2.5 and the Brute's 5 are their
+      specialties). VEF's CompShieldBubble reads both stats off the armor itself, blocks ranged
+      and explosive hits only, and lets the wearer shoot (and jet) through it.
+    - VacuumResistance 0.2 / 0.1 / 0.7 under Odyssey, which owns the stat (MayRequire on the
+      values, as VFEP carries them). Vanilla Gravship Expanded (chapter 1) lowers the spacer
+      armors to 0.22 and helmets to 0.65 by defName so no suit reaches 1.0 without an oxygen
+      source; matched by package id, the Toxin takes those, as HazardVacuumResistance.xml does
+      for the Hazard. Shoulders 0.1 either way.
+    - Research VFEP_SpacerWarcaskets (6000, Spacer) in place of VFEP_SpecialisedWarcaskets;
+      Biotech's ToxGas stays. Tag WarcasketVeteran in place of WarcasketSpecialised: the
+      spacer sets' tag, which puts the set on both VFEP factions' veteran raiders and Odyssey's
+      salvagers beside the Marine, Recon and spacer sets, where the 7th-gen tag reaches no pawn
+      kind at all.
+    - Costs in the tier's band, spacer components and plasteel with no steel (the Siegebreaker
+      is 6 / 145 / Uranium 50, 0 / 60, 2 / 50): armor ComponentSpacer 7, Plasteel 130, Uranium
+      50; shoulders 1 / 55; helmet 2 / 45. One more component on the armor and shoulders for
+      the tank and nozzle, as the 7th-gen version pays industrial ones over the Cataphract, and
+      15 plasteel traded off each piece for its chemfuel, which stays as the def headers set it.
+
+    Insulation_Cold on the armor and helmet is replaced only where it is not already 100:
+    SOS2Patch.xml sets 100 on both under Save Our Ship 2, and patch files within a mod apply in
+    filesystem order, so neither file may depend on running after the other.
+  -->
+  <Operation Class="ToxinWarcasket.PatchOperationSetting">
+    <setting>spacerTier</setting>
+    <match Class="PatchOperationSequence">
+      <operations>
+
+        <!-- Plating and speed, every piece. -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Sharp</xpath>
+          <value>
+            <ArmorRating_Sharp>2</ArmorRating_Sharp>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Blunt</xpath>
+          <value>
+            <ArmorRating_Blunt>1</ArmorRating_Blunt>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Heat</xpath>
+          <value>
+            <ArmorRating_Heat>1</ArmorRating_Heat>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/equippedStatOffsets/MoveSpeed</xpath>
+        </li>
+
+        <!-- Research and tags, every piece. -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/researchPrerequisites/li[text() = "VFEP_SpecialisedWarcaskets"]</xpath>
+          <value>
+            <li>VFEP_SpacerWarcaskets</li>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/apparel/tags/li[text() = "WarcasketSpecialised"]</xpath>
+          <value>
+            <li>WarcasketVeteran</li>
+          </value>
+        </li>
+
+        <!-- Armor: frame, insulation, shield, resistances, costs. -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/statBases/Mass</xpath>
+          <value>
+            <Mass>50</Mass>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <success>Always</success>
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/statBases/Insulation_Cold[. != "100"]</xpath>
+          <value>
+            <Insulation_Cold>80</Insulation_Cold>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/statBases/Insulation_Heat</xpath>
+          <value>
+            <Insulation_Heat>80</Insulation_Heat>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/statBases</xpath>
+          <value>
+            <EnergyShieldRechargeRate>0.01</EnergyShieldRechargeRate>
+            <EnergyShieldEnergyMax>1.5</EnergyShieldEnergyMax>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/equippedStatOffsets</xpath>
+          <value>
+            <PsychicSensitivity>-0.5</PsychicSensitivity>
+            <ToxicResistance>0.5</ToxicResistance>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/costList</xpath>
+          <value>
+            <costList>
+              <ComponentSpacer>7</ComponentSpacer>
+              <Plasteel>130</Plasteel>
+              <Uranium>50</Uranium>
+              <Chemfuel>30</Chemfuel>
+            </costList>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/comps</xpath>
+          <value>
+            <li Class="VEF.Apparels.CompProperties_ShieldBubble">
+              <compClass>VEF.Apparels.CompShieldBubble</compClass>
+              <blockRangedAttack>true</blockRangedAttack>
+              <blockMeleeAttack>false</blockMeleeAttack>
+              <showWhenDrafted>true</showWhenDrafted>
+              <showOnHostiles>true</showOnHostiles>
+              <showOnNeutralInCombat>true</showOnNeutralInCombat>
+              <shieldTexPath>Other/ShieldBubble</shieldTexPath>
+              <chargeFullyWhenMade>true</chargeFullyWhenMade>
+              <minShieldSize>2.1</minShieldSize>
+              <maxShieldSize>2.7</maxShieldSize>
+              <disableRotation>true</disableRotation>
+            </li>
+          </value>
+        </li>
+
+        <!-- Shoulders: frame, insulation, costs. -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/statBases/Mass</xpath>
+          <value>
+            <Mass>20</Mass>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/statBases/Insulation_Cold</xpath>
+          <value>
+            <Insulation_Cold>22</Insulation_Cold>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/statBases/Insulation_Heat</xpath>
+          <value>
+            <Insulation_Heat>22</Insulation_Heat>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/costList</xpath>
+          <value>
+            <costList>
+              <ComponentSpacer>1</ComponentSpacer>
+              <Plasteel>55</Plasteel>
+              <Chemfuel>15</Chemfuel>
+            </costList>
+          </value>
+        </li>
+
+        <!-- Helmet: insulation, costs. -->
+        <li Class="PatchOperationReplace">
+          <success>Always</success>
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/Insulation_Cold[. != "100"]</xpath>
+          <value>
+            <Insulation_Cold>5</Insulation_Cold>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/costList</xpath>
+          <value>
+            <costList>
+              <ComponentSpacer>2</ComponentSpacer>
+              <Plasteel>45</Plasteel>
+              <Chemfuel>10</Chemfuel>
+            </costList>
+          </value>
+        </li>
+
+        <!-- Vacuum resistance, Odyssey only; VGE's lowered armor and helmet when it is active. -->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/equippedStatOffsets</xpath>
+          <value>
+            <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.1</VacuumResistance>
+          </value>
+        </li>
+        <li Class="ToxinWarcasket.PatchOperationModActive">
+          <packageIds>
+            <li>vanillaexpanded.gravship</li>
+          </packageIds>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/equippedStatOffsets</xpath>
+                <value>
+                  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.22</VacuumResistance>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/equippedStatOffsets</xpath>
+                <value>
+                  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.65</VacuumResistance>
+                </value>
+              </li>
+            </operations>
+          </match>
+          <nomatch Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/equippedStatOffsets</xpath>
+                <value>
+                  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.2</VacuumResistance>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/equippedStatOffsets</xpath>
+                <value>
+                  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.7</VacuumResistance>
+                </value>
+              </li>
+            </operations>
+          </nomatch>
+        </li>
+
+      </operations>
+    </match>
+  </Operation>
+</Patch>
