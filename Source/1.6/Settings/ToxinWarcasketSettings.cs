@@ -302,12 +302,21 @@ public class ToxinWarcasketSettings : ModSettings
         GUI.color = Color.white;
     }
 
+    // The colour of the Odyssey note in the spacer tier tooltip, whose vacuum resistance is the
+    // one part of the tier that needs the DLC. Vanilla's one idiom for an expansion's name in
+    // text (the research tab's source line) reads ExpansionDef.primaryColor, which the game's
+    // own data makes white for Odyssey, so the note takes a purple from the colour library
+    // instead, after the DLC's branding.
+    private static readonly Color OdysseyColor = ColorLibrary.LightPurple;
+
     // The spacer tier rebuild; the patch and the text only read the box at startup, so the label
-    // always says a change takes a restart.
+    // always says a change takes a restart. The tooltip's Odyssey note is passed in coloured so
+    // translators never touch the markup.
     private void DoSpacerTierRow(Listing_Standard listing)
     {
         string label = "TXWC_SpacerTier".Translate() + "TXWC_RequiresRestartSuffix".Translate();
-        ToggleRow(listing, label, "TXWC_SpacerTierDesc".Translate(), ref spacerTier);
+        string tooltip = "TXWC_SpacerTierDesc".Translate("TXWC_RequiresOdysseySuffix".Translate().Colorize(OdysseyColor));
+        ToggleRow(listing, label, tooltip, ref spacerTier);
     }
 
     // The set's own vacuum resistance, disabled without Odyssey as the hazard row is. While the

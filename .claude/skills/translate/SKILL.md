@@ -69,7 +69,10 @@ notes for the shim or flow edit this repo owes before continuing.
   sign. `TXWC_DefaultSuffix` keeps its leading space, as do the
   `TXWC_Requires*Suffix` and `TXWC_IncludedInSpacerTierSuffix` keys. The
   toggles (`TXWC_SpacerTier*`, `TXWC_ToxinVacuum*`, `TXWC_HazardVacuum*`,
-  `TXWC_FeedToxAbsorption*`) take no `{0}`, except
+  `TXWC_FeedToxAbsorption*`) take no `{0}`, except `TXWC_SpacerTierDesc`,
+  whose `{0}` is the translated `TXWC_RequiresOdysseySuffix` passed in by
+  code with its colour, placed right after the vacuum resistance clause
+  with no space before it (the suffix carries its own), and except
   `TXWC_FeedToxAbsorptionDesc`, whose `{0}` is the title of Vanilla Races
   Expanded - Waster, passed in by code and never translated (the mod ships
   English only, and that is its Workshop title in every language); keep

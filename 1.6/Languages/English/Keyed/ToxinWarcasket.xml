@@ -47,7 +47,7 @@
   <TXWC_AbsorbSummary>One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel.</TXWC_AbsorbSummary>
 
   <TXWC_SpacerTier>Spacer tier toxin warcaskets</TXWC_SpacerTier>
-  <TXWC_SpacerTierDesc>Rebuilds the toxin warcaskets as 10th generation spacer warcaskets, beside the Siegebreaker: spacer plating and insulation with no speed penalty, toxic and psychic resistance, vacuum resistance, and a shield bubble on the shell, at spacer component and plasteel costs behind the Spacer Warcaskets research. Changing this requires a restart. Default: off.</TXWC_SpacerTierDesc>
+  <TXWC_SpacerTierDesc>Rebuilds the toxin warcaskets as 10th generation spacer warcaskets, beside the Siegebreaker: spacer plating and insulation with no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble on the shell, at spacer component and plasteel costs behind the Spacer Warcaskets research. Changing this requires a restart. Default: off.</TXWC_SpacerTierDesc>
 
   <TXWC_SpacerShortDescription_Armor>Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot.</TXWC_SpacerShortDescription_Armor>
   <TXWC_SpacerShortDescription_Shoulders>Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank.</TXWC_SpacerShortDescription_Shoulders>
