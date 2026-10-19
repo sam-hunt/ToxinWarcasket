@@ -1,5 +1,14 @@
 # TODOs
 
+- Test in game, as the smoke test cannot vary settings: the vacuum settings under Odyssey in
+  the four combinations, neither, toxin vacuum only, spacer tier only, both, plus one run with
+  Vanilla Gravship Expanded. Each piece's stat card shows one Vacuum Resistance line at the
+  spacer values (0.2 / 0.1 / 0.7; 0.22 / 0.1 / 0.65 under VGE) whenever either setting is on,
+  and none when neither is. In the window, the toxin vacuum row greys out and reads as held
+  on the moment the spacer box is ticked, and shows the saved choice again when it is unticked.
+- The vacuum resistance clause in the spacer-tier toxin warcaskets mod setting should
+  also succinctly note in parenthesis that the stat requires Odyssey and should be
+  colorized in its idiomatic purple
 - Review the spacer tier setting's player-facing text before release: the Keyed strings
   (`TXWC_SpacerTier*` in `1.6/Languages/English/Keyed/ToxinWarcasket.xml`), the Workshop
   description's settings and FAQ lines, the README's tier wording, and whether the hazard
