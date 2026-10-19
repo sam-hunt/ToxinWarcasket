@@ -14,7 +14,7 @@ An impressively unethical feat of engineering, the Toxin is a 7th generation war
 [*][b]Helmet:[/b] the respirator. Immunity to tox gas exposure, like a gas mask, plus the ability to suck gases around the pilot into the tank (clears smoke, rot stink, and deadlife dust too!).
 [/list]
 
-Mod settings tune the gas per chemfuel, the tank's capacity and vent rate, the jet's cost, cone, range, and charges without a tank, and the absorb's radius, duration, and cooldown etc. An opt-in setting rebuilds the whole set at the spacer tier instead: spacer plating, a shield bubble, vacuum resistance, and spacer costs behind the Spacer Warcaskets research (restart required).
+Mod settings tune the gas per chemfuel, the tank's capacity and vent rate, the jet's cost, cone, range, and charges without a tank, and the absorb's radius, duration, and cooldown etc. An opt-in setting rebuilds the whole set at the spacer tier instead: spacer plating, a shield bubble, vacuum resistance, and spacer costs behind the Spacer Warcaskets research (restart required). Another gives the set the spacer warcaskets' vacuum resistance on its own, without the rest of the tier.
 
 [hr][/hr]
 [h1]Mod Compatibility[/h1]
@@ -33,7 +33,7 @@ Mod settings tune the gas per chemfuel, the tank's capacity and vent rate, the j
 A: Yes. Tox gas only exists with Biotech, and the whole set integrates with it.
 
 [b]Q: How is it different from VFE Pirates' Hazard set?[/b]
-A: The Hazard is the all-rounder: lighter, fireproof, and immune to toxic buildup and psychic effects, with thinner sharp/blunt plating. The Toxin is built for tox gas alone, in both offense and defense. It pays in weight for its stronger plating and tank, while still being more vulnerable to venom, fire, extreme temperatures etc. Includes an opt-in patch to further differentiate the two by bumping the Hazard's vacuum resistance.
+A: The Hazard is the all-rounder: lighter, fireproof, and immune to toxic buildup and psychic effects, with thinner sharp/blunt plating. The Toxin is built for tox gas alone, in both offense and defense. It pays in weight for its stronger plating and tank, while still being more vulnerable to venom, fire, extreme temperatures etc. Opt-in settings give either set the spacer warcaskets' vacuum resistance, to set the two apart as you like.
 
 [b]Q: How do I get it?[/b]
 A: Research VFE Pirates' "Specialised Warcaskets" and Biotech's "Tox Gas" projects, then weld it on at the warcasket foundry like any other set. Mix and match the pieces with VFE Pirates' own sets as you please.

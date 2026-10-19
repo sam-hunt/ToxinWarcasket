@@ -67,7 +67,8 @@ notes for the shim or flow edit this repo owes before continuing.
   tooltip take one `{0}`, the formatted value (the tooltip's is the
   default); keep it and any unit after it, such as the cone width's degree
   sign. `TXWC_DefaultSuffix` keeps its leading space, as do the
-  `TXWC_Requires*Suffix` keys. The toggles (`TXWC_HazardVacuum*`,
+  `TXWC_Requires*Suffix` and `TXWC_IncludedInSpacerTierSuffix` keys. The
+  toggles (`TXWC_SpacerTier*`, `TXWC_ToxinVacuum*`, `TXWC_HazardVacuum*`,
   `TXWC_FeedToxAbsorption*`) take no `{0}`, except
   `TXWC_FeedToxAbsorptionDesc`, whose `{0}` is the title of Vanilla Races
   Expanded - Waster, passed in by code and never translated (the mod ships

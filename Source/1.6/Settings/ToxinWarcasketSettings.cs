@@ -74,6 +74,16 @@ public class ToxinWarcasketSettings : ModSettings
     // waits for a restart. Off by default.
     public bool spacerTier;
 
+    // Gives the set the spacer sets' vacuum resistance under Odyssey, as hazardVacuum does the
+    // Hazard, without the rest of the tier. The patch (1.6/Patches/ToxinVacuumResistance.xml)
+    // reads ToxinVacuumActive rather than this, so this stays the player's own choice and comes
+    // back when the tier is switched off again. Off by default.
+    public bool toxinVacuum;
+
+    // What ToxinVacuumResistance.xml reads: the spacer tier carries the stat, so it holds the
+    // toggle on.
+    public bool ToxinVacuumActive => toxinVacuum || spacerTier;
+
     // The tank's feedsToxAbsorption: whether a charged tank stands in for tox gas to Vanilla
     // Races Expanded - Waster's tox absorption gene (Integrations/VREWasterIntegration). Written
     // onto the def like the tunables and read live from it, so no restart; its default is the
@@ -111,6 +121,7 @@ public class ToxinWarcasketSettings : ModSettings
             tunable.ExposeData();
         Scribe_Values.Look(ref hazardVacuum, "HazardVacuum");
         Scribe_Values.Look(ref spacerTier, "SpacerTier");
+        Scribe_Values.Look(ref toxinVacuum, "ToxinVacuum");
         Scribe_Values.Look(ref feedToxAbsorption, "FeedToxAbsorption", true);
     }
 
@@ -225,6 +236,7 @@ public class ToxinWarcasketSettings : ModSettings
         SummaryRow(listing, AbsorbSummary);
         SectionHeader(listing, "TXWC_SectionMisc", null);
         DoSpacerTierRow(listing);
+        DoToxinVacuumRow(listing);
         DoHazardVacuumRow(listing);
         DoFeedToxAbsorptionRow(listing);
         listing.Gap(SectionGap);
@@ -239,6 +251,7 @@ public class ToxinWarcasketSettings : ModSettings
                 tunable.Reset();
             hazardVacuum = false;
             spacerTier = false;
+            toxinVacuum = false;
             feedToxAbsorption = feedToxAbsorptionDefault;
         }
     }
@@ -295,6 +308,31 @@ public class ToxinWarcasketSettings : ModSettings
     {
         string label = "TXWC_SpacerTier".Translate() + "TXWC_RequiresRestartSuffix".Translate();
         ToggleRow(listing, label, "TXWC_SpacerTierDesc".Translate(), ref spacerTier);
+    }
+
+    // The set's own vacuum resistance, disabled without Odyssey as the hazard row is. While the
+    // spacer tier box is ticked (as it stands in the window, so before any restart) the row is
+    // shown held on and disabled, with the suffix saying why, and the field itself is left alone
+    // so the player's own choice returns when the tier goes off again.
+    private void DoToxinVacuumRow(Listing_Standard listing)
+    {
+        bool odyssey = ModsConfig.OdysseyActive;
+        bool held = odyssey && spacerTier;
+        string label = "TXWC_ToxinVacuum".Translate();
+        if (!odyssey)
+            label += "TXWC_RequiresOdysseySuffix".Translate();
+        else if (held)
+            label += "TXWC_IncludedInSpacerTierSuffix".Translate();
+        else
+            label += "TXWC_RequiresRestartSuffix".Translate();
+        string tooltip = "TXWC_ToxinVacuumDesc".Translate();
+        if (held)
+        {
+            bool on = true;
+            ToggleRow(listing, label, tooltip, ref on, disabled: true);
+        }
+        else
+            ToggleRow(listing, label, tooltip, ref toxinVacuum, disabled: !odyssey);
     }
 
     // Disabled without Odyssey, which owns the stat, and the label says so; with Odyssey it

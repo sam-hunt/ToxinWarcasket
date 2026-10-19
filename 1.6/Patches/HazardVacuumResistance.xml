@@ -5,8 +5,9 @@
     resistance of VFEP's spacer (10th generation) sets, a step above its own tier, to set the two
     7th-gen environment sets further apart under Odyssey. The Hazard is the all-rounder (fire,
     heat, cold, toxins, psychic) and the Toxin the tox gas specialist; without this, neither
-    resists vacuum, as no 7th-gen set does (the spacer tier setting, SpacerTier.xml, moves the
-    Toxin up a tier and gives it the stat on its own terms; the two settings are independent).
+    resists vacuum, as no 7th-gen set does. The Toxin's own counterpart is the toxin vacuum
+    setting (ToxinVacuumResistance.xml, the same values), which the spacer tier setting holds
+    on; the settings are independent, so the player sets the gap between the two to taste.
     PatchOperationSetting skips the whole patch while the setting is off, and the inner
     PatchOperationModActive while Odyssey, which owns the stat, is inactive.
 
