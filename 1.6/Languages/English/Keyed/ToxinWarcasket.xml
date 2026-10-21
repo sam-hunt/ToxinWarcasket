@@ -46,8 +46,8 @@
 
   <TXWC_AbsorbSummary>One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel.</TXWC_AbsorbSummary>
 
-  <TXWC_SpacerTier>Spacer tier toxin warcaskets</TXWC_SpacerTier>
-  <TXWC_SpacerTierDesc>Rebuilds the toxin warcaskets as 10th generation spacer warcaskets, beside the Siegebreaker: spacer plating and insulation with no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble on the shell, at spacer component and plasteel costs behind the Spacer Warcaskets research. Changing this requires a restart. Default: off.</TXWC_SpacerTierDesc>
+  <TXWC_SpacerTier>Toxin warcasket is spacer tier</TXWC_SpacerTier>
+  <TXWC_SpacerTierDesc>Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off.</TXWC_SpacerTierDesc>
 
   <TXWC_SpacerShortDescription_Armor>Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot.</TXWC_SpacerShortDescription_Armor>
   <TXWC_SpacerShortDescription_Shoulders>Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank.</TXWC_SpacerShortDescription_Shoulders>
@@ -55,12 +55,12 @@
   <TXWC_SpacerLoreGeneration>10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armour designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armours have been improved, generally reducing restrictions on mixing pieces of different armour series even across generations.</TXWC_SpacerLoreGeneration>
   <TXWC_SpacerLoreSeries>The Toxin series rebuilds the spacer chassis for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins.</TXWC_SpacerLoreSeries>
 
-  <TXWC_ToxinVacuum>Toxin warcaskets resist vacuum</TXWC_ToxinVacuum>
-  <TXWC_ToxinVacuumDesc>Gives the toxin warcaskets the vacuum resistance of the spacer warcaskets, without the rest of the spacer tier. Changing this requires a restart. Default: off.</TXWC_ToxinVacuumDesc>
+  <TXWC_ToxinVacuum>Toxin warcasket resists vacuum</TXWC_ToxinVacuum>
+  <TXWC_ToxinVacuumDesc>Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off.</TXWC_ToxinVacuumDesc>
   <TXWC_IncludedInSpacerTierSuffix> (included in the spacer tier)</TXWC_IncludedInSpacerTierSuffix>
 
-  <TXWC_HazardVacuum>Hazard warcaskets resist vacuum</TXWC_HazardVacuum>
-  <TXWC_HazardVacuumDesc>Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off.</TXWC_HazardVacuumDesc>
+  <TXWC_HazardVacuum>Hazard warcasket resists vacuum</TXWC_HazardVacuum>
+  <TXWC_HazardVacuumDesc>Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off.</TXWC_HazardVacuumDesc>
   <TXWC_RequiresRestartSuffix> (requires restart)</TXWC_RequiresRestartSuffix>
   <TXWC_RequiresOdysseySuffix> (requires Odyssey)</TXWC_RequiresOdysseySuffix>
 
