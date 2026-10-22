@@ -159,10 +159,20 @@ TODOs.md         - Scoping notes for the feature work that has not landed yet
 - **C#:** root namespace `ToxinWarcasket`; patch classes live in `Source/1.6/Patches/` under
   the `.Patches` namespace suffix to avoid RimWorld type-name conflicts. Log with the
   `[Toxin Warcasket]` prefix.
+- **Startup def-derived state must survive an in-process play-data reload** (a mid-session
+  language switch reloads every def, but a type initializer never runs twice). Anything that
+  reads or writes defs at startup, or caches a def instance, goes in the idempotent
+  `Startup.Run`, never in a bare static ctor: `ModInit` calls it once for the first load, which
+  the in-flight `CallAll` postfix cannot see, and `Patches/StaticConstructorOnStartupUtility_CallAll.cs`
+  on every reload; its header has the verified load ordering and the `DoPlayLoad` trap. A
+  mod-shipped texture held in a static field dies on the same reload; this mod holds none, so
+  resolve one through a getter that re-resolves on a Unity-null `== null` check (never `??`) if
+  one is ever added.
 - **Optional-mod integrations are reflection, never references or patches.** Each lives in
-  `Source/1.6/Integrations/` (`.Integrations` namespace suffix), resolves its foreign names once
-  in a static constructor that `ModInit` forces after defs load, stays silent when the mod is
-  absent and warns once when the mod is active but a name failed to resolve, so the smoke test
+  `Source/1.6/Integrations/` (`.Integrations` namespace suffix), resolves its foreign names in
+  an idempotent `Resolve()` that `Startup.Run` calls once per load (a def instance it holds is
+  replaced by every reload), stays silent when the mod is absent and warns once per load when
+  the mod is active but a name failed to resolve, so the smoke test
   (which boots with the mod on its list) catches drift. Detect a mod with
   `ModLister.GetActiveModWithIdentifier(id, ignorePostfix: true)`, never `ModsConfig.IsActive`,
   which misses a Workshop copy installed beside a local one. The VRE Waster integration is the

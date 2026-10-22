@@ -11,9 +11,9 @@ using AbilityDef = VEF.Abilities.AbilityDef;
 namespace ToxinWarcasket;
 
 // The set's mod settings. Each Tunable overrides a def field, written onto the def's props by
-// ApplyToDefs (at startup, then whenever the window closes), so every reader of those props,
-// vanilla's and VEF's included, sees the setting with no code of its own. The defaults, and the
-// rationale for them, are the defs'.
+// ApplyToDefs (on every play-data load, then whenever the window closes), so every reader of
+// those props, vanilla's and VEF's included, sees the setting with no code of its own. The
+// defaults, and the rationale for them, are the defs'.
 //
 // The sliders read in chemfuel, the one cost the player pays: the tank's and the jet's size in
 // chemfuel, the gas yield in cells per chemfuel, the vent in chemfuel a second. The code keeps
@@ -131,8 +131,8 @@ public class ToxinWarcasketSettings : ModSettings
         Scribe_Values.Look(ref feedToxAbsorption, "FeedToxAbsorption", true);
     }
 
-    // Reads the def-backed defaults before the first ApplyToDefs overwrites them; defs must be
-    // loaded, so ModInit's static constructor calls this, never the Mod constructor.
+    // Reads the def-backed defaults before ApplyToDefs overwrites them; defs must be loaded, so
+    // Startup.Run calls this once per load, never the Mod constructor.
     public void LoadDefaultsFromDefs()
     {
         if (!TryGetDefs(out Defs defs))
@@ -183,8 +183,8 @@ public class ToxinWarcasketSettings : ModSettings
 
     // The spacer tier's descriptions, from Keyed strings rather than from the patch: the XML
     // patches apply before the DefInjected translations, which would put the 7th-gen text back
-    // for every language but English, while this runs after both injection passes (ModInit's
-    // static constructor) and Keyed strings come translated per language. Startup only, as the
+    // for every language but English, while this runs after both injection passes (Startup.Run,
+    // once per load) and Keyed strings come translated per language. Load time only, as the
     // patch is, so the text never moves without the stats. Each description is its piece's short
     // description over the two paragraphs the pieces share, as the def XML lays them out.
     public void ApplySpacerText()

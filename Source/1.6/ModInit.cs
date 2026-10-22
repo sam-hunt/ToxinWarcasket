@@ -1,11 +1,12 @@
 using HarmonyLib;
-using ToxinWarcasket.Integrations;
 using Verse;
 
 namespace ToxinWarcasket;
 
-// Mod entry point. Applies every [HarmonyPatch] class in this assembly, then reads the setting
-// defaults from the loaded defs and writes the player's settings onto them (ToxinWarcasketSettings).
+// Mod entry point. Applies every [HarmonyPatch] class in this assembly, then runs the
+// def-derived startup work (Startup.Run: the settings' defaults and overrides, the spacer text,
+// the waster integration) for this first load; later play-data reloads run it again through the
+// CallAll postfix.
 //
 // Deliberately a [StaticConstructorOnStartup] rather than the ToxinWarcasketMod constructor:
 // Mod constructors run BEFORE any defs are loaded, and applying a Harmony patch
@@ -24,12 +25,6 @@ public static class ModInit
         var harmony = new Harmony("shunter.toxinwarcasket");
         harmony.PatchAll();
 
-        ToxinWarcasketMod.Settings.LoadDefaultsFromDefs();
-        ToxinWarcasketMod.Settings.ApplyToDefs();
-        ToxinWarcasketMod.Settings.ApplySpacerText();
-
-        // Forces each optional integration to resolve its foreign names now, after defs, so a
-        // drifted one warns at startup (where the smoke test reads) rather than on first use.
-        _ = VREWasterIntegration.Available;
+        Startup.Run();
     }
 }

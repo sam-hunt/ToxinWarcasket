@@ -4,9 +4,9 @@ using Verse;
 namespace ToxinWarcasket;
 
 // Owns the mod settings only. The constructor runs before defs load, so it neither patches
-// (ModInit's comment) nor touches the defs the settings override: ModInit reads their defaults
-// and applies the settings once defs exist, and WriteSettings re-applies them whenever the
-// settings window closes.
+// (ModInit's comment) nor touches the defs the settings override: Startup.Run reads their
+// defaults and applies the settings once defs exist, on every load, and WriteSettings re-applies
+// them whenever the settings window closes.
 public class ToxinWarcasketMod : Mod
 {
     public ToxinWarcasketMod(ModContentPack content) : base(content)

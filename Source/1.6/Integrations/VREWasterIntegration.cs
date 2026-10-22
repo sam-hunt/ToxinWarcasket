@@ -22,13 +22,14 @@ namespace ToxinWarcasket.Integrations;
 // mutations, so a pilot without it gets nothing: no gas is laid and no exposure applied.
 //
 // No compile-time reference to VREW's assembly, and no Harmony patch of it: three names are
-// resolved by reflection once, at startup, and resolving a Type never runs its static
-// constructor, so the patch-timing hazard in ModInit's comment does not arise. Self-reports
+// resolved by reflection in Resolve, and resolving a Type never runs its static constructor,
+// so the patch-timing hazard in ModInit's comment does not arise. Two of the three are def
+// instances, which an in-process play-data reload replaces, so Resolve is idempotent and
+// Startup.Run calls it once per load, after defs, never a static constructor. Self-reports
 // drift at startup (the family's Pattern B): silent when VREW is not active; one Log.Warning
-// when it is but a name failed to resolve, which the smoke test (VREW on its list) catches.
-// ModInit forces this class's static constructor so the warning fires at startup, not on the
-// first worn tank. VREW's two constants are copied, not read, so a VREW retune drifts this
-// silently; re-verify them against its assembly when VREW updates.
+// per load when it is but a name failed to resolve, which the smoke test (VREW on its list)
+// catches. VREW's two constants are copied, not read, so a VREW retune drifts this silently;
+// re-verify them against its assembly when VREW updates.
 public static class VREWasterIntegration
 {
     public const string PackageId = "vanillaracesexpanded.waster";
@@ -42,18 +43,23 @@ public static class VREWasterIntegration
     private const string ToxAbsorptionGeneName = "VRE_ToxAbsorption";
     private const string PollutionRushGeneName = "VREW_PollutionRush";
 
-    // The mutation hediffs' comp type, or null when VREW is not loaded.
-    private static readonly Type geneDependentPollutionType;
-    private static readonly GeneDef toxAbsorptionGene;
-    private static readonly GeneDef pollutionRushGene;
+    // The mutation hediffs' comp type and the two genes, or null when VREW is not loaded or
+    // before Resolve has run.
+    private static Type geneDependentPollutionType;
+    private static GeneDef toxAbsorptionGene;
+    private static GeneDef pollutionRushGene;
 
-    // True while VREW is active and every name resolved. A Workshop copy beside a local one
-    // carries a "_steam" postfix, which ModsConfig.IsActive would miss; the XML gates ignore it.
+    // True while VREW is active. A Workshop copy beside a local one carries a "_steam" postfix,
+    // which ModsConfig.IsActive would miss; the XML gates ignore it.
     public static bool ModActive { get; } = ModLister.GetActiveModWithIdentifier(PackageId, ignorePostfix: true) != null;
 
+    // True while VREW is active and every name resolved on this load.
     public static bool Available => geneDependentPollutionType != null && toxAbsorptionGene != null && pollutionRushGene != null;
 
-    static VREWasterIntegration()
+    // Resolves, or re-resolves, VREW's names against the current def database. Every field is
+    // overwritten each call, so a reload's fresh defs replace the previous load's, which the
+    // gene tracker would never match by reference.
+    public static void Resolve()
     {
         if (!ModActive)
             return;
@@ -65,6 +71,9 @@ public static class VREWasterIntegration
         }
         catch (Exception ex)
         {
+            geneDependentPollutionType = null;
+            toxAbsorptionGene = null;
+            pollutionRushGene = null;
             Log.Warning("[Toxin Warcasket] " + ModName + " reflection failed (the tank will not feed tox absorption): " + ex);
             return;
         }
