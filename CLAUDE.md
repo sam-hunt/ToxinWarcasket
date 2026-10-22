@@ -19,7 +19,7 @@ landed; the design of the tox gas mechanics is `Docs/Research/ABILITIES_SPEC.md`
 **Sibling mod:** `../ShipcrackerWarcasket/` is the same author's spacer-tier set (templated on
 the Siegebreaker) and the source of this repo's infrastructure. When both repos need the same
 infra change, make it there first if it is the more exercised one, then mirror it here; the
-two must not drift in the shared parts (build, CI, l10n shims, skills).
+two must not drift in the shared parts (build, CI, l10n shims, skills, the settings `Tunable`).
 
 ### Where documentation lives
 
