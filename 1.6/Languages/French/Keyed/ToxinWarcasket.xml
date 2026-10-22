@@ -54,6 +54,11 @@
   <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
   <TXWC_JetRangeDesc>La distance que parcourt le jet de gaz. Plus le jet porte loin, plus le gaz est dilué. Par défaut : {0}.</TXWC_JetRangeDesc>
 
+  <!-- EN: Aiming time (seconds) -->
+  <TXWC_JetWarmup>Temps de visée (secondes)</TXWC_JetWarmup>
+  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <TXWC_JetWarmupDesc>Le temps qu'il faut au pilote pour viser avant que le jet de gaz ne se déclenche. Par défaut : {0}.</TXWC_JetWarmupDesc>
+
   <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
   <TXWC_JetSummary>Un jet : {0} chemfuel pour {1} cases de gaz tox ({2} packs tox). Un réservoir plein en contient {3}, les épaulières seules {4}.</TXWC_JetSummary>
 
@@ -75,10 +80,33 @@
   <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
   <TXWC_AbsorbSummary>Une absorption aspire le gaz des {0} cases autour du pilote. Un nuage qui les couvre entièrement rapporte {1} chemfuel au réservoir.</TXWC_AbsorbSummary>
 
-  <!-- EN: Hazard warcaskets resist vacuum -->
-  <TXWC_HazardVacuum>Les warcaskets hazard résistent au vide</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
-  <TXWC_HazardVacuumDesc>Donne au warcasket hazard la résistance au vide des warcaskets spatiaux, ce qui le distingue davantage du warcasket toxine. Ce changement nécessite un redémarrage. Par défaut : désactivé.</TXWC_HazardVacuumDesc>
+  <!-- EN: Toxin warcasket is spacer tier -->
+  <TXWC_SpacerTier>Le warcasket toxine est de niveau spatial</TXWC_SpacerTier>
+  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
+  <TXWC_SpacerTierDesc>Reconstruit le warcasket toxine au niveau spatial de 10e génération, comme le warcasket siegebreaker. Il gagne un blindage et une isolation de niveau spatial, une résistance aux toxines et aux effets psychiques, la résistance au vide{0} et un bouclier d'énergie, sans pénalité de vitesse. En contrepartie, il coûte des composants avancés et du plastacier et nécessite la recherche « spacer warcaskets » (warcaskets spatiaux). Les pirates vétérans peuvent aussi le porter. Par défaut : désactivé.</TXWC_SpacerTierDesc>
+
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <TXWC_SpacerShortDescription_Armor>Coque warcasket spécialisée de technologie spatiale, offrant une protection standard. Elle est équipée d'un réservoir de gaz tox qui se purge autour du pilote.</TXWC_SpacerShortDescription_Armor>
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <TXWC_SpacerShortDescription_Shoulders>Épaulières warcasket spécialisées de technologie spatiale, offrant une protection standard. Elles sont équipées de jets montés sur les épaules qui pulvérisent le gaz tox du réservoir de la coque.</TXWC_SpacerShortDescription_Shoulders>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
+  <TXWC_SpacerShortDescription_Helmet>Casque warcasket spécialisé de technologie spatiale, offrant une protection standard. Étanche, il est muni d'un respirateur qui arrête le gaz tox et le renvoie dans le réservoir de la coque.</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armour designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armours have been improved, generally reducing restrictions on mixing pieces of different armour series even across generations. -->
+  <TXWC_SpacerLoreGeneration>Les warcaskets de 10e génération ont en réalité été adaptés à partir d'équipements pirates capturés, puis améliorés par les divisions de recherche militaire des gouvernements grâce à des modèles avancés d'armure motorisée. L'accès à davantage de ressources de grande qualité et l'objectif d'en équiper des vétérans de combat qui n'auraient autrement pas pu servir ont conduit le programme à créer de véritables cuirassés à un seul pilote. La polyvalence des armures a été améliorée, ce qui réduit en général les restrictions sur la combinaison de pièces de séries différentes, même d'une génération à l'autre.</TXWC_SpacerLoreGeneration>
+  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>La série toxine est conçue pour la guerre chimique. Un réservoir logé dans la coque alimente des évents autour du pilote et des jets de gaz sur les épaulières, et le respirateur du casque renvoie le gaz dans le réservoir. Ensemble, les pièces immunisent le pilote contre les toxines.</TXWC_SpacerLoreSeries>
+
+  <!-- EN: Toxin warcasket resists vacuum -->
+  <TXWC_ToxinVacuum>Le warcasket toxine résiste au vide</TXWC_ToxinVacuum>
+  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
+  <TXWC_ToxinVacuumDesc>Donne au warcasket toxine la résistance au vide du niveau spatial, sans le reste de ce niveau. Par défaut : désactivé.</TXWC_ToxinVacuumDesc>
+  <!-- EN:  (included by spacer tier) -->
+  <TXWC_IncludedInSpacerTierSuffix> (inclus dans le niveau spatial)</TXWC_IncludedInSpacerTierSuffix>
+
+  <!-- EN: Hazard warcasket resists vacuum -->
+  <TXWC_HazardVacuum>Le warcasket hazard résiste au vide</TXWC_HazardVacuum>
+  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
+  <TXWC_HazardVacuumDesc>Donne au warcasket hazard la résistance au vide du niveau spatial. Par défaut : désactivé.</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix> (nécessite un redémarrage)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->

@@ -104,6 +104,18 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | (requires Vanilla Races Expanded - Waster) | ` (Vanilla Races Expanded - Wasterが必要)` | The Odyssey suffix pattern; the mod title stays English. |
 | the tank feeds ... (setting, on by default) (Workshop bullet) | タンクが...にガスを供給します(設定,デフォルトはOn). | Coined; parenthetical attached before the period as in the page's Combat Extended bullet (未検証です(報告歓迎).). |
 
+## Spacer tier setting
+
+| English | Japanese | Grounding |
+|---|---|---|
+| aiming time (the gas jet's warmup slider) | 照準時間 | Core StatDef `AimingDelayFactor.label`; the slider label is `照準時間 (秒)`. Core's `RangedWarmupTime_Desc` (狙いを定め始めてから発砲するまで) shapes the tooltip. |
+| spacer tier (the setting) / is spacer tier (toggle label) | 宇宙世紀仕様 / トキシン・ウォーキャスケットの宇宙世紀仕様 | Coined: 宇宙世紀 (Core Keyed `TechLevel_Spacer`) + 仕様; toggle is a noun phrase, the shape of the vacuum toggles. Suffix ` (宇宙世紀仕様に含まれる)` follows ` (再起動が必要)`. |
+| resists vacuum (toggle labels) | `<セット>`・ウォーキャスケットの真空耐性 | The existing Hazard label, kept for both toggles (Japanese has no singular/plural to track). |
+| Specialized spacer-tech warcasket `<part>` with standard protection (spacer opener) | 宇宙技術を用いた特殊なウォーキャスケット`<パーツ>`で,標準的な防護性能を備えています. | Shipcracker's spacer opener (宇宙技術を用いた特殊な...で,) with 標準的な防護性能 coined against the 7th-gen 防護性能に優れる. The feature clause is the DefInjected one verbatim. |
+| 10th-generation paragraph (`TXWC_SpacerLoreGeneration`) | 第10世代のウォーキャスケットは,実は鹵獲した宙賊の装備を改造したもので,... | Translated; no community VFEP pack exists. 宙賊 is Core `Pirate.label`; register and shape follow this mod's 7th-generation paragraph. "Dreadnoughts" is 弩級の兵器. |
+| veteran raiders (VFEP's veteran pawnkind) | ベテランの襲撃者 | VFEP PawnKind label `veteran` in katakana; 襲撃者 from Core quest and description text. |
+| spacer components / shield bubble / toxic resistance / psychic resistance | 先進コンポーネント / シールドバブル / 毒耐性 / 精神感応性の抑制 | Core `ComponentSpacer.label`; Biotech `Mech_Centurion.description`; Core `ToxicResistance.label`; Core `PsychicSensitivity` (精神感応性) with the 抑える verb of the vanilla weapon traits. |
+
 ## Pending native review
 
 Inherited and still open there: ショルダーアーマー and the resulting label
@@ -122,3 +134,7 @@ The VREW update pass (machine-assisted): 毒ガス吸収 for VREW's "tox
 absorption" gene and 汚染変異 for its "pollution mutations" (no Japanese
 VREW translation to align with), 有効な状態に保たれる for their staying active, and the toggle
 label タンクによるウェイスターの毒ガス吸収.
+
+The spacer tier pass (machine-assisted): 宇宙世紀仕様 for "spacer tier",
+標準的な防護性能 for "standard protection", the 10th-generation paragraph
+(no community rendering), and ベテランの襲撃者.

@@ -101,6 +101,19 @@ multi-word noun gets its `s` on the last word.
 | Costs no gas. | Ne consomme aucun gaz. | **Coined**, plain French. |
 | ` (requires Vanilla Races Expanded - Waster)` | ` (nécessite Vanilla Races Expanded - Waster)` | Pattern of `(nécessite Odyssey)`; the mod title stays in English. |
 
+## Grounded in the spacer tier update pass
+
+| English | French | Grounding |
+|---|---|---|
+| aiming time (the jet's warmup slider) | temps de visée (`Temps de visée (secondes)`) | Core `AimingDelayFactor.label` and Keyed `RangedWarmupTime` = `temps de visée`; the inherited Shipcracker aiming row agrees. |
+| spacer tier | niveau spatial (`de niveau spatial`, `au niveau spatial de 10e génération`) | Core `TechLevel_Spacer` = `spatial` on Keyed `ResearchCostComparison`'s `niveau technologique`. |
+| Specialized spacer-tech ... with standard protection (spacer opener) | `<Part> warcasket spécialisé(e)(s) de technologie spatiale, offrant une protection standard.` then the 7th-gen feature sentence verbatim | Shipcracker's spacer opener (`Coque warcasket spécialisée de technologie spatiale`); `offrant une protection standard` replaces `plus protecteur mais plus lourd`. |
+| 10th-generation paragraph (VFEP) | translated, no community pack (see VFEP grounding above); `armure motorisée` for power armour, `cuirassés à un seul pilote` for single-user dreadnoughts | Core `Apparel_PowerArmor.description` = `Une armure motorisée`; the rest coined in the 7th-gen paragraph's register. |
+| veteran raiders (VFEP spacer pirates) | pirates vétérans | **Coined.** Core `pillard` is the Scavenger pawn kind, so `pirates` names VFEP's raiders unambiguously; Core `vétéran` (`MechWarVeteran77.titleShort`). |
+| siegebreaker (in-game settings text) | warcasket siegebreaker | Kept English in-game for the same reason as `hazard`: VFEP's label is untranslated. The Workshop page's `Brise-siège` stays Workshop-only. |
+| shield bubble / spacer components | bouclier d'énergie / composants avancés | Core `Apparel_ShieldBelt.label`, `ComponentSpacer.label`. |
+| ` (included by spacer tier)` | ` (inclus dans le niveau spatial)` | Pattern of `(nécessite un redémarrage)`. |
+
 ## Pending native review
 
 Still open from the Shipcracker review, inherited as-is: `fonderie de
@@ -118,3 +131,7 @@ The VRE Waster update pass's coinages, also machine-assisted: `absorption
 tox` for the gene (on `résistance tox`), `mutations liées à la pollution`,
 `alimente` for "feeds", and `Ne consomme aucun
 gaz`.
+
+The spacer tier update pass's coinages, also machine-assisted: `niveau
+spatial` for the tier, `offrant une protection standard`, `pirates vétérans`,
+`cuirassés à un seul pilote`, and keeping `siegebreaker` in English in-game.

@@ -87,6 +87,19 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | `Default: on.` | 默认：开。 | Core Keyed `On` = 开, pairing with this file's `Default: off.` = 默认：关 (Core `Off`). The inherited settings row's 默认：启用 (Core `Enabled`, as Shipcracker's `SCWC_VacuumBurnDesc`) has no Off counterpart in this file, so it is not used here. |
 | Vanilla Races Expanded - Waster | Vanilla Races Expanded - Waster | Kept in English (Workshop title); suffix （需要Vanilla Races Expanded - Waster）. |
 
+## v1.2 update pass (spacer tier, aiming time)
+
+| English | Simplified Chinese | Grounding |
+|---|---|---|
+| aiming time (the jet's warmup slider) | 瞄准时间（秒） | Core Keyed `RangedWarmupTime` and `AimingDelayFactor.label` = 瞄准时间; the desc echoes `Stat_Thing_Weapon_RangedWarmupTime_Desc` (从瞄准到开火). |
+| spacer tier / spacer (armor, costs) | 太空时代级别 | Community pack's 10th-gen opener (特化型太空时代级别…); vanilla `TechLevel_Spacer` = 太空时代. Toggle label 毒素型战棺升级为太空时代级别, declarative like 险境型战棺可抵御真空. |
+| "Specialized spacer-tech warcasket ... with standard protection" | 特化型太空时代级别战棺`<part>`，在不增加机体重量的同时极大幅提升了防护性 | Community pack's Siegebreaker / Controller / Sarcophagus openers, every "standard protection" part; our 7th-gen feature clause follows unchanged. |
+| 10th-generation paragraph (`TXWC_SpacerLoreGeneration`) | 第十代战棺有些特殊，它们是用从海盗那里收缴的设备改造而成的…… | Community pack's Siegebreaker text verbatim (loose, as the pack is), its —— reflowed to a comma like the 7th-gen paragraph. |
+| veteran raiders (VFEP's spacer-warcasket pirates) | 前来袭击的精英机兵 | The pack's `VFEP_Veteran.label` = 精英机兵 (1.6 PawnKindDef.xml), the name players see on those raiders; 袭击 from Core. Same as zh-Hant. |
+| shield bubble / psychic resistance / no speed penalty | 能量护盾 / 心灵抗性 / 无移动速度惩罚 | Shipcracker glossary (能量护盾); Core 心灵敏感度 family; Core `MoveSpeed.label` = 移动速度. |
+| spacer components | 高级零部件 | Core `ComponentSpacer.label`. |
+| (included by spacer tier) suffix | （太空时代级别已包含） | Coined, shaped like （需要重启）. |
+
 ## Pending native review
 
 Inherited and still open there: 呼吸器 (coined, no vanilla or community
@@ -99,3 +112,6 @@ This mod's first pass (machine-assisted): 毒素型 (set name), 毒气罐,
 The VREW Waster update pass (machine-assisted): 毒气吸收 (gene), 污染突变,
 the toggle label 毒气罐供给污骸种的毒气吸收, and 默认：开 beside this
 file's 默认：关 (开 would mirror Core's On/Off pair).
+
+The v1.2 update pass (machine-assisted): the toggle 毒素型战棺升级为太空时代级别,
+and the suffix （太空时代级别已包含）.

@@ -91,6 +91,21 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | Default: on. / On | 預設值：開啟。 / 開啟 | Core Keyed `On` 開啟; same shape as the inherited 預設值：關閉。 |
 | requires VRE - Waster (suffix) | (需要Vanilla Races Expanded - Waster) | Mod title kept in English, set solid like the Workshop page's Latin names; ASCII parens solid, no leading space, like the other suffixes. |
 
+## Grounded in the v1.2 update (spacer tier, aiming time)
+
+| English | ChineseTraditional | Grounding |
+|---|---|---|
+| aiming time (the gas jet's warmup, settings) | 瞄準時間(秒) | Core `AimingDelayFactor.label` and Keyed `RangedWarmupTime` 瞄準時間; the tooltip mirrors `Stat_Thing_Weapon_RangedWarmupTime_Desc` 此武器從瞄準到發射的時間。 |
+| spacer tier | 太空級 | Coined: 太空 is Core `TechLevel_Spacer`, 級 as in a grade. Toggle label 毒素型戰棺為太空級; 太空級的真空抵抗力 for "the spacer tier's vacuum resistance". |
+| (included by spacer tier) (suffix) | (太空級已包含) | Same solid ASCII-paren, no-leading-space shape as the other suffixes. |
+| Toxin / Hazard warcasket resists vacuum (toggles) | 毒素型戰棺具真空抵抗力 / 險境型戰棺具真空抵抗力 | Sibling labels; the Hazard one is unchanged from the first pass. |
+| Specialized spacer-tech warcasket X with standard protection (opener) | 特化型太空科技戰棺X，在不增加機體重量的同時極大幅提升了防護性。 | zh-Hans pack's Siegebreaker / Controller / Sarcophagus opener (特化型太空时代级别战棺X，在不增加机体重量的同时极大幅提升了防护性), with the inherited 特化型太空科技 prefix. Loose for "standard protection", but it is how the pack reads on every spacer set, as the 7th-gen opener follows the pack's Cataphract. |
+| 10th-generation paragraph | 第十代戰棺有些特殊，它們是… | zh-Hans pack's paragraph (repeated on every spacer set, here from `VFEP_WarcasketHelmet_Siegebreaker.description`), dash reflowed into ，; 兼容性→相容性 (Core `Incompatible` 不相容), 借助→藉助, quotes →「戰棺」. |
+| veteran raiders | 前來襲擊的精英機兵 | zh-Hans pack `VFEP_Veteran.label` 精英机兵 (fetched 2026-10-22 from q847633684/Vanilla-Expanded-ZH 1.6 PawnKindDef.xml); 精英 attested in zh-Hant (Odyssey 打撈者精英). |
+| spacer components | 高級零件 | Core `ComponentSpacer.label`. |
+| spacer armor and insulation / no speed penalty / toxic and psychic resistance / shield bubble | 太空級的護甲與隔熱性能 / 無移動速度懲罰 / 毒素與心靈抗性 / 一層護盾 | Core `ToxicResistance.label` 毒素抗性, `MoveSpeed` 移動速度, Keyed 速度懲罰 (`WillGetWorkSpeedPenalty`), `ShieldBelt.label` 護盾; 隔熱 and 心靈抗性 coined (stat labels 隔絕 - 冷/熱 and 心靈敏感度 do not read as prose). |
+| spacer plating / spacer costs (Workshop) | 太空級裝甲 / 造價也提高到太空級 | Coined from the rows above. |
+
 ## Pending native review
 
 Every "derived" term above: converted from the zh-Hans pack and
@@ -107,3 +122,8 @@ Traditional pack).
 Coinages from the 2026-10-17 VRE Waster update, pending native review:
 「毒氣吸收」基因 (tox absorption), 污染突變 (pollution mutations), the
 setting label 毒氣罐供荒地人吸收毒氣, and 保持活躍 for the mutations staying active.
+
+Coinages from the 2026-10-22 v1.2 update, pending native review: 太空級
+(spacer tier), the adopted pack opener's 極大幅 for "standard protection",
+前來襲擊的精英機兵 (veteran raiders), 隔熱性能 and 心靈抗性 in the spacer tier
+tooltip.

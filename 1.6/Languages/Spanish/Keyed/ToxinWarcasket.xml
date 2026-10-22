@@ -54,6 +54,11 @@
   <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
   <TXWC_JetRangeDesc>Distancia que alcanza el chorro de gas. Un chorro más largo reparte el mismo gas con menos densidad. Por defecto: {0}.</TXWC_JetRangeDesc>
 
+  <!-- EN: Aiming time (seconds) -->
+  <TXWC_JetWarmup>Tiempo para apuntar (segundos)</TXWC_JetWarmup>
+  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <TXWC_JetWarmupDesc>Tiempo que tarda el piloto en apuntar el chorro de gas antes de dispararlo. Por defecto: {0}.</TXWC_JetWarmupDesc>
+
   <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
   <TXWC_JetSummary>Un chorro: {0} de biocombustible para {1} casillas de toxigás ({2} packs de tóxicos). Un depósito lleno da para {3}; las hombreras solas, para {4}.</TXWC_JetSummary>
 
@@ -75,10 +80,33 @@
   <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
   <TXWC_AbsorbSummary>Una absorción aspira de las {0} casillas que rodean al piloto. Si una nube las cubre por completo, recupera {1} de biocombustible.</TXWC_AbsorbSummary>
 
-  <!-- EN: Hazard warcaskets resist vacuum -->
-  <TXWC_HazardVacuum>Los ataúdes de guerra hazard resisten el vacío</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
-  <TXWC_HazardVacuumDesc>Da al ataúd de guerra hazard la resistencia al vacío de los ataúdes de guerra de la era espacial, lo que lo distingue aún más del ataúd de guerra toxina. Cambiar esta opción requiere un reinicio. Por defecto: desactivado.</TXWC_HazardVacuumDesc>
+  <!-- EN: Toxin warcasket is spacer tier -->
+  <TXWC_SpacerTier>El ataúd de guerra toxina es de la era espacial</TXWC_SpacerTier>
+  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
+  <TXWC_SpacerTierDesc>Reconstruye el ataúd de guerra toxina en el nivel de la era espacial de 10.ª generación, al igual que el Siegebreaker. Gana blindaje y aislamiento de la era espacial, resistencia tóxica y psíquica, resistencia al vacío{0} y una burbuja de escudo, sin penalización de velocidad, pero cuesta componentes avanzados y plastiacero, y requiere la investigación "ataúdes de guerra de la era espacial". Los asaltantes veteranos también pueden llevarlo. Por defecto: desactivado.</TXWC_SpacerTierDesc>
+
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <TXWC_SpacerShortDescription_Armor>Un armazón especializado de ataúd de guerra de tecnología espacial con una protección estándar, equipado con un depósito de toxigás que se purga alrededor del piloto.</TXWC_SpacerShortDescription_Armor>
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <TXWC_SpacerShortDescription_Shoulders>Unas hombreras especializadas de ataúd de guerra de tecnología espacial con una protección estándar, equipadas con toberas que rocían toxigás desde el depósito del armazón.</TXWC_SpacerShortDescription_Shoulders>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
+  <TXWC_SpacerShortDescription_Helmet>Un casco especializado de ataúd de guerra de tecnología espacial con una protección estándar. Es hermético y lleva un respirador que impide el paso del toxigás y lo devuelve al depósito del armazón.</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armour designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armours have been improved, generally reducing restrictions on mixing pieces of different armour series even across generations. -->
+  <TXWC_SpacerLoreGeneration>Los ataúdes de guerra de 10.ª generación se adaptaron en realidad a partir de equipos piratas capturados, y las divisiones de investigación militar del gobierno los mejoraron con diseños avanzados de servoarmadura. El acceso a una mayor cantidad de recursos de alta calidad y el objetivo de equiparlos a veteranos de combate que, de otro modo, no podrían servir hicieron que el programa creara verdaderos acorazados de una sola persona. Se ha mejorado la versatilidad de las armaduras, lo que en general reduce las restricciones al combinar piezas de distintas series, incluso de otras generaciones.</TXWC_SpacerLoreGeneration>
+  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>La serie Toxina está hecha para la guerra química. Un depósito en el armazón alimenta las válvulas de purga que rodean al piloto y las toberas de gas de las hombreras, y el respirador del casco devuelve el gas al depósito. Juntas, las piezas hacen al piloto inmune a las toxinas.</TXWC_SpacerLoreSeries>
+
+  <!-- EN: Toxin warcasket resists vacuum -->
+  <TXWC_ToxinVacuum>El ataúd de guerra toxina resiste el vacío</TXWC_ToxinVacuum>
+  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
+  <TXWC_ToxinVacuumDesc>Da al ataúd de guerra toxina la resistencia al vacío del nivel de la era espacial, sin el resto del nivel. Por defecto: desactivado.</TXWC_ToxinVacuumDesc>
+  <!-- EN:  (included by spacer tier) -->
+  <TXWC_IncludedInSpacerTierSuffix> (incluido en el nivel de la era espacial)</TXWC_IncludedInSpacerTierSuffix>
+
+  <!-- EN: Hazard warcasket resists vacuum -->
+  <TXWC_HazardVacuum>El ataúd de guerra hazard resiste el vacío</TXWC_HazardVacuum>
+  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
+  <TXWC_HazardVacuumDesc>Da al ataúd de guerra hazard la resistencia al vacío del nivel de la era espacial. Por defecto: desactivado.</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix> (requiere reinicio)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->

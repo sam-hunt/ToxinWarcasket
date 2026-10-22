@@ -1,6 +1,6 @@
 {
   "meta": {
-    "gameBuild": "1.7.4981 rev136",
+    "gameBuild": "1.7.4985 rev1269",
     "activeDlcs": [
       "Core",
       "Biotech"
@@ -62,6 +62,10 @@
       "TXWC_WarcasketShoulders_Toxin.shortDescription": {
         "english": "Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted jets that spray tox gas from the shell's tank.",
         "required": true
+      },
+      "TXWC_Warcasket_Toxin.comps.CompShieldBubble.shieldTexPath": {
+        "english": "Other/ShieldBubble",
+        "normalized": "TXWC_Warcasket_Toxin.comps.4.shieldTexPath"
       },
       "TXWC_Warcasket_Toxin.comps.CompToxTank.chargeNoun": {
         "english": "unit",

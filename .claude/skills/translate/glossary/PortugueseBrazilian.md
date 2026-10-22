@@ -92,6 +92,15 @@ reconciled against the community pack's `VFE_Pirates_ThingDef.xml` and
 | Tank feeds waster tox absorption (settings toggle) | Tanque alimenta a absorção de gás tóxico dos toxicadores; Workshop: `o tanque alimenta o gene de absorção de gás tóxico de um piloto toxicador` | coined, label shape of `TXWC_HazardVacuum` |
 | Default: on. / on by default | Padrão: ligado. / `(configuração, ligada por padrão)` (agreeing with `configuração`) | Core Keyed `On` "Ligado", mirroring `Padrão: desligado.` |
 | (requires Vanilla Races Expanded - Waster) | (requer Vanilla Races Expanded - Waster) | Title kept in English (VREW's Workshop title), `(requer Odyssey)` pattern |
+| aiming time (the gas jet's warmup, settings slider) | Tempo de pontaria (segundos); desc verb `mirar` | Core `AimingDelayFactor.label` "tempo de pontaria"; `mirar` matches the Workshop page's "A mira" |
+| spacer tier (settings) | nível espacial (`Carcaça de guerra toxina é de nível espacial`; `no nível espacial de 10ª geração`; suffix ` (parte do nível espacial)`) | Core Keyed `TechLevel_Spacer` "Espacial"; the suffix avoids a participle that would have to agree with an unnamed setting |
+| spacer armor / spacer components / shield bubble | blindagem de nível espacial / componentes avançados / uma bolha de escudo | Core `ComponentSpacer.label` "componente avançado"; the other two coined |
+| standard protection (10th-gen opener) | Carcaça de guerra de tecnologia espacial especializada com proteção padrão, ... (especializadas/equipadas for ombreiras, especializado for capacete) | Pack `VFEP_Warcasket_Siegebreaker` / `VFEP_WarcasketShoulders_Siegebreaker` / `VFEP_WarcasketHelmet_Siegebreaker` descriptions, verbatim |
+| 10th-generation paragraph (`TXWC_SpacerLoreGeneration`) | "As carcaças de guerra de 10ª geração foram, na verdade, adaptadas ..." | Pack `VFEP_Warcasket_Siegebreaker.description` paragraph 2, verbatim (no dashes to reflow; its English "dreadnoughts" kept as the pack has it) |
+| spacer warcaskets (research) | carcaças de guerra espaciais | Pack `VFEP_SpacerWarcaskets.label` |
+| research cited in prose (Keyed and Workshop) | ASCII double-quoted lowercase label: `a pesquisa "carcaças de guerra espaciais"` | No vanilla precedent; pt-BR research labels are lowercase, so the quotes do the job the English's Title Case does. Kept on the Workshop page even where the English dropped its quotes. Matches Shipcracker's pt-BR page |
+| veteran raiders | invasores veteranos | Core `Raid` "invasão"; pack `VFEP_Veteran.label` "veterano" |
+| Hazard / Toxin warcasket resists vacuum (toggles) | Carcaça de guerra de risco / toxina resiste ao vácuo; desc `Dá à carcaça de guerra ... a resistência ao vácuo do nível espacial` | sibling toggles share one shape; Core `VacuumResistance.label` "Resistência ao Vácuo" |
 
 ## Pending native review
 

@@ -54,6 +54,11 @@
   <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
   <TXWC_JetRangeDesc>毒氣噴射能到達的距離。噴得越遠，同樣的毒氣散得越稀。預設值：{0}。</TXWC_JetRangeDesc>
 
+  <!-- EN: Aiming time (seconds) -->
+  <TXWC_JetWarmup>瞄準時間(秒)</TXWC_JetWarmup>
+  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <TXWC_JetWarmupDesc>駕駛員從瞄準到發射毒氣噴射所需的時間。預設值：{0}。</TXWC_JetWarmupDesc>
+
   <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
   <TXWC_JetSummary>每次噴射：{0}單位化合燃料，可產生{1}格毒氣({2}個毒氣背包)。滿罐可噴射{3}次，僅靠護肩則為{4}次。</TXWC_JetSummary>
 
@@ -75,10 +80,33 @@
   <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
   <TXWC_AbsorbSummary>每次吸收會吸入駕駛員周圍{0}格內的氣體。這些格子全被毒雲覆蓋時，可存入{1}單位化合燃料。</TXWC_AbsorbSummary>
 
-  <!-- EN: Hazard warcaskets resist vacuum -->
+  <!-- EN: Toxin warcasket is spacer tier -->
+  <TXWC_SpacerTier>毒素型戰棺為太空級</TXWC_SpacerTier>
+  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
+  <TXWC_SpacerTierDesc>以第十代太空級重新打造毒素型戰棺，與破襲型同級。它將獲得太空級的護甲與隔熱性能、無移動速度懲罰、毒素與心靈抗性、真空抵抗力{0}，以及一層護盾，但需耗用高級零件與塑鋼，並須完成「太空戰棺」研究。前來襲擊的精英機兵也可能穿戴它。預設值：關閉。</TXWC_SpacerTierDesc>
+
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <TXWC_SpacerShortDescription_Armor>特化型太空科技戰棺裝甲，在不增加機體重量的同時極大幅提升了防護性。配備可在駕駛員周圍排放毒氣的毒氣罐。</TXWC_SpacerShortDescription_Armor>
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <TXWC_SpacerShortDescription_Shoulders>特化型太空科技戰棺護肩，在不增加機體重量的同時極大幅提升了防護性。配備肩部噴射口，可噴出外殼毒氣罐內的毒氣。</TXWC_SpacerShortDescription_Shoulders>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
+  <TXWC_SpacerShortDescription_Helmet>特化型太空科技戰棺頭盔，在不增加機體重量的同時極大幅提升了防護性。以呼吸器密封，可阻擋毒氣，並將毒氣吸回外殼內的毒氣罐。</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armour designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armours have been improved, generally reducing restrictions on mixing pieces of different armour series even across generations. -->
+  <TXWC_SpacerLoreGeneration>第十代戰棺有些特殊，它們是用從海盜那裡收繳的設備改造而成的。然而，軍備的更新迭代顯然絕非易事。為了盡早將新型戰棺投入實戰，政府的軍備研發部不惜斥下巨資，並用上了最高級的動力裝甲技術。與前幾代相比，第十代的整體性能不僅獲得了全方位提升，不同型號部件間的相容性也得到了大幅改進，跨代進行組裝完全不成問題。藉助它們的力量，許多不甘於因負傷殘疾就早早退役的老兵們也得以迅速重返戰場。在許多人心中，只有第十代才是最配得上「戰棺」這個響亮名號的。</TXWC_SpacerLoreGeneration>
+  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>毒素型專為化學戰爭打造。外殼內的毒氣罐為駕駛員周圍的排氣口與護肩上的噴射口供氣，頭盔的呼吸器則將毒氣吸回罐中。整套部件讓駕駛員對毒素免疫。</TXWC_SpacerLoreSeries>
+
+  <!-- EN: Toxin warcasket resists vacuum -->
+  <TXWC_ToxinVacuum>毒素型戰棺具真空抵抗力</TXWC_ToxinVacuum>
+  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
+  <TXWC_ToxinVacuumDesc>讓毒素型戰棺擁有太空級的真空抵抗力，但不包含太空級的其他效果。預設值：關閉。</TXWC_ToxinVacuumDesc>
+  <!-- EN:  (included by spacer tier) -->
+  <TXWC_IncludedInSpacerTierSuffix>(太空級已包含)</TXWC_IncludedInSpacerTierSuffix>
+
+  <!-- EN: Hazard warcasket resists vacuum -->
   <TXWC_HazardVacuum>險境型戰棺具真空抵抗力</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
-  <TXWC_HazardVacuumDesc>讓險境型戰棺擁有太空戰棺的真空抵抗力，與毒素型戰棺進一步區隔。變更此設定需要重新啟動。預設值：關閉。</TXWC_HazardVacuumDesc>
+  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
+  <TXWC_HazardVacuumDesc>讓險境型戰棺擁有太空級的真空抵抗力。預設值：關閉。</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix>(需要重新啟動)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->

@@ -98,6 +98,19 @@ that plural unchanged.
 | Default: on. | Standard: an. | The file's `Standard: aus.` with the "On" row above (Core Keyed `On`). Workshop bullet: (Einstellung, standardmäßig an). |
 | (requires Vanilla Races Expanded - Waster) | (erfordert Vanilla Races Expanded - Waster) | Same shape as the Odyssey suffix; the mod title stays English. |
 
+## Grounded in the v1.2 update pass
+
+| English | German | Grounding |
+|---|---|---|
+| aiming time (the gas jet's warmup slider) | Anvisierungsdauer (Sekunden) | Core `AimingDelayFactor.label` and Keyed `RangedWarmupTime` (EN "Aiming time") = Anvisierungsdauer; the tooltip's "anzuvisieren" follows `AimingDelayFactor.description`. |
+| spacer tier (the setting) | Raumfahrt-Stufe; toggle label "Toxin-Kriegssarg gehört zur Raumfahrt-Stufe"; suffix " (in Raumfahrt-Stufe enthalten)" | Coined: Core `TechLevel_Spacer` = Raumfahrt plus Stufe ("tech level" = Techstufe). Suffix in the article-less shape of " (erfordert Neustart)". |
+| `<set>` warcasket resists vacuum (toggle labels) | `<Set>`-Kriegssarg ist vakuumresistent | Singular, sibling shape for the Toxin and Hazard toggles; adjective per the vacuum resistance row. |
+| specialized spacer-tech ... with standard protection (spacer short description opener) | Eine spezialisierte Kriegssarg-Hülle / Spezialisierte Kriegssarg-Schulterpanzer / Ein spezialisierter Kriegssarg-Helm aus der Raumfahrttechnik mit Standardschutz | Coined: Shipcracker's German spacer opener ("... aus der Raumfahrttechnik mit verbesserter Stoßverteilung") with "standard" as in its "Standardschild"; the feature clause is the 7th-gen DefInjected one word for word. |
+| 10th generation paragraph (VFEP lore) | Die Kriegssärge der 10. Generation gingen eigentlich aus erbeuteten Piratenmodellen hervor ... | Translated (no community VFEP German pack available); register of this file's 7th-gen paragraph. power armour = Powerrüstungen (Core `Fabrication.description`); dreadnoughts = wandelnde Schlachtschiffe; "armour series" = Baureihen, as in the 7th-gen paragraph. |
+| veteran raiders (VFEP's veteran pirates in spacer warcaskets) | Veteranen unter den Piraten ... bei Überfällen | Coined: Core `MechWarVeteran77.titleShort` = Veteran; VFEP's raiders are pirates. |
+| spacer armor and insulation / shield bubble / spacer components | Raumfahrt-Panzerung und -Isolierung / Schutzschild / Hightech-Bauteile | Core `Insulation_Cold.label` (Isolierung), Core `Make_ComponentSpacer.label` (Hightech-Bauteil); Schutzschild per Shipcracker's shield bubble row. |
+| psychic resistance (spacer tier desc) | Resistenz gegen ... mentale Effekte | Core renders psychic as mental (`PsychicSensitivity.label` = mentale Sensibilität, `PsychicShock` = mentaler Schock). The Workshop FAQ's older "psychische Effekte" is left as is. |
+
 ## Pending native review
 
 Inherited from the Shipcracker glossary, still open there: Kriegssarg for
@@ -123,3 +136,8 @@ for its pollution mutations; speisen for the tank feeding the gene (toggle
 label "Tank speist die Giftgasabsorption der Ödländer"); Giftgaswolke; the
 toggle tooltip and the Workshop bullet (Der Tank speist das Gen
 'Giftgasabsorption' eines Ödländer-Piloten).
+
+The v1.2 update pass (machine-assisted): Anvisierungsdauer, Raumfahrt-Stufe
+and its toggle and suffix, the "mit Standardschutz" spacer opener, the
+10th-generation paragraph, "Veteranen unter den Piraten" and the
+spacer tier tooltip.

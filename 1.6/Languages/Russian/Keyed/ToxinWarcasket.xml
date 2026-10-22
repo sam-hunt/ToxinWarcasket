@@ -54,6 +54,11 @@
   <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
   <TXWC_JetRangeDesc>Как далеко достаёт газовая струя. Чем длиннее струя, тем сильнее рассеивается тот же газ. По умолчанию: {0}.</TXWC_JetRangeDesc>
 
+  <!-- EN: Aiming time (seconds) -->
+  <TXWC_JetWarmup>Время прицеливания (в секундах)</TXWC_JetWarmup>
+  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <TXWC_JetWarmupDesc>Сколько времени пилот целится перед выпуском газовой струи. По умолчанию: {0}.</TXWC_JetWarmupDesc>
+
   <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
   <TXWC_JetSummary>Одна струя: {0} ед. химтоплива. Клеток токсичного газа: {1} (в пересчёте на токсичные ранцы: {2}). Струй в полном баке: {3}, в самих наплечниках: {4}.</TXWC_JetSummary>
 
@@ -75,10 +80,33 @@
   <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
   <TXWC_AbsorbSummary>Клеток вокруг пилота в зоне поглощения: {0}. Сплошное облако над ними пополнит бак на {1} ед. химтоплива.</TXWC_AbsorbSummary>
 
-  <!-- EN: Hazard warcaskets resist vacuum -->
+  <!-- EN: Toxin warcasket is spacer tier -->
+  <TXWC_SpacerTier>Токсичная броня мертвеца космического уровня</TXWC_SpacerTier>
+  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
+  <TXWC_SpacerTierDesc>Переводит токсичную броню мертвеца на космический уровень десятого поколения, как у прорывной брони мертвеца. Она получает защиту и изоляцию космического уровня, сопротивление токсинам и психическим воздействиям, устойчивость к вакууму{0} и силовой щит, а штрафа к скорости у неё нет. Взамен для изготовления нужны продвинутые компоненты, пласталь и исследование «Космическая броня мертвеца». Её могут носить и налётчики-ветераны. По умолчанию: выключено.</TXWC_SpacerTierDesc>
+
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <TXWC_SpacerShortDescription_Armor>Специализированная броня мертвеца со стандартными защитными характеристиками, сделанная по технологиям космического уровня. Встроенный бак выпускает токсичный газ вокруг пилота.</TXWC_SpacerShortDescription_Armor>
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <TXWC_SpacerShortDescription_Shoulders>Специализированные наплечники брони мертвеца со стандартными защитными характеристиками, сделанные по технологиям космического уровня. Сопла на плечах распыляют токсичный газ из бака брони.</TXWC_SpacerShortDescription_Shoulders>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
+  <TXWC_SpacerShortDescription_Helmet>Специализированный шлем брони мертвеца со стандартными защитными характеристиками, сделанный по технологиям космического уровня. Герметичный респиратор не пропускает токсичный газ и втягивает его обратно в бак брони.</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armour designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armours have been improved, generally reducing restrictions on mixing pieces of different armour series even across generations. -->
+  <TXWC_SpacerLoreGeneration>Броня мертвеца десятого поколения была создана на основе образцов, найденных на захваченных пиратских судах. Команды технических специалистов, подчиняющихся правительству, пошли в направлении улучшения имеющихся образцов теми технологиями продвинутой силовой брони, которые уже были у них в распоряжении. Доступ к высококачественным материалам и задача оснастить бронёй ветеранов, которые в иных условиях были бы неспособны продолжать несение службы, привело к созданию дредноутов, для управления которыми требовался единственный оператор. Получившиеся образцы брони отличаются повышенной универсальностью, что позволяет устанавливать на этот вариант компоненты от брони других поколений с меньшими потерями производительности.</TXWC_SpacerLoreGeneration>
+  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>Токсичная серия создана для химической войны. Бак в броне питает клапаны вокруг пилота и газовые сопла на наплечниках, а респиратор шлема втягивает газ обратно в бак. Полный комплект делает пилота невосприимчивым к токсинам.</TXWC_SpacerLoreSeries>
+
+  <!-- EN: Toxin warcasket resists vacuum -->
+  <TXWC_ToxinVacuum>Токсичная броня мертвеца устойчива к вакууму</TXWC_ToxinVacuum>
+  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
+  <TXWC_ToxinVacuumDesc>Даёт токсичной броне мертвеца устойчивость к вакууму космического уровня, но не остальные его свойства. По умолчанию: выключено.</TXWC_ToxinVacuumDesc>
+  <!-- EN:  (included by spacer tier) -->
+  <TXWC_IncludedInSpacerTierSuffix> (входит в космический уровень)</TXWC_IncludedInSpacerTierSuffix>
+
+  <!-- EN: Hazard warcasket resists vacuum -->
   <TXWC_HazardVacuum>Защитная броня мертвеца устойчива к вакууму</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
-  <TXWC_HazardVacuumDesc>Даёт защитной броне мертвеца такую же устойчивость к вакууму, как у космической брони мертвеца, и сильнее отличает её от токсичной. Изменение требует перезапуска игры. По умолчанию: выключено.</TXWC_HazardVacuumDesc>
+  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
+  <TXWC_HazardVacuumDesc>Даёт защитной броне мертвеца устойчивость к вакууму космического уровня. По умолчанию: выключено.</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix> (требуется перезапуск)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->

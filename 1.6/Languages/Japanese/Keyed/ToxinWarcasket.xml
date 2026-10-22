@@ -54,6 +54,11 @@
   <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
   <TXWC_JetRangeDesc>ガス噴射が届く距離です.遠くまで届くほど,同じ量のガスが薄く広がります.デフォルト: {0}.</TXWC_JetRangeDesc>
 
+  <!-- EN: Aiming time (seconds) -->
+  <TXWC_JetWarmup>照準時間 (秒)</TXWC_JetWarmup>
+  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <TXWC_JetWarmupDesc>パイロットがガス噴射の狙いを定め始めてから噴射するまでにかかる時間です.デフォルト: {0}.</TXWC_JetWarmupDesc>
+
   <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
   <TXWC_JetSummary>噴射1回: バイオ液化燃料{0}で毒ガス{1}タイル分 (毒ガスパック{2}個分).満タンのタンクで{3}回,ショルダーアーマー単体で{4}回使えます.</TXWC_JetSummary>
 
@@ -75,10 +80,33 @@
   <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
   <TXWC_AbsorbSummary>ガス吸収1回で,パイロットの周囲{0}タイルからガスを吸い込みます.その全体をガスが覆っていれば,バイオ液化燃料{1}を蓄えます.</TXWC_AbsorbSummary>
 
-  <!-- EN: Hazard warcaskets resist vacuum -->
+  <!-- EN: Toxin warcasket is spacer tier -->
+  <TXWC_SpacerTier>トキシン・ウォーキャスケットの宇宙世紀仕様</TXWC_SpacerTier>
+  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
+  <TXWC_SpacerTierDesc>トキシン・ウォーキャスケットを,シージブレーカーと同じ第10世代の宇宙世紀仕様に作り直します.宇宙技術による装甲と断熱性,移動速度のペナルティなし,毒耐性と精神感応性の抑制,真空耐性{0},シールドバブルを得る代わりに,材料に先進コンポーネントとプラスチールを使い,研究「宇宙世紀のウォーキャスケット」が必要になります.ベテランの襲撃者も装着するようになります.デフォルト: Off.</TXWC_SpacerTierDesc>
+
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <TXWC_SpacerShortDescription_Armor>宇宙技術を用いた特殊なウォーキャスケット外殻で,標準的な防護性能を備えています.パイロットの周囲にガスを放出する毒ガスタンクを搭載しています.</TXWC_SpacerShortDescription_Armor>
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <TXWC_SpacerShortDescription_Shoulders>宇宙技術を用いた特殊なウォーキャスケットショルダーアーマーで,標準的な防護性能を備えています.外殻のタンクから毒ガスを噴射する肩部の噴射口を搭載しています.</TXWC_SpacerShortDescription_Shoulders>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
+  <TXWC_SpacerShortDescription_Helmet>宇宙技術を用いた特殊なウォーキャスケットヘルメットで,標準的な防護性能を備えています.呼吸装置で気密化されており,毒ガスを遮断するとともに,外殻のタンクへ吸い戻します.</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armour designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armours have been improved, generally reducing restrictions on mixing pieces of different armour series even across generations. -->
+  <TXWC_SpacerLoreGeneration>第10世代のウォーキャスケットは,実は鹵獲した宙賊の装備を改造したもので,政府の軍事研究部門が先進的なパワーアーマーの設計を取り入れて改良しました.高品質な資源をより多く利用できたことに加え,本来なら軍務に就けない歴戦の兵士に装着させることを目的としていたため,この計画は一人で操る弩級の兵器を生み出しました.アーマーの汎用性も高められ,異なるシリーズのパーツを,世代をまたいでも組み合わせやすくなっています.</TXWC_SpacerLoreGeneration>
+  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>トキシンシリーズは,化学戦向けに作られたものです.外殻のタンクがパイロットの周囲の放出口とショルダーアーマーのガス噴射口にガスを送り,ヘルメットの呼吸装置がガスをタンクへ吸い戻します.全パーツがそろうと,パイロットは毒素の影響を受けなくなります.</TXWC_SpacerLoreSeries>
+
+  <!-- EN: Toxin warcasket resists vacuum -->
+  <TXWC_ToxinVacuum>トキシン・ウォーキャスケットの真空耐性</TXWC_ToxinVacuum>
+  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
+  <TXWC_ToxinVacuumDesc>トキシン・ウォーキャスケットに宇宙世紀仕様の真空耐性を与えます.ほかの仕様は含みません.デフォルト: Off.</TXWC_ToxinVacuumDesc>
+  <!-- EN:  (included by spacer tier) -->
+  <TXWC_IncludedInSpacerTierSuffix> (宇宙世紀仕様に含まれる)</TXWC_IncludedInSpacerTierSuffix>
+
+  <!-- EN: Hazard warcasket resists vacuum -->
   <TXWC_HazardVacuum>ハザード・ウォーキャスケットの真空耐性</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
-  <TXWC_HazardVacuumDesc>ハザード・ウォーキャスケットに宇宙世紀のウォーキャスケットと同じ真空耐性を与え,トキシン・ウォーキャスケットとの違いをさらに際立たせます.変更には再起動が必要です.デフォルト: Off.</TXWC_HazardVacuumDesc>
+  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
+  <TXWC_HazardVacuumDesc>ハザード・ウォーキャスケットに宇宙世紀仕様の真空耐性を与えます.デフォルト: Off.</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix> (再起動が必要)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->

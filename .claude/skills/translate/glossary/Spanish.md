@@ -102,6 +102,21 @@ despite the folder name these are the VFE Pirates files).
 | Default: on. (toggle tooltip) | Por defecto: activado. | The inherited settings row, mirroring the hazard vacuum's `Por defecto: desactivado.` |
 | requires Vanilla Races Expanded - Waster (suffix) | ` (requiere Vanilla Races Expanded - Waster)` | Same frame as ` (requiere Odyssey)`; the mod title stays in English. |
 
+## Grounded in the v1.2 update pass
+
+| English | Spanish | Grounding |
+|---|---|---|
+| aiming time (the gas jet's warmup slider) | tiempo para apuntar; `Tiempo para apuntar (segundos)` | Core StatDef `AimingDelayFactor.label` = `tiempo para apuntar` (Core `WarmupTime` = `Calentamiento` reads as heating, so not used). |
+| spacer tier (the set's settings tier) | nivel de la era espacial; toggle label `El ataúd de guerra toxina es de la era espacial`; suffix ` (incluido en el nivel de la era espacial)` | Coined from Core `TechLevel_Spacer` = `era espacial` and the Workshop's existing `del nivel del Aerial`. The vacuum toggles share the shape `El ataúd de guerra <set> resiste el vacío`. |
+| spacer (armor, insulation, costs) | de la era espacial | Core `TechLevel_Spacer`. |
+| spacer components | componentes avanzados | Core `ComponentSpacer.label`. |
+| standard protection (10th-gen opener) | `Un armazón especializado de ataúd de guerra de tecnología espacial con una protección estándar` (`Un casco ...`, `Unas hombreras especializadas ...`) | Community VFEP `VFEP_Warcasket_Siegebreaker.shortDescription`; `de ataúd de guerra` kept on the helmet and shoulders as in the 7th-gen lines and Shipcracker. |
+| 10th-generation paragraph | `Los ataúdes de guerra de 10.ª generación se adaptaron en realidad a partir de equipos piratas capturados...` | The pack's shared spacer paragraph (15 VFEP descriptions), corrected like the 7th-gen one: `10ma` is a Latin American ordinal, agreement slips (`fueron adaptadas`, `un diseño avanzados`, `mejoro`). Keeps the pack's `verdaderos acorazados de una sola persona` and the `servoarmadura` (Core `Apparel_PowerArmor`). |
+| spacer warcaskets (research, cited) | "ataúdes de guerra de la era espacial" (ASCII quotes) | Shipcracker's Workshop FAQ; quoted as vanilla quotes research names (`proyectos de investigación: "{RESEARCH}"`). The pack's label `ataúdes de guerra espacial` is ungrammatical. |
+| veteran raiders | los asaltantes veteranos | Core `asalto` for raid; community VFEP `VFEP_Veteran.label` = `veterano`. |
+| shield bubble | burbuja de escudo | Coined; no vanilla Castilian noun for the bubble. |
+| toxic and psychic resistance | resistencia tóxica y psíquica | Core `ToxicResistance.label` = `resistencia tóxica`. |
+
 ## Pending native review
 
 Nothing inherited is open for the VFEP rows (they are the community pack's).
@@ -120,3 +135,5 @@ Nothing inherited is open for the VFEP rows (they are the community pack's).
   `mutaciones por contaminación` for pollution mutations, `piloto escoria`
   / `los escorias`, `nube tóxica`, and the settings label `El depósito
   alimenta la absorción de toxigás de los escorias`.
+- v1.2 pass: `nivel de la era espacial` for spacer tier, `tiempo para
+  apuntar`, `burbuja de escudo`, and the corrected 10th-generation paragraph.

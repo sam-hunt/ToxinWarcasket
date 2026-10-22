@@ -54,6 +54,11 @@
   <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
   <TXWC_JetRangeDesc>Wie weit der Gasstoß reicht. Ein längerer Gasstoß verteilt dasselbe Gas dünner. Standard: {0}.</TXWC_JetRangeDesc>
 
+  <!-- EN: Aiming time (seconds) -->
+  <TXWC_JetWarmup>Anvisierungsdauer (Sekunden)</TXWC_JetWarmup>
+  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <TXWC_JetWarmupDesc>Wie lange der Pilot braucht, um den Gasstoß anzuvisieren, bevor er abgefeuert wird. Standard: {0}.</TXWC_JetWarmupDesc>
+
   <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
   <TXWC_JetSummary>Ein Gasstoß: {0} Sprit für {1} Zellen Giftgas ({2} Giftrucksäcke). Ein voller Tank reicht für {3}, die Schulterpanzer allein fassen {4}.</TXWC_JetSummary>
 
@@ -75,10 +80,33 @@
   <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
   <TXWC_AbsorbSummary>Eine Absorption saugt Gas aus den {0} Zellen um den Piloten. Eine volle Wolke darüber bringt {1} Sprit in den Tank.</TXWC_AbsorbSummary>
 
-  <!-- EN: Hazard warcaskets resist vacuum -->
-  <TXWC_HazardVacuum>Gefahrenschutz-Kriegssärge sind vakuumresistent</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the vacuum resistance of the spacer warcaskets, setting it further apart from the toxin warcasket. Changing this requires a restart. Default: off. -->
-  <TXWC_HazardVacuumDesc>Gibt dem Gefahrenschutz-Kriegssarg die Vakuumresistenz der Raumfahrt-Kriegssärge und grenzt ihn damit stärker vom Toxin-Kriegssarg ab. Eine Änderung erfordert einen Neustart. Standard: aus.</TXWC_HazardVacuumDesc>
+  <!-- EN: Toxin warcasket is spacer tier -->
+  <TXWC_SpacerTier>Toxin-Kriegssarg gehört zur Raumfahrt-Stufe</TXWC_SpacerTier>
+  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
+  <TXWC_SpacerTierDesc>Baut den Toxin-Kriegssarg wie den Belagerungsbrecher auf der Raumfahrt-Stufe der 10. Generation neu auf. Er verlangsamt den Piloten nicht mehr und erhält Raumfahrt-Panzerung und -Isolierung, Resistenz gegen Gifte und mentale Effekte, Vakuumresistenz{0} und einen Schutzschild, kostet aber Hightech-Bauteile und Plastahl und erfordert das Forschungsprojekt 'Raumfahrt-Kriegssärge'. Auch Veteranen unter den Piraten können ihn bei Überfällen tragen. Standard: aus.</TXWC_SpacerTierDesc>
+
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <TXWC_SpacerShortDescription_Armor>Eine spezialisierte Kriegssarg-Hülle aus der Raumfahrttechnik mit Standardschutz. Ein eingebauter Giftgastank lässt Gas rund um den Piloten ab.</TXWC_SpacerShortDescription_Armor>
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <TXWC_SpacerShortDescription_Shoulders>Spezialisierte Kriegssarg-Schulterpanzer aus der Raumfahrttechnik mit Standardschutz. Auf den Schultern sitzen Düsen, die Giftgas aus dem Tank der Hülle versprühen.</TXWC_SpacerShortDescription_Shoulders>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
+  <TXWC_SpacerShortDescription_Helmet>Ein spezialisierter Kriegssarg-Helm aus der Raumfahrttechnik mit Standardschutz. Er ist luftdicht versiegelt, und sein Atemgerät hält Giftgas fern und saugt es in den Tank der Hülle zurück.</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armour designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armours have been improved, generally reducing restrictions on mixing pieces of different armour series even across generations. -->
+  <TXWC_SpacerLoreGeneration>Die Kriegssärge der 10. Generation gingen eigentlich aus erbeuteten Piratenmodellen hervor, die militärische Forschungsabteilungen von Regierungen mit fortschrittlichen Entwürfen für Powerrüstungen verbesserten. Da mehr hochwertige Rohstoffe zur Verfügung standen und Kriegsveteranen ausgerüstet werden sollten, die sonst nicht mehr dienstfähig wären, brachte das Programm wandelnde Schlachtschiffe für einen einzigen Piloten hervor. Auch die Vielseitigkeit der Rüstungen wurde verbessert, sodass sich Teile verschiedener Baureihen meist mit weniger Einschränkungen kombinieren lassen, selbst über Generationen hinweg.</TXWC_SpacerLoreGeneration>
+  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>Die Toxin-Baureihe ist für die chemische Kriegsführung gebaut. Ein Tank in der Hülle speist Ventile rund um den Piloten und Gasdüsen an den Schulterpanzern, und das Atemgerät des Helms saugt Gas zurück in den Tank. Zusammen machen die Teile den Piloten immun gegen Gifte.</TXWC_SpacerLoreSeries>
+
+  <!-- EN: Toxin warcasket resists vacuum -->
+  <TXWC_ToxinVacuum>Toxin-Kriegssarg ist vakuumresistent</TXWC_ToxinVacuum>
+  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
+  <TXWC_ToxinVacuumDesc>Gibt dem Toxin-Kriegssarg die Vakuumresistenz der Raumfahrt-Stufe, ohne den Rest der Stufe. Standard: aus.</TXWC_ToxinVacuumDesc>
+  <!-- EN:  (included by spacer tier) -->
+  <TXWC_IncludedInSpacerTierSuffix> (in Raumfahrt-Stufe enthalten)</TXWC_IncludedInSpacerTierSuffix>
+
+  <!-- EN: Hazard warcasket resists vacuum -->
+  <TXWC_HazardVacuum>Gefahrenschutz-Kriegssarg ist vakuumresistent</TXWC_HazardVacuum>
+  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
+  <TXWC_HazardVacuumDesc>Gibt dem Gefahrenschutz-Kriegssarg die Vakuumresistenz der Raumfahrt-Stufe. Standard: aus.</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix> (erfordert Neustart)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->

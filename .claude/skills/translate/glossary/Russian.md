@@ -102,6 +102,23 @@ Russian worker lowercases a missed key, so a miss also loses capitalization.
 | (requires Vanilla Races Expanded - Waster) | (требуется Vanilla Races Expanded - Waster) | Same pattern as `(требуется Odyssey)`; the title stays English. |
 | Workshop: "(setting, on by default)" | (настройка, по умолчанию включена) | Coined; `включена` agrees with feminine `настройка`. Feed verb: `бак питает` (the tank feeds). |
 
+## Spacer tier and aiming time (update pass 2026-10-22)
+
+| English | Russian | Grounding |
+|---|---|---|
+| aiming time (the jet's warmup; slider) | время прицеливания, `Время прицеливания (в секундах)` | Core `AimingDelayFactor.label`. Tooltip verb `целится` (Core `Stat_Thing_Weapon_RangedWarmupTime_Desc` frames warmup as `прицеливание` before `выстрел`). |
+| spacer tier (setting) | космический уровень; toggle `Токсичная броня мертвеца космического уровня` | Inherited `космического уровня` (Core `TechLevel_Spacer`). Noun-phrase label: no natural predicate fits as `устойчива к вакууму` does for the vacuum toggles. |
+| the spacer tier's vacuum resistance | устойчивость к вакууму космического уровня | Odyssey `VacuumResistance.label` + `космического уровня`; shared by both vacuum toggles so they read as siblings. |
+| (included by spacer tier) | (входит в космический уровень) | Coined; same shape as `(требуется перезапуск)`. |
+| Specialized spacer-tech warcasket ... with standard protection (opener) | Специализированная броня мертвеца / Специализированные наплечники брони мертвеца / Специализированный шлем брони мертвеца со стандартными защитными характеристиками, сделанная / сделанные / сделанный по технологиям космического уровня. | Community pack verbatim: `VFEP_Warcasket_Siegebreaker.shortDescription`, `VFEP_WarcasketShoulders_Siegebreaker.shortDescription`, `VFEP_WarcasketHelmet_Siegebreaker.description`. The feature sentence after it is the 7th-gen DefInjected one, word for word. |
+| 10th-generation paragraph | pack's paragraph verbatim (`Броня мертвеца десятого поколения была создана...`) | Pack's Siegebreaker/Guardian/Controller/Sarcophagus/Brute descriptions (`VFEPirates.WarcasketDef/Apparel_Various.xml`). Of its two variants (comma after `подчиняющихся правительству` or not) the one with the comma, which closes the participial phrase. The pack's `привело` (for a compound subject) is kept verbatim. |
+| spacer warcaskets research | «Космическая броня мертвеца» | Pack `VFEP_SpacerWarcaskets.label` `космическая броня мертвеца`, capitalised in guillemets as the specialised research is. Confirms the Shipcracker row. Kept in guillemets on the Workshop page too: Russian quotes cited labels on its own convention, not because the English did. |
+| siegebreaker (settings tooltip) | прорывная броня мертвеца | Inherited set adjective. |
+| veteran raiders | налётчики-ветераны | Pack `VFEP_Veteran.label` `ветеран` + Core `налётчик`. |
+| spacer armor and insulation / no speed penalty / toxic and psychic resistance | защита и изоляция космического уровня / штрафа к скорости нет / сопротивление токсинам и психическим воздействиям | Core `Insulation_Cold` `Изоляция`, `ToxicResistance.label` `сопротивление токсинам`, Core `психическим воздействиям`. |
+| spacer components | продвинутые компоненты | Core `ComponentSpacer.label`. |
+| immune to toxins (spacer series paragraph) | невосприимчивым к токсинам | Coined; the 7th-gen paragraph's `к токсичной среде` narrowed per the skill. First sentence `Токсичная серия создана для химической войны.` |
+
 ## Pending native review
 
 Nothing inherited is open for the VFEP rows (they are the community pack's).
@@ -113,3 +130,4 @@ This pass's coinages, all pending native review:
 - `с превосходной защитой ценой большего веса` (superior protection and worse weight).
 - `TXWC_JetTankLow` restructured as `Недостаточно {lookup: {CHARGENOUN_plural}; Case; 1} в баке (нужно {COUNT}).` to avoid numeral agreement with an injected noun.
 - VRE Waster pass (2026-10-17): `ген поглощения токсичного газа` (tox absorption; it shares `поглощение` with the set's own absorb ability), `мутации от загрязнения`, `токсичное облако`, the label `Мусорщики поглощают токсичный газ из бака`, and the Workshop bullet's `бак питает ...` and `(настройка, по умолчанию включена)`.
+- Spacer tier pass (2026-10-22): the toggle label `Токсичная броня мертвеца космического уровня`, `(входит в космический уровень)`, `устойчивость к вакууму космического уровня`, `налётчики-ветераны`, and `Токсичная серия создана для химической войны`.

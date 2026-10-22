@@ -95,6 +95,25 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | Default: on. | 기본값: 켜짐. | Counterpart of the file's `기본값: 꺼짐.`; 켜짐 per the Off row above. |
 | (requires Vanilla Races Expanded - Waster) | (Vanilla Races Expanded - Waster 필요) | Shape of `(오디세이 필요)`; title kept in English (VREW's Workshop title). |
 
+## Grounded in the spacer tier pass (v1.2)
+
+| English | Korean | Grounding |
+|---|---|---|
+| aiming time (the gas jet's warmup slider) | 조준 시간 (`조준 시간 (초)`) | Core Keyed `RangedWarmupTime` = `조준 시간`; the tooltip follows `Stat_Thing_Weapon_RangedWarmupTime_Desc` (`조준 후 발사되기까지`). Core's `WarmupTime` = `준비 시간` is the generic warmup, not the aim. |
+| spacer tier (setting) / its toggle label | 우주시대 등급 / `독소 워캐스킷의 우주시대 등급` | Coined: inherited 우주시대 + 등급; noun-phrase toggle, same shape as the vacuum toggles. |
+| `<set>` warcasket resists vacuum (toggle labels) | `<prefix> 워캐스킷의 진공 저항력` | Noun-phrase toggle; Odyssey `VacuumResistance.label`. The Toxin and Hazard pair share one phrasing. |
+| (included by spacer tier) | (우주시대 등급에 포함) | Shape of `(재시작 필요)` / `(오디세이 필요)`. |
+| Specialized spacer-tech warcasket `<part>` with standard protection (spacer opener) | `우주시대 기술로 특화된 표준적인 방어력의 워캐스킷[ 어깨| 헬멧]입니다.` | RMK `VFEP_Warcasket*_Siegebreaker.shortDescription`, verbatim; the feature clause after it is the 7th-gen DefInjected one, word for word. |
+| 10th-generation paragraph | `10세대 워캐스킷은 사실 노획한 해적 장비를 ...더 자유로운 편입니다.` | RMK 1.6 WarcasketDef, every spacer set's description (Siegebreaker, Guardian, Brute, Controller, Sarcophagus), verbatim; no dashes. |
+| veteran raiders (spacer warcasket wearers) | 베터런 습격자 | RMK `VFEP_Veteran.label` = `베터런` (the pawnkind tagged `WarcasketVeteran`); Core Keyed raider = `습격자` (`Difficulty_RaidLootPointsFactor_Info`). |
+| spacer components | 고급 부품 | Core `ComponentSpacer.label`. |
+| shield bubble | 보호막 | Core `ShieldBelt.label`; RMK uses 보호막 throughout. |
+| spacer armor / insulation / no speed penalty | 우주시대 수준의 방어도 / 단열 / 이동속도 감소가 사라짐 | Coined around Core `Insulation_Cold.label` = `단열`, `MoveSpeed.label` = `이동속도`. Workshop: 우주시대 수준의 장갑. |
+| toxic and psychic resistance | 독성 저항과 정신 저항 | Core `ToxicResistance.label` = `독성 저항`; 정신 저항 coined in parallel (Core `PsychicSensitivity` = `정신 감응력`). |
+| toxins (spacer series paragraph's last sentence) | 독성 (`독성의 영향을 받지 않습니다`) | The 7th-gen `환경 독성` minus 환경, matching the tier's 독성 저항. |
+| research citation (settings, Workshop) | ASCII single quotes, `'우주시대 워캐스킷' 연구` | `l10n/languages/Korean.md` (vanilla `연구 프로젝트 '{PROJECT_label}'`); the Workshop kept its quotes when the English dropped its double quotes. |
+| opt-in (setting) | 선택형 설정 | The Workshop's earlier 선택형 패치. |
+
 ## Pending native review
 
 Nothing inherited is open for the VFEP rows (they are RMK's). This pass's
@@ -104,3 +123,5 @@ coinages: 독소 (set prefix), 독소 가스 탱크, 탱크 배출 / 배출구, 
 The VREW pass (2026-10-17) adds: 독소 흡수 (the VREW gene), 오염 변이
 for pollution mutations with 활성 상태로 유지 for "active", and the toggle label
 `웨이스터의 독소 흡수에 탱크 사용`.
+The spacer tier pass (2026-10-22) adds: 우주시대 등급 and the `독소 워캐스킷의 우주시대 등급`
+toggle, 베터런 습격자, 정신 저항, and 독성 for the spacer series' "toxins".
