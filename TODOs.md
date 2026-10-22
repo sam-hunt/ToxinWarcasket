@@ -1,32 +1,8 @@
 # TODOs
 
-## Test in game
-
-The smoke test cannot vary settings, so these need a manual run.
-
-- **Vacuum settings under Odyssey:** all four combinations, plus one run with Vanilla Gravship
-  Expanded (VGE).
-
-  | Spacer tier | Toxin vacuum | Each piece's stat card              |
-  |-------------|--------------|-------------------------------------|
-  | off         | off          | no Vacuum Resistance line           |
-  | off         | on           | one line, spacer values             |
-  | on          | off          | one line, spacer values             |
-  | on          | on           | one line, spacer values             |
-
-  | Spacer values | Armor | Shoulders | Helmet |
-  |---------------|-------|-----------|--------|
-  | Odyssey       | 0.2   | 0.1       | 0.7    |
-  | + VGE         | 0.22  | 0.1       | 0.65   |
-
-  In the settings window, the toxin vacuum row:
-  - greys out and reads as held on as soon as the spacer box is ticked;
-  - shows the saved choice again once it is unticked.
-
-- **Spacer tier tooltip, Odyssey note** (after the vacuum resistance clause):
-  - reads in purple;
-  - sits right in the sentence;
-  - shows the same with and without Odyssey active.
+- Gas Jet cast time mod setting
+- Evaluate balance of spacer upgrade welding costs
+- Split out the mod settings ui per section similar to our other mods' pattern
 
 ## Bugs
 
