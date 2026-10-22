@@ -15,6 +15,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
      changes land in the stable version's section at promotion. The /release skill
      walks through all of this. -->
 
+## [1.2.0] - 2026-10-22
+
+### Added
+
+- Optional spacer tier setting: rebuilds the set as a 10th generation spacer warcasket with spacer plating, a shield bubble, vacuum resistance and spacer costs (restart required).
+- Optional vacuum resistance for the toxin set alone, beside the existing one for the Hazard set.
+- Aiming time slider for the gas jet.
+- Settings section headers show their ability's description as a tooltip.
+- The new settings are translated into all 9 languages.
+
+### Fixed
+
+- Mod settings, the spacer tier text and the Waster support no longer revert after switching language mid-game.
+- Settings toggles held by a missing mod or by the spacer tier now show the value actually in effect.
+- Coloured notes in settings tooltips keep their colour.
+
 ## [1.1.0] - 2026-10-17
 
 ### Added
@@ -38,5 +54,6 @@ First release.
 - RimWorld 1.6 and 1.7 support.
 - Translated into 9 languages.
 
+[1.2.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.2.0
 [1.1.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.1.0
 [1.0.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.0.0
