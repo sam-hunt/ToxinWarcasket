@@ -4,8 +4,8 @@ using Verse;
 namespace ToxinWarcasket;
 
 // Jet section: the shoulders' CompProperties_JetNozzle (tankChargesPerShot, maxCharges and the
-// own jets' ammoCountPerCharge) and VerbProperties_SprayGas (halfAngle and range). The header
-// carries the verb's commandIcon and the nozzle's jet label and description.
+// own jets' ammoCountPerCharge) and VerbProperties_SprayGas (halfAngle, range and warmupTime).
+// The header carries the verb's commandIcon and the nozzle's jet label and description.
 public partial class ToxinWarcasketSettings
 {
     // The shoulders' CompProperties_JetNozzle: tankChargesPerShot, in chemfuel, and the own
@@ -20,6 +20,15 @@ public partial class ToxinWarcasketSettings
     public readonly Tunable jetConeWidth = new("JetConeWidth", 6f, 120f, 2f, v => v.ToString("0"));
     public readonly Tunable jetRange = new("JetRange", 2.9f, 29.9f, 1f, v => v.ToString("0.#"));
 
+    // The verb's warmupTime, shown in seconds and stored on the def as the float seconds vanilla
+    // reads when it starts a cast (Verb.WarmupTime, folded into the Stance_Warmup's ticks), so a
+    // write reaches the next jet with nothing to reconcile. Banded: quarter seconds at the quick
+    // end, where they matter, half seconds up to a slow aim.
+    public readonly Tunable jetWarmup = new("JetWarmup", 0f, 5f, 0.25f, v => v.ToString("0.##"))
+    {
+        StepBands = [(2f, 0.25f), (5f, 0.5f)],
+    };
+
     // The shoulders' jet icon (its verb's commandIcon), beside the jet section's header.
     private Texture2D jetIcon;
 
@@ -33,6 +42,7 @@ public partial class ToxinWarcasketSettings
         jetReserve.ExposeData();
         jetConeWidth.ExposeData();
         jetRange.ExposeData();
+        jetWarmup.ExposeData();
     }
 
     private void LoadJetDefaults(Defs defs)
@@ -43,6 +53,7 @@ public partial class ToxinWarcasketSettings
         jetReserve.DefaultValue = defs.nozzle.maxCharges;
         jetConeWidth.DefaultValue = defs.jet.halfAngle * 2f;
         jetRange.DefaultValue = defs.jet.range;
+        jetWarmup.DefaultValue = defs.jet.warmupTime;
     }
 
     private void ApplyJetToDefs(Defs defs)
@@ -52,6 +63,7 @@ public partial class ToxinWarcasketSettings
         defs.nozzle.ammoCountPerCharge = defs.nozzle.tankChargesPerShot * chemfuelPerCharge;
         defs.jet.halfAngle = jetConeWidth.Value / 2f;
         defs.jet.range = jetRange.Value;
+        defs.jet.warmupTime = jetWarmup.Value;
     }
 
     private void ResetJetSettings()
@@ -60,6 +72,7 @@ public partial class ToxinWarcasketSettings
         jetReserve.Reset();
         jetConeWidth.Reset();
         jetRange.Reset();
+        jetWarmup.Reset();
     }
 
     private void DrawJetSection(Listing_Standard listing)
@@ -69,6 +82,7 @@ public partial class ToxinWarcasketSettings
         jetReserve.DoRow(listing);
         jetConeWidth.DoRow(listing);
         jetRange.DoRow(listing);
+        jetWarmup.DoRow(listing);
         SummaryRow(listing, JetSummary);
     }
 

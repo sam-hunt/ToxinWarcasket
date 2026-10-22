@@ -31,8 +31,8 @@
     the cloud will show, and the cone itself is the part that bites: the first ring gets half the
     cone's density on the grid's first push, the next a quarter, the third a trace. At the
     defaults that is about 133 cells, four times the cone, three rings deep and back to the
-    pilot's neighbours, which is the cloud a shot leaves on open ground. halfAngle and range are
-    the defaults of their mod settings. Warmup 1 s.
+    pilot's neighbours, which is the cloud a shot leaves on open ground. halfAngle, range and
+    the 1 s warmupTime are the defaults of their mod settings.
     - Fuel (ToxinWarcasket.CompJetNozzle): 20 charges from the armor's tank, and nothing else
       while one is worn; with the tank short the command is disabled with the tank's shortfall.
       Worn without a tank, the nozzle's own two jets are the fuel, each reloaded with those

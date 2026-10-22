@@ -49,6 +49,28 @@ public sealed class Tunable
 
     public float DefaultValue { get; set; }
 
+    // Stored units per shown unit, for a row that stores one unit and shows another. The
+    // slider, the value, the default and the tooltip all show scaled; Value and IntValue stay
+    // stored. No row in this mod is scaled; the family template keeps it.
+    public float DisplayScale { get; set; } = 1f;
+
+    // Filled into the label as {0} when set. Unused in this mod; part of the family template.
+    public string LabelArg { get; set; }
+
+    // Filled into the tooltip as {1} onward when set, after the default's {0}: figures the
+    // tooltip quotes from other defs, read when the defaults are, so they follow whatever the
+    // loaded mods make of those defs. Unused in this mod; part of the family template.
+    public string[] DescArgs { get; set; }
+
+    // Piecewise steps, for a row that wants a finer grid at the low end: each band covers the
+    // values from the previous band's upTo (the minimum, for the first) up to its own, in
+    // ascending order, the last ending at the maximum. A value snaps to the grid of the band it
+    // falls in, anchored at that band's start; with each band's width a whole number of its
+    // steps, every boundary lies on both neighbouring grids. Null means the single step applies
+    // over the whole range. Bands are in stored units and bypass StoredStep's whole-shown-unit
+    // rounding, so a banded row keeps DisplayScale at 1.
+    public (float upTo, float step)[] StepBands { get; set; }
+
     public float Value => value < 0f ? DefaultValue : Mathf.Clamp(value, min, max);
 
     public int IntValue => Mathf.RoundToInt(Value);
@@ -57,9 +79,53 @@ public sealed class Tunable
 
     public void ExposeData() => Scribe_Values.Look(ref value, key, Unset);
 
-    // Label "TXWC_<key>" (the unit is part of it) on the left, the slider in the middle, the
-    // current value on the right with "(default)" while unset, and "TXWC_<key>Desc" with the
-    // default as the whole row's tooltip.
+    // The stored value a slider released at shown lands on: the nearest step up from the
+    // minimum, then clamped to the range. The step is the row's in stored units; a scale that
+    // would make it a fraction of a shown unit rounds it to whole shown units instead, so a
+    // scaled row never shows a value its format rounds away. Pure, for the tests.
+    public static float Snap(float shown, float min, float max, float step, float scale)
+    {
+        float stored = Mathf.Clamp(shown * scale, min, max);
+        float storedStep = StoredStep(step, scale);
+        return Mathf.Clamp(min + Mathf.Round((stored - min) / storedStep) * storedStep, min, max);
+    }
+
+    public static float StoredStep(float step, float scale) =>
+        scale == 1f ? step : Mathf.Max(1f, Mathf.Round(step / scale)) * scale;
+
+    // The banded Snap: the nearest step of the band the clamped value falls in, counted from
+    // that band's start and kept within it. A value on a boundary belongs to the band below.
+    // Pure, for the tests.
+    public static float Snap(float stored, float min, float max, (float upTo, float step)[] bands)
+    {
+        float clamped = Mathf.Clamp(stored, min, max);
+        if (bands == null || bands.Length == 0)
+            return clamped;
+        float start = min;
+        for (int i = 0; i < bands.Length; i++)
+        {
+            bool last = i == bands.Length - 1;
+            float end = last ? max : Mathf.Min(bands[i].upTo, max);
+            if (clamped <= end || last)
+                return Mathf.Clamp(start + Mathf.Round((clamped - start) / bands[i].step) * bands[i].step, start, end);
+            start = end;
+        }
+        return clamped;
+    }
+
+    // The step of the band a stored value falls in, by the same boundary rule as the banded
+    // Snap. Pure, for the tests.
+    public static float BandStep(float stored, float max, (float upTo, float step)[] bands)
+    {
+        for (int i = 0; i < bands.Length - 1; i++)
+            if (stored <= Mathf.Min(bands[i].upTo, max))
+                return bands[i].step;
+        return bands[bands.Length - 1].step;
+    }
+
+    // Label "TXWC_<key>" (the unit is part of it, or LabelArg) on the left, the slider in the
+    // middle, the current value on the right with "(default)" while unset, and "TXWC_<key>Desc"
+    // with the default and any DescArgs as the whole row's tooltip.
     public void DoRow(Listing_Standard listing)
     {
         Rect row = listing.GetRect(RowHeight);
@@ -72,23 +138,48 @@ public sealed class Tunable
             valueRect.x - labelRect.xMax - 2f * SliderPad, row.height);
 
         Widgets.DrawHighlightIfMouseover(row);
-        TooltipHandler.TipRegion(row, ("TXWC_" + key + "Desc").Translate(format(DefaultValue)));
+        TooltipHandler.TipRegion(row, Tooltip());
 
-        string shown = format(Value);
+        string shown = Format(Value);
         if (value < 0f)
             shown += "TXWC_DefaultSuffix".Translate();
         TextAnchor anchor = Text.Anchor;
         Text.Anchor = TextAnchor.MiddleLeft;
-        Widgets.Label(labelRect, ("TXWC_" + key).Translate());
+        Widgets.Label(labelRect, LabelArg == null ? ("TXWC_" + key).Translate() : ("TXWC_" + key).Translate(LabelArg));
         Widgets.Label(valueRect, shown);
         Text.Anchor = anchor;
 
-        float current = Value;
-        float raw = Widgets.HorizontalSlider(sliderRect, current, min, max, middleAlignment: true);
+        float current = Value / DisplayScale;
+        float raw = Widgets.HorizontalSlider(sliderRect, current, min / DisplayScale, max / DisplayScale, middleAlignment: true);
         listing.Gap(RowGap);
         if (raw == current)
             return;
-        float snapped = Mathf.Clamp(min + Mathf.Round((raw - min) / step) * step, min, max);
-        value = Mathf.Abs(snapped - DefaultValue) < step * 0.5f ? Unset : snapped;
+        float snapped;
+        float defaultStep;
+        if (StepBands == null)
+        {
+            snapped = Snap(raw, min, max, step, DisplayScale);
+            defaultStep = StoredStep(step, DisplayScale);
+        }
+        else
+        {
+            snapped = Snap(raw * DisplayScale, min, max, StepBands);
+            defaultStep = BandStep(DefaultValue, max, StepBands);
+        }
+        value = Mathf.Abs(snapped - DefaultValue) < defaultStep * 0.5f ? Unset : snapped;
+    }
+
+    private string Format(float stored) => format(stored / DisplayScale);
+
+    private string Tooltip()
+    {
+        string descKey = "TXWC_" + key + "Desc";
+        if (DescArgs == null)
+            return descKey.Translate(Format(DefaultValue));
+        var args = new NamedArgument[DescArgs.Length + 1];
+        args[0] = Format(DefaultValue);
+        for (int i = 0; i < DescArgs.Length; i++)
+            args[i + 1] = DescArgs[i];
+        return descKey.Translate(args);
     }
 }

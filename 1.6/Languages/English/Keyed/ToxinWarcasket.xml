@@ -33,6 +33,9 @@
   <TXWC_JetRange>Range (cells)</TXWC_JetRange>
   <TXWC_JetRangeDesc>How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}.</TXWC_JetRangeDesc>
 
+  <TXWC_JetWarmup>Aiming time (seconds)</TXWC_JetWarmup>
+  <TXWC_JetWarmupDesc>How long the pilot takes to aim the gas jet before it fires. Default: {0}.</TXWC_JetWarmupDesc>
+
   <TXWC_JetSummary>A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}.</TXWC_JetSummary>
 
   <TXWC_AbsorbRadius>Radius (cells)</TXWC_AbsorbRadius>
