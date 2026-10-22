@@ -57,7 +57,7 @@
 
   <TXWC_ToxinVacuum>Toxin warcasket resists vacuum</TXWC_ToxinVacuum>
   <TXWC_ToxinVacuumDesc>Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off.</TXWC_ToxinVacuumDesc>
-  <TXWC_IncludedInSpacerTierSuffix> (included in the spacer tier)</TXWC_IncludedInSpacerTierSuffix>
+  <TXWC_IncludedInSpacerTierSuffix> (included by spacer tier)</TXWC_IncludedInSpacerTierSuffix>
 
   <TXWC_HazardVacuum>Hazard warcasket resists vacuum</TXWC_HazardVacuum>
   <TXWC_HazardVacuumDesc>Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off.</TXWC_HazardVacuumDesc>

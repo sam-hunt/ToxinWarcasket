@@ -107,6 +107,12 @@ public class ToxinWarcasketSettings : ModSettings
     private Texture2D jetIcon;
     private Texture2D absorbIcon;
 
+    // The tooltip over each section's header: the ability or verb that piece gives, its name as
+    // VEF titles an ability's tooltip over the description its command shows in game.
+    private string tankTip;
+    private string jetTip;
+    private string absorbTip;
+
     // Gas units (GasGrid.MaxGasPerCell to a full cell) one tank charge makes, wherever the set
     // spends or banks one: the vent, the bursts, the jet from the tank or its reserve, the absorb.
     public float GasPerCharge => gasPerChemfuel.Value * chemfuelPerCharge * GasGrid.MaxGasPerCell;
@@ -135,9 +141,13 @@ public class ToxinWarcasketSettings : ModSettings
         packCells = DefDatabase<ThingDef>.GetNamedSilentFail(ToxPackDefName)
             ?.GetCompProperties<CompProperties_ReleaseGas>()?.cellsToFill ?? packCells;
         absorbDraw = defs.absorbDraw;
-        tankIcon = DefDatabase<AbilityDef>.GetNamedSilentFail(VentDefName)?.icon;
+        AbilityDef vent = DefDatabase<AbilityDef>.GetNamedSilentFail(VentDefName);
+        tankIcon = vent?.icon;
         jetIcon = defs.jet.commandIcon.NullOrEmpty() ? null : ContentFinder<Texture2D>.Get(defs.jet.commandIcon, false);
         absorbIcon = defs.absorb.icon;
+        tankTip = vent == null ? null : HeaderTip(vent.LabelCap, vent.description);
+        jetTip = HeaderTip(defs.nozzle.jetLabel.CapitalizeFirst(), defs.nozzle.jetDescription);
+        absorbTip = HeaderTip(defs.absorb.LabelCap, defs.absorb.description);
         tankCapacity.DefaultValue = defs.tank.maxCharges * chemfuelPerCharge;
         gasPerChemfuel.DefaultValue = defs.tank.cellsPerCharge / chemfuelPerCharge;
         ventRate.DefaultValue = defs.tank.ventChargesPerSecond * chemfuelPerCharge;
@@ -207,6 +217,10 @@ public class ToxinWarcasketSettings : ModSettings
     // listing height; the scrollbar only takes its width once it is needed. maxOneColumn keeps
     // the listing growing downward: past its rect's height it would start a new column off to
     // the right, outside the window, and never report the height the scroll view needs.
+    //
+    // A toggle's suffix names the one thing that stands between the player and it, highest first:
+    // a missing mod or DLC ("requires ..."), which also disables the row, then a restart. A
+    // requirement that is met is never named, in the label or the tooltip.
     public void DoWindowContents(Rect inRect)
     {
         const float buttonHeight = 30f;
@@ -218,23 +232,23 @@ public class ToxinWarcasketSettings : ModSettings
         Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
         var listing = new Listing_Standard { maxOneColumn = true };
         listing.Begin(viewRect);
-        SectionHeader(listing, "TXWC_SectionTank", tankIcon, first: true);
+        SectionHeader(listing, "TXWC_SectionTank", tankIcon, tankTip, first: true);
         tankCapacity.DoRow(listing);
         gasPerChemfuel.DoRow(listing);
         ventRate.DoRow(listing);
         SummaryRow(listing, TankSummary);
-        SectionHeader(listing, "TXWC_SectionJet", jetIcon);
+        SectionHeader(listing, "TXWC_SectionJet", jetIcon, jetTip);
         jetCost.DoRow(listing);
         jetReserve.DoRow(listing);
         jetConeWidth.DoRow(listing);
         jetRange.DoRow(listing);
         SummaryRow(listing, JetSummary);
-        SectionHeader(listing, "TXWC_SectionAbsorb", absorbIcon);
+        SectionHeader(listing, "TXWC_SectionAbsorb", absorbIcon, absorbTip);
         absorbRadius.DoRow(listing);
         absorbDuration.DoRow(listing);
         absorbCooldown.DoRow(listing);
         SummaryRow(listing, AbsorbSummary);
-        SectionHeader(listing, "TXWC_SectionMisc", null);
+        SectionHeader(listing, "TXWC_SectionMisc", null, null);
         DoSpacerTierRow(listing);
         DoToxinVacuumRow(listing);
         DoHazardVacuumRow(listing);
@@ -309,43 +323,49 @@ public class ToxinWarcasketSettings : ModSettings
     // instead, after the DLC's branding.
     private static readonly Color OdysseyColor = ColorLibrary.LightPurple;
 
+    // The colour of Vanilla Races Expanded - Waster's title in the waster feed tooltip, set apart
+    // from the Odyssey purple as the light green beside it in the colour library.
+    private static readonly Color WasterColor = ColorLibrary.LightGreen;
+
     // The spacer tier rebuild; the patch and the text only read the box at startup, so the label
     // always says a change takes a restart. The tooltip's Odyssey note is passed in coloured so
-    // translators never touch the markup.
+    // translators never touch the markup, and only while Odyssey is missing, as the rows' own
+    // requirement suffixes are. The tooltips are Resolve()d, never converted to string, because
+    // TaggedString's implicit string conversion strips the colour tags.
     private void DoSpacerTierRow(Listing_Standard listing)
     {
         string label = "TXWC_SpacerTier".Translate() + "TXWC_RequiresRestartSuffix".Translate();
-        string tooltip = "TXWC_SpacerTierDesc".Translate("TXWC_RequiresOdysseySuffix".Translate().Colorize(OdysseyColor));
+        string note = ModsConfig.OdysseyActive ? "" : "TXWC_RequiresOdysseySuffix".Translate().Colorize(OdysseyColor);
+        string tooltip = "TXWC_SpacerTierDesc".Translate(note).Resolve();
         ToggleRow(listing, label, tooltip, ref spacerTier);
     }
 
-    // The set's own vacuum resistance, disabled without Odyssey as the hazard row is. While the
-    // spacer tier box is ticked (as it stands in the window, so before any restart) the row is
-    // shown held on and disabled, with the suffix saying why, and the field itself is left alone
-    // so the player's own choice returns when the tier goes off again.
+    // The set's own vacuum resistance, shown off and disabled without Odyssey as the hazard row
+    // is. While the spacer tier box is ticked (as it stands in the window, so before any restart)
+    // the row is shown held on and disabled, with the suffix saying why.
     private void DoToxinVacuumRow(Listing_Standard listing)
     {
         bool odyssey = ModsConfig.OdysseyActive;
-        bool held = odyssey && spacerTier;
         string label = "TXWC_ToxinVacuum".Translate();
+        bool? forced = null;
         if (!odyssey)
-            label += "TXWC_RequiresOdysseySuffix".Translate();
-        else if (held)
-            label += "TXWC_IncludedInSpacerTierSuffix".Translate();
-        else
-            label += "TXWC_RequiresRestartSuffix".Translate();
-        string tooltip = "TXWC_ToxinVacuumDesc".Translate();
-        if (held)
         {
-            bool on = true;
-            ToggleRow(listing, label, tooltip, ref on, disabled: true);
+            label += "TXWC_RequiresOdysseySuffix".Translate();
+            forced = false;
+        }
+        else if (spacerTier)
+        {
+            label += "TXWC_IncludedInSpacerTierSuffix".Translate();
+            forced = true;
         }
         else
-            ToggleRow(listing, label, tooltip, ref toxinVacuum, disabled: !odyssey);
+            label += "TXWC_RequiresRestartSuffix".Translate();
+        ToggleRow(listing, label, "TXWC_ToxinVacuumDesc".Translate(), ref toxinVacuum, forced);
     }
 
-    // Disabled without Odyssey, which owns the stat, and the label says so; with Odyssey it
-    // always says a change takes a restart, since the patch only reads the box at startup.
+    // Shown off and disabled without Odyssey, which owns the stat, and the label says so; with
+    // Odyssey it always says a change takes a restart, since the patch only reads the box at
+    // startup.
     private void DoHazardVacuumRow(Listing_Standard listing)
     {
         bool odyssey = ModsConfig.OdysseyActive;
@@ -354,39 +374,52 @@ public class ToxinWarcasketSettings : ModSettings
             label += "TXWC_RequiresOdysseySuffix".Translate();
         else
             label += "TXWC_RequiresRestartSuffix".Translate();
-        ToggleRow(listing, label, "TXWC_HazardVacuumDesc".Translate(), ref hazardVacuum, disabled: !odyssey);
+        ToggleRow(listing, label, "TXWC_HazardVacuumDesc".Translate(), ref hazardVacuum, odyssey ? null : false);
     }
 
-    // The tank's waster feed, disabled without Vanilla Races Expanded - Waster, whose gene it
-    // feeds; the comp reads the box live, so no restart suffix. The tooltip takes the mod's title
-    // as an argument, in vanilla's colour for names, so it stands out of the sentence and
-    // translators never touch it.
+    // The tank's waster feed, shown off and disabled without Vanilla Races Expanded - Waster,
+    // whose gene it feeds; the comp reads the box live, so no restart suffix. The tooltip takes
+    // the mod's title as an argument, coloured so it stands out of the sentence and translators
+    // never touch it.
     private void DoFeedToxAbsorptionRow(Listing_Standard listing)
     {
         bool waster = VREWasterIntegration.ModActive;
         string label = "TXWC_FeedToxAbsorption".Translate();
         if (!waster)
             label += "TXWC_RequiresVREWasterSuffix".Translate();
-        string tooltip = "TXWC_FeedToxAbsorptionDesc".Translate(VREWasterIntegration.ModName.Colorize(ColoredText.NameColor));
-        ToggleRow(listing, label, tooltip, ref feedToxAbsorption, disabled: !waster);
+        string tooltip = "TXWC_FeedToxAbsorptionDesc".Translate(VREWasterIntegration.ModName.Colorize(WasterColor)).Resolve();
+        ToggleRow(listing, label, tooltip, ref feedToxAbsorption, waster ? null : false);
     }
 
     // A checkbox row laid out as a Tunable row is, the box where a slider row shows its value.
-    private static void ToggleRow(Listing_Standard listing, string label, string tooltip, ref bool value, bool disabled = false)
+    // A row with a forced value (a missing mod or DLC holds it off, another setting holds it on)
+    // is disabled and shows that value, never the saved one, so it cannot read as on while it is
+    // not; the field is left alone, so the player's choice returns once the row frees up. A
+    // disabled row draws its label in the greyed box's colour too, since CheckboxLabeled only
+    // greys the box.
+    private static void ToggleRow(Listing_Standard listing, string label, string tooltip, ref bool value, bool? forced = null)
     {
         Rect row = listing.GetRect(Tunable.RowHeight);
         row.xMin += Tunable.RowIndent;
         row.xMax -= Tunable.RowEndPad;
         Widgets.DrawHighlightIfMouseover(row);
         TooltipHandler.TipRegion(row, tooltip);
-        Widgets.CheckboxLabeled(row, label, ref value, disabled: disabled);
+        if (forced is bool shown)
+        {
+            GUI.color = Widgets.InactiveColor;
+            Widgets.CheckboxLabeled(row, label, ref shown, disabled: true);
+        }
+        else
+            Widgets.CheckboxLabeled(row, label, ref value);
+        GUI.color = Color.white;
         listing.Gap(Tunable.RowGap);
     }
 
     // The header's text in the medium font after its icon, a square as tall as the header; a
     // header without one (the toggles', or any while the defs were not found) starts its text
-    // at the left edge rather than after an empty slot.
-    private static void SectionHeader(Listing_Standard listing, string key, Texture2D icon, bool first = false)
+    // at the left edge rather than after an empty slot. The tooltip covers the icon and the text
+    // only, not the empty width after them.
+    private static void SectionHeader(Listing_Standard listing, string key, Texture2D icon, string tooltip, bool first = false)
     {
         const float headerGap = 4f;
         const float headerHeight = 32f;
@@ -394,6 +427,7 @@ public class ToxinWarcasketSettings : ModSettings
         if (!first)
             listing.Gap(SectionGap);
         Rect rect = listing.GetRect(headerHeight);
+        float left = rect.xMin;
         if (icon != null && icon != BaseContent.BadTex)
         {
             GUI.DrawTexture(rect.LeftPartPixels(headerHeight), icon);
@@ -403,11 +437,19 @@ public class ToxinWarcasketSettings : ModSettings
         TextAnchor anchor = Text.Anchor;
         Text.Font = GameFont.Medium;
         Text.Anchor = TextAnchor.MiddleLeft;
-        Widgets.Label(rect, key.Translate());
+        string label = key.Translate();
+        Widgets.Label(rect, label);
+        if (!tooltip.NullOrEmpty())
+            TooltipHandler.TipRegion(new Rect(left, rect.y, rect.xMin - left + Text.CalcSize(label).x, rect.height), tooltip);
         Text.Anchor = anchor;
         Text.Font = font;
         listing.Gap(headerGap);
     }
+
+    // An ability's tooltip as VEF opens one: its name in vanilla's tip title colour over its
+    // description. VEF's stat lines are left out; the rows below quote those numbers.
+    private static string HeaderTip(string label, string description) =>
+        description.NullOrEmpty() ? null : label.Colorize(ColoredText.TipSectionTitleColor) + "\n\n" + description;
 
     private struct Defs
     {

@@ -195,6 +195,9 @@ TODOs.md         - Scoping notes for the feature work that has not landed yet
   startup-only like the patch it accompanies (`ToxinWarcasketSettings.ApplySpacerText` is the
   model). Patch files within a mod apply in filesystem order, so two patches touching one node
   must not depend on their order.
+- **Coloured text must be `Resolve()`d, never converted to `string`.** `TaggedString`'s
+  implicit `string` conversion is `RawText.StripTags()`, so `string s = key.Translate(x.Colorize(c))`
+  silently drops the colour; `Colorize` on a plain string, or `.Resolve()`, keeps it.
 - **No em dashes in player-facing text** (def labels/descriptions, `Keyed/`, `About.xml`,
   `.steamworkshop/`); reflow the sentence instead. This file, code comments and def comments are
   unaffected.
