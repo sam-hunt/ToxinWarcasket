@@ -31,11 +31,14 @@
       spacer sets' tag, which puts the set on both VFEP factions' veteran raiders and Odyssey's
       salvagers beside the Marine, Recon and spacer sets, where the 7th-gen tag reaches no pawn
       kind at all.
-    - Costs in the tier's band, spacer components and plasteel with no steel (the Siegebreaker
-      is 6 / 145 / Uranium 50, 0 / 60, 2 / 50): armor ComponentSpacer 7, Plasteel 130, Uranium
-      50; shoulders 1 / 55; helmet 2 / 45. One more component on the armor and shoulders for
-      the tank and nozzle, as the 7th-gen version pays industrial ones over the Cataphract, and
-      15 plasteel traded off each piece for its chemfuel, which stays as the def headers set it.
+    - Costs in the tier's band, spacer components and plasteel with no steel, the chemfuel on
+      top as the def headers set it: armor ComponentSpacer 6, Plasteel 150, Uranium 50;
+      shoulders 2 / 60; helmet 4 / 60. The armor's 6 is the tier's standard (the Brute's 4 and
+      the Controller's 12 are its dial), the shoulders' 2 the Controller shoulders' price for
+      a verb, the helmet's 4 the Controller's and Brute's for a helmet with a function of its
+      own. Plasteel at the utility sets' 145 to 150 / 60 / 60, never under the tier's floor.
+      The set is about 5250 silver at market value, over the Guardian and Brute and under the
+      Controller, as a kit set beside the Siegebreaker's 4195.
 
     Insulation_Cold on the armor and helmet is replaced only where it is not already 100:
     SOS2Patch.xml sets 100 on both under Save Our Ship 2, and patch files within a mod apply in
@@ -121,8 +124,8 @@
           <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/costList</xpath>
           <value>
             <costList>
-              <ComponentSpacer>7</ComponentSpacer>
-              <Plasteel>130</Plasteel>
+              <ComponentSpacer>6</ComponentSpacer>
+              <Plasteel>150</Plasteel>
               <Uranium>50</Uranium>
               <Chemfuel>30</Chemfuel>
             </costList>
@@ -170,8 +173,8 @@
           <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/costList</xpath>
           <value>
             <costList>
-              <ComponentSpacer>1</ComponentSpacer>
-              <Plasteel>55</Plasteel>
+              <ComponentSpacer>2</ComponentSpacer>
+              <Plasteel>60</Plasteel>
               <Chemfuel>15</Chemfuel>
             </costList>
           </value>
@@ -189,8 +192,8 @@
           <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/costList</xpath>
           <value>
             <costList>
-              <ComponentSpacer>2</ComponentSpacer>
-              <Plasteel>45</Plasteel>
+              <ComponentSpacer>4</ComponentSpacer>
+              <Plasteel>60</Plasteel>
               <Chemfuel>10</Chemfuel>
             </costList>
           </value>
