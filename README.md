@@ -43,6 +43,8 @@ directly, such as venom and toxic needles, still do.
   pollutes the ground around the body
 - **Built on VFE Pirates** rather than beside it: the foundry, entombing, customization and
   removal surgery all apply unchanged, and the pieces mix and match with VFE Pirates' own sets
+- **Mod settings**: tune the tank, jets and absorb, or opt in to rebuild the set at the spacer
+  tier
 
 ## Requirements
 

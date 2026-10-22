@@ -28,12 +28,6 @@ The smoke test cannot vary settings, so these need a manual run.
   - sits right in the sentence;
   - shows the same with and without Odyssey active.
 
-## Before release
-
-- **Review the spacer tier's player-facing text:**
-  - Workshop description: the settings and FAQ lines
-  - README: the tier wording
-
 ## Bugs
 
 - **Settings stop applying after an in-session language switch** (until a restart).
