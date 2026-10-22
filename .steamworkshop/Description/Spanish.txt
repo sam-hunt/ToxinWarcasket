@@ -14,7 +14,7 @@ Una proeza de ingeniería impresionantemente poco ética, el Toxina es un ataúd
 [*][b]Casco:[/b] el respirador. Inmunidad a la exposición al toxigás, como una máscara antigás, además de la capacidad de aspirar los gases alrededor del piloto hacia el depósito (¡también despeja el humo, el olor a putrefacción y el polvo de la muerte!).
 [/list]
 
-Las opciones del mod ajustan el gas por biocombustible, la capacidad y la velocidad de purga del depósito, el coste, el cono y el alcance del chorro, las cargas sin depósito, y el radio, la duración y el enfriamiento de la absorción, etc.
+Las opciones del mod permiten ajustar cada habilidad y algunas estadísticas. Una opción desactivada por defecto transforma en su lugar todo el conjunto al nivel de los ataúdes de guerra de la era espacial: blindaje, escudos, resistencia al vacío, costes más altos y una investigación posterior para desbloquearlo.
 
 [hr][/hr]
 [h1]Compatibilidad con mods[/h1]
@@ -33,7 +33,7 @@ Las opciones del mod ajustan el gas por biocombustible, la capacidad y la veloci
 R: Sí. El toxigás solo existe con Biotech, y todo el conjunto gira en torno a él.
 
 [b]P: ¿En qué se diferencia de la serie Hazard de VFE Pirates?[/b]
-R: El Hazard es el todoterreno: más ligero, ignífugo e inmune a la acumulación tóxica y a los efectos psíquicos, con menos blindaje cortante y contundente. El Toxina está hecho solo para el toxigás, tanto en ataque como en defensa. Paga en peso su blindaje más fuerte y su depósito, y sigue siendo más vulnerable al veneno, al fuego, a las temperaturas extremas, etc. Incluye un parche opcional para diferenciarlos aún más, aumentando la resistencia al vacío del Hazard.
+R: El Hazard es el todoterreno: más ligero, ignífugo e inmune a la acumulación tóxica y a los efectos psíquicos, con menos blindaje cortante y contundente. El Toxina está hecho solo para el toxigás, tanto en ataque como en defensa. Paga en peso su blindaje más fuerte y su depósito, y sigue siendo más vulnerable al veneno, al fuego, a las temperaturas extremas, etc. Hay opciones, desactivadas por defecto, que dan a cualquiera de los dos la resistencia al vacío de los ataúdes de guerra de la era espacial, para diferenciarlos a tu gusto.
 
 [b]P: ¿Cómo lo consigo?[/b]
 R: Investiga los proyectos "ataúdes de guerra especializados" de VFE Pirates y "toxigás" de Biotech, y móntalo en la forja de ataúd de guerra como cualquier otro conjunto. Combina las piezas con las series de VFE Pirates como quieras.

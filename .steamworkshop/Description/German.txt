@@ -14,7 +14,7 @@ Der Toxin-Kriegssarg, ein beeindruckend unethisches Meisterwerk der Ingenieursku
 [*][b]Helm:[/b] das Atemgerät. Wie eine Gasmaske immun gegen Giftgas, dazu die Fähigkeit, Gase um den Piloten in den Tank zu saugen (entfernt auch Rauch, Verwesungsgeruch und Deadlife-Staub!).
 [/list]
 
-In den Mod-Einstellungen lassen sich anpassen: Gas pro Sprit, Kapazität und Ablassrate des Tanks, Kosten, Kegel und Reichweite der Gasstöße samt ihrer Anzahl ohne Tank, sowie Radius, Dauer und Abklingzeit der Absorption usw.
+In den Mod-Einstellungen lassen sich jede Fähigkeit und einige Werte anpassen. Eine optionale Einstellung baut das ganze Set stattdessen auf der Stufe der Raumfahrt-Kriegssärge neu auf: Panzerung, Schilde, Vakuumresistenz, höhere Kosten und ein späteres Forschungsprojekt.
 
 [hr][/hr]
 [h1]Mod-Kompatibilität[/h1]
@@ -33,7 +33,7 @@ In den Mod-Einstellungen lassen sich anpassen: Gas pro Sprit, Kapazität und Abl
 A: Ja. Giftgas gibt es nur mit Biotech, und das ganze Set baut darauf auf.
 
 [b]F: Was unterscheidet es vom Gefahrenschutz-Set aus VFE Pirates?[/b]
-A: Der Gefahrenschutz ist der Allrounder: leichter, feuerfest und immun gegen Vergiftung und psychische Effekte, aber mit dünnerer Panzerung gegen Schnitt und Wucht. Der Toxin-Kriegssarg ist ganz auf Giftgas ausgelegt, im Angriff wie in der Verteidigung. Für die stärkere Panzerung und den Tank zahlt er mit Gewicht und bleibt anfälliger für Giftangriffe, Feuer, extreme Temperaturen usw. Enthält einen optionalen Patch, der die beiden stärker voneinander abgrenzt, indem er die Vakuumresistenz des Gefahrenschutz-Kriegssargs erhöht.
+A: Der Gefahrenschutz ist der Allrounder: leichter, feuerfest und immun gegen Vergiftung und psychische Effekte, aber mit dünnerer Panzerung gegen Schnitt und Wucht. Der Toxin-Kriegssarg ist ganz auf Giftgas ausgelegt, im Angriff wie in der Verteidigung. Für die stärkere Panzerung und den Tank zahlt er mit Gewicht und bleibt anfälliger für Giftangriffe, Feuer, extreme Temperaturen usw. Optionale Einstellungen geben jedem der beiden Sets die Vakuumresistenz der Raumfahrt-Kriegssärge, damit du sie nach Belieben voneinander abgrenzen kannst.
 
 [b]F: Wie bekomme ich es?[/b]
 A: Erforsche die Projekte 'spezialisierte Kriegssärge' aus VFE Pirates und 'Giftgas' aus Biotech und schweiße dann einen Kolonisten wie bei jedem anderen Set in der Kriegssarg-Gießerei ein. Die Teile lassen sich nach Belieben mit den Sets aus VFE Pirates kombinieren.

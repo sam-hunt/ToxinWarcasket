@@ -14,7 +14,7 @@ An impressively unethical feat of engineering, the Toxin is a 7th generation war
 [*][b]Helmet:[/b] the respirator. Immunity to tox gas exposure, like a gas mask, plus the ability to suck gases around the pilot into the tank (clears smoke, rot stink, and deadlife dust too!).
 [/list]
 
-Mod settings tune the gas per chemfuel, the tank's capacity and vent rate, the jet's cost, cone, range, and charges without a tank, and the absorb's radius, duration, and cooldown etc. An opt-in setting rebuilds the whole set at the spacer tier instead: spacer plating, a shield bubble, vacuum resistance, and spacer costs behind the Spacer Warcaskets research (restart required). Another gives the set just the spacer tier's vacuum resistance.
+Mod settings allow tuning each ability and some stats. An opt-in toggle rewrites the whole set to the Spacer Warcasket tier instead: plating, shields, vacuum resistance, higher costs, and the later research gate.
 
 [hr][/hr]
 [h1]Mod Compatibility[/h1]

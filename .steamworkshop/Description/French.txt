@@ -14,7 +14,7 @@ Prouesse d'ingénierie d'une immoralité impressionnante, le Toxine est un warca
 [*][b]Casque :[/b] le respirateur. Immunité à l'exposition au gaz tox, comme un masque à gaz, plus la capacité d'aspirer les gaz autour du pilote vers le réservoir (elle dissipe aussi la fumée, la pestilence et la poussière de résurrection !).
 [/list]
 
-Les paramètres du mod règlent le gaz par chemfuel, la capacité et le débit de purge du réservoir, le coût, le cône, la portée et les charges sans réservoir des jets, ainsi que le rayon, la durée et le temps de recharge de l'absorption, etc.
+Les paramètres du mod permettent de régler chaque capacité et certaines statistiques. Une option facultative fait plutôt passer tout l'ensemble au niveau des warcaskets spatiaux : blindage, boucliers, résistance au vide, coûts plus élevés et recherche plus tardive.
 
 [hr][/hr]
 [h1]Compatibilité des mods[/h1]
@@ -33,7 +33,7 @@ Les paramètres du mod règlent le gaz par chemfuel, la capacité et le débit d
 R : Oui. Le gaz tox n'existe qu'avec Biotech, et tout l'ensemble repose dessus.
 
 [b]Q : En quoi diffère-t-il de l'ensemble Hazard de VFE Pirates ?[/b]
-R : Le Hazard est polyvalent : plus léger, ignifugé, insensible à l'accumulation toxique et aux effets psychiques, mais avec un blindage plus mince contre les dégâts tranchants et contondants. Le Toxine est conçu pour le seul gaz tox, en attaque comme en défense. Son blindage plus solide et son réservoir se paient en poids, et il reste plus vulnérable au venin, au feu, aux températures extrêmes, etc. Inclut un correctif facultatif pour mieux les distinguer en augmentant la résistance au vide du Hazard.
+R : Le Hazard est polyvalent : plus léger, ignifugé, insensible à l'accumulation toxique et aux effets psychiques, mais avec un blindage plus mince contre les dégâts tranchants et contondants. Le Toxine est conçu pour le seul gaz tox, en attaque comme en défense. Son blindage plus solide et son réservoir se paient en poids, et il reste plus vulnérable au venin, au feu, aux températures extrêmes, etc. Des paramètres facultatifs donnent à l'un ou l'autre ensemble la résistance au vide des warcaskets spatiaux, pour distinguer les deux à votre guise.
 
 [b]Q : Comment l'obtenir ?[/b]
 R : Recherchez le projet « specialised warcaskets » (warcaskets spécialisés) de VFE Pirates et le projet « gaz tox » de Biotech, puis soudez-le sur un colon à la fonderie de warcaskets, comme tout autre ensemble. Combinez librement ses pièces avec celles des ensembles de VFE Pirates.
