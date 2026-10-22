@@ -31,7 +31,6 @@ The smoke test cannot vary settings, so these need a manual run.
 ## Before release
 
 - **Review the spacer tier's player-facing text:**
-  - Item text: Keyed `TXWC_SpacerShortDescription_*` and `TXWC_SpacerLore*`
   - Workshop description: the settings and FAQ lines
   - README: the tier wording
 

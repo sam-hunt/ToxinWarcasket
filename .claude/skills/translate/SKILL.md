@@ -60,10 +60,10 @@ notes for the shim or flow edit this repo owes before continuing.
 ## This mod's translation surface
 
 - **Two surfaces plus the Workshop page.** The defs' English is served by
-  the def XML's own fields (DefInjected, below). The mod settings window is
-  the only Keyed file: `1.6/Languages/English/Keyed/ToxinWarcasket.xml`,
-  translated to `1.6/Languages/<Language>/Keyed/ToxinWarcasket.xml` with the
-  same keys. Each `TXWC_<Setting>` label and its `TXWC_<Setting>Desc`
+  the def XML's own fields (DefInjected, below). The one Keyed file,
+  `1.6/Languages/English/Keyed/ToxinWarcasket.xml`, carries the mod settings
+  window and the spacer tier's item text (below), translated to
+  `1.6/Languages/<Language>/Keyed/ToxinWarcasket.xml` with the same keys. Each `TXWC_<Setting>` label and its `TXWC_<Setting>Desc`
   tooltip take one `{0}`, the formatted value (the tooltip's is the
   default); keep it and any unit after it, such as the cone width's degree
   sign. `TXWC_DefaultSuffix` keeps its leading space, as do the
@@ -132,6 +132,20 @@ notes for the shim or flow edit this repo owes before continuing.
   def's `shortDescription` identical to its description's first paragraph,
   as the English does. Paragraph breaks are the literal two-character
   `\n` sequences the def XML uses.
+- **The spacer tier's descriptions are Keyed, not DefInjected.** With the
+  setting on, code assembles each part's description from
+  `TXWC_SpacerShortDescription_<Part>` (also written as its
+  `shortDescription`), `TXWC_SpacerLoreGeneration` and
+  `TXWC_SpacerLoreSeries`, joining them with real paragraph breaks, so
+  these keys carry no `\n`. Each short description is the Siegebreaker's
+  opening ("Specialized spacer-tech warcasket ... with standard
+  protection") plus that part's 7th-gen feature clause: reuse the
+  DefInjected clause word for word. `TXWC_SpacerLoreGeneration` is VFEP's
+  10th-generation paragraph verbatim, which VFEP repeats across its spacer
+  sets: ground it as the 7th-generation one (below). `TXWC_SpacerLoreSeries`
+  keeps the 7th-gen series paragraph's second sentence word for word; its
+  first drops the Cataphract, and its last says "toxins", not
+  "environmental toxins", since this tier also resists direct toxins.
 - **Compat roots carry no strings.** None is live: Biotech is a hard
   dependency, so the tox gas content and its DefInjected sit in the main
   tree. A future optional-mod root follows CLAUDE.md's Localization and
@@ -159,12 +173,13 @@ Terms that MUST be grounded before use:
 - from VFEP's own vocabulary: "warcasket" itself, the VFEP set names our
   text, settings or Workshop page reference (cataphract, hazard), the
   "specialised warcaskets" and "spacer warcaskets" research labels,
-  "warcasket foundry", "shoulders" / "pauldrons", "helmet", "shell", and
-  the 7th-generation paragraph, which VFEP's own descriptions repeat
-  verbatim across the Aerial, Barrage, Hazard and Shock sets, so a
-  community VFEP pack already renders it: take that rendering where one
-  exists (the glossary names the pack), and where none does, follow the
-  meaning, not the dashes (ours reflows VFEP's dashed aside into commas);
+  "warcasket foundry", "shoulders" / "pauldrons", "helmet", "shell",
+  "spacer-tech", and the 7th- and 10th-generation paragraphs, which VFEP's
+  own descriptions repeat verbatim across its 7th-gen and spacer sets, so a
+  community VFEP pack already renders them: take that rendering where one
+  exists (the glossary names the pack); where none does, translate the
+  meaning, keeping the aside VFEP sets off with spaced hyphens as the
+  language punctuates an aside;
 - from vanilla Core (ground against the Core tar per `l10n/process.md`):
   apparel terms (armor, helmet, shoulder pads), steel, plasteel, uranium,
   chemfuel, respirator, breathing, toxic environment resistance, toxic
