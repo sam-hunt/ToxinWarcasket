@@ -43,25 +43,18 @@
     Insulation_Cold on the armor and helmet is replaced only where it is not already 100:
     SOS2Patch.xml sets 100 on both under Save Our Ship 2, and patch files within a mod apply in
     filesystem order, so neither file may depend on running after the other.
+
+    Under Combat Extended, CombatExtended.xml owns the plating (Sharp and Blunt), the shield
+    stats and the costs of both tiers, in CE's units, so the block at the end applies this
+    file's versions of exactly those only without CE: the two files then never touch the same
+    node and apply in either order. Heat is not a CE value and stays above with the rest.
   -->
   <Operation Class="ToxinWarcasket.PatchOperationSetting">
     <setting>spacerTier</setting>
     <match Class="PatchOperationSequence">
       <operations>
 
-        <!-- Plating and speed, every piece. -->
-        <li Class="PatchOperationReplace">
-          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Sharp</xpath>
-          <value>
-            <ArmorRating_Sharp>2</ArmorRating_Sharp>
-          </value>
-        </li>
-        <li Class="PatchOperationReplace">
-          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Blunt</xpath>
-          <value>
-            <ArmorRating_Blunt>1</ArmorRating_Blunt>
-          </value>
-        </li>
+        <!-- Heat plating and speed, every piece (Sharp and Blunt are in the block at the end). -->
         <li Class="PatchOperationReplace">
           <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Heat</xpath>
           <value>
@@ -86,7 +79,7 @@
           </value>
         </li>
 
-        <!-- Armor: frame, insulation, shield, resistances, costs. -->
+        <!-- Armor: frame, insulation, shield comp, resistances. -->
         <li Class="PatchOperationReplace">
           <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/statBases/Mass</xpath>
           <value>
@@ -107,28 +100,10 @@
           </value>
         </li>
         <li Class="PatchOperationAdd">
-          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/statBases</xpath>
-          <value>
-            <EnergyShieldRechargeRate>0.01</EnergyShieldRechargeRate>
-            <EnergyShieldEnergyMax>1.5</EnergyShieldEnergyMax>
-          </value>
-        </li>
-        <li Class="PatchOperationAdd">
           <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/equippedStatOffsets</xpath>
           <value>
             <PsychicSensitivity>-0.5</PsychicSensitivity>
             <ToxicResistance>0.5</ToxicResistance>
-          </value>
-        </li>
-        <li Class="PatchOperationReplace">
-          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/costList</xpath>
-          <value>
-            <costList>
-              <ComponentSpacer>6</ComponentSpacer>
-              <Plasteel>150</Plasteel>
-              <Uranium>50</Uranium>
-              <Chemfuel>30</Chemfuel>
-            </costList>
           </value>
         </li>
         <li Class="PatchOperationAdd">
@@ -150,7 +125,7 @@
           </value>
         </li>
 
-        <!-- Shoulders: frame, insulation, costs. -->
+        <!-- Shoulders: frame, insulation. -->
         <li Class="PatchOperationReplace">
           <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/statBases/Mass</xpath>
           <value>
@@ -169,18 +144,8 @@
             <Insulation_Heat>22</Insulation_Heat>
           </value>
         </li>
-        <li Class="PatchOperationReplace">
-          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/costList</xpath>
-          <value>
-            <costList>
-              <ComponentSpacer>2</ComponentSpacer>
-              <Plasteel>60</Plasteel>
-              <Chemfuel>15</Chemfuel>
-            </costList>
-          </value>
-        </li>
 
-        <!-- Helmet: insulation, costs. -->
+        <!-- Helmet: insulation. -->
         <li Class="PatchOperationReplace">
           <success>Always</success>
           <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/Insulation_Cold[. != "100"]</xpath>
@@ -188,15 +153,67 @@
             <Insulation_Cold>5</Insulation_Cold>
           </value>
         </li>
-        <li Class="PatchOperationReplace">
-          <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/costList</xpath>
-          <value>
-            <costList>
-              <ComponentSpacer>4</ComponentSpacer>
-              <Plasteel>60</Plasteel>
-              <Chemfuel>10</Chemfuel>
-            </costList>
-          </value>
+
+        <!-- Without Combat Extended: plating, shield stats and costs. CombatExtended.xml sets
+             its own in CE's units for both tiers and never touches anything else here. -->
+        <li Class="ToxinWarcasket.PatchOperationModActive">
+          <packageIds>
+            <li>ceteam.combatextended</li>
+          </packageIds>
+          <nomatch Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Sharp</xpath>
+                <value>
+                  <ArmorRating_Sharp>2</ArmorRating_Sharp>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin" or defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Blunt</xpath>
+                <value>
+                  <ArmorRating_Blunt>1</ArmorRating_Blunt>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/statBases</xpath>
+                <value>
+                  <EnergyShieldRechargeRate>0.01</EnergyShieldRechargeRate>
+                  <EnergyShieldEnergyMax>1.5</EnergyShieldEnergyMax>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/costList</xpath>
+                <value>
+                  <costList>
+                    <ComponentSpacer>6</ComponentSpacer>
+                    <Plasteel>150</Plasteel>
+                    <Uranium>50</Uranium>
+                    <Chemfuel>30</Chemfuel>
+                  </costList>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/costList</xpath>
+                <value>
+                  <costList>
+                    <ComponentSpacer>2</ComponentSpacer>
+                    <Plasteel>60</Plasteel>
+                    <Chemfuel>15</Chemfuel>
+                  </costList>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/costList</xpath>
+                <value>
+                  <costList>
+                    <ComponentSpacer>4</ComponentSpacer>
+                    <Plasteel>60</Plasteel>
+                    <Chemfuel>10</Chemfuel>
+                  </costList>
+                </value>
+              </li>
+            </operations>
+          </nomatch>
         </li>
 
       </operations>

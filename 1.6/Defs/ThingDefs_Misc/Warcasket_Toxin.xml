@@ -95,7 +95,9 @@
     colorTwo). Mask names differ by graphic class: Graphic_Multi reads <path>_northm,
     Graphic_Single <path>_m, the latter a copy of the _southm as the icon is of the _south.
 
-    Compat: 1.6/Patches/SOS2Patch.xml reaches this def (EVA tag, cold insulation).
+    Compat: 1.6/Patches/SOS2Patch.xml reaches this def (EVA tag, cold insulation), and under
+    Combat Extended 1.6/Patches/CombatExtended.xml rescales the plating to CE's units and adds
+    bulk and carry capacity for both tiers; see its header.
 
     ApparelExtension priority 1: VFEP_WarcasketArmorBase carries its own ApparelExtension and
     inheritance appends list items, so this def resolves with two. VEF merges duplicate

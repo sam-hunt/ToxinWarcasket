@@ -21,6 +21,10 @@
       filter and into the armor's tank. The ability runs the draw and its autocast on
       the helmet's own tick, so this piece redeclares tickerType Normal (the base's is Never)
       for its CompAbilitiesApparel to tick it (the ability def's header).
+
+    Compat: 1.6/Patches/SOS2Patch.xml reaches this def (EVA tag, cold insulation). Under Combat
+    Extended 1.6/Patches/CombatExtended.xml seals it against CE's smoke, which reads neither the
+    immunity above nor the resistance stat, and rescales its plating; see its header.
   -->
   <VFEPirates.WarcasketDef ParentName="VFEP_WarcasketHelmetBase">
     <defName>TXWC_WarcasketHelmet_Toxin</defName>

@@ -68,6 +68,23 @@ net472 DLL loads unchanged.
 **WSL setup:** `RIMWORLD_PATH` in `~/.bashrc` pointing at the Windows install, e.g.
 `/mnt/c/Program Files (x86)/Steam/steamapps/common/RimWorld`.
 
+### Tests
+
+`Tests/1.6/` is a headless xUnit (net472) suite, never shipped: `dotnet test
+Tests/1.6/ToxinWarcasket.Tests.csproj` (vstest hosts it through mono on Linux/WSL). It copies the
+game's real 1.6 runtime DLLs into its output (Krafs's reference-only stubs cannot load at run
+time), resolved from `RIMWORLD_MANAGED_1_6`, then a 1.6 install's `<Data>/Managed/`, then the
+frozen copy at `~/.local/share/RimWorld-1.6/Managed` (its README.txt records provenance), the
+only source on a 1.7 install. With none found the build stays green on the Krafs fallback but every
+test fails with `TypeLoadException`, and that run overwrites any real DLLs an earlier build had
+copied into the test bin. CI builds the suite through the sln but cannot run it. Tests may only
+load types free of VEF and VFEP, whose DLLs never reach the test output. The XML tests read the
+repo's defs and patches from disk: `CompatPatchTests` resolves every xpath of the CE and spacer
+tier patches against the merged defs and applies the two files in both orders under every
+setting and CE combination, since patch files within a mod apply in filesystem order. The release
+skill runs the suite and a Release build as its first gate, before anything that boots the game
+or commits.
+
 ### Dependency-mod assemblies
 
 `VFEPirates.dll` and `VEF.dll` are referenced compile-only (`Private="false"`), resolved by the
@@ -123,6 +140,7 @@ Textures/        - Art (version-independent, loaded via the "/" root; no Common/
   Mods/<Name>/   - Optional-mod/DLC compat roots (version-specific), gated in LoadFolders.xml
 Mods/<Name>/     - Optional-mod/DLC compat roots (version-independent art)
 Source/1.6/      - C# source code targeting net472
+Tests/1.6/       - Headless xUnit suite (not shipped)
 Scripts/         - l10n config shims + the expected-injections.json sidecar (not shipped)
 Docs/Research/   - Reference notes (VFEP stats, tox gas engine map); not shipped
 l10n/            - rimworld-l10n toolkit, git submodule pinned to a release tag (not shipped)
@@ -289,9 +307,12 @@ inherited from the Shipcracker glossaries so the two sets read as one family in-
   tag via `DEF_TYPE_ALIASES`. A DefInjected folder named `WarcasketDef` would never load.
 - **Startup smoke test (pre-release):** `python3 Scripts/integration-smoke-test.py` (game closed)
   boots the deployed mod on a pinned list (VFEP chain + Biotech + VRE Waster so the integration
-  resolves + Save Our Ship 2 with Vehicle Framework so `SOS2Patch.xml` actually runs), then
+  resolves + Save Our Ship 2 with Vehicle Framework so `SOS2Patch.xml` actually runs + Combat
+  Extended so `CombatExtended.xml` and the spacer tier patch's CE branches run), then
   classifies logged errors by origin and fails on anything attributed to this mod or a
-  VFEP/VEF/VREW/SOS2 seam. Wired into the release skill.
+  VFEP/VEF/VREW/SOS2/CE seam. The engine boots the saved settings as they are and the CE patch
+  branches on the spacer tier setting, so run it twice, with that setting off and on. Wired into
+  the release skill.
   Sibling-mod "dump WILL fail" warnings at launch are expected: the probe is ticked for every
   family mod but each boot loads only its own list.
 - **`.steamworkshop/`** holds the Workshop title and BBCode description per language
@@ -302,9 +323,10 @@ inherited from the Shipcracker glossaries so the two sets read as one family in-
   PNG/JPG, so `About/Preview.png` stays static and the release skill sets the GIF on the page
   with a preview-only SteamCMD update after each in-game upload (which resets it).
 
-**Releases:** run the `/release` skill, or by hand: add the version's `## [X.Y.Z]` section to
-`CHANGELOG.md`, bump `About/About.xml` `<modVersion>` and `Source/1.6/Properties/AssemblyInfo.cs`,
-then push a `v*.*.*` tag. The GitHub Actions workflow (`.github/workflows/release.yml`) builds,
+**Releases:** run the `/release` skill, or by hand: rename the `## [Unreleased]` section of
+`CHANGELOG.md` to `## [X.Y.Z] - date` (changes are recorded there as they land, so nothing is
+carried out of band), bump `About/About.xml` `<modVersion>` and
+`Source/1.6/Properties/AssemblyInfo.cs`, then push a `v*.*.*` tag. The GitHub Actions workflow (`.github/workflows/release.yml`) builds,
 stages via `StageMod`, lifts the tag's CHANGELOG section into the release body, and **fails the
 release if that section is missing**. Release candidates are `X.Y.Z-rc.N` tags (the same glob
 matches): CHANGELOG-less and Workshop-less, with the suffix only in `modVersion` and

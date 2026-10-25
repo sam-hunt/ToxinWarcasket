@@ -50,6 +50,8 @@
       would affect, never into their own faction's.
 
     Compat: SOS2Patch.xml leaves shoulder pads alone, as VFEP's own patch does for VFEP's.
+    Under Combat Extended 1.6/Patches/CombatExtended.xml rescales the plating and adds bulk, as
+    CE's own patch does for VFEP's; see its header.
   -->
   <VFEPirates.WarcasketDef ParentName="VFEP_WarcasketShoulderPadBase">
     <defName>TXWC_WarcasketShoulders_Toxin</defName>

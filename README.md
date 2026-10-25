@@ -75,7 +75,7 @@ Subscribe on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedet
 - **Safe to add** to existing saves.
 - **Not safe to remove** from saves while a pawn is welded into the set.
 - **Save Our Ship 2 / Universum**: EVA rated under exactly the same rules as VFE Pirates' own sets.
-- Not tested with Combat Extended.
+- **Combat Extended**: built-in patch. CE armor values, bulk and carry capacity in line with VFE Pirates' own warcaskets, and a helmet sealed against CE smoke.
 
 ## Contributing
 

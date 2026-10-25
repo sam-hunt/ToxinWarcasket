@@ -24,7 +24,7 @@ Mod settings allow tuning each ability and some stats. An opt-in toggle rewrites
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] and Biotech DLC required.
 [*]Save Our Ship 2: EVA rated under the same rules as VFE Pirates' own sets.
 [*]Vanilla Races Expanded - Waster: a tank with gas in it counts as tox gas for a waster pilot's tox absorption gene (setting, on by default).
-[*]Not tested with Combat Extended (reports welcome).
+[*]Combat Extended: built-in patch. CE armor values, bulk and carry capacity in line with VFE Pirates' own warcaskets, and a helmet sealed against CE smoke.
 [/list]
 
 [hr][/hr]

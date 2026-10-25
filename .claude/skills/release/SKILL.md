@@ -61,19 +61,20 @@ release: use the full history (`git log --oneline --no-merges`) and think in
 terms of the mod's shipped feature set rather than a diff. No confirmation —
 this is orientation, not a decision.
 
-### 2. Build gate
+### 2. Tests and build gate
 
-Run:
+Run, in order:
 ```bash
+dotnet test Tests/1.6/ToxinWarcasket.Tests.csproj
 dotnet build ToxinWarcasket.sln -c Release
 ```
 
-- The csproj sets `TreatWarningsAsErrors`, so the build is also the lint
+- Both projects set `TreatWarningsAsErrors`, so the build is also the lint
   gate: any compiler or analyzer warning fails it, and a passing build means
   there is nothing warnings-only left in the log to read out.
 - This runs before the game boots in steps 3 and 6 because it takes seconds
   and fails fast; a broken tree must not reach the translation commits.
-- On any failure, stop and help the user fix it, then rerun until it passes.
+- On any failure, stop and help the user fix it, then rerun until both pass.
   No confirmation on success.
 
 ### 3. Refresh translation expectations and check freshness
@@ -168,15 +169,21 @@ client and rerun):
 python3 Scripts/integration-smoke-test.py
 ```
 
-- Boots the freshly deployed build once on a pinned list of Toxin
+- Boots the freshly deployed build on a pinned list of Toxin
   Warcasket plus its dependency chain (Harmony, Vanilla Expanded Framework,
-  VFE Pirates, Biotech) and its one optional integration (graphical boot,
+  VFE Pirates, Biotech) and its optional integrations (graphical boot,
   ~1-2 min, auto-quits), then classifies every Player.log error by origin and
   fails on anything attributed to Toxin Warcasket or an integration
   seam:
   - **Save Our Ship 2**, with its dependency Vehicle Framework, so
     `1.6/Patches/SOS2Patch.xml` actually runs; it only fires with SOS2 or
     Universum active.
+  - **Combat Extended**, so `1.6/Patches/CombatExtended.xml` and the
+    spacer tier patch's CE branches run. Both branch on the spacer tier
+    setting, which the engine reads from the saved settings file as it is,
+    so run the script twice: once with the setting off and once with it on
+    (flip `SpacerTier` in the game's `Config/Mod_ToxinWarcasket_ToxinWarcasketMod.xml`
+    between boots, then put it back as the user had it).
   - Biotech is on the list as a hard dependency: every tox gas mechanic
     needs it.
 
@@ -211,20 +218,24 @@ final. Do all of the following, then present it as **one** confirmation:
   - Before an RC, confirm its tag doesn't already exist (`git tag -l`).
 - **Stable releases only — the changelog.** An RC skips this bullet group
   entirely: no section, no link reference.
-  - Draft changelog notes from the full log since the last stable tag —
-    including any commits steps 3-4 just created — grouped under Keep a
-    Changelog headers (Added, Changed, Fixed), omitting chore/version-bump
-    commits.
+  - Start from whatever already sits under `## [Unreleased]` (entries
+    recorded when a change or contribution landed, with their credits), then
+    complete it from the full log since the last stable tag — including any
+    commits steps 3-4 just created — grouped under Keep a Changelog headers
+    (Added, Changed, Fixed), omitting chore/version-bump commits.
     When promoting, this spans every candidate: a fix for a bug that was
     introduced and fixed within the candidate line never reached Workshop
     users, so fold it into the entry it corrects or drop it.
   - Each changelog entry is a short one-liner fit for Steam Workshop change
     notes (see the note atop `CHANGELOG.md`).
-  - Update `CHANGELOG.md`: new `## [X.Y.Z] - YYYY-MM-DD` section at the top,
-    directly below the Keep a Changelog intro paragraph, using today's date
-    (this changelog carries no `[Unreleased]` heading; don't add one), plus a
+  - Update `CHANGELOG.md`: rename the `## [Unreleased]` heading to
+    `## [X.Y.Z] - YYYY-MM-DD` using today's date, put a fresh, empty
+    `## [Unreleased]` heading back above it, add a
     `[X.Y.Z]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/vX.Y.Z`
-    link reference at the bottom, above any older ones.
+    link reference at the bottom above any older ones, and point the
+    `[Unreleased]` compare link at `compare/vX.Y.Z...HEAD`. The workflow's
+    extraction anchors on the version heading, so the empty `[Unreleased]`
+    section above it is harmless.
 - Bump the version strings in both files:
   - `About/About.xml` `<modVersion>`: the full version, suffix included
     (`1.4.0-rc.1`). The game treats it as a display-only string, so testers

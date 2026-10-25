@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!--
+    Combat Extended parity for the three pieces, both tiers. CE reads ArmorRating_Sharp as
+    millimetres of RHA and ArmorRating_Blunt as megapascals, counts a worn item's full Mass
+    against a 40 kg CarryWeight, scales its smoke's inhalation hediff by SmokeSensitivity and
+    Breathing alone, and rescales nothing it has not patched by defName (its apparel autopatcher
+    is off by default and matches no multi-layer warcasket preset). CE's own VFE Pirates patch
+    (ModPatches/Vanilla Factions Expanded - Pirates/.../Apparel_Warcaskets.xml and
+    Apparel_Warcaskets_Spacer.xml) reaches only VFEP's defNames; from its base-class patches
+    ours inherit Flammability 0.25 and the helmet and shoulder PartialArmorExt alone. So
+    unpatched the set wore flak-jacket plating, moved at the speed floor under 108 kg and
+    breathed CE's smoke through a sealed helmet.
+
+    Each tier copies a VFEP chassis exactly, so the CE numbers are that chassis's. Heat is
+    never touched, as in every CE patch; uranium, chemfuel and the 7th-gen plasteel are not in
+    CE's cost rescale and stay. Nothing else CE does reaches the set: vanilla tox gas, the
+    set's gas explosions (GenExplosion with ToxGas and no damage amount), the gas jet verb and
+    the reloadables all run as without CE, and CE's own tox grenades and rounds emit vanilla
+    ToxGas, which Absorb Gas takes as it takes a tox pack's. CE's black smoke is a Thing, not
+    gas, so Absorb Gas cannot take it.
+    - 7th generation (spacerTier off): the Aerial's, whose vanilla plating the set shares to the
+      decimal. Plating 28 / 70 on armor and shoulders, 25 / 56 on the helmet. Bulk / WornBulk
+      250 / 25, 15 / 5, 15 / 8. Costs on CE's industrial rescale, steel and components x2.
+      NightVisionEfficiency_Apparel 0.5, CE's for every industrial warcasket helmet.
+    - Spacer tier (spacerTier on): the Siegebreaker's, the Controller's and the Sarcophagus's,
+      the sets whose blunt 1 pattern the tier copies. Plating 36 / 90 and 32 / 72. Bulk 275 / 35,
+      15 / 5, 20 / 10. Shield 2.25 / 0.015, CE's x1.5 on the tier's 1.5 / 0.01 (VEF's
+      CompShieldBubble absorbs CE projectiles unpatched; only the numbers move). Costs on CE's
+      spacer rescale, plasteel x1.5 and two more spacer components on the armor and helmet.
+      NightVisionEfficiency_Apparel 0.75, the spacer helmets'.
+    - Both tiers: CarryWeight +250 on the armor, CarryBulk +200 (industrial) or +225 (spacer)
+      and Suppressability -100, the frames' carry offsets and immunity to suppression, without
+      which the set moves at half speed. SmokeSensitivity -1 on the helmet (the stat clamps at
+      0) makes the wearer immune to CE's smoke, CE's convention for every sealed helmet; the
+      Breathing floor of the respirator does not count there. immuneToToxGasExposure is on the
+      helmet def already.
+
+    Ordering: this file and SpacerTier.xml both live in this folder, and patch files within a
+    mod apply in filesystem order, so neither may depend on running after the other. Under CE
+    this file owns plating, shield stats and costs for both tiers, and SpacerTier.xml skips its
+    own versions of exactly those (its "without Combat Extended" block); everything this file
+    adds or replaces is then a node SpacerTier.xml never touches under CE, and every xpath here
+    resolves against the unpatched def. That is why the spacer branch replaces each costList
+    whole rather than its leaves (a 7th-gen list has no ComponentSpacer to replace) and adds
+    the shield stats rather than replacing them. Tests/1.6/CompatPatchTests.cs applies the two
+    files in both orders and checks the result. A setting change takes effect at the next
+    startup, as with every patch PatchOperationSetting gates.
+  -->
+  <Operation Class="ToxinWarcasket.PatchOperationModActive">
+    <packageIds>
+      <li>ceteam.combatextended</li>
+    </packageIds>
+    <match Class="ToxinWarcasket.PatchOperationSetting">
+      <setting>spacerTier</setting>
+
+      <!-- 7th generation: the Aerial's numbers. -->
+      <nomatch Class="PatchOperationSequence">
+        <operations>
+
+          <!-- Armor and shoulders: plating. -->
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin"]/statBases/ArmorRating_Sharp</xpath>
+            <value>
+              <ArmorRating_Sharp>28</ArmorRating_Sharp>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin"]/statBases/ArmorRating_Blunt</xpath>
+            <value>
+              <ArmorRating_Blunt>70</ArmorRating_Blunt>
+            </value>
+          </li>
+
+          <!-- Armor: bulk, carry, costs. -->
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/statBases</xpath>
+            <value>
+              <Bulk>250</Bulk>
+              <WornBulk>25</WornBulk>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/equippedStatOffsets</xpath>
+            <value>
+              <CarryWeight>250</CarryWeight>
+              <CarryBulk>200</CarryBulk>
+              <Suppressability>-100</Suppressability>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/costList/ComponentIndustrial</xpath>
+            <value>
+              <ComponentIndustrial>16</ComponentIndustrial>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/costList/Steel</xpath>
+            <value>
+              <Steel>280</Steel>
+            </value>
+          </li>
+
+          <!-- Shoulders: bulk, costs. -->
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/statBases</xpath>
+            <value>
+              <Bulk>15</Bulk>
+              <WornBulk>5</WornBulk>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/costList/ComponentIndustrial</xpath>
+            <value>
+              <ComponentIndustrial>4</ComponentIndustrial>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/costList/Steel</xpath>
+            <value>
+              <Steel>110</Steel>
+            </value>
+          </li>
+
+          <!-- Helmet: plating, bulk, night vision, smoke, costs. -->
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Sharp</xpath>
+            <value>
+              <ArmorRating_Sharp>25</ArmorRating_Sharp>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Blunt</xpath>
+            <value>
+              <ArmorRating_Blunt>56</ArmorRating_Blunt>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/statBases</xpath>
+            <value>
+              <Bulk>15</Bulk>
+              <WornBulk>8</WornBulk>
+              <NightVisionEfficiency_Apparel>0.5</NightVisionEfficiency_Apparel>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/equippedStatOffsets</xpath>
+            <value>
+              <SmokeSensitivity>-1</SmokeSensitivity>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/costList/ComponentIndustrial</xpath>
+            <value>
+              <ComponentIndustrial>6</ComponentIndustrial>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/costList/Steel</xpath>
+            <value>
+              <Steel>90</Steel>
+            </value>
+          </li>
+
+        </operations>
+      </nomatch>
+
+      <!-- Spacer tier: the Siegebreaker's numbers. -->
+      <match Class="PatchOperationSequence">
+        <operations>
+
+          <!-- Armor and shoulders: plating. -->
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin"]/statBases/ArmorRating_Sharp</xpath>
+            <value>
+              <ArmorRating_Sharp>36</ArmorRating_Sharp>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin" or defName = "TXWC_WarcasketShoulders_Toxin"]/statBases/ArmorRating_Blunt</xpath>
+            <value>
+              <ArmorRating_Blunt>90</ArmorRating_Blunt>
+            </value>
+          </li>
+
+          <!-- Armor: bulk, shield, carry, costs. -->
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/statBases</xpath>
+            <value>
+              <Bulk>275</Bulk>
+              <WornBulk>35</WornBulk>
+              <EnergyShieldRechargeRate>0.015</EnergyShieldRechargeRate>
+              <EnergyShieldEnergyMax>2.25</EnergyShieldEnergyMax>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/equippedStatOffsets</xpath>
+            <value>
+              <CarryWeight>250</CarryWeight>
+              <CarryBulk>225</CarryBulk>
+              <Suppressability>-100</Suppressability>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_Warcasket_Toxin"]/costList</xpath>
+            <value>
+              <costList>
+                <ComponentSpacer>8</ComponentSpacer>
+                <Plasteel>225</Plasteel>
+                <Uranium>50</Uranium>
+                <Chemfuel>30</Chemfuel>
+              </costList>
+            </value>
+          </li>
+
+          <!-- Shoulders: bulk, costs. -->
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/statBases</xpath>
+            <value>
+              <Bulk>15</Bulk>
+              <WornBulk>5</WornBulk>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketShoulders_Toxin"]/costList</xpath>
+            <value>
+              <costList>
+                <ComponentSpacer>2</ComponentSpacer>
+                <Plasteel>90</Plasteel>
+                <Chemfuel>15</Chemfuel>
+              </costList>
+            </value>
+          </li>
+
+          <!-- Helmet: plating, bulk, night vision, smoke, costs. -->
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Sharp</xpath>
+            <value>
+              <ArmorRating_Sharp>32</ArmorRating_Sharp>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/statBases/ArmorRating_Blunt</xpath>
+            <value>
+              <ArmorRating_Blunt>72</ArmorRating_Blunt>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/statBases</xpath>
+            <value>
+              <Bulk>20</Bulk>
+              <WornBulk>10</WornBulk>
+              <NightVisionEfficiency_Apparel>0.75</NightVisionEfficiency_Apparel>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/equippedStatOffsets</xpath>
+            <value>
+              <SmokeSensitivity>-1</SmokeSensitivity>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/VFEPirates.WarcasketDef[defName = "TXWC_WarcasketHelmet_Toxin"]/costList</xpath>
+            <value>
+              <costList>
+                <ComponentSpacer>6</ComponentSpacer>
+                <Plasteel>90</Plasteel>
+                <Chemfuel>10</Chemfuel>
+              </costList>
+            </value>
+          </li>
+
+        </operations>
+      </match>
+    </match>
+  </Operation>
+</Patch>
