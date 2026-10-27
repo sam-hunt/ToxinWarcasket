@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Smaller download: the shipped XML no longer carries developer comments, and every image is recompressed without any change to the pixels.
+- American spelling throughout, matching the base game.
 
 ## [1.2.0] - 2026-10-22
 

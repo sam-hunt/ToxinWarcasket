@@ -232,6 +232,9 @@ TODOs.md         - Scoping notes for the feature work that has not landed yet
 - **Coloured text must be `Resolve()`d, never converted to `string`.** `TaggedString`'s
   implicit `string` conversion is `RawText.StripTags()`, so `string s = key.Translate(x.Colorize(c))`
   silently drops the colour; `Colorize` on a plain string, or `.Resolve()`, keeps it.
+- **American spelling in player-facing text,** as vanilla uses, including the generation lore
+  quoted from VFEP (which spells it British); a VFEP name the player looks up in game, such as
+  the "specialised warcaskets" research, is quoted as VFEP spells it.
 - **No em dashes in player-facing text** (def labels/descriptions, `Keyed/`, `About.xml`,
   `.steamworkshop/`); reflow the sentence instead. This file, code comments and def comments are
   unaffected.
