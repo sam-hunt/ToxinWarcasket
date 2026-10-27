@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Combat Extended support: CE armor values, bulk and carry capacity in line with VFE Pirates' own warcaskets at either tier, and a helmet sealed against CE smoke.
 
+### Changed
+
+- Smaller download: the shipped XML no longer carries developer comments.
+
 ## [1.2.0] - 2026-10-22
 
 ### Added
