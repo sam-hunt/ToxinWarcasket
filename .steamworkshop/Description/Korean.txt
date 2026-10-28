@@ -24,7 +24,7 @@
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]와 바이오테크 DLC가 필요합니다.
 [*]Save Our Ship 2: VFE Pirates의 기본 세트와 같은 규칙으로 선외활동(EVA) 등급을 받습니다.
 [*]Vanilla Races Expanded - Waster: 가스가 든 탱크는 웨이스터 조종사의 독소 흡수 유전자에 독소 가스로 간주됩니다(설정, 기본값: 켜짐).
-[*]Combat Extended와는 테스트하지 않았습니다(제보 환영).
+[*]Combat Extended: 방어도, 부피, 허용 부피가 다른 우주시대 워캐스킷과 비슷한 수준이며, 헬멧은 CE의 연막을 막습니다.
 [/list]
 
 [hr][/hr]

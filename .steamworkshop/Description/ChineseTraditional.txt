@@ -24,7 +24,7 @@
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]與Biotech DLC皆為必要。
 [*]Save Our Ship 2：與VFE Pirates原有的套裝採用相同規則，具備EVA能力。
 [*]Vanilla Races Expanded - Waster：毒氣罐內有毒氣時，對荒地人駕駛員的「毒氣吸收」基因視為毒氣(模組設定，預設開啟)。
-[*]未與Combat Extended一同測試(歡迎回報)。
+[*]Combat Extended：護甲數值、穿著體積與體積攜帶能力比照其他太空級的戰棺，頭盔能隔絕CE的煙霧。
 [/list]
 
 [hr][/hr]

@@ -24,7 +24,7 @@ Mod 設定で,各能力と一部のステータスを調整できます.任意�
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]とBiotech DLCが必要です.
 [*]Save Our Ship 2: VFE Pirates本体のセットと同じ条件でEVA対応になります.
 [*]Vanilla Races Expanded - Waster: ガスの入ったタンクは,ウェイスターのパイロットの毒ガス吸収の遺伝子にとって毒ガスとみなされます(設定,デフォルトはOn).
-[*]Combat Extendedでは未検証です(報告歓迎).
+[*]Combat Extended: アーマー値,かさ,積載量が他の宇宙世紀のウォーキャスケットと同水準に調整され,ヘルメットはCEの煙を通しません.
 [/list]
 
 [hr][/hr]

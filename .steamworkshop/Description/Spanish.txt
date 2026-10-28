@@ -24,7 +24,7 @@ Las opciones del mod permiten ajustar cada habilidad y algunas estadísticas. Un
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] y el DLC Biotech obligatorios.
 [*]Save Our Ship 2: apto para EVA con las mismas reglas que las series propias de VFE Pirates.
 [*]Vanilla Races Expanded - Waster: un depósito con gas cuenta como toxigás para el gen de absorción de toxigás de un piloto escoria (opción, activada por defecto).
-[*]No probado con Combat Extended (se agradecen los informes).
+[*]Combat Extended: valores de armadura, volumen equipado y capacidades de masa y de volumen a la par de otros ataúdes de guerra de la era espacial, y el casco bloquea el humo de CE.
 [/list]
 
 [hr][/hr]

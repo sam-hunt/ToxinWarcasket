@@ -24,7 +24,7 @@ Les paramètres du mod permettent de régler chaque capacité et certaines stati
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] et le DLC Biotech requis.
 [*]Save Our Ship 2 : apte aux sorties extravéhiculaires, selon les mêmes règles que les ensembles de VFE Pirates.
 [*]Vanilla Races Expanded - Waster : un réservoir contenant du gaz compte comme du gaz tox pour le gène d'absorption tox d'un pilote pestilent (paramètre, activé par défaut).
-[*]Non testé avec Combat Extended (vos retours sont les bienvenus).
+[*]Combat Extended : valeurs d'armure, masse et capacité de transport au niveau des autres warcaskets de niveau spatial, et le casque bloque la fumée de CE.
 [/list]
 
 [hr][/hr]

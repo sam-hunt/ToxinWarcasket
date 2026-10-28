@@ -24,7 +24,7 @@ In den Mod-Einstellungen lassen sich jede Fähigkeit und einige Werte anpassen. 
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] und das Biotech-DLC erforderlich.
 [*]Save Our Ship 2: EVA-tauglich nach denselben Regeln wie die Sets aus VFE Pirates.
 [*]Vanilla Races Expanded - Waster: Ein Tank mit Gas zählt für das Gen 'Giftgasabsorption' eines Ödländer-Piloten als Giftgas (Einstellung, standardmäßig an).
-[*]Nicht mit Combat Extended getestet (Rückmeldungen willkommen).
+[*]Combat Extended: Rüstungswerte, Bulk und Bulk-Kapazität liegen auf dem Niveau anderer Raumfahrt-Kriegssärge, und der Helm blockiert den Rauch von CE.
 [/list]
 
 [hr][/hr]
