@@ -22,9 +22,9 @@ Mod settings allow tuning each ability and some stats. An opt-in toggle rewrites
 [*]Safe to add to existing saves.
 [*]Not safe to remove while a pawn is welded into the set.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] and Biotech DLC required.
-[*]Save Our Ship 2: EVA rated under the same rules as VFE Pirates' own sets.
-[*]Vanilla Races Expanded - Waster: a tank with gas in it counts as tox gas for a waster pilot's tox absorption gene (setting, on by default).
-[*]Combat Extended: armor values, bulk and carry capacity matching other spacer-tier warcaskets, and the helmet blocks CE smoke.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1909914131]Save Our Ship 2[/url]: EVA rated under the same rules as VFE Pirates' own sets.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2983471725]Vanilla Races Expanded - Waster[/url]: a tank with gas in it counts as tox gas for a waster pilot's tox absorption gene (setting, on by default).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044]Combat Extended[/url]: armor values, bulk and carry capacity matching other spacer-tier warcaskets, and the helmet blocks CE smoke.
 [/list]
 
 [hr][/hr]
