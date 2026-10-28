@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-10-28
+
 ### Added
 
 - Combat Extended support: CE armor values, bulk and carry capacity in line with VFE Pirates' own warcaskets at either tier, and a helmet sealed against CE smoke.
@@ -66,7 +68,8 @@ First release.
 - RimWorld 1.6 and 1.7 support.
 - Translated into 9 languages.
 
-[Unreleased]: https://github.com/sam-hunt/ToxinWarcasket/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/sam-hunt/ToxinWarcasket/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.3.0
 [1.2.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.2.0
 [1.1.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.1.0
 [1.0.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.0.0
