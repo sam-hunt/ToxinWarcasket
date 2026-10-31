@@ -13,6 +13,13 @@ page separately: the `release` skill runs a preview-only SteamCMD update after
 every in-game upload, because the uploader resets the preview to the PNG each
 time.
 
+`Scripts/preview-gif.py` builds it from the artist's animated `Preview.mp4`,
+keeping the video's own framing (the artist re-laid out the PNG's title, icons
+and background, so the PNG's pixels cannot be reused); its header records the
+method and the size tuning. The MP4 is not tracked; keep it with the gameplay
+recordings. The badge is bumped in place by the `gif-patch` skill like the
+PNG's, never by re-exporting.
+
 ## Images/
 
 The page's gallery images, uploaded by hand through the page's images and

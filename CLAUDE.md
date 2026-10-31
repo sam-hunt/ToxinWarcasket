@@ -147,7 +147,7 @@ Textures/        - Art (version-independent, loaded via the "/" root; no Common/
 Mods/<Name>/     - Optional-mod/DLC compat roots (version-independent art)
 Source/1.6/      - C# source code targeting net472
 Tests/1.6/       - Headless xUnit suite (not shipped)
-Scripts/         - l10n config shims + the expected-injections.json sidecar (not shipped)
+Scripts/         - l10n config shims + the expected-injections.json sidecar, preview-gif.py (not shipped)
 Docs/Research/   - Reference notes (VFEP stats, tox gas engine map); not shipped
 l10n/            - rimworld-l10n toolkit, git submodule pinned to a release tag (not shipped)
 LoadFolders.xml  - Tells RimWorld which folders to load per game version (1.7 loads the 1.6 tree)
@@ -331,6 +331,9 @@ inherited from the Shipcracker glossaries so the two sets read as one family in-
   `Preview.gif`, when present, is the animated Workshop thumbnail: the mod list decodes only
   PNG/JPG, so `About/Preview.png` stays static and the release skill sets the GIF on the page
   with a preview-only SteamCMD update after each in-game upload (which resets it).
+  `Scripts/preview-gif.py` rebuilds it from the artist's MP4 (kept outside the repo) and its
+  header is the record of the method and size tuning; version bumps go through the `gif-patch`
+  skill instead. The family guide for the next commission is `../PREVIEW_GIF_FROM_MP4.md`.
 
 **Releases:** run the `/release` skill, or by hand: rename the `## [Unreleased]` section of
 `CHANGELOG.md` to `## [X.Y.Z] - date` (changes are recorded there as they land, so nothing is
