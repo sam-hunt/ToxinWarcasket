@@ -3,6 +3,7 @@ using RimWorld;
 using ToxinWarcasket.Integrations;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace ToxinWarcasket;
 
@@ -104,8 +105,11 @@ public class CompToxTank : CompApparelReloadable
     {
         if (on && remainingCharges > 0)
         {
+            Pawn wearer = Wearer;
+            if (!venting && wearer is { Spawned: true })
+                Props.ventStartSound?.PlayOneShot(new TargetInfo(wearer.Position, wearer.Map));
             venting = true;
-            Ability_AbsorbGas.WornBy(Wearer)?.StopAbsorbing();
+            Ability_AbsorbGas.WornBy(wearer)?.StopAbsorbing();
             return;
         }
         venting = false;

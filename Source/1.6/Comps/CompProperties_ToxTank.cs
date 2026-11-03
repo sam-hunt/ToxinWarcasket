@@ -19,9 +19,10 @@ public class CompProperties_ToxTank : CompProperties_ApparelReloadable
     // Fewest charges that make a downed or death burst; below this the tank just stays put.
     public int minBurstCharges = 10;
 
-    // Vent emission rate.
+    // Vent emission rate, the loop played while venting, and the one-shot played as it opens.
     public float ventChargesPerSecond = 2f;
     public EffecterDef ventEffecter;
+    public SoundDef ventStartSound;
 
     // Whether a charged tank feeds Vanilla Races Expanded - Waster's tox absorption gene as tox
     // gas would (Integrations/VREWasterIntegration); a mod setting defaulting to this.
