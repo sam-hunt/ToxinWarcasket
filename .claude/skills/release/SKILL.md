@@ -175,9 +175,6 @@ python3 Scripts/integration-smoke-test.py
   ~1-2 min, auto-quits), then classifies every Player.log error by origin and
   fails on anything attributed to Toxin Warcasket or an integration
   seam:
-  - **Save Our Ship 2**, with its dependency Vehicle Framework, so
-    `1.6/Patches/SOS2Patch.xml` actually runs; it only fires with SOS2 or
-    Universum active.
   - **Combat Extended**, so `1.6/Patches/CombatExtended.xml` and the
     spacer tier patch's CE branches run. Both branch on the spacer tier
     setting, which the engine reads from the saved settings file as it is,

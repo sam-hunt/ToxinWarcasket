@@ -265,9 +265,8 @@ and references to Biotech defs need no `MayRequire`.
   dropped when it moves. Gate on the package id (`ludeon.rimworld.odyssey`), never
   `PatchOperationFindMod` (matches by display name); inside a patch file that must not split
   across roots, `ToxinWarcasket.PatchOperationModActive` is the package-id equivalent (patches
-  from different roots apply in an order that is not LoadFolders order). The one deliberate exception is a patch
-  that mirrors a VFEP patch: `1.6/Patches/SOS2Patch.xml` copies VFEP's own display-name gate so
-  the Toxin and VFEP's sets flip to EVA-rated under exactly the same condition.
+  from different roots apply in an order that is not LoadFolders order). A patch that mirrors an upstream patch
+  copies that patch's own gate instead, so both fire together.
 - Compat roots must sit BESIDE the well-known folders, never inside them: anything under
   `1.6/Defs/**` or `1.6/Languages/**` loads unconditionally at any depth.
 - The game gates a DefInjected entry by the load root that CONTAINS it, never by the def it
@@ -306,7 +305,7 @@ inherited from the Shipcracker glossaries so the two sets read as one family in-
   `rimworld-l10n` repo, consumed as a git submodule pinned to a semver release tag (`git submodule
   status` names it; if `l10n/` is empty, run `git submodule update --init`). `Scripts/*.py` are
   thin per-repo config shims over its engines; each shim's comments carry this repo's rationale
-  (the VFEP dependency chain, why Biotech is the only DLC pinned, why SOS2 is on the smoke list).
+  (the VFEP dependency chain, why Biotech is the only DLC pinned, why VREW and CE are on the smoke list).
   Never edit `l10n/` in place here: mod-independent learnings go upstream in the canonical
   checkout; mod-specific ones go in the skill's glossary. The pin moves only at release, at the
   start of a translation pass, or when a new major lands (`l10n/tools/bump-consumer.sh`), never
@@ -316,10 +315,10 @@ inherited from the Shipcracker glossaries so the two sets read as one family in-
   tag via `DEF_TYPE_ALIASES`. A DefInjected folder named `WarcasketDef` would never load.
 - **Startup smoke test (pre-release):** `python3 Scripts/integration-smoke-test.py` (game closed)
   boots the deployed mod on a pinned list (VFEP chain + Biotech + VRE Waster so the integration
-  resolves + Save Our Ship 2 with Vehicle Framework so `SOS2Patch.xml` actually runs + Combat
-  Extended so `CombatExtended.xml` and the spacer tier patch's CE branches run), then
-  classifies logged errors by origin and fails on anything attributed to this mod or a
-  VFEP/VEF/VREW/SOS2/CE seam. The engine boots the saved settings as they are and the CE patch
+  resolves + Combat Extended so `CombatExtended.xml` and the spacer tier patch's CE branches
+  run), then classifies logged errors by origin and fails on anything attributed to this mod or
+  a VFEP/VEF/VREW/CE seam. Save Our Ship 2 is deliberately off the list: its patch is
+  best-effort. The engine boots the saved settings as they are and the CE patch
   branches on the spacer tier setting, so run it twice, with that setting off and on. Wired into
   the release skill.
   Sibling-mod "dump WILL fail" warnings at launch are expected: the probe is ticked for every

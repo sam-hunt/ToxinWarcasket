@@ -11,6 +11,9 @@
     being EVA-rated. If VFEP changes its gate, change this one to match. VFEP's patch names every
     tier's armor and helmet, so the spacer tier setting changes nothing here; SpacerTier.xml
     leaves an Insulation_Cold of 100 alone, as the two files apply in no fixed order.
+    Best-effort: SOS2 is sparsely maintained upstream and off the release smoke list, so nothing
+    boots this file against a live SOS2; the xpath check in Tests/1.6/CompatPatchTests.cs is the
+    only coverage it gets.
   -->
   <Operation Class="PatchOperationFindMod">
     <mods>

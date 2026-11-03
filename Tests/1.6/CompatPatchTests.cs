@@ -28,6 +28,7 @@ public class CompatPatchTests
 
     private const string CombatExtendedPatch = "1.6/Patches/CombatExtended.xml";
     private const string SpacerTierPatch = "1.6/Patches/SpacerTier.xml";
+    private const string Sos2Patch = "1.6/Patches/SOS2Patch.xml";
     private const string CombatExtendedId = "ceteam.combatextended";
 
     // Table cell markers: the node must be absent, or present with any value.
@@ -63,6 +64,7 @@ public class CompatPatchTests
     [Theory]
     [InlineData(CombatExtendedPatch)]
     [InlineData(SpacerTierPatch)]
+    [InlineData(Sos2Patch)]
     public void EveryXPath_ResolvesToOneNodePerNamedDef(string relativePath)
     {
         var defs = MergedDefs();
