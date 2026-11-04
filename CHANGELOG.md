@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Reworded the mod settings tooltips, summary lines and toggle labels to read like vanilla's options.
+- Reworded the set's descriptions, the spray gas, vent tank and absorb gas text and the mod description to read like the base game and VFE Pirates' own sets.
 
 ## [1.3.0] - 2026-10-28
 

@@ -1,6 +1,6 @@
 # Toxin Warcasket
 
-> A RimWorld mod adding a heavy chemical-warfare warcasket set for Vanilla Factions Expanded - Pirates
+> A RimWorld mod adding a heavy warcasket set built for chemical warfare, for Vanilla Factions Expanded - Pirates
 
 [![RimWorld](https://img.shields.io/badge/RimWorld-1.6%20%7C%201.7-blue.svg)](https://rimworldgame.com/)
 [![Subscribers](https://img.shields.io/steam/subscriptions/3821100591?logo=steam&label=subscribers)](https://steamcommunity.com/sharedfiles/filedetails/?id=3821100591)

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "gameBuild": "1.7.4990 rev1069",
+    "gameBuild": "1.7.4998 rev1299",
     "activeDlcs": [
       "Core",
       "Biotech"
@@ -20,7 +20,7 @@
   "defInjections": {
     "ThingDef": {
       "TXWC_WarcasketHelmet_Toxin.description": {
-        "english": "Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that - while interchangeable - work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergizes with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series is based on the Cataphract design, rebuilt for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to environmental toxins.",
+        "english": "Specialized warcasket helmet with superior protection and worse weight, fitted with a respirator that keeps out tox gas and draws it back into the tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that - while interchangeable - work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergizes with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series is based on the Cataphract design, with the frame rebuilt around a tox gas tank for chemical warfare. The tank in the shell feeds vents around the pilot and the gas jets on the pauldrons, and the respirator in the helmet draws gas back into it. The objective was a pilot who could gas a position and then walk into it, and clear the air again once the fighting was done. Together the pieces make the pilot immune to environmental toxins.",
         "required": true
       },
       "TXWC_WarcasketHelmet_Toxin.label": {
@@ -28,7 +28,7 @@
         "required": true
       },
       "TXWC_WarcasketHelmet_Toxin.shortDescription": {
-        "english": "Specialized warcasket helmet with superior protection and worse weight, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank.",
+        "english": "Specialized warcasket helmet with superior protection and worse weight, fitted with a respirator that keeps out tox gas and draws it back into the tank.",
         "required": true
       },
       "TXWC_WarcasketShoulders_Toxin.comps.CompJetNozzle.chargeNoun": {
@@ -42,7 +42,7 @@
         "normalized": "TXWC_WarcasketShoulders_Toxin.comps.2.cooldownGerund"
       },
       "TXWC_WarcasketShoulders_Toxin.comps.CompJetNozzle.jetDescription": {
-        "english": "Spray a cone of tox gas from the shoulders toward the target. The gas lands in the inner cone and drifts over the outer area, thinning as it goes. Each jet draws on the warcasket's tank. Without a tank, the shoulders fall back on jets of their own, reloaded with chemfuel.",
+        "english": "Spray a cone of tox gas from the shoulders at the target. The gas will spread outward from where it lands and thin as it drifts. Each jet draws chemfuel from the warcasket's tank. If no tank is worn, the shoulders will use a small reserve of their own, which must be reloaded with chemfuel.",
         "required": true,
         "normalized": "TXWC_WarcasketShoulders_Toxin.comps.2.jetDescription"
       },
@@ -52,7 +52,7 @@
         "normalized": "TXWC_WarcasketShoulders_Toxin.comps.2.jetLabel"
       },
       "TXWC_WarcasketShoulders_Toxin.description": {
-        "english": "Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted jets that spray tox gas from the shell's tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that - while interchangeable - work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergizes with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series is based on the Cataphract design, rebuilt for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to environmental toxins.",
+        "english": "Specialized warcasket pauldrons with superior protection and worse weight, fitted with shoulder-mounted jets that spray tox gas from the shell's tank.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that - while interchangeable - work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergizes with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series is based on the Cataphract design, with the frame rebuilt around a tox gas tank for chemical warfare. The tank in the shell feeds vents around the pilot and the gas jets on the pauldrons, and the respirator in the helmet draws gas back into it. The objective was a pilot who could gas a position and then walk into it, and clear the air again once the fighting was done. Together the pieces make the pilot immune to environmental toxins.",
         "required": true
       },
       "TXWC_WarcasketShoulders_Toxin.label": {
@@ -78,7 +78,7 @@
         "normalized": "TXWC_Warcasket_Toxin.comps.2.cooldownGerund"
       },
       "TXWC_Warcasket_Toxin.description": {
-        "english": "Specialized warcasket shell with superior protection and worse weight, fitted with a tox gas tank that vents around the pilot.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that - while interchangeable - work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergizes with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series is based on the Cataphract design, rebuilt for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to environmental toxins.",
+        "english": "Specialized warcasket shell with superior protection and worse weight, fitted with a tox gas tank that vents around the pilot.\n\nThe 7th generation warcaskets came after underwhelming results in improving the baseline performance even further, instead focusing on creating designs that - while interchangeable - work better as a set. They were also the first to include plasteel in the design as it appeared more frequently in scavenging and looting. Each piece has a unique function that synergizes with those of the same series, making them a truly separate class of mobile armor units.\n\nThe Toxin series is based on the Cataphract design, with the frame rebuilt around a tox gas tank for chemical warfare. The tank in the shell feeds vents around the pilot and the gas jets on the pauldrons, and the respirator in the helmet draws gas back into it. The objective was a pilot who could gas a position and then walk into it, and clear the air again once the fighting was done. Together the pieces make the pilot immune to environmental toxins.",
         "required": true
       },
       "TXWC_Warcasket_Toxin.label": {
@@ -92,7 +92,7 @@
     },
     "VEF.Abilities.AbilityDef": {
       "TXWC_AbsorbGas.description": {
-        "english": "Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas, and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn.",
+        "english": "Draw the surrounding air in through the respirator for a few seconds. Smoke, tox gas and other gases near the pilot will be pulled in and cleared, even as they move. If a tank is worn, whatever is drawn in will be filtered and stored in it as tox gas.",
         "required": true
       },
       "TXWC_AbsorbGas.iconPath": {
@@ -111,7 +111,7 @@
         "required": true
       },
       "TXWC_VentTank.description": {
-        "english": "Open the tank's vents and release tox gas around the pilot. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left.",
+        "english": "Open the tank's vents and release tox gas around the pilot. The cloud will grow from wherever the pilot stands and follow them as they move. Toggle again to close the vents and keep what is left.",
         "required": true
       },
       "TXWC_VentTank.iconPath": {

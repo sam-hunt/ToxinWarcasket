@@ -1,10 +1,10 @@
 Toxin Warcasket
 
-A new chemical-warfare warcasket for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
+A new warcasket built for chemical warfare, for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
 
 [h1]About[/h1]
 
-An impressively unethical feat of engineering, the Toxin is a 7th generation warcasket built on VFE Pirates' Cataphract chassis: Aerial-grade plating on a slightly lighter frame, and three pieces sharing a tox gas tank. Flood a position with gas, storm it unharmed, and recover a portion by clearing the air after. Requires Biotech.
+An impressively unethical feat of engineering, the Toxin is a 7th generation warcasket built on VFE Pirates' Cataphract chassis. It carries Aerial-grade plating on a slightly lighter frame, and its three pieces share a tox gas tank. Flood a position with gas, storm it unharmed, and recover a portion by clearing the air after. Requires Biotech.
 
 [hr][/hr]
 [h1]The Set[/h1]
