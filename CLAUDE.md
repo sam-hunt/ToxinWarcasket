@@ -235,9 +235,11 @@ TODOs.md         - Scoping notes for the feature work that has not landed yet
 - **American spelling in player-facing text,** as vanilla uses, including the generation lore
   quoted from VFEP (which spells it British); a VFEP name the player looks up in game, such as
   the "specialised warcaskets" research, is quoted as VFEP spells it.
-- **No em dashes in player-facing text** (def labels/descriptions, `Keyed/`, `About.xml`,
-  `.steamworkshop/`); reflow the sentence instead. This file, code comments and def comments are
-  unaffected.
+- **Player-facing text follows `l10n/languages/English.md`** (def labels and descriptions,
+  `Keyed/`, `About.xml`, `.steamworkshop/`): read it before writing or changing any. Its
+  mechanical rules (no dashes, semicolons, "Whether" openers or parenthetical asides) are checked
+  by `Scripts/check-translations.py` as `[player text]` warnings, which `--strict` turns into
+  release errors. This file, code comments and def comments are unaffected.
 
 ## Tox Gas and Biotech
 
