@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Opening the tank's vents now plays the tox pack's activation sound.
 
+### Changed
+
+- Reworded the mod settings tooltips, summary lines and toggle labels to read like vanilla's options.
+
 ## [1.3.0] - 2026-10-28
 
 ### Added

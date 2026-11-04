@@ -97,7 +97,7 @@ Russian worker lowercases a missed key, so a miss also loses capitalization.
 | pollution mutations (VREW) | мутации от загрязнения | Coined: Anomaly `мутация` (`BecameMutant.label`) + Biotech `загрязнение`. `остаются активными` for "keeping active". |
 | keeping (mutations) active / counts as | остаются активными / считается токсичным газом | Coined: an on-state while gas is present, not growth; `считается` (is counted as). |
 | tox cloud | токсичное облако | Coined from Biotech `токсичный`. |
-| Tank feeds waster tox absorption (setting label) | Мусорщики поглощают токсичный газ из бака | Coined, active clause per the calque lesson rather than a noun chain. |
+| Tox absorption from the tank (setting label) | Мусорщики поглощают токсичный газ из бака | Coined, active clause per the calque lesson rather than a noun chain. English label reshaped to a noun phrase on the settings pass; the target value is kept as it was and owes a reshape in the next translation pass. |
 | Default: on. | По умолчанию: включено. | Counterpart of the file's `По умолчанию: выключено.`; Core tooltips use `Если включено`. |
 | (requires Vanilla Races Expanded - Waster) | (требуется Vanilla Races Expanded - Waster) | Same pattern as `(требуется Odyssey)`; the title stays English. |
 | Workshop: "(setting, on by default)" | (настройка, по умолчанию включена) | Coined; `включена` agrees with feminine `настройка`. Feed verb: `бак питает` (the tank feeds). |

@@ -91,7 +91,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | tox absorption (VREW gene, shown via `{0}`) | 독소 흡수 (`독소 흡수 유전자({0})`) | Coined: Biotech `ToxGas.label` 독소 + this glossary's 흡수 (absorb). VREW ships English only, so no source exists. The literal `가` after `유전자({0})` follows the fixed noun, no josa marker needed. |
 | pollution mutations | 오염 변이 | Coined: Biotech `PlanetPollution` 오염 + Anomaly's 변이 (`WarpedObelisk_Mutator` `변이 재사용 대기시간`; Anomaly also has 돌연변이 in labels). "active" rendered 활성 상태로 유지됩니다. |
 | keeping (mutations) active / counts as | 활성 상태로 유지됩니다 / 독소 가스로 간주되어 | Coined: an on-state while gas is present, not growth; 간주 (is regarded as). |
-| Tank feeds waster tox absorption (toggle label) / Workshop bullet | 웨이스터의 독소 흡수에 탱크 사용 / `웨이스터 조종사의 독소 흡수 유전자에 탱크를 사용합니다(설정, 기본값: 켜짐).` | Coined; noun-phrase toggle like `TXWC_HazardVacuum`. "feeds" as 사용 so it does not imply gas is spent (the setting costs none); the Workshop bullet reuses the same verb. |
+| Tox absorption from the tank (toggle label) / Workshop bullet | 웨이스터의 독소 흡수에 탱크 사용 / `웨이스터 조종사의 독소 흡수 유전자에 탱크를 사용합니다(설정, 기본값: 켜짐).` | Coined; noun-phrase toggle like `TXWC_HazardVacuum`, which the English label now is too. "feeds" as 사용 so it does not imply gas is spent (the setting costs none); the Workshop bullet reuses the same verb. |
 | Default: on. | 기본값: 켜짐. | Counterpart of the file's `기본값: 꺼짐.`; 켜짐 per the Off row above. |
 | (requires Vanilla Races Expanded - Waster) | (Vanilla Races Expanded - Waster 필요) | Shape of `(오디세이 필요)`; title kept in English (VREW's Workshop title). |
 
@@ -101,7 +101,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 |---|---|---|
 | aiming time (the gas jet's warmup slider) | 조준 시간 (`조준 시간 (초)`) | Core Keyed `RangedWarmupTime` = `조준 시간`; the tooltip follows `Stat_Thing_Weapon_RangedWarmupTime_Desc` (`조준 후 발사되기까지`). Core's `WarmupTime` = `준비 시간` is the generic warmup, not the aim. |
 | spacer tier (setting) / its toggle label | 우주시대 등급 / `독소 워캐스킷의 우주시대 등급` | Coined: inherited 우주시대 + 등급; noun-phrase toggle, same shape as the vacuum toggles. |
-| `<set>` warcasket resists vacuum (toggle labels) | `<prefix> 워캐스킷의 진공 저항력` | Noun-phrase toggle; Odyssey `VacuumResistance.label`. The Toxin and Hazard pair share one phrasing. |
+| `<set>` warcasket vacuum resistance (toggle labels) | `<prefix> 워캐스킷의 진공 저항력` | Noun-phrase toggle, now the English shape too; Odyssey `VacuumResistance.label`. The Toxin and Hazard pair share one phrasing. |
 | (included by spacer tier) | (우주시대 등급에 포함) | Shape of `(재시작 필요)` / `(오디세이 필요)`. |
 | Specialized spacer-tech warcasket `<part>` with standard protection (spacer opener) | `우주시대 기술로 특화된 표준적인 방어력의 워캐스킷[ 어깨| 헬멧]입니다.` | RMK `VFEP_Warcasket*_Siegebreaker.shortDescription`, verbatim; the feature clause after it is the 7th-gen DefInjected one, word for word. |
 | 10th-generation paragraph | `10세대 워캐스킷은 사실 노획한 해적 장비를 ...더 자유로운 편입니다.` | RMK 1.6 WarcasketDef, every spacer set's description (Siegebreaker, Guardian, Brute, Controller, Sarcophagus), verbatim; no dashes. |

@@ -99,7 +99,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | tox absorption (VREW gene) | 毒ガス吸収 / 毒ガス吸収の遺伝子 | Coined: 毒ガス (Biotech `ToxGas.label`) + 吸収 (Biotech Keyed `CanAbsorbPollution`, 汚染を吸収). The 毒 prefix keeps it apart from the helmet's ガス吸収 ability. VREW ships English only. |
 | pollution mutations (VREW) | 汚染変異 | Coined: 汚染 (Biotech) + 変異 (Biotech `WasteRat.description` 変異種, `UniqueXenotypeDesc` ヒト変異体). They stay active as 有効な状態に保たれる. |
 | keeping (mutations) active / counts as | 有効な状態に保たれます / 毒ガスとみなされ | Coined: an on-state while gas is present, not growth; みなす (is treated as). |
-| Tank feeds waster tox absorption (toggle label) | タンクによるウェイスターの毒ガス吸収 | Coined noun phrase, the same shape as the `TXWC_HazardVacuum` label. |
+| Tox absorption from the tank (toggle label) | タンクによるウェイスターの毒ガス吸収 | Coined noun phrase, the same shape as the `TXWC_HazardVacuum` label; the English label is now a noun phrase too, so the shape stands. |
 | Default: on. | デフォルト: On. | The `Default: off.` pattern (デフォルト: Off.) with Core Keyed `On`. |
 | (requires Vanilla Races Expanded - Waster) | ` (Vanilla Races Expanded - Wasterが必要)` | The Odyssey suffix pattern; the mod title stays English. |
 | the tank feeds ... (setting, on by default) (Workshop bullet) | タンクが...にガスを供給します(設定,デフォルトはOn). | Coined; parenthetical attached before the period as in the page's Combat Extended bullet (未検証です(報告歓迎).). |
@@ -109,8 +109,8 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | English | Japanese | Grounding |
 |---|---|---|
 | aiming time (the gas jet's warmup slider) | 照準時間 | Core StatDef `AimingDelayFactor.label`; the slider label is `照準時間 (秒)`. Core's `RangedWarmupTime_Desc` (狙いを定め始めてから発砲するまで) shapes the tooltip. |
-| spacer tier (the setting) / is spacer tier (toggle label) | 宇宙世紀仕様 / トキシン・ウォーキャスケットの宇宙世紀仕様 | Coined: 宇宙世紀 (Core Keyed `TechLevel_Spacer`) + 仕様; toggle is a noun phrase, the shape of the vacuum toggles. Suffix ` (宇宙世紀仕様に含まれる)` follows ` (再起動が必要)`. |
-| resists vacuum (toggle labels) | `<セット>`・ウォーキャスケットの真空耐性 | The existing Hazard label, kept for both toggles (Japanese has no singular/plural to track). |
+| spacer tier (the setting) / Spacer tier (toggle label) | 宇宙世紀仕様 / トキシン・ウォーキャスケットの宇宙世紀仕様 | Coined: 宇宙世紀 (Core Keyed `TechLevel_Spacer`) + 仕様; toggle is a noun phrase, the shape of the vacuum toggles. The English label is now the bare "Spacer tier", so the set name in the toggle rendering is optional. Suffix ` (宇宙世紀仕様に含まれる)` follows ` (再起動が必要)`. |
+| `<set>` warcasket vacuum resistance (toggle labels) | `<セット>`・ウォーキャスケットの真空耐性 | The existing Hazard label, kept for both toggles (Japanese has no singular/plural to track); the English labels are now the same noun phrase. |
 | Specialized spacer-tech warcasket `<part>` with standard protection (spacer opener) | 宇宙技術を用いた特殊なウォーキャスケット`<パーツ>`で,標準的な防護性能を備えています. | Shipcracker's spacer opener (宇宙技術を用いた特殊な...で,) with 標準的な防護性能 coined against the 7th-gen 防護性能に優れる. The feature clause is the DefInjected one verbatim. |
 | 10th-generation paragraph (`TXWC_SpacerLoreGeneration`) | 第10世代のウォーキャスケットは,実は鹵獲した宙賊の装備を改造したもので,... | Translated; no community VFEP pack exists. 宙賊 is Core `Pirate.label`; register and shape follow this mod's 7th-generation paragraph. "Dreadnoughts" is 弩級の兵器. |
 | veteran raiders (VFEP's veteran pawnkind) | ベテランの襲撃者 | VFEP PawnKind label `veteran` in katakana; 襲撃者 from Core quest and description text. |

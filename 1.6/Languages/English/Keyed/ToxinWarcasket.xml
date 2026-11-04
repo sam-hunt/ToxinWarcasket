@@ -9,48 +9,48 @@
   <TXWC_SectionMisc>Miscellaneous</TXWC_SectionMisc>
 
   <TXWC_TankCapacity>Tank capacity (chemfuel)</TXWC_TankCapacity>
-  <TXWC_TankCapacityDesc>How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}.</TXWC_TankCapacityDesc>
+  <TXWC_TankCapacityDesc>The amount of chemfuel the tank holds when full. Default: {0}.</TXWC_TankCapacityDesc>
 
   <TXWC_GasPerChemfuel>Tox gas per chemfuel (cells)</TXWC_GasPerChemfuel>
-  <TXWC_GasPerChemfuelDesc>How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}.</TXWC_GasPerChemfuelDesc>
+  <TXWC_GasPerChemfuelDesc>The number of cells of tox gas each chemfuel makes, whether it is vented, sprayed, or burst from the tank when the pilot goes down. Absorbing gas refills the tank at the same rate. For comparison, a tox pack makes 45 cells from 35 chemfuel. Default: {0}.</TXWC_GasPerChemfuelDesc>
 
   <TXWC_VentRate>Vent rate (chemfuel per second)</TXWC_VentRate>
-  <TXWC_VentRateDesc>How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}.</TXWC_VentRateDesc>
+  <TXWC_VentRateDesc>The amount of chemfuel released each second while the vents are open. A faster vent makes a wider cloud that clears sooner. Default: {0}.</TXWC_VentRateDesc>
 
-  <TXWC_TankSummary>A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds.</TXWC_TankSummary>
+  <TXWC_TankSummary>A full tank holds {0} chemfuel, enough for {1} cells of tox gas or about {2} tox packs. Venting empties it in {3} seconds.</TXWC_TankSummary>
 
   <TXWC_JetCost>Cost (chemfuel)</TXWC_JetCost>
-  <TXWC_JetCostDesc>How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}.</TXWC_JetCostDesc>
+  <TXWC_JetCostDesc>The amount of chemfuel each gas jet draws from the tank. Without a tank, the jets stored in the shoulders reload for the same amount. Default: {0}.</TXWC_JetCostDesc>
 
   <TXWC_JetReserve>Jets without a tank</TXWC_JetReserve>
-  <TXWC_JetReserveDesc>How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}.</TXWC_JetReserveDesc>
+  <TXWC_JetReserveDesc>The number of gas jets the shoulders carry on their own. They are only used when no tank is worn, and reload with chemfuel. Default: {0}.</TXWC_JetReserveDesc>
 
   <TXWC_JetTankLow>Needs {COUNT} {CHARGENOUN_plural} in the tank.</TXWC_JetTankLow>
 
   <TXWC_JetConeWidth>Cone width (degrees)</TXWC_JetConeWidth>
-  <TXWC_JetConeWidthDesc>The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}.</TXWC_JetConeWidthDesc>
+  <TXWC_JetConeWidthDesc>The width of the cone the gas jet sprays. A wider cone spreads the same gas thinner. Default: {0}.</TXWC_JetConeWidthDesc>
 
   <TXWC_JetRange>Range (cells)</TXWC_JetRange>
-  <TXWC_JetRangeDesc>How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}.</TXWC_JetRangeDesc>
+  <TXWC_JetRangeDesc>The distance the gas jet reaches. Default: {0}.</TXWC_JetRangeDesc>
 
   <TXWC_JetWarmup>Aiming time (seconds)</TXWC_JetWarmup>
-  <TXWC_JetWarmupDesc>How long the pilot takes to aim the gas jet before it fires. Default: {0}.</TXWC_JetWarmupDesc>
+  <TXWC_JetWarmupDesc>The time the pilot takes to aim the gas jet before it fires. Default: {0}.</TXWC_JetWarmupDesc>
 
-  <TXWC_JetSummary>A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}.</TXWC_JetSummary>
+  <TXWC_JetSummary>Each jet draws {0} chemfuel and sprays {1} cells of tox gas, about {2} tox packs. A full tank holds {3} jets and the shoulders alone hold {4}.</TXWC_JetSummary>
 
   <TXWC_AbsorbRadius>Radius (cells)</TXWC_AbsorbRadius>
-  <TXWC_AbsorbRadiusDesc>How far around the pilot the absorb draws gas in. Default: {0}.</TXWC_AbsorbRadiusDesc>
+  <TXWC_AbsorbRadiusDesc>The distance around the pilot that gas is drawn in from. Default: {0}.</TXWC_AbsorbRadiusDesc>
 
   <TXWC_AbsorbDuration>Duration (seconds)</TXWC_AbsorbDuration>
-  <TXWC_AbsorbDurationDesc>How long each absorb keeps drawing gas in. Default: {0}.</TXWC_AbsorbDurationDesc>
+  <TXWC_AbsorbDurationDesc>The time the respirator keeps drawing gas in after each use. Default: {0}.</TXWC_AbsorbDurationDesc>
 
   <TXWC_AbsorbCooldown>Cooldown (hours)</TXWC_AbsorbCooldown>
-  <TXWC_AbsorbCooldownDesc>How long the absorb takes to recharge. Default: {0}.</TXWC_AbsorbCooldownDesc>
+  <TXWC_AbsorbCooldownDesc>The time the pilot must wait after absorbing gas before absorbing again. Default: {0}.</TXWC_AbsorbCooldownDesc>
 
-  <TXWC_AbsorbSummary>One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel.</TXWC_AbsorbSummary>
+  <TXWC_AbsorbSummary>Absorbing gas draws from the {0} cells around the pilot. A full cloud over all of them refills {1} chemfuel.</TXWC_AbsorbSummary>
 
-  <TXWC_SpacerTier>Toxin warcasket is spacer tier</TXWC_SpacerTier>
-  <TXWC_SpacerTierDesc>Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off.</TXWC_SpacerTierDesc>
+  <TXWC_SpacerTier>Spacer tier</TXWC_SpacerTier>
+  <TXWC_SpacerTierDesc>When enabled, the toxin warcasket is rebuilt as a 10th generation spacer warcasket like the siegebreaker. It gains spacer plating and insulation, a shield bubble, resistance to toxins, psychic effects and vacuum{0}, and loses its speed penalty, but it costs spacer components and plasteel, needs the spacer warcaskets research, and can be worn by veteran raiders. When disabled, it stays a 7th generation set. Default: off.</TXWC_SpacerTierDesc>
 
   <TXWC_SpacerShortDescription_Armor>Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot.</TXWC_SpacerShortDescription_Armor>
   <TXWC_SpacerShortDescription_Shoulders>Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank.</TXWC_SpacerShortDescription_Shoulders>
@@ -58,17 +58,17 @@
   <TXWC_SpacerLoreGeneration>10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armor designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armors have been improved, generally reducing restrictions on mixing pieces of different armor series even across generations.</TXWC_SpacerLoreGeneration>
   <TXWC_SpacerLoreSeries>The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins.</TXWC_SpacerLoreSeries>
 
-  <TXWC_ToxinVacuum>Toxin warcasket resists vacuum</TXWC_ToxinVacuum>
-  <TXWC_ToxinVacuumDesc>Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off.</TXWC_ToxinVacuumDesc>
+  <TXWC_ToxinVacuum>Toxin warcasket vacuum resistance</TXWC_ToxinVacuum>
+  <TXWC_ToxinVacuumDesc>When enabled, the toxin warcasket resists vacuum like a spacer warcasket, with none of the tier's other changes. When disabled, it is as exposed to vacuum as the other 7th generation sets. Default: off.</TXWC_ToxinVacuumDesc>
   <TXWC_IncludedInSpacerTierSuffix> (included by spacer tier)</TXWC_IncludedInSpacerTierSuffix>
 
-  <TXWC_HazardVacuum>Hazard warcasket resists vacuum</TXWC_HazardVacuum>
-  <TXWC_HazardVacuumDesc>Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off.</TXWC_HazardVacuumDesc>
+  <TXWC_HazardVacuum>Hazard warcasket vacuum resistance</TXWC_HazardVacuum>
+  <TXWC_HazardVacuumDesc>When enabled, the hazard warcasket resists vacuum like a spacer warcasket. When disabled, it is left as Vanilla Factions Expanded - Pirates ships it. Default: off.</TXWC_HazardVacuumDesc>
   <TXWC_RequiresRestartSuffix> (requires restart)</TXWC_RequiresRestartSuffix>
   <TXWC_RequiresOdysseySuffix> (requires Odyssey)</TXWC_RequiresOdysseySuffix>
 
-  <TXWC_FeedToxAbsorption>Tank feeds waster tox absorption</TXWC_FeedToxAbsorption>
-  <TXWC_FeedToxAbsorptionDesc>A tank with gas in it counts as tox gas for pilots with the tox absorption gene ({0}), keeping their pollution mutations active. Costs no gas. Default: on.</TXWC_FeedToxAbsorptionDesc>
+  <TXWC_FeedToxAbsorption>Tox absorption from the tank</TXWC_FeedToxAbsorption>
+  <TXWC_FeedToxAbsorptionDesc>When enabled, a tank with gas in it counts as tox gas for a pilot with the tox absorption gene from {0}, so their pollution mutations stay active. No gas is used. When disabled, the gene only reacts to gas in the air. Default: on.</TXWC_FeedToxAbsorptionDesc>
   <TXWC_RequiresVREWasterSuffix> (requires Vanilla Races Expanded - Waster)</TXWC_RequiresVREWasterSuffix>
 
   <TXWC_DefaultSuffix> (default)</TXWC_DefaultSuffix>

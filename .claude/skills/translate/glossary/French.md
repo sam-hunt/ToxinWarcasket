@@ -98,7 +98,7 @@ multi-word noun gets its `s` on the last word.
 | keeping (mutations) active / counts as | maintient actives / compte comme | Coined: an on-state while gas is present, not growth. |
 | tank feeds (the VREW toggle) | `Le réservoir alimente l'absorption tox des pestilents`; Workshop `le réservoir alimente le gène d'absorption tox d'un pilote pestilent` | **Coined.** Sentence-case label like `TXWC_HazardVacuum`. |
 | tox cloud | nuage de gaz tox | Biotech `ToxGas.label` + glossary `nuage`. |
-| Costs no gas. | Ne consomme aucun gaz. | **Coined**, plain French. |
+| No gas is used. (was "Costs no gas.") | Ne consomme aucun gaz. | **Coined**, plain French; the English sentence was reshaped on the settings pass and the rendering still fits. |
 | ` (requires Vanilla Races Expanded - Waster)` | ` (nécessite Vanilla Races Expanded - Waster)` | Pattern of `(nécessite Odyssey)`; the mod title stays in English. |
 
 ## Grounded in the spacer tier update pass

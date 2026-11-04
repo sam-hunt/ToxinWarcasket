@@ -86,7 +86,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | tox absorption (VREW gene label) | 「毒氣吸收」基因 | Coined: Biotech `ToxGas.label` 毒氣 + 吸收 (the absorb row's verb; Biotech `CannotAbsorbPollution` 吸收污染). VREW ships English only. Quoted in 「」 as a named gene. |
 | pollution mutations (VREW) | 污染突變 | Coined: 污染 (Biotech, row above) + 突變 (Core mech descriptions 突變品種). |
 | keeping (mutations) active / counts as | 保持活躍 / 視為 | Coined: an on-state while gas is present, not growth; 視為 (is treated as) from Core prose. |
-| Tank feeds waster tox absorption (setting label) | 毒氣罐供荒地人吸收毒氣 | Coined, descriptive "the tank lets wasters absorb tox gas"; the tooltip names the gene. |
+| Tox absorption from the tank (setting label) | 毒氣罐供荒地人吸收毒氣 | Coined, descriptive "the tank lets wasters absorb tox gas"; the tooltip names the gene. English label reshaped to a noun phrase on the settings pass; the target value is kept as it was and owes a reshape in the next translation pass. |
 | the tank feeds (a gene, Workshop) | 毒氣罐會供給…「毒氣吸收」基因 | Coined; the Workshop bullet names the gene where the setting label does not. |
 | Default: on. / On | 預設值：開啟。 / 開啟 | Core Keyed `On` 開啟; same shape as the inherited 預設值：關閉。 |
 | requires VRE - Waster (suffix) | (需要Vanilla Races Expanded - Waster) | Mod title kept in English, set solid like the Workshop page's Latin names; ASCII parens solid, no leading space, like the other suffixes. |
@@ -98,7 +98,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | aiming time (the gas jet's warmup, settings) | 瞄準時間(秒) | Core `AimingDelayFactor.label` and Keyed `RangedWarmupTime` 瞄準時間; the tooltip mirrors `Stat_Thing_Weapon_RangedWarmupTime_Desc` 此武器從瞄準到發射的時間。 |
 | spacer tier | 太空級 | Coined: 太空 is Core `TechLevel_Spacer`, 級 as in a grade. Toggle label 毒素型戰棺為太空級; 太空級的真空抵抗力 for "the spacer tier's vacuum resistance". |
 | (included by spacer tier) (suffix) | (太空級已包含) | Same solid ASCII-paren, no-leading-space shape as the other suffixes. |
-| Toxin / Hazard warcasket resists vacuum (toggles) | 毒素型戰棺具真空抵抗力 / 險境型戰棺具真空抵抗力 | Sibling labels; the Hazard one is unchanged from the first pass. |
+| Toxin / Hazard warcasket vacuum resistance (toggles) | 毒素型戰棺具真空抵抗力 / 險境型戰棺具真空抵抗力 | Sibling labels; the Hazard one is unchanged from the first pass. English label reshaped to a noun phrase on the settings pass; the target value is kept as it was and owes a reshape in the next translation pass. |
 | Specialized spacer-tech warcasket X with standard protection (opener) | 特化型太空科技戰棺X，在不增加機體重量的同時極大幅提升了防護性。 | zh-Hans pack's Siegebreaker / Controller / Sarcophagus opener (特化型太空时代级别战棺X，在不增加机体重量的同时极大幅提升了防护性), with the inherited 特化型太空科技 prefix. Loose for "standard protection", but it is how the pack reads on every spacer set, as the 7th-gen opener follows the pack's Cataphract. |
 | 10th-generation paragraph | 第十代戰棺有些特殊，它們是… | zh-Hans pack's paragraph (repeated on every spacer set, here from `VFEP_WarcasketHelmet_Siegebreaker.description`), dash reflowed into ，; 兼容性→相容性 (Core `Incompatible` 不相容), 借助→藉助, quotes →「戰棺」. |
 | veteran raiders | 前來襲擊的精英機兵 | zh-Hans pack `VFEP_Veteran.label` 精英机兵 (fetched 2026-10-22 from q847633684/Vanilla-Expanded-ZH 1.6 PawnKindDef.xml); 精英 attested in zh-Hant (Odyssey 打撈者精英). |

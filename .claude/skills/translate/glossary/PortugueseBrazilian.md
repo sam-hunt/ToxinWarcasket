@@ -89,7 +89,7 @@ reconciled against the community pack's `VFE_Pirates_ThingDef.xml` and
 | pollution mutations (VREW's pollution-related genes) | mutações ligadas à poluição | coined; VREW's own wording is "pollution-related genes"; Core attests `mutada`/`mutante` |
 | keeping (mutations) active / counts as | mantendo ativas / conta como | Coined: an on-state while gas is present, not growth. |
 | tox cloud | nuvem tóxica | Biotech description text ("nuvem tóxica mortal") |
-| Tank feeds waster tox absorption (settings toggle) | Tanque alimenta a absorção de gás tóxico dos toxicadores; Workshop: `o tanque alimenta o gene de absorção de gás tóxico de um piloto toxicador` | coined, label shape of `TXWC_HazardVacuum` |
+| Tox absorption from the tank (settings toggle) | Tanque alimenta a absorção de gás tóxico dos toxicadores; Workshop: `o tanque alimenta o gene de absorção de gás tóxico de um piloto toxicador` | coined, label shape of `TXWC_HazardVacuum`. English label reshaped to a noun phrase on the settings pass; the target value is kept as it was and owes a reshape in the next translation pass. |
 | Default: on. / on by default | Padrão: ligado. / `(configuração, ligada por padrão)` (agreeing with `configuração`) | Core Keyed `On` "Ligado", mirroring `Padrão: desligado.` |
 | (requires Vanilla Races Expanded - Waster) | (requer Vanilla Races Expanded - Waster) | Title kept in English (VREW's Workshop title), `(requer Odyssey)` pattern |
 | aiming time (the gas jet's warmup, settings slider) | Tempo de pontaria (segundos); desc verb `mirar` | Core `AimingDelayFactor.label` "tempo de pontaria"; `mirar` matches the Workshop page's "A mira" |
@@ -100,7 +100,7 @@ reconciled against the community pack's `VFE_Pirates_ThingDef.xml` and
 | spacer warcaskets (research) | carcaças de guerra espaciais | Pack `VFEP_SpacerWarcaskets.label` |
 | research cited in prose (Keyed and Workshop) | ASCII double-quoted lowercase label: `a pesquisa "carcaças de guerra espaciais"` | No vanilla precedent; pt-BR research labels are lowercase, so the quotes do the job the English's Title Case does. Kept on the Workshop page even where the English dropped its quotes. Matches Shipcracker's pt-BR page |
 | veteran raiders | invasores veteranos | Core `Raid` "invasão"; pack `VFEP_Veteran.label` "veterano" |
-| Hazard / Toxin warcasket resists vacuum (toggles) | Carcaça de guerra de risco / toxina resiste ao vácuo; desc `Dá à carcaça de guerra ... a resistência ao vácuo do nível espacial` | sibling toggles share one shape; Core `VacuumResistance.label` "Resistência ao Vácuo" |
+| Hazard / Toxin warcasket vacuum resistance (toggles) | Carcaça de guerra de risco / toxina resiste ao vácuo; desc `Dá à carcaça de guerra ... a resistência ao vácuo do nível espacial` | sibling toggles share one shape; Core `VacuumResistance.label` "Resistência ao Vácuo". English label reshaped to a noun phrase on the settings pass; the target value is kept as it was and owes a reshape in the next translation pass. The tooltips now take the "When enabled ... When disabled ..." frame, so the quoted desc shape owes the same. |
 
 ## Pending native review
 

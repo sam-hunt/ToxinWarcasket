@@ -83,7 +83,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | pollution mutations (VREW) | 污染突变 | Coined: 污染 (`PollutionLower`) + 突变 (Core's 突变小麦; Biotech's 变异 is its prefix-symbol slot, not prose). |
 | keeping (mutations) active / counts as | 保持生效 / 视同 | Coined: an on-state while gas is present, not growth; 视同 (is treated as). |
 | tox cloud | 毒气云 | Already in `TXWC_VentRateDesc` (毒气云). |
-| "Tank feeds waster tox absorption" (toggle) | 毒气罐供给污骸种的毒气吸收 | Coined; declarative like 险境型战棺可抵御真空. The Workshop bullet reuses 供给 (毒气罐供给污骸种驾驶员的毒气吸收基因), with 默认开启 for "on by default". |
+| "Tox absorption from the tank" (toggle) | 毒气罐供给污骸种的毒气吸收 | Coined; declarative like 险境型战棺可抵御真空. The Workshop bullet reuses 供给 (毒气罐供给污骸种驾驶员的毒气吸收基因), with 默认开启 for "on by default". English label reshaped to a noun phrase on the settings pass; the target value is kept as it was and owes a reshape in the next translation pass. The vacuum toggles are now "Toxin / Hazard warcasket vacuum resistance" and owe the same. |
 | `Default: on.` | 默认：开。 | Core Keyed `On` = 开, pairing with this file's `Default: off.` = 默认：关 (Core `Off`). The inherited settings row's 默认：启用 (Core `Enabled`, as Shipcracker's `SCWC_VacuumBurnDesc`) has no Off counterpart in this file, so it is not used here. |
 | Vanilla Races Expanded - Waster | Vanilla Races Expanded - Waster | Kept in English (Workshop title); suffix （需要Vanilla Races Expanded - Waster）. |
 
