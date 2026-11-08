@@ -97,7 +97,7 @@ Russian worker lowercases a missed key, so a miss also loses capitalization.
 | pollution mutations (VREW) | мутации от загрязнения | Coined: Anomaly `мутация` (`BecameMutant.label`) + Biotech `загрязнение`. `остаются активными` for "keeping active". |
 | keeping (mutations) active / counts as | остаются активными / считается токсичным газом | Coined: an on-state while gas is present, not growth; `считается` (is counted as). |
 | tox cloud | токсичное облако | Coined from Biotech `токсичный`. |
-| Tox absorption from the tank (setting label) | Мусорщики поглощают токсичный газ из бака | Coined, active clause per the calque lesson rather than a noun chain. English label reshaped to a noun phrase on the settings pass; the target value is kept as it was and owes a reshape in the next translation pass. |
+| Tox absorption from the tank (setting label) | Поглощение токсичного газа из бака | Noun phrase like the vacuum toggles; `поглощение` per the absorb row. |
 | Default: on. | По умолчанию: включено. | Counterpart of the file's `По умолчанию: выключено.`; Core tooltips use `Если включено`. |
 | (requires Vanilla Races Expanded - Waster) | (требуется Vanilla Races Expanded - Waster) | Same pattern as `(требуется Odyssey)`; the title stays English. |
 | Workshop: "(setting, on by default)" | (настройка, по умолчанию включена) | Coined; `включена` agrees with feminine `настройка`. Feed verb: `бак питает` (the tank feeds). |
@@ -107,8 +107,10 @@ Russian worker lowercases a missed key, so a miss also loses capitalization.
 | English | Russian | Grounding |
 |---|---|---|
 | aiming time (the jet's warmup; slider) | время прицеливания, `Время прицеливания (в секундах)` | Core `AimingDelayFactor.label`. Tooltip verb `целится` (Core `Stat_Thing_Weapon_RangedWarmupTime_Desc` frames warmup as `прицеливание` before `выстрел`). |
-| spacer tier (setting) | космический уровень; toggle `Токсичная броня мертвеца космического уровня` | Inherited `космического уровня` (Core `TechLevel_Spacer`). Noun-phrase label: no natural predicate fits as `устойчива к вакууму` does for the vacuum toggles. |
+| spacer tier (setting) | космический уровень; toggle `Космический уровень` | Inherited `космического уровня` (Core `TechLevel_Spacer`). Noun-phrase label like the vacuum toggles. |
 | the spacer tier's vacuum resistance | устойчивость к вакууму космического уровня | Odyssey `VacuumResistance.label` + `космического уровня`; shared by both vacuum toggles so they read as siblings. |
+| `<set>` warcasket vacuum resistance (toggle labels) | Устойчивость к вакууму токсичной / защитной брони мертвеца | Odyssey `VacuumResistance.label`; the set and `броня мертвеца` in the genitive. |
+| When enabled, ... When disabled, ... (toggle tooltip frame) | Если включено, ... Если выключено, ... | Core's own option tooltips (`Если включено`). |
 | (included by spacer tier) | (входит в космический уровень) | Coined; same shape as `(требуется перезапуск)`. |
 | Specialized spacer-tech warcasket ... with standard protection (opener) | Специализированная броня мертвеца / Специализированные наплечники брони мертвеца / Специализированный шлем брони мертвеца со стандартными защитными характеристиками, сделанная / сделанные / сделанный по технологиям космического уровня. | Community pack verbatim: `VFEP_Warcasket_Siegebreaker.shortDescription`, `VFEP_WarcasketShoulders_Siegebreaker.shortDescription`, `VFEP_WarcasketHelmet_Siegebreaker.description`. The feature sentence after it is the 7th-gen DefInjected one, word for word. |
 | 10th-generation paragraph | pack's paragraph verbatim (`Броня мертвеца десятого поколения была создана...`) | Pack's Siegebreaker/Guardian/Controller/Sarcophagus/Brute descriptions (`VFEPirates.WarcasketDef/Apparel_Various.xml`). Of its two variants (comma after `подчиняющихся правительству` or not) the one with the comma, which closes the participial phrase. The pack's `привело` (for a compound subject) is kept verbatim. |

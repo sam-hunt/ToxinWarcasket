@@ -15,107 +15,107 @@
 
   <!-- EN: Tank capacity (chemfuel) -->
   <TXWC_TankCapacity>Ёмкость бака (химтопливо)</TXWC_TankCapacity>
-  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
-  <TXWC_TankCapacityDesc>Сколько химтоплива вмещает полный бак. Шкала бака отображает его в единицах. Если в баке уже больше, излишек пропадает. По умолчанию: {0}.</TXWC_TankCapacityDesc>
+  <!-- EN: The amount of chemfuel the tank holds when full. Default: {0}. -->
+  <TXWC_TankCapacityDesc>Сколько химтоплива вмещает полный бак. По умолчанию: {0}.</TXWC_TankCapacityDesc>
 
   <!-- EN: Tox gas per chemfuel (cells) -->
   <TXWC_GasPerChemfuel>Токсичный газ на единицу химтоплива (в клетках)</TXWC_GasPerChemfuel>
-  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
-  <TXWC_GasPerChemfuelDesc>Сколько клеток токсичного газа даёт каждая единица химтоплива в баке, как бы её ни потратили: выпуском, струёй или выбросом, когда пилот выходит из строя. Поглощение возвращает в бак единицу химтоплива за каждый такой объём втянутого газа. Токсичный ранец заполняет 45 клеток за 35 единиц химтоплива. По умолчанию: {0}.</TXWC_GasPerChemfuelDesc>
+  <!-- EN: The number of cells of tox gas each chemfuel makes, whether it is vented, sprayed, or burst from the tank when the pilot goes down. Absorbing gas refills the tank at the same rate. For comparison, a tox pack makes 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>Сколько клеток токсичного газа даёт каждая единица химтоплива, будь то выпуск, струя или выброс из бака, когда пилот выходит из строя. Поглощение газа пополняет бак в том же темпе. Для сравнения, токсичный ранец даёт 45 клеток из 35 единиц химтоплива. По умолчанию: {0}.</TXWC_GasPerChemfuelDesc>
 
   <!-- EN: Vent rate (chemfuel per second) -->
   <TXWC_VentRate>Скорость выпуска (химтопливо в секунду)</TXWC_VentRate>
-  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
-  <TXWC_VentRateDesc>Как быстро выпуск газа опустошает бак. Чем быстрее выпуск, тем шире облако и тем скорее оно рассеивается. По умолчанию: {0}.</TXWC_VentRateDesc>
+  <!-- EN: The amount of chemfuel released each second while the vents are open. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>Сколько химтоплива выпускается каждую секунду, пока клапаны открыты. Чем быстрее выпуск, тем шире облако и тем скорее оно рассеивается. По умолчанию: {0}.</TXWC_VentRateDesc>
 
-  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
-  <TXWC_TankSummary>Полный бак: {0} ед. химтоплива. Клеток токсичного газа: {1} (в пересчёте на токсичные ранцы: {2}). Выпуск опустошает бак за {3} с.</TXWC_TankSummary>
+  <!-- EN: A full tank holds {0} chemfuel, enough for {1} cells of tox gas or about {2} tox packs. Venting empties it in {3} seconds. -->
+  <TXWC_TankSummary>Полный бак вмещает {0} ед. химтоплива. Этого хватит на {1} клеток токсичного газа, в пересчёте на токсичные ранцы примерно {2}. Выпуск опустошает бак за {3} с.</TXWC_TankSummary>
 
   <!-- EN: Cost (chemfuel) -->
   <TXWC_JetCost>Расход на струю (химтопливо)</TXWC_JetCost>
-  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
-  <TXWC_JetCostDesc>Сколько химтоплива каждая газовая струя берёт из бака. Без бака собственная струя наплечников даёт столько же газа за столько же химтоплива. По умолчанию: {0}.</TXWC_JetCostDesc>
+  <!-- EN: The amount of chemfuel each gas jet draws from the tank. Without a tank, the jets stored in the shoulders reload for the same amount. Default: {0}. -->
+  <TXWC_JetCostDesc>Сколько химтоплива каждая газовая струя берёт из бака. Без бака струи в наплечниках перезаряжаются на столько же. По умолчанию: {0}.</TXWC_JetCostDesc>
 
   <!-- EN: Jets without a tank -->
   <TXWC_JetReserve>Струи без бака</TXWC_JetReserve>
-  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
-  <TXWC_JetReserveDesc>Сколько струй наплечники хранят сами, если бак не надет. Они перезаряжаются химтопливом и не расходуются, пока на пилоте есть бак. По умолчанию: {0}.</TXWC_JetReserveDesc>
+  <!-- EN: The number of gas jets the shoulders carry on their own. They are only used when no tank is worn, and reload with chemfuel. Default: {0}. -->
+  <TXWC_JetReserveDesc>Сколько газовых струй наплечники хранят сами. Они используются, только если бак не надет, и перезаряжаются химтопливом. По умолчанию: {0}.</TXWC_JetReserveDesc>
 
   <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
   <TXWC_JetTankLow>Недостаточно {lookup: {CHARGENOUN_plural}; Case; 1} в баке (нужно {COUNT}).</TXWC_JetTankLow>
 
   <!-- EN: Cone width (degrees) -->
   <TXWC_JetConeWidth>Ширина конуса (в градусах)</TXWC_JetConeWidth>
-  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetConeWidthDesc>Полная ширина конуса, в который ложится газовая струя. Чем шире конус, тем сильнее рассеивается тот же газ. По умолчанию: {0}.</TXWC_JetConeWidthDesc>
+  <!-- EN: The width of the cone the gas jet sprays. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>Ширина конуса, в котором газовая струя распыляет газ. Чем шире конус, тем сильнее рассеивается тот же газ. По умолчанию: {0}.</TXWC_JetConeWidthDesc>
 
   <!-- EN: Range (cells) -->
   <TXWC_JetRange>Дальность (в клетках)</TXWC_JetRange>
-  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetRangeDesc>Как далеко достаёт газовая струя. Чем длиннее струя, тем сильнее рассеивается тот же газ. По умолчанию: {0}.</TXWC_JetRangeDesc>
+  <!-- EN: The distance the gas jet reaches. Default: {0}. -->
+  <TXWC_JetRangeDesc>Расстояние, на которое достаёт газовая струя. По умолчанию: {0}.</TXWC_JetRangeDesc>
 
   <!-- EN: Aiming time (seconds) -->
   <TXWC_JetWarmup>Время прицеливания (в секундах)</TXWC_JetWarmup>
-  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <!-- EN: The time the pilot takes to aim the gas jet before it fires. Default: {0}. -->
   <TXWC_JetWarmupDesc>Сколько времени пилот целится перед выпуском газовой струи. По умолчанию: {0}.</TXWC_JetWarmupDesc>
 
-  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
-  <TXWC_JetSummary>Одна струя: {0} ед. химтоплива. Клеток токсичного газа: {1} (в пересчёте на токсичные ранцы: {2}). Струй в полном баке: {3}, в самих наплечниках: {4}.</TXWC_JetSummary>
+  <!-- EN: Each jet draws {0} chemfuel and sprays {1} cells of tox gas, about {2} tox packs. A full tank holds {3} jets and the shoulders alone hold {4}. -->
+  <TXWC_JetSummary>Каждая струя берёт {0} ед. химтоплива и распыляет {1} клеток токсичного газа, в пересчёте на токсичные ранцы примерно {2}. Струй в полном баке: {3}, в самих наплечниках: {4}.</TXWC_JetSummary>
 
   <!-- EN: Radius (cells) -->
   <TXWC_AbsorbRadius>Радиус (в клетках)</TXWC_AbsorbRadius>
-  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
-  <TXWC_AbsorbRadiusDesc>На каком расстоянии от пилота поглощение втягивает газ. По умолчанию: {0}.</TXWC_AbsorbRadiusDesc>
+  <!-- EN: The distance around the pilot that gas is drawn in from. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>Расстояние от пилота, с которого втягивается газ. По умолчанию: {0}.</TXWC_AbsorbRadiusDesc>
 
   <!-- EN: Duration (seconds) -->
   <TXWC_AbsorbDuration>Длительность (в секундах)</TXWC_AbsorbDuration>
-  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
-  <TXWC_AbsorbDurationDesc>Как долго длится каждое поглощение газа. По умолчанию: {0}.</TXWC_AbsorbDurationDesc>
+  <!-- EN: The time the respirator keeps drawing gas in after each use. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>Сколько времени респиратор продолжает втягивать газ после каждого применения. По умолчанию: {0}.</TXWC_AbsorbDurationDesc>
 
   <!-- EN: Cooldown (hours) -->
   <TXWC_AbsorbCooldown>Перезарядка (в часах)</TXWC_AbsorbCooldown>
-  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
-  <TXWC_AbsorbCooldownDesc>Сколько времени перезаряжается поглощение. По умолчанию: {0}.</TXWC_AbsorbCooldownDesc>
+  <!-- EN: The time the pilot must wait after absorbing gas before absorbing again. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>Сколько времени пилот должен ждать после поглощения газа, прежде чем поглотить газ снова. По умолчанию: {0}.</TXWC_AbsorbCooldownDesc>
 
-  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
-  <TXWC_AbsorbSummary>Клеток вокруг пилота в зоне поглощения: {0}. Сплошное облако над ними пополнит бак на {1} ед. химтоплива.</TXWC_AbsorbSummary>
+  <!-- EN: Absorbing gas draws from the {0} cells around the pilot. A full cloud over all of them refills {1} chemfuel. -->
+  <TXWC_AbsorbSummary>Поглощение берёт газ из {0} клеток вокруг пилота. Сплошное облако над всеми ними пополнит бак на {1} ед. химтоплива.</TXWC_AbsorbSummary>
 
-  <!-- EN: Toxin warcasket is spacer tier -->
-  <TXWC_SpacerTier>Токсичная броня мертвеца космического уровня</TXWC_SpacerTier>
-  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
-  <TXWC_SpacerTierDesc>Переводит токсичную броню мертвеца на космический уровень десятого поколения, как у прорывной брони мертвеца. Она получает защиту и изоляцию космического уровня, сопротивление токсинам и психическим воздействиям, устойчивость к вакууму{0} и силовой щит, а штрафа к скорости у неё нет. Взамен для изготовления нужны продвинутые компоненты, пласталь и исследование «Космическая броня мертвеца». Её могут носить и налётчики-ветераны. По умолчанию: выключено.</TXWC_SpacerTierDesc>
+  <!-- EN: Spacer tier -->
+  <TXWC_SpacerTier>Космический уровень</TXWC_SpacerTier>
+  <!-- EN: When enabled, the toxin warcasket is rebuilt as a 10th generation spacer warcasket like the siegebreaker. It gains spacer plating and insulation, a shield bubble, resistance to toxins, psychic effects and vacuum{0}, and loses its speed penalty, but it costs spacer components and plasteel, needs the spacer warcaskets research, and can be worn by veteran raiders. When disabled, it stays a 7th generation set. Default: off. -->
+  <TXWC_SpacerTierDesc>Если включено, токсичная броня мертвеца станет бронёй мертвеца космического уровня десятого поколения, подобно прорывной. Она получит защиту и изоляцию космического уровня, силовой щит, сопротивление токсинам, психическим воздействиям и вакууму{0}, а штрафа к скорости лишится. Взамен для изготовления нужны продвинутые компоненты, пласталь и исследование «Космическая броня мертвеца», а носить её смогут и налётчики-ветераны. Если выключено, она останется комплектом седьмого поколения. По умолчанию: выключено.</TXWC_SpacerTierDesc>
 
-  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, equipped with a tox gas tank that vents around the pilot. -->
   <TXWC_SpacerShortDescription_Armor>Специализированная броня мертвеца со стандартными защитными характеристиками, сделанная по технологиям космического уровня. Встроенный бак выпускает токсичный газ вокруг пилота.</TXWC_SpacerShortDescription_Armor>
-  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, equipped with shoulder-mounted jets that spray tox gas from the shell's tank. -->
   <TXWC_SpacerShortDescription_Shoulders>Специализированные наплечники брони мертвеца со стандартными защитными характеристиками, сделанные по технологиям космического уровня. Сопла на плечах распыляют токсичный газ из бака брони.</TXWC_SpacerShortDescription_Shoulders>
-  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
-  <TXWC_SpacerShortDescription_Helmet>Специализированный шлем брони мертвеца со стандартными защитными характеристиками, сделанный по технологиям космического уровня. Герметичный респиратор не пропускает токсичный газ и втягивает его обратно в бак брони.</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, equipped with a respirator that keeps out tox gas and draws it back into the tank. -->
+  <TXWC_SpacerShortDescription_Helmet>Специализированный шлем брони мертвеца со стандартными защитными характеристиками, сделанный по технологиям космического уровня. Респиратор не пропускает токсичный газ и втягивает его обратно в бак.</TXWC_SpacerShortDescription_Helmet>
   <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armor designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armors have been improved, generally reducing restrictions on mixing pieces of different armor series even across generations. -->
   <TXWC_SpacerLoreGeneration>Броня мертвеца десятого поколения была создана на основе образцов, найденных на захваченных пиратских судах. Команды технических специалистов, подчиняющихся правительству, пошли в направлении улучшения имеющихся образцов теми технологиями продвинутой силовой брони, которые уже были у них в распоряжении. Доступ к высококачественным материалам и задача оснастить бронёй ветеранов, которые в иных условиях были бы неспособны продолжать несение службы, привело к созданию дредноутов, для управления которыми требовался единственный оператор. Получившиеся образцы брони отличаются повышенной универсальностью, что позволяет устанавливать на этот вариант компоненты от брони других поколений с меньшими потерями производительности.</TXWC_SpacerLoreGeneration>
-  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
-  <TXWC_SpacerLoreSeries>Токсичная серия создана для химической войны. Бак в броне питает клапаны вокруг пилота и газовые сопла на наплечниках, а респиратор шлема втягивает газ обратно в бак. Полный комплект делает пилота невосприимчивым к токсинам.</TXWC_SpacerLoreSeries>
+  <!-- EN: The Toxin series was built around a tox gas tank for chemical warfare. The tank in the shell feeds vents around the pilot and the gas jets on the pauldrons, and the respirator in the helmet draws gas back into it. The objective was a pilot who could gas a position and then walk into it, and clear the air again once the fighting was done. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>Токсичная серия построена вокруг бака с токсичным газом для химической войны. Бак в броне питает клапаны вокруг пилота и газовые сопла на наплечниках, а респиратор в шлеме втягивает газ обратно в бак. Задача была в том, чтобы пилот мог залить позицию газом, войти в неё и очистить воздух, когда бой закончится. Полный комплект делает пилота невосприимчивым к токсинам.</TXWC_SpacerLoreSeries>
 
-  <!-- EN: Toxin warcasket resists vacuum -->
-  <TXWC_ToxinVacuum>Токсичная броня мертвеца устойчива к вакууму</TXWC_ToxinVacuum>
-  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
-  <TXWC_ToxinVacuumDesc>Даёт токсичной броне мертвеца устойчивость к вакууму космического уровня, но не остальные его свойства. По умолчанию: выключено.</TXWC_ToxinVacuumDesc>
+  <!-- EN: Toxin warcasket vacuum resistance -->
+  <TXWC_ToxinVacuum>Устойчивость к вакууму токсичной брони мертвеца</TXWC_ToxinVacuum>
+  <!-- EN: When enabled, the toxin warcasket resists vacuum like a spacer warcasket, with none of the tier's other changes. When disabled, it is as exposed to vacuum as the other 7th generation sets. Default: off. -->
+  <TXWC_ToxinVacuumDesc>Если включено, токсичная броня мертвеца будет устойчива к вакууму, как броня мертвеца космического уровня, но остальные изменения этого уровня не применятся. Если выключено, к вакууму она так же уязвима, как и остальные комплекты седьмого поколения. По умолчанию: выключено.</TXWC_ToxinVacuumDesc>
   <!-- EN:  (included by spacer tier) -->
   <TXWC_IncludedInSpacerTierSuffix> (входит в космический уровень)</TXWC_IncludedInSpacerTierSuffix>
 
-  <!-- EN: Hazard warcasket resists vacuum -->
-  <TXWC_HazardVacuum>Защитная броня мертвеца устойчива к вакууму</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
-  <TXWC_HazardVacuumDesc>Даёт защитной броне мертвеца устойчивость к вакууму космического уровня. По умолчанию: выключено.</TXWC_HazardVacuumDesc>
+  <!-- EN: Hazard warcasket vacuum resistance -->
+  <TXWC_HazardVacuum>Устойчивость к вакууму защитной брони мертвеца</TXWC_HazardVacuum>
+  <!-- EN: When enabled, the hazard warcasket resists vacuum like a spacer warcasket. When disabled, it is left as Vanilla Factions Expanded - Pirates ships it. Default: off. -->
+  <TXWC_HazardVacuumDesc>Если включено, защитная броня мертвеца будет устойчива к вакууму, как броня мертвеца космического уровня. Если выключено, она останется такой, какой её поставляет Vanilla Factions Expanded - Pirates. По умолчанию: выключено.</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix> (требуется перезапуск)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->
   <TXWC_RequiresOdysseySuffix> (требуется Odyssey)</TXWC_RequiresOdysseySuffix>
 
-  <!-- EN: Tank feeds waster tox absorption -->
-  <TXWC_FeedToxAbsorption>Мусорщики поглощают токсичный газ из бака</TXWC_FeedToxAbsorption>
-  <!-- EN: A tank with gas in it counts as tox gas for pilots with the tox absorption gene ({0}), keeping their pollution mutations active. Costs no gas. Default: on. -->
-  <TXWC_FeedToxAbsorptionDesc>Бак с газом считается токсичным газом для пилотов с геном поглощения токсичного газа ({0}), и их мутации от загрязнения остаются активными. Газ при этом не расходуется. По умолчанию: включено.</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN: Tox absorption from the tank -->
+  <TXWC_FeedToxAbsorption>Поглощение токсичного газа из бака</TXWC_FeedToxAbsorption>
+  <!-- EN: When enabled, a tank with gas in it counts as tox gas for a pilot with the tox absorption gene from {0}, so their pollution mutations stay active. No gas is used. When disabled, the gene only reacts to gas in the air. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>Если включено, бак с газом будет считаться токсичным газом для пилота с геном поглощения токсичного газа из {0}, и его мутации от загрязнения останутся активными. Газ при этом не расходуется. Если выключено, ген будет реагировать только на газ в воздухе. По умолчанию: включено.</TXWC_FeedToxAbsorptionDesc>
   <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
   <TXWC_RequiresVREWasterSuffix> (требуется Vanilla Races Expanded - Waster)</TXWC_RequiresVREWasterSuffix>
 

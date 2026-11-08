@@ -1,6 +1,6 @@
 Токсичная броня мертвеца
 
-Новая броня мертвеца для химической войны. Дополнение к [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
+Новая броня мертвеца, созданная для химической войны. Дополнение к [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
 
 [h1]О моде[/h1]
 
@@ -22,9 +22,9 @@
 [*]Можно безопасно добавить в существующее сохранение.
 [*]Удалять небезопасно, пока хоть один поселенец закован в этот комплект.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] и DLC Biotech обязательны.
-[*]Save Our Ship 2: комплект годится для выхода в открытый космос по тем же правилам, что и броня из самого VFE Pirates.
-[*]Vanilla Races Expanded - Waster: бак с газом считается токсичным газом для гена поглощения токсичного газа у пилота-мусорщика (настройка, по умолчанию включена).
-[*]Combat Extended: показатели брони, объёмность и переносимый объём как у другой брони мертвеца космического уровня, а шлем не пропускает дым CE.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1909914131]Save Our Ship 2[/url]: комплект годится для выхода в открытый космос по тем же правилам, что и броня из самого VFE Pirates.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2983471725]Vanilla Races Expanded - Waster[/url]: бак с газом считается токсичным газом для гена поглощения токсичного газа у пилота-мусорщика (настройка, по умолчанию включена).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044]Combat Extended[/url]: показатели брони, объёмность и переносимый объём как у другой брони мертвеца космического уровня, а шлем не пропускает дым CE.
 [/list]
 
 [hr][/hr]
