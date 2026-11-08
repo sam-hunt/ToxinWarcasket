@@ -320,9 +320,10 @@ inherited from the Shipcracker glossaries so the two sets read as one family in-
   resolves + Combat Extended so `CombatExtended.xml` and the spacer tier patch's CE branches
   run), then classifies logged errors by origin and fails on anything attributed to this mod or
   a VFEP/VEF/VREW/CE seam. Save Our Ship 2 is deliberately off the list: its patch is
-  best-effort. The engine boots the saved settings as they are and the CE patch
-  branches on the spacer tier setting, so run it twice, with that setting off and on. Wired into
-  the release skill.
+  best-effort. The engine boots every pinned mod on its default settings and the CE patch
+  branches on the spacer tier setting, so run it twice, plain and with `--spacer-tier`
+  (`Scripts/spacer_tier_boot.py` writes the setting inside the engine's set-aside; the sidecar
+  refresh always boots through it, for the spacer-on superset). Wired into the release skill.
   Sibling-mod "dump WILL fail" warnings at launch are expected: the probe is ticked for every
   family mod but each boot loads only its own list.
 - **`.steamworkshop/`** holds the Workshop title and BBCode description per language

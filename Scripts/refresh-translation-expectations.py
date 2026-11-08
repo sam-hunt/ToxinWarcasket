@@ -51,38 +51,14 @@ engine.CANONICAL_ACTIVE_MODS = [
 # translatable one (player text a setting changes goes through Keyed/, per
 # CLAUDE.md). A spacer-on boot therefore dumps the superset, so the probe
 # boots with the setting forced on, whatever the player's own settings
-# file says, and that file is handed back byte-identical afterwards. The
-# engine's WORLDS mechanism merges boots over different MOD LISTS, not
-# different settings, which is why the flip lives here. Keep this
-# invariant when touching the spacer patch: a PatchOperationRemove of a
-# translatable node there would need a second boot and a merge instead.
-SETTINGS_FILE = "Mod_ToxinWarcasket_ToxinWarcasketMod.xml"
-SPACER_ON = (
-    '<?xml version="1.0" encoding="utf-8"?>\n'
-    "<SettingsBlock>\n"
-    '\t<ModSettings Class="ToxinWarcasket.ToxinWarcasketSettings">\n'
-    "\t\t<SpacerTier>True</SpacerTier>\n"
-    "\t</ModSettings>\n"
-    "</SettingsBlock>"
-)
+# file says. The engine sets every pinned mod's settings file aside so the
+# boot runs on defaults, and its WORLDS mechanism merges boots over
+# different MOD LISTS, not different settings, so the flip goes through
+# Scripts/spacer_tier_boot.py, which writes it inside the engine's
+# set-aside. Keep this invariant when touching the spacer patch: a
+# PatchOperationRemove of a translatable node there would need a second
+# boot and a merge instead.
+from spacer_tier_boot import force_spacer_tier_on  # noqa: E402
 
-
-def run_with_spacer_tier_on():
-    if "--no-launch" in sys.argv:
-        return engine.main()
-    settings = engine.modsconfig_path().with_name(SETTINGS_FILE)
-    original = settings.read_bytes() if settings.exists() else None
-    settings.write_text(SPACER_ON, encoding="utf-8-sig")
-    print("Probe boot forces the spacer tier setting on (superset of "
-          "injection points); the saved settings are restored after.")
-    try:
-        return engine.main()
-    finally:
-        if original is None:
-            settings.unlink(missing_ok=True)
-        else:
-            settings.write_bytes(original)
-        print(f"Restored {settings}")
-
-
-raise SystemExit(run_with_spacer_tier_on())
+force_spacer_tier_on()
+raise SystemExit(engine.main())

@@ -11,6 +11,7 @@
 #   python3 Scripts/integration-smoke-test.py              # boot + scan
 #   python3 Scripts/integration-smoke-test.py --no-launch  # rescan last log
 #   python3 Scripts/integration-smoke-test.py --strict     # any error fails
+#   python3 Scripts/integration-smoke-test.py --spacer-tier  # spacer tier on
 
 import sys
 from pathlib import Path
@@ -35,9 +36,11 @@ engine.PACKAGE_ID = "shunter.toxinwarcasket"
 # 1.6/Patches/CombatExtended.xml fires on its package id and SpacerTier.xml
 # skips its plating, shield and cost operations under it; both branch on the
 # spacer tier setting, and a failed operation or a misnamed setting is an
-# error only a boot with CE active can surface. The engine reads the saved
-# settings file as it is, so boot once with the setting off and once on
-# (the setting is a restart-time patch gate). CE loads after VFEP, where
+# error only a boot with CE active can surface. The engine boots on default
+# settings (spacer tier off), so boot once plain and once with
+# --spacer-tier, which forces the setting on through
+# Scripts/spacer_tier_boot.py (the setting is a restart-time patch gate,
+# so it needs its own boot). CE loads after VFEP, where
 # its own About.xml puts it. Probe last (auto-quit). Plain ids on purpose;
 # see the refresh shim's "_steam" note.
 # Save Our Ship 2 is deliberately absent: 1.6/Patches/SOS2Patch.xml is a
@@ -72,4 +75,10 @@ engine.INTEGRATION_PATTERNS = {
     "CE": ["CombatExtended"],
 }
 
+# Our own flag, taken off argv before the engine's argparse sees it.
+if "--spacer-tier" in sys.argv:
+    sys.argv.remove("--spacer-tier")
+    from spacer_tier_boot import force_spacer_tier_on  # noqa: E402
+
+    force_spacer_tier_on()
 raise SystemExit(engine.main())

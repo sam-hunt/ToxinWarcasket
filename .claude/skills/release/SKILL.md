@@ -175,6 +175,7 @@ client and rerun):
 
 ```bash
 python3 Scripts/integration-smoke-test.py
+python3 Scripts/integration-smoke-test.py --spacer-tier
 ```
 
 - Boots the freshly deployed build on a pinned list of Toxin
@@ -185,10 +186,10 @@ python3 Scripts/integration-smoke-test.py
   seam:
   - **Combat Extended**, so `1.6/Patches/CombatExtended.xml` and the
     spacer tier patch's CE branches run. Both branch on the spacer tier
-    setting, which the engine reads from the saved settings file as it is,
-    so run the script twice: once with the setting off and once with it on
-    (flip `SpacerTier` in the game's `Config/Mod_ToxinWarcasket_ToxinWarcasketMod.xml`
-    between boots, then put it back as the user had it).
+    setting, and the engine boots every pinned mod on its default settings
+    (spacer tier off) whatever the saved file says, so the second run's
+    `--spacer-tier` forces it on for that boot (`Scripts/spacer_tier_boot.py`).
+    Editing the saved settings file does nothing. Both runs must pass.
   - Biotech is on the list as a hard dependency: every tox gas mechanic
     needs it.
 
