@@ -20,15 +20,17 @@
       3x speed (a 300-tick draw is about 1.7 s) the roar is still heard.
     - randomStartPoint, as the draw is far shorter than the loop and every cast would otherwise
       play the same opening seconds.
-    - maxSimultaneous 2 with PrioritizeNearest: the two nearest drawing pilots are heard.
-    tempoAffectedByGameSpeed, muteWhenPaused and canVacuumDampen keep their defaults, as on
-    GasReleasing, so a paused draw keeps sounding as the vent's hiss does.
+    - maxVoices 2: the two drawing pilots nearest the camera are heard and any more are muted
+      (SustainerManager.UpdateAllSustainerScopes). maxSimultaneous only limits one-shots.
+    tempoAffectedByGameSpeed, muteWhenPaused and canVacuumDampen keep their defaults, so the roar
+    keeps its pitch at every speed and keeps sounding through a pause, as no tick ends the
+    PerTick sustainer while the game is paused.
   -->
   <SoundDef>
     <defName>TXWC_AbsorbGasDraw</defName>
     <sustain>true</sustain>
     <context>MapOnly</context>
-    <maxSimultaneous>2</maxSimultaneous>
+    <maxVoices>2</maxVoices>
     <priorityMode>PrioritizeNearest</priorityMode>
     <sustainFadeoutTime>0.6</sustainFadeoutTime>
     <subSounds>

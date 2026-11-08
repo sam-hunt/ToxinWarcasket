@@ -77,8 +77,9 @@ public class AbsorbGasExtension : DefModExtension
 // sustainer ends itself once a tick passes unmaintained (Sustainer.SustainerUpdate), so the
 // strided TickInterval cannot hold it, hence the def's needsTicking. When the helmet comes off
 // mid-draw Tick stops being called, the sustainer ends and fades by itself, and the stale
-// reference is dropped by the Ended check on the next tick that reaches it. TrySpawnSustainer
-// returns null while the def's voice cap is full, and the next tick retries.
+// reference is dropped by the Ended check on the next tick that reaches it. A voice cap never
+// refuses a sustainer (it mutes the farthest), so TrySpawnSustainer's null, which the next tick
+// retries, only comes from an undefined def or a destroyed pilot.
 //
 // Gizmo: VEF's GetGizmo builds a new Command_Ability, tooltip and all, every time gizmos are
 // requested, which is every frame for a selected wearer. One command is kept and only what
