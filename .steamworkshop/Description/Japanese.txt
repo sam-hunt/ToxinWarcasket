@@ -1,10 +1,10 @@
 トキシン・ウォーキャスケット
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]に,化学戦用の新型ウォーキャスケットを追加します.
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]に,化学戦のために作られた新型ウォーキャスケットを追加します.
 
 [h1]概要[/h1]
 
-倫理を軽々と踏み越えた見事な工学の産物,トキシンは,VFE Piratesのカタフラクトのシャーシを土台にした第7世代のウォーキャスケットです.エアリアル系並みの装甲をやや軽いフレームに載せ,3つのパーツが毒ガスタンクを共有します.陣地をガスで満たし,無傷で突入し,後で空気を浄化してガスの一部を回収できます.Biotechが必要です.
+倫理を軽々と踏み越えた見事な工学の産物,トキシンは,VFE Piratesのカタフラクトのシャーシを土台にした第7世代のウォーキャスケットです.エアリアル系並みの装甲をやや軽いフレームに備え,3つのパーツが毒ガスタンクを共有します.陣地をガスで満たし,無傷で突入し,後で空気を浄化してガスの一部を回収できます.Biotechが必要です.
 
 [hr][/hr]
 [h1]セット構成[/h1]
@@ -22,9 +22,9 @@ Mod 設定で,各能力と一部のステータスを調整できます.任意�
 [*]既存のセーブデータに追加しても安全です.
 [*]ポーンがセットに溶接されている間は,MODを削除しないでください.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]とBiotech DLCが必要です.
-[*]Save Our Ship 2: VFE Pirates本体のセットと同じ条件でEVA対応になります.
-[*]Vanilla Races Expanded - Waster: ガスの入ったタンクは,ウェイスターのパイロットの毒ガス吸収の遺伝子にとって毒ガスとみなされます(設定,デフォルトはOn).
-[*]Combat Extended: アーマー値,かさ,積載量が他の宇宙世紀のウォーキャスケットと同水準に調整され,ヘルメットはCEの煙を通しません.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1909914131]Save Our Ship 2[/url]:VFE Pirates本体のセットと同じ条件でEVA対応になります.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2983471725]Vanilla Races Expanded - Waster[/url]:ガスの入ったタンクは,ウェイスターのパイロットの毒ガス吸収の遺伝子にとって毒ガスとみなされます(設定,デフォルトはOn).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044]Combat Extended[/url]:アーマー値,かさ,積載量が他の宇宙世紀のウォーキャスケットと同水準に調整され,ヘルメットはCEの煙を通しません.
 [/list]
 
 [hr][/hr]

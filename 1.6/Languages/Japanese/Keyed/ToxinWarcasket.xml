@@ -15,107 +15,107 @@
 
   <!-- EN: Tank capacity (chemfuel) -->
   <TXWC_TankCapacity>タンク容量 (バイオ液化燃料)</TXWC_TankCapacity>
-  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
-  <TXWC_TankCapacityDesc>満タンのタンクに入るバイオ液化燃料の量です.ゲージは1単位ごとに表示されます.タンクの現在量より低くすると,超過分は失われます.デフォルト: {0}.</TXWC_TankCapacityDesc>
+  <!-- EN: The amount of chemfuel the tank holds when full. Default: {0}. -->
+  <TXWC_TankCapacityDesc>タンクが満タンのときに入るバイオ液化燃料の量です.デフォルト: {0}.</TXWC_TankCapacityDesc>
 
   <!-- EN: Tox gas per chemfuel (cells) -->
   <TXWC_GasPerChemfuel>バイオ液化燃料1あたりの毒ガス (タイル)</TXWC_GasPerChemfuel>
-  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
-  <TXWC_GasPerChemfuelDesc>タンク内のバイオ液化燃料1から生じる毒ガスのタイル数です.放出,噴射,パイロットが倒れたときの破裂のどれで使っても同じです.ガス吸収は,この量のガスを吸い込むたびにバイオ液化燃料1を蓄えます.毒ガスパックはバイオ液化燃料35で45タイル分のガスを出します.デフォルト: {0}.</TXWC_GasPerChemfuelDesc>
+  <!-- EN: The number of cells of tox gas each chemfuel makes, whether it is vented, sprayed, or burst from the tank when the pilot goes down. Absorbing gas refills the tank at the same rate. For comparison, a tox pack makes 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>バイオ液化燃料1から生じる毒ガスのタイル数です.放出,噴射,パイロットが倒れたときのタンクの破裂のどれで使っても同じです.ガス吸収では,同じ割合でタンクが補充されます.参考として,毒ガスパックはバイオ液化燃料35で45タイル分のガスを出します.デフォルト: {0}.</TXWC_GasPerChemfuelDesc>
 
   <!-- EN: Vent rate (chemfuel per second) -->
   <TXWC_VentRate>放出速度 (バイオ液化燃料/秒)</TXWC_VentRate>
-  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
-  <TXWC_VentRateDesc>放出口がタンクを空にする速さです.速いほどガスの雲は広くなり,早く晴れます.デフォルト: {0}.</TXWC_VentRateDesc>
+  <!-- EN: The amount of chemfuel released each second while the vents are open. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>放出口を開いている間に毎秒放出されるバイオ液化燃料の量です.速いほどガスの雲は広くなり,早く晴れます.デフォルト: {0}.</TXWC_VentRateDesc>
 
-  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
-  <TXWC_TankSummary>満タン: バイオ液化燃料{0}で毒ガス{1}タイル分 (毒ガスパック{2}個分).放出すると{3}秒で空になります.</TXWC_TankSummary>
+  <!-- EN: A full tank holds {0} chemfuel, enough for {1} cells of tox gas or about {2} tox packs. Venting empties it in {3} seconds. -->
+  <TXWC_TankSummary>満タンのタンクにはバイオ液化燃料{0}が入り,毒ガス{1}タイル分,毒ガスパック約{2}個分に相当します.放出すると{3}秒で空になります.</TXWC_TankSummary>
 
   <!-- EN: Cost (chemfuel) -->
   <TXWC_JetCost>コスト (バイオ液化燃料)</TXWC_JetCost>
-  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
-  <TXWC_JetCostDesc>ガス噴射1回でタンクから使うバイオ液化燃料の量です.タンクがない場合も,ショルダーアーマー自体の噴射1回で,同じ量のバイオ液化燃料から同じガスが出ます.デフォルト: {0}.</TXWC_JetCostDesc>
+  <!-- EN: The amount of chemfuel each gas jet draws from the tank. Without a tank, the jets stored in the shoulders reload for the same amount. Default: {0}. -->
+  <TXWC_JetCostDesc>ガス噴射1回でタンクから使うバイオ液化燃料の量です.タンクがない場合は,ショルダーアーマーに蓄えられた噴射が同じ量で補充されます.デフォルト: {0}.</TXWC_JetCostDesc>
 
   <!-- EN: Jets without a tank -->
   <TXWC_JetReserve>タンクなしの噴射回数</TXWC_JetReserve>
-  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
-  <TXWC_JetReserveDesc>タンクなしで装着したときに,ショルダーアーマー単体で使える噴射の回数です.バイオ液化燃料で補充でき,タンクを装着している間は消費されません.デフォルト: {0}.</TXWC_JetReserveDesc>
+  <!-- EN: The number of gas jets the shoulders carry on their own. They are only used when no tank is worn, and reload with chemfuel. Default: {0}. -->
+  <TXWC_JetReserveDesc>ショルダーアーマー単体で持つガス噴射の回数です.タンクを装着していないときだけ使われ,バイオ液化燃料で補充します.デフォルト: {0}.</TXWC_JetReserveDesc>
 
   <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
   <TXWC_JetTankLow>タンクに{CHARGENOUN_plural}が{COUNT}必要です.</TXWC_JetTankLow>
 
   <!-- EN: Cone width (degrees) -->
   <TXWC_JetConeWidth>円錐の幅 (度)</TXWC_JetConeWidth>
-  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetConeWidthDesc>ガス噴射が着弾する円錐の全幅です.広いほど,同じ量のガスが薄く広がります.デフォルト: {0}.</TXWC_JetConeWidthDesc>
+  <!-- EN: The width of the cone the gas jet sprays. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>ガス噴射の円錐の幅です.広いほど,同じ量のガスが薄く広がります.デフォルト: {0}.</TXWC_JetConeWidthDesc>
 
   <!-- EN: Range (cells) -->
   <TXWC_JetRange>範囲 (タイル)</TXWC_JetRange>
-  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetRangeDesc>ガス噴射が届く距離です.遠くまで届くほど,同じ量のガスが薄く広がります.デフォルト: {0}.</TXWC_JetRangeDesc>
+  <!-- EN: The distance the gas jet reaches. Default: {0}. -->
+  <TXWC_JetRangeDesc>ガス噴射が届く距離です.デフォルト: {0}.</TXWC_JetRangeDesc>
 
   <!-- EN: Aiming time (seconds) -->
   <TXWC_JetWarmup>照準時間 (秒)</TXWC_JetWarmup>
-  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <!-- EN: The time the pilot takes to aim the gas jet before it fires. Default: {0}. -->
   <TXWC_JetWarmupDesc>パイロットがガス噴射の狙いを定め始めてから噴射するまでにかかる時間です.デフォルト: {0}.</TXWC_JetWarmupDesc>
 
-  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
-  <TXWC_JetSummary>噴射1回: バイオ液化燃料{0}で毒ガス{1}タイル分 (毒ガスパック{2}個分).満タンのタンクで{3}回,ショルダーアーマー単体で{4}回使えます.</TXWC_JetSummary>
+  <!-- EN: Each jet draws {0} chemfuel and sprays {1} cells of tox gas, about {2} tox packs. A full tank holds {3} jets and the shoulders alone hold {4}. -->
+  <TXWC_JetSummary>噴射1回でバイオ液化燃料{0}を使い,毒ガス{1}タイル分,毒ガスパック約{2}個分を噴射します.満タンのタンクで{3}回,ショルダーアーマー単体で{4}回使えます.</TXWC_JetSummary>
 
   <!-- EN: Radius (cells) -->
   <TXWC_AbsorbRadius>半径 (タイル)</TXWC_AbsorbRadius>
-  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
-  <TXWC_AbsorbRadiusDesc>ガス吸収がパイロットの周囲からガスを吸い込む範囲です.デフォルト: {0}.</TXWC_AbsorbRadiusDesc>
+  <!-- EN: The distance around the pilot that gas is drawn in from. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>パイロットの周囲でガスを吸い込む範囲です.デフォルト: {0}.</TXWC_AbsorbRadiusDesc>
 
   <!-- EN: Duration (seconds) -->
   <TXWC_AbsorbDuration>持続時間 (秒)</TXWC_AbsorbDuration>
-  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
-  <TXWC_AbsorbDurationDesc>ガス吸収1回でガスを吸い込み続ける時間です.デフォルト: {0}.</TXWC_AbsorbDurationDesc>
+  <!-- EN: The time the respirator keeps drawing gas in after each use. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>使用後に呼吸装置がガスを吸い込み続ける時間です.デフォルト: {0}.</TXWC_AbsorbDurationDesc>
 
   <!-- EN: Cooldown (hours) -->
   <TXWC_AbsorbCooldown>クールダウン (時間)</TXWC_AbsorbCooldown>
-  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
-  <TXWC_AbsorbCooldownDesc>ガス吸収が再び使えるようになるまでの時間です.デフォルト: {0}.</TXWC_AbsorbCooldownDesc>
+  <!-- EN: The time the pilot must wait after absorbing gas before absorbing again. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>ガス吸収を使った後,再び使えるようになるまでの時間です.デフォルト: {0}.</TXWC_AbsorbCooldownDesc>
 
-  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
-  <TXWC_AbsorbSummary>ガス吸収1回で,パイロットの周囲{0}タイルからガスを吸い込みます.その全体をガスが覆っていれば,バイオ液化燃料{1}を蓄えます.</TXWC_AbsorbSummary>
+  <!-- EN: Absorbing gas draws from the {0} cells around the pilot. A full cloud over all of them refills {1} chemfuel. -->
+  <TXWC_AbsorbSummary>ガス吸収では,パイロットの周囲{0}タイルからガスを吸い込みます.範囲全体をガスが覆っていれば,バイオ液化燃料{1}が補充されます.</TXWC_AbsorbSummary>
 
-  <!-- EN: Toxin warcasket is spacer tier -->
-  <TXWC_SpacerTier>トキシン・ウォーキャスケットの宇宙世紀仕様</TXWC_SpacerTier>
-  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
-  <TXWC_SpacerTierDesc>トキシン・ウォーキャスケットを,シージブレーカーと同じ第10世代の宇宙世紀仕様に作り直します.宇宙技術による装甲と断熱性,移動速度のペナルティなし,毒耐性と精神感応性の抑制,真空耐性{0},シールドバブルを得る代わりに,材料に先進コンポーネントとプラスチールを使い,研究「宇宙世紀のウォーキャスケット」が必要になります.ベテランの襲撃者も装着するようになります.デフォルト: Off.</TXWC_SpacerTierDesc>
+  <!-- EN: Spacer tier -->
+  <TXWC_SpacerTier>宇宙世紀仕様</TXWC_SpacerTier>
+  <!-- EN: When enabled, the toxin warcasket is rebuilt as a 10th generation spacer warcasket like the siegebreaker. It gains spacer plating and insulation, a shield bubble, resistance to toxins, psychic effects and vacuum{0}, and loses its speed penalty, but it costs spacer components and plasteel, needs the spacer warcaskets research, and can be worn by veteran raiders. When disabled, it stays a 7th generation set. Default: off. -->
+  <TXWC_SpacerTierDesc>有効にすると,トキシン・ウォーキャスケットがシージブレーカーと同じ第10世代の宇宙世紀仕様に作り直されます.宇宙技術による装甲と断熱性,シールドバブル,毒耐性,精神感応性の抑制,真空耐性{0}を備え,移動速度のペナルティもなくなります.ただし,材料に先進コンポーネントとプラスチールが必要で,研究「宇宙世紀のウォーキャスケット」も求められます.ベテランの襲撃者も装着できます.無効にすると,第7世代のセットのままです.デフォルト: Off.</TXWC_SpacerTierDesc>
 
-  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, equipped with a tox gas tank that vents around the pilot. -->
   <TXWC_SpacerShortDescription_Armor>宇宙技術を用いた特殊なウォーキャスケット外殻で,標準的な防護性能を備えています.パイロットの周囲にガスを放出する毒ガスタンクを搭載しています.</TXWC_SpacerShortDescription_Armor>
-  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, equipped with shoulder-mounted jets that spray tox gas from the shell's tank. -->
   <TXWC_SpacerShortDescription_Shoulders>宇宙技術を用いた特殊なウォーキャスケットショルダーアーマーで,標準的な防護性能を備えています.外殻のタンクから毒ガスを噴射する肩部の噴射口を搭載しています.</TXWC_SpacerShortDescription_Shoulders>
-  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
-  <TXWC_SpacerShortDescription_Helmet>宇宙技術を用いた特殊なウォーキャスケットヘルメットで,標準的な防護性能を備えています.呼吸装置で気密化されており,毒ガスを遮断するとともに,外殻のタンクへ吸い戻します.</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, equipped with a respirator that keeps out tox gas and draws it back into the tank. -->
+  <TXWC_SpacerShortDescription_Helmet>宇宙技術を用いた特殊なウォーキャスケットヘルメットで,標準的な防護性能を備えています.呼吸装置を搭載しており,毒ガスを遮断するとともに,タンクへ吸い戻します.</TXWC_SpacerShortDescription_Helmet>
   <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armor designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armors have been improved, generally reducing restrictions on mixing pieces of different armor series even across generations. -->
   <TXWC_SpacerLoreGeneration>第10世代のウォーキャスケットは,実は鹵獲した宙賊の装備を改造したもので,政府の軍事研究部門が先進的なパワーアーマーの設計を取り入れて改良しました.高品質な資源をより多く利用できたことに加え,本来なら軍務に就けない歴戦の兵士に装着させることを目的としていたため,この計画は一人で操る弩級の兵器を生み出しました.アーマーの汎用性も高められ,異なるシリーズのパーツを,世代をまたいでも組み合わせやすくなっています.</TXWC_SpacerLoreGeneration>
-  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
-  <TXWC_SpacerLoreSeries>トキシンシリーズは,化学戦向けに作られたものです.外殻のタンクがパイロットの周囲の放出口とショルダーアーマーのガス噴射口にガスを送り,ヘルメットの呼吸装置がガスをタンクへ吸い戻します.全パーツがそろうと,パイロットは毒素の影響を受けなくなります.</TXWC_SpacerLoreSeries>
+  <!-- EN: The Toxin series was built around a tox gas tank for chemical warfare. The tank in the shell feeds vents around the pilot and the gas jets on the pauldrons, and the respirator in the helmet draws gas back into it. The objective was a pilot who could gas a position and then walk into it, and clear the air again once the fighting was done. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>トキシンシリーズは,毒ガスタンクを中心に,化学戦向けに作られたものです.外殻のタンクがパイロットの周囲の放出口とショルダーアーマーのガス噴射口にガスを送り,ヘルメットの呼吸装置がガスをタンクへ吸い戻します.目指したのは,ガスで陣地を制圧してそのまま踏み込み,戦闘が終わったら空気を元に戻せるパイロットです.全パーツがそろうと,パイロットは毒素の影響を受けなくなります.</TXWC_SpacerLoreSeries>
 
-  <!-- EN: Toxin warcasket resists vacuum -->
+  <!-- EN: Toxin warcasket vacuum resistance -->
   <TXWC_ToxinVacuum>トキシン・ウォーキャスケットの真空耐性</TXWC_ToxinVacuum>
-  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
-  <TXWC_ToxinVacuumDesc>トキシン・ウォーキャスケットに宇宙世紀仕様の真空耐性を与えます.ほかの仕様は含みません.デフォルト: Off.</TXWC_ToxinVacuumDesc>
+  <!-- EN: When enabled, the toxin warcasket resists vacuum like a spacer warcasket, with none of the tier's other changes. When disabled, it is as exposed to vacuum as the other 7th generation sets. Default: off. -->
+  <TXWC_ToxinVacuumDesc>有効にすると,トキシン・ウォーキャスケットが宇宙世紀のウォーキャスケットと同じ真空耐性を持ち,ほかの変更は加わりません.無効にすると,ほかの第7世代のセットと同様に真空の影響を受けます.デフォルト: Off.</TXWC_ToxinVacuumDesc>
   <!-- EN:  (included by spacer tier) -->
   <TXWC_IncludedInSpacerTierSuffix> (宇宙世紀仕様に含まれる)</TXWC_IncludedInSpacerTierSuffix>
 
-  <!-- EN: Hazard warcasket resists vacuum -->
+  <!-- EN: Hazard warcasket vacuum resistance -->
   <TXWC_HazardVacuum>ハザード・ウォーキャスケットの真空耐性</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
-  <TXWC_HazardVacuumDesc>ハザード・ウォーキャスケットに宇宙世紀仕様の真空耐性を与えます.デフォルト: Off.</TXWC_HazardVacuumDesc>
+  <!-- EN: When enabled, the hazard warcasket resists vacuum like a spacer warcasket. When disabled, it is left as Vanilla Factions Expanded - Pirates ships it. Default: off. -->
+  <TXWC_HazardVacuumDesc>有効にすると,ハザード・ウォーキャスケットが宇宙世紀のウォーキャスケットと同じ真空耐性を持ちます.無効にすると,Vanilla Factions Expanded - Piratesでの元の状態のままです.デフォルト: Off.</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix> (再起動が必要)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->
   <TXWC_RequiresOdysseySuffix> (Odysseyが必要)</TXWC_RequiresOdysseySuffix>
 
-  <!-- EN: Tank feeds waster tox absorption -->
-  <TXWC_FeedToxAbsorption>タンクによるウェイスターの毒ガス吸収</TXWC_FeedToxAbsorption>
-  <!-- EN: A tank with gas in it counts as tox gas for pilots with the tox absorption gene ({0}), keeping their pollution mutations active. Costs no gas. Default: on. -->
-  <TXWC_FeedToxAbsorptionDesc>ガスの入ったタンクは,毒ガス吸収の遺伝子 ({0})を持つパイロットにとって毒ガスとみなされ,汚染変異が有効な状態に保たれます.ガスは消費しません.デフォルト: On.</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN: Tox absorption from the tank -->
+  <TXWC_FeedToxAbsorption>タンクからの毒ガス吸収</TXWC_FeedToxAbsorption>
+  <!-- EN: When enabled, a tank with gas in it counts as tox gas for a pilot with the tox absorption gene from {0}, so their pollution mutations stay active. No gas is used. When disabled, the gene only reacts to gas in the air. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>有効にすると,ガスの入ったタンクは,{0}の毒ガス吸収の遺伝子を持つパイロットにとって毒ガスとみなされ,汚染変異が有効な状態に保たれます.ガスは消費されません.無効にすると,この遺伝子は空気中のガスにだけ反応します.デフォルト: On.</TXWC_FeedToxAbsorptionDesc>
   <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
   <TXWC_RequiresVREWasterSuffix> (Vanilla Races Expanded - Wasterが必要)</TXWC_RequiresVREWasterSuffix>
 

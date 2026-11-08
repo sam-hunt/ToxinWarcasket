@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <!-- EN: Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas, and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn. -->
-  <TXWC_AbsorbGas.description>呼吸装置で周囲の空気を数秒間吸い込み,パイロットの周りから煙幕,毒ガス,その他のガスを取り除きます.パイロットが移動しても効果は続きます.吸い込んだものはろ過され,ウォーキャスケットのタンクを装着していれば毒ガスとして蓄えられます.</TXWC_AbsorbGas.description>
+  <!-- EN: Draw the surrounding air in through the respirator for a few seconds. Smoke, tox gas and other gases near the pilot will be pulled in and cleared, even as they move. If a tank is worn, whatever is drawn in will be filtered and stored in it as tox gas. -->
+  <TXWC_AbsorbGas.description>呼吸装置で周囲の空気を数秒間吸い込みます.パイロットの近くにある煙幕,毒ガス,その他のガスは,移動していても吸い込まれて取り除かれます.タンクを装着していれば,吸い込んだものはろ過され,毒ガスとしてタンクに蓄えられます.</TXWC_AbsorbGas.description>
   <!-- EN: Using ability: {0} -->
   <TXWC_AbsorbGas.jobReportString>能力を使用中: {0}</TXWC_AbsorbGas.jobReportString>
   <!-- EN: absorb gas -->
@@ -10,7 +10,7 @@
   <!-- EN: absorb gas -->
   <TXWC_AbsorbGas.verbProperties.label>ガス吸収</TXWC_AbsorbGas.verbProperties.label>
 
-  <!-- EN: Open the tank's vents and release tox gas around the pilot. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left. -->
+  <!-- EN: Open the tank's vents and release tox gas around the pilot. The cloud will grow from wherever the pilot stands and follow them as they move. Toggle again to close the vents and keep what is left. -->
   <TXWC_VentTank.description>タンクの放出口を開き,パイロットの周囲に毒ガスを放出します.ガスの雲はパイロットのいる場所から広がり,パイロットの移動についていきます.もう一度切り替えると放出口が閉じ,残りのガスはタンクに保たれます.</TXWC_VentTank.description>
   <!-- EN: Using ability: {0} -->
   <TXWC_VentTank.jobReportString>能力を使用中: {0}</TXWC_VentTank.jobReportString>
