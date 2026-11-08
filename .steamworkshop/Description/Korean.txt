@@ -1,10 +1,10 @@
 독소 워캐스킷
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]에 화학전용 워캐스킷을 새로 추가합니다.
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]에 화학전을 위해 만든 워캐스킷을 새로 추가합니다.
 
 [h1]소개[/h1]
 
-놀랍도록 비윤리적인 공학의 결정체인 독소 워캐스킷은 VFE Pirates의 중무장 워캐스킷 프레임을 바탕으로 한 7세대 워캐스킷입니다. 충격 워캐스킷 수준의 장갑을 조금 더 가벼운 프레임에 얹었고, 세 부품이 독소 가스 탱크를 함께 씁니다. 가스로 진지를 뒤덮고, 아무 피해 없이 돌입한 뒤, 공기를 정화해 가스 일부를 회수하세요. 바이오테크가 필요합니다.
+놀랍도록 비윤리적인 공학의 결정체인 독소 워캐스킷은 VFE Pirates의 중무장 워캐스킷 프레임을 바탕으로 한 7세대 워캐스킷입니다. 충격 워캐스킷 수준의 장갑을 조금 더 가벼운 프레임에 얹었으며, 세 부품이 독소 가스 탱크를 함께 씁니다. 가스로 진지를 뒤덮고, 아무 피해 없이 돌입한 뒤, 공기를 정화해 가스 일부를 회수하세요. 바이오테크가 필요합니다.
 
 [hr][/hr]
 [h1]세트 구성[/h1]
@@ -22,9 +22,9 @@
 [*]기존 세이브에 추가해도 안전합니다.
 [*]정착민이 세트에 안치된 동안에는 제거하면 안 됩니다.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]와 바이오테크 DLC가 필요합니다.
-[*]Save Our Ship 2: VFE Pirates의 기본 세트와 같은 규칙으로 선외활동(EVA) 등급을 받습니다.
-[*]Vanilla Races Expanded - Waster: 가스가 든 탱크는 웨이스터 조종사의 독소 흡수 유전자에 독소 가스로 간주됩니다(설정, 기본값: 켜짐).
-[*]Combat Extended: 방어도, 부피, 허용 부피가 다른 우주시대 워캐스킷과 비슷한 수준이며, 헬멧은 CE의 연막을 막습니다.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1909914131]Save Our Ship 2[/url]: VFE Pirates의 기본 세트와 같은 규칙으로 선외활동(EVA) 등급을 받습니다.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2983471725]Vanilla Races Expanded - Waster[/url]: 가스가 든 탱크는 웨이스터 조종사의 독소 흡수 유전자에 독소 가스로 간주됩니다(설정, 기본값: 켜짐).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044]Combat Extended[/url]: 방어도, 부피, 허용 부피가 다른 우주시대 워캐스킷과 비슷한 수준이며, 헬멧은 CE의 연막을 막습니다.
 [/list]
 
 [hr][/hr]

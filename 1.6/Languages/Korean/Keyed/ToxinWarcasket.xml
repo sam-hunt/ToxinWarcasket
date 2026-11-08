@@ -15,107 +15,107 @@
 
   <!-- EN: Tank capacity (chemfuel) -->
   <TXWC_TankCapacity>탱크 용량 (화학연료)</TXWC_TankCapacity>
-  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
-  <TXWC_TankCapacityDesc>탱크를 가득 채웠을 때 들어가는 화학연료의 양입니다. 게이지에는 화학연료 1개가 1로 표시됩니다. 탱크에 이미 이보다 많이 들어 있으면 초과분은 사라집니다. 기본값: {0}.</TXWC_TankCapacityDesc>
+  <!-- EN: The amount of chemfuel the tank holds when full. Default: {0}. -->
+  <TXWC_TankCapacityDesc>탱크를 가득 채웠을 때 들어가는 화학연료의 양입니다. 기본값: {0}.</TXWC_TankCapacityDesc>
 
   <!-- EN: Tox gas per chemfuel (cells) -->
   <TXWC_GasPerChemfuel>화학연료당 독소 가스 (칸)</TXWC_GasPerChemfuel>
-  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
-  <TXWC_GasPerChemfuelDesc>탱크의 화학연료 1개가 만드는 독소 가스의 칸 수입니다. 배출하든, 분사하든, 조종사가 쓰러지며 터지든 똑같이 적용됩니다. 흡수는 이만큼의 가스를 빨아들일 때마다 화학연료 1개 분량을 저장합니다. 독소 등짐은 화학연료 35개로 45칸을 채웁니다. 기본값: {0}.</TXWC_GasPerChemfuelDesc>
+  <!-- EN: The number of cells of tox gas each chemfuel makes, whether it is vented, sprayed, or burst from the tank when the pilot goes down. Absorbing gas refills the tank at the same rate. For comparison, a tox pack makes 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>화학연료 1개가 만드는 독소 가스의 칸 수입니다. 배출하든, 분사하든, 조종사가 쓰러지며 탱크에서 터지든 똑같이 적용됩니다. 가스를 흡수하면 같은 비율로 탱크가 다시 채워집니다. 참고로 독소 등짐은 화학연료 35개로 45칸을 만듭니다. 기본값: {0}.</TXWC_GasPerChemfuelDesc>
 
   <!-- EN: Vent rate (chemfuel per second) -->
   <TXWC_VentRate>배출 속도 (초당 화학연료)</TXWC_VentRate>
-  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
-  <TXWC_VentRateDesc>배출구가 탱크를 비우는 속도입니다. 빠를수록 가스 구름이 더 넓게 퍼지고 더 빨리 걷힙니다. 기본값: {0}.</TXWC_VentRateDesc>
+  <!-- EN: The amount of chemfuel released each second while the vents are open. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>배출구가 열려 있는 동안 1초마다 내보내는 화학연료의 양입니다. 빠를수록 가스 구름이 더 넓게 퍼지고 더 빨리 걷힙니다. 기본값: {0}.</TXWC_VentRateDesc>
 
-  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
-  <TXWC_TankSummary>가득 찬 탱크: 화학연료 {0}개, 독소 가스 {1}칸 (독소 등짐 {2}개 분량). 배출하면 {3}초 만에 비워집니다.</TXWC_TankSummary>
+  <!-- EN: A full tank holds {0} chemfuel, enough for {1} cells of tox gas or about {2} tox packs. Venting empties it in {3} seconds. -->
+  <TXWC_TankSummary>가득 찬 탱크에는 화학연료 {0}개가 들어가며, 독소 가스 {1}칸 또는 독소 등짐 약 {2}개 분량입니다. 배출하면 {3}초 만에 비워집니다.</TXWC_TankSummary>
 
   <!-- EN: Cost (chemfuel) -->
   <TXWC_JetCost>비용 (화학연료)</TXWC_JetCost>
-  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
-  <TXWC_JetCostDesc>가스 분사 1회에 탱크에서 끌어오는 화학연료의 양입니다. 탱크가 없을 때 쓰는 어깨 자체의 분사도 같은 화학연료로 같은 양의 가스를 만듭니다. 기본값: {0}.</TXWC_JetCostDesc>
+  <!-- EN: The amount of chemfuel each gas jet draws from the tank. Without a tank, the jets stored in the shoulders reload for the same amount. Default: {0}. -->
+  <TXWC_JetCostDesc>가스 분사 1회에 탱크에서 끌어오는 화학연료의 양입니다. 탱크가 없을 때는 어깨에 저장된 분사도 같은 양으로 재장전됩니다. 기본값: {0}.</TXWC_JetCostDesc>
 
   <!-- EN: Jets without a tank -->
   <TXWC_JetReserve>탱크 미착용 시 분사 횟수</TXWC_JetReserve>
-  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
-  <TXWC_JetReserveDesc>탱크 없이 어깨만 착용할 때 쓰는, 어깨 자체의 분사 횟수입니다. 화학연료로 재장전하며, 탱크를 착용한 동안에는 소모되지 않습니다. 기본값: {0}.</TXWC_JetReserveDesc>
+  <!-- EN: The number of gas jets the shoulders carry on their own. They are only used when no tank is worn, and reload with chemfuel. Default: {0}. -->
+  <TXWC_JetReserveDesc>어깨 자체에 든 가스 분사의 횟수입니다. 탱크를 착용하지 않았을 때만 쓰이며, 화학연료로 재장전합니다. 기본값: {0}.</TXWC_JetReserveDesc>
 
   <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
   <TXWC_JetTankLow>탱크에 {CHARGENOUN_plural} {COUNT}개가 필요합니다.</TXWC_JetTankLow>
 
   <!-- EN: Cone width (degrees) -->
   <TXWC_JetConeWidth>원뿔 폭 (도)</TXWC_JetConeWidth>
-  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetConeWidthDesc>가스 분사가 떨어지는 원뿔의 전체 폭입니다. 원뿔이 넓을수록 같은 양의 가스가 더 옅게 퍼집니다. 기본값: {0}.</TXWC_JetConeWidthDesc>
+  <!-- EN: The width of the cone the gas jet sprays. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>가스 분사가 뿜어지는 원뿔의 폭입니다. 원뿔이 넓을수록 같은 양의 가스가 더 옅게 퍼집니다. 기본값: {0}.</TXWC_JetConeWidthDesc>
 
   <!-- EN: Range (cells) -->
   <TXWC_JetRange>사거리 (칸)</TXWC_JetRange>
-  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetRangeDesc>가스 분사가 닿는 거리입니다. 멀리 닿을수록 같은 양의 가스가 더 옅게 퍼집니다. 기본값: {0}.</TXWC_JetRangeDesc>
+  <!-- EN: The distance the gas jet reaches. Default: {0}. -->
+  <TXWC_JetRangeDesc>가스 분사가 닿는 거리입니다. 기본값: {0}.</TXWC_JetRangeDesc>
 
   <!-- EN: Aiming time (seconds) -->
   <TXWC_JetWarmup>조준 시간 (초)</TXWC_JetWarmup>
-  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <!-- EN: The time the pilot takes to aim the gas jet before it fires. Default: {0}. -->
   <TXWC_JetWarmupDesc>조종사가 가스 분사를 조준해 발사하기까지 걸리는 시간입니다. 기본값: {0}.</TXWC_JetWarmupDesc>
 
-  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
-  <TXWC_JetSummary>분사 1회: 화학연료 {0}개, 독소 가스 {1}칸 (독소 등짐 {2}개 분량). 가득 찬 탱크로 {3}회, 어깨만으로 {4}회 분사할 수 있습니다.</TXWC_JetSummary>
+  <!-- EN: Each jet draws {0} chemfuel and sprays {1} cells of tox gas, about {2} tox packs. A full tank holds {3} jets and the shoulders alone hold {4}. -->
+  <TXWC_JetSummary>분사 1회는 화학연료 {0}개를 끌어와 독소 가스 {1}칸, 독소 등짐 약 {2}개 분량을 뿜습니다. 가득 찬 탱크로 {3}회, 어깨만으로 {4}회 분사할 수 있습니다.</TXWC_JetSummary>
 
   <!-- EN: Radius (cells) -->
   <TXWC_AbsorbRadius>범위 (칸)</TXWC_AbsorbRadius>
-  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
-  <TXWC_AbsorbRadiusDesc>흡수가 조종사 주위에서 가스를 빨아들이는 범위입니다. 기본값: {0}.</TXWC_AbsorbRadiusDesc>
+  <!-- EN: The distance around the pilot that gas is drawn in from. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>조종사 주위에서 가스를 빨아들이는 거리입니다. 기본값: {0}.</TXWC_AbsorbRadiusDesc>
 
   <!-- EN: Duration (seconds) -->
   <TXWC_AbsorbDuration>지속 시간 (초)</TXWC_AbsorbDuration>
-  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
-  <TXWC_AbsorbDurationDesc>흡수 1회가 가스를 빨아들이는 시간입니다. 기본값: {0}.</TXWC_AbsorbDurationDesc>
+  <!-- EN: The time the respirator keeps drawing gas in after each use. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>사용한 뒤 호흡 장치가 가스를 계속 빨아들이는 시간입니다. 기본값: {0}.</TXWC_AbsorbDurationDesc>
 
   <!-- EN: Cooldown (hours) -->
   <TXWC_AbsorbCooldown>재사용 대기 (시간)</TXWC_AbsorbCooldown>
-  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
-  <TXWC_AbsorbCooldownDesc>흡수를 다시 쓸 수 있을 때까지 걸리는 시간입니다. 기본값: {0}.</TXWC_AbsorbCooldownDesc>
+  <!-- EN: The time the pilot must wait after absorbing gas before absorbing again. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>가스를 흡수한 뒤 다시 흡수하려면 조종사가 기다려야 하는 시간입니다. 기본값: {0}.</TXWC_AbsorbCooldownDesc>
 
-  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
-  <TXWC_AbsorbSummary>흡수 1회는 조종사 주위 {0}칸에서 가스를 빨아들입니다. 이 칸들이 가스로 가득 차 있으면 화학연료 {1}개 분량이 저장됩니다.</TXWC_AbsorbSummary>
+  <!-- EN: Absorbing gas draws from the {0} cells around the pilot. A full cloud over all of them refills {1} chemfuel. -->
+  <TXWC_AbsorbSummary>가스 흡수는 조종사 주위 {0}칸에서 가스를 빨아들입니다. 이 칸들이 모두 가스로 가득 차 있으면 화학연료 {1}개 분량이 다시 채워집니다.</TXWC_AbsorbSummary>
 
-  <!-- EN: Toxin warcasket is spacer tier -->
-  <TXWC_SpacerTier>독소 워캐스킷의 우주시대 등급</TXWC_SpacerTier>
-  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
-  <TXWC_SpacerTierDesc>독소 워캐스킷을 돌격 워캐스킷처럼 10세대 우주시대 등급으로 다시 만듭니다. 우주시대 수준의 방어도와 단열, 독성 저항과 정신 저항, 진공 저항력{0}, 보호막을 얻고 이동속도 감소가 사라지지만, 제작에 고급 부품과 플라스틸이 들고 '우주시대 워캐스킷' 연구가 필요합니다. 베터런 습격자도 이 워캐스킷을 착용할 수 있습니다. 기본값: 꺼짐.</TXWC_SpacerTierDesc>
+  <!-- EN: Spacer tier -->
+  <TXWC_SpacerTier>우주시대 등급</TXWC_SpacerTier>
+  <!-- EN: When enabled, the toxin warcasket is rebuilt as a 10th generation spacer warcasket like the siegebreaker. It gains spacer plating and insulation, a shield bubble, resistance to toxins, psychic effects and vacuum{0}, and loses its speed penalty, but it costs spacer components and plasteel, needs the spacer warcaskets research, and can be worn by veteran raiders. When disabled, it stays a 7th generation set. Default: off. -->
+  <TXWC_SpacerTierDesc>활성화하면 독소 워캐스킷이 돌격 워캐스킷처럼 10세대 우주시대 워캐스킷으로 다시 만들어집니다. 우주시대 수준의 방어도와 단열, 독성 저항과 정신 저항, 진공 저항력{0}, 보호막을 얻고 이동속도 감소가 사라집니다. 대신 제작에 고급 부품과 플라스틸이 들고 '우주시대 워캐스킷' 연구가 필요하며, 베터런 습격자도 착용할 수 있습니다. 비활성화하면 7세대 세트로 남습니다. 기본값: 꺼짐.</TXWC_SpacerTierDesc>
 
-  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, equipped with a tox gas tank that vents around the pilot. -->
   <TXWC_SpacerShortDescription_Armor>우주시대 기술로 특화된 표준적인 방어력의 워캐스킷입니다. 조종사 주위로 가스를 내뿜는 독소 가스 탱크를 장착했습니다.</TXWC_SpacerShortDescription_Armor>
-  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, equipped with shoulder-mounted jets that spray tox gas from the shell's tank. -->
   <TXWC_SpacerShortDescription_Shoulders>우주시대 기술로 특화된 표준적인 방어력의 워캐스킷 어깨입니다. 워캐스킷의 탱크에서 끌어온 독소 가스를 뿜는 어깨 분사기를 장착했습니다.</TXWC_SpacerShortDescription_Shoulders>
-  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
-  <TXWC_SpacerShortDescription_Helmet>우주시대 기술로 특화된 표준적인 방어력의 워캐스킷 헬멧입니다. 호흡 장치로 밀폐되어 독소 가스를 막아 내고, 가스를 워캐스킷의 탱크로 다시 빨아들입니다.</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, equipped with a respirator that keeps out tox gas and draws it back into the tank. -->
+  <TXWC_SpacerShortDescription_Helmet>우주시대 기술로 특화된 표준적인 방어력의 워캐스킷 헬멧입니다. 독소 가스를 막아 내고 가스를 탱크로 다시 빨아들이는 호흡 장치를 장착했습니다.</TXWC_SpacerShortDescription_Helmet>
   <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armor designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armors have been improved, generally reducing restrictions on mixing pieces of different armor series even across generations. -->
   <TXWC_SpacerLoreGeneration>10세대 워캐스킷은 사실 노획한 해적 장비를 정부의 군사 연구소에서 최신 설계로 개선시킨 것입니다. 부상 또는 다른 이유로 인해 복무를 계속할 수 없는 숙련병을 활용하기 위해, 고성능 재료를 아낌없이 활용하여 말 그대로 1인 함선을 만들어 냈습니다. 부품들의 범용성이 향상되어 서로 다른 세대나 시리즈와 조합하는 데 있어서 더 자유로운 편입니다.</TXWC_SpacerLoreGeneration>
-  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
-  <TXWC_SpacerLoreSeries>독소 시리즈는 화학전을 위해 만들어졌습니다. 몸통의 탱크가 조종사 주위의 배출구와 어깨의 가스 분사기에 가스를 공급하고, 헬멧의 호흡 장치는 가스를 탱크로 다시 빨아들입니다. 부품을 모두 갖추면 조종사는 독성의 영향을 받지 않습니다.</TXWC_SpacerLoreSeries>
+  <!-- EN: The Toxin series was built around a tox gas tank for chemical warfare. The tank in the shell feeds vents around the pilot and the gas jets on the pauldrons, and the respirator in the helmet draws gas back into it. The objective was a pilot who could gas a position and then walk into it, and clear the air again once the fighting was done. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>독소 시리즈는 화학전을 위해 독소 가스 탱크를 중심으로 만들어졌습니다. 몸통의 탱크가 조종사 주위의 배출구와 어깨의 가스 분사기에 가스를 공급하고, 헬멧의 호흡 장치는 가스를 탱크로 다시 빨아들입니다. 조종사가 진지를 가스로 뒤덮은 뒤 그 안으로 걸어 들어가고, 전투가 끝나면 다시 공기를 정화하는 것이 설계 목표였습니다. 부품을 모두 갖추면 조종사는 독성의 영향을 받지 않습니다.</TXWC_SpacerLoreSeries>
 
-  <!-- EN: Toxin warcasket resists vacuum -->
+  <!-- EN: Toxin warcasket vacuum resistance -->
   <TXWC_ToxinVacuum>독소 워캐스킷의 진공 저항력</TXWC_ToxinVacuum>
-  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
-  <TXWC_ToxinVacuumDesc>독소 워캐스킷에 우주시대 등급의 진공 저항력을 부여합니다. 등급의 다른 효과는 포함되지 않습니다. 기본값: 꺼짐.</TXWC_ToxinVacuumDesc>
+  <!-- EN: When enabled, the toxin warcasket resists vacuum like a spacer warcasket, with none of the tier's other changes. When disabled, it is as exposed to vacuum as the other 7th generation sets. Default: off. -->
+  <TXWC_ToxinVacuumDesc>활성화하면 독소 워캐스킷이 우주시대 워캐스킷처럼 진공에 저항하며, 등급의 다른 변경은 적용되지 않습니다. 비활성화하면 다른 7세대 세트처럼 진공에 그대로 노출됩니다. 기본값: 꺼짐.</TXWC_ToxinVacuumDesc>
   <!-- EN:  (included by spacer tier) -->
   <TXWC_IncludedInSpacerTierSuffix> (우주시대 등급에 포함)</TXWC_IncludedInSpacerTierSuffix>
 
-  <!-- EN: Hazard warcasket resists vacuum -->
+  <!-- EN: Hazard warcasket vacuum resistance -->
   <TXWC_HazardVacuum>재해 워캐스킷의 진공 저항력</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
-  <TXWC_HazardVacuumDesc>재해 워캐스킷에 우주시대 등급의 진공 저항력을 부여합니다. 기본값: 꺼짐.</TXWC_HazardVacuumDesc>
+  <!-- EN: When enabled, the hazard warcasket resists vacuum like a spacer warcasket. When disabled, it is left as Vanilla Factions Expanded - Pirates ships it. Default: off. -->
+  <TXWC_HazardVacuumDesc>활성화하면 재해 워캐스킷이 우주시대 워캐스킷처럼 진공에 저항합니다. 비활성화하면 VFE Pirates에 들어 있는 그대로 남습니다. 기본값: 꺼짐.</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix> (재시작 필요)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->
   <TXWC_RequiresOdysseySuffix> (오디세이 필요)</TXWC_RequiresOdysseySuffix>
 
-  <!-- EN: Tank feeds waster tox absorption -->
-  <TXWC_FeedToxAbsorption>웨이스터의 독소 흡수에 탱크 사용</TXWC_FeedToxAbsorption>
-  <!-- EN: A tank with gas in it counts as tox gas for pilots with the tox absorption gene ({0}), keeping their pollution mutations active. Costs no gas. Default: on. -->
-  <TXWC_FeedToxAbsorptionDesc>가스가 든 탱크는 독소 흡수 유전자({0})가 있는 조종사에게 독소 가스로 간주되어, 오염 변이가 활성 상태로 유지됩니다. 가스는 소모되지 않습니다. 기본값: 켜짐.</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN: Tox absorption from the tank -->
+  <TXWC_FeedToxAbsorption>탱크의 독소 흡수</TXWC_FeedToxAbsorption>
+  <!-- EN: When enabled, a tank with gas in it counts as tox gas for a pilot with the tox absorption gene from {0}, so their pollution mutations stay active. No gas is used. When disabled, the gene only reacts to gas in the air. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>활성화하면 가스가 든 탱크는 독소 흡수 유전자({0})가 있는 조종사에게 독소 가스로 간주되어, 오염 변이가 활성 상태로 유지됩니다. 가스는 소모되지 않습니다. 비활성화하면 이 유전자는 공기 중의 가스에만 반응합니다. 기본값: 켜짐.</TXWC_FeedToxAbsorptionDesc>
   <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
   <TXWC_RequiresVREWasterSuffix> (Vanilla Races Expanded - Waster 필요)</TXWC_RequiresVREWasterSuffix>
 
