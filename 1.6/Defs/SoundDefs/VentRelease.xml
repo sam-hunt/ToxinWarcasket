@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    The vent's hiss, played by the TXWC_VentReleasing effecter (that def's header) once each time
+    the vents open, after CompToxTank's GasPack_Deploy click. Core's GasReleasing (the tox pack's)
+    on the same clip, made to play once instead of looping:
+    - volumeRange 25, under GasReleasing's 35 and the click's 40, as a toggle opened often should
+      sit under the pack's single use. distRange 10~30 is the click's, where GasReleasing takes
+      the engine default 25~70: at that default the hiss stays at full volume out to 25 cells
+      from the listener, louder than the click whenever the camera is zoomed out, and on the
+      click's range it falls off as the rest of the set's sounds do.
+    - sustainLoop false schedules the sample to end with its clip (SubSustainer.StartSample), and
+      sustainIntervalRange 9999 puts the next one past any vent, so a long vent goes quiet once
+      the hiss has played rather than repeating it. The sustainer itself lives on silently until
+      the vent closes, so the effecter's SubEffecter_Sustainer, which only respawns an ended
+      sustainer, never restarts it mid-vent. Each opening spawns a new effecter and so a new hiss.
+    - sustainFadeoutTime 0.3: closing the vent stops the effecter maintaining its PerTick
+      sustainer, which ends two ticks later (Sustainer.SustainerUpdate) and fades the hiss over
+      0.3 s. GasReleasing has none and cuts dead.
+    - tempoAffectedByGameSpeed is left at its default, false, where GasReleasing sets it: a
+      non-looping sample is cleaned up at a real-time end scheduled from its clip's length, so a
+      clip paused with the game would be cut short on unpausing. The hiss instead plays through
+      once at its own pitch at any speed and through a pause, as GasPack_Deploy's one-shot does.
+    - maxVoices stays at the default 4, which mutes the farthest past that (SustainerManager);
+      GasReleasing's maxSimultaneous 1 only limits one-shots and is dropped.
+  -->
+  <SoundDef>
+    <defName>TXWC_VentRelease</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainFadeoutTime>0.3</sustainFadeoutTime>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapon/ToxShell/Toxic_Shell_GasRelease_01b</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <distRange>10~30</distRange>
+        <sustainLoop>false</sustainLoop>
+        <sustainIntervalRange>9999~9999</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+    The armor's vent, ticked by CompToxTank on the wearer for as long as the vents are open and
+    cleaned up as they close; every opening spawns a new one. Core's ToxGasReleasing (the tox
+    pack's) with its looping GasReleasing hiss swapped for TXWC_VentRelease, which plays once per
+    opening and fades fast on close (that def's header). The gas flecks are ToxGasReleasing's.
+  -->
+  <EffecterDef>
+    <defName>TXWC_VentReleasing</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>TXWC_VentRelease</soundDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.3</positionRadius>
+        <fleckDef>Fleck_ToxGasSmall</fleckDef>
+        <chancePerTick>0.1</chancePerTick>
+        <scale>0.5~1</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+</Defs>

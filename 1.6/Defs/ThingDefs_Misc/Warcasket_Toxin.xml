@@ -54,7 +54,8 @@
       ruptures, so a death in surgery leaves the room clean.
     - Vent (TXWC_VentTank, a toggle): four charges a second, 5% of the tank, so a full tank is
       20 s of vent, half again the pack's release time, and a toggle-off wastes at most one charge.
-      Its sound is the tox pack's: GasPack_Deploy as the vents open, then ToxGasReleasing's hiss.
+      Its sound is the tox pack's: GasPack_Deploy as the vents open, then the pack's hiss, played
+      once per opening by TXWC_VentReleasing (that def's header) rather than looped.
       GasGrid.AddGas floods a full cell's excess outward, so the cloud grows from the pilot and
       trails them. The rate is set by how the grid behaves: every gassed cell loses 3 of 255 per
       64 ticks unroofed (half that roofed) whatever its density, and neighbours equalize whenever
@@ -168,7 +169,7 @@
         <soundReload>Standard_Reload</soundReload>
         <cellsPerCharge>1.5</cellsPerCharge>
         <ventChargesPerSecond>4</ventChargesPerSecond>
-        <ventEffecter>ToxGasReleasing</ventEffecter>
+        <ventEffecter>TXWC_VentReleasing</ventEffecter>
         <ventStartSound>GasPack_Deploy</ventStartSound>
         <feedsToxAbsorption>true</feedsToxAbsorption>
         <ruptureCenterFilth>Filth_BlastMark</ruptureCenterFilth>
