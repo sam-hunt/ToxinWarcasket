@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The tank's vent now hisses once, more quietly, as it opens instead of looping for the whole vent, and fades out quickly when closed.
 - Reworded the mod settings tooltips, summary lines and toggle labels to read like vanilla's options.
 - Reworded the set's descriptions, the spray gas, vent tank and absorb gas text and the mod description to read like the base game and VFE Pirates' own sets.
+- Updated all 9 translations and their Workshop pages to the reworded text.
 
 ## [1.3.0] - 2026-10-28
 
