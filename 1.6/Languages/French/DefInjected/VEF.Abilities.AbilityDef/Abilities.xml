@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <!-- EN: Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas, and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn. -->
-  <TXWC_AbsorbGas.description>Aspire l'air environnant par le respirateur pendant quelques secondes et dissipe la fumée, le gaz tox et les autres gaz autour du pilote, même en mouvement. Tout ce qui est aspiré est filtré et stocké sous forme de gaz tox dans le réservoir du warcasket, si le pilote en porte un.</TXWC_AbsorbGas.description>
+  <!-- EN: Draw the surrounding air in through the respirator for a few seconds. Smoke, tox gas and other gases near the pilot will be pulled in and cleared, even as they move. If a tank is worn, whatever is drawn in will be filtered and stored in it as tox gas. -->
+  <TXWC_AbsorbGas.description>Aspire l'air environnant par le respirateur pendant quelques secondes. La fumée, le gaz tox et les autres gaz proches du pilote seront aspirés et dissipés, même en mouvement. Si un réservoir est porté, tout ce qui est aspiré sera filtré et stocké dedans sous forme de gaz tox.</TXWC_AbsorbGas.description>
   <!-- EN: Using ability: {0} -->
   <TXWC_AbsorbGas.jobReportString>utilise la capacité : {0}.</TXWC_AbsorbGas.jobReportString>
   <!-- EN: absorb gas -->
@@ -10,8 +10,8 @@
   <!-- EN: absorb gas -->
   <TXWC_AbsorbGas.verbProperties.label>absorption de gaz</TXWC_AbsorbGas.verbProperties.label>
 
-  <!-- EN: Open the tank's vents and release tox gas around the pilot. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left. -->
-  <TXWC_VentTank.description>Ouvre les évents du réservoir et libère du gaz tox autour du pilote. Le nuage s'étend depuis l'endroit où se tient le pilote et le suit dans ses déplacements. Une nouvelle activation referme les évents et conserve le gaz restant.</TXWC_VentTank.description>
+  <!-- EN: Open the tank's vents and release tox gas around the pilot. The cloud will grow from wherever the pilot stands and follow them as they move. Toggle again to close the vents and keep what is left. -->
+  <TXWC_VentTank.description>Ouvre les évents du réservoir et libère du gaz tox autour du pilote. Le nuage s'étendra depuis l'endroit où se tient le pilote et le suivra dans ses déplacements. Une nouvelle activation referme les évents et conserve le gaz restant.</TXWC_VentTank.description>
   <!-- EN: Using ability: {0} -->
   <TXWC_VentTank.jobReportString>utilise la capacité : {0}.</TXWC_VentTank.jobReportString>
   <!-- EN: vent tank -->

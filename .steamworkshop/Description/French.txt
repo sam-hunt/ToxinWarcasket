@@ -1,10 +1,10 @@
 Warcasket toxine
 
-Un nouveau warcasket de guerre chimique pour [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
+Un nouveau warcasket conçu pour la guerre chimique, à destination de [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
 
 [h1]À propos[/h1]
 
-Prouesse d'ingénierie d'une immoralité impressionnante, le Toxine est un warcasket de 7e génération bâti sur le châssis du Cataphracte de VFE Pirates : un blindage digne de l'Aérien sur une structure un peu plus légère, et trois pièces qui partagent un réservoir de gaz tox. Noyez une position sous le gaz, prenez-la d'assaut sans dommage, puis récupérez-en une partie en assainissant l'air. Nécessite Biotech.
+Prouesse d'ingénierie d'une immoralité impressionnante, le Toxine est un warcasket de 7e génération bâti sur le châssis du Cataphracte de VFE Pirates. Il porte un blindage digne de l'Aérien sur une structure un peu plus légère, et ses trois pièces partagent un réservoir de gaz tox. Noyez une position sous le gaz, prenez-la d'assaut sans dommage, puis récupérez-en une partie en assainissant l'air. Nécessite Biotech.
 
 [hr][/hr]
 [h1]L'ensemble[/h1]
@@ -22,9 +22,9 @@ Les paramètres du mod permettent de régler chaque capacité et certaines stati
 [*]Peut être ajouté sans risque à une partie en cours.
 [*]Ne peut pas être retiré sans risque tant qu'un colon est soudé dans l'ensemble.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] et le DLC Biotech requis.
-[*]Save Our Ship 2 : apte aux sorties extravéhiculaires, selon les mêmes règles que les ensembles de VFE Pirates.
-[*]Vanilla Races Expanded - Waster : un réservoir contenant du gaz compte comme du gaz tox pour le gène d'absorption tox d'un pilote pestilent (paramètre, activé par défaut).
-[*]Combat Extended : valeurs d'armure, masse et capacité de transport au niveau des autres warcaskets de niveau spatial, et le casque bloque la fumée de CE.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1909914131]Save Our Ship 2[/url] : apte aux sorties extravéhiculaires, selon les mêmes règles que les ensembles de VFE Pirates.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2983471725]Vanilla Races Expanded - Waster[/url] : un réservoir contenant du gaz compte comme du gaz tox pour le gène d'absorption tox d'un pilote pestilent (paramètre, activé par défaut).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044]Combat Extended[/url] : valeurs d'armure, masse et capacité de transport au niveau des autres warcaskets de niveau spatial, et le casque bloque la fumée de CE.
 [/list]
 
 [hr][/hr]

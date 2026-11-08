@@ -96,9 +96,9 @@ multi-word noun gets its `s` on the last word.
 | tox absorption (VREW gene) | absorption tox; prose `le gène d'absorption tox` | **Coined** (VREW ships English only), on Biotech `ToxResist_Partial.label` = `résistance tox`; shares `absorption` with the absorb ability's row. |
 | pollution mutations (VREW) | mutations liées à la pollution | **Coined**; `mutation` is plain French (Anomaly `BecameMutant.label` = `a subi une mutation`). |
 | keeping (mutations) active / counts as | maintient actives / compte comme | Coined: an on-state while gas is present, not growth. |
-| tank feeds (the VREW toggle) | `Le réservoir alimente l'absorption tox des pestilents`; Workshop `le réservoir alimente le gène d'absorption tox d'un pilote pestilent` | **Coined.** Sentence-case label like `TXWC_HazardVacuum`. |
+| Tox absorption from the tank (the VREW toggle) | `Absorption tox depuis le réservoir`; Workshop `le réservoir alimente le gène d'absorption tox d'un pilote pestilent` | **Coined.** Noun-phrase label like `TXWC_HazardVacuum`; the Workshop bullet keeps the verb. |
 | tox cloud | nuage de gaz tox | Biotech `ToxGas.label` + glossary `nuage`. |
-| No gas is used. (was "Costs no gas.") | Ne consomme aucun gaz. | **Coined**, plain French; the English sentence was reshaped on the settings pass and the rendering still fits. |
+| No gas is used. | Aucun gaz n'est consommé. | **Coined**, plain French. |
 | ` (requires Vanilla Races Expanded - Waster)` | ` (nécessite Vanilla Races Expanded - Waster)` | Pattern of `(nécessite Odyssey)`; the mod title stays in English. |
 
 ## Grounded in the spacer tier update pass
@@ -106,7 +106,10 @@ multi-word noun gets its `s` on the last word.
 | English | French | Grounding |
 |---|---|---|
 | aiming time (the jet's warmup slider) | temps de visée (`Temps de visée (secondes)`) | Core `AimingDelayFactor.label` and Keyed `RangedWarmupTime` = `temps de visée`; the inherited Shipcracker aiming row agrees. |
-| spacer tier | niveau spatial (`de niveau spatial`, `au niveau spatial de 10e génération`) | Core `TechLevel_Spacer` = `spatial` on Keyed `ResearchCostComparison`'s `niveau technologique`. |
+| spacer tier | niveau spatial (`de niveau spatial`, `au niveau spatial de 10e génération`); toggle label `Niveau spatial` | Core `TechLevel_Spacer` = `spatial` on Keyed `ResearchCostComparison`'s `niveau technologique`. |
+| `<set>` warcasket vacuum resistance (toggle labels) | `Résistance au vide du warcasket <set>` | Noun phrase like the English; `résistance au vide` per the Odyssey row. |
+| When enabled, ... When disabled, ... (toggle tooltip frame) | Si cette option est activée, ... Si elle est désactivée, ... | Vanilla's option-tooltip shape per `l10n/languages/French.md`. |
+| gas a position (lore) | gazer une position | **Coined**, plain French. |
 | Specialized spacer-tech ... with standard protection (spacer opener) | `<Part> warcasket spécialisé(e)(s) de technologie spatiale, offrant une protection standard.` then the 7th-gen feature sentence verbatim | Shipcracker's spacer opener (`Coque warcasket spécialisée de technologie spatiale`); `offrant une protection standard` replaces `plus protecteur mais plus lourd`. |
 | 10th-generation paragraph (VFEP) | translated, no community pack (see VFEP grounding above); `armure motorisée` for power armour, `cuirassés à un seul pilote` for single-user dreadnoughts | Core `Apparel_PowerArmor.description` = `Une armure motorisée`; the rest coined in the 7th-gen paragraph's register. |
 | veteran raiders (VFEP spacer pirates) | pirates vétérans | **Coined.** Core `pillard` is the Scavenger pawn kind, so `pirates` names VFEP's raiders unambiguously; Core `vétéran` (`MechWarVeteran77.titleShort`). |
