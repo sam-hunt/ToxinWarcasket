@@ -15,107 +15,107 @@
 
   <!-- EN: Tank capacity (chemfuel) -->
   <TXWC_TankCapacity>Capacidad del depósito (biocombustible)</TXWC_TankCapacity>
-  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
-  <TXWC_TankCapacityDesc>Cantidad de biocombustible que cabe en un depósito lleno. El indicador cuenta una unidad por cada biocombustible. Si un depósito ya contiene más, pierde el exceso. Por defecto: {0}.</TXWC_TankCapacityDesc>
+  <!-- EN: The amount of chemfuel the tank holds when full. Default: {0}. -->
+  <TXWC_TankCapacityDesc>La cantidad de biocombustible que contiene el depósito cuando está lleno. Por defecto: {0}.</TXWC_TankCapacityDesc>
 
   <!-- EN: Tox gas per chemfuel (cells) -->
   <TXWC_GasPerChemfuel>Toxigás por biocombustible (casillas)</TXWC_GasPerChemfuel>
-  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
-  <TXWC_GasPerChemfuelDesc>Número de casillas de toxigás que produce cada biocombustible del depósito, se gaste como se gaste: en la purga, en un chorro o de golpe cuando el piloto queda incapacitado. La absorción recupera un biocombustible cada vez que aspira esa cantidad de gas. Un pack de tóxicos llena 45 casillas con 35 de biocombustible. Por defecto: {0}.</TXWC_GasPerChemfuelDesc>
+  <!-- EN: The number of cells of tox gas each chemfuel makes, whether it is vented, sprayed, or burst from the tank when the pilot goes down. Absorbing gas refills the tank at the same rate. For comparison, a tox pack makes 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>El número de casillas de toxigás que produce cada biocombustible, ya se purgue, se rocíe o salga de golpe del depósito cuando el piloto queda incapacitado. Absorber gas recarga el depósito al mismo ritmo. Como referencia, un pack de tóxicos produce 45 casillas con 35 de biocombustible. Por defecto: {0}.</TXWC_GasPerChemfuelDesc>
 
   <!-- EN: Vent rate (chemfuel per second) -->
   <TXWC_VentRate>Velocidad de purga (biocombustible por segundo)</TXWC_VentRate>
-  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
-  <TXWC_VentRateDesc>Rapidez con la que la purga vacía el depósito. Una purga más rápida forma una nube más amplia que se disipa antes. Por defecto: {0}.</TXWC_VentRateDesc>
+  <!-- EN: The amount of chemfuel released each second while the vents are open. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>La cantidad de biocombustible que se libera cada segundo mientras las válvulas están abiertas. Una purga más rápida forma una nube más amplia que se disipa antes. Por defecto: {0}.</TXWC_VentRateDesc>
 
-  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
-  <TXWC_TankSummary>Un depósito lleno: {0} de biocombustible para {1} casillas de toxigás ({2} packs de tóxicos). La purga lo vacía en {3} segundos.</TXWC_TankSummary>
+  <!-- EN: A full tank holds {0} chemfuel, enough for {1} cells of tox gas or about {2} tox packs. Venting empties it in {3} seconds. -->
+  <TXWC_TankSummary>Un depósito lleno contiene {0} de biocombustible, suficiente para {1} casillas de toxigás o unos {2} packs de tóxicos. La purga lo vacía en {3} segundos.</TXWC_TankSummary>
 
   <!-- EN: Cost (chemfuel) -->
   <TXWC_JetCost>Coste (biocombustible)</TXWC_JetCost>
-  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
-  <TXWC_JetCostDesc>Cantidad de biocombustible que cada chorro de gas toma del depósito. Sin depósito, los chorros propios de las hombreras producen el mismo gas por el mismo biocombustible. Por defecto: {0}.</TXWC_JetCostDesc>
+  <!-- EN: The amount of chemfuel each gas jet draws from the tank. Without a tank, the jets stored in the shoulders reload for the same amount. Default: {0}. -->
+  <TXWC_JetCostDesc>La cantidad de biocombustible que cada chorro de gas toma del depósito. Sin depósito, los chorros guardados en las hombreras se recargan por la misma cantidad. Por defecto: {0}.</TXWC_JetCostDesc>
 
   <!-- EN: Jets without a tank -->
   <TXWC_JetReserve>Chorros sin depósito</TXWC_JetReserve>
-  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
-  <TXWC_JetReserveDesc>Número de chorros que las hombreras llevan por sí solas, para usarlas sin depósito. Se recargan con biocombustible y no se gastan mientras se lleve un depósito. Por defecto: {0}.</TXWC_JetReserveDesc>
+  <!-- EN: The number of gas jets the shoulders carry on their own. They are only used when no tank is worn, and reload with chemfuel. Default: {0}. -->
+  <TXWC_JetReserveDesc>El número de chorros de gas que las hombreras llevan por sí solas. Solo se usan cuando no se lleva depósito, y se recargan con biocombustible. Por defecto: {0}.</TXWC_JetReserveDesc>
 
   <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
   <TXWC_JetTankLow>Necesita {COUNT} {CHARGENOUN_plural} en el depósito.</TXWC_JetTankLow>
 
   <!-- EN: Cone width (degrees) -->
   <TXWC_JetConeWidth>Anchura del cono (grados)</TXWC_JetConeWidth>
-  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetConeWidthDesc>Anchura total del cono en el que cae el chorro de gas. Un cono más ancho reparte el mismo gas con menos densidad. Por defecto: {0}.</TXWC_JetConeWidthDesc>
+  <!-- EN: The width of the cone the gas jet sprays. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>La anchura del cono que rocía el chorro de gas. Un cono más ancho reparte el mismo gas con menos densidad. Por defecto: {0}.</TXWC_JetConeWidthDesc>
 
   <!-- EN: Range (cells) -->
   <TXWC_JetRange>Alcance (casillas)</TXWC_JetRange>
-  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetRangeDesc>Distancia que alcanza el chorro de gas. Un chorro más largo reparte el mismo gas con menos densidad. Por defecto: {0}.</TXWC_JetRangeDesc>
+  <!-- EN: The distance the gas jet reaches. Default: {0}. -->
+  <TXWC_JetRangeDesc>La distancia que alcanza el chorro de gas. Por defecto: {0}.</TXWC_JetRangeDesc>
 
   <!-- EN: Aiming time (seconds) -->
   <TXWC_JetWarmup>Tiempo para apuntar (segundos)</TXWC_JetWarmup>
-  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
-  <TXWC_JetWarmupDesc>Tiempo que tarda el piloto en apuntar el chorro de gas antes de dispararlo. Por defecto: {0}.</TXWC_JetWarmupDesc>
+  <!-- EN: The time the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <TXWC_JetWarmupDesc>El tiempo que tarda el piloto en apuntar el chorro de gas antes de dispararlo. Por defecto: {0}.</TXWC_JetWarmupDesc>
 
-  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
-  <TXWC_JetSummary>Un chorro: {0} de biocombustible para {1} casillas de toxigás ({2} packs de tóxicos). Un depósito lleno da para {3}; las hombreras solas, para {4}.</TXWC_JetSummary>
+  <!-- EN: Each jet draws {0} chemfuel and sprays {1} cells of tox gas, about {2} tox packs. A full tank holds {3} jets and the shoulders alone hold {4}. -->
+  <TXWC_JetSummary>Cada chorro toma {0} de biocombustible y rocía {1} casillas de toxigás, unos {2} packs de tóxicos. Un depósito lleno contiene {3} chorros y las hombreras solas, {4}.</TXWC_JetSummary>
 
   <!-- EN: Radius (cells) -->
   <TXWC_AbsorbRadius>Radio (casillas)</TXWC_AbsorbRadius>
-  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
-  <TXWC_AbsorbRadiusDesc>Distancia alrededor del piloto desde la que la absorción aspira el gas. Por defecto: {0}.</TXWC_AbsorbRadiusDesc>
+  <!-- EN: The distance around the pilot that gas is drawn in from. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>La distancia alrededor del piloto desde la que se aspira el gas. Por defecto: {0}.</TXWC_AbsorbRadiusDesc>
 
   <!-- EN: Duration (seconds) -->
   <TXWC_AbsorbDuration>Duración (segundos)</TXWC_AbsorbDuration>
-  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
-  <TXWC_AbsorbDurationDesc>Tiempo que cada absorción sigue aspirando gas. Por defecto: {0}.</TXWC_AbsorbDurationDesc>
+  <!-- EN: The time the respirator keeps drawing gas in after each use. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>El tiempo que el respirador sigue aspirando gas después de cada uso. Por defecto: {0}.</TXWC_AbsorbDurationDesc>
 
   <!-- EN: Cooldown (hours) -->
   <TXWC_AbsorbCooldown>Enfriamiento (horas)</TXWC_AbsorbCooldown>
-  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
-  <TXWC_AbsorbCooldownDesc>Tiempo que tarda la absorción en recargarse. Por defecto: {0}.</TXWC_AbsorbCooldownDesc>
+  <!-- EN: The time the pilot must wait after absorbing gas before absorbing again. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>El tiempo que el piloto debe esperar tras absorber gas antes de volver a hacerlo. Por defecto: {0}.</TXWC_AbsorbCooldownDesc>
 
-  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
-  <TXWC_AbsorbSummary>Una absorción aspira de las {0} casillas que rodean al piloto. Si una nube las cubre por completo, recupera {1} de biocombustible.</TXWC_AbsorbSummary>
+  <!-- EN: Absorbing gas draws from the {0} cells around the pilot. A full cloud over all of them refills {1} chemfuel. -->
+  <TXWC_AbsorbSummary>Absorber gas aspira de las {0} casillas que rodean al piloto. Si una nube las cubre todas por completo, se recuperan {1} de biocombustible.</TXWC_AbsorbSummary>
 
-  <!-- EN: Toxin warcasket is spacer tier -->
-  <TXWC_SpacerTier>El ataúd de guerra toxina es de la era espacial</TXWC_SpacerTier>
-  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
-  <TXWC_SpacerTierDesc>Reconstruye el ataúd de guerra toxina en el nivel de la era espacial de 10.ª generación, al igual que el Siegebreaker. Gana blindaje y aislamiento de la era espacial, resistencia tóxica y psíquica, resistencia al vacío{0} y una burbuja de escudo, sin penalización de velocidad, pero cuesta componentes avanzados y plastiacero, y requiere la investigación "ataúdes de guerra de la era espacial". Los asaltantes veteranos también pueden llevarlo. Por defecto: desactivado.</TXWC_SpacerTierDesc>
+  <!-- EN: Spacer tier -->
+  <TXWC_SpacerTier>Nivel de la era espacial</TXWC_SpacerTier>
+  <!-- EN: When enabled, the toxin warcasket is rebuilt as a 10th generation spacer warcasket like the siegebreaker. It gains spacer plating and insulation, a shield bubble, resistance to toxins, psychic effects and vacuum{0}, and loses its speed penalty, but it costs spacer components and plasteel, needs the spacer warcaskets research, and can be worn by veteran raiders. When disabled, it stays a 7th generation set. Default: off. -->
+  <TXWC_SpacerTierDesc>Si está activado, el ataúd de guerra toxina se reconstruye como un ataúd de guerra de la era espacial de 10.ª generación, al igual que el Siegebreaker. Gana blindaje y aislamiento de la era espacial, una burbuja de escudo y resistencia a las toxinas, a los efectos psíquicos y al vacío{0}, y pierde su penalización de velocidad. Cuesta componentes avanzados y plastiacero, y requiere la investigación "ataúdes de guerra de la era espacial". Los asaltantes veteranos pueden llevarlo. Si está desactivado, sigue siendo un conjunto de 7.ª generación. Por defecto: desactivado.</TXWC_SpacerTierDesc>
 
-  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, equipped with a tox gas tank that vents around the pilot. -->
   <TXWC_SpacerShortDescription_Armor>Un armazón especializado de ataúd de guerra de tecnología espacial con una protección estándar, equipado con un depósito de toxigás que se purga alrededor del piloto.</TXWC_SpacerShortDescription_Armor>
-  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, equipped with shoulder-mounted jets that spray tox gas from the shell's tank. -->
   <TXWC_SpacerShortDescription_Shoulders>Unas hombreras especializadas de ataúd de guerra de tecnología espacial con una protección estándar, equipadas con toberas que rocían toxigás desde el depósito del armazón.</TXWC_SpacerShortDescription_Shoulders>
-  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
-  <TXWC_SpacerShortDescription_Helmet>Un casco especializado de ataúd de guerra de tecnología espacial con una protección estándar. Es hermético y lleva un respirador que impide el paso del toxigás y lo devuelve al depósito del armazón.</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, equipped with a respirator that keeps out tox gas and draws it back into the tank. -->
+  <TXWC_SpacerShortDescription_Helmet>Un casco especializado de ataúd de guerra de tecnología espacial con una protección estándar, equipado con un respirador que impide el paso del toxigás y lo devuelve al depósito.</TXWC_SpacerShortDescription_Helmet>
   <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armor designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armors have been improved, generally reducing restrictions on mixing pieces of different armor series even across generations. -->
   <TXWC_SpacerLoreGeneration>Los ataúdes de guerra de 10.ª generación se adaptaron en realidad a partir de equipos piratas capturados, y las divisiones de investigación militar del gobierno los mejoraron con diseños avanzados de servoarmadura. El acceso a una mayor cantidad de recursos de alta calidad y el objetivo de equiparlos a veteranos de combate que, de otro modo, no podrían servir hicieron que el programa creara verdaderos acorazados de una sola persona. Se ha mejorado la versatilidad de las armaduras, lo que en general reduce las restricciones al combinar piezas de distintas series, incluso de otras generaciones.</TXWC_SpacerLoreGeneration>
-  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
-  <TXWC_SpacerLoreSeries>La serie Toxina está hecha para la guerra química. Un depósito en el armazón alimenta las válvulas de purga que rodean al piloto y las toberas de gas de las hombreras, y el respirador del casco devuelve el gas al depósito. Juntas, las piezas hacen al piloto inmune a las toxinas.</TXWC_SpacerLoreSeries>
+  <!-- EN: The Toxin series was built around a tox gas tank for chemical warfare. The tank in the shell feeds vents around the pilot and the gas jets on the pauldrons, and the respirator in the helmet draws gas back into it. The objective was a pilot who could gas a position and then walk into it, and clear the air again once the fighting was done. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>La serie Toxina se construyó en torno a un depósito de toxigás para la guerra química. El depósito del armazón alimenta las válvulas de purga que rodean al piloto y las toberas de gas de las hombreras, y el respirador del casco devuelve el gas al depósito. El objetivo era un piloto capaz de llenar de gas una posición y luego entrar en ella, y de despejar el aire de nuevo cuando terminara el combate. Juntas, las piezas hacen al piloto inmune a las toxinas.</TXWC_SpacerLoreSeries>
 
-  <!-- EN: Toxin warcasket resists vacuum -->
-  <TXWC_ToxinVacuum>El ataúd de guerra toxina resiste el vacío</TXWC_ToxinVacuum>
-  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
-  <TXWC_ToxinVacuumDesc>Da al ataúd de guerra toxina la resistencia al vacío del nivel de la era espacial, sin el resto del nivel. Por defecto: desactivado.</TXWC_ToxinVacuumDesc>
+  <!-- EN: Toxin warcasket vacuum resistance -->
+  <TXWC_ToxinVacuum>Resistencia al vacío del ataúd de guerra toxina</TXWC_ToxinVacuum>
+  <!-- EN: When enabled, the toxin warcasket resists vacuum like a spacer warcasket, with none of the tier's other changes. When disabled, it is as exposed to vacuum as the other 7th generation sets. Default: off. -->
+  <TXWC_ToxinVacuumDesc>Si está activado, el ataúd de guerra toxina resiste el vacío como un ataúd de guerra de la era espacial, sin los demás cambios del nivel. Si está desactivado, está tan expuesto al vacío como los demás conjuntos de 7.ª generación. Por defecto: desactivado.</TXWC_ToxinVacuumDesc>
   <!-- EN:  (included by spacer tier) -->
   <TXWC_IncludedInSpacerTierSuffix> (incluido en el nivel de la era espacial)</TXWC_IncludedInSpacerTierSuffix>
 
-  <!-- EN: Hazard warcasket resists vacuum -->
-  <TXWC_HazardVacuum>El ataúd de guerra hazard resiste el vacío</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
-  <TXWC_HazardVacuumDesc>Da al ataúd de guerra hazard la resistencia al vacío del nivel de la era espacial. Por defecto: desactivado.</TXWC_HazardVacuumDesc>
+  <!-- EN: Hazard warcasket vacuum resistance -->
+  <TXWC_HazardVacuum>Resistencia al vacío del ataúd de guerra hazard</TXWC_HazardVacuum>
+  <!-- EN: When enabled, the hazard warcasket resists vacuum like a spacer warcasket. When disabled, it is left as Vanilla Factions Expanded - Pirates ships it. Default: off. -->
+  <TXWC_HazardVacuumDesc>Si está activado, el ataúd de guerra hazard resiste el vacío como un ataúd de guerra de la era espacial. Si está desactivado, se queda como lo entrega Vanilla Factions Expanded - Pirates. Por defecto: desactivado.</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix> (requiere reinicio)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->
   <TXWC_RequiresOdysseySuffix> (requiere Odyssey)</TXWC_RequiresOdysseySuffix>
 
-  <!-- EN: Tank feeds waster tox absorption -->
-  <TXWC_FeedToxAbsorption>El depósito alimenta la absorción de toxigás de los escorias</TXWC_FeedToxAbsorption>
-  <!-- EN: A tank with gas in it counts as tox gas for pilots with the tox absorption gene ({0}), keeping their pollution mutations active. Costs no gas. Default: on. -->
-  <TXWC_FeedToxAbsorptionDesc>Un depósito con gas cuenta como toxigás para los pilotos con el gen de absorción de toxigás ({0}), lo que mantiene activas sus mutaciones por contaminación. No consume gas. Por defecto: activado.</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN: Tox absorption from the tank -->
+  <TXWC_FeedToxAbsorption>Absorción de toxigás desde el depósito</TXWC_FeedToxAbsorption>
+  <!-- EN: When enabled, a tank with gas in it counts as tox gas for a pilot with the tox absorption gene from {0}, so their pollution mutations stay active. No gas is used. When disabled, the gene only reacts to gas in the air. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>Si está activado, un depósito con gas cuenta como toxigás para un piloto con el gen de absorción de toxigás de {0}, de modo que sus mutaciones por contaminación siguen activas. No se consume gas. Si está desactivado, el gen solo reacciona al gas del aire. Por defecto: activado.</TXWC_FeedToxAbsorptionDesc>
   <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
   <TXWC_RequiresVREWasterSuffix> (requiere Vanilla Races Expanded - Waster)</TXWC_RequiresVREWasterSuffix>
 

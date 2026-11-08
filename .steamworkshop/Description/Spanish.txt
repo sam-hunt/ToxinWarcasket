@@ -1,10 +1,10 @@
 Ataúd de guerra toxina
 
-Un nuevo ataúd de guerra para [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url], pensado para la guerra química.
+Un nuevo ataúd de guerra concebido para la guerra química, para [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
 
 [h1]Acerca de[/h1]
 
-Una proeza de ingeniería impresionantemente poco ética, el Toxina es un ataúd de guerra de 7.ª generación construido sobre el chasis del Catafracto de VFE Pirates: blindaje del nivel del Aerial sobre un armazón algo más ligero, y tres piezas que comparten un depósito de toxigás. Inunda una posición de gas, asáltala sin sufrir daño y recupera una parte limpiando el aire después. Requiere Biotech.
+Una proeza de ingeniería impresionantemente poco ética, el Toxina es un ataúd de guerra de 7.ª generación construido sobre el chasis del Catafracto de VFE Pirates. Lleva blindaje del nivel del Aerial sobre un armazón algo más ligero, y sus tres piezas comparten un depósito de toxigás. Inunda una posición de gas, asáltala sin sufrir daño y recupera una parte limpiando el aire después. Requiere Biotech.
 
 [hr][/hr]
 [h1]El conjunto[/h1]
@@ -22,9 +22,9 @@ Las opciones del mod permiten ajustar cada habilidad y algunas estadísticas. Un
 [*]Seguro de añadir a partidas existentes.
 [*]No es seguro quitarlo mientras haya alguien sepultado en el conjunto.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] y el DLC Biotech obligatorios.
-[*]Save Our Ship 2: apto para EVA con las mismas reglas que las series propias de VFE Pirates.
-[*]Vanilla Races Expanded - Waster: un depósito con gas cuenta como toxigás para el gen de absorción de toxigás de un piloto escoria (opción, activada por defecto).
-[*]Combat Extended: valores de armadura, volumen equipado y capacidades de masa y de volumen a la par de otros ataúdes de guerra de la era espacial, y el casco bloquea el humo de CE.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1909914131]Save Our Ship 2[/url]: apto para EVA con las mismas reglas que las series propias de VFE Pirates.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2983471725]Vanilla Races Expanded - Waster[/url]: un depósito con gas cuenta como toxigás para el gen de absorción de toxigás de un piloto escoria (opción, activada por defecto).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044]Combat Extended[/url]: valores de armadura, volumen equipado y capacidades de masa y de volumen a la par de otros ataúdes de guerra de la era espacial, y el casco bloquea el humo de CE.
 [/list]
 
 [hr][/hr]

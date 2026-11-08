@@ -98,7 +98,7 @@ despite the folder name these are the VFE Pirates files).
 | pollution mutations (VREW) | mutaciones por contaminación | Coined: Anomaly `inducir mutaciones`, Odyssey `mutado por aguas contaminadas`, Biotech `contaminación`. |
 | keeping (mutations) active / counts as | mantiene activas / cuenta como | Coined: an on-state while gas is present, not growth. |
 | tox cloud | nube tóxica | Biotech `Toxalope.description` (`produce una nube tóxica`). |
-| Tox absorption from the tank (settings label) | El depósito alimenta la absorción de toxigás de los escorias | Coined, sentence case like the hazard vacuum toggle. English label reshaped to a noun phrase on the settings pass; the target value is kept as it was and owes a reshape in the next translation pass. The tooltip's "Costs no gas" is now "No gas is used" (`No consume gas` still fits). |
+| Tox absorption from the tank (settings label) | Absorción de toxigás desde el depósito | Coined, noun phrase like the vacuum toggles. The tooltip's "No gas is used" is `No se consume gas`. |
 | Default: on. (toggle tooltip) | Por defecto: activado. | The inherited settings row, mirroring the hazard vacuum's `Por defecto: desactivado.` |
 | requires Vanilla Races Expanded - Waster (suffix) | ` (requiere Vanilla Races Expanded - Waster)` | Same frame as ` (requiere Odyssey)`; the mod title stays in English. |
 
@@ -107,7 +107,8 @@ despite the folder name these are the VFE Pirates files).
 | English | Spanish | Grounding |
 |---|---|---|
 | aiming time (the gas jet's warmup slider) | tiempo para apuntar; `Tiempo para apuntar (segundos)` | Core StatDef `AimingDelayFactor.label` = `tiempo para apuntar` (Core `WarmupTime` = `Calentamiento` reads as heating, so not used). |
-| spacer tier (the set's settings tier) | nivel de la era espacial; toggle label `El ataúd de guerra toxina es de la era espacial`; suffix ` (incluido en el nivel de la era espacial)` | Coined from Core `TechLevel_Spacer` = `era espacial` and the Workshop's existing `del nivel del Aerial`. The vacuum toggles share the shape `El ataúd de guerra <set> resiste el vacío`. |
+| spacer tier (the set's settings tier) | nivel de la era espacial; toggle label `Nivel de la era espacial`; suffix ` (incluido en el nivel de la era espacial)` | Coined from Core `TechLevel_Spacer` = `era espacial` and the Workshop's existing `del nivel del Aerial`. The vacuum toggles are `Resistencia al vacío del ataúd de guerra <set>`. |
+| When enabled, ... When disabled, ... (toggle tooltip frame) | Si está activado, ... Si está desactivado, ... | Vanilla's option-tooltip shape per `l10n/languages/Spanish.md`. |
 | spacer (armor, insulation, costs) | de la era espacial | Core `TechLevel_Spacer`. |
 | spacer components | componentes avanzados | Core `ComponentSpacer.label`. |
 | standard protection (10th-gen opener) | `Un armazón especializado de ataúd de guerra de tecnología espacial con una protección estándar` (`Un casco ...`, `Unas hombreras especializadas ...`) | Community VFEP `VFEP_Warcasket_Siegebreaker.shortDescription`; `de ataúd de guerra` kept on the helmet and shoulders as in the 7th-gen lines and Shipcracker. |
