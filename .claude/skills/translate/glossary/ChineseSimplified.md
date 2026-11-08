@@ -83,7 +83,7 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | pollution mutations (VREW) | 污染突变 | Coined: 污染 (`PollutionLower`) + 突变 (Core's 突变小麦; Biotech's 变异 is its prefix-symbol slot, not prose). |
 | keeping (mutations) active / counts as | 保持生效 / 视同 | Coined: an on-state while gas is present, not growth; 视同 (is treated as). |
 | tox cloud | 毒气云 | Already in `TXWC_VentRateDesc` (毒气云). |
-| "Tox absorption from the tank" (toggle) | 毒气罐供给污骸种的毒气吸收 | Coined; declarative like 险境型战棺可抵御真空. The Workshop bullet reuses 供给 (毒气罐供给污骸种驾驶员的毒气吸收基因), with 默认开启 for "on by default". English label reshaped to a noun phrase on the settings pass; the target value is kept as it was and owes a reshape in the next translation pass. The vacuum toggles are now "Toxin / Hazard warcasket vacuum resistance" and owe the same. |
+| "Tox absorption from the tank" (toggle) | 来自毒气罐的毒气吸收 | Coined noun phrase like 毒素型战棺真空抗性. The Workshop bullet keeps 供给 (毒气罐供给污骸种驾驶员的毒气吸收基因), with 默认开启 for "on by default". |
 | `Default: on.` | 默认：开。 | Core Keyed `On` = 开, pairing with this file's `Default: off.` = 默认：关 (Core `Off`). The inherited settings row's 默认：启用 (Core `Enabled`, as Shipcracker's `SCWC_VacuumBurnDesc`) has no Off counterpart in this file, so it is not used here. |
 | Vanilla Races Expanded - Waster | Vanilla Races Expanded - Waster | Kept in English (Workshop title); suffix （需要Vanilla Races Expanded - Waster）. |
 
@@ -92,7 +92,10 @@ unchanged), so one noun serves every slot and no lookup file is needed.
 | English | Simplified Chinese | Grounding |
 |---|---|---|
 | aiming time (the jet's warmup slider) | 瞄准时间（秒） | Core Keyed `RangedWarmupTime` and `AimingDelayFactor.label` = 瞄准时间; the desc echoes `Stat_Thing_Weapon_RangedWarmupTime_Desc` (从瞄准到开火). |
-| spacer tier / spacer (armor, costs) | 太空时代级别 | Community pack's 10th-gen opener (特化型太空时代级别…); vanilla `TechLevel_Spacer` = 太空时代. Toggle label 毒素型战棺升级为太空时代级别, declarative like 险境型战棺可抵御真空. |
+| spacer tier / spacer (armor, costs) | 太空时代级别 | Community pack's 10th-gen opener (特化型太空时代级别…); vanilla `TechLevel_Spacer` = 太空时代. Toggle label 太空时代级别. |
+| Toxin / Hazard warcasket vacuum resistance (toggles) | 毒素型战棺真空抗性 / 险境型战棺真空抗性 | Noun phrase; 真空抗性 per the vacuum resistance row. |
+| When enabled, ... When disabled, ... (toggle tooltip frame) | 启用后，… 禁用后，… | Vanilla's option-tooltip shape per `l10n/languages/ChineseSimplified.md`. |
+| refill (the tank, by absorbing) | 回填 | Coined; pending native review. |
 | "Specialized spacer-tech warcasket ... with standard protection" | 特化型太空时代级别战棺`<part>`，在不增加机体重量的同时极大幅提升了防护性 | Community pack's Siegebreaker / Controller / Sarcophagus openers, every "standard protection" part; our 7th-gen feature clause follows unchanged. |
 | 10th-generation paragraph (`TXWC_SpacerLoreGeneration`) | 第十代战棺有些特殊，它们是用从海盗那里收缴的设备改造而成的…… | Community pack's Siegebreaker text verbatim (loose, as the pack is), its —— reflowed to a comma like the 7th-gen paragraph. |
 | veteran raiders (VFEP's spacer-warcasket pirates) | 前来袭击的精英机兵 | The pack's `VFEP_Veteran.label` = 精英机兵 (1.6 PawnKindDef.xml), the name players see on those raiders; 袭击 from Core. Same as zh-Hant. |

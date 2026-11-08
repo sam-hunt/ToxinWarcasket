@@ -1,10 +1,10 @@
 毒素型战棺
 
-为[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]新增一套化学战战棺。
+为[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]新增一套专为化学战打造的战棺。
 
 [h1]简介[/h1]
 
-毒素型是一项令人叹服又毫无道德的工程壮举，属于第七代战棺，以VFE海盗的骑士型机体为基础：装甲达到突击型的水准，机体略轻，三个部件共用一个毒气罐。先用毒气淹没阵地，再毫发无伤地攻下它，事后清理空气还能回收一部分毒气。需要Biotech。
+毒素型是一项令人叹服又毫无道德的工程壮举，属于第七代战棺，以VFE海盗的骑士型机体为基础。它的装甲达到突击型的水准，机体略轻，三个部件共用一个毒气罐。先用毒气淹没阵地，再毫发无伤地攻下它，事后清理空气还能回收一部分毒气。需要Biotech。
 
 [hr][/hr]
 [h1]套装[/h1]
@@ -22,9 +22,9 @@
 [*]可安全添加至现有存档。
 [*]仍有殖民者封在这套战棺里时，不可安全移除。
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url]和Biotech DLC：必需。
-[*]Save Our Ship 2：与VFE海盗自带套装遵循相同规则，具备舱外活动（EVA）能力。
-[*]Vanilla Races Expanded - Waster：毒气罐中有毒气时，对污骸种驾驶员的毒气吸收基因视同毒气（设置选项，默认开启）。
-[*]Combat Extended：护甲值、体积与体积携带能力和其他太空时代战棺相当，头盔可隔绝CE烟雾。
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1909914131]Save Our Ship 2[/url]：与VFE海盗自带套装遵循相同规则，具备舱外活动（EVA）能力。
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2983471725]Vanilla Races Expanded - Waster[/url]：毒气罐中有毒气时，对污骸种驾驶员的毒气吸收基因视同毒气（设置选项，默认开启）。
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044]Combat Extended[/url]：护甲值、体积与体积携带能力和其他太空时代战棺相当，头盔可隔绝CE烟雾。
 [/list]
 
 [hr][/hr]

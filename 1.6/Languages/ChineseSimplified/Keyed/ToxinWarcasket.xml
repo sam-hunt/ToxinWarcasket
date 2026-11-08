@@ -15,107 +15,107 @@
 
   <!-- EN: Tank capacity (chemfuel) -->
   <TXWC_TankCapacity>毒气罐容量（化合燃料）</TXWC_TankCapacity>
-  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
-  <TXWC_TankCapacityDesc>毒气罐装满时容纳的化合燃料量，计量表以1为单位计数。调低到毒气罐现有存量以下时，超出部分会被清除。默认：{0}。</TXWC_TankCapacityDesc>
+  <!-- EN: The amount of chemfuel the tank holds when full. Default: {0}. -->
+  <TXWC_TankCapacityDesc>毒气罐装满时容纳的化合燃料量。默认：{0}。</TXWC_TankCapacityDesc>
 
   <!-- EN: Tox gas per chemfuel (cells) -->
   <TXWC_GasPerChemfuel>每单位化合燃料的毒气量（格）</TXWC_GasPerChemfuel>
-  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
-  <TXWC_GasPerChemfuelDesc>毒气罐中每单位化合燃料能产生多少格毒气，排放、喷射以及驾驶员倒下时爆出都按此计算。吸收气体时，每吸入这么多气体便存回一单位化合燃料。一个毒气背包用35化合燃料产生45格毒气。默认：{0}。</TXWC_GasPerChemfuelDesc>
+  <!-- EN: The number of cells of tox gas each chemfuel makes, whether it is vented, sprayed, or burst from the tank when the pilot goes down. Absorbing gas refills the tank at the same rate. For comparison, a tox pack makes 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>每单位化合燃料产生的毒气格数。排放、喷射和驾驶员倒下时罐中爆出的毒气，都按此计算。吸收气体时，毒气罐按相同比例回填。作为对照，一个毒气背包用35化合燃料产生45格毒气。默认：{0}。</TXWC_GasPerChemfuelDesc>
 
   <!-- EN: Vent rate (chemfuel per second) -->
   <TXWC_VentRate>排放速率（化合燃料/秒）</TXWC_VentRate>
-  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
-  <TXWC_VentRateDesc>排气阀清空毒气罐的速度。排放越快，毒气云越大，消散也越快。默认：{0}。</TXWC_VentRateDesc>
+  <!-- EN: The amount of chemfuel released each second while the vents are open. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>排气阀打开期间每秒释放的化合燃料量。排放越快，毒气云越大，消散也越快。默认：{0}。</TXWC_VentRateDesc>
 
-  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
-  <TXWC_TankSummary>满罐：{0}化合燃料，可产生{1}格毒气（相当于{2}个毒气背包）。排气阀可在{3}秒内将其排空。</TXWC_TankSummary>
+  <!-- EN: A full tank holds {0} chemfuel, enough for {1} cells of tox gas or about {2} tox packs. Venting empties it in {3} seconds. -->
+  <TXWC_TankSummary>装满的毒气罐可容纳{0}化合燃料，足够产生{1}格毒气，约合{2}个毒气背包。排放时可在{3}秒内将其排空。</TXWC_TankSummary>
 
   <!-- EN: Cost (chemfuel) -->
   <TXWC_JetCost>消耗（化合燃料）</TXWC_JetCost>
-  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
-  <TXWC_JetCostDesc>每次毒气喷射从毒气罐中抽取的化合燃料量。没有毒气罐时，护肩自带的喷射消耗同样多的化合燃料，产生同样多的毒气。默认：{0}。</TXWC_JetCostDesc>
+  <!-- EN: The amount of chemfuel each gas jet draws from the tank. Without a tank, the jets stored in the shoulders reload for the same amount. Default: {0}. -->
+  <TXWC_JetCostDesc>每次毒气喷射从毒气罐中抽取的化合燃料量。没有毒气罐时，护肩装填自带喷射所需的化合燃料量与此相同。默认：{0}。</TXWC_JetCostDesc>
 
   <!-- EN: Jets without a tank -->
   <TXWC_JetReserve>无毒气罐时的喷射次数</TXWC_JetReserve>
-  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
-  <TXWC_JetReserveDesc>护肩自身储备的喷射次数，供未穿戴毒气罐时使用。这些喷射用化合燃料装填，穿戴毒气罐期间不会消耗。默认：{0}。</TXWC_JetReserveDesc>
+  <!-- EN: The number of gas jets the shoulders carry on their own. They are only used when no tank is worn, and reload with chemfuel. Default: {0}. -->
+  <TXWC_JetReserveDesc>护肩自身储备的毒气喷射次数。这些喷射只在未穿戴毒气罐时使用，并以化合燃料装填。默认：{0}。</TXWC_JetReserveDesc>
 
   <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
   <TXWC_JetTankLow>毒气罐中需要{COUNT}单位{CHARGENOUN_plural}。</TXWC_JetTankLow>
 
   <!-- EN: Cone width (degrees) -->
   <TXWC_JetConeWidth>锥形宽度（度）</TXWC_JetConeWidth>
-  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetConeWidthDesc>毒气喷射所覆盖锥形区域的总宽度。锥形越宽，同样多的毒气分布得越稀薄。默认：{0}。</TXWC_JetConeWidthDesc>
+  <!-- EN: The width of the cone the gas jet sprays. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>毒气喷射的锥形区域宽度。锥形越宽，同样多的毒气分布得越稀薄。默认：{0}。</TXWC_JetConeWidthDesc>
 
   <!-- EN: Range (cells) -->
   <TXWC_JetRange>射程（格）</TXWC_JetRange>
-  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetRangeDesc>毒气喷射能达到的距离。射程越远，同样多的毒气分布得越稀薄。默认：{0}。</TXWC_JetRangeDesc>
+  <!-- EN: The distance the gas jet reaches. Default: {0}. -->
+  <TXWC_JetRangeDesc>毒气喷射能达到的距离。默认：{0}。</TXWC_JetRangeDesc>
 
   <!-- EN: Aiming time (seconds) -->
   <TXWC_JetWarmup>瞄准时间（秒）</TXWC_JetWarmup>
-  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <!-- EN: The time the pilot takes to aim the gas jet before it fires. Default: {0}. -->
   <TXWC_JetWarmupDesc>驾驶员使用毒气喷射时，从瞄准到喷出所需的时间。默认：{0}。</TXWC_JetWarmupDesc>
 
-  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
-  <TXWC_JetSummary>每次喷射：{0}化合燃料，产生{1}格毒气（相当于{2}个毒气背包）。满罐可喷射{3}次，仅凭护肩可喷射{4}次。</TXWC_JetSummary>
+  <!-- EN: Each jet draws {0} chemfuel and sprays {1} cells of tox gas, about {2} tox packs. A full tank holds {3} jets and the shoulders alone hold {4}. -->
+  <TXWC_JetSummary>每次喷射消耗{0}化合燃料，喷出{1}格毒气，约合{2}个毒气背包。装满的毒气罐可喷射{3}次，仅凭护肩可喷射{4}次。</TXWC_JetSummary>
 
   <!-- EN: Radius (cells) -->
   <TXWC_AbsorbRadius>半径（格）</TXWC_AbsorbRadius>
-  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
-  <TXWC_AbsorbRadiusDesc>吸收气体时，以驾驶员为中心吸入气体的范围。默认：{0}。</TXWC_AbsorbRadiusDesc>
+  <!-- EN: The distance around the pilot that gas is drawn in from. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>以驾驶员为中心吸入气体的距离。默认：{0}。</TXWC_AbsorbRadiusDesc>
 
   <!-- EN: Duration (seconds) -->
   <TXWC_AbsorbDuration>持续时间（秒）</TXWC_AbsorbDuration>
-  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
-  <TXWC_AbsorbDurationDesc>每次吸收持续吸入气体的时间。默认：{0}。</TXWC_AbsorbDurationDesc>
+  <!-- EN: The time the respirator keeps drawing gas in after each use. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>每次使用后呼吸器持续吸入气体的时间。默认：{0}。</TXWC_AbsorbDurationDesc>
 
   <!-- EN: Cooldown (hours) -->
   <TXWC_AbsorbCooldown>冷却时间（小时）</TXWC_AbsorbCooldown>
-  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
-  <TXWC_AbsorbCooldownDesc>吸收气体能力重新充能所需的时间。默认：{0}。</TXWC_AbsorbCooldownDesc>
+  <!-- EN: The time the pilot must wait after absorbing gas before absorbing again. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>驾驶员吸收气体后，再次吸收前需要等待的时间。默认：{0}。</TXWC_AbsorbCooldownDesc>
 
-  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
-  <TXWC_AbsorbSummary>每次吸收作用于驾驶员周围的{0}格。这些格子全部充满气体时，可存回{1}化合燃料。</TXWC_AbsorbSummary>
+  <!-- EN: Absorbing gas draws from the {0} cells around the pilot. A full cloud over all of them refills {1} chemfuel. -->
+  <TXWC_AbsorbSummary>吸收气体时会吸入驾驶员周围{0}格内的气体。若这些格子全部充满气体，可回填{1}化合燃料。</TXWC_AbsorbSummary>
 
-  <!-- EN: Toxin warcasket is spacer tier -->
-  <TXWC_SpacerTier>毒素型战棺升级为太空时代级别</TXWC_SpacerTier>
-  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
-  <TXWC_SpacerTierDesc>将毒素型战棺按第十代太空时代级别重新打造，与破袭型同级。届时将获得太空时代级别的护甲与隔温、无移动速度惩罚、毒素与心灵抗性、真空抗性{0}以及能量护盾，但需消耗高级零部件和玻璃钢，并需要研究「太空时代战棺」。前来袭击的精英机兵也可能穿戴它。默认：关。</TXWC_SpacerTierDesc>
+  <!-- EN: Spacer tier -->
+  <TXWC_SpacerTier>太空时代级别</TXWC_SpacerTier>
+  <!-- EN: When enabled, the toxin warcasket is rebuilt as a 10th generation spacer warcasket like the siegebreaker. It gains spacer plating and insulation, a shield bubble, resistance to toxins, psychic effects and vacuum{0}, and loses its speed penalty, but it costs spacer components and plasteel, needs the spacer warcaskets research, and can be worn by veteran raiders. When disabled, it stays a 7th generation set. Default: off. -->
+  <TXWC_SpacerTierDesc>启用后，毒素型战棺会按第十代太空时代级别重新打造，与破袭型同级。它将获得太空时代级别的护甲与隔温、能量护盾、毒素与心灵抗性和真空抗性{0}，并不再有移动速度惩罚。但制造需要高级零部件和玻璃钢，还需研究「太空时代战棺」，前来袭击的精英机兵也可以穿戴它。禁用后，它仍是第七代套装。默认：关。</TXWC_SpacerTierDesc>
 
-  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, equipped with a tox gas tank that vents around the pilot. -->
   <TXWC_SpacerShortDescription_Armor>特化型太空时代级别战棺装甲，在不增加机体重量的同时极大幅提升了防护性，另装有毒气罐，可在驾驶员周围排放毒气。</TXWC_SpacerShortDescription_Armor>
-  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, equipped with shoulder-mounted jets that spray tox gas from the shell's tank. -->
   <TXWC_SpacerShortDescription_Shoulders>特化型太空时代级别战棺护肩，在不增加机体重量的同时极大幅提升了防护性，另装有肩载喷口，可喷出装甲毒气罐中的毒气。</TXWC_SpacerShortDescription_Shoulders>
-  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
-  <TXWC_SpacerShortDescription_Helmet>特化型太空时代级别战棺头盔，在不增加机体重量的同时极大幅提升了防护性。头盔由呼吸器密封，既能阻隔毒气，也能把毒气抽回装甲的毒气罐。</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, equipped with a respirator that keeps out tox gas and draws it back into the tank. -->
+  <TXWC_SpacerShortDescription_Helmet>特化型太空时代级别战棺头盔，在不增加机体重量的同时极大幅提升了防护性，另装有呼吸器，可阻隔毒气，并把毒气抽回毒气罐。</TXWC_SpacerShortDescription_Helmet>
   <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armor designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armors have been improved, generally reducing restrictions on mixing pieces of different armor series even across generations. -->
   <TXWC_SpacerLoreGeneration>第十代战棺有些特殊，它们是用从海盗那里收缴的设备改造而成的。然而，军备的更新迭代显然绝非易事。为了尽早将新型战棺投入实战，政府的军备研发部不惜斥下巨资，并用上了最高级的动力装甲技术。与前几代相比，第十代的整体性能不仅拥有了全方位提升，不同型号部件间的兼容性也得到了大幅改进，跨代进行组装完全不成问题。借助它们的力量，许多不甘于因负伤残疾就早早退役的老兵们也得以迅速重返战场。在许多人心中，只有第十代才是最配得上“战棺”这个响亮名号的。</TXWC_SpacerLoreGeneration>
-  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
-  <TXWC_SpacerLoreSeries>毒素型专为化学战打造。装甲内的毒气罐为驾驶员周身的排气阀和护肩上的喷口供气，头盔的呼吸器则把毒气抽回罐中。整套穿戴时，驾驶员对毒素免疫。</TXWC_SpacerLoreSeries>
+  <!-- EN: The Toxin series was built around a tox gas tank for chemical warfare. The tank in the shell feeds vents around the pilot and the gas jets on the pauldrons, and the respirator in the helmet draws gas back into it. The objective was a pilot who could gas a position and then walk into it, and clear the air again once the fighting was done. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>毒素型围绕毒气罐打造，专为化学战所用。装甲内的毒气罐为驾驶员周身的排气阀和护肩上的喷口供气，头盔的呼吸器则把毒气抽回罐中。设计目标是让驾驶员先用毒气覆盖阵地再走进去，战斗结束后还能把空气清理干净。整套穿戴时，驾驶员对毒素免疫。</TXWC_SpacerLoreSeries>
 
-  <!-- EN: Toxin warcasket resists vacuum -->
-  <TXWC_ToxinVacuum>毒素型战棺可抵御真空</TXWC_ToxinVacuum>
-  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
-  <TXWC_ToxinVacuumDesc>让毒素型战棺拥有太空时代级别的真空抗性，但不含该级别的其他特性。默认：关。</TXWC_ToxinVacuumDesc>
+  <!-- EN: Toxin warcasket vacuum resistance -->
+  <TXWC_ToxinVacuum>毒素型战棺真空抗性</TXWC_ToxinVacuum>
+  <!-- EN: When enabled, the toxin warcasket resists vacuum like a spacer warcasket, with none of the tier's other changes. When disabled, it is as exposed to vacuum as the other 7th generation sets. Default: off. -->
+  <TXWC_ToxinVacuumDesc>启用后，毒素型战棺会像太空时代战棺一样抵御真空，但不含该级别的其他改动。禁用后，它与其他第七代套装一样容易受真空影响。默认：关。</TXWC_ToxinVacuumDesc>
   <!-- EN:  (included by spacer tier) -->
   <TXWC_IncludedInSpacerTierSuffix>（太空时代级别已包含）</TXWC_IncludedInSpacerTierSuffix>
 
-  <!-- EN: Hazard warcasket resists vacuum -->
-  <TXWC_HazardVacuum>险境型战棺可抵御真空</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
-  <TXWC_HazardVacuumDesc>让险境型战棺拥有太空时代级别的真空抗性。默认：关。</TXWC_HazardVacuumDesc>
+  <!-- EN: Hazard warcasket vacuum resistance -->
+  <TXWC_HazardVacuum>险境型战棺真空抗性</TXWC_HazardVacuum>
+  <!-- EN: When enabled, the hazard warcasket resists vacuum like a spacer warcasket. When disabled, it is left as Vanilla Factions Expanded - Pirates ships it. Default: off. -->
+  <TXWC_HazardVacuumDesc>启用后，险境型战棺会像太空时代战棺一样抵御真空。禁用后，它保持Vanilla Factions Expanded - Pirates原有的样子。默认：关。</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix>（需要重启）</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->
   <TXWC_RequiresOdysseySuffix>（需要奥德赛）</TXWC_RequiresOdysseySuffix>
 
-  <!-- EN: Tank feeds waster tox absorption -->
-  <TXWC_FeedToxAbsorption>毒气罐供给污骸种的毒气吸收</TXWC_FeedToxAbsorption>
-  <!-- EN: A tank with gas in it counts as tox gas for pilots with the tox absorption gene ({0}), keeping their pollution mutations active. Costs no gas. Default: on. -->
-  <TXWC_FeedToxAbsorptionDesc>毒气罐中有毒气时，对拥有毒气吸收基因（{0}）的驾驶员视同毒气，使其污染突变保持生效。不消耗毒气。默认：开。</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN: Tox absorption from the tank -->
+  <TXWC_FeedToxAbsorption>来自毒气罐的毒气吸收</TXWC_FeedToxAbsorption>
+  <!-- EN: When enabled, a tank with gas in it counts as tox gas for a pilot with the tox absorption gene from {0}, so their pollution mutations stay active. No gas is used. When disabled, the gene only reacts to gas in the air. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>启用后，驾驶员拥有来自{0}的毒气吸收基因时，只要毒气罐中有毒气，就视同身处毒气中，污染突变保持生效，且不消耗毒气。禁用后，该基因只对空气中的毒气起反应。默认：开。</TXWC_FeedToxAbsorptionDesc>
   <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
   <TXWC_RequiresVREWasterSuffix>（需要Vanilla Races Expanded - Waster）</TXWC_RequiresVREWasterSuffix>
 
