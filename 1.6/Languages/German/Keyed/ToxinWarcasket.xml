@@ -15,107 +15,107 @@
 
   <!-- EN: Tank capacity (chemfuel) -->
   <TXWC_TankCapacity>Tankkapazität (Sprit)</TXWC_TankCapacity>
-  <!-- EN: How much chemfuel a full tank holds. The gauge counts it in units of one. Lowering it below a tank's current fill drops the excess. Default: {0}. -->
-  <TXWC_TankCapacityDesc>Wie viel Sprit ein voller Tank fasst. Die Anzeige zählt ihn in Einheiten zu je 1 Sprit. Sinkt der Wert unter den aktuellen Füllstand eines Tanks, geht der Überschuss verloren. Standard: {0}.</TXWC_TankCapacityDesc>
+  <!-- EN: The amount of chemfuel the tank holds when full. Default: {0}. -->
+  <TXWC_TankCapacityDesc>Die Menge an Sprit, die der Tank im vollen Zustand fasst. Standard: {0}.</TXWC_TankCapacityDesc>
 
   <!-- EN: Tox gas per chemfuel (cells) -->
   <TXWC_GasPerChemfuel>Giftgas pro Sprit (Zellen)</TXWC_GasPerChemfuel>
-  <!-- EN: How many cells of tox gas each chemfuel in the tank makes, however it is spent: vented, jetted, or burst when the pilot goes down. The absorb banks a chemfuel's worth per that much gas drawn in. A tox pack fills 45 cells from 35 chemfuel. Default: {0}. -->
-  <TXWC_GasPerChemfuelDesc>Wie viele Zellen Giftgas jede Einheit Sprit im Tank erzeugt, egal wie sie verbraucht wird: abgelassen, als Gasstoß versprüht oder freigesetzt, wenn der Pilot zu Boden geht. Die Absorption speichert eine Einheit Sprit für je so viel angesaugtes Gas. Ein Giftrucksack erzeugt aus 35 Sprit 45 Zellen. Standard: {0}.</TXWC_GasPerChemfuelDesc>
+  <!-- EN: The number of cells of tox gas each chemfuel makes, whether it is vented, sprayed, or burst from the tank when the pilot goes down. Absorbing gas refills the tank at the same rate. For comparison, a tox pack makes 45 cells from 35 chemfuel. Default: {0}. -->
+  <TXWC_GasPerChemfuelDesc>Die Anzahl der Zellen Giftgas, die jede Einheit Sprit erzeugt, egal ob sie abgelassen, versprüht oder aus dem Tank freigesetzt wird, wenn der Pilot zu Boden geht. Das Absorbieren von Gas füllt den Tank mit derselben Rate wieder auf. Zum Vergleich: Ein Giftrucksack erzeugt aus 35 Sprit 45 Zellen. Standard: {0}.</TXWC_GasPerChemfuelDesc>
 
   <!-- EN: Vent rate (chemfuel per second) -->
   <TXWC_VentRate>Ablassrate (Sprit pro Sekunde)</TXWC_VentRate>
-  <!-- EN: How fast the vent empties the tank. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
-  <TXWC_VentRateDesc>Wie schnell das Ablassen den Tank leert. Schnelleres Ablassen erzeugt eine breitere Wolke, die sich früher auflöst. Standard: {0}.</TXWC_VentRateDesc>
+  <!-- EN: The amount of chemfuel released each second while the vents are open. A faster vent makes a wider cloud that clears sooner. Default: {0}. -->
+  <TXWC_VentRateDesc>Die Menge an Sprit, die pro Sekunde abgelassen wird, solange die Ventile offen sind. Schnelleres Ablassen erzeugt eine breitere Wolke, die sich früher auflöst. Standard: {0}.</TXWC_VentRateDesc>
 
-  <!-- EN: A full tank: {0} chemfuel for {1} cells of tox gas ({2} tox packs). The vent empties it in {3} seconds. -->
-  <TXWC_TankSummary>Ein voller Tank: {0} Sprit für {1} Zellen Giftgas ({2} Giftrucksäcke). Das Ablassen leert ihn in {3} Sekunden.</TXWC_TankSummary>
+  <!-- EN: A full tank holds {0} chemfuel, enough for {1} cells of tox gas or about {2} tox packs. Venting empties it in {3} seconds. -->
+  <TXWC_TankSummary>Ein voller Tank fasst {0} Sprit, genug für {1} Zellen Giftgas oder etwa {2} Giftrucksäcke. Das Ablassen leert ihn in {3} Sekunden.</TXWC_TankSummary>
 
   <!-- EN: Cost (chemfuel) -->
   <TXWC_JetCost>Kosten (Sprit)</TXWC_JetCost>
-  <!-- EN: How much chemfuel each gas jet draws from the tank. Without a tank, one of the shoulders' own jets makes the same gas for the same chemfuel. Default: {0}. -->
-  <TXWC_JetCostDesc>Wie viel Sprit jeder Gasstoß aus dem Tank verbraucht. Ohne Tank erzeugt ein eigener Gasstoß der Schulterpanzer dasselbe Gas für dieselbe Menge Sprit. Standard: {0}.</TXWC_JetCostDesc>
+  <!-- EN: The amount of chemfuel each gas jet draws from the tank. Without a tank, the jets stored in the shoulders reload for the same amount. Default: {0}. -->
+  <TXWC_JetCostDesc>Die Menge an Sprit, die jeder Gasstoß aus dem Tank verbraucht. Ohne Tank werden die in den Schulterpanzern gespeicherten Gasstöße für dieselbe Menge nachgeladen. Standard: {0}.</TXWC_JetCostDesc>
 
   <!-- EN: Jets without a tank -->
   <TXWC_JetReserve>Gasstöße ohne Tank</TXWC_JetReserve>
-  <!-- EN: How many jets the shoulders hold on their own, for wear without the tank. They reload with chemfuel and are untouched while a tank is worn. Default: {0}. -->
-  <TXWC_JetReserveDesc>Wie viele Gasstöße die Schulterpanzer selbst fassen, für den Einsatz ohne Tank. Sie werden mit Sprit nachgeladen und bleiben unberührt, solange ein Tank getragen wird. Standard: {0}.</TXWC_JetReserveDesc>
+  <!-- EN: The number of gas jets the shoulders carry on their own. They are only used when no tank is worn, and reload with chemfuel. Default: {0}. -->
+  <TXWC_JetReserveDesc>Die Anzahl der Gasstöße, die die Schulterpanzer selbst fassen. Sie kommen nur zum Einsatz, wenn kein Tank getragen wird, und werden mit Sprit nachgeladen. Standard: {0}.</TXWC_JetReserveDesc>
 
   <!-- EN: Needs {COUNT} {CHARGENOUN_plural} in the tank. -->
   <TXWC_JetTankLow>Benötigt {COUNT} {CHARGENOUN_plural} im Tank.</TXWC_JetTankLow>
 
   <!-- EN: Cone width (degrees) -->
   <TXWC_JetConeWidth>Kegelbreite (Grad)</TXWC_JetConeWidth>
-  <!-- EN: The full width of the cone the gas jet lands in. A wider cone spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetConeWidthDesc>Die volle Breite des Kegels, in dem der Gasstoß landet. Ein breiterer Kegel verteilt dasselbe Gas dünner. Standard: {0}.</TXWC_JetConeWidthDesc>
+  <!-- EN: The width of the cone the gas jet sprays. A wider cone spreads the same gas thinner. Default: {0}. -->
+  <TXWC_JetConeWidthDesc>Die Breite des Kegels, den der Gasstoß versprüht. Ein breiterer Kegel verteilt dasselbe Gas dünner. Standard: {0}.</TXWC_JetConeWidthDesc>
 
   <!-- EN: Range (cells) -->
   <TXWC_JetRange>Reichweite (Zellen)</TXWC_JetRange>
-  <!-- EN: How far the gas jet reaches. A longer jet spreads the same gas thinner. Default: {0}. -->
-  <TXWC_JetRangeDesc>Wie weit der Gasstoß reicht. Ein längerer Gasstoß verteilt dasselbe Gas dünner. Standard: {0}.</TXWC_JetRangeDesc>
+  <!-- EN: The distance the gas jet reaches. Default: {0}. -->
+  <TXWC_JetRangeDesc>Die Entfernung, die der Gasstoß erreicht. Standard: {0}.</TXWC_JetRangeDesc>
 
   <!-- EN: Aiming time (seconds) -->
   <TXWC_JetWarmup>Anvisierungsdauer (Sekunden)</TXWC_JetWarmup>
-  <!-- EN: How long the pilot takes to aim the gas jet before it fires. Default: {0}. -->
-  <TXWC_JetWarmupDesc>Wie lange der Pilot braucht, um den Gasstoß anzuvisieren, bevor er abgefeuert wird. Standard: {0}.</TXWC_JetWarmupDesc>
+  <!-- EN: The time the pilot takes to aim the gas jet before it fires. Default: {0}. -->
+  <TXWC_JetWarmupDesc>Die Zeit, die der Pilot braucht, um den Gasstoß anzuvisieren, bevor er abgefeuert wird. Standard: {0}.</TXWC_JetWarmupDesc>
 
-  <!-- EN: A jet: {0} chemfuel for {1} cells of tox gas ({2} tox packs). A full tank holds {3}, the shoulders alone {4}. -->
-  <TXWC_JetSummary>Ein Gasstoß: {0} Sprit für {1} Zellen Giftgas ({2} Giftrucksäcke). Ein voller Tank reicht für {3}, die Schulterpanzer allein fassen {4}.</TXWC_JetSummary>
+  <!-- EN: Each jet draws {0} chemfuel and sprays {1} cells of tox gas, about {2} tox packs. A full tank holds {3} jets and the shoulders alone hold {4}. -->
+  <TXWC_JetSummary>Jeder Gasstoß verbraucht {0} Sprit und versprüht {1} Zellen Giftgas, etwa {2} Giftrucksäcke. Ein voller Tank fasst {3} Gasstöße, die Schulterpanzer allein {4}.</TXWC_JetSummary>
 
   <!-- EN: Radius (cells) -->
   <TXWC_AbsorbRadius>Radius (Zellen)</TXWC_AbsorbRadius>
-  <!-- EN: How far around the pilot the absorb draws gas in. Default: {0}. -->
-  <TXWC_AbsorbRadiusDesc>Wie weit um den Piloten herum die Absorption Gas ansaugt. Standard: {0}.</TXWC_AbsorbRadiusDesc>
+  <!-- EN: The distance around the pilot that gas is drawn in from. Default: {0}. -->
+  <TXWC_AbsorbRadiusDesc>Die Entfernung rund um den Piloten, aus der Gas angesaugt wird. Standard: {0}.</TXWC_AbsorbRadiusDesc>
 
   <!-- EN: Duration (seconds) -->
   <TXWC_AbsorbDuration>Dauer (Sekunden)</TXWC_AbsorbDuration>
-  <!-- EN: How long each absorb keeps drawing gas in. Default: {0}. -->
-  <TXWC_AbsorbDurationDesc>Wie lange jede Absorption Gas ansaugt. Standard: {0}.</TXWC_AbsorbDurationDesc>
+  <!-- EN: The time the respirator keeps drawing gas in after each use. Default: {0}. -->
+  <TXWC_AbsorbDurationDesc>Die Zeit, die das Atemgerät nach jeder Anwendung weiter Gas ansaugt. Standard: {0}.</TXWC_AbsorbDurationDesc>
 
   <!-- EN: Cooldown (hours) -->
   <TXWC_AbsorbCooldown>Abklingzeit (Stunden)</TXWC_AbsorbCooldown>
-  <!-- EN: How long the absorb takes to recharge. Default: {0}. -->
-  <TXWC_AbsorbCooldownDesc>Wie lange die Absorption zum Aufladen braucht. Standard: {0}.</TXWC_AbsorbCooldownDesc>
+  <!-- EN: The time the pilot must wait after absorbing gas before absorbing again. Default: {0}. -->
+  <TXWC_AbsorbCooldownDesc>Die Zeit, die der Pilot nach dem Absorbieren von Gas warten muss, bevor er erneut absorbieren kann. Standard: {0}.</TXWC_AbsorbCooldownDesc>
 
-  <!-- EN: One absorb draws from the {0} cells around the pilot. A full cloud over them banks {1} chemfuel. -->
-  <TXWC_AbsorbSummary>Eine Absorption saugt Gas aus den {0} Zellen um den Piloten. Eine volle Wolke darüber bringt {1} Sprit in den Tank.</TXWC_AbsorbSummary>
+  <!-- EN: Absorbing gas draws from the {0} cells around the pilot. A full cloud over all of them refills {1} chemfuel. -->
+  <TXWC_AbsorbSummary>Beim Absorbieren wird Gas aus den {0} Zellen um den Piloten angesaugt. Eine volle Wolke über allen Zellen füllt {1} Sprit wieder auf.</TXWC_AbsorbSummary>
 
-  <!-- EN: Toxin warcasket is spacer tier -->
-  <TXWC_SpacerTier>Toxin-Kriegssarg gehört zur Raumfahrt-Stufe</TXWC_SpacerTier>
-  <!-- EN: Rebuilds the toxin warcasket at the 10th generation spacer tier, like the siegebreaker. It gains spacer armor and insulation, no speed penalty, toxic and psychic resistance, vacuum resistance{0}, and a shield bubble, but costs spacer components and plasteel and needs the spacer warcaskets research. Veteran raiders can wear it too. Default: off. -->
-  <TXWC_SpacerTierDesc>Baut den Toxin-Kriegssarg wie den Belagerungsbrecher auf der Raumfahrt-Stufe der 10. Generation neu auf. Er verlangsamt den Piloten nicht mehr und erhält Raumfahrt-Panzerung und -Isolierung, Resistenz gegen Gifte und mentale Effekte, Vakuumresistenz{0} und einen Schutzschild, kostet aber Hightech-Bauteile und Plastahl und erfordert das Forschungsprojekt 'Raumfahrt-Kriegssärge'. Auch Veteranen unter den Piraten können ihn bei Überfällen tragen. Standard: aus.</TXWC_SpacerTierDesc>
+  <!-- EN: Spacer tier -->
+  <TXWC_SpacerTier>Raumfahrt-Stufe</TXWC_SpacerTier>
+  <!-- EN: When enabled, the toxin warcasket is rebuilt as a 10th generation spacer warcasket like the siegebreaker. It gains spacer plating and insulation, a shield bubble, resistance to toxins, psychic effects and vacuum{0}, and loses its speed penalty, but it costs spacer components and plasteel, needs the spacer warcaskets research, and can be worn by veteran raiders. When disabled, it stays a 7th generation set. Default: off. -->
+  <TXWC_SpacerTierDesc>Wenn aktiviert, wird der Toxin-Kriegssarg wie der Belagerungsbrecher als Raumfahrt-Kriegssarg der 10. Generation neu aufgebaut. Er erhält Raumfahrt-Panzerung und -Isolierung, einen Schutzschild sowie Resistenz gegen Gifte, mentale Effekte und Vakuum{0}. Er verlangsamt den Piloten nicht mehr, kostet aber Hightech-Bauteile und Plastahl. Außerdem erfordert er das Forschungsprojekt 'Raumfahrt-Kriegssärge' und kann von Veteranen unter den Piraten getragen werden. Wenn deaktiviert, bleibt er ein Set der 7. Generation. Standard: aus.</TXWC_SpacerTierDesc>
 
-  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, fitted with a tox gas tank that vents around the pilot. -->
+  <!-- EN: Specialized spacer-tech warcasket shell with standard protection, equipped with a tox gas tank that vents around the pilot. -->
   <TXWC_SpacerShortDescription_Armor>Eine spezialisierte Kriegssarg-Hülle aus der Raumfahrttechnik mit Standardschutz. Ein eingebauter Giftgastank lässt Gas rund um den Piloten ab.</TXWC_SpacerShortDescription_Armor>
-  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, fitted with shoulder-mounted jets that spray tox gas from the shell's tank. -->
+  <!-- EN: Specialized spacer-tech warcasket pauldrons with standard protection, equipped with shoulder-mounted jets that spray tox gas from the shell's tank. -->
   <TXWC_SpacerShortDescription_Shoulders>Spezialisierte Kriegssarg-Schulterpanzer aus der Raumfahrttechnik mit Standardschutz. Auf den Schultern sitzen Düsen, die Giftgas aus dem Tank der Hülle versprühen.</TXWC_SpacerShortDescription_Shoulders>
-  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, sealed behind a respirator that keeps out tox gas and draws it back into the shell's tank. -->
-  <TXWC_SpacerShortDescription_Helmet>Ein spezialisierter Kriegssarg-Helm aus der Raumfahrttechnik mit Standardschutz. Er ist luftdicht versiegelt, und sein Atemgerät hält Giftgas fern und saugt es in den Tank der Hülle zurück.</TXWC_SpacerShortDescription_Helmet>
+  <!-- EN: Specialized spacer-tech warcasket helmet with standard protection, equipped with a respirator that keeps out tox gas and draws it back into the tank. -->
+  <TXWC_SpacerShortDescription_Helmet>Ein spezialisierter Kriegssarg-Helm aus der Raumfahrttechnik mit Standardschutz. Sein Atemgerät hält Giftgas fern und saugt es in den Tank zurück.</TXWC_SpacerShortDescription_Helmet>
   <!-- EN: 10th generation warcaskets were actually adapted from captured pirate rigs, with government military research divisions improving them with advanced power armor designs. Access to a greater amount of high quality resources and the objective of equipping them onto combat veterans that would otherwise be unable to serve meant the program created single-user operated dreadnoughts. The versatility of the armors have been improved, generally reducing restrictions on mixing pieces of different armor series even across generations. -->
   <TXWC_SpacerLoreGeneration>Die Kriegssärge der 10. Generation gingen eigentlich aus erbeuteten Piratenmodellen hervor, die militärische Forschungsabteilungen von Regierungen mit fortschrittlichen Entwürfen für Powerrüstungen verbesserten. Da mehr hochwertige Rohstoffe zur Verfügung standen und Kriegsveteranen ausgerüstet werden sollten, die sonst nicht mehr dienstfähig wären, brachte das Programm wandelnde Schlachtschiffe für einen einzigen Piloten hervor. Auch die Vielseitigkeit der Rüstungen wurde verbessert, sodass sich Teile verschiedener Baureihen meist mit weniger Einschränkungen kombinieren lassen, selbst über Generationen hinweg.</TXWC_SpacerLoreGeneration>
-  <!-- EN: The Toxin series is built for chemical warfare. A tank in the shell feeds vents around the pilot and gas jets on the pauldrons, and the helmet's respirator draws gas back into the tank. Together the pieces make the pilot immune to toxins. -->
-  <TXWC_SpacerLoreSeries>Die Toxin-Baureihe ist für die chemische Kriegsführung gebaut. Ein Tank in der Hülle speist Ventile rund um den Piloten und Gasdüsen an den Schulterpanzern, und das Atemgerät des Helms saugt Gas zurück in den Tank. Zusammen machen die Teile den Piloten immun gegen Gifte.</TXWC_SpacerLoreSeries>
+  <!-- EN: The Toxin series was built around a tox gas tank for chemical warfare. The tank in the shell feeds vents around the pilot and the gas jets on the pauldrons, and the respirator in the helmet draws gas back into it. The objective was a pilot who could gas a position and then walk into it, and clear the air again once the fighting was done. Together the pieces make the pilot immune to toxins. -->
+  <TXWC_SpacerLoreSeries>Die Toxin-Baureihe wurde um einen Giftgastank herum für die chemische Kriegsführung gebaut. Der Tank in der Hülle speist Ventile rund um den Piloten und die Gasdüsen an den Schulterpanzern, und das Atemgerät im Helm saugt Gas in den Tank zurück. Ziel war ein Pilot, der eine Stellung unter Gas setzen, dann hineinstürmen und die Luft nach dem Kampf wieder reinigen kann. Zusammen machen die Teile den Piloten immun gegen Gifte.</TXWC_SpacerLoreSeries>
 
-  <!-- EN: Toxin warcasket resists vacuum -->
-  <TXWC_ToxinVacuum>Toxin-Kriegssarg ist vakuumresistent</TXWC_ToxinVacuum>
-  <!-- EN: Gives the toxin warcasket the spacer tier's vacuum resistance, without the rest of the tier. Default: off. -->
-  <TXWC_ToxinVacuumDesc>Gibt dem Toxin-Kriegssarg die Vakuumresistenz der Raumfahrt-Stufe, ohne den Rest der Stufe. Standard: aus.</TXWC_ToxinVacuumDesc>
+  <!-- EN: Toxin warcasket vacuum resistance -->
+  <TXWC_ToxinVacuum>Vakuumresistenz des Toxin-Kriegssargs</TXWC_ToxinVacuum>
+  <!-- EN: When enabled, the toxin warcasket resists vacuum like a spacer warcasket, with none of the tier's other changes. When disabled, it is as exposed to vacuum as the other 7th generation sets. Default: off. -->
+  <TXWC_ToxinVacuumDesc>Wenn aktiviert, ist der Toxin-Kriegssarg wie ein Raumfahrt-Kriegssarg vakuumresistent, ohne die übrigen Änderungen der Stufe. Wenn deaktiviert, ist er dem Vakuum so ausgesetzt wie die anderen Sets der 7. Generation. Standard: aus.</TXWC_ToxinVacuumDesc>
   <!-- EN:  (included by spacer tier) -->
   <TXWC_IncludedInSpacerTierSuffix> (in Raumfahrt-Stufe enthalten)</TXWC_IncludedInSpacerTierSuffix>
 
-  <!-- EN: Hazard warcasket resists vacuum -->
-  <TXWC_HazardVacuum>Gefahrenschutz-Kriegssarg ist vakuumresistent</TXWC_HazardVacuum>
-  <!-- EN: Gives the hazard warcasket the spacer tier's vacuum resistance. Default: off. -->
-  <TXWC_HazardVacuumDesc>Gibt dem Gefahrenschutz-Kriegssarg die Vakuumresistenz der Raumfahrt-Stufe. Standard: aus.</TXWC_HazardVacuumDesc>
+  <!-- EN: Hazard warcasket vacuum resistance -->
+  <TXWC_HazardVacuum>Vakuumresistenz des Gefahrenschutz-Kriegssargs</TXWC_HazardVacuum>
+  <!-- EN: When enabled, the hazard warcasket resists vacuum like a spacer warcasket. When disabled, it is left as Vanilla Factions Expanded - Pirates ships it. Default: off. -->
+  <TXWC_HazardVacuumDesc>Wenn aktiviert, ist der Gefahrenschutz-Kriegssarg wie ein Raumfahrt-Kriegssarg vakuumresistent. Wenn deaktiviert, bleibt er so, wie ihn Vanilla Factions Expanded - Pirates ausliefert. Standard: aus.</TXWC_HazardVacuumDesc>
   <!-- EN:  (requires restart) -->
   <TXWC_RequiresRestartSuffix> (erfordert Neustart)</TXWC_RequiresRestartSuffix>
   <!-- EN:  (requires Odyssey) -->
   <TXWC_RequiresOdysseySuffix> (erfordert Odyssey)</TXWC_RequiresOdysseySuffix>
 
-  <!-- EN: Tank feeds waster tox absorption -->
-  <TXWC_FeedToxAbsorption>Tank speist die Giftgasabsorption der Ödländer</TXWC_FeedToxAbsorption>
-  <!-- EN: A tank with gas in it counts as tox gas for pilots with the tox absorption gene ({0}), keeping their pollution mutations active. Costs no gas. Default: on. -->
-  <TXWC_FeedToxAbsorptionDesc>Ein Tank mit Gas zählt für Piloten mit dem Gen 'Giftgasabsorption' ({0}) als Giftgas und hält ihre Verseuchungsmutationen aktiv. Kostet kein Gas. Standard: an.</TXWC_FeedToxAbsorptionDesc>
+  <!-- EN: Tox absorption from the tank -->
+  <TXWC_FeedToxAbsorption>Giftgasabsorption aus dem Tank</TXWC_FeedToxAbsorption>
+  <!-- EN: When enabled, a tank with gas in it counts as tox gas for a pilot with the tox absorption gene from {0}, so their pollution mutations stay active. No gas is used. When disabled, the gene only reacts to gas in the air. Default: on. -->
+  <TXWC_FeedToxAbsorptionDesc>Wenn aktiviert, zählt ein Tank mit Gas für einen Piloten mit dem Gen 'Giftgasabsorption' aus {0} als Giftgas, sodass seine Verseuchungsmutationen aktiv bleiben. Dabei wird kein Gas verbraucht. Wenn deaktiviert, reagiert das Gen nur auf Gas in der Luft. Standard: an.</TXWC_FeedToxAbsorptionDesc>
   <!-- EN:  (requires Vanilla Races Expanded - Waster) -->
   <TXWC_RequiresVREWasterSuffix> (erfordert Vanilla Races Expanded - Waster)</TXWC_RequiresVREWasterSuffix>
 

@@ -1,10 +1,10 @@
 Toxin-Kriegssarg
 
-Ein neuer Kriegssarg zur chemischen Kriegsführung für [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
+Ein neuer Kriegssarg, gebaut für die chemische Kriegsführung, für [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
 
 [h1]Überblick[/h1]
 
-Der Toxin-Kriegssarg, ein beeindruckend unethisches Meisterwerk der Ingenieurskunst, gehört zur 7. Generation und baut auf dem Kataphrakt-Chassis aus VFE Pirates auf: Panzerung auf dem Niveau des Luft-Kriegssargs bei etwas leichterem Rahmen und drei Teile, die sich einen Giftgastank teilen. Setze eine Stellung unter Gas, stürme sie unversehrt und hol dir danach einen Teil des Gases zurück, indem du die Luft reinigst. Erfordert Biotech.
+Der Toxin-Kriegssarg, ein beeindruckend unethisches Meisterwerk der Ingenieurskunst, gehört zur 7. Generation und baut auf dem Kataphrakt-Chassis aus VFE Pirates auf. Seine Panzerung entspricht der des Luft-Kriegssargs, bei etwas leichterem Rahmen. Seine drei Teile teilen sich einen Giftgastank. Setze eine Stellung unter Gas, stürme sie unversehrt und hol dir danach einen Teil des Gases zurück, indem du die Luft reinigst. Erfordert Biotech.
 
 [hr][/hr]
 [h1]Das Set[/h1]
@@ -22,9 +22,9 @@ In den Mod-Einstellungen lassen sich jede Fähigkeit und einige Werte anpassen. 
 [*]Kann gefahrlos zu bestehenden Spielständen hinzugefügt werden.
 [*]Kann nicht gefahrlos entfernt werden, solange jemand in das Set eingeschweißt ist.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] und das Biotech-DLC erforderlich.
-[*]Save Our Ship 2: EVA-tauglich nach denselben Regeln wie die Sets aus VFE Pirates.
-[*]Vanilla Races Expanded - Waster: Ein Tank mit Gas zählt für das Gen 'Giftgasabsorption' eines Ödländer-Piloten als Giftgas (Einstellung, standardmäßig an).
-[*]Combat Extended: Rüstungswerte, Bulk und Bulk-Kapazität liegen auf dem Niveau anderer Raumfahrt-Kriegssärge, und der Helm blockiert den Rauch von CE.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1909914131]Save Our Ship 2[/url]: EVA-tauglich nach denselben Regeln wie die Sets aus VFE Pirates.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2983471725]Vanilla Races Expanded - Waster[/url]: Ein Tank mit Gas zählt für das Gen 'Giftgasabsorption' eines Ödländer-Piloten als Giftgas (Einstellung, standardmäßig an).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044]Combat Extended[/url]: Rüstungswerte, Bulk und Bulk-Kapazität liegen auf dem Niveau anderer Raumfahrt-Kriegssärge, und der Helm blockiert den Rauch von CE.
 [/list]
 
 [hr][/hr]

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <!-- EN: Draw in the surrounding air through the respirator for a few seconds, clearing smoke, tox gas, and other gases from around the pilot as they move. Whatever is drawn in is filtered and banked as tox gas in the warcasket's tank, if one is worn. -->
-  <TXWC_AbsorbGas.description>Sauge einige Sekunden lang die umgebende Luft durch das Atemgerät an und entferne so Rauch, Giftgas und andere Gase rund um den Piloten, auch während er sich bewegt. Alles Angesaugte wird gefiltert und als Giftgas im Tank des Kriegssargs gespeichert, sofern einer getragen wird.</TXWC_AbsorbGas.description>
+  <!-- EN: Draw the surrounding air in through the respirator for a few seconds. Smoke, tox gas and other gases near the pilot will be pulled in and cleared, even as they move. If a tank is worn, whatever is drawn in will be filtered and stored in it as tox gas. -->
+  <TXWC_AbsorbGas.description>Sauge einige Sekunden lang die umgebende Luft durch das Atemgerät an. Rauch, Giftgas und andere Gase in der Nähe des Piloten werden angesaugt und entfernt, auch während sie sich bewegen. Wird ein Tank getragen, wird alles Angesaugte gefiltert und darin als Giftgas gespeichert.</TXWC_AbsorbGas.description>
   <!-- EN: Using ability: {0} -->
   <TXWC_AbsorbGas.jobReportString>setzt Fähigkeit '{0}' ein.</TXWC_AbsorbGas.jobReportString>
   <!-- EN: absorb gas -->
@@ -10,8 +10,8 @@
   <!-- EN: absorb gas -->
   <TXWC_AbsorbGas.verbProperties.label>Gas absorbieren</TXWC_AbsorbGas.verbProperties.label>
 
-  <!-- EN: Open the tank's vents and release tox gas around the pilot. The cloud grows from wherever the pilot stands and follows them as they move. Toggle again to close the vents and keep what is left. -->
-  <TXWC_VentTank.description>Öffne die Ventile des Tanks und lass Giftgas rund um den Piloten ab. Die Wolke breitet sich von dort aus, wo der Pilot gerade steht, und folgt ihm, wenn er sich bewegt. Ein erneuter Klick schließt die Ventile, und der Rest bleibt im Tank.</TXWC_VentTank.description>
+  <!-- EN: Open the tank's vents and release tox gas around the pilot. The cloud will grow from wherever the pilot stands and follow them as they move. Toggle again to close the vents and keep what is left. -->
+  <TXWC_VentTank.description>Öffne die Ventile des Tanks und lass Giftgas rund um den Piloten ab. Die Wolke wird sich von dort ausbreiten, wo der Pilot gerade steht, und ihm folgen, wenn er sich bewegt. Ein erneuter Klick schließt die Ventile, und der Rest bleibt im Tank.</TXWC_VentTank.description>
   <!-- EN: Using ability: {0} -->
   <TXWC_VentTank.jobReportString>setzt Fähigkeit '{0}' ein.</TXWC_VentTank.jobReportString>
   <!-- EN: vent tank -->
