@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-11-08
+
 ### Added
 
 - Opening the tank's vents now plays the tox pack's activation sound.
@@ -25,10 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- The tank's vent now hisses once, more quietly, as it opens instead of looping for the whole vent, and fades out quickly when closed.
-- Reworded the mod settings tooltips, summary lines and toggle labels to read like vanilla's options.
-- Reworded the set's descriptions, the spray gas, vent tank and absorb gas text and the mod description to read like the base game and VFE Pirates' own sets.
-- Updated all 9 translations and their Workshop pages to the reworded text.
+- The vent now hisses once, more quietly, as it opens instead of looping.
+- The gas jet's aiming time slider is easier to set at its fastest values.
+- Reworded the settings, item and ability text to read like the base game.
+- Updated all 9 translations to match.
 
 ## [1.3.0] - 2026-10-28
 
@@ -80,7 +82,8 @@ First release.
 - RimWorld 1.6 and 1.7 support.
 - Translated into 9 languages.
 
-[Unreleased]: https://github.com/sam-hunt/ToxinWarcasket/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/sam-hunt/ToxinWarcasket/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.4.0
 [1.3.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.3.0
 [1.2.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.2.0
 [1.1.0]: https://github.com/sam-hunt/ToxinWarcasket/releases/tag/v1.1.0
