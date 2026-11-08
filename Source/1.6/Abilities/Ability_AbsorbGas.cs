@@ -2,6 +2,7 @@ using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 using VEF.Abilities;
 using Ability = VEF.Abilities.Ability;
 using Command_Ability = VEF.Abilities.Command_Ability;
@@ -36,6 +37,9 @@ public class AbsorbGasExtension : DefModExtension
     public FleckDef puffFleck;
     public int puffsPerPulse = 4;
     public float puffSpeed = 3.5f;
+
+    // Sustained for as long as a draw runs.
+    public SoundDef drawSound;
 }
 
 // The helmet's Absorb Gas: for the ability's duration the respirator draws every gas within its
@@ -65,6 +69,17 @@ public class AbsorbGasExtension : DefModExtension
 // gas. Player pilots only, as raiders never absorb, and never while the worn tank is venting,
 // which would feed the vent's own cloud straight back in.
 //
+// Sound: a bare PerTick sustainer of the extension's drawSound, maintained from Tick while the
+// draw runs and ended on the first tick it does not, so it follows the draw's state whether the
+// draw was cast by hand, autocast or reloaded mid-way, and stops with expiry, StopAbsorbing or
+// the pilot despawning. Neither VEF's castSound (a one-shot, which would play the looping clip's
+// full length) nor an effecter (the same per-tick bookkeeping plus a def) fits. A PerTick
+// sustainer ends itself once a tick passes unmaintained (Sustainer.SustainerUpdate), so the
+// strided TickInterval cannot hold it, hence the def's needsTicking. When the helmet comes off
+// mid-draw Tick stops being called, the sustainer ends and fades by itself, and the stale
+// reference is dropped by the Ended check on the next tick that reaches it. TrySpawnSustainer
+// returns null while the def's voice cap is full, and the next tick retries.
+//
 // Gizmo: VEF's GetGizmo builds a new Command_Ability, tooltip and all, every time gizmos are
 // requested, which is every frame for a selected wearer. One command is kept and only what
 // moves is refreshed, after Shipcracker's Ability_BreachJump: the enable state every call, and
@@ -81,6 +96,8 @@ public class Ability_AbsorbGas : Ability
     private int carriedUnits;
 
     private AbsorbGasExtension extension;
+
+    private Sustainer drawSustainer;
 
     private Command_Ability gizmo;
     private string description;
@@ -174,6 +191,24 @@ public class Ability_AbsorbGas : Ability
             tank.SetVenting(false);
         absorbEndTick = Find.TickManager.TicksGame + GetDurationForPawn();
         carriedUnits = 0;
+    }
+
+    public override void Tick()
+    {
+        base.Tick();
+        SoundDef sound = Extension?.drawSound;
+        if (sound != null && Absorbing && pawn is { Spawned: true })
+        {
+            if (drawSustainer == null || drawSustainer.Ended)
+                drawSustainer = sound.TrySpawnSustainer(SoundInfo.InMap(pawn, MaintenanceType.PerTick));
+            drawSustainer?.Maintain();
+        }
+        else if (drawSustainer != null)
+        {
+            if (!drawSustainer.Ended)
+                drawSustainer.End();
+            drawSustainer = null;
+        }
     }
 
     public override void TickInterval(int delta)

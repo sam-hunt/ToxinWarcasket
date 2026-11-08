@@ -4,8 +4,8 @@
     The helmet's respirator pull, granted by its CompAbilitiesApparel and run by
     Ability_AbsorbGas (the mechanics, the jobless cast and the autocast are in that class's
     comment). Usable undrafted for cleanup, three in-game hours of cooldown, no fuel; player-only,
-    as raiders never cast it. needsTickingInterval is what lets the helmet's CompAbilitiesApparel
-    tick it.
+    as raiders never cast it. needsTickingInterval and needsTicking are what let the helmet's
+    CompAbilitiesApparel tick it: the draw on the interval, the sound every tick.
 
     The draw (AbsorbGasExtension): for durationTime, 300 ticks, a pulse every 30, ten in all,
     each taking up to 64 of every gas type's density from the 37 cells within radius 3.5, a round
@@ -27,6 +27,9 @@
       Fleck_DeadlifeSmall); smoke's grey and rot stink's orange have no coloured fleck to copy
       and are matched by eye. A pulse over clean air throws four of Core's AirPuff from the disc's
       edge toward the pilot at 3.5 cells a second instead, so the draw always shows.
+    - Sound: TXWC_AbsorbGasDraw (that def's header), Core's tornado roar pitched up and set at a
+      fifth of its volume (14), under the vent's hiss (35) and gunfire. Ability_AbsorbGas holds
+      it as a sustainer for exactly the draw.
   -->
   <VEF.Abilities.AbilityDef>
     <defName>TXWC_AbsorbGas</defName>
@@ -39,6 +42,7 @@
     <durationTime>300</durationTime>
     <cooldownTime>7500</cooldownTime>
     <showUndrafted>true</showUndrafted>
+    <needsTicking>true</needsTicking>
     <needsTickingInterval>true</needsTickingInterval>
     <modExtensions>
       <li Class="ToxinWarcasket.AbsorbGasExtension">
@@ -56,6 +60,7 @@
         <puffFleck>AirPuff</puffFleck>
         <puffsPerPulse>4</puffsPerPulse>
         <puffSpeed>3.5</puffSpeed>
+        <drawSound>TXWC_AbsorbGasDraw</drawSound>
       </li>
     </modExtensions>
   </VEF.Abilities.AbilityDef>

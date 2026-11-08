@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Opening the tank's vents now plays the tox pack's activation sound.
+- Absorb gas now plays a rushing intake sound while the respirator draws.
 
 ### Changed
 
