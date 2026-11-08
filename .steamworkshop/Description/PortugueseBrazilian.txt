@@ -1,10 +1,10 @@
 Carcaça de Guerra Toxina
 
-Uma nova carcaça de guerra de combate químico para o [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
+Uma nova carcaça de guerra feita para a guerra química, para o [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url].
 
 [h1]Sobre[/h1]
 
-Uma façanha de engenharia impressionantemente antiética, a Toxina é uma carcaça de guerra de 7ª geração construída sobre o chassi da carcaça de guerra catafrática do VFE Pirates: blindagem do nível da carcaça aérea em uma estrutura um pouco mais leve, e três peças que compartilham um tanque de gás tóxico. Encha uma posição de gás, invada-a sem sofrer dano e recupere parte do gás limpando o ar depois. Requer Biotech.
+Uma façanha de engenharia impressionantemente antiética, a Toxina é uma carcaça de guerra de 7ª geração construída sobre o chassi da carcaça de guerra catafrática do VFE Pirates. Ela traz blindagem do nível da carcaça aérea em uma estrutura um pouco mais leve, e suas três peças compartilham um tanque de gás tóxico. Encha uma posição de gás, invada-a sem sofrer dano e recupere parte do gás limpando o ar depois. Requer Biotech.
 
 [hr][/hr]
 [h1]O conjunto[/h1]
@@ -22,9 +22,9 @@ As configurações do mod permitem ajustar cada habilidade e algumas estatístic
 [*]Seguro para adicionar a jogos salvos existentes.
 [*]Não é seguro remover enquanto houver um colono integrado ao conjunto.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2723801948]Vanilla Factions Expanded - Pirates[/url] e DLC Biotech obrigatórios.
-[*]Save Our Ship 2: vale como traje de EVA pelas mesmas regras dos conjuntos do próprio VFE Pirates.
-[*]Vanilla Races Expanded - Waster: um tanque com gás conta como gás tóxico para o gene de absorção de gás tóxico de um piloto toxicador (configuração, ligada por padrão).
-[*]Combat Extended: valores de armadura, volume e capacidade de carga equivalentes aos de outras carcaças de guerra de nível espacial, e o capacete bloqueia a fumaça do CE.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1909914131]Save Our Ship 2[/url]: vale como traje de EVA pelas mesmas regras dos conjuntos do próprio VFE Pirates.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2983471725]Vanilla Races Expanded - Waster[/url]: um tanque com gás conta como gás tóxico para o gene de absorção de gás tóxico de um piloto toxicador (configuração, ligada por padrão).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044]Combat Extended[/url]: valores de armadura, volume e capacidade de carga equivalentes aos de outras carcaças de guerra de nível espacial, e o capacete bloqueia a fumaça do CE.
 [/list]
 
 [hr][/hr]
